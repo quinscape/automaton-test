@@ -9,6 +9,7 @@ import de.quinscape.automatontest.domain.tables.pojos.Product;
 import de.quinscape.domainql.annotation.GraphQLField;
 import de.quinscape.domainql.annotation.GraphQLLogic;
 import de.quinscape.domainql.annotation.GraphQLQuery;
+import de.quinscape.domainql.model.Domain;
 import de.quinscape.domainql.util.Paged;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -120,6 +121,12 @@ import static de.quinscape.automatontest.domain.Tables.*;
             .fetchOneInto(
                 AppUserConfig.class
             );
+    }
+
+    @GraphQLQuery
+    public Domain currentDomain()
+    {
+        return null;
     }
 
 }
