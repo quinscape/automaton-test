@@ -47,24 +47,31 @@ export function initProcess(process, scope)
                     "open-sub" : {
                         to: "ProcessTestHome",
                         action: t => {
-                            console.log("execute Transition ProcessTestHome.open-sub");
 
                             return (
-                                process.runSubProcess("sub-process", t.context)
-                                    .then(
-                                        result => result && runInAction( () => process.currentObject = result)
-                                    )
+                                process.runSubProcess("sub-process-example", t.context)
+                                .then(
+                                    result => result && runInAction( () => process.currentObject = result)
+                                )
+                            );
+                        }
+                    },
+                    "open-sub2" : {
+                        to: "ProcessTestHome",
+                        action: t => {
+
+                            return (
+                                process.runSubProcess("customer", t.context)
+                                .then(
+                                    result => result && runInAction( () => process.currentObject = result)
+                                )
                             );
                         }
                     },
                     "clear" : {
                         to: "ProcessTestHome",
                         action: t => {
-                            console.log("execute Transition ProcessTestHome.clear");
-
-                            return (
-                                runInAction( () => process.currentObject = null)
-                            );
+                            process.currentObject = null
                         }
                     }
                 }

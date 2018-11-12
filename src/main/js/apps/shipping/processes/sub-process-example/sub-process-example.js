@@ -12,6 +12,7 @@ export function initProcess(process, scope)
 {
 
     // process config
+    process.options.forceSubProcess = true;
 
     // return process states and transitions
     return (

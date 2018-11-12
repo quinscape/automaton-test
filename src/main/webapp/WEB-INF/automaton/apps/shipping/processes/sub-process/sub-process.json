@@ -41,7 +41,7 @@
         "type": "ProcessExports",
         "configuration": [],
         "process": {
-            "startState": "SubProcessHome",
+            "startState": "\"SubProcessHome\"",
             "states": {
                 "SubProcessHome": {
                     "choose": {

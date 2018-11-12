@@ -37,7 +37,7 @@ class MultiLayoutHome extends React.Component {
                     text="To C"
                 />
 
-                <JSONData name="processLayout" flatten={ true } value={ env.process.layout }/>
+                <JSONData name="processLayout" flatten={ true } value={ env.process.options.layout }/>
             </React.Fragment>
         )
     }

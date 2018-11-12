@@ -1,0 +1,40 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Process"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "t => { const { target } = process.input; t.target = target && \"Target\" + target.toUpperCase() || \"Home\"; }",
+            "states": {
+                "Home": {},
+                "TargetA": {
+                    "back": {
+                        "to": "Home"
+                    }
+                },
+                "TargetB": {
+                    "back": {
+                        "to": "Home"
+                    }
+                },
+                "TargetC": {
+                    "back": {
+                        "to": "Home"
+                    }
+                }
+            }
+        },
+        "scope": null
+    }
+}

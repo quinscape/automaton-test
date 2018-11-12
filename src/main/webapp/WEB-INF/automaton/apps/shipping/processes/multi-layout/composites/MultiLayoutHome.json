@@ -204,7 +204,7 @@
                             "name": "value",
                             "value": {
                                 "type": "JSXExpressionContainer",
-                                "code": "{env.process.layout}"
+                                "code": "{env.process.options.layout}"
                             }
                         }
                     ],

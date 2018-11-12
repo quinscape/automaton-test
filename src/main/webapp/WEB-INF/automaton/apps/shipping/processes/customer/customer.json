@@ -41,7 +41,7 @@
         "type": "ProcessExports",
         "configuration": [],
         "process": {
-            "startState": "CustomerList",
+            "startState": "\"CustomerList\"",
             "states": {
                 "CustomerList": {
                     "to-detail": {

@@ -33,7 +33,7 @@
         "type": "ProcessExports",
         "configuration": [],
         "process": {
-            "startState": "ShippingHome",
+            "startState": "\"ShippingHome\"",
             "states": {
                 "ShippingHome": []
             }

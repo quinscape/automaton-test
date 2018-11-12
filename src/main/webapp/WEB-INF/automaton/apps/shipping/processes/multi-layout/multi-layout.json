@@ -56,21 +56,21 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "../../../../components/Layout",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "Layout"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
             "source": "../../../../components/LayoutV3",
             "specifiers": [
                 {
                     "type": "ImportDefaultSpecifier",
                     "name": "LayoutV3"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../../components/LayoutV4",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "LayoutV4"
                 }
             ]
         }
@@ -79,10 +79,10 @@
         "type": "ProcessExports",
         "configuration": [
             "/* process config /*\n",
-            "process.layout = { \"MultiLayoutA\": LayoutV2, \"MultiLayoutB\": LayoutV3, // this is the fallback for Views not listed here explicitly. I could leave this out here, since \"Layout\" is also\n// the global default layout\n\"default\": process.input.useDefault ? Layout : null }"
+            "process.options.layout = { \"MultiLayoutA\": LayoutV2, \"MultiLayoutB\": LayoutV3, // use local default or not depending on input value\n\"default\": process.input.useDefault ? LayoutV4 : null }"
         ],
         "process": {
-            "startState": "MultiLayoutHome",
+            "startState": "\"MultiLayoutHome\"",
             "states": {
                 "MultiLayoutHome": {
                     "to-a": {

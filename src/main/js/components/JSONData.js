@@ -326,10 +326,10 @@ class JSONData extends React.Component {
 
         return (
             <div className="json-data-container mt-3">
-                <div className="toolbar">
+                <div className="toolbar mt-1 mr-1">
                     <button
                         type="button"
-                        className="btn btn-secondary btn-sm m-1"
+                        className="btn btn-secondary btn-sm mr-1"
                         title={flatten ? "Show as JSON" : "Show as js"}
                         onClick={this.toggleFlatten}
                     >
@@ -340,7 +340,7 @@ class JSONData extends React.Component {
                     <button
                         id={copyButtonId}
                         type="button"
-                        className="btn btn-secondary btn-sm m-1"
+                        className="btn btn-secondary btn-sm mr-1"
                         title={flatten ? "Copy js to clipboard" : "Copy JSON to clipboard"}
                         onClick={this.copy}
                     >

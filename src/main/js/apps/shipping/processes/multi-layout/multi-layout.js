@@ -22,14 +22,12 @@ export function initProcess(process, scope)
 {
 
     // process config
-    process.layout = {
+    process.options.layout = {
         "MultiLayoutA" : LayoutV2,
         "MultiLayoutB" : LayoutV3,
 
         // use local default or not depending on input value
-        "default" : process.input.useDefault ? LayoutV4 : null,
-
-        xxx: a => a*2
+        "default" : process.input.useDefault ? LayoutV4 : null
     };
 
     // return process states and transitions

@@ -2,6 +2,7 @@ package de.quinscape.automatontest.util;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.StringTokenizer;
 
 public final class Util
 {
@@ -42,5 +43,87 @@ public final class Util
         return buff.toString();
     }
 
+
+    public static String formatJSON(String s)
+    {
+
+        StringBuilder sb = new StringBuilder(s.length() * 3 / 2);
+        StringTokenizer st = new StringTokenizer(s, "{}[],\"", true);
+        int icnt = 0;
+        String lastToken="";
+        boolean quoted=false;
+        while (st.hasMoreTokens())
+        {
+            String token = st.nextToken();
+
+            if (token.equals("\""))
+            {
+                int pos=lastToken.length()-1;
+                int cnt=0;
+                while (pos >= 0 && lastToken.charAt(pos) == '\\')
+                {
+                    pos--;
+                    cnt++;
+                }
+
+                if ((cnt & 1) == 0)
+                {
+                    quoted=!quoted;
+                }
+            }
+
+            if (quoted)
+            {
+                sb.append(token);
+            }
+            else
+            {
+                if (token.equals("{") || token.equals("["))
+                {
+                    icnt++;
+                    sb.append(token);
+                    newLine(sb, icnt);
+                }
+                else if (token.equals("}") || token.equals("]"))
+                {
+                    icnt--;
+                    newLine(sb, icnt);
+                    sb.append(token);
+                }
+                else if (token.equals(","))
+                {
+                    sb.append(token);
+                    newLine(sb, icnt);
+                }
+                else
+                {
+                    sb.append(token);
+                }
+            }
+            lastToken=token;
+        }
+        return sb.toString();
+    }
+
+    private final static String INDENT = "    ";
+
+    private final static String NEWLINE = System.getProperty("line.separator");
+
+    /**
+     * Adds a newline followed by a given number of indentation spaces.
+     *
+     * @param sb
+     *          StringStreamBuilder
+     * @param cnt
+     *          level of indentation
+     */
+    private static void newLine(StringBuilder sb, int cnt)
+    {
+        sb.append(NEWLINE);
+        for (int i = 0; i < cnt; i++)
+        {
+            sb.append(INDENT);
+        }
+    }
 
 }

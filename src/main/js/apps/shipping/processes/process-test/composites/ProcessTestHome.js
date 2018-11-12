@@ -31,6 +31,13 @@ class ProcessTestHome extends React.Component {
                 />
 
                 <Button
+                    transition="open-sub2"
+                    className="mr-1 btn btn-secondary"
+                    icon="fa-subway"
+                    text="Open Customer as Sub"
+                />
+
+                <Button
                     transition="clear"
                     className="mr-1 btn btn-secondary"
                     icon="fa-minus-circle"

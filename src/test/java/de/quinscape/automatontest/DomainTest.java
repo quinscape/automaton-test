@@ -1,6 +1,7 @@
 package de.quinscape.automatontest;
 
 import de.quinscape.automatontest.domain.Public;
+import de.quinscape.automatontest.util.Util;
 import de.quinscape.domainql.DomainGenerator;
 import de.quinscape.domainql.model.Domain;
 import de.quinscape.domainql.model.DomainType;
@@ -36,7 +37,7 @@ public class DomainTest
         {
             File file = new File(domainDir, domainType.getName() + ".json");
 
-            final String json = JSONUtil.formatJSON(JSONUtil.DEFAULT_GENERATOR.forValue(domainType));
+            final String json = Util.formatJSON(JSONUtil.DEFAULT_GENERATOR.forValue(domainType));
 
             FileUtils.writeStringToFile(file, json, "UTF-8");
         }

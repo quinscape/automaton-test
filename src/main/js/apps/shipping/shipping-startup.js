@@ -1,7 +1,7 @@
 import "whatwg-fetch"
 import bootstrap from 'jsview-bootstrap'
 import { configure, runInAction } from "mobx"
-import { startup, config } from "automaton-js"
+import { startup, config} from "automaton-js"
 import Layout from "../../components/Layout";
 
 // set MobX configuration
@@ -13,7 +13,7 @@ configure({
 bootstrap(
     initial => {
 
-        console.log("INITIAL", initial);
+        //console.log("INITIAL", initial);
 
         return startup(
             require.context("./", true, /\.js$/),

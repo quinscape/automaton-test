@@ -3,6 +3,7 @@ import { observer } from "mobx-react";
 
 import { DataGrid, Button, i18n } from "automaton-js"
 import CustomerForm from "./CustomerForm";
+import JSONData from "../../../../../components/JSONData";
 
 @observer
 class CustomerDetail extends React.Component {
@@ -20,11 +21,7 @@ class CustomerDetail extends React.Component {
                         i18n('Customer Detail')
                     }
                 </h1>
-                <pre>
-                    {
-                        JSON.stringify(process.currentObject, null, 4)
-                    }
-                </pre>
+                <JSONData name="customer" value={ process.currentObject }/>
             </div>
         )
     }

@@ -37,7 +37,7 @@ import static de.quinscape.automatontest.domain.Tables.*;
     public Paged<Customer> getCustomers(
         @GraphQLField(defaultValue = "0")
             int offset,
-        @GraphQLField(defaultValue = "20")
+        @GraphQLField(defaultValue = "10")
             int limit
     )
     {
@@ -56,7 +56,7 @@ import static de.quinscape.automatontest.domain.Tables.*;
     public Paged<Order> getOrders(
         @GraphQLField(defaultValue = "0")
             int offset,
-        @GraphQLField(defaultValue = "20")
+        @GraphQLField(defaultValue = "10")
             int limit
     )
     {
@@ -75,7 +75,7 @@ import static de.quinscape.automatontest.domain.Tables.*;
     public Paged<Product> getProducts(
         @GraphQLField(defaultValue = "0")
             int offset,
-        @GraphQLField(defaultValue = "20")
+        @GraphQLField(defaultValue = "10")
             int limit
     )
     {
