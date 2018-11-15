@@ -27,8 +27,7 @@ export function initProcess(process, scope)
                         "to-detail": {
                             to: "CustomerDetail",
                             action: t => {
-
-                                console.log("Transition 'to-detail'", toJS(t.context))
+                                scope.currentCustomer = t.context;
                             }
                         }
                     }
@@ -38,7 +37,7 @@ export function initProcess(process, scope)
                         to: "CustomerList",
                         action: t => {
 
-                            console.log("Transition 'save'")
+                            console.log("Transition 'save': ", toJS(t.context))
                         }
                     },
                     "cancel": {
@@ -58,7 +57,7 @@ export default class CustomerScope {
 
     @observable
     @type("DomainObject")
-    currentObject = null;
+    currentCustomer = null;
 
     /** Current todos */
     @observable

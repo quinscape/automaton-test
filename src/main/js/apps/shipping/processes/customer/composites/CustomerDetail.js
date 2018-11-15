@@ -12,7 +12,7 @@ class CustomerDetail extends React.Component {
     {
         const { env } = this.props;
 
-        const { process } = env;
+        const { scope } = env;
 
         return (
             <div>
@@ -21,7 +21,7 @@ class CustomerDetail extends React.Component {
                         i18n('Customer Detail')
                     }
                 </h1>
-                <JSONData name="customer" value={ process.currentObject }/>
+                <JSONData name="customer" value={ scope.currentCustomer }/>
             </div>
         )
     }

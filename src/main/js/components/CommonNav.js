@@ -6,7 +6,8 @@ import DropdownToggle from "reactstrap/lib/DropdownToggle";
 import DropdownMenu from "reactstrap/lib/DropdownMenu";
 import DropdownItem from "reactstrap/lib/DropdownItem";
 
-import { uri, Link } from "automaton-js"
+import { uri, Link, runProcessURI } from "automaton-js"
+
 
 class CommonNav extends React.Component {
 
@@ -14,18 +15,19 @@ class CommonNav extends React.Component {
         dropdownOpen: false
     };
 
+    toggle = () => this.setState({dropdownOpen: !this.state.dropdownOpen});
 
-    toggle = () => this.setState({ dropdownOpen: !this.state.dropdownOpen});
+
     render()
     {
         return (
             <Nav className="ml-auto" navbar>
                 <NavItem>
-                    <Link className="nav-link" href={ uri("/shipping/order/") }>Orders</Link>
+                    <Link className="nav-link" href={uri("/shipping/order/")}>Orders</Link>
                 </NavItem>
-                    <Link className="nav-link" href={ uri("/shipping/products/") }>Products</Link>
+                <Link className="nav-link" href={uri("/shipping/products/")}>Products</Link>
                 <NavItem>
-                    <Link className="nav-link" href={ uri("/shipping/customer/") }>Customers</Link>
+                    <Link className="nav-link" href={uri("/shipping/customer/")}>Customers</Link>
                 </NavItem>
 
                 <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -33,14 +35,43 @@ class CommonNav extends React.Component {
                         Tests
                     </DropdownToggle>
                     <DropdownMenu>
-                        <Link className="btn btn-link" href={ uri("/shipping/process-test") }>Process-Test</Link>
-                        <DropdownItem divider />
-                        <Link className="btn btn-link" href={ uri("/shipping/multi-layout") }>Multi-Layout</Link>
-                        <Link className="btn btn-link" href={ uri("/shipping/multi-layout", {useDefault: 1}) }>Multi-Layout (with Default)</Link>
-                        <DropdownItem divider />
-                        <Link className="btn btn-link" href={ uri("/shipping/decision-start", {target: "a"}) }>Decision Start A</Link>
-                        <Link className="btn btn-link" href={ uri("/shipping/decision-start", {target: "b"}) }>Decision Start B</Link>
-                        <Link className="btn btn-link" href={ uri("/shipping/decision-start", {target: "C"}) }>Decision Start C</Link>
+                        <DropdownItem
+                            onClick={() => runProcessURI("/shipping/crud-test")}
+                        >
+                            CRUD-Test
+                        </DropdownItem>
+                        <DropdownItem
+                            onClick={() => runProcessURI("/shipping/process-test")}
+                        >
+                            Process-Test
+                        </DropdownItem>
+                        <DropdownItem divider/>
+                        <DropdownItem
+                            onClick={() => runProcessURI("/shipping/multi-layout")}
+                        >
+                            Multi-Layout
+                        </DropdownItem>
+                        <DropdownItem
+                            onClick={() => runProcessURI("/shipping/multi-layout?useDefault=1")}
+                        >
+                            Multi-Layout(with Default)
+                        </DropdownItem>
+                        <DropdownItem divider/>
+                        <DropdownItem
+                            onClick={() => runProcessURI("/shipping/decision-start?target=a")}
+                        >
+                            Decision Start A
+                        </DropdownItem>
+                        <DropdownItem
+                            onClick={() => runProcessURI("/shipping/decision-start?target=b")}
+                        >
+                            Decision Start B
+                        </DropdownItem>
+                        <DropdownItem
+                            onClick={() => runProcessURI("/shipping/decision-start?target=c")}
+                        >
+                            Decision Start C
+                        </DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
             </Nav>

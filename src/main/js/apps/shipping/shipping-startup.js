@@ -1,7 +1,7 @@
 import "whatwg-fetch"
 import bootstrap from 'jsview-bootstrap'
 import { configure, runInAction } from "mobx"
-import { startup, config} from "automaton-js"
+import { startup, config, getCurrentProcess } from "automaton-js"
 import Layout from "../../components/Layout";
 
 // set MobX configuration
@@ -29,5 +29,6 @@ bootstrap(
 
 module.exports = {
     config,
+    currentProcess: getCurrentProcess,
     runInAction
 };

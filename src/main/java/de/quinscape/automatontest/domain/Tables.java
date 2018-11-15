@@ -12,6 +12,8 @@ import de.quinscape.automatontest.domain.tables.AppTranslation;
 import de.quinscape.automatontest.domain.tables.AppUser;
 import de.quinscape.automatontest.domain.tables.AppUserConfig;
 import de.quinscape.automatontest.domain.tables.Customer;
+import de.quinscape.automatontest.domain.tables.Foo;
+import de.quinscape.automatontest.domain.tables.FooType;
 import de.quinscape.automatontest.domain.tables.Order;
 import de.quinscape.automatontest.domain.tables.OrderItem;
 import de.quinscape.automatontest.domain.tables.OrderStatus;
@@ -73,6 +75,16 @@ public class Tables {
      * The table <code>public.customer</code>.
      */
     public static final Customer CUSTOMER = de.quinscape.automatontest.domain.tables.Customer.CUSTOMER;
+
+    /**
+     * The table <code>public.foo</code>.
+     */
+    public static final Foo FOO = de.quinscape.automatontest.domain.tables.Foo.FOO;
+
+    /**
+     * The table <code>public.foo_type</code>.
+     */
+    public static final FooType FOO_TYPE = de.quinscape.automatontest.domain.tables.FooType.FOO_TYPE;
 
     /**
      * The table <code>public.order</code>.

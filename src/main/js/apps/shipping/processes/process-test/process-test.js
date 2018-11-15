@@ -51,7 +51,7 @@ export function initProcess(process, scope)
                             return (
                                 process.runSubProcess("sub-process-example", t.context)
                                 .then(
-                                    result => result && runInAction( () => process.currentObject = result)
+                                    result => result && runInAction( () => scope.currentOrder = result)
                                 )
                             );
                         }
@@ -63,7 +63,7 @@ export function initProcess(process, scope)
                             return (
                                 process.runSubProcess("customer", t.context)
                                 .then(
-                                    result => result && runInAction( () => process.currentObject = result)
+                                    result => result && runInAction( () => scope.currentOrder = result)
                                 )
                             );
                         }
@@ -71,7 +71,7 @@ export function initProcess(process, scope)
                     "clear" : {
                         to: "ProcessTestHome",
                         action: t => {
-                            process.currentObject = null
+                            scope.currentOrder = null
                         }
                     }
                 }
@@ -80,3 +80,10 @@ export function initProcess(process, scope)
     );
 }
 
+
+export default class ProcessTestScope {
+
+    @observable
+    @type("Order")
+    currentOrder = null;
+}

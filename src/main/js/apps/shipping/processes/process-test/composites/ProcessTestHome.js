@@ -12,7 +12,7 @@ class ProcessTestHome extends React.Component {
     {
         const { env } = this.props;
 
-        const { process } = env;
+        const { scope } = env;
 
 
         return (
@@ -48,7 +48,7 @@ class ProcessTestHome extends React.Component {
 
                 <JSONData
                     name="chosen"
-                    value={ process.currentObject }
+                    value={ scope.currentOrder }
                     maxHeight={ 20 }
                 />
 

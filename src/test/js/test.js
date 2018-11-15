@@ -1,5 +1,7 @@
 import assert from "power-assert"
 
+import { get, set, observable, values } from "mobx"
+
 describe("Testing", function () {
 
     it("Mocha is integrated", function () {
@@ -10,16 +12,20 @@ describe("Testing", function () {
 
     });
 
-    it("i18n Proxy", function () {
+    it("mobx ", function () {
 
-        const t = {};
+        const obj = observable.object({
+            name : "Foo",
+            subs: [{
+                name: "Sub #1"
+            },{
+                name: "Sub #2"
+            }]
+        });
 
-        t.toValue = (function () {
+        console.log(get(obj, "name"));
+        console.log(get(obj, ["subs", 0, "name"]));
 
-            return "A";
-        }).bind(t);
-
-        console.log(t)
 
     });
 });

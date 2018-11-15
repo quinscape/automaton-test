@@ -302,7 +302,7 @@ class JSONData extends React.Component {
         const valueOpened = this.state.valueOpened.slice();
         valueOpened[index] = value;
 
-        console.log("setValueOpened" , valueOpened)
+        //console.log("setValueOpened" , valueOpened)
 
         this.setState({
             valueOpened
@@ -318,7 +318,7 @@ class JSONData extends React.Component {
 
         if (flatten)
         {
-            console.log("flattenData(rows, value, name, ", valueOpened);
+            //console.log("flattenData(rows, value, name, ", valueOpened);
             flattenData(rows, value, name, valueOpened, this.setValueOpened);
         }
 

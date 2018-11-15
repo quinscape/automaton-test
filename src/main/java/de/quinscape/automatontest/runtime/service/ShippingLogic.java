@@ -4,6 +4,7 @@ import de.quinscape.automaton.model.AutomatonApplication;
 import de.quinscape.automatontest.domain.tables.pojos.AppUserConfig;
 import de.quinscape.automatontest.domain.tables.pojos.AppConfig;
 import de.quinscape.automatontest.domain.tables.pojos.Customer;
+import de.quinscape.automatontest.domain.tables.pojos.Foo;
 import de.quinscape.automatontest.domain.tables.pojos.Order;
 import de.quinscape.automatontest.domain.tables.pojos.Product;
 import de.quinscape.domainql.annotation.GraphQLField;
@@ -41,14 +42,14 @@ import static de.quinscape.automatontest.domain.Tables.*;
             int limit
     )
     {
-        final List<Customer> todos = dslContext.select()
+        final List<Customer> customers = dslContext.select()
             .from(CUSTOMER)
             .orderBy(CUSTOMER.NUMBER)
             .offset(offset)
             .limit(limit)
             .fetchInto(Customer.class);
 
-        return new Paged<>(todos, todos.size());
+        return new Paged<>(customers, dslContext.selectCount().from(CUSTOMER).execute());
     }
 
 
@@ -67,7 +68,7 @@ import static de.quinscape.automatontest.domain.Tables.*;
             .limit(limit)
             .fetchInto(Order.class);
 
-        return new Paged<>(orders, orders.size());
+        return new Paged<>(orders, dslContext.selectCount().from(ORDER).execute());
     }
 
 
@@ -79,14 +80,33 @@ import static de.quinscape.automatontest.domain.Tables.*;
             int limit
     )
     {
-        final List<Product> todos = dslContext.select()
+        final List<Product> products = dslContext.select()
             .from(PRODUCT)
             .orderBy(PRODUCT.NUMBER)
             .offset(offset)
             .limit(limit)
             .fetchInto(Product.class);
 
-        return new Paged<>(todos, todos.size());
+        return new Paged<>(products, dslContext.selectCount().from(PRODUCT).execute());
+    }
+
+
+    @GraphQLQuery
+    public Paged<Foo> getFoos(
+        @GraphQLField(defaultValue = "0")
+            int offset,
+        @GraphQLField(defaultValue = "10")
+            int limit
+    )
+    {
+        final List<Foo> foos = dslContext.select()
+            .from(FOO)
+            .orderBy(FOO.CREATED)
+            .offset(offset)
+            .limit(limit)
+            .fetchInto(Foo.class);
+
+        return new Paged<>(foos, dslContext.selectCount().from(FOO).execute());
     }
 
 
