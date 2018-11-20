@@ -38,7 +38,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class FooType extends TableImpl<FooTypeRecord> {
 
-    private static final long serialVersionUID = 1514155790;
+    private static final long serialVersionUID = 1937329622;
 
     /**
      * The reference instance of <code>public.foo_type</code>
@@ -54,9 +54,9 @@ public class FooType extends TableImpl<FooTypeRecord> {
     }
 
     /**
-     * The column <code>public.foo_type.id</code>.
+     * The column <code>public.foo_type.ordinal</code>.
      */
-    public final TableField<FooTypeRecord, Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+    public final TableField<FooTypeRecord, Integer> ORDINAL = createField("ordinal", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
      * The column <code>public.foo_type.name</code>.
@@ -105,7 +105,7 @@ public class FooType extends TableImpl<FooTypeRecord> {
      */
     @Override
     public List<Index> getIndexes() {
-        return Arrays.<Index>asList(Indexes.PK_FOO_TYPE);
+        return Arrays.<Index>asList(Indexes.FOO_TYPE_NAME_KEY, Indexes.PK_FOO_TYPE);
     }
 
     /**
@@ -121,7 +121,7 @@ public class FooType extends TableImpl<FooTypeRecord> {
      */
     @Override
     public List<UniqueKey<FooTypeRecord>> getKeys() {
-        return Arrays.<UniqueKey<FooTypeRecord>>asList(Keys.PK_FOO_TYPE);
+        return Arrays.<UniqueKey<FooTypeRecord>>asList(Keys.PK_FOO_TYPE, Keys.FOO_TYPE_NAME_KEY);
     }
 
     /**

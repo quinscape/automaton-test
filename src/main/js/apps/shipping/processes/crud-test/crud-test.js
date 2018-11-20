@@ -20,28 +20,28 @@ export function initProcess(process, scope)
     // return process states and transitions
     return (
         {
-            startState: "CustomerList",
+            startState: "FooList",
             states: {
-                "CustomerList":
+                "FooList":
                     {
                         "to-detail": {
-                            to: "CustomerDetail",
+                            to: "FooDetail",
                             action: t => {
-                                scope.currentCustomer = t.context;
+                                scope.currentFoo = t.context;
                             }
                         }
                     }
                 ,
-                "CustomerDetail": {
+                "FooDetail": {
                     "save": {
-                        to: "CustomerList",
+                        to: "FooList",
                         action: t => {
 
                             console.log("Transition 'save': ", toJS(t.context))
                         }
                     },
                     "cancel": {
-                        to: "CustomerList",
+                        to: "FooList",
                         action: t => {
 
                             console.log("Transition 'cancel'")
@@ -51,36 +51,46 @@ export function initProcess(process, scope)
             }
         }
     );
-};
+}
 
-export default class CustomerScope {
+export default class CRUDTestScope {
 
     @observable
-    @type("DomainObject")
-    currentCustomer = null;
+    @type("Foo")
+    currentFoo = null;
 
     /** Current todos */
     @observable
-    @type("PagedCustomer")
-    customers = injection(
+    @type("PagedFoo")
+    foos = injection(
         // language=GraphQL
-            `{
-                getCustomers{
-                    rows{
-                        id
-                        number
-                        salutation
-                        name
+        `{
+            getFoos{
+                rows{
+                    id
+                    name
+                     num
+                    created
+                    owner{
+                        login
                     }
+                    type 
+                    
                 }
-            }`
+                rowCount
+            }
+        }`
     );
-
-
+    
+    @action
+    updateFoos(foos)
+    {
+        this.foos = foos;
+    }
 
     @action
-    updateCustomers(customers)
+    updateCurrent(foo)
     {
-        this.customers = customers;
+        this.currentFoo = foo;
     }
 }

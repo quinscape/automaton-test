@@ -55,6 +55,7 @@ public class Indexes {
     public static final Index PK_APP_USER_CONFIG = Indexes0.PK_APP_USER_CONFIG;
     public static final Index PK_CUSTOMER = Indexes0.PK_CUSTOMER;
     public static final Index PK_FOO = Indexes0.PK_FOO;
+    public static final Index FOO_TYPE_NAME_KEY = Indexes0.FOO_TYPE_NAME_KEY;
     public static final Index PK_FOO_TYPE = Indexes0.PK_FOO_TYPE;
     public static final Index FKI_ORDER_ORDER_SHIPPING_TYPE = Indexes0.FKI_ORDER_ORDER_SHIPPING_TYPE;
     public static final Index FKI_ORDER_ORDER_STATUS = Indexes0.FKI_ORDER_ORDER_STATUS;
@@ -81,7 +82,8 @@ public class Indexes {
         public static Index PK_APP_USER_CONFIG = Internal.createIndex("pk_app_user_config", AppUserConfig.APP_USER_CONFIG, new OrderField[] { AppUserConfig.APP_USER_CONFIG.LOGIN }, true);
         public static Index PK_CUSTOMER = Internal.createIndex("pk_customer", Customer.CUSTOMER, new OrderField[] { Customer.CUSTOMER.ID }, true);
         public static Index PK_FOO = Internal.createIndex("pk_foo", Foo.FOO, new OrderField[] { Foo.FOO.ID }, true);
-        public static Index PK_FOO_TYPE = Internal.createIndex("pk_foo_type", FooType.FOO_TYPE, new OrderField[] { FooType.FOO_TYPE.ID }, true);
+        public static Index FOO_TYPE_NAME_KEY = Internal.createIndex("foo_type_name_key", FooType.FOO_TYPE, new OrderField[] { FooType.FOO_TYPE.NAME }, true);
+        public static Index PK_FOO_TYPE = Internal.createIndex("pk_foo_type", FooType.FOO_TYPE, new OrderField[] { FooType.FOO_TYPE.ORDINAL }, true);
         public static Index FKI_ORDER_ORDER_SHIPPING_TYPE = Internal.createIndex("fki_order_order_shipping_type", Order.ORDER, new OrderField[] { Order.ORDER.SHIPPING_TYPE }, false);
         public static Index FKI_ORDER_ORDER_STATUS = Internal.createIndex("fki_order_order_status", Order.ORDER, new OrderField[] { Order.ORDER.STATUS }, false);
         public static Index PK_ORDER = Internal.createIndex("pk_order", Order.ORDER, new OrderField[] { Order.ORDER.ID }, true);

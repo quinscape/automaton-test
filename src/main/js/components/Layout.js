@@ -30,8 +30,11 @@ class Layout extends React.Component {
 
         return (
             <Container fluid={false}>
-                <Navbar color="dark" dark expand="md">
-                    <NavbarBrand href={ contextPath + "/" }>ACME shipping</NavbarBrand>
+                <Navbar color="primary" dark expand="md">
+                    <NavbarBrand href={ contextPath + "/" }>
+                        <i className="fab fa-quinscape mr-1" style={ { fontWeight: "normal"}}/>
+                        Automaton-Test
+                    </NavbarBrand>
                     <NavbarToggler onClick={this.toggle}/>
                     <Collapse isOpen={this.state.isNavExpanded} navbar>
                         <CommonNav/>

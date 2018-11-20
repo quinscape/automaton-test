@@ -77,6 +77,7 @@ public class Keys {
     public static final UniqueKey<CustomerRecord> PK_CUSTOMER = UniqueKeys0.PK_CUSTOMER;
     public static final UniqueKey<FooRecord> PK_FOO = UniqueKeys0.PK_FOO;
     public static final UniqueKey<FooTypeRecord> PK_FOO_TYPE = UniqueKeys0.PK_FOO_TYPE;
+    public static final UniqueKey<FooTypeRecord> FOO_TYPE_NAME_KEY = UniqueKeys0.FOO_TYPE_NAME_KEY;
     public static final UniqueKey<OrderRecord> PK_ORDER = UniqueKeys0.PK_ORDER;
     public static final UniqueKey<OrderItemRecord> PK_ORDER_ITEM = UniqueKeys0.PK_ORDER_ITEM;
     public static final UniqueKey<OrderStatusRecord> PK_ORDER_STATUS = UniqueKeys0.PK_ORDER_STATUS;
@@ -116,7 +117,8 @@ public class Keys {
         public static final UniqueKey<AppUserConfigRecord> PK_APP_USER_CONFIG = Internal.createUniqueKey(AppUserConfig.APP_USER_CONFIG, "pk_app_user_config", AppUserConfig.APP_USER_CONFIG.LOGIN);
         public static final UniqueKey<CustomerRecord> PK_CUSTOMER = Internal.createUniqueKey(Customer.CUSTOMER, "pk_customer", Customer.CUSTOMER.ID);
         public static final UniqueKey<FooRecord> PK_FOO = Internal.createUniqueKey(Foo.FOO, "pk_foo", Foo.FOO.ID);
-        public static final UniqueKey<FooTypeRecord> PK_FOO_TYPE = Internal.createUniqueKey(FooType.FOO_TYPE, "pk_foo_type", FooType.FOO_TYPE.ID);
+        public static final UniqueKey<FooTypeRecord> PK_FOO_TYPE = Internal.createUniqueKey(FooType.FOO_TYPE, "pk_foo_type", FooType.FOO_TYPE.ORDINAL);
+        public static final UniqueKey<FooTypeRecord> FOO_TYPE_NAME_KEY = Internal.createUniqueKey(FooType.FOO_TYPE, "foo_type_name_key", FooType.FOO_TYPE.NAME);
         public static final UniqueKey<OrderRecord> PK_ORDER = Internal.createUniqueKey(Order.ORDER, "pk_order", Order.ORDER.ID);
         public static final UniqueKey<OrderItemRecord> PK_ORDER_ITEM = Internal.createUniqueKey(OrderItem.ORDER_ITEM, "pk_order_item", OrderItem.ORDER_ITEM.ID);
         public static final UniqueKey<OrderStatusRecord> PK_ORDER_STATUS = Internal.createUniqueKey(OrderStatus.ORDER_STATUS, "pk_order_status", OrderStatus.ORDER_STATUS.ORDINAL);
@@ -130,7 +132,7 @@ public class Keys {
         public static final ForeignKey<AppUserConfigRecord, AppAttachmentRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_ATTACHMENT_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_ATTACHMENT, AppUserConfig.APP_USER_CONFIG, "app_user_config__fk_app_user_config_attachment_id", AppUserConfig.APP_USER_CONFIG.ATTACHMENT_ID);
         public static final ForeignKey<CustomerRecord, AddressRecord> CUSTOMER__FK_CUSTOMER_BILLING_ADDRESS_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_ADDRESS, Customer.CUSTOMER, "customer__fk_customer_billing_address_id", Customer.CUSTOMER.BILLING_ADDRESS_ID);
         public static final ForeignKey<CustomerRecord, AddressRecord> CUSTOMER__FK_CUSTOMER_DELIVERY_ADDRESS_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_ADDRESS, Customer.CUSTOMER, "customer__fk_customer_delivery_address_id", Customer.CUSTOMER.DELIVERY_ADDRESS_ID);
-        public static final ForeignKey<FooRecord, FooTypeRecord> FOO__FK_FOO_TYPE_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_FOO_TYPE, Foo.FOO, "foo__fk_foo_type_id", Foo.FOO.TYPE_ID);
+        public static final ForeignKey<FooRecord, FooTypeRecord> FOO__FK_FOO_TYPE_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.FOO_TYPE_NAME_KEY, Foo.FOO, "foo__fk_foo_type_id", Foo.FOO.TYPE);
         public static final ForeignKey<FooRecord, AppUserRecord> FOO__FK_FOO_OWNER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, Foo.FOO, "foo__fk_foo_owner_id", Foo.FOO.OWNER_ID);
         public static final ForeignKey<OrderRecord, ShippingTypeRecord> ORDER__FK_ORDER_SHIPPING_TYPE = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_SHIPPING_TYPE, Order.ORDER, "order__fk_order_shipping_type", Order.ORDER.SHIPPING_TYPE);
         public static final ForeignKey<OrderRecord, OrderStatusRecord> ORDER__FK_ORDER_ORDER_STATUS = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.ORDER_STATUS_NAME_KEY, Order.ORDER, "order__fk_order_order_status", Order.ORDER.STATUS);

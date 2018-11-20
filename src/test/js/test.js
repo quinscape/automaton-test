@@ -1,6 +1,6 @@
 import assert from "power-assert"
 
-import { get, set, observable, values } from "mobx"
+import { get, set, observable, values, com } from "mobx"
 
 describe("Testing", function () {
 
@@ -14,17 +14,7 @@ describe("Testing", function () {
 
     it("mobx ", function () {
 
-        const obj = observable.object({
-            name : "Foo",
-            subs: [{
-                name: "Sub #1"
-            },{
-                name: "Sub #2"
-            }]
-        });
-
-        console.log(get(obj, "name"));
-        console.log(get(obj, ["subs", 0, "name"]));
+        const fn = computed(() => )
 
 
     });

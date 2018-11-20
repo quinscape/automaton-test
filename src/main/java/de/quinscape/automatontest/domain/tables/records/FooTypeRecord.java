@@ -35,26 +35,27 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 @Entity
 @Table(name = "foo_type", schema = "public", indexes = {
-    @Index(name = "pk_foo_type", unique = true, columnList = "id ASC")
+    @Index(name = "foo_type_name_key", unique = true, columnList = "name ASC"),
+    @Index(name = "pk_foo_type", unique = true, columnList = "ordinal ASC")
 })
 public class FooTypeRecord extends UpdatableRecordImpl<FooTypeRecord> implements Record2<Integer, String> {
 
-    private static final long serialVersionUID = 122145712;
+    private static final long serialVersionUID = 293318739;
 
     /**
-     * Setter for <code>public.foo_type.id</code>.
+     * Setter for <code>public.foo_type.ordinal</code>.
      */
-    public void setId(Integer value) {
+    public void setOrdinal(Integer value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>public.foo_type.id</code>.
+     * Getter for <code>public.foo_type.ordinal</code>.
      */
     @Id
-    @Column(name = "id", unique = true, nullable = false, precision = 32)
+    @Column(name = "ordinal", unique = true, nullable = false, precision = 32)
     @NotNull
-    public Integer getId() {
+    public Integer getOrdinal() {
         return (Integer) get(0);
     }
 
@@ -68,7 +69,7 @@ public class FooTypeRecord extends UpdatableRecordImpl<FooTypeRecord> implements
     /**
      * Getter for <code>public.foo_type.name</code>.
      */
-    @Column(name = "name", nullable = false, length = 100)
+    @Column(name = "name", unique = true, nullable = false, length = 100)
     @NotNull
     @Size(max = 100)
     public String getName() {
@@ -112,7 +113,7 @@ public class FooTypeRecord extends UpdatableRecordImpl<FooTypeRecord> implements
      */
     @Override
     public Field<Integer> field1() {
-        return FooType.FOO_TYPE.ID;
+        return FooType.FOO_TYPE.ORDINAL;
     }
 
     /**
@@ -128,7 +129,7 @@ public class FooTypeRecord extends UpdatableRecordImpl<FooTypeRecord> implements
      */
     @Override
     public Integer component1() {
-        return getId();
+        return getOrdinal();
     }
 
     /**
@@ -144,7 +145,7 @@ public class FooTypeRecord extends UpdatableRecordImpl<FooTypeRecord> implements
      */
     @Override
     public Integer value1() {
-        return getId();
+        return getOrdinal();
     }
 
     /**
@@ -160,7 +161,7 @@ public class FooTypeRecord extends UpdatableRecordImpl<FooTypeRecord> implements
      */
     @Override
     public FooTypeRecord value1(Integer value) {
-        setId(value);
+        setOrdinal(value);
         return this;
     }
 
@@ -197,10 +198,10 @@ public class FooTypeRecord extends UpdatableRecordImpl<FooTypeRecord> implements
     /**
      * Create a detached, initialised FooTypeRecord
      */
-    public FooTypeRecord(Integer id, String name) {
+    public FooTypeRecord(Integer ordinal, String name) {
         super(FooType.FOO_TYPE);
 
-        set(0, id);
+        set(0, ordinal);
         set(1, name);
     }
 }

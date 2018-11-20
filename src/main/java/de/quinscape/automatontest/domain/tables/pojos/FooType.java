@@ -31,42 +31,43 @@ import javax.validation.constraints.Size;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 @Entity
 @Table(name = "foo_type", schema = "public", indexes = {
-    @Index(name = "pk_foo_type", unique = true, columnList = "id ASC")
+    @Index(name = "foo_type_name_key", unique = true, columnList = "name ASC"),
+    @Index(name = "pk_foo_type", unique = true, columnList = "ordinal ASC")
 })
 public class FooType implements DomainObject, Serializable {
 
-    private static final long serialVersionUID = 890915738;
+    private static final long serialVersionUID = 2010184275;
 
-    private Integer id;
+    private Integer ordinal;
     private String  name;
 
     public FooType() {}
 
     public FooType(FooType value) {
-        this.id = value.id;
+        this.ordinal = value.ordinal;
         this.name = value.name;
     }
 
     public FooType(
-        Integer id,
+        Integer ordinal,
         String  name
     ) {
-        this.id = id;
+        this.ordinal = ordinal;
         this.name = name;
     }
 
     @Id
-    @Column(name = "id", unique = true, nullable = false, precision = 32)
+    @Column(name = "ordinal", unique = true, nullable = false, precision = 32)
     @NotNull
-    public Integer getId() {
-        return this.id;
+    public Integer getOrdinal() {
+        return this.ordinal;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setOrdinal(Integer ordinal) {
+        this.ordinal = ordinal;
     }
 
-    @Column(name = "name", nullable = false, length = 100)
+    @Column(name = "name", unique = true, nullable = false, length = 100)
     @NotNull
     @Size(max = 100)
     public String getName() {
@@ -81,7 +82,7 @@ public class FooType implements DomainObject, Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder("FooType (");
 
-        sb.append(id);
+        sb.append(ordinal);
         sb.append(", ").append(name);
 
         sb.append(")");

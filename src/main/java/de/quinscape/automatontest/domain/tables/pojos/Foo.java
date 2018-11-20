@@ -36,12 +36,12 @@ import javax.validation.constraints.Size;
 })
 public class Foo implements DomainObject, Serializable {
 
-    private static final long serialVersionUID = -40751353;
+    private static final long serialVersionUID = 1416477264;
 
     private String    id;
     private String    name;
     private Integer   num;
-    private Integer   typeId;
+    private String    type;
     private Timestamp created;
     private String    description;
     private String    ownerId;
@@ -52,7 +52,7 @@ public class Foo implements DomainObject, Serializable {
         this.id = value.id;
         this.name = value.name;
         this.num = value.num;
-        this.typeId = value.typeId;
+        this.type = value.type;
         this.created = value.created;
         this.description = value.description;
         this.ownerId = value.ownerId;
@@ -62,7 +62,7 @@ public class Foo implements DomainObject, Serializable {
         String    id,
         String    name,
         Integer   num,
-        Integer   typeId,
+        String    type,
         Timestamp created,
         String    description,
         String    ownerId
@@ -70,7 +70,7 @@ public class Foo implements DomainObject, Serializable {
         this.id = id;
         this.name = name;
         this.num = num;
-        this.typeId = typeId;
+        this.type = type;
         this.created = created;
         this.description = description;
         this.ownerId = ownerId;
@@ -109,14 +109,15 @@ public class Foo implements DomainObject, Serializable {
         this.num = num;
     }
 
-    @Column(name = "type_id", nullable = false, precision = 32)
+    @Column(name = "type", nullable = false, length = 100)
     @NotNull
-    public Integer getTypeId() {
-        return this.typeId;
+    @Size(max = 100)
+    public String getType() {
+        return this.type;
     }
 
-    public void setTypeId(Integer typeId) {
-        this.typeId = typeId;
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Column(name = "created", nullable = false)
@@ -156,7 +157,7 @@ public class Foo implements DomainObject, Serializable {
         sb.append(id);
         sb.append(", ").append(name);
         sb.append(", ").append(num);
-        sb.append(", ").append(typeId);
+        sb.append(", ").append(type);
         sb.append(", ").append(created);
         sb.append(", ").append(description);
         sb.append(", ").append(ownerId);

@@ -39,9 +39,9 @@ import org.jooq.impl.UpdatableRecordImpl;
 @Table(name = "foo", schema = "public", indexes = {
     @Index(name = "pk_foo", unique = true, columnList = "id ASC")
 })
-public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7<String, String, Integer, Integer, Timestamp, String, String> {
+public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7<String, String, Integer, String, Timestamp, String, String> {
 
-    private static final long serialVersionUID = 125533224;
+    private static final long serialVersionUID = 1520040827;
 
     /**
      * Setter for <code>public.foo.id</code>.
@@ -95,19 +95,20 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
     }
 
     /**
-     * Setter for <code>public.foo.type_id</code>.
+     * Setter for <code>public.foo.type</code>.
      */
-    public void setTypeId(Integer value) {
+    public void setType(String value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>public.foo.type_id</code>.
+     * Getter for <code>public.foo.type</code>.
      */
-    @Column(name = "type_id", nullable = false, precision = 32)
+    @Column(name = "type", nullable = false, length = 100)
     @NotNull
-    public Integer getTypeId() {
-        return (Integer) get(3);
+    @Size(max = 100)
+    public String getType() {
+        return (String) get(3);
     }
 
     /**
@@ -178,7 +179,7 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
      * {@inheritDoc}
      */
     @Override
-    public Row7<String, String, Integer, Integer, Timestamp, String, String> fieldsRow() {
+    public Row7<String, String, Integer, String, Timestamp, String, String> fieldsRow() {
         return (Row7) super.fieldsRow();
     }
 
@@ -186,7 +187,7 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
      * {@inheritDoc}
      */
     @Override
-    public Row7<String, String, Integer, Integer, Timestamp, String, String> valuesRow() {
+    public Row7<String, String, Integer, String, Timestamp, String, String> valuesRow() {
         return (Row7) super.valuesRow();
     }
 
@@ -218,8 +219,8 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
      * {@inheritDoc}
      */
     @Override
-    public Field<Integer> field4() {
-        return Foo.FOO.TYPE_ID;
+    public Field<String> field4() {
+        return Foo.FOO.TYPE;
     }
 
     /**
@@ -274,8 +275,8 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
      * {@inheritDoc}
      */
     @Override
-    public Integer component4() {
-        return getTypeId();
+    public String component4() {
+        return getType();
     }
 
     /**
@@ -330,8 +331,8 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
      * {@inheritDoc}
      */
     @Override
-    public Integer value4() {
-        return getTypeId();
+    public String value4() {
+        return getType();
     }
 
     /**
@@ -389,8 +390,8 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
      * {@inheritDoc}
      */
     @Override
-    public FooRecord value4(Integer value) {
-        setTypeId(value);
+    public FooRecord value4(String value) {
+        setType(value);
         return this;
     }
 
@@ -425,7 +426,7 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
      * {@inheritDoc}
      */
     @Override
-    public FooRecord values(String value1, String value2, Integer value3, Integer value4, Timestamp value5, String value6, String value7) {
+    public FooRecord values(String value1, String value2, Integer value3, String value4, Timestamp value5, String value6, String value7) {
         value1(value1);
         value2(value2);
         value3(value3);
@@ -450,13 +451,13 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
     /**
      * Create a detached, initialised FooRecord
      */
-    public FooRecord(String id, String name, Integer num, Integer typeId, Timestamp created, String description, String ownerId) {
+    public FooRecord(String id, String name, Integer num, String type, Timestamp created, String description, String ownerId) {
         super(Foo.FOO);
 
         set(0, id);
         set(1, name);
         set(2, num);
-        set(3, typeId);
+        set(3, type);
         set(4, created);
         set(5, description);
         set(6, ownerId);

@@ -82,6 +82,8 @@ public class GraphQLConfiguration
             .configureRelation( ORDER.STATUS                , SourceField.SCALAR, TargetField.NONE)
             .configureRelation( ORDER.SHIPPING_TYPE         , SourceField.OBJECT, TargetField.NONE)
             .configureRelation( ORDER_ITEM.PRODUCT_ID       , SourceField.OBJECT, TargetField.NONE)
+            .configureRelation( FOO.OWNER_ID       , SourceField.OBJECT, TargetField.MANY)
+            .configureRelation( FOO.TYPE       , SourceField.SCALAR, TargetField.NONE)
             .buildGraphQLSchema();
     }
 
