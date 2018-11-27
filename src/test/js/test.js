@@ -1,6 +1,12 @@
 import assert from "power-assert"
 
-import { get, set, observable, values, com } from "mobx"
+import { get, set, observable, values, toJS } from "mobx"
+
+
+class Test
+{
+    @observable value = 1;
+}
 
 describe("Testing", function () {
 
@@ -14,7 +20,15 @@ describe("Testing", function () {
 
     it("mobx ", function () {
 
-        const fn = computed(() => )
+
+        const t = new Test();
+
+        t.value = 12;
+
+        const o = toJS(t);
+
+        console.log(o,typeof o, t);
+
 
 
     });
