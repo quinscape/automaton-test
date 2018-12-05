@@ -36,7 +36,6 @@ export default class MySubProcessScope {
 
     /** Current orders */
     @observable
-    @type("PagedOrder")
     orders = injection(
         // language=GraphQL
         `{

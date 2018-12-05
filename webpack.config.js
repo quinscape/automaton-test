@@ -30,7 +30,7 @@ module.exports = {
     output: {
         path: JS_OUTPUT_DIRECTORY,
         filename: "bundle-[name]-[chunkhash].js",
-        chunkFilename: "bundle-[id]-[chunkhash].js",
+        chunkFilename: "bundle-[name]-[chunkhash].js",
 
         // TODO: change exposed entry-point
         library: "App",
@@ -49,7 +49,8 @@ module.exports = {
             "mobx-react": path.resolve("./node_modules/mobx-react"),
             "mobx-react-devtools": path.resolve("./node_modules/mobx-react-devtools"),
             "mobx-utils": path.resolve("./node_modules/mobx-utils"),
-            "history": path.resolve("./node_modules/history")
+            "history": path.resolve("./node_modules/history"),
+            "bignumber.js": path.resolve("./node_modules/bignumber.js")
         }
     },
 
@@ -104,7 +105,7 @@ module.exports = {
             // No postprocessing of that.
             {
                 test: /\.css$/,
-                exclude: /node_modules/,
+//                exclude: /node_modules/,
                 use: [MiniCssExtractPlugin.loader, "css-loader"]
             }
         ]

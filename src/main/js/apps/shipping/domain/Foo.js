@@ -10,6 +10,7 @@ import {
 
 
 export default class Foo {
+
     @observable id;
 
     @observable name;

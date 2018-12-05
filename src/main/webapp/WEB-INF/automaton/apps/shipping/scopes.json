@@ -29,7 +29,7 @@
         "name": "UserScope",
         "observables": [
             {
-                "type": "String",
+                "type": null,
                 "name": "value",
                 "defaultValue": "\"bar\"",
                 "description": null

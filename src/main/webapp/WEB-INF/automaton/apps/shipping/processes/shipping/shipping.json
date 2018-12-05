@@ -38,6 +38,7 @@
                 "ShippingHome": []
             }
         },
-        "scope": null
+        "scope": null,
+        "extraConstants": []
     }
 }

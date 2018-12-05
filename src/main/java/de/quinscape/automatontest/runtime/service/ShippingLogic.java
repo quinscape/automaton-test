@@ -1,10 +1,9 @@
 package de.quinscape.automatontest.runtime.service;
 
 import de.quinscape.automaton.model.AutomatonApplication;
-import de.quinscape.automatontest.domain.tables.pojos.AppUserConfig;
 import de.quinscape.automatontest.domain.tables.pojos.AppConfig;
+import de.quinscape.automatontest.domain.tables.pojos.AppUserConfig;
 import de.quinscape.automatontest.domain.tables.pojos.Customer;
-import de.quinscape.automatontest.domain.tables.pojos.Foo;
 import de.quinscape.automatontest.domain.tables.pojos.Order;
 import de.quinscape.automatontest.domain.tables.pojos.Product;
 import de.quinscape.domainql.annotation.GraphQLField;
@@ -49,7 +48,7 @@ import static de.quinscape.automatontest.domain.Tables.*;
             .limit(limit)
             .fetchInto(Customer.class);
 
-        return new Paged<>(customers, dslContext.selectCount().from(CUSTOMER).execute());
+        return new Paged<>(customers, dslContext.fetchCount(CUSTOMER));
     }
 
 
@@ -68,7 +67,7 @@ import static de.quinscape.automatontest.domain.Tables.*;
             .limit(limit)
             .fetchInto(Order.class);
 
-        return new Paged<>(orders, dslContext.selectCount().from(ORDER).execute());
+        return new Paged<>(orders, dslContext.fetchCount(ORDER));
     }
 
 
@@ -87,26 +86,7 @@ import static de.quinscape.automatontest.domain.Tables.*;
             .limit(limit)
             .fetchInto(Product.class);
 
-        return new Paged<>(products, dslContext.selectCount().from(PRODUCT).execute());
-    }
-
-
-    @GraphQLQuery
-    public Paged<Foo> getFoos(
-        @GraphQLField(defaultValue = "0")
-            int offset,
-        @GraphQLField(defaultValue = "10")
-            int limit
-    )
-    {
-        final List<Foo> foos = dslContext.select()
-            .from(FOO)
-            .orderBy(FOO.CREATED)
-            .offset(offset)
-            .limit(limit)
-            .fetchInto(Foo.class);
-
-        return new Paged<>(foos, dslContext.selectCount().from(FOO).execute());
+        return new Paged<>(products, dslContext.fetchCount(PRODUCT));
     }
 
 

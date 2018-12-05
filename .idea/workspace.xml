@@ -7,77 +7,128 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../automaton-js/src/convert.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../automaton-js/src/domain.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/automaton-js/src/convert.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/automaton-js/src/domain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/AutomatonDevTools.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/AutomatonDevTools.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/Dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/Dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../automaton-js/src/GraphQLQuery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../automaton-js/src/standard-queries.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../automaton-js/test/parse-query.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/automaton-js/src/GraphQLQuery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/automaton-js/src/standard-queries.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/automaton-js/test/parse-query.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/CRUDDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/docs/api.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/docs/api.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/docs/concepts.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/docs/concepts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/docs/reference.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/docs/reference.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton-js/lib/Process.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/Process.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton-js/lib/Process.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/Process.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton-js/lib/QueryDeclaration.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/QueryDeclaration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/Transition.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/Transition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/QueryDeclaration.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/QueryDeclaration.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton-js/lib/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton-js/lib/config.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/config.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/decorator/type.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/decorator/type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/domain.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/domain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/domain.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/domain.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton-js/lib/i18n.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/i18n.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/i18n.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/i18n.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton-js/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton-js/lib/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/index.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton-js/lib/injection.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/injection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/modelToJs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/modelToJs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/render.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/runProcess.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/runProcess.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/scopeNames.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/scopeNames.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/startup.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/startup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/sync.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/sync.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/injection.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/injection.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton-js/lib/ui/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/ui/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/ui/Button.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/ui/Button.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton-js/lib/ui/DataGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/ui/DataGrid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/ui/DefaultLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/ui/DefaultLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/ui/Icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/ui/Icon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/ui/Link.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/ui/Link.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/uri.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/uri.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/util/getDisplayName.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/util/getDisplayName.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/withAutomatonEnv.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/withAutomatonEnv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/ui/DataGrid.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/ui/DataGrid.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton-js/src/Process.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/Process.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/QueryDeclaration.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton-js/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/src/startup.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/startup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/decorator/type.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/domain.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/domain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/i18n.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/i18n.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/injection.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/injection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/ui/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/ui/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/ui/DataGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/ui/DataGrid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/AutomatonDevTools.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/AutomatonDevTools.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/Dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/Dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automatontest.backup" beforeDir="false" afterPath="$PROJECT_DIR$/automatontest.backup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/docs/api.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/docs/api.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/docs/concepts.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/docs/concepts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/docs/reference.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/docs/reference.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/Process.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/Process.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/Process.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/Process.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/QueryDeclaration.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/QueryDeclaration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/Transition.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/Transition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/QueryDeclaration.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/QueryDeclaration.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/config.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/config.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/decorator/type.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/decorator/type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/domain.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/domain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/domain.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/domain.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/i18n.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/i18n.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/i18n.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/i18n.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/index.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/injection.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/injection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/modelToJs.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/modelToJs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/render.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/runProcess.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/runProcess.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/scopeNames.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/scopeNames.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/startup.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/startup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/sync.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/sync.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/injection.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/injection.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/Button.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/Button.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/DataGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/DataGrid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/DefaultLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/DefaultLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/Icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/Icon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/Link.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/Link.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/uri.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/uri.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/util/getDisplayName.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/util/getDisplayName.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/withAutomatonEnv.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/withAutomatonEnv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/DataGrid.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/lib/ui/DataGrid.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/src/Process.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/src/Process.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/src/QueryDeclaration.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/src/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/src/startup.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/src/startup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/src/decorator/type.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/src/domain.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/src/domain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/src/i18n.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/src/i18n.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/src/injection.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/src/injection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/src/ui/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/src/ui/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/src/ui/DataGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/src/ui/DataGrid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/automaton-js/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/automaton-js/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/DomainConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/DomainConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/WebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/WebConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/ShippingLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/ShippingLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/domain/Foo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/domain/Foo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/CRUDList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/customer/customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/customer/customer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/process-test/process-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/process-test/process-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/sub-process-example/sub-process-example.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/sub-process-example/sub-process-example.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/scopes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/scopes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/components/CommonNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/components/CommonNav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/components/JSONData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/components/JSONData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/customer/composites/CustomerDetail.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/customer/composites/CustomerDetail.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/customer/customer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/customer/customer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/decision-start/decision-start.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/decision-start/decision-start.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/multi-layout/composites/MultiLayoutHome.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/multi-layout/composites/MultiLayoutHome.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/multi-layout/multi-layout.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/multi-layout/multi-layout.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/process-test/composites/ProcessTestHome.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/process-test/composites/ProcessTestHome.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/process-test/process-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/process-test/process-test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/shipping/shipping.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/shipping/shipping.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/scopes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/scopes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-quinscape.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-quinscape.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-quinscape.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-quinscape.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/js/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/js/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.graphql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton/automaton.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/automaton.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/auth/AutomatonAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/auth/AutomatonAuthentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/config/AutomatonConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/config/AutomatonConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/GraphQLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/GraphQLController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/ProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/ProcessController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/AutomatonJsViewProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/AutomatonJsViewProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/DefaultProcessInjectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/DefaultProcessInjectionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/ProcessInjectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/ProcessInjectionService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/../automaton/target/" />
@@ -88,12 +139,97 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/js/test.js">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+            <state relative-caret-position="405">
+              <caret line="41" column="40" lean-forward="true" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.14-SNAPSHOT/domainql-0.14-SNAPSHOT-sources.jar!/de/quinscape/domainql/util/DomainObjectUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="94" selection-start-line="94" selection-end-line="118" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/tables/pojos/Foo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-810">
+              <folding>
+                <element signature="e#0#3901#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/tables/Foo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-945">
+              <folding>
+                <element signature="e#0#4778#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.14-SNAPSHOT/domainql-0.14-SNAPSHOT-sources.jar!/de/quinscape/domainql/generic/DomainObjectCoercing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="130" selection-start-line="130" selection-end-line="130" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/3.10.6/jooq-3.10.6-sources.jar!/org/jooq/InsertQuery.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="67" column="63" selection-start-line="67" selection-start-column="63" selection-end-line="67" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/3.10.6/jooq-3.10.6-sources.jar!/org/jooq/StoreQuery.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/3.10.6/jooq-3.10.6-sources.jar!/org/jooq/Insert.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/3.10.6/jooq-3.10.6-sources.jar!/org/jooq/Query.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-580">
+              <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="39" column="65" selection-start-line="39" selection-start-column="65" selection-end-line="39" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -113,39 +249,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lat</find>
-      <find>createViewModel</find>
-      <find>mob</find>
-      <find>run</find>
-      <find>DropdownItem</find>
-      <find>props</find>
-      <find>prop</find>
-      <find>fetchProcessInjections</find>
-      <find>fetch</find>
-      <find>ErrorV</find>
-      <find>config.lay</find>
-      <find>env</find>
-      <find>gray-</find>
-      <find>!default</find>
-      <find>;</find>
-      <find>primary</find>
-      <find>nav</find>
-      <find>alert</find>
-      <find>font</find>
-      <find>font-family</find>
-      <find>navbar</find>
-      <find>striped</find>
-      <find>// variante 2</find>
-      <find>createEnv</find>
-      <find>auth</find>
-      <find>auth.</find>
-      <find>Customer</find>
-      <find>loadDomainDefinitions</find>
-      <find>inputS</find>
+      <find>fields</find>
+      <find>action</find>
+      <find>cid</find>
+      <find>ERROR IN TR</find>
+      <find>AuthSe</find>
+      <find>last</find>
+      <find>last_login</find>
+      <find>console.</find>
+      <find>DOMAI</find>
+      <find>DOMAIN-CLAS</find>
+      <find>WebConfigu</find>
+      <find>handleChange</find>
+      <find>unwrap</find>
+      <find>/type</find>
+      <find>changedE</find>
+      <find>formInstance</find>
+      <find>GraphQLQuery</find>
+      <find>decor</find>
+      <find>fieldId</find>
+      <find>env.form</find>
+      <find>currentState</find>
       <find>console.log</find>
+      <find>FormConfigProvider</find>
+      <find>&lt;Card</find>
+      <find>options</find>
+      <find>\{[ ]*(.*?)[ ]*}</find>
+      <find>formConfig.getValue</find>
+      <find>pojo</find>
+      <find>javaType</find>
+      <find>GraphQLSchema</find>
     </findStrings>
     <replaceStrings>
-      <replace>```js</replace>
       <replace>moduleName</replace>
       <replace>shortName</replace>
       <replace>\n</replace>
@@ -163,7 +298,6 @@
       <replace>ShippingHome</replace>
       <replace>json-data</replace>
       <replace>.</replace>
-      <replace>{ $1 }</replace>
       <replace>valueOpened</replace>
       <replace>pathname</replace>
       <replace>btn btn-link</replace>
@@ -175,6 +309,8 @@
       <replace>,</replace>
       <replace />
       <replace>Foo</replace>
+      <replace>AutomatonZipletFilter</replace>
+      <replace>{ $1 }</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -182,62 +318,62 @@
     </dirStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../automaton" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/DomainTest.java" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/sync.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/docs/concepts.md" />
-        <option value="$PROJECT_DIR$/../automaton-js/docs/reference.md" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/multi-layout/multi-layout.js" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/multi-layout/composites/MultiLayoutHome.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/multi-layout/multi-layout.json" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/multi-layout/composites/MultiLayoutHome.json" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/DialogMode.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/Dialog.js" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/sub-process-example/sub-process-example.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/ui/DataGrid.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/modelToJs.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/render.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/core.js" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/customer/composites/CustomerDetail.js" />
         <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/process-test/process-test.js" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/process-test/composites/ProcessTestHome.js" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/customer/customer.js" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/AutomatonDevTools.js" />
-        <option value="$PROJECT_DIR$/src/main/js/components/JSONData.js" />
+        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/sub-process-example/sub-process-example.js" />
         <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/ShippingLogic.java" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/runProcess.js" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/DefaultProcessInjectionService.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/ProcessNotFoundException.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/AutomatonException.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/AutomatonInjectionException.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/ProcessNotFoundException.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/ProcessController.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.jsx" />
-        <option value="$USER_HOME$/tmp/bootstrap-4.1.3/scss/_variables.scss" />
-        <option value="$PROJECT_DIR$/_variables.scss" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/template.html" />
-        <option value="$PROJECT_DIR$/src/main/js/components/CommonNav.js" />
-        <option value="$PROJECT_DIR$/src/main/js/components/Layout.js" />
-        <option value="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/TestCase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" />
-        <option value="$PROJECT_DIR$/../automaton-js/package.json" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooForm.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/index.js" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooList.js" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooDetail.js" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/WireTestResult.java" />
+        <option value="$PROJECT_DIR$/../automaton-js/test/test.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/Process.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/domain.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/startup.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/convert.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/config.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/package.json" />
         <option value="$PROJECT_DIR$/src/test/js/test.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/test/test-schema.json" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/parseQuery.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/test/parse-query.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/QueryDeclaration.js" />
+        <option value="$PROJECT_DIR$/db.sql" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/auth/AutomatonAuthentication.java" />
+        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/domain/Foo.js" />
+        <option value="$PROJECT_DIR$/.babelrc" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/domain.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/graphql.js" />
+        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/domain/WireTestResult.js" />
+        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/wire/composites/WireHome.js" />
+        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/domain/Injected.js" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/ProcessInjectionService.java" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/config.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/startup.js" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/InjectionService.java" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/ProcessController.java" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/DefaultInjectionService.java" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/AutomatonJsViewProvider.java" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/DefaultProcessInjectionService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/ui/DataGrid.js" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/TestLogic.java" />
+        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/wire/wire.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/GraphQLQuery.js" />
+        <option value="$PROJECT_DIR$/src/main/js/test.js" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/Process.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/deleteDomainObject.js" />
+        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooDetail.js" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/GraphQLController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/DomainConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/WebConfiguration.java" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/config/AutomatonConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooForm.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/ui/Button.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/standard-queries.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/index.js" />
+        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java" />
       </list>
     </option>
   </component>
@@ -496,7 +632,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -511,22 +647,146 @@
             </path>
             <path>
               <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="automaton-js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-js" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-js" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="domainql-form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-js" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="domainql-form" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-js" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="domainql-form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="domainql-form" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
@@ -539,53 +799,13 @@
               <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="shipping" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="shipping" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="automatontest" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -593,8 +813,111 @@
               <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="automatontest" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="automatontest" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="shipping" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="shipping" type="462c0819:PsiDirectoryNode" />
+              <item name="processes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="shipping" type="462c0819:PsiDirectoryNode" />
+              <item name="processes" type="462c0819:PsiDirectoryNode" />
+              <item name="crud-test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="shipping" type="462c0819:PsiDirectoryNode" />
+              <item name="processes" type="462c0819:PsiDirectoryNode" />
+              <item name="crud-test" type="462c0819:PsiDirectoryNode" />
+              <item name="composites" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
@@ -613,7 +936,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -636,25 +959,18 @@
     <property name="javascript.nodejs.core.library.configured.version" value="8.12.0" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton" />
-    <property name="last_opened_file_path" value="$USER_HOME$/tmp/bootstrap-4.1.3/scss/_variables.scss" />
-    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../domainql-form" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/../automaton-js/node_modules/mocha" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="de.quinscape.automaton" />
-      <recent name="de.quinscape.automaton.runtime.util" />
-      <recent name="de.quinscape.automaton.model.view" />
-      <recent name="de.quinscape.automaton.model.process" />
-      <recent name="de.quinscape.automaton.model.inject.process" />
-    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="de.quinscape.automaton.runtime.provider" />
       <recent name="de.quinscape.automaton.model.process" />
@@ -669,30 +985,37 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="de.quinscape.automaton.runtime" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="de.quinscape.automaton.runtime.controller" />
-      <recent name="de.quinscape.automaton.model" />
-      <recent name="de.quinscape.automaton.runtime.i18n" />
-      <recent name="de.quinscape.automaton.model.process" />
-      <recent name="de.quinscape.dqlmobx.runtime.service" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/domain" />
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes" />
-      <recent name="$PROJECT_DIR$/src/main/js/components" />
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/decision-start/composites" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/ui" />
-    </key>
-    <key name="es6.move.members.recent.items">
-      <recent name="$PROJECT_DIR$/../automaton-js/src/DialogMode.js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/sync.js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/../automaton-js" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/shipping" />
       <recent name="$PROJECT_DIR$/../automaton-js/src/util" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.quinscape.automatontest.runtime.service" />
+      <recent name="de.quinscape.automaton.runtime.controller" />
+      <recent name="de.quinscape.automaton.model" />
+      <recent name="de.quinscape.automaton.runtime.i18n" />
+      <recent name="de.quinscape.automaton.model.process" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/domain" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src" />
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes" />
+      <recent name="$PROJECT_DIR$/src/main/js/components" />
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/decision-start/composites" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/../automaton-js/src/DialogMode.js" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src/sync.js" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="de.quinscape.automatontest.runtime.service" />
+      <recent name="de.quinscape.automaton.runtime.provider" />
+      <recent name="de.quinscape.automaton" />
+      <recent name="de.quinscape.automaton.runtime.util" />
+      <recent name="de.quinscape.automaton.model.view" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -735,20 +1058,6 @@
       <option name="PACKAGE_NAME" value="de.quinscape.automatontest" />
       <option name="MAIN_CLASS_NAME" value="de.quinscape.automatontest.DomainTest" />
       <option name="METHOD_NAME" value="name" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestCase.testPW" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton-test" />
-      <option name="PACKAGE_NAME" value="de.quinscape.automatontest" />
-      <option name="MAIN_CLASS_NAME" value="de.quinscape.automatontest.TestCase" />
-      <option name="METHOD_NAME" value="testPW" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -867,6 +1176,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Automaton-Js Tests" type="mocha-javascript-test-runner">
+      <node-interpreter>project</node-interpreter>
+      <node-options>-r babel-register</node-options>
+      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs>
+        <env name="BABEL_ENV" value="test" />
+      </envs>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory>$PROJECT_DIR$/../automaton-js/test/</test-directory>
+      <recursive>false</recursive>
+      <method v="2" />
+    </configuration>
     <configuration name="Js Test" type="mocha-javascript-test-runner" temporary="true">
       <node-interpreter>project</node-interpreter>
       <node-options>-r babel-register</node-options>
@@ -883,7 +1208,7 @@
       <recursive>false</recursive>
       <method v="2" />
     </configuration>
-    <configuration name="Testing.i18n Proxy" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="Testing.graphql" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options>-r babel-register</node-options>
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -898,7 +1223,7 @@
       <test-file>$PROJECT_DIR$/src/test/js/test.js</test-file>
       <test-names>
         <name value="Testing" />
-        <name value="i18n Proxy" />
+        <name value="graphql" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -921,22 +1246,41 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="parseQuery" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options>-r babel-register</node-options>
+      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs>
+        <env name="BABEL_ENV" value="test" />
+      </envs>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/../automaton-js/test/parse-query.js</test-file>
+      <test-names>
+        <name value="parseQuery" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="JUnit.DomainTest.name" />
-      <item itemvalue="JUnit.TestCase.testPW" />
+      <item itemvalue="Mocha.Automaton-Js Tests" />
       <item itemvalue="Mocha.Js Test" />
-      <item itemvalue="Mocha.Testing.i18n Proxy" />
       <item itemvalue="Mocha.Testing.mobx " />
+      <item itemvalue="Mocha.Testing.graphql" />
+      <item itemvalue="Mocha.parseQuery" />
       <item itemvalue="Spring Boot.DQLMobxApplication" />
       <item itemvalue="Tomcat Server.Local Tomcat" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.parseQuery" />
+        <item itemvalue="Mocha.Testing.graphql" />
+        <item itemvalue="Mocha.Js Test" />
         <item itemvalue="JUnit.DomainTest.name" />
         <item itemvalue="Mocha.Testing.mobx " />
-        <item itemvalue="JUnit.TestCase.testPW" />
-        <item itemvalue="Mocha.Js Test" />
-        <item itemvalue="Mocha.Testing.i18n Proxy" />
       </list>
     </recent_temporary>
   </component>
@@ -1025,50 +1369,61 @@
       <workItem from="1543146893501" duration="4773000" />
       <workItem from="1543231440726" duration="602000" />
       <workItem from="1543245584236" duration="2887000" />
-      <workItem from="1543315732035" duration="1152000" />
+      <workItem from="1543315732035" duration="1928000" />
+      <workItem from="1543413864414" duration="6838000" />
+      <workItem from="1543489245862" duration="20511000" />
+      <workItem from="1543569265256" duration="25045000" />
+      <workItem from="1543662308698" duration="3820000" />
+      <workItem from="1543750379456" duration="3042000" />
+      <workItem from="1543759203193" duration="681000" />
+      <workItem from="1543759903711" duration="513000" />
+      <workItem from="1543760432185" duration="9773000" />
+      <workItem from="1543827202450" duration="15033000" />
+      <workItem from="1543917791022" duration="2291000" />
+      <workItem from="1543995822371" duration="8378000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Js_Test - 2018.11.14 at 15h 22m 57s.xml">
-      <configuration name="Js Test" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="parseQuery - 2018.11.30 at 13h 29m 43s.xml">
+      <configuration name="parseQuery" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Testing_mobx_ - 2018.11.14 at 15h 23m 02s.xml">
-      <configuration name="Testing.mobx " configurationId="mocha-javascript-test-runner" />
+    <history-entry file="parseQuery - 2018.11.30 at 13h 30m 41s.xml">
+      <configuration name="parseQuery" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Testing_mobx_ - 2018.11.14 at 15h 23m 17s.xml">
-      <configuration name="Testing.mobx " configurationId="mocha-javascript-test-runner" />
+    <history-entry file="parseQuery - 2018.11.30 at 13h 31m 54s.xml">
+      <configuration name="parseQuery" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="TestCase_testPW - 2018.11.16 at 20h 50m 37s.xml">
-      <configuration name="TestCase.testPW" configurationId="JUnit" />
+    <history-entry file="parseQuery - 2018.11.30 at 13h 33m 47s.xml">
+      <configuration name="parseQuery" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="TestCase_testPW - 2018.11.16 at 20h 52m 03s.xml">
-      <configuration name="TestCase.testPW" configurationId="JUnit" />
+    <history-entry file="parseQuery - 2018.11.30 at 13h 34m 06s.xml">
+      <configuration name="parseQuery" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="TestCase_testPW - 2018.11.16 at 20h 52m 37s.xml">
-      <configuration name="TestCase.testPW" configurationId="JUnit" />
+    <history-entry file="parseQuery - 2018.11.30 at 13h 34m 35s.xml">
+      <configuration name="parseQuery" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="TestCase_testPW - 2018.11.16 at 20h 59m 12s.xml">
-      <configuration name="TestCase.testPW" configurationId="JUnit" />
+    <history-entry file="parseQuery - 2018.11.30 at 13h 34m 44s.xml">
+      <configuration name="parseQuery" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Testing_mobx_ - 2018.11.23 at 12h 53m 47s.xml">
-      <configuration name="Testing.mobx " configurationId="mocha-javascript-test-runner" />
+    <history-entry file="parseQuery - 2018.11.30 at 13h 34m 50s.xml">
+      <configuration name="parseQuery" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Testing_mobx_ - 2018.11.23 at 12h 53m 58s.xml">
-      <configuration name="Testing.mobx " configurationId="mocha-javascript-test-runner" />
+    <history-entry file="parseQuery - 2018.11.30 at 13h 37m 08s.xml">
+      <configuration name="parseQuery" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="DomainTest_name - 2018.11.23 at 13h 00m 27s.xml">
-      <configuration name="DomainTest.name" configurationId="JUnit" />
+    <history-entry file="parseQuery - 2018.11.30 at 13h 37m 30s.xml">
+      <configuration name="parseQuery" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="561658000" />
+    <option name="totallyTimeSpent" value="658359000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22044729" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24494143" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1077,8 +1432,8 @@
       <window_info id="Image Layers" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.33333334" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31584582" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.33297643" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4992997" visible="true" weight="0.31584582" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1086,10 +1441,10 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3290461" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3290461" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="GraphQL" order="11" visible="true" weight="0.23019272" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007003" side_tool="true" weight="0.23019272" />
+      <window_info anchor="bottom" id="GraphQL" order="11" sideWeight="0.4992997" weight="0.23019272" />
       <window_info anchor="bottom" id="Spring" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3279743" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32762313" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32976446" />
       <window_info anchor="bottom" id="TypeScript" order="15" />
       <window_info anchor="bottom" id="Flow" order="16" weight="0.3290461" />
@@ -1097,7 +1452,7 @@
       <window_info anchor="bottom" id="Docker" order="18" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24973376" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
@@ -1173,12 +1528,6 @@
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/DefaultProcessInjectionService.java</url>
-          <line>57</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/sub-process-example/sub-process-example.js</url>
           <line>23</line>
@@ -1197,337 +1546,338 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/runProcess.js">
+    <entry file="file://$PROJECT_DIR$/src/main/js/components/FooList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="46" selection-start-column="46" selection-end-column="46" />
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/ProcessController.java">
+    <entry file="file://$PROJECT_DIR$/../automaton-js/src/decorator/type.js" />
+    <entry file="file://$PROJECT_DIR$/src/main/js/test.js" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/TestLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="83" selection-start-line="83" selection-end-line="93" />
+        <state relative-caret-position="675">
+          <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+          <folding>
+            <element signature="e#1255#1256#0" expanded="true" />
+            <element signature="e#1318#1319#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/DefaultProcessInjectionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="90" column="42" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/ScopeSyncController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="83" column="17" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/ProcessNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/AutomatonInjectionException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/AutomatonException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_variables.scss" />
-    <entry file="file://$USER_HOME$/tmp/bootstrap-4.1.3/scss/_variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="934">
-          <caret line="641" column="9" selection-start-line="641" selection-start-column="3" selection-end-line="641" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="86" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/js/components/CommonNav.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/js/components/Layout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/ShippingLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="125" column="40" selection-start-line="125" selection-start-column="40" selection-end-line="125" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/TestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/AutomatonTestApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap-quinscape.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22950">
-          <caret line="1530" column="14" selection-start-line="1530" selection-start-column="14" selection-end-line="1530" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="85" column="67" selection-start-line="85" selection-start-column="67" selection-end-line="85" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/.babelrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="5" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/domainql-form/index.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/domainql-form/src/index.js">
+    <entry file="file://$PROJECT_DIR$/../automaton-js/node_modules/domainql-form/src/FormConfig.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooForm.js">
+    <entry file="file://$PROJECT_DIR$/../automaton-js/src/GraphQLQuery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        <state relative-caret-position="315">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/domainql-form/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooDetail.js">
+    <entry file="file://$PROJECT_DIR$/../automaton-js/src/graphql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="88" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="88" />
+        <state relative-caret-position="1290">
+          <caret line="86" column="43" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/ui/Icon.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/ui/Button.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="69" column="15" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="93" column="30" selection-start-line="93" selection-start-column="30" selection-end-line="93" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/index.js">
+    <entry file="file://$PROJECT_DIR$/../automaton-js/src/ui/DataGrid.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="80" lean-forward="true" selection-start-line="1" selection-start-column="80" selection-end-line="1" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/docs/concepts.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/docs/api.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/docs/reference.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="45">
-            <caret line="3" column="15" selection-start-line="2" selection-end-line="3" selection-end-column="15" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="30">
-            <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="66" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="3" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/AutomatonJsViewProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" selection-start-line="20" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/spring-jsview/0.2/spring-jsview-0.2-sources.jar!/de/quinscape/spring/jsview/JsViewProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/Process.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/domain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/convert.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/domainql-form/src/InputSchema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8055">
-          <caret line="537" selection-start-line="537" selection-end-line="537" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/DomainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state relative-caret-position="675">
+          <caret line="45" selection-start-line="45" selection-end-line="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/startup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/domain/Foo.js">
+    <entry file="file://$PROJECT_DIR$/src/main/js/login.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/domain/types/Foo.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/config.js">
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        <state relative-caret-position="1875">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/js/test.js">
+    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/CRUDList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        <state relative-caret-position="615">
+          <caret line="41" column="48" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/wire/wire.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/domainql-form/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="50" column="4" lean-forward="true" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/domainql-form/src/UserFormControl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" column="6" lean-forward="true" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton-js/src/Process.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="246" column="13" selection-start-line="246" selection-start-column="13" selection-end-line="246" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/domainql-form/src/FormConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="363" column="11" selection-start-line="363" selection-start-column="11" selection-end-line="363" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/domainql-form/src/FormConfigProvider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-236" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/wire/composites/WireHome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="90" selection-start-line="63" selection-end-line="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/domainql-form/src/withForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/domainql-form/src/Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="252" column="42" lean-forward="true" selection-start-line="252" selection-start-column="42" selection-end-line="252" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/SecurityConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="120" column="19" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/auth/AppAuthenticationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Tables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="61" column="39" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/i18n/DefaultTranslationService.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton-js/node_modules/domainql-form/src/Select.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton-js/node_modules/domainql-form/src/default-renderers.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/AutomatonApplication.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.14-SNAPSHOT/domainql-0.14-SNAPSHOT-sources.jar!/de/quinscape/domainql/DomainQLBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="314" selection-start-line="314" selection-end-line="314" />
+          <folding>
+            <element signature="e#10229#10230#0" expanded="true" />
+            <element signature="e#10293#10294#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.14-SNAPSHOT/domainql-0.14-SNAPSHOT-sources.jar!/de/quinscape/domainql/DomainQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="79" column="21" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/CRUDDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="64" selection-start-line="44" selection-start-column="64" selection-end-line="44" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/ScopeTableConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/GraphQLController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="77" column="11" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="92" column="61" selection-start-line="92" selection-start-column="61" selection-end-line="92" selection-end-column="61" />
+          <folding>
+            <element signature="e#3431#3432#0" expanded="true" />
+            <element signature="e#3509#3510#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/DomainConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="81" column="22" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/WebConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/config/AutomatonConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-224">
+          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="36" column="51" lean-forward="true" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton-js/src/ui/Button.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="95" column="9" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton-js/src/standard-queries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton-js/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="39" column="65" selection-start-line="39" selection-start-column="65" selection-end-line="39" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/3.10.6/jooq-3.10.6-sources.jar!/org/jooq/Query.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-580">
+          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/3.10.6/jooq-3.10.6-sources.jar!/org/jooq/Insert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/3.10.6/jooq-3.10.6-sources.jar!/org/jooq/InsertQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="67" column="63" selection-start-line="67" selection-start-column="63" selection-end-line="67" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/3.10.6/jooq-3.10.6-sources.jar!/org/jooq/StoreQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.14-SNAPSHOT/domainql-0.14-SNAPSHOT-sources.jar!/de/quinscape/domainql/generic/DomainObjectCoercing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/tables/pojos/Foo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-810">
+          <folding>
+            <element signature="e#0#3901#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/tables/Foo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-945">
+          <folding>
+            <element signature="e#0#4778#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="41" column="40" lean-forward="true" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.14-SNAPSHOT/domainql-0.14-SNAPSHOT-sources.jar!/de/quinscape/domainql/util/DomainObjectUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="94" selection-start-line="94" selection-end-line="118" />
         </state>
       </provider>
     </entry>

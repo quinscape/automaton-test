@@ -51,7 +51,7 @@
                             "params": [
                                 "t"
                             ],
-                            "code": "{ console.log(\"Transition 'to-detail'\", toJS(t.context)); }"
+                            "code": "{ scope.currentCustomer = t.context; }"
                         }
                     }
                 },
@@ -63,7 +63,7 @@
                             "params": [
                                 "t"
                             ],
-                            "code": "{ console.log(\"Transition 'save'\"); }"
+                            "code": "{ console.log(\"Transition 'save': \", toJS(t.context)); }"
                         }
                     },
                     "cancel": {
@@ -83,13 +83,13 @@
             "name": "CustomerScope",
             "observables": [
                 {
-                    "type": "DomainObject",
-                    "name": "currentObject",
+                    "type": null,
+                    "name": "currentCustomer",
                     "defaultValue": "null",
                     "description": null
                 },
                 {
-                    "type": "PagedCustomer",
+                    "type": null,
                     "name": "customers",
                     "defaultValue": "injection( // language=GraphQL\n`{\n                getCustomers{\n                    rows{\n                        id\n                        number\n                        salutation\n                        name\n                    }\n                }\n            }`)",
                     "description": "* Current todos"
@@ -106,6 +106,7 @@
             ],
             "computeds": [],
             "helpers": []
-        }
+        },
+        "extraConstants": []
     }
 }

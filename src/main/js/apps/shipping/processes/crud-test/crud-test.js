@@ -7,8 +7,10 @@ import {
 
 import {
     injection,
-    type
+    storeDomainObject,
+    deleteDomainObject
 } from "automaton-js";
+
 
 
 // noinspection JSUnusedGlobalSymbols
@@ -20,28 +22,42 @@ export function initProcess(process, scope)
     // return process states and transitions
     return (
         {
-            startState: "FooList",
+            startState: "CRUDList",
             states: {
-                "FooList":
+                "CRUDList":
                     {
                         "to-detail": {
-                            to: "FooDetail",
+                            to: "CRUDDetail",
                             action: t => {
                                 scope.currentFoo = t.context;
                             }
                         }
                     }
                 ,
-                "FooDetail": {
+                "CRUDDetail": {
                     "save": {
-                        to: "FooList",
+                        to: "CRUDList",
+                        action: t => storeDomainObject(t.context)
+                    },
+                    "delete": {
+                        to: "CRUDList",
+                        discard: true,
                         action: t => {
 
-                            console.log("Transition 'save': ", toJS(t.context))
+                            if (confirm(`Delete ${t.context.name} ?`))
+                            {
+                                const { id } = t.context;
+
+                                return deleteDomainObject("Foo", id)
+                                    .then(
+                                        didDelete => didDelete && scope.removeFoo(id)
+                                    )
+                            }
                         }
                     },
                     "cancel": {
-                        to: "FooList",
+                        to: "CRUDList",
+                        discard: true,
                         action: t => {
 
                             console.log("Transition 'cancel'")
@@ -56,12 +72,10 @@ export function initProcess(process, scope)
 export default class CRUDTestScope {
 
     @observable
-    @type("Foo")
     currentFoo = null;
 
     /** Current todos */
     @observable
-    @type("PagedFoo")
     foos = injection(
         // language=GraphQL
         `{
@@ -86,6 +100,12 @@ export default class CRUDTestScope {
     updateFoos(foos)
     {
         this.foos = foos;
+    }
+
+    @action
+    removeFoo(id)
+    {
+        this.foos.rows = this.foos.rows.filter( foo => foo.id !== id);
     }
 
     @action

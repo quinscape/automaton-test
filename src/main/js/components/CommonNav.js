@@ -36,6 +36,11 @@ class CommonNav extends React.Component {
                     </DropdownToggle>
                     <DropdownMenu>
                         <DropdownItem
+                            onClick={() => runProcessURI("/shipping/wire")}
+                        >
+                            Wire-Tests
+                        </DropdownItem>
+                        <DropdownItem
                             onClick={() => runProcessURI("/shipping/crud-test")}
                         >
                             CRUD-Test

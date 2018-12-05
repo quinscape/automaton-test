@@ -47,6 +47,16 @@
                     "name": "CustomerForm"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../../../components/JSONData",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "JSONData"
+                }
+            ]
         }
     ],
     "composite": {
@@ -86,10 +96,10 @@
                             "properties": [
                                 {
                                     "type": "ObjectProperty",
-                                    "key": "process",
+                                    "key": "scope",
                                     "value": {
                                         "type": "Identifier",
-                                        "name": "process"
+                                        "name": "scope"
                                     }
                                 }
                             ]
@@ -115,14 +125,26 @@
                     "type": "JSXElement"
                 },
                 {
-                    "name": "pre",
-                    "attrs": [],
-                    "kids": [
+                    "name": "JSONData",
+                    "attrs": [
                         {
-                            "type": "JSXExpressionContainer",
-                            "code": "{JSON.stringify(process.currentObject, null, 4)}"
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"customer\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "value",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{scope.currentCustomer}"
+                            }
                         }
                     ],
+                    "kids": [],
                     "type": "JSXElement"
                 }
             ],

@@ -122,6 +122,18 @@ function flattenData(elems, value, path, valueOpened, setValueOpened)
             "\n"
         );
     }
+    else if (value instanceof Date)
+    {
+        elems.push(
+            <span
+                key={index}
+                className="json-value"
+            >
+                { value.toISOString() }
+            </span>,
+            "\n"
+        );
+    }
     else
     {
         elems.push(

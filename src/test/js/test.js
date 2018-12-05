@@ -2,6 +2,7 @@ import assert from "power-assert"
 
 import { get, set, observable, values, toJS } from "mobx"
 
+import { parse } from "graphql/language/parser"
 
 class Test
 {
@@ -14,22 +15,8 @@ describe("Testing", function () {
         const array = test("x");
         const array2 = test("x", 2);
 
-        console.log({array, array2});
+            console.log({array, array2});
 
     });
 
-    it("mobx ", function () {
-
-
-        const t = new Test();
-
-        t.value = 12;
-
-        const o = toJS(t);
-
-        console.log(o,typeof o, t);
-
-
-
-    });
 });

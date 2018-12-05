@@ -4,16 +4,19 @@ import { configure, runInAction } from "mobx"
 import { startup, config, getCurrentProcess } from "automaton-js"
 import Layout from "../../components/Layout";
 
+// noinspection ES6UnusedImports
+import AUTOMATON_CSS from "./automaton-test.css"
+
 // set MobX configuration
 configure({
-    enforceActions: "observed"
+//    enforceActions: "observed"
 });
 
 
 bootstrap(
     initial => {
 
-        //console.log("INITIAL", initial);
+        console.log("INITIAL", initial);
 
         return startup(
             require.context("./", true, /\.js$/),

@@ -59,7 +59,17 @@
                             "params": [
                                 "t"
                             ],
-                            "code": "{ console.log(\"execute Transition ProcessTestHome.open-sub\"); return process.runSubProcess(\"sub-process\", t.context).then(result => result && runInAction(() => process.currentObject = result)); }"
+                            "code": "{ return process.runSubProcess(\"sub-process-example\", t.context).then(result => result && runInAction(() => scope.currentOrder = result)); }"
+                        }
+                    },
+                    "open-sub2": {
+                        "to": "ProcessTestHome",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ return process.runSubProcess(\"customer\", t.context).then(result => result && runInAction(() => scope.currentOrder = result)); }"
                         }
                     },
                     "clear": {
@@ -69,12 +79,26 @@
                             "params": [
                                 "t"
                             ],
-                            "code": "{ console.log(\"execute Transition ProcessTestHome.clear\"); return runInAction(() => process.currentObject = null); }"
+                            "code": "{ scope.currentOrder = null; }"
                         }
                     }
                 }
             }
         },
-        "scope": null
+        "scope": {
+            "name": "ProcessTestScope",
+            "observables": [
+                {
+                    "type": null,
+                    "name": "currentOrder",
+                    "defaultValue": "null",
+                    "description": null
+                }
+            ],
+            "actions": [],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": []
     }
 }

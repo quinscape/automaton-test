@@ -37,13 +37,12 @@
             "plugins": [
                 [
                     "transform-imports", {
-                    "reactstrap": {
-                        "transform": "reactstrap/lib/${member}",
-                        "preventFullImport": true
+                        "reactstrap": {
+                            "transform": "reactstrap/lib/${member}",
+                            "preventFullImport": true
+                        }
                     }
-                }
-                ],
-                "transform-react-remove-prop-types"
+                ]
             ]
         },
         "analyze": {

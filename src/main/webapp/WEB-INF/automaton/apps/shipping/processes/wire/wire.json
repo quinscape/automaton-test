@@ -1,0 +1,122 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "computed"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "runInAction"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "graphql"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "GraphQLQuery"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"WireHome\"",
+            "states": {
+                "WireHome": {
+                    "test-target": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "WireTestQuery.execute({ target: { ...t.context, ownerId: config.auth.id || \"\" }, count: 123 }).then(({ wireTestMutation }) => scope.updateMutationResult(wireTestMutation), err => scope.updateMutationResult(mutationError(err)))"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "WireTestScope",
+            "observables": [
+                {
+                    "type": null,
+                    "name": "complex",
+                    "defaultValue": "injection( // language=GraphQL\n`{\n                getFoos(limit: 2){\n                    rowCount\n                    rows {\n                        id\n                        name\n                        num\n                        created\n                        type\n                    }\n                }\n            }`)",
+                    "description": "* Current todos"
+                },
+                {
+                    "type": null,
+                    "name": "mutationResult",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "type": null,
+                    "name": "scalar",
+                    "defaultValue": "injection( // language=GraphQL\n`{\n                queryWithScalar\n            }`)",
+                    "description": null
+                },
+                {
+                    "type": null,
+                    "name": "list",
+                    "defaultValue": "injection( // language=GraphQL\n`{\n                queryWithList\n            }`)",
+                    "description": null
+                },
+                {
+                    "type": null,
+                    "name": "complexList",
+                    "defaultValue": "injection( // language=GraphQL\n`{\n                queryWithComplexList{\n                    id\n                    name\n                    num\n                    type\n                    created\n                }\n            }`)",
+                    "description": null
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateMutationResult",
+                    "params": [
+                        "mutationResult"
+                    ],
+                    "code": "this.mutationResult = mutationResult;"
+                }
+            ],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": [
+            "// language=GraphQL\nconst WireTestQuery = new GraphQLQuery(`\n    mutation testMutation($target: FooInput!, $count: Int!){\n        wireTestMutation(input : $target, count: $count)\n        {\n            id\n            created\n            check\n        }\n    }`);",
+            "function mutationError(err) { return { id: \"ERROR\", created: new Date(), check: String(err) }; } // noinspection JSUnusedGlobalSymbols"
+        ]
+    }
+}

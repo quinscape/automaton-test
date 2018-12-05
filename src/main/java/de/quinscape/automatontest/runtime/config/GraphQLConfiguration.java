@@ -50,9 +50,9 @@ public class GraphQLConfiguration
         this.dslContext = dslContext;
     }
 
-
+    
     @Bean
-    public GraphQLSchema graphQLSchema()
+    public DomainQL domainQL()
     {
         final Collection<Object> logicBeans = applicationContext.getBeansWithAnnotation(GraphQLLogic.class).values();
 
@@ -65,7 +65,7 @@ public class GraphQLConfiguration
             .objectTypes(Public.PUBLIC)
 
             .withAdditionalScalar( DomainObject.class, DomainObjectScalar.newDomainObjectScalar())
-                
+
             .withAdditionalScalar(JSONB.class, new JSONBScalar())
 
             .withAdditionalInputTypes(
@@ -84,12 +84,12 @@ public class GraphQLConfiguration
             .configureRelation( ORDER_ITEM.PRODUCT_ID       , SourceField.OBJECT, TargetField.NONE)
             .configureRelation( FOO.OWNER_ID       , SourceField.OBJECT, TargetField.MANY)
             .configureRelation( FOO.TYPE       , SourceField.SCALAR, TargetField.NONE)
-            .buildGraphQLSchema();
+            .build();
     }
 
     @Bean
-    public GraphQL graphQL(GraphQLSchema schema)
+    public GraphQL graphQL(DomainQL domainQL)
     {
-        return GraphQL.newGraphQL(schema).build();
+        return GraphQL.newGraphQL(domainQL.getGraphQLSchema()).build();
     }
 }

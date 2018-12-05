@@ -4,7 +4,7 @@ import { observer } from "mobx-react";
 import { DataGrid, Button, i18n } from "automaton-js"
 
 @observer
-class FooList extends React.Component {
+class CRUDList extends React.Component {
 
     render()
     {
@@ -46,4 +46,4 @@ class FooList extends React.Component {
     }
 }
 
-export default FooList
+export default CRUDList

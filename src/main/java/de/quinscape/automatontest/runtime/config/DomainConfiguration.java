@@ -79,7 +79,7 @@ public class DomainConfiguration
     }
 
     @Bean
-    public DSLContext edslContext(DataSourceConnectionProvider connectionProvider)
+    public DSLContext dslContext(DataSourceConnectionProvider connectionProvider)
     {
         DefaultDSLContext defaultDSLContext = new DefaultDSLContext(
             new DefaultConfiguration()

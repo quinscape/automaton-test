@@ -56,12 +56,10 @@ export function initProcess(process, scope)
 export default class CustomerScope {
 
     @observable
-    @type("DomainObject")
     currentCustomer = null;
 
     /** Current todos */
     @observable
-    @type("PagedCustomer")
     customers = injection(
         // language=GraphQL
             `{
@@ -75,8 +73,6 @@ export default class CustomerScope {
                 }
             }`
     );
-
-
 
     @action
     updateCustomers(customers)

@@ -5,6 +5,7 @@ import de.quinscape.automaton.runtime.i18n.TranslationService;
 import de.quinscape.automaton.runtime.provider.AutomatonJsViewProvider;
 import de.quinscape.automaton.runtime.provider.ProcessInjectionService;
 import de.quinscape.automaton.runtime.ws.AutomatonWebSocketHandler;
+import de.quinscape.domainql.DomainQL;
 import de.quinscape.domainql.preload.PreloadedGraphQLQueryProvider;
 import de.quinscape.domainql.schema.SchemaDataProvider;
 import de.quinscape.spring.jsview.JsViewResolver;
@@ -14,11 +15,14 @@ import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.http.CacheControl;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.ServletContext;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 @Configuration
 public class WebConfiguration
@@ -27,9 +31,9 @@ public class WebConfiguration
 
     private final ServletContext servletContext;
 
-    private final ResourceLoader resourceLoader;
+    private final DomainQL domainQL;
 
-    private final GraphQLSchema graphQLSchema;
+    private final ResourceLoader resourceLoader;
 
     private final AutomatonWebSocketHandler automatonTestWebSocketHandler;
 
@@ -44,17 +48,17 @@ public class WebConfiguration
     @Autowired
     public WebConfiguration(
         ServletContext servletContext,
-        GraphQLSchema graphQLSchema,
         ResourceLoader resourceLoader,
         ProcessInjectionService processInjectionService,
         TranslationService translationService,
         DSLContext dslContext,
+        ScopeTableConfig scopeTableConfig,
         @Lazy Optional<AutomatonWebSocketHandler> optionalSocketHandler,
-        ScopeTableConfig scopeTableConfig
+        @Lazy DomainQL domainQL
     )
     {
         this.servletContext = servletContext;
-        this.graphQLSchema = graphQLSchema;
+        this.domainQL = domainQL;
         this.resourceLoader = resourceLoader;
 
         this.automatonTestWebSocketHandler = optionalSocketHandler.orElse(null);
@@ -68,6 +72,7 @@ public class WebConfiguration
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry)
     {
+        final GraphQLSchema graphQLSchema = domainQL.getGraphQLSchema();
         registry.viewResolver(
             JsViewResolver.newResolver(servletContext, "WEB-INF/template.html")
                 .withResourceLoader(resourceLoader)
@@ -99,5 +104,14 @@ public class WebConfiguration
 
                 .build()
         );
+    }
+
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry)
+    {
+        registry.addResourceHandler("/js/**")
+            .addResourceLocations("/js/", "/css/", "/webfonts/")
+            .setCacheControl(CacheControl.maxAge(90, TimeUnit.DAYS));
     }
 }

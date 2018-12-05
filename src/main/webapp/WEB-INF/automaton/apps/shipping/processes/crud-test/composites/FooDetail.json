@@ -1,0 +1,255 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx-react",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observer"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Button"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./FooForm",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "FooForm"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "reactstrap",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ButtonToolbar"
+                }
+            ]
+        }
+    ],
+    "composite": {
+        "type": "CompositeComponent",
+        "constants": [
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ObjectPattern",
+                            "properties": [
+                                {
+                                    "type": "ObjectProperty",
+                                    "key": "env",
+                                    "value": {
+                                        "type": "Identifier",
+                                        "name": "env"
+                                    }
+                                }
+                            ]
+                        },
+                        "init": "this.props"
+                    }
+                ]
+            },
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ObjectPattern",
+                            "properties": [
+                                {
+                                    "type": "ObjectProperty",
+                                    "key": "scope",
+                                    "value": {
+                                        "type": "Identifier",
+                                        "name": "scope"
+                                    }
+                                }
+                            ]
+                        },
+                        "init": "env"
+                    }
+                ]
+            }
+        ],
+        "root": {
+            "name": "React.Fragment",
+            "attrs": [],
+            "kids": [
+                {
+                    "name": "h1",
+                    "attrs": [],
+                    "kids": [
+                        {
+                            "type": "JSXExpressionContainer",
+                            "code": "{i18n(\"Foo Detail\")}"
+                        }
+                    ],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "FooForm",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "value",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{scope.currentFoo}"
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "onSubmit",
+                            "value": {
+                                "type": "JSXRenderFunction",
+                                "params": [
+                                    {
+                                        "type": "Identifier",
+                                        "name": "root"
+                                    }
+                                ],
+                                "constants": [],
+                                "root": {
+                                    "type": "Expression",
+                                    "code": "scope.updateCurrent(root)"
+                                }
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "ButtonToolbar",
+                    "attrs": [],
+                    "kids": [
+                        {
+                            "name": "Button",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "className",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"btn btn-primary mr-1\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "transition",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"save\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "icon",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"fa-save mr-1\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "text",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"Save\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "Button",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "className",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"btn btn-secondary mr-1\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "transition",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"cancel\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "icon",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"fa-cancel mr-1\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "text",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"Cancel\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        }
+                    ],
+                    "type": "JSXElement"
+                }
+            ],
+            "type": "JSXElement"
+        },
+        "decorators": [
+            {
+                "name": "observer"
+            }
+        ]
+    },
+    "export": "FooDetail"
+}

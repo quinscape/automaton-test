@@ -84,6 +84,5 @@ export function initProcess(process, scope)
 export default class ProcessTestScope {
 
     @observable
-    @type("Order")
     currentOrder = null;
 }

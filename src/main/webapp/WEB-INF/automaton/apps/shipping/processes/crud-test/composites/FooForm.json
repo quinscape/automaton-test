@@ -1,0 +1,228 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "classnames",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "cx"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx-react",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observer"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Field"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "GlobalErrors"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "TextArea"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "withForm"
+                }
+            ]
+        }
+    ],
+    "composite": {
+        "type": "CompositeComponent",
+        "constants": [
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ObjectPattern",
+                            "properties": [
+                                {
+                                    "type": "ObjectProperty",
+                                    "key": "formConfig",
+                                    "value": {
+                                        "type": "Identifier",
+                                        "name": "formConfig"
+                                    }
+                                }
+                            ]
+                        },
+                        "init": "this.props"
+                    }
+                ]
+            },
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ObjectPattern",
+                            "properties": [
+                                {
+                                    "type": "ObjectProperty",
+                                    "key": "root",
+                                    "value": {
+                                        "type": "Identifier",
+                                        "name": "root"
+                                    }
+                                }
+                            ]
+                        },
+                        "init": "formConfig"
+                    }
+                ]
+            },
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "Identifier",
+                            "name": "auth"
+                        },
+                        "init": "config.auth"
+                    }
+                ]
+            },
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "Identifier",
+                            "name": "canAccess"
+                        },
+                        "init": "auth.id === root.owner.id"
+                    }
+                ]
+            }
+        ],
+        "root": {
+            "name": "React.Fragment",
+            "attrs": [],
+            "kids": [
+                {
+                    "name": "GlobalErrors",
+                    "attrs": [],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "Field",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"name\""
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "TextArea",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"description\""
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "Field",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"num\""
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "Field",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"created\""
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                }
+            ],
+            "type": "JSXElement"
+        },
+        "decorators": [
+            {
+                "name": "observer"
+            }
+        ]
+    },
+    "export": "withForm(FooForm, { type: \"FooInput\" })"
+}
