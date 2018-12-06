@@ -27,10 +27,9 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@quinscape/automaton-js@^0.0.3":
+"@quinscape/automaton-js@quinscape/automaton-js":
   version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.0.3.tgz#57e3ef19fcf03d9411d18516862e6009a6b78fe2"
-  integrity sha512-8u6vbcsVYLkKOifxUtQWXs39FfK7klR3CYCgmB30DD+zQYqC4eYE30PujwU6n57bDM3KENaYLjO0ZngfCGBY2w==
+  resolved "https://codeload.github.com/quinscape/automaton-js/tar.gz/109eeb162fa5f8a508647fdf83ba901a7e780f7d"
   dependencies:
     classnames "^2.2.6"
     prop-types "^15.6.2"
@@ -1907,17 +1906,19 @@ domain-browser@^1.1.1:
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
   integrity sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA==
 
-domainql-form@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-0.0.8.tgz#8091e6815f1040eb3a6a5a3477ea04cbfe560f12"
-  integrity sha512-W2jCZq3vcTJHFRDqxEcBUoWRv1yqLZzYJhdwLUOeVRnJeQtlqjw6lM958tQABr7jjkIlVkFABt9fM2uW+CdfwA==
+domainql-form@quinscape/domainql-form:
+  version "2.0.1"
+  resolved "https://codeload.github.com/quinscape/domainql-form/tar.gz/d8f659511eba2c0074e5c110ab12b687531175f7"
   dependencies:
     classnames "^2.2.5"
     lodash.debounce "^4.0.8"
     lodash.get "^4.4.2"
     lodash.isequal "^4.5.0"
+    lodash.set "^4.3.2"
     lodash.topath "^4.5.2"
     prop-types "^15.6.1"
+    react "^16.6.3"
+    react-dom "^16.6.3"
 
 domainql-webpack-plugin@^0.0.3:
   version "0.0.3"
@@ -3068,6 +3069,11 @@ lodash.once@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
   integrity sha1-DdOXEhPHxW34gJd9UEyI+0cal6w=
+
+lodash.set@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/lodash.set/-/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
+  integrity sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM=
 
 lodash.snakecase@^4.1.1:
   version "4.1.1"

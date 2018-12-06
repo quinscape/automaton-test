@@ -35,9 +35,9 @@
         "webpack-cli": "^3.1.0"
     },
     "dependencies": {
-        "@quinscape/automaton-js": "^0.0.3",
+        "@quinscape/automaton-js": "quinscape/automaton-js",
         "bignumber.js": "^8.0.1",
-        "domainql-form": "^0.0.8",
+        "domainql-form": "quinscape/domainql-form",
         "formik": "^1.3.1",
         "history": "^4.7.2",
         "jsview-bootstrap": "^0.1.1",
