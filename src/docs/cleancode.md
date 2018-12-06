@@ -243,7 +243,42 @@ Das führt auch zu einigen Regeln, die wir noch nicht erfasst haben:
 
 #### Keine Singletons.
 
-Nie nicht.
+Nie nicht. Okay.. vielleicht gaaanz selten.
+
+Das hier fühlt sich nach einem gerechtfertigten Singleton an.
+
+```java
+package de.quinscape.domainql.param;
+
+import graphql.schema.DataFetchingEnvironment;
+
+/**
+ * Provides the GraphQL DataFetchingEnvironment as a Logic method parameter.
+ */
+public class DataFetchingEnvironmentProvider
+    implements ParameterProvider<DataFetchingEnvironment>
+{
+    public final static DataFetchingEnvironmentProvider INSTANCE = new DataFetchingEnvironmentProvider();
+
+    private DataFetchingEnvironmentProvider()
+    {
+
+    }
+
+    @Override
+    public DataFetchingEnvironment provide(DataFetchingEnvironment environment)
+    {
+        return environment;
+    }
+}
+```
+Die Klasse injiziert das DataFetchingEnvironment selbst in GraphQL-Methoden. Die Klasse hat keine Felder und
+funktioniert nur auf Basis des einen Typen, von dem die aktuelle Instanz bereitsgestellt wird.
+
+Nichts an dieser Klasse wird sich höchstwahrscheinlich jemals ändern. Falls ich es doch aus irgendeinem
+Grund bereuen sollte, ist der Umbau wahrscheinlich nicht schwierig.
+
+Dies sind die Extrem-Beispiele, in denen Singletons Sinn machen.
 
 #### Caches
 
