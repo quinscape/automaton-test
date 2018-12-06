@@ -223,7 +223,7 @@ Starke Ablehnung. Die Viabilität einer Test-Suite steht und fällt mit der Fäh
 
 Wenn der Test so lange dauert, dass man sich einen Kaffee holen könnte, wird er nicht mehr dauernd ausgeführt.
 
-Das erste Arrange in Arrange-Act-Assert kostet Zeit.
+Das Arrange in Arrange-Act-Assert kostet Zeit.
 
 Eine testbare Aktion hat einen Kontext der eindeutig eine Mehrzahl von Werten umfasst.
 
