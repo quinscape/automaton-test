@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../automaton/automaton.iml" filepath="$PROJECT_DIR$/../automaton/automaton.iml" />
       <module fileurl="file://$PROJECT_DIR$/../automaton-js/automaton-js.iml" filepath="$PROJECT_DIR$/../automaton-js/automaton-js.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/automaton-test.iml" filepath="$PROJECT_DIR$/.idea/automaton-test.iml" />
     </modules>
