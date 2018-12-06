@@ -143,6 +143,55 @@ Es läuft immer auf "Das haben wir schon immer so gemacht" oder "Das fühlt sich
 
 Das vertikale Ausrichtungs-Argument ist im Vergleich dagegen geradezu stichhaltig.
 
+Ich habe ein Argument *für* Egyptian Brackets gefunden, genau dort, wo ich es auch benutze, nämlich
+für Objekt-Literale.
+
+```js
+    return
+    {
+        foo:1
+    }
+
+```
+
+Das returned "undefined". weil es als
+
+```js
+    return;
+    {
+        foo:1
+    }
+
+```
+ 
+Interpretiert wird.
+
+ 
+Generell sieht man im React-Umfeld viel
+ 
+
+```js
+    return (
+        <div>
+            ...
+        </div>
+    )
+```
+
+aus dem gleichen Grund. Automatische Semikolon-Einfügung (seufz). 
+
+Also 
+
+```js
+    return {
+        foo:1
+    }
+```
+
+Gleiches würde ich für Java Lambdas, Java Anonymous Classes (die ich fast nie verwende) und in Js auch Fat Arrows verwenden.
+
+
+
 ## Objekte und Datenstrukturen
 
 Nahezu komplette Ablehnung, und ausserdem mich ich hier auch rein faktisch sagen, dass dieser
