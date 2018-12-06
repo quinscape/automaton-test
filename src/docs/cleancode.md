@@ -205,6 +205,83 @@ Kontext der verschiedenen Technologien.
 
 Wir brauchen noch ein schlüssiges Fehlerbehandlungskonzept für die Client-Seite.. Monitoring usw.
 
+### Exceptions
+
+Wir benutzen bevorzugt unchecked Exceptions und bevorzugt typisierte Exceptions, d.h. pro Project gibt es eine
+
+```java
+package de.quinscape.domainql;
+
+/**
+ * Generic runtime exception for the DomainQL project.
+ */
+public class DomainQLException
+    extends RuntimeException
+{
+    private static final long serialVersionUID = -3518149341721548644L;
+
+
+    public DomainQLException(String message)
+    {
+        super(message);
+    }
+
+
+    public DomainQLException(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
+
+
+    public DomainQLException(Throwable cause)
+    {
+        super(cause);
+    }
+}
+```
+
+von der jede Project-Exception erbt.
+
+Wenn es definierte Fehlerfälle in einem Teilbereich gibt, sollten diese in der Regel solche abgeleiteten Exceptions
+sein. 
+
+```java
+package de.quinscape.domainql;
+
+public class DomainQLExecutionException
+    extends DomainQLException
+{
+    private static final long serialVersionUID = -8343955271035853751L;
+
+
+    public DomainQLExecutionException(String message)
+    {
+        super(message);
+    }
+
+
+    public DomainQLExecutionException(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
+
+
+    public DomainQLExecutionException(Throwable cause)
+    {
+        super(cause);
+    }
+}
+```
+
+Jede Exception muss:
+
+ * Die notwendigen Konstruktoren bereitstellen (nicht sicher wegen dem moderneren Kram in RuntimeException)
+ * eine serialVersionUID haben (auto-generiert per IDE-Plugin)
+ 
+ Die Fehler-Details werden auf der throw-Seite als String übergeben. Eventuell hat die Exception eine Kontext
+ der bei der Behandlung wichtig ist.
+
+
 ## Test
 
 
