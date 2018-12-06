@@ -39,7 +39,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class AppUser extends TableImpl<AppUserRecord> {
 
-    private static final long serialVersionUID = -1809177859;
+    private static final long serialVersionUID = 1264606110;
 
     /**
      * The reference instance of <code>public.app_user</code>
@@ -82,7 +82,7 @@ public class AppUser extends TableImpl<AppUserRecord> {
     /**
      * The column <code>public.app_user.last_login</code>.
      */
-    public final TableField<AppUserRecord, Timestamp> LAST_LOGIN = createField("last_login", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false), this, "");
+    public final TableField<AppUserRecord, Timestamp> LAST_LOGIN = createField("last_login", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * The column <code>public.app_user.roles</code>.

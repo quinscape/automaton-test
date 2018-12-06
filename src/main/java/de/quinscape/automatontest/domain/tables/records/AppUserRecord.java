@@ -42,7 +42,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 })
 public class AppUserRecord extends UpdatableRecordImpl<AppUserRecord> implements Record7<String, String, String, Boolean, Timestamp, Timestamp, String> {
 
-    private static final long serialVersionUID = -1404265147;
+    private static final long serialVersionUID = 1595754862;
 
     /**
      * Setter for <code>public.app_user.id</code>.
@@ -137,8 +137,7 @@ public class AppUserRecord extends UpdatableRecordImpl<AppUserRecord> implements
     /**
      * Getter for <code>public.app_user.last_login</code>.
      */
-    @Column(name = "last_login", nullable = false)
-    @NotNull
+    @Column(name = "last_login")
     public Timestamp getLastLogin() {
         return (Timestamp) get(5);
     }

@@ -37,7 +37,7 @@ import javax.validation.constraints.Size;
 })
 public class AppUser implements DomainObject, Serializable {
 
-    private static final long serialVersionUID = 2095129420;
+    private static final long serialVersionUID = 1670232301;
 
     private String    id;
     private String    login;
@@ -130,8 +130,7 @@ public class AppUser implements DomainObject, Serializable {
         this.created = created;
     }
 
-    @Column(name = "last_login", nullable = false)
-    @NotNull
+    @Column(name = "last_login")
     public Timestamp getLastLogin() {
         return this.lastLogin;
     }
