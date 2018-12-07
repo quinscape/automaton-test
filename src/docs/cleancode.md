@@ -280,8 +280,27 @@ Jede Exception muss:
  
  Die Fehler-Details werden auf der throw-Seite als String übergeben. Eventuell hat die Exception eine Kontext
  der bei der Behandlung wichtig ist.
+ 
+### Checked Exceptions in Interfaces
 
+Die "Wir benutzen unchecked" heißt natürlich nicht, dass wir die checked ignorieren oder nie benutzen. 
+Analog zu Spring würden wir für Framework-artige Interfaces, bei denen heterogene zukünftige Implementation
+weiß-Gott-was für APIs benutzen.
 
+Wenn wir jetzt aber nicht
+
+```java
+public interface MyInterface()
+{
+    public Result doSomething() throws Exception
+}
+```
+
+Machen, muss die Implementierung alle checked Exceptions wrappen. Dann ist es aber besser, wenn wir zunächst
+Exception fangen und es dann in die richtige Exception auf unserer Seite zu wrappen, anstatt das noch eine 
+intermediäre Runtime Exception in der Exception-Kette auftaucht, die evt. noch den Typ der ursprünglichen
+verschleiert.
+ 
 ## Test
 
 
@@ -347,10 +366,17 @@ Ausnahmen sind natürlich Teilbereiche, bei denen von vorne herein klar ist, das
 um eine isolierbare Funktionalität mit offensichtlicher Architektur und nicht-trivialer Funktionalität.
 Solche Tests sind in der Regel gut und halten ewig. Sie sind auch meistens sehr schnell.
 
+
 ### Gute Tests
 
 Gute Tests testen wirklich den Kern der Funktionalität in einer Granularität die resistent
 gegen Code-Veränderungen ist. Gute Tests sind dann einfach, wenn der Code testbar ist.
+
+### Fehler testen
+
+Die speziellen Exceptions, die man angelegt hat, kann man dann in Unit-Tests auch gleich testen.
+
+Minimales Fehler-Szenario erstellt, `@Test(expected = MyException.class)` dran, fertig.  
 
 ### Testbarkeit!!!1
 
