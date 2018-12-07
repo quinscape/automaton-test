@@ -336,6 +336,7 @@ wirklich in nennenswerten Projekten durchzieht.
 Am ehesten scheint dies noch zu funkionieren, wenn man den generellen Entwicklungsprozess einem
 solchen TDD-Guru unterwirft und extra für TDD eine Einwandfrei isolierte inner Domain-Schicht
 erzeugt, eine aufwendig geschaffene Traumwelt, in der man dann TDD zelebrieren kann.
+( https://en.wikipedia.org/wiki/Conway%27s_law )
 
 Unter verzigfachung des Aufwands.
 
