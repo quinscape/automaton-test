@@ -198,6 +198,25 @@ Nahezu komplette Ablehnung, und ausserdem mich ich hier auch rein faktisch sagen
 Punkt gelaufen ist. Unsere Architektur steht soweit, solange wir die nicht radikal ändern,
 ist dieser Abschnitt Makulatur.
 
+
+## Bevorzuge Komposition über Veerbung
+
+Die Bevorzugung von Komposition (Klassen die Klassen *benutzen*) gegenüber Vererbung (Klassen *sind* Veerbungen anderer 
+Klassen) ist ein wesentlicher Punkt in der Anwendungsarchitektur. 
+
+[Wikipedia](https://de.wikipedia.org/wiki/Komposition_an_Stelle_von_Vererbung) erklärt hier einiges, es fehlen aber
+noch wesentliche Aspekte.
+
+Zum Einen das "Liskovsche Substititutionsprinzip", dass zumindest in der englischen Version verlinkt wird. Zum
+anderen dann in Java die Komplexitäten von equals/hashcode in Verbindung mit Polymorphie. Hier sei nochmal
+das Lesen "Effective Java" von Joshua Block empfohlen, dass meine Erinnerung auch auf diese Problem eingeht.
+
+Mit dem Fazit für mich, dass sich die generelle weichere Stil-Empfehlung durch die Komplexität der richtigen
+Implementation direkt den Punkt Code-Qualität und Programm-Korrektheit erreicht. "Equals/hashcode" Probleme zu debuggen 
+ist brutal.    
+
+Wichtiger Punkt.  
+
 ## Fehlerbehandlung
 
 Hier sollte man nochmal ein komplettes Konzept auf Basis des Spring-Container-Handlings von Exceptions im
