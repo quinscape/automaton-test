@@ -105,10 +105,26 @@
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.10" />
           <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.10.0" />
           <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.14.1" />
-          <element id="library" level="project" name="Maven: de.quinscape.domainql:automaton:0.3-SNAPSHOT" />
+          <element id="archive" name="automaton-0.3-SNAPSHOT.jar">
+            <element id="module-output" name="automaton" />
+          </element>
           <element id="library" level="project" name="Maven: com.github.ziplet:ziplet:2.3.0" />
           <element id="library" level="project" name="Maven: com.google.googlejavaformat:google-java-format:1.4" />
           <element id="library" level="project" name="Maven: com.google.errorprone:javac-shaded:9-dev-r4023-3" />
+          <element id="library" level="project" name="Maven: org.jooq:jooq-meta:3.10.6" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.7" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.0.4.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">
