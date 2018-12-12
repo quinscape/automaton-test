@@ -3,7 +3,7 @@ package de.quinscape.automatontest.runtime.config;
 import com.atomikos.icatch.jta.UserTransactionImp;
 import com.atomikos.icatch.jta.UserTransactionManager;
 import de.quinscape.automaton.model.js.StaticFunctionReferences;
-import de.quinscape.automaton.runtime.controller.ScopeTableConfig;
+import de.quinscape.automaton.runtime.config.ScopeTableConfig;
 import de.quinscape.automaton.runtime.i18n.DefaultTranslationService;
 import de.quinscape.automaton.runtime.i18n.TranslationService;
 import de.quinscape.automatontest.domain.tables.pojos.AppTranslation;

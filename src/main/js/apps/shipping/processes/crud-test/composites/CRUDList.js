@@ -1,6 +1,7 @@
 import React from "react"
 import { observer } from "mobx-react";
 
+import { ButtonToolbar } from "reactstrap"
 import { DataGrid, Button, i18n } from "automaton-js"
 
 @observer
@@ -19,6 +20,16 @@ class CRUDList extends React.Component {
                         i18n('Foo List')
                     }
                 </h1>
+                <ButtonToolbar>
+                    <Button
+                        className="btn btn-secondary mr-1"
+                        icon="fa-plus-circle"
+                        text="New Foo"
+                        transition="new-foo"
+                    />
+                </ButtonToolbar>
+
+
                 <DataGrid
                     value={ scope.foos }
                 >

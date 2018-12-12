@@ -25,7 +25,7 @@ class FooForm extends React.Component {
             <React.Fragment>
                 <GlobalErrors/>
                 <Field name="name"/>
-                <TextArea name="description"/>
+                <TextArea name="description" />
                 <Field name="num"/>
                 <Field name="created"/>
 

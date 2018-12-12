@@ -1,6 +1,6 @@
 package de.quinscape.automatontest.runtime.config;
 
-import de.quinscape.automaton.runtime.controller.ScopeTableConfig;
+import de.quinscape.automaton.runtime.config.ScopeTableConfig;
 import de.quinscape.automaton.runtime.i18n.TranslationService;
 import de.quinscape.automaton.runtime.provider.AutomatonJsViewProvider;
 import de.quinscape.automaton.runtime.provider.ProcessInjectionService;
