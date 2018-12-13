@@ -2,7 +2,7 @@ import React from "react"
 import { toJS } from "mobx";
 import { observer } from "mobx-react";
 
-import { DataGrid, Button, i18n } from "automaton-js"
+import { DataGrid, Button, i18n } from "@quinscape/automaton-js"
 import JSONData from "../../../../../components/JSONData"
 
 @observer

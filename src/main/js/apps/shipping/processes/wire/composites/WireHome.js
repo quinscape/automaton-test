@@ -2,7 +2,7 @@ import React from "react"
 import cx from "classnames"
 import { observer } from "mobx-react";
 
-import { i18n, Button } from "automaton-js"
+import { i18n, Button } from "@quinscape/automaton-js"
 import FooList from "../../../../../components/FooList";
 import Calendar from "react-calendar"
 import { ButtonToolbar, Row, Col, Card, CardHeader, CardBody } from "reactstrap";

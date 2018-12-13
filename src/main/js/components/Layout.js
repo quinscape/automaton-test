@@ -1,6 +1,6 @@
 import React from "react"
 
-import { AutomatonDevTools, uri, Link, LayoutSlot } from "automaton-js"
+import { AutomatonDevTools, uri, Link, LayoutSlot } from "@quinscape/automaton-js"
 
 import {
     Collapse,

@@ -11,11 +11,11 @@
                 "sourceRoot": "src/main/js/",
                 "trackedFunctions": {
                     "injection": {
-                        "module": "automaton-js",
+                        "module": "@quinscape/automaton-js",
                         "fn": "injection"
                     },
                     "i18n": {
-                        "module": "automaton-js",
+                        "module": "@quinscape/automaton-js",
                         "fn": "i18n"
                     }
                 },

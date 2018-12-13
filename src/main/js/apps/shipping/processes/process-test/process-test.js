@@ -6,7 +6,7 @@ import {
     toJS
 } from "mobx";
 
-import { injection, Process, type } from "automaton-js";
+import { injection, Process, type } from "@quinscape/automaton-js";
 
 // noinspection JSUnusedGlobalSymbols
 /**

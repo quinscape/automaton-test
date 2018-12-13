@@ -4,7 +4,7 @@ import {
     action
 } from "mobx";
 
-import { injection } from "automaton-js";
+import { injection } from "@quinscape/automaton-js";
 
 // noinspection JSUnusedGlobalSymbols
 export function initProcess(process, scope)

@@ -6,7 +6,7 @@ import {
 
 import {
     injection
-} from "automaton-js";
+} from "@quinscape/automaton-js";
 
 
 export default class Foo {

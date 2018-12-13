@@ -1,7 +1,7 @@
 import React from "react"
 import { observer } from "mobx-react";
 
-import { Button, i18n, LayoutContent } from "automaton-js"
+import { Button, i18n, LayoutContent } from "@quinscape/automaton-js"
 
 
 @observer

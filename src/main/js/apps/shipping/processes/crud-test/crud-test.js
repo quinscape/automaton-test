@@ -11,8 +11,16 @@ import {
     storeDomainObject,
     deleteDomainObject,
     GraphQLQuery
-} from "automaton-js";
+} from "@quinscape/automaton-js";
 
+
+console.log({
+    injection,
+    config,
+    storeDomainObject,
+    deleteDomainObject,
+    GraphQLQuery
+});
 
 // language=GraphQL
 const CreateFooMutation = new GraphQLQuery(`

@@ -8,7 +8,7 @@ import {
 import {
     injection,
     type
-} from "automaton-js";
+} from "@quinscape/automaton-js";
 
 
 // noinspection JSUnusedGlobalSymbols

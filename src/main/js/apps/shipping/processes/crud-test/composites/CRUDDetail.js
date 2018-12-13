@@ -1,7 +1,7 @@
 import React from "react"
 import { observer } from "mobx-react";
 
-import { Button, i18n, Icon, config } from "automaton-js"
+import { Button, i18n, Icon, config } from "@quinscape/automaton-js"
 import { UserFormControl, FormConfigProvider, DEFAULT_OPTIONS } from "domainql-form"
 import FooForm from "./FooForm";
 import { ButtonToolbar, Row, Col, Card, CardHeader, CardBody } from "reactstrap";

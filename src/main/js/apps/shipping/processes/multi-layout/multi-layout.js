@@ -6,7 +6,7 @@ import {
     toJS
 } from "mobx";
 
-import { injection, Process, type } from "automaton-js";
+import { injection, Process, type } from "@quinscape/automaton-js";
 import LayoutV2 from "../../../../components/LayoutV2";
 import LayoutV3 from "../../../../components/LayoutV3";
 import LayoutV4 from "../../../../components/LayoutV4";

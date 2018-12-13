@@ -1,4 +1,4 @@
-import { Process } from "automaton-js";
+import { Process } from "@quinscape/automaton-js";
 
 
 /**

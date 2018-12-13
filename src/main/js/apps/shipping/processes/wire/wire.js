@@ -11,7 +11,7 @@ import {
     graphql,
     GraphQLQuery,
     config
-} from "automaton-js";
+} from "@quinscape/automaton-js";
 
 // language=GraphQL
 const WireTestQuery = new GraphQLQuery(`

@@ -1,7 +1,7 @@
 import React from "react"
 import cx from "classnames"
 import { observer } from "mobx-react";
-import { config, i18n, Icon, Button } from "automaton-js"
+import { config, i18n, Icon, Button } from "@quinscape/automaton-js"
 
 import { Field, GlobalErrors, TextArea, withForm } from "domainql-form"
 import { ButtonToolbar } from "reactstrap";

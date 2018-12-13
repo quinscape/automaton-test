@@ -6,7 +6,7 @@ import DropdownToggle from "reactstrap/lib/DropdownToggle";
 import DropdownMenu from "reactstrap/lib/DropdownMenu";
 import DropdownItem from "reactstrap/lib/DropdownItem";
 
-import { uri, Link, runProcessURI } from "automaton-js"
+import { uri, Link, runProcessURI } from "@quinscape/automaton-js"
 
 
 class CommonNav extends React.Component {

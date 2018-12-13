@@ -2,7 +2,7 @@ import React from "react"
 import { observer } from "mobx-react";
 
 import { ButtonToolbar } from "reactstrap"
-import { DataGrid, Button, i18n } from "automaton-js"
+import { DataGrid, Button, i18n } from "@quinscape/automaton-js"
 
 @observer
 class CRUDList extends React.Component {
