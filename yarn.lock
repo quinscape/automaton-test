@@ -39,7 +39,6 @@
   resolved "https://codeload.github.com/quinscape/automaton-js/tar.gz/00ed02a6308376bf69ff28c2063b2adc0c3e226d"
   dependencies:
     classnames "^2.2.6"
-    graphql "^14.0.2"
     prop-types "^15.6.2"
     react-json-tree "^0.11.0"
 
@@ -589,10 +588,10 @@ babel-messages@^6.23.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-automaton@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/babel-plugin-automaton/-/babel-plugin-automaton-0.0.8.tgz#f3b1a13e782f01cb9f810739798243a435113fb2"
-  integrity sha512-7mgoka9mr+TVfYuHef1adPzy858t+2V+XSX3ysQ9Z1xgG4DOY7JdozgN9pyecJCKcq+Dwrstbtma0ln2p1+qkA==
+babel-plugin-automaton@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/babel-plugin-automaton/-/babel-plugin-automaton-0.0.9.tgz#047ee73f7a26f67c07858057265b054f9c30012f"
+  integrity sha512-vZyAxDw2rn7rq3mUm+w9+W9J+nD4LZe0I1Y6jzEJ1CUfMmgdR1tEnY2xeWL4ibIvK6sukqQd/KE8se9R1KNnPQ==
   dependencies:
     babel-generator "^6.26.1"
     babel-runtime "^6.26.0"
