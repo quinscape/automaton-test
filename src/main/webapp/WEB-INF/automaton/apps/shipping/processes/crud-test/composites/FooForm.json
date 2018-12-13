@@ -32,11 +32,23 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "automaton-js",
+            "source": "@quinscape/automaton-js",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
                     "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Button"
                 }
             ]
         },
@@ -54,15 +66,21 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "Icon"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "TextArea"
                 },
                 {
                     "type": "ImportSpecifier",
                     "name": "withForm"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "reactstrap",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ButtonToolbar"
                 }
             ]
         }
@@ -214,15 +232,135 @@
                     ],
                     "kids": [],
                     "type": "JSXElement"
+                },
+                {
+                    "name": "ButtonToolbar",
+                    "attrs": [],
+                    "kids": [
+                        {
+                            "name": "Button",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "className",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"btn btn-primary mr-1\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "transition",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"save\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "icon",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"fa-save mr-1\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "text",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"Save\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "Button",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "className",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"btn btn-danger mr-1\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "transition",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"delete\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "icon",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"fa-times mr-1\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "text",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"Delete\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "Button",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "className",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"btn btn-secondary mr-1\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "transition",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"cancel\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "icon",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"fa-times mr-1\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "text",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"Cancel\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        }
+                    ],
+                    "type": "JSXElement"
                 }
             ],
             "type": "JSXElement"
         },
-        "decorators": [
-            {
-                "name": "observer"
-            }
-        ]
+        "decorators": []
     },
-    "export": "withForm(FooForm, { type: \"FooInput\" })"
+    "export": "withForm(observer(FooForm), { type: \"FooInput\" })"
 }

@@ -24,7 +24,7 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "automaton-js",
+            "source": "@quinscape/automaton-js",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
@@ -83,13 +83,11 @@
             "name": "CustomerScope",
             "observables": [
                 {
-                    "type": null,
                     "name": "currentCustomer",
                     "defaultValue": "null",
                     "description": null
                 },
                 {
-                    "type": null,
                     "name": "customers",
                     "defaultValue": "injection( // language=GraphQL\n`{\n                getCustomers{\n                    rows{\n                        id\n                        number\n                        salutation\n                        name\n                    }\n                }\n            }`)",
                     "description": "* Current todos"
@@ -101,7 +99,8 @@
                     "params": [
                         "customers"
                     ],
-                    "code": "this.customers = customers;"
+                    "code": "this.customers = customers;",
+                    "bound": false
                 }
             ],
             "computeds": [],

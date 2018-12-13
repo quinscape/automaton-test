@@ -28,7 +28,7 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "automaton-js",
+            "source": "@quinscape/automaton-js",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
@@ -89,7 +89,6 @@
             "name": "ProcessTestScope",
             "observables": [
                 {
-                    "type": null,
                     "name": "currentOrder",
                     "defaultValue": "null",
                     "description": null

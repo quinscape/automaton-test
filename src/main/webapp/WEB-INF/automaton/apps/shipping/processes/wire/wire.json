@@ -28,7 +28,7 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "automaton-js",
+            "source": "@quinscape/automaton-js",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
@@ -72,31 +72,26 @@
             "name": "WireTestScope",
             "observables": [
                 {
-                    "type": null,
                     "name": "complex",
                     "defaultValue": "injection( // language=GraphQL\n`{\n                getFoos(limit: 2){\n                    rowCount\n                    rows {\n                        id\n                        name\n                        num\n                        created\n                        type\n                    }\n                }\n            }`)",
                     "description": "* Current todos"
                 },
                 {
-                    "type": null,
                     "name": "mutationResult",
                     "defaultValue": "null",
                     "description": null
                 },
                 {
-                    "type": null,
                     "name": "scalar",
                     "defaultValue": "injection( // language=GraphQL\n`{\n                queryWithScalar\n            }`)",
                     "description": null
                 },
                 {
-                    "type": null,
                     "name": "list",
                     "defaultValue": "injection( // language=GraphQL\n`{\n                queryWithList\n            }`)",
                     "description": null
                 },
                 {
-                    "type": null,
                     "name": "complexList",
                     "defaultValue": "injection( // language=GraphQL\n`{\n                queryWithComplexList{\n                    id\n                    name\n                    num\n                    type\n                    created\n                }\n            }`)",
                     "description": null
@@ -108,7 +103,8 @@
                     "params": [
                         "mutationResult"
                     ],
-                    "code": "this.mutationResult = mutationResult;"
+                    "code": "this.mutationResult = mutationResult;",
+                    "bound": true
                 }
             ],
             "computeds": [],

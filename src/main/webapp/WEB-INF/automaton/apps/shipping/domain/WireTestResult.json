@@ -19,19 +19,16 @@
         "name": "WireTestResult",
         "observables": [
             {
-                "type": null,
                 "name": "id",
                 "defaultValue": null,
                 "description": null
             },
             {
-                "type": null,
                 "name": "created",
                 "defaultValue": null,
                 "description": null
             },
             {
-                "type": null,
                 "name": "check",
                 "defaultValue": null,
                 "description": null

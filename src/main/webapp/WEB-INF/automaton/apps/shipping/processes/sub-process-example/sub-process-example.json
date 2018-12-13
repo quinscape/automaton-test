@@ -24,7 +24,7 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "automaton-js",
+            "source": "@quinscape/automaton-js",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
@@ -69,7 +69,6 @@
             "name": "MySubProcessScope",
             "observables": [
                 {
-                    "type": null,
                     "name": "orders",
                     "defaultValue": "injection( // language=GraphQL\n`{\n                getOrders\n                {\n                    rowCount\n                    rows{\n                        accepted\n                        customer{\n                            salutation\n                            name\n                        },\n                        id\n                        number\n                        shippingType{\n                            name\n                        }\n                        status\n                    }\n                }\n        }`)",
                     "description": "* Current orders"

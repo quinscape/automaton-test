@@ -24,7 +24,7 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "automaton-js",
+            "source": "@quinscape/automaton-js",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
@@ -32,7 +32,19 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "type"
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "storeDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "deleteDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "GraphQLQuery"
                 }
             ]
         }
@@ -41,11 +53,21 @@
         "type": "ProcessExports",
         "configuration": [],
         "process": {
-            "startState": "\"FooList\"",
+            "startState": "\"CRUDList\"",
             "states": {
-                "FooList": {
+                "CRUDList": {
+                    "new-foo": {
+                        "to": "CRUDDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "CreateFooMutation.execute({ name: \"Unnamed Foo\" }).then(({ createFoo }) => scope.updateCurrent(createFoo))"
+                        }
+                    },
                     "to-detail": {
-                        "to": "FooDetail",
+                        "to": "CRUDDetail",
                         "action": {
                             "type": "Action",
                             "params": [
@@ -55,19 +77,38 @@
                         }
                     }
                 },
-                "FooDetail": {
+                "CRUDDetail": {
                     "save": {
-                        "to": "FooList",
+                        "to": "CRUDList",
                         "action": {
                             "type": "Action",
                             "params": [
                                 "t"
                             ],
-                            "code": "{ console.log(\"Transition 'save': \", toJS(t.context)); }"
+                            "code": "storeDomainObject({ ...t.context, ownerId: config.auth.id || \"\" }).then(() => GetFoosQuery.execute()).then(({ getFoos }) => scope.updateFoos(getFoos))"
+                        }
+                    },
+                    "delete": {
+                        "to": "CRUDList",
+                        "discard": true,
+                        "confirmation": {
+                            "type": "Action",
+                            "params": [
+                                "context"
+                            ],
+                            "code": "`Delete ${context.name} ?`"
+                        },
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const { id } = t.context; return deleteDomainObject(\"Foo\", id).then(didDelete => didDelete && scope.removeFoo(id)); }"
                         }
                     },
                     "cancel": {
-                        "to": "FooList",
+                        "to": "CRUDList",
+                        "discard": true,
                         "action": {
                             "type": "Action",
                             "params": [
@@ -83,15 +124,13 @@
             "name": "CRUDTestScope",
             "observables": [
                 {
-                    "type": null,
                     "name": "currentFoo",
                     "defaultValue": "null",
                     "description": null
                 },
                 {
-                    "type": null,
                     "name": "foos",
-                    "defaultValue": "injection( // language=GraphQL\n`{\n            getFoos{\n                rows{\n                    id\n                    name\n                     num\n                    created\n                    owner{\n                        login\n                    }\n                    type \n                    \n                }\n                rowCount\n            }\n        }`)",
+                    "defaultValue": "injection( // language=GraphQL\n`{\n            getFoos{\n                rows{\n                    id\n                    name\n                    num\n                    created\n                    description\n                    owner{\n                        login\n                    }\n                    type \n                    \n                }\n                rowCount\n            }\n        }`)",
                     "description": "* Current todos"
                 }
             ],
@@ -101,19 +140,32 @@
                     "params": [
                         "foos"
                     ],
-                    "code": "this.foos = foos;"
+                    "code": "this.foos = foos;",
+                    "bound": false
+                },
+                {
+                    "name": "removeFoo",
+                    "params": [
+                        "id"
+                    ],
+                    "code": "this.foos.rows = this.foos.rows.filter(foo => foo.id !== id);",
+                    "bound": false
                 },
                 {
                     "name": "updateCurrent",
                     "params": [
                         "foo"
                     ],
-                    "code": "this.currentFoo = foo;"
+                    "code": "this.currentFoo = foo;",
+                    "bound": false
                 }
             ],
             "computeds": [],
             "helpers": []
         },
-        "extraConstants": []
+        "extraConstants": [
+            "// language=GraphQL\nconst CreateFooMutation = new GraphQLQuery(`\n    mutation createFoo($name: String!){\n         createFoo(name: $name)\n         {\n             id\n             name\n             num\n             created\n             owner{\n                 login\n             }\n             type\n\n        }\n    }\n    `); // language=GraphQL",
+            "// language=GraphQL\nconst GetFoosQuery = new GraphQLQuery(`\n    query getFoos{\n        getFoos{\n            rows{\n                id\n                name\n                num\n                created\n                description\n                owner{\n                    login\n                }\n                type\n\n            }\n            rowCount\n        }\n    }\n    `); // noinspection JSUnusedGlobalSymbols"
+        ]
     }
 }
