@@ -57,7 +57,7 @@
           <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.9.3" />
           <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.2" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
-          <element id="library" level="project" name="Maven: de.quinscape.domainql:domainql:0.15-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: de.quinscape.domainql:domainql:0.15" />
           <element id="library" level="project" name="Maven: org.atteo:evo-inflector:1.2.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.9.RELEASE" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:24.1-jre" />
@@ -111,20 +111,6 @@
           <element id="library" level="project" name="Maven: com.github.ziplet:ziplet:2.3.0" />
           <element id="library" level="project" name="Maven: com.google.googlejavaformat:google-java-format:1.4" />
           <element id="library" level="project" name="Maven: com.google.errorprone:javac-shaded:9-dev-r4023-3" />
-          <element id="library" level="project" name="Maven: org.jooq:jooq-meta:3.10.6" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.7" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.0.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.0.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.6.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.6.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.6.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.6.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.6.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.6.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.0.4.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.0.4.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.0.6.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.0.4.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">
