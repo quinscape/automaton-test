@@ -35,6 +35,7 @@ const CreateFooMutation = new GraphQLQuery(`
                  login
              }
              type
+             flag
 
         }
     }
@@ -54,6 +55,7 @@ const GetFoosQuery = new GraphQLQuery(`
                     login
                 }
                 type
+                flag
 
             }
             rowCount
@@ -155,7 +157,8 @@ export default class CRUDTestScope {
                     owner{
                         login
                     }
-                    type 
+                    type
+                    flag
                     
                 }
                 rowCount

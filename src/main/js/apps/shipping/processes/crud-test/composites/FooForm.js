@@ -28,6 +28,7 @@ class FooForm extends React.Component {
                 <TextArea name="description" />
                 <Field name="num"/>
                 <Field name="created"/>
+                <Field name="flag"/>
 
                 <ButtonToolbar>
                     <Button

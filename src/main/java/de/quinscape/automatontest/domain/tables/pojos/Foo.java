@@ -36,7 +36,7 @@ import javax.validation.constraints.Size;
 })
 public class Foo implements DomainObject, Serializable {
 
-    private static final long serialVersionUID = 1416477264;
+    private static final long serialVersionUID = 816904348;
 
     private String    id;
     private String    name;
@@ -45,6 +45,7 @@ public class Foo implements DomainObject, Serializable {
     private Timestamp created;
     private String    description;
     private String    ownerId;
+    private Boolean   flag;
 
     public Foo() {}
 
@@ -56,6 +57,7 @@ public class Foo implements DomainObject, Serializable {
         this.created = value.created;
         this.description = value.description;
         this.ownerId = value.ownerId;
+        this.flag = value.flag;
     }
 
     public Foo(
@@ -65,7 +67,8 @@ public class Foo implements DomainObject, Serializable {
         String    type,
         Timestamp created,
         String    description,
-        String    ownerId
+        String    ownerId,
+        Boolean   flag
     ) {
         this.id = id;
         this.name = name;
@@ -74,6 +77,7 @@ public class Foo implements DomainObject, Serializable {
         this.created = created;
         this.description = description;
         this.ownerId = ownerId;
+        this.flag = flag;
     }
 
     @Id
@@ -150,6 +154,16 @@ public class Foo implements DomainObject, Serializable {
         this.ownerId = ownerId;
     }
 
+    @Column(name = "flag", nullable = false)
+    @NotNull
+    public Boolean getFlag() {
+        return this.flag;
+    }
+
+    public void setFlag(Boolean flag) {
+        this.flag = flag;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Foo (");
@@ -161,6 +175,7 @@ public class Foo implements DomainObject, Serializable {
         sb.append(", ").append(created);
         sb.append(", ").append(description);
         sb.append(", ").append(ownerId);
+        sb.append(", ").append(flag);
 
         sb.append(")");
         return sb.toString();

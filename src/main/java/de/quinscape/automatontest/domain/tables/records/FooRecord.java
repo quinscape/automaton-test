@@ -19,8 +19,8 @@ import javax.validation.constraints.Size;
 
 import org.jooq.Field;
 import org.jooq.Record1;
-import org.jooq.Record7;
-import org.jooq.Row7;
+import org.jooq.Record8;
+import org.jooq.Row8;
 import org.jooq.impl.UpdatableRecordImpl;
 
 
@@ -39,9 +39,9 @@ import org.jooq.impl.UpdatableRecordImpl;
 @Table(name = "foo", schema = "public", indexes = {
     @Index(name = "pk_foo", unique = true, columnList = "id ASC")
 })
-public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7<String, String, Integer, String, Timestamp, String, String> {
+public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record8<String, String, Integer, String, Timestamp, String, String, Boolean> {
 
-    private static final long serialVersionUID = 1520040827;
+    private static final long serialVersionUID = -515349014;
 
     /**
      * Setter for <code>public.foo.id</code>.
@@ -159,6 +159,22 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
         return (String) get(6);
     }
 
+    /**
+     * Setter for <code>public.foo.flag</code>.
+     */
+    public void setFlag(Boolean value) {
+        set(7, value);
+    }
+
+    /**
+     * Getter for <code>public.foo.flag</code>.
+     */
+    @Column(name = "flag", nullable = false)
+    @NotNull
+    public Boolean getFlag() {
+        return (Boolean) get(7);
+    }
+
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -172,23 +188,23 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
     }
 
     // -------------------------------------------------------------------------
-    // Record7 type implementation
+    // Record8 type implementation
     // -------------------------------------------------------------------------
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Row7<String, String, Integer, String, Timestamp, String, String> fieldsRow() {
-        return (Row7) super.fieldsRow();
+    public Row8<String, String, Integer, String, Timestamp, String, String, Boolean> fieldsRow() {
+        return (Row8) super.fieldsRow();
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Row7<String, String, Integer, String, Timestamp, String, String> valuesRow() {
-        return (Row7) super.valuesRow();
+    public Row8<String, String, Integer, String, Timestamp, String, String, Boolean> valuesRow() {
+        return (Row8) super.valuesRow();
     }
 
     /**
@@ -251,6 +267,14 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
      * {@inheritDoc}
      */
     @Override
+    public Field<Boolean> field8() {
+        return Foo.FOO.FLAG;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public String component1() {
         return getId();
     }
@@ -307,6 +331,14 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
      * {@inheritDoc}
      */
     @Override
+    public Boolean component8() {
+        return getFlag();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public String value1() {
         return getId();
     }
@@ -357,6 +389,14 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
     @Override
     public String value7() {
         return getOwnerId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean value8() {
+        return getFlag();
     }
 
     /**
@@ -426,7 +466,16 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
      * {@inheritDoc}
      */
     @Override
-    public FooRecord values(String value1, String value2, Integer value3, String value4, Timestamp value5, String value6, String value7) {
+    public FooRecord value8(Boolean value) {
+        setFlag(value);
+        return this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public FooRecord values(String value1, String value2, Integer value3, String value4, Timestamp value5, String value6, String value7, Boolean value8) {
         value1(value1);
         value2(value2);
         value3(value3);
@@ -434,6 +483,7 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
         value5(value5);
         value6(value6);
         value7(value7);
+        value8(value8);
         return this;
     }
 
@@ -451,7 +501,7 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
     /**
      * Create a detached, initialised FooRecord
      */
-    public FooRecord(String id, String name, Integer num, String type, Timestamp created, String description, String ownerId) {
+    public FooRecord(String id, String name, Integer num, String type, Timestamp created, String description, String ownerId, Boolean flag) {
         super(Foo.FOO);
 
         set(0, id);
@@ -461,5 +511,6 @@ public class FooRecord extends UpdatableRecordImpl<FooRecord> implements Record7
         set(4, created);
         set(5, description);
         set(6, ownerId);
+        set(7, flag);
     }
 }

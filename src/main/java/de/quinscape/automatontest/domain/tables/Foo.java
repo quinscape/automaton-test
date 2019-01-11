@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Foo extends TableImpl<FooRecord> {
 
-    private static final long serialVersionUID = -449608328;
+    private static final long serialVersionUID = 1736070118;
 
     /**
      * The reference instance of <code>public.foo</code>
@@ -89,6 +89,11 @@ public class Foo extends TableImpl<FooRecord> {
      * The column <code>public.foo.owner_id</code>.
      */
     public final TableField<FooRecord, String> OWNER_ID = createField("owner_id", org.jooq.impl.SQLDataType.VARCHAR(36).nullable(false), this, "");
+
+    /**
+     * The column <code>public.foo.flag</code>.
+     */
+    public final TableField<FooRecord, Boolean> FLAG = createField("flag", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
     /**
      * Create a <code>public.foo</code> table reference
