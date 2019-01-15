@@ -5,6 +5,7 @@ import de.quinscape.automaton.runtime.i18n.TranslationService;
 import de.quinscape.automaton.runtime.provider.AutomatonJsViewProvider;
 import de.quinscape.automaton.runtime.provider.ProcessInjectionService;
 import de.quinscape.automaton.runtime.ws.AutomatonWebSocketHandler;
+import de.quinscape.automatontest.runtime.rules.ValidationRuleProvider;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.domainql.preload.PreloadedGraphQLQueryProvider;
 import de.quinscape.domainql.schema.SchemaDataProvider;
@@ -100,6 +101,10 @@ public class WebConfiguration
                     new SchemaDataProvider(
                         graphQLSchema
                     )
+                )
+
+                .withViewDataProvider(
+                    new ValidationRuleProvider()
                 )
 
                 .build()
