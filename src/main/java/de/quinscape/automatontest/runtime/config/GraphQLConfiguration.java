@@ -5,6 +5,7 @@ import de.quinscape.automatontest.domain.tables.pojos.Address;
 import de.quinscape.automatontest.domain.tables.pojos.Customer;
 import de.quinscape.automatontest.domain.tables.pojos.Order;
 import de.quinscape.automatontest.domain.tables.pojos.OrderItem;
+import de.quinscape.automatontest.model.ValidationRules;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.domainql.annotation.GraphQLLogic;
 import de.quinscape.domainql.config.SourceField;
@@ -72,7 +73,8 @@ public class GraphQLConfiguration
                 Customer.class,
                 Order.class,
                 OrderItem.class,
-                Address.class
+                Address.class,
+                ValidationRules.class
             )
 
             // configure object creation for schema relationships
