@@ -1,4 +1,4 @@
-package de.quinscape.automatontest.runtime.rules;
+package de.quinscape.automatontest.model;
 
 import org.svenson.JSONTypeHint;
 
@@ -8,7 +8,7 @@ public class Rule
 {
     private String name;
 
-    private List<RuleField> ruleFields;
+    private List<RuleField> fields;
 
 
     public String getName()
@@ -23,15 +23,15 @@ public class Rule
     }
 
 
-    public List<RuleField> getRuleFields()
+    public List<RuleField> getFields()
     {
-        return ruleFields;
+        return fields;
     }
 
 
     @JSONTypeHint(RuleField.class)
-    public void setRuleFields(List<RuleField> ruleFields)
+    public void setFields(List<RuleField> fields)
     {
-        this.ruleFields = ruleFields;
+        this.fields = fields;
     }
 }

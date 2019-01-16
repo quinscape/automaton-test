@@ -1,7 +1,7 @@
 import "whatwg-fetch"
 import bootstrap from 'jsview-bootstrap'
 import { configure, runInAction } from "mobx"
-import { startup, config, getCurrentProcess } from "@quinscape/automaton-js"
+import { startup, config, getCurrentProcess, addConfig } from "@quinscape/automaton-js"
 import Layout from "../../components/Layout";
 
 // noinspection ES6UnusedImports
@@ -23,6 +23,8 @@ bootstrap(
             initial,
             config => {
                 config.layout = Layout;
+
+                addConfig("validationRules", initial.validationRules)
             }
         );
     },

@@ -5,17 +5,19 @@ import de.quinscape.automaton.runtime.i18n.TranslationService;
 import de.quinscape.automaton.runtime.provider.AutomatonJsViewProvider;
 import de.quinscape.automaton.runtime.provider.ProcessInjectionService;
 import de.quinscape.automaton.runtime.ws.AutomatonWebSocketHandler;
-import de.quinscape.automatontest.runtime.rules.ValidationRuleProvider;
+import de.quinscape.automatontest.model.ValidationRules;
 import de.quinscape.domainql.DomainQL;
-import de.quinscape.domainql.preload.PreloadedGraphQLQueryProvider;
 import de.quinscape.domainql.schema.SchemaDataProvider;
 import de.quinscape.spring.jsview.JsViewResolver;
+import de.quinscape.spring.jsview.loader.ResourceHandle;
 import de.quinscape.spring.jsview.loader.ResourceLoader;
 import graphql.schema.GraphQLSchema;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.core.env.Environment;
 import org.springframework.http.CacheControl;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -29,6 +31,8 @@ import java.util.concurrent.TimeUnit;
 public class WebConfiguration
     implements WebMvcConfigurer
 {
+
+    private final Environment env;
 
     private final ServletContext servletContext;
 
@@ -45,19 +49,25 @@ public class WebConfiguration
 
     private final ScopeTableConfig scopeTableConfig;
 
+    private final ResourceHandle<ValidationRules> validationRulesHandle;
+
 
     @Autowired
     public WebConfiguration(
+        Environment env,
         ServletContext servletContext,
         ResourceLoader resourceLoader,
         ProcessInjectionService processInjectionService,
         TranslationService translationService,
         DSLContext dslContext,
         ScopeTableConfig scopeTableConfig,
+        @Qualifier("validationRules")
+        ResourceHandle<ValidationRules> validationRulesHandle,
         @Lazy Optional<AutomatonWebSocketHandler> optionalSocketHandler,
         @Lazy DomainQL domainQL
     )
     {
+        this.env = env;
         this.servletContext = servletContext;
         this.domainQL = domainQL;
         this.resourceLoader = resourceLoader;
@@ -67,6 +77,7 @@ public class WebConfiguration
         this.translationService = translationService;
         this.dslContext = dslContext;
         this.scopeTableConfig = scopeTableConfig;
+        this.validationRulesHandle = validationRulesHandle;
     }
 
 
@@ -88,13 +99,13 @@ public class WebConfiguration
                     )
                 )
 
-                // queries defined via PRELOADED_QUERIES
-                .withViewDataProvider(
-                    new PreloadedGraphQLQueryProvider(
-                        graphQLSchema,
-                        resourceLoader
-                    )
-                )
+//                // queries defined via PRELOADED_QUERIES
+//                .withViewDataProvider(
+//                    new PreloadedGraphQLQueryProvider(
+//                        graphQLSchema,
+//                        resourceLoader
+//                    )
+//                )
 
                 // schema data for domainql-form and automaton-js
                 .withViewDataProvider(
@@ -104,9 +115,8 @@ public class WebConfiguration
                 )
 
                 .withViewDataProvider(
-                    new ValidationRuleProvider()
+                    ctx -> ctx.provideViewData("validationRules", validationRulesHandle.getContent())
                 )
-
                 .build()
         );
     }

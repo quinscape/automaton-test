@@ -4,6 +4,7 @@ import de.quinscape.automaton.runtime.config.AutomatonConfiguration;
 import de.quinscape.automatontest.runtime.config.DomainConfiguration;
 import de.quinscape.automatontest.runtime.config.GraphQLConfiguration;
 import de.quinscape.automatontest.runtime.config.SecurityConfiguration;
+import de.quinscape.automatontest.runtime.config.ServiceConfiguration;
 import de.quinscape.automatontest.runtime.config.WebConfiguration;
 import de.quinscape.automaton.runtime.config.WebsocketConfiguration;
 import de.quinscape.automatontest.runtime.controller.JsEntryPointController;
@@ -16,6 +17,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -37,7 +39,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
     WebsocketConfiguration.class,
     DomainConfiguration.class,
     WebConfiguration.class,
-    SecurityConfiguration.class
+    SecurityConfiguration.class,
+    ServiceConfiguration.class
 })
 
 @EnableWebSecurity(debug = false)

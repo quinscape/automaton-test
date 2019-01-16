@@ -81,13 +81,13 @@
         <dependency>
             <groupId>de.quinscape.domainql</groupId>
             <artifactId>domainql</artifactId>
-            <version>0.15</version>
+            <version>0.16-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>de.quinscape</groupId>
             <artifactId>spring-jsview</artifactId>
-            <version>0.2</version>
+            <version>0.3-SNAPSHOT</version>
         </dependency>
 
         <!-- DATABASE DEPENDENCIES -->

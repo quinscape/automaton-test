@@ -6,6 +6,8 @@ import { config, i18n, Icon, Button } from "@quinscape/automaton-js"
 import { Field, GlobalErrors, TextArea, withForm } from "domainql-form"
 import { ButtonToolbar } from "reactstrap";
 
+import validation from "../../../../../services/validation"
+
 class FooForm extends React.Component {
 
     render()
@@ -62,7 +64,8 @@ export default withForm(
         FooForm
     ),
     {
-        type: "FooInput"
+        type: "FooInput",
+        validation: validation("FooInput")
     }
 )
 
