@@ -7,12 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_15_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_15.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton/automaton.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/automaton.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/ui/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/ui/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/lib/ui/Button.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/lib/ui/Button.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/ui/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/ui/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/ProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/ProcessController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/../automaton/target/" />
@@ -25,80 +24,96 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/shipping/shipping.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../automaton-js/src/Process.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.babelrc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+            <state relative-caret-position="1440">
+              <caret line="80" column="33" selection-start-line="74" selection-start-column="32" selection-end-line="80" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/sub-process-example/sub-process-example.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+            <state relative-caret-position="504">
+              <caret line="34" column="38" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/sub-process-example/composites/SubProcessHome.js">
+        <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/process-test/process-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+            <state relative-caret-position="918">
+              <caret line="51" column="53" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/wire/wire.js">
+        <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/ProcessController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+            <state relative-caret-position="1206">
+              <caret line="67" column="87" selection-start-line="67" selection-start-column="87" selection-end-line="67" selection-end-column="87" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../automaton-js/src/injection.js">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/provider/ProcessInjectionService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///usr/local/java/jdk1.8/src.zip!/java/lang/Enum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3672">
+              <caret line="237" selection-start-line="237" selection-end-line="237" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../automaton/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1620">
+              <caret line="90" selection-start-line="89" selection-end-line="90" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/CRUDList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/customer/composites/CustomerList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="72">
+                <caret line="4" selection-start-line="4" selection-end-line="4" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -108,31 +123,15 @@
       <list>
         <option value="TypeScript File" />
         <option value="Interface" />
-        <option value="JavaScript File" />
-        <option value="Enum" />
         <option value="JUnit4 Test Class" />
+        <option value="Enum" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>changedE</find>
-      <find>formInstance</find>
-      <find>GraphQLQuery</find>
-      <find>decor</find>
-      <find>fieldId</find>
-      <find>env.form</find>
-      <find>currentState</find>
-      <find>console.log</find>
-      <find>FormConfigProvider</find>
-      <find>&lt;Card</find>
-      <find>options</find>
-      <find>\{[ ]*(.*?)[ ]*}</find>
-      <find>formConfig.getValue</find>
-      <find>pojo</find>
-      <find>javaType</find>
-      <find>GraphQLSchema</find>
       <find>&quot;gra</find>
       <find>webs</find>
       <find>single</find>
@@ -147,6 +146,22 @@
       <find>confir</find>
       <find>confirmation</find>
       <find>new QueryConfig</find>
+      <find>FieldMode</find>
+      <find>length</find>
+      <find>ResourceH</find>
+      <find>jsFunctionReferences</find>
+      <find>enabled</find>
+      <find>@Valu</find>
+      <find>@Value</find>
+      <find>&quot;lodash.</find>
+      <find>validateField</find>
+      <find>lodas</find>
+      <find>shouldCom</find>
+      <find>React.Com</find>
+      <find>flag</find>
+      <find>\{[ ]*(.*)[ ]*}</find>
+      <find>&quot;automaton-js</find>
+      <find>ColumnVisibility</find>
     </findStrings>
     <replaceStrings>
       <replace>shortName</replace>
@@ -177,8 +192,8 @@
       <replace />
       <replace>Foo</replace>
       <replace>AutomatonZipletFilter</replace>
-      <replace>{ $1 }</replace>
       <replace>ProjectException</replace>
+      <replace>{ $1 }</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -191,38 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/ui/DataGrid.js" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/wire/wire.js" />
-        <option value="$PROJECT_DIR$/src/main/js/test.js" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/deleteDomainObject.js" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooDetail.js" />
-        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/DomainConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/WebConfiguration.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooForm.js" />
-        <option value="$PROJECT_DIR$/../automaton/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/ShippingLogic.java" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/CRUDList.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/graphql.js" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/GraphQLQuery.js" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/GraphQLController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/SecurityConfiguration.java" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/injection.js" />
-        <option value="$PROJECT_DIR$/src/docs/cleancode.md" />
-        <option value="$PROJECT_DIR$/../automaton-js/src/index.js" />
-        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/Paging.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/FilterMode.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/DataSourceFilterMode.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/DataSourceFilterField.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/data/AutomatonFilterConverter.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/FilterField.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/config/AutomatonConfiguration.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/FilteredDataSource.java" />
         <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/InvalidSortOrderException.java" />
         <option value="$PROJECT_DIR$/../automaton/src/test/java/de/quinscape/automaton/model/data/FilteredDataDefinitionTest.java" />
         <option value="$PROJECT_DIR$/../automaton/src/test/java/de/quinscape/automaton/model/data/SortOrderTest.java" />
@@ -239,9 +222,41 @@
         <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/DefaultProvider.java" />
         <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/Filtered.java" />
         <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/ObjectFactory.java" />
-        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/QueryConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/TestLogic.java" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/rules/ModePolicy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/rules/Rule.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/rules/RuleField.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/rules/RuleFieldValidation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/rules/ValidationRules.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/AutomatonTestApplication.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/rules/ValidationRuleProvider.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/ValidationService.java" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/config/WebsocketConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/ServiceConfiguration.java" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/index.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/config.js" />
+        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" />
+        <option value="$PROJECT_DIR$/../automaton-js/src/service/validation.js" />
+        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js" />
+        <option value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooForm.js" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/TestLogic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/model/ValidationRules.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/WebConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/model/RuleFieldValidation.java" />
+        <option value="$PROJECT_DIR$/src/test/js/validation.js" />
+        <option value="$PROJECT_DIR$/src/test/js/test.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/rules.json" />
+        <option value="$PROJECT_DIR$/src/main/js/services/validation.js" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/NamedConfig.java" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/ColumnStatus.java" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/ColumnVisibility.java" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/Model.java" />
+        <option value="/var/www/test/natural-spread.html" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/ColumnConfig.java" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/QueryConfig.java" />
+        <option value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/InteractiveQuery.java" />
       </list>
     </option>
   </component>
@@ -500,6 +515,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -551,17 +567,110 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="automaton" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="shipping" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="shipping" type="462c0819:PsiDirectoryNode" />
+              <item name="processes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="shipping" type="462c0819:PsiDirectoryNode" />
+              <item name="processes" type="462c0819:PsiDirectoryNode" />
+              <item name="crud-test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="shipping" type="462c0819:PsiDirectoryNode" />
+              <item name="processes" type="462c0819:PsiDirectoryNode" />
+              <item name="process-test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="shipping" type="462c0819:PsiDirectoryNode" />
+              <item name="processes" type="462c0819:PsiDirectoryNode" />
+              <item name="sub-process-example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="automaton-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="shipping" type="462c0819:PsiDirectoryNode" />
+              <item name="processes" type="462c0819:PsiDirectoryNode" />
+              <item name="sub-process-example" type="462c0819:PsiDirectoryNode" />
+              <item name="composites" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="automaton-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GraphQL Schemas" type="390a5855:JSGraphQLSchemaDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -584,7 +693,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="8.12.0" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../automaton" />
+    <property name="last_opened_file_path" value="/var/www/test/natural-spread.html" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/../automaton-js/node_modules/mocha" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -592,12 +701,16 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveMembersDialog.RECENTS_KEY">
-      <recent name="de.quinscape.automaton.model.data.SortOrder" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="de.quinscape.automaton.model.data" />
+      <recent name="de.quinscape.automaton.runtime" />
+      <recent name="de.quinscape.automatontest.runtime.service" />
+      <recent name="de.quinscape.automaton.runtime.provider" />
+      <recent name="de.quinscape.automaton" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="de.quinscape.automaton.runtime.provider" />
@@ -608,19 +721,13 @@
       <recent name="de.quinscape.automaton.model.view" />
       <recent name="de.quinscape.automaton.util" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="de.quinscape.automaton.model.data.SortOrder" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="de.quinscape.automatontest.model" />
       <recent name="de.quinscape.automaton.model.data" />
       <recent name="de.quinscape.automaton.runtime" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../automaton-js" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/shipping" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/util" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="de.quinscape.automatontest.runtime.service" />
@@ -630,22 +737,25 @@
       <recent name="de.quinscape.automaton.model.process" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/js" />
       <recent name="$PROJECT_DIR$/src/docs" />
       <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/domain" />
       <recent name="$PROJECT_DIR$/../automaton-js/src" />
       <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes" />
-      <recent name="$PROJECT_DIR$/src/main/js/components" />
     </key>
     <key name="es6.move.members.recent.items">
       <recent name="$PROJECT_DIR$/../automaton-js/src/DialogMode.js" />
       <recent name="$PROJECT_DIR$/../automaton-js/src/sync.js" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="de.quinscape.automaton.model.data" />
-      <recent name="de.quinscape.automaton.runtime" />
-      <recent name="de.quinscape.automatontest.runtime.service" />
-      <recent name="de.quinscape.automaton.runtime.provider" />
-      <recent name="de.quinscape.automaton" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/js/services" />
+      <recent name="$PROJECT_DIR$/../automaton-js" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/shipping" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -671,6 +781,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RuleField" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.quinscape.automatontest.model.RuleField" />
+      <module name="automaton-test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -681,6 +799,7 @@
       <module name="automaton" />
       <option name="PACKAGE_NAME" value="de.quinscape.automaton.model.data" />
       <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.model.data.SortOrderTest" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -717,20 +836,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SortOrderTest.testOrderByRegEx" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton" />
-      <option name="PACKAGE_NAME" value="de.quinscape.automaton.model.data" />
-      <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.model.data.SortOrderTest" />
-      <option name="METHOD_NAME" value="testOrderByRegEx" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SortOrderTest.testSortOrderCreation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="automaton" />
       <option name="PACKAGE_NAME" value="de.quinscape.automaton.model.data" />
@@ -746,6 +851,7 @@
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -774,6 +880,7 @@
     </configuration>
     <configuration name="Local Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="automaton-test:war exploded">
@@ -870,23 +977,40 @@
       <recursive>false</recursive>
       <method v="2" />
     </configuration>
+    <configuration name="Automaton-Test Tests" type="mocha-javascript-test-runner">
+      <node-interpreter>project</node-interpreter>
+      <node-options>-r babel-register</node-options>
+      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs>
+        <env name="BABEL_ENV" value="test" />
+      </envs>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory>$PROJECT_DIR$/src/test/js</test-directory>
+      <recursive>false</recursive>
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="JUnit.SortOrderTest.testOrderByRegEx" />
+      <item itemvalue="Application.RuleField" />
       <item itemvalue="JUnit.SortOrderTest" />
       <item itemvalue="JUnit.SortOrderTest.testSortOrderCreation" />
       <item itemvalue="JUnit.SortOrderTest.testError" />
       <item itemvalue="JUnit.SortOrderTest.testError3" />
       <item itemvalue="Mocha.Automaton-Js Tests" />
+      <item itemvalue="Mocha.Automaton-Test Tests" />
       <item itemvalue="Spring Boot.DQLMobxApplication" />
       <item itemvalue="Tomcat Server.Local Tomcat" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RuleField" />
         <item itemvalue="JUnit.SortOrderTest" />
         <item itemvalue="JUnit.SortOrderTest.testError3" />
         <item itemvalue="JUnit.SortOrderTest.testError" />
         <item itemvalue="JUnit.SortOrderTest.testSortOrderCreation" />
-        <item itemvalue="JUnit.SortOrderTest.testOrderByRegEx" />
       </list>
     </recent_temporary>
   </component>
@@ -994,6 +1118,15 @@
       <workItem from="1544535958000" duration="1026000" />
       <workItem from="1544554557527" duration="5259000" />
       <workItem from="1544610943162" duration="1448000" />
+      <workItem from="1547567965236" duration="19672000" />
+      <workItem from="1547634578843" duration="4833000" />
+      <workItem from="1547680442094" duration="3961000" />
+      <workItem from="1547725131926" duration="1439000" />
+      <workItem from="1547751697356" duration="1317000" />
+      <workItem from="1547811734895" duration="611000" />
+      <workItem from="1547837481471" duration="1840000" />
+      <workItem from="1548072396616" duration="5437000" />
+      <workItem from="1548155065205" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
@@ -1006,18 +1139,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FilteredDataDefinitionTest_testOrderByRegEx - 2018.12.10 at 15h 00m 00s.xml">
-      <configuration name="FilteredDataDefinitionTest.testOrderByRegEx" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FilteredDataDefinitionTest_testOrderByRegEx - 2018.12.10 at 15h 00m 13s.xml">
-      <configuration name="FilteredDataDefinitionTest.testOrderByRegEx" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SortOrderTest - 2018.12.10 at 15h 06m 27s.xml">
-      <configuration name="SortOrderTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SortOrderTest_testPositive - 2018.12.10 at 15h 08m 59s.xml">
-      <configuration name="SortOrderTest.testPositive" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SortOrderTest_testPositive - 2018.12.10 at 15h 09m 19s.xml">
       <configuration name="SortOrderTest.testPositive" configurationId="JUnit" />
     </history-entry>
@@ -1036,15 +1157,27 @@
     <history-entry file="SortOrderTest - 2018.12.10 at 15h 11m 15s.xml">
       <configuration name="SortOrderTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Automaton-Js_Tests - 2019.01.17 at 03h 24m 39s.xml">
+      <configuration name="Automaton-Js Tests" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Automaton-Js_Tests - 2019.01.17 at 03h 24m 58s.xml">
+      <configuration name="Automaton-Js Tests" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Automaton-Test_Tests - 2019.01.17 at 03h 25m 59s.xml">
+      <configuration name="Automaton-Test Tests" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Automaton-Test_Tests - 2019.01.17 at 12h 41m 29s.xml">
+      <configuration name="Automaton-Test Tests" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="707717000" />
+    <option name="totallyTimeSpent" value="747426000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+    <frame x="2627" y="25" width="3373" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26890308" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21340548" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1054,7 +1187,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.33297643" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4992997" visible="true" weight="0.30620986" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992997" weight="0.30620986" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993576" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1063,7 +1196,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3290461" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007003" side_tool="true" weight="0.23019272" />
-      <window_info anchor="bottom" id="GraphQL" order="11" sideWeight="0.4992997" weight="0.23019272" />
+      <window_info anchor="bottom" id="GraphQL" order="11" sideWeight="0.4992997" visible="true" weight="0.2348367" />
       <window_info anchor="bottom" id="Spring" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32762313" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32976446" />
@@ -1183,6 +1316,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/node_modules/automaton-js" />
+    </ignored-roots>
     <MESSAGE value="Mention Conway's Law" />
     <option name="LAST_COMMIT_MESSAGE" value="Mention Conway's Law" />
   </component>
@@ -1191,7 +1327,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java</url>
-          <line>41</line>
+          <line>37</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -1208,338 +1344,243 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.14-SNAPSHOT/domainql-0.14-SNAPSHOT-sources.jar!/de/quinscape/domainql/util/DomainObjectUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="133" column="22" selection-start-line="133" selection-start-column="22" selection-end-line="133" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/spring-jsview/0.2/spring-jsview-0.2-sources.jar!/de/quinscape/spring/jsview/loader/ResourceLoader.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/spring-jsview/0.2/spring-jsview-0.2-sources.jar!/de/quinscape/spring/jsview/loader/Java7NIOResourceWatcher.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/spring-jsview/0.2/spring-jsview-0.2-sources.jar!/de/quinscape/spring/jsview/loader/ResourceWatcher.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/spring-jsview/0.2/spring-jsview-0.2-sources.jar!/de/quinscape/spring/jsview/loader/ServletResourceLoader.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="85" selection-start-line="80" selection-end-line="85" />
+        <state relative-caret-position="244">
+          <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/rules/ValidationRuleProvider.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/ValidationService.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/spring-jsview/0.2/spring-jsview-0.2-sources.jar!/de/quinscape/spring/jsview/loader/FileResourceHandle.java" />
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/config/WebsocketConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        <state relative-caret-position="206">
+          <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/CRUDList.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/ServiceConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+        <state relative-caret-position="448">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/3.10.6/jooq-3.10.6-sources.jar!/org/jooq/impl/DefaultDataType.java">
+    <entry file="file://$PROJECT_DIR$/../automaton-js/src/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton-js/src/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="844" selection-start-line="844" selection-end-line="844" />
+        <state relative-caret-position="73">
+          <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/3.10.6/jooq-3.10.6-sources.jar!/org/jooq/DSLContext.java">
+    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="6962" column="39" selection-start-line="6962" selection-start-column="39" selection-end-line="6962" selection-end-column="39" />
+        <state relative-caret-position="390">
+          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java">
+    <entry file="file://$PROJECT_DIR$/node_modules/domainql-form/src/InputSchema.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="165">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.15-SNAPSHOT/domainql-0.15-SNAPSHOT-sources.jar!/de/quinscape/domainql/util/DomainObjectUtil.java">
+    <entry file="file://$PROJECT_DIR$/../automaton-js/src/ui/DataGrid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="205" lean-forward="true" selection-start-line="205" selection-end-line="205" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/GraphQLQuery.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/model/ModePolicy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="10" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/Transition.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/model/RuleField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="1275">
+          <caret line="124" column="11" selection-start-line="124" selection-start-column="11" selection-end-line="124" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/graphql.js">
+    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="80" column="33" selection-start-line="74" selection-start-column="32" selection-end-line="80" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/FooForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" column="8" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/js/components/JSONData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4515">
+          <caret line="301" column="4" selection-start-line="301" selection-start-column="4" selection-end-line="301" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/domainql-form/src/withForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton-js/node_modules/domainql-form/src/InputSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="10" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/WireTestResult.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/model/ValidationRules.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="58" column="43" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/model/RuleFieldValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#704#705#0" expanded="true" />
+            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#905#906#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#993#994#0" expanded="true" />
+            <element signature="e#1035#1036#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/WebConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="119" column="38" selection-start-line="119" selection-start-column="38" selection-end-line="119" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/model/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/js/services/validation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="140" column="17" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/rules.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/js/validation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="75" selection-start-line="13" selection-start-column="75" selection-end-line="13" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/js/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton-js/lib/withAutomatonEnv.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/GraphQLController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/SecurityConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/ShippingLogic.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/docs/cleancode.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="855">
-            <caret line="214" column="81" selection-start-line="214" selection-start-column="81" selection-end-line="214" selection-end-column="81" />
-            <folding>
-              <element signature="e#277#278#0" expanded="true" />
-              <element signature="e#307#308#0" expanded="true" />
-              <element signature="e#375#376#0" expanded="true" />
-              <element signature="e#412#413#0" expanded="true" />
-              <element signature="e#464#465#0" expanded="true" />
-              <element signature="e#492#493#0" expanded="true" />
-              <element signature="e#233#234#0" expanded="true" />
-              <element signature="e#263#264#0" expanded="true" />
-              <element signature="e#340#341#0" expanded="true" />
-              <element signature="e#377#378#0" expanded="true" />
-              <element signature="e#438#439#0" expanded="true" />
-              <element signature="e#466#467#0" expanded="true" />
-              <element signature="e#536#537#0" expanded="true" />
-              <element signature="e#570#571#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/injection.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/GridView.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/Paging.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#273#274#0" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/DataSourceFilterMode.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/3.10.6/jooq-3.10.6-sources.jar!/org/jooq/Condition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/data/AutomatonFilterConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/config/WebsocketConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/config/AutomatonConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-891">
-          <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/FieldFilterDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding>
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#519#520#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/InvalidSortOrderException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-          <folding>
-            <element signature="e#170#171#0" expanded="true" />
-            <element signature="e#200#201#0" expanded="true" />
-            <element signature="e#278#279#0" expanded="true" />
-            <element signature="e#315#316#0" expanded="true" />
-            <element signature="e#377#378#0" expanded="true" />
-            <element signature="e#405#406#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/java/jdk1.8/src.zip!/java/util/Collections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="4787" column="30" selection-start-line="4787" selection-start-column="30" selection-end-line="4787" selection-end-column="30" />
-          <folding>
-            <element signature="e#186747#186748#0" expanded="true" />
-            <element signature="e#186792#186793#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/test/java/de/quinscape/automaton/model/data/SortOrderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="e#1156#1157#0" expanded="true" />
-            <element signature="e#1186#1187#0" expanded="true" />
-            <element signature="e#1419#1420#0" expanded="true" />
-            <element signature="e#1484#1485#0" expanded="true" />
-            <element signature="e#1570#1571#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/Sorted.java" />
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/SortConfig.java" />
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/SortOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="11" column="81" lean-forward="true" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
-          <folding>
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#371#372#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.15-SNAPSHOT/domainql-0.15-SNAPSHOT-sources.jar!/de/quinscape/domainql/util/JSONHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.15-SNAPSHOT/domainql-0.15-SNAPSHOT-sources.jar!/de/quinscape/domainql/schema/SchemaDataProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="99" column="18" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
-          <folding>
-            <element signature="e#3146#3147#0" expanded="true" />
-            <element signature="e#3198#3199#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/java/jdk1.8/src.zip!/java/util/function/Supplier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/standard-queries.js" />
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/convert.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/tables/pojos/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/ObjectFactory.java" />
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/QueryConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-          <folding>
-            <element signature="e#911#912#0" expanded="true" />
-            <element signature="e#999#1000#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/js/apps/shipping/domain/Foo.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/ui/Button.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2130">
-          <caret line="142" column="26" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton-js/src/Process.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/Filtered.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
-          <folding>
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.15-SNAPSHOT/domainql-0.15-SNAPSHOT-sources.jar!/de/quinscape/domainql/util/Paged.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/TestLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="95" column="7" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/ColumnVisibility.java" />
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/ColumnStatus.java" />
+    <entry file="file:///var/www/test/natural-spread.html" />
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/NamedConfig.java" />
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/Filtered.java" />
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/Paging.java" />
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/ColumnConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#168#169#0" expanded="true" />
+            <element signature="e#198#199#0" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+            <element signature="e#288#289#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/QueryConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1550,31 +1591,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/WebConfiguration.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.16-SNAPSHOT/domainql-0.16-SNAPSHOT-sources.jar!/de/quinscape/domainql/util/DegenerificationUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
+        <state relative-caret-position="780">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/TestLogic.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.16-SNAPSHOT/domainql-0.16-SNAPSHOT-sources.jar!/de/quinscape/domainql/logic/GraphQLValueProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="77" selection-start-line="77" selection-end-line="94" />
+        <state relative-caret-position="2085">
+          <caret line="142" column="70" selection-start-line="142" selection-start-column="70" selection-end-line="142" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.babelrc">
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/NamedModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+        <state relative-caret-position="180">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        <state relative-caret-position="60">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/process/ViewState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/data/InteractiveQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
