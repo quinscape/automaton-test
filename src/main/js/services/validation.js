@@ -1,10 +1,8 @@
-import { startup, config, getCurrentProcess, addConfig } from "@quinscape/automaton-js"
-
-import get from "lodash.get"
+import { config, i18n } from "@quinscape/automaton-js"
 import toPath from "lodash.topath"
 
-import { i18n } from "automaton-js"
 import { FieldMode } from "domainql-form";
+
 
 const cache = {
 
@@ -35,11 +33,20 @@ function prepareFields(fields)
 
         if (validations)
         {
+            const out = [];
+
             for (let j = 0; j < validations.length; j++)
             {
                 const entry = validations[j];
-                entry.re = new RegExp(entry.regexp, entry.flags);
+                const re = new RegExp(
+                    entry.regexp,
+                    (entry.caseInsensitive ? "i" : "") + (entry.multiLine ? "m" : "")
+                );
+                out.push(re, entry.message);
             }
+
+            // overwrite with flat array
+            field.validations = out;
         }
     }
 }
@@ -70,6 +77,79 @@ export function matchPath(rulePath, current)
 
 
 /**
+ * Overrides the given field context with the field-configuration relating
+ * parts of the field rule.
+ *
+ * @param {Object} ctx          field context
+ * @param {Object} fieldRule    field rule
+ */
+function overrideContextWithRule(ctx, fieldRule)
+{
+    const {mode, tooltip, placeholder, validations, length, required} = fieldRule;
+
+    // if the mode is set in the rule, ..
+    if (mode)
+    {
+        // ..apply according to policy
+        switch (fieldRule.modePolicy)
+        {
+            case "IGNORE_LOCAL":
+                ctx.mode = mode;
+                break;
+            case "OVERRIDE":
+                ctx.mode = ctx.mode !== FieldMode.NORMAL ? ctx.mode : mode;
+        }
+    }
+
+    if (tooltip)
+    {
+        ctx.tooltip = tooltip;
+    }
+
+    if (placeholder)
+    {
+        ctx.placeholder = placeholder;
+    }
+
+    // copy field rule to field context if it contains validations
+    ctx.fieldRule = ( (validations && validations.length) || length > 0 || required) && fieldRule;
+}
+
+
+function evaluateRule(fieldRule, value)
+{
+    const {name, required, length, validations} = fieldRule;
+
+    const errors = [];
+
+    if (required && value === "")
+    {
+        errors.push(i18n(name + ":Required"));
+    }
+
+    if (length > 0 && value.length > length)
+    {
+        errors.push(i18n(name + ":Too Long"));
+    }
+
+    if (validations)
+    {
+        for (let i = 0; i < validations.length; i += 2)
+        {
+            const re = validations[i];
+            const message = validations[i + 1];
+            if (!re.test(value))
+            {
+                errors.push(message);
+            }
+        }
+    }
+
+    return errors.length > 0 ? errors : null;
+}
+
+
+/**
  * Returns a high-level validation object for domainql-form that evaluates the externalized rules.json files.
  *
  * @param name
@@ -83,7 +163,7 @@ export default function(name)
     }
 
 
-    const { validationRules } = config;
+    const { validationRules  } = config;
 
     if (validationRules)
     {
@@ -91,53 +171,27 @@ export default function(name)
 
         if (!rule)
         {
-            console.log("No rule for ", name);
+            console.log("No rule for", name);
             return null;
         }
 
-        const { fields } = rule;
+        const { fields  } = rule;
         prepareFields(fields);
 
         const validationObject = {
             validateField: (ctx, value) => {
 
-                const { fieldRule } = ctx;
+                const { fieldRule  } = ctx;
 
                 if (fieldRule)
                 {
-                    const { name, required, length, validations } = fieldRule;
-
-                    const errors = [];
-
-                    if (required && value === "")
-                    {
-                        errors.push(i18n( name + ":Required"));
-                    }
-
-                    if (length > 0 && value.length > length)
-                    {
-                        errors.push(i18n( name + ":Too Long"));
-                    }
-
-                    if (validations)
-                    {
-                        for (let i = 0; i < validations.length; i++)
-                        {
-                            const entry = validations[i];
-                            if (entry.re.test(value))
-                            {
-                                errors.push(entry.message);
-                            }
-                        }
-                    }
-
-                    return errors.length > 0 ? errors : null;
+                    return evaluateRule(fieldRule, value);
                 }
 
             },
             fieldContext: ctx => {
 
-                console.log("Creat Field Context Overlay", ctx.qualifiedName);
+                //console.log("Create Field Context Overlay", ctx.qualifiedName);
 
                 const path = toPath(ctx.qualifiedName);
 
@@ -147,38 +201,7 @@ export default function(name)
 
                     if (matchPath(fieldRule.path, path))
                     {
-                        const { mode, tooltip, placeholder, validations, length, required } = fieldRule;
-
-                        if (mode)
-                        {
-                            switch(fieldRule.modePolicy)
-                            {
-                                case "IGNORE_LOCAL":
-                                    ctx.mode = mode;
-                                    break;
-                                case "OVERRIDE":
-                                    ctx.mode = ctx.mode !== FieldMode.NORMAL ? ctx.mode : mode;
-                            }
-                        }
-
-                        if (tooltip)
-                        {
-                            ctx.tooltip = tooltip;
-                        }
-
-                        if (placeholder)
-                        {
-                            ctx.placeholder = placeholder;
-                        }
-
-                        ctx.fieldRule = (
-                                (
-                                    validations &&
-                                    validations.length
-                                )  ||
-                                length > 0 ||
-                                required
-                            ) && fieldRule;
+                        overrideContextWithRule(ctx, fieldRule);
                     }
                 }
             }
@@ -187,6 +210,7 @@ export default function(name)
         //console.log("VALIDATION OBJECT", name, validationObject, fields);
 
         cache[name] = validationObject;
+        
         return validationObject;
     }
 }

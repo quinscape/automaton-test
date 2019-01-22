@@ -115,7 +115,10 @@ public class WebConfiguration
                 )
 
                 .withViewDataProvider(
-                    ctx -> ctx.provideViewData("validationRules", validationRulesHandle.getContent())
+                    ctx -> {
+                        final ValidationRules content = validationRulesHandle.getContent();
+                        ctx.provideViewData("validationRules", content);
+                    }
                 )
                 .build()
         );

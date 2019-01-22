@@ -14,6 +14,11 @@ public class ValidationRules
     private List<Rule> rules;
     private String comment;
 
+    /**
+     * <code>true</code> if the rules are backed by a writable resource handle / were loaded from either the servlet
+     * context or an external directory by file.
+     */
+    private boolean writable;
 
     public List<Rule> getRules()
     {
@@ -42,5 +47,17 @@ public class ValidationRules
     public void setComment(String comment)
     {
         this.comment = comment;
+    }
+
+
+    public boolean isWritable()
+    {
+        return writable;
+    }
+
+
+    public void setWritable(boolean writable)
+    {
+        this.writable = writable;
     }
 }

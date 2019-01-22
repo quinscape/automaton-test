@@ -1,7 +1,5 @@
 package de.quinscape.automatontest.runtime.service;
 
-import de.quinscape.automaton.model.data.Filtered;
-import de.quinscape.automaton.model.data.QueryConfig;
 import de.quinscape.automaton.runtime.auth.AutomatonAuthentication;
 import de.quinscape.automatontest.domain.tables.pojos.Foo;
 import de.quinscape.domainql.annotation.GraphQLField;
@@ -95,7 +93,7 @@ public class TestLogic
 
 
 
-        @GraphQLMutation
+    @GraphQLMutation
     public WireTestResult wireTestMutation(Foo input, int count)
     {
         return new WireTestResult(input.getId() , input.getCreated(), input.getCreated().toInstant() + ":" + count);
@@ -114,5 +112,47 @@ public class TestLogic
         foo.setOwnerId(AutomatonAuthentication.current().getId());
 
         return foo;
+    }
+
+
+    public static class WireTestResult
+    {
+        private final String id;
+
+        private final Timestamp created;
+
+        private final String check;
+
+
+        public WireTestResult()
+        {
+            this(null, null, null);
+
+        }
+
+        public WireTestResult(String id, Timestamp created, String check)
+        {
+            this.id = id;
+            this.created = created;
+            this.check = check;
+        }
+
+
+        public String getId()
+        {
+            return id;
+        }
+
+
+        public Timestamp getCreated()
+        {
+            return created;
+        }
+
+
+        public String getCheck()
+        {
+            return check;
+        }
     }
 }

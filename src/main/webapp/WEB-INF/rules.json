@@ -10,17 +10,17 @@
                     "placeholder" : "not a,b or c",
                     "validations": [
                         {
-                            "regexp" : "^a",
+                            "regexp" : "^[^a]",
                             "flags" : "i",
                             "message" : "Nöö.."
                         },
                         {
-                            "regexp" : "^b",
+                            "regexp" : "^[^b]",
                             "flags" : "i",
                             "message" : "Auch nicht.."
                         },
                         {
-                            "regexp" : "^c",
+                            "regexp" : "^[^c]",
                             "flags" : "i",
                             "message" : "Sowieso nicht.."
                         }
