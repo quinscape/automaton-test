@@ -1,36 +1,5 @@
 {
     "_" : "Default validation rules.",
     "rules": [
-        {
-            "name": "FooInput",
-            "fields": [
-                {
-                    "name" : "name",
-                    "tooltip" : "Useless",
-                    "placeholder" : "not a,b or c",
-                    "validations": [
-                        {
-                            "regexp" : "^[^a]",
-                            "flags" : "i",
-                            "message" : "Nöö.."
-                        },
-                        {
-                            "regexp" : "^[^b]",
-                            "flags" : "i",
-                            "message" : "Auch nicht.."
-                        },
-                        {
-                            "regexp" : "^[^c]",
-                            "flags" : "i",
-                            "message" : "Sowieso nicht.."
-                        }
-                    ]
-                },
-                {
-                    "name" : "description",
-                    "mode": "READ_ONLY"
-                }
-            ]
-        }
     ]
 }
