@@ -54,6 +54,7 @@ export function initProcess(process, scope)
                                 {
                                 target: {
                                     ...t.context,
+                                    flag: true,
                                     ownerId:
                                         config.auth.id || ""
                                 },
