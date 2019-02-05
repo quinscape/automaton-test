@@ -95,7 +95,7 @@
     <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.9.3" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
-    <orderEntry type="library" name="Maven: de.quinscape.domainql:domainql:0.16-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: de.quinscape.domainql:domainql:0.19-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.atteo:evo-inflector:1.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.0.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:24.1-jre" level="project" />
@@ -109,7 +109,7 @@
     <orderEntry type="library" name="Maven: org.jooq:jooq:3.10.6" level="project" />
     <orderEntry type="library" name="Maven: org.jooq:jooq-codegen:3.10.6" level="project" />
     <orderEntry type="library" name="Maven: org.jooq:jooq-meta:3.10.8" level="project" />
-    <orderEntry type="library" name="Maven: com.graphql-java:graphql-java:10.0" level="project" />
+    <orderEntry type="library" name="Maven: com.graphql-java:graphql-java:11.0" level="project" />
     <orderEntry type="library" name="Maven: org.antlr:antlr4-runtime:4.7.1" level="project" />
     <orderEntry type="library" name="Maven: com.graphql-java:java-dataloader:2.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.2" level="project" />

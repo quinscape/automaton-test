@@ -57,7 +57,7 @@
           <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.9.3" />
           <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.2" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
-          <element id="library" level="project" name="Maven: de.quinscape.domainql:domainql:0.16-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: de.quinscape.domainql:domainql:0.19-SNAPSHOT" />
           <element id="library" level="project" name="Maven: org.atteo:evo-inflector:1.2.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.9.RELEASE" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:24.1-jre" />
@@ -71,7 +71,7 @@
           <element id="library" level="project" name="Maven: org.jooq:jooq:3.10.6" />
           <element id="library" level="project" name="Maven: org.jooq:jooq-codegen:3.10.6" />
           <element id="library" level="project" name="Maven: org.jooq:jooq-meta:3.10.8" />
-          <element id="library" level="project" name="Maven: com.graphql-java:graphql-java:10.0" />
+          <element id="library" level="project" name="Maven: com.graphql-java:graphql-java:11.0" />
           <element id="library" level="project" name="Maven: org.antlr:antlr4-runtime:4.7.1" />
           <element id="library" level="project" name="Maven: com.graphql-java:java-dataloader:2.1.1" />
           <element id="library" level="project" name="Maven: org.reactivestreams:reactive-streams:1.0.2" />
