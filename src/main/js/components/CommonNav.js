@@ -46,6 +46,11 @@ class CommonNav extends React.Component {
                             CRUD-Test
                         </DropdownItem>
                         <DropdownItem
+                            onClick={() => runProcessURI("/shipping/datagrid-test")}
+                        >
+                            DataGrid-Test
+                        </DropdownItem>
+                        <DropdownItem
                             onClick={() => runProcessURI("/shipping/process-test")}
                         >
                             Process-Test
