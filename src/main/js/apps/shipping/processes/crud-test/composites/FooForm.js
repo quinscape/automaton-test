@@ -1,11 +1,12 @@
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
-import { config, i18n, Icon, Button } from "@quinscape/automaton-js"
+import { Button, config, i18n } from "@quinscape/automaton-js"
 
-import { Field, GlobalErrors, TextArea, withForm } from "domainql-form"
+import { Field, GlobalErrors, TextArea } from "domainql-form"
 import { ButtonToolbar } from "reactstrap";
 
 import validation from "../../../../../services/validation"
+import withAppForm from "../../../../../components/withAppForm";
 
 
 const FooForm = props => {
@@ -63,7 +64,7 @@ const FooForm = props => {
     )
 };
 
-export default withForm(
+export default withAppForm(
     fnObserver(
         FooForm
     ),
