@@ -1,3 +1,8 @@
+.brand-icon
+{
+    font-weight: normal;
+}
+
 .react-calendar__tile--active
 {
     background: #0220b1;

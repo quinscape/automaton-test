@@ -1,24 +1,20 @@
 import React from "react"
-import { observer } from "mobx-react";
+import { observer as fnObserver } from "mobx-react-lite";
 import get from "lodash.get";
 
-@observer
-class FooList extends React.Component {
+const FooList = props => {
 
-    render()
-    {
-        const { path, ob } = this.props;
+    const { path, ob } = props;
 
-        const foos = get(ob, path);
+    const foos = get(ob, path);
 
-        return (
-            <ul>
-                {
-                    foos.map(foo => <li key={foo.id}>{ foo.code }</li> )
-                }
-            </ul>
-        )
-    }
+    return (
+        <ul>
+            {
+                foos.map(foo => <li key={foo.id}>{ foo.code }</li> )
+            }
+        </ul>
+    )
 }
 
-export default FooList
+export default fnObserver(FooList)

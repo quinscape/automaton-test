@@ -1,7 +1,7 @@
 import "whatwg-fetch"
 import bootstrap from 'jsview-bootstrap'
 import { configure, runInAction } from "mobx"
-import { startup, config, getCurrentProcess, addConfig } from "@quinscape/automaton-js"
+import { startup, config, getCurrentProcess, addConfig, shutdown } from "@quinscape/automaton-js"
 import Layout from "../../components/Layout";
 
 // noinspection ES6UnusedImports
@@ -9,9 +9,8 @@ import AUTOMATON_CSS from "./automaton-test.css"
 
 // set MobX configuration
 configure({
-//    enforceActions: "observed"
+    enforceActions: "observed"
 });
-
 
 bootstrap(
     initial => {
@@ -22,8 +21,8 @@ bootstrap(
             require.context("./", true, /\.js$/),
             initial,
             config => {
-                config.layout = Layout;
 
+                config.layout = Layout;
                 addConfig("validationRules", initial.validationRules)
             }
         );
@@ -35,5 +34,6 @@ bootstrap(
 module.exports = {
     config,
     currentProcess: getCurrentProcess,
-    runInAction
+    runInAction,
+    shutdown
 };

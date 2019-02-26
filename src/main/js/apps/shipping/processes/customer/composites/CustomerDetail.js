@@ -1,16 +1,14 @@
 import React from "react"
-import { observer } from "mobx-react";
 
-import { DataGrid, Button, i18n } from "@quinscape/automaton-js"
-import CustomerForm from "./CustomerForm";
+import { i18n } from "@quinscape/automaton-js"
 import JSONData from "../../../../../components/JSONData";
 
-@observer
-class CustomerDetail extends React.Component {
+import { observer as fnObserver } from "mobx-react-lite";
 
-    render()
-    {
-        const { env } = this.props;
+
+const CustomerDetail = props =>  {
+
+        const { env } = props;
 
         const { scope } = env;
 
@@ -24,7 +22,6 @@ class CustomerDetail extends React.Component {
                 <JSONData name="customer" value={ scope.currentCustomer }/>
             </div>
         )
-    }
-}
+};
 
-export default CustomerDetail
+export default fnObserver(CustomerDetail)

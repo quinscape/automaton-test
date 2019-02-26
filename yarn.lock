@@ -1658,10 +1658,10 @@ domain-browser@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
 
-domainql-form@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-2.0.2.tgz#8c5482eeab4e77cf294a7b801a2c04d09a5438d7"
-  integrity sha512-82a8qFbKnx/7DrxE9yn4M6Krrh78g5qC5rFkPeKKxZxkjyKRLBVdmThhKiRrmQ2OIQHJ5zfwCKhm8vm+csW3mA==
+domainql-form@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-2.0.4.tgz#956ece99fabce12d119ab9d24c541117d016f3e2"
+  integrity sha512-hH5qKZ3CVNctak1Q+3HD1ZXbIK+9zc18gEHHUA4+yK/xtl5OnvoP1JzPLtkjgIqWz1h4G9BAbQz0ZfWz0RDYPQ==
   dependencies:
     cartesian "^1.0.1"
     classnames "^2.2.5"
@@ -1670,7 +1670,7 @@ domainql-form@^2.0.2:
     lodash.isequal "^4.5.0"
     lodash.set "^4.3.2"
     lodash.topath "^4.5.2"
-    prop-types "^15.6.1"
+    prop-types "^15.7.1"
 
 domainql-webpack-plugin@^0.0.3:
   version "0.0.3"
@@ -2842,9 +2842,15 @@ mobx-react-devtools@^6.0.3:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/mobx-react-devtools/-/mobx-react-devtools-6.0.3.tgz#4d536c8cdd77d9f4b81f5e8415d7bedccc6a2a99"
 
-mobx-react@^5.2.8:
+mobx-react-lite@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-1.1.0.tgz#395930c85defff0f898b91170165617a1c783e0c"
+  integrity sha512-1/HwceljNxckfP+dDKlNWy7UR/1b/N2HbYSJt37dJHLrDiFPY6TZo+Ni+/xSl8bLJ1JE6+12sfZ1hqHbch/45A==
+
+mobx-react@^5.4.3:
   version "5.4.3"
   resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-5.4.3.tgz#6709b7dd89670c40e9815914ac2ca49cc02bfb47"
+  integrity sha512-WC8yFlwvJ91hy8j6CrydAuFteUafcuvdITFQeHl3LRIf5ayfT/4W3M/byhEYD2BcJWejeXr8y4Rh2H26RunCRQ==
   dependencies:
     hoist-non-react-statics "^3.0.0"
     react-lifecycles-compat "^3.0.2"
@@ -2853,9 +2859,10 @@ mobx-utils@^5.0.4:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.1.0.tgz#3a08f3bb004ca5f4331083763c07c7275e5989a5"
 
-mobx@^5.5.0:
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/mobx/-/mobx-5.8.0.tgz#cf59eae4baa2fde4387ffb6462b7ccf3b497b03c"
+mobx@^5.9.0:
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-5.9.0.tgz#a08edd7132787f771409c9c33788a5df66ff7ce7"
+  integrity sha512-D3mY1uM3H9BP5duk5tTanrOq92yqetYKsprPJWvkKDrbs+fro59xrpWX+vtr10YoLgJIFz+a4A8lI+4YtqmCUQ==
 
 mocha@^5.2.0:
   version "5.2.0"
@@ -3390,6 +3397,15 @@ prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
+prop-types@^15.7.1:
+  version "15.7.2"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
+  integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
+  dependencies:
+    loose-envify "^1.4.0"
+    object-assign "^4.1.1"
+    react-is "^16.8.1"
+
 prr@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/prr/-/prr-1.0.1.tgz#d3fc114ba06995a45ec6893f484ceb1d78f5f476"
@@ -3503,14 +3519,15 @@ react-calendar@^2.17.5:
     prop-types "^15.6.0"
     react-lifecycles-compat "^3.0.4"
 
-react-dom@^16.6.3:
-  version "16.6.3"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.6.3.tgz#8fa7ba6883c85211b8da2d0efeffc9d3825cccc0"
+react-dom@^16.8.3:
+  version "16.8.3"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.3.tgz#ae236029e66210783ac81999d3015dfc475b9c32"
+  integrity sha512-ttMem9yJL4/lpItZAQ2NTFAbV7frotHk5DZEHXUOws2rMmrsvh1Na7ThGT0dTzUIl6pqTOi5tYREfL8AEna3lA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.11.2"
+    scheduler "^0.13.3"
 
 react-fast-compare@^2.0.1:
   version "2.0.4"
@@ -3519,6 +3536,11 @@ react-fast-compare@^2.0.1:
 react-is@^16.3.2:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
+
+react-is@^16.8.1:
+  version "16.8.2"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.2.tgz#09891d324cad1cb0c1f2d91f70a71a4bee34df0f"
+  integrity sha512-D+NxhSR2HUCjYky1q1DwpNUD44cDpUXzSmmFyC3ug1bClcU/iDNy0YNn1iwme28fn+NFhpA13IndOd42CrFb+Q==
 
 react-json-pretty@^1.7.9:
   version "1.7.9"
@@ -3554,14 +3576,15 @@ react-transition-group@^2.3.1:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react@^16.6.3:
-  version "16.6.3"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.6.3.tgz#25d77c91911d6bbdd23db41e70fb094cc1e0871c"
+react@^16.8.3:
+  version "16.8.3"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.8.3.tgz#c6f988a2ce895375de216edcfaedd6b9a76451d9"
+  integrity sha512-3UoSIsEq8yTJuSu0luO1QQWYbgGEILm+eJl2QN/VLDi7hL+EN18M3q3oVZwmVzzBJ3DkM7RMdRwBmZZ+b4IzSA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.11.2"
+    scheduler "^0.13.3"
 
 reactstrap@^6.5.0:
   version "6.5.0"
@@ -3756,9 +3779,10 @@ sax@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-scheduler@^0.11.2:
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.11.3.tgz#b5769b90cf8b1464f3f3cfcafe8e3cd7555a2d6b"
+scheduler@^0.13.3:
+  version "0.13.3"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.13.3.tgz#bed3c5850f62ea9c716a4d781f9daeb9b2a58896"
+  integrity sha512-UxN5QRYWtpR1egNWzJcVLk8jlegxAugswQc984lD3kU7NuobsO37/sRfbpTdBjtnD5TBNFA2Q2oLV5+UmPSmEQ==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"

@@ -1,51 +1,34 @@
-import React from "react"
+import React, { useReducer } from "react"
 
-import { AutomatonDevTools, uri, Link } from "@quinscape/automaton-js"
+import { AutomatonDevTools } from "@quinscape/automaton-js"
 
-import {
-    Collapse,
-    Container,
-    Nav,
-    Navbar,
-    NavLink,
-    NavbarBrand,
-    NavbarToggler,
-    NavItem
-} from "reactstrap"
+import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler } from "reactstrap"
 import CommonNav from "./CommonNav";
 
-class LayoutV4 extends React.Component {
 
-    state = {
-        isNavExpanded: false
-    };
+const LayoutV4 = props => {
 
-    toggle = () => this.setState({ isNavExpanded : !this.state.isNavExpanded});
+    const [isNavExpanded, toggle] = useReducer(isNavExpanded => !isNavExpanded, false);
 
-    render()
-    {
-        const { env, children } = this.props;
+    const { env, children } = props;
 
-        const { contextPath } = env.config;
+    const { contextPath } = env.config;
 
-        return (
-            <Container fluid={true}>
-                <Navbar color="light" light>
-                    <NavbarBrand href={ contextPath + "/" }>Layout v4</NavbarBrand>
-                    <NavbarToggler onClick={this.toggle}/>
-                    <Collapse isOpen={this.state.isNavExpanded} navbar>
-                        <CommonNav/>
-                    </Collapse>
-                </Navbar>
-                {
-                    children
-                }
-                <AutomatonDevTools/>
-            </Container>
-        )
-    }
-}
-
-
+    return (
+        <Container fluid={ true }>
+            <Navbar color="light" light>
+                <NavbarBrand href={ contextPath + "/" }>Layout v4</NavbarBrand>
+                <NavbarToggler onClick={ toggle }/>
+                <Collapse isOpen={ isNavExpanded } navbar>
+                    <CommonNav/>
+                </Collapse>
+            </Navbar>
+            {
+                children
+            }
+            <AutomatonDevTools/>
+        </Container>
+    )
+};
 
 export default LayoutV4

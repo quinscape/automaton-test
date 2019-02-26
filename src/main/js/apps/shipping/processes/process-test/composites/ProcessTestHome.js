@@ -1,61 +1,57 @@
 import React from "react"
-import { toJS } from "mobx";
-import { observer } from "mobx-react";
+import { observer as fnObserver } from "mobx-react-lite";
 
-import { DataGrid, Button, i18n } from "@quinscape/automaton-js"
+import { Button, i18n } from "@quinscape/automaton-js"
 import JSONData from "../../../../../components/JSONData"
 
-@observer
-class ProcessTestHome extends React.Component {
 
-    render()
-    {
-        const { env } = this.props;
+const ProcessTestHome = props => {
 
-        const { scope } = env;
+    const { env } = props;
+
+    const { scope } = env;
 
 
-        return (
-            <React.Fragment>
-                <h1>
-                    {
-                        i18n('Process-Tests')
-                    }
-                </h1>
+    return (
+        <React.Fragment>
+            <h1>
+                {
+                    i18n('Process-Tests')
+                }
+            </h1>
 
-                <Button
-                    transition="open-sub"
-                    className="mr-1 btn btn-secondary"
-                    icon="fa-subway"
-                    text="Open Sub-Process"
-                />
+            <Button
+                transition="open-sub"
+                className="mr-1 btn btn-secondary"
+                icon="fa-subway"
+                text="Open Sub-Process"
+            />
 
-                <Button
-                    transition="open-sub2"
-                    className="mr-1 btn btn-secondary"
-                    icon="fa-subway"
-                    text="Open Customer as Sub"
-                />
+            <Button
+                transition="open-sub2"
+                className="mr-1 btn btn-secondary"
+                icon="fa-subway"
+                text="Open Customer as Sub"
+            />
 
-                <Button
-                    transition="clear"
-                    className="mr-1 btn btn-secondary"
-                    icon="fa-minus-circle"
-                    text="Clear"
-                />
+            <Button
+                transition="clear"
+                className="mr-1 btn btn-secondary"
+                icon="fa-minus-circle"
+                text="Clear"
+            />
 
 
 
-                <JSONData
-                    name="chosen"
-                    value={ scope.currentOrder }
-                    maxHeight={ 20 }
-                />
+            <JSONData
+                name="chosen"
+                value={ scope.currentOrder }
+                maxHeight={ 20 }
+            />
 
 
-            </React.Fragment>
-        )
-    }
-}
+        </React.Fragment>
+    )
+};
 
-export default ProcessTestHome
+export default fnObserver(ProcessTestHome);

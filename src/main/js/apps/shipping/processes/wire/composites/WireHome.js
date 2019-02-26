@@ -1,6 +1,6 @@
 import React from "react"
 import cx from "classnames"
-import { observer } from "mobx-react";
+import { observer as fnObserver } from "mobx-react-lite";
 
 import { i18n, Button } from "@quinscape/automaton-js"
 import FooList from "../../../../../components/FooList";
@@ -8,54 +8,51 @@ import Calendar from "react-calendar"
 import { ButtonToolbar, Row, Col, Card, CardHeader, CardBody } from "reactstrap";
 
 
-@observer
-class WireHome extends React.Component {
+const WireHome = props => {
 
-    render()
-    {
-        const {env} = this.props;
+    const { env } = props;
 
-        const {scope} = env;
+    const { scope } = env;
 
-        return (
-            <Row className="mt-3">
-                <Col>
+    return (
+        <Row className="mt-3">
+            <Col>
                 <h1>
                     {
                         i18n("Injected Values")
                     }
                 </h1>
                 <dl>
-                    <dt>{"complex ( count " + scope.complex.rowCount + " )"} </dt>
+                    <dt>{ "complex ( count " + scope.complex.rowCount + " )" } </dt>
                     <dd>
-                        <FooList ob={scope} path="complex.rows"/>
+                        <FooList ob={ scope } path="complex.rows"/>
                     </dd>
                     <dt>scalar</dt>
                     <dd>
-                        <Calendar className="shadow p-3 mb-5 bg-white rounded" value={scope.scalar}/>
+                        <Calendar className="shadow p-3 mb-5 bg-white rounded" value={ scope.scalar }/>
                     </dd>
                     <dt>list</dt>
                     <dd>
                         <ul>
                             {
-                                scope.list.map(n => <li key={n}>{n}</li>)
+                                scope.list.map(n => <li key={ n }>{ n }</li>)
                             }
                         </ul>
                     </dd>
                     <dt>complexList</dt>
                     <dd>
-                        <FooList ob={scope} path="complexList"/>
+                        <FooList ob={ scope } path="complexList"/>
                     </dd>
                 </dl>
-                </Col>
-                <Col>
+            </Col>
+            <Col>
                 <ButtonToolbar>
                     <Button
                         className={ cx("btn", scope.mutationResult ? scope.mutationResult.successful ? "btn-success" : "btn-danger" : "btn-primary") }
                         icon="fa-check"
                         text="Test Mutation"
                         transition="test-target"
-                        context={scope.complexList[0]}
+                        context={ scope.complexList[0] }
                     />
                 </ButtonToolbar>
                 {
@@ -90,11 +87,9 @@ class WireHome extends React.Component {
                         </Card>
                     )
                 }
-                </Col>
-            </Row>
-        )
-    }
-}
+            </Col>
+        </Row>
+    )
+};
 
-
-export default WireHome
+export default fnObserver(WireHome);

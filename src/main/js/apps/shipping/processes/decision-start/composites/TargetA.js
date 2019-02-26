@@ -1,16 +1,11 @@
 import React from "react"
-import { observer } from "mobx-react";
+import { observer as fnObserver } from "mobx-react-lite";
 
 import { Button, i18n } from "@quinscape/automaton-js"
 
+const TargetA = props => {
 
-@observer
-class TargetA extends React.Component {
-
-    render()
-    {
-        const { env } = this.props;
-
+        const { env } = props;
 
         return (
             <React.Fragment>
@@ -27,7 +22,6 @@ class TargetA extends React.Component {
                 />
             </React.Fragment>
         )
-    }
-}
+};
 
-export default TargetA
+export default fnObserver(TargetA);

@@ -1,52 +1,35 @@
-import React from "react"
+import React, { useReducer } from "react"
 
-import { AutomatonDevTools, uri, Link } from "@quinscape/automaton-js"
+import { AutomatonDevTools } from "@quinscape/automaton-js"
 
-import {
-    Collapse,
-    Container,
-    Nav,
-    Navbar,
-    NavLink,
-    NavbarBrand,
-    NavbarToggler,
-    NavItem
-} from "reactstrap"
+import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler } from "reactstrap"
 import CommonNav from "./CommonNav";
 
-class LayoutV2 extends React.Component {
+const LayoutV2 = props => {
 
-    state = {
-        isNavExpanded: false
-    };
+    const [isNavExpanded, toggle] = useReducer(isNavExpanded => !isNavExpanded, false);
 
-    toggle = () => this.setState({ isNavExpanded : !this.state.isNavExpanded});
+    const { env, children } = props;
 
-    render()
-    {
-        const { env, children } = this.props;
+    const { contextPath } = env.config;
 
-        const { contextPath } = env.config;
-
-        return (
-            <Container fluid={false}>
-                <Navbar color="light" light expand="md">
-                    <NavbarBrand href={ contextPath + "/" }>Layout v2</NavbarBrand>
-                    <NavbarToggler onClick={this.toggle}/>
-                    <Collapse isOpen={this.state.isNavExpanded} navbar>
-                        <CommonNav/>
-                    </Collapse>
-                </Navbar>
-                {
-                    children
-                }
-
-                <AutomatonDevTools/>
-            </Container>
-        )
-    }
+    return (
+        <Container fluid={ false }>
+            <Navbar color="light" light expand="md">
+                <NavbarBrand href={ contextPath + "/" }>
+                    Layout v2
+                </NavbarBrand>
+                <NavbarToggler onClick={ toggle }/>
+                <Collapse isOpen={ isNavExpanded } navbar>
+                    <CommonNav/>
+                </Collapse>
+            </Navbar>
+            {
+                children
+            }
+            <AutomatonDevTools/>
+        </Container>
+    )
 }
-
-
 
 export default LayoutV2

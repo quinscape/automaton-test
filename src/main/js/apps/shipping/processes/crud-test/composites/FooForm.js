@@ -1,6 +1,5 @@
 import React from "react"
-import cx from "classnames"
-import { observer } from "mobx-react";
+import { observer as fnObserver } from "mobx-react-lite";
 import { config, i18n, Icon, Button } from "@quinscape/automaton-js"
 
 import { Field, GlobalErrors, TextArea, withForm } from "domainql-form"
@@ -8,59 +7,64 @@ import { ButtonToolbar } from "reactstrap";
 
 import validation from "../../../../../services/validation"
 
-class FooForm extends React.Component {
 
-    render()
-    {
-        const {formConfig} = this.props;
+const FooForm = props => {
 
-        const {root} = formConfig;
+    const { formConfig } = props;
 
-        //console.log("FOO FORM", root);
+    const { root } = formConfig;
 
-        const auth = config.auth;
-        //console.log({auth, root});
+    //console.log("FOO FORM", root);
 
-        const canAccess = auth.id === root.owner.id;
+    const auth = config.auth;
+    //console.log({ auth, root });
 
-        return (
-            <React.Fragment>
-                <GlobalErrors/>
-                <Field name="name"/>
-                <TextArea name="description" />
-                <Field name="num"/>
-                <Field name="created"/>
-                <Field name="flag"/>
+    const canAccess = auth.id === root.owner.id;
 
-                <ButtonToolbar>
-                    <Button
-                        className="btn btn-primary mr-1"
-                        transition="save"
-                        icon="fa-save mr-1"
-                        text="Save"
-                    />
-                    <Button
-                        className="btn btn-danger mr-1"
-                        transition="delete"
-                        icon="fa-times mr-1"
-                        text="Delete"
-                    />
-                    <Button
-                        className="btn btn-secondary mr-1"
-                        transition="cancel"
-                        icon="fa-times mr-1"
-                        text="Cancel"
-                    />
+    return (
+        <React.Fragment>
+            <h1>
+                {
+                    i18n("Foo Detail")
+                }
+            </h1>
 
-                </ButtonToolbar>
-            </React.Fragment>
-        )
-    }
-}
 
+            <GlobalErrors/>
+            <Field name="name"/>
+            <TextArea name="description"/>
+            <Field name="created"/>
+            <Field name="flag"/>
+            <Field name="num"/>
+
+            <ButtonToolbar>
+                <Button
+                    className="btn btn-primary mr-1"
+                    transition="save"
+                    icon="fa-save mr-1"
+                    text="Save"
+                />
+                <Button
+                    className="btn btn-danger mr-1"
+                    transition="delete"
+                    icon="fa-times mr-1"
+                    text="Delete"
+                />
+                <Button
+                    className="btn btn-secondary mr-1"
+                    transition="cancel"
+                    icon="fa-times mr-1"
+                    text="Cancel"
+                />
+
+            </ButtonToolbar>
+
+        </React.Fragment>
+    )
+};
 
 export default withForm(
-    observer(
+    fnObserver(
         FooForm
     ),
     {

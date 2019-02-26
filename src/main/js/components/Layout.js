@@ -1,54 +1,58 @@
-import React from "react"
+import React, { useReducer } from "react"
 
-import { AutomatonDevTools, uri, Link, LayoutSlot } from "@quinscape/automaton-js"
+import { AutomatonDevTools } from "@quinscape/automaton-js"
 
 import {
     Collapse,
     Container,
-    Nav,
     Navbar,
-    NavLink,
     NavbarBrand,
-    NavbarToggler,
-    NavItem
+    NavbarToggler
 } from "reactstrap"
+
 import CommonNav from "./CommonNav";
 
-class Layout extends React.Component {
+const Layout = props => {
 
-    state = {
-        isNavExpanded: false
-    };
+    const [ isNavExpanded, toggle ] = useReducer(isNavExpanded => !isNavExpanded, false);
 
-    toggle = () => this.setState({ isNavExpanded : !this.state.isNavExpanded});
+    const { env, children } = props;
 
-    render()
-    {
-        const { env, children } = this.props;
+    const { contextPath } = env.config;
 
-        const { contextPath } = env.config;
-
-        return (
-            <Container fluid={false}>
-                <Navbar color="primary" dark expand="md">
-                    <NavbarBrand href={ contextPath + "/" }>
-                        <i className="fab fa-quinscape mr-1" style={ { fontWeight: "normal"}}/>
-                        Automaton-Test
-                    </NavbarBrand>
-                    <NavbarToggler onClick={this.toggle}/>
-                    <Collapse isOpen={this.state.isNavExpanded} navbar>
-                        <CommonNav/>
-                    </Collapse>
-                </Navbar>
-                {
-                    children
-                }
-                <AutomatonDevTools/>
-            </Container>
-        )
-    }
-}
-
-
+    return (
+        <Container
+            fluid={ false }
+        >
+            <Navbar
+                id="app-navbar"
+                color="primary"
+                dark
+                expand="md"
+                sticky="top"
+            >
+                <NavbarBrand
+                    href={contextPath + "/"}
+                >
+                    <i className="brand-icon fab fa-quinscape mr-1"/>
+                    Automaton-Test
+                </NavbarBrand>
+                <NavbarToggler
+                    onClick={ toggle }
+                />
+                <Collapse
+                    isOpen={ isNavExpanded }
+                    navbar
+                >
+                    <CommonNav/>
+                </Collapse>
+            </Navbar>
+            {
+                children
+            }
+            <AutomatonDevTools/>
+        </Container>
+    );
+};
 
 export default Layout

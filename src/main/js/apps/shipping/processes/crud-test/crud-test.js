@@ -61,6 +61,7 @@ export function initProcess(process, scope)
 {
 
     // process config
+    //process.versioningStrategy = name => false;
 
     // return process states and transitions
     return (

@@ -1,33 +1,27 @@
 import React from "react"
-import { observer } from "mobx-react";
+import { observer as fnObserver } from "mobx-react-lite";
 
 import { Button, i18n } from "@quinscape/automaton-js"
 
+const TargetB = props => {
 
-@observer
-class TargetB extends React.Component {
+    const { env } = props;
 
-    render()
-    {
-        const { env } = this.props;
+    return (
+        <React.Fragment>
+            <h1>
+                {
+                    i18n('Target B')
+                }
+            </h1>
 
+            <Button
+                transition="back"
+                className="mr-1 btn btn-secondary"
+                text="Back"
+            />
+        </React.Fragment>
+    )
+};
 
-        return (
-            <React.Fragment>
-                <h1>
-                    {
-                        i18n('Target B')
-                    }
-                </h1>
-
-                <Button
-                    transition="back"
-                    className="mr-1 btn btn-secondary"
-                    text="Back"
-                />
-            </React.Fragment>
-        )
-    }
-}
-
-export default TargetB
+export default fnObserver(TargetB);

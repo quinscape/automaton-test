@@ -1,57 +1,64 @@
-import React from "react"
-import { observer } from "mobx-react";
+import React, { useState } from "react"
+import { observer as fnObserver } from "mobx-react-lite";
 
-import { Button, i18n, Icon, config } from "@quinscape/automaton-js"
-import { UserFormControl, FormConfigProvider, DEFAULT_OPTIONS } from "domainql-form"
+import { Icon } from "@quinscape/automaton-js"
+import { DEFAULT_OPTIONS, UserFormControl } from "domainql-form"
 import FooForm from "./FooForm";
-import { ButtonToolbar, Row, Col, Card, CardHeader, CardBody } from "reactstrap";
+import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 
-@observer
-class CRUDDetail extends React.Component {
 
-    state = {
-        control: { ... DEFAULT_OPTIONS }
-    };
+const CRUDDetail = props => {
 
-    changeControl = (k,v) => this.setState({
-        control: {
-            ... this.state.control,
-            [k] : v
-        }
+    const [ control, setControl] = useState(DEFAULT_OPTIONS);
+    const [ modalOpen, setModalOpen] = useState(false);
+
+    const changeControl = (k, v) => setControl({
+        ...control,
+        [k]: v
     });
 
-    render()
-    {
-        const { env } = this.props;
-        const { control } = this.state;
+    const close = () => setModalOpen(false);
 
-        const { scope } = env;
+    const {env} = props;
+    const {scope} = env;
 
-        return (
-            <React.Fragment>
-                <h1>
-                    {
-                        i18n("Foo Detail")
-                    }
-                </h1>
-                <FooForm value={ scope.currentFoo } { ... control } />
-                <Card className="mt-4" color="light">
-                    <CardHeader>
-                        User Form Control
-                    </CardHeader>
-                    <CardBody>
-                        <UserFormControl
-                            control={ control }
-                            changeControl={ this.changeControl }
-                        />
-                    </CardBody>
-                </Card>
+    return (
+        <React.Fragment>
 
+            <div className="row">
+                <div className="col">
+                    <button className="btn btn-light float-right" title="Form Settings" onClick={ () => setModalOpen(true) }>
+                        <Icon className="fa-cog"/>
+                    </button>
+                </div>
+            </div>
 
-            </React.Fragment>
-        )
-    }
-}
+            <div className="row">
 
+                <div className="col">
+                    <FooForm value={scope.currentFoo} {...control} />
+                </div>
+            </div>
 
-export default CRUDDetail
+            <Modal isOpen={ modalOpen } toggle={ close } >
+                <ModalHeader toggle={ close }>
+                    User Form Control
+                </ModalHeader>
+                <ModalBody>
+                    <UserFormControl
+                        control={control}
+                        changeControl={changeControl}
+                    />
+                </ModalBody>
+                <ModalFooter>
+                    <button className="btn btn-primary" onClick={ () => setModalOpen(false) }>
+                        Close
+                    </button>
+                </ModalFooter>
+            </Modal>
+
+        </React.Fragment>
+    )
+};
+
+export default fnObserver(CRUDDetail)
