@@ -65,6 +65,12 @@ const BackTestCounter = props => {
                             transition="back-2"
                         />
                         <Button
+                            className="btn btn-success mr-1"
+                            icon="fa-arrow-left"
+                            text="Back to Parent"
+                            transition="back-fn"
+                        />
+                        <Button
                             className="btn btn-primary mr-1"
                             icon="fa-arrow-left"
                             text="Back to Home"

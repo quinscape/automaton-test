@@ -1,4 +1,5 @@
 import { observable } from "mobx";
+import { backToParent } from "@quinscape/automaton-js"
 
 // noinspection JSUnusedGlobalSymbols
 export function initProcess(process, scope)
@@ -48,6 +49,13 @@ export function initProcess(process, scope)
                     "back-2": {
                         action: t => {
                             t.back(2);
+                        }
+                    },
+                    "back-fn": {
+                        action: t => {
+                            t.back(
+                                backToParent(t)
+                            );
                         }
                     },
                     "back-home": {
