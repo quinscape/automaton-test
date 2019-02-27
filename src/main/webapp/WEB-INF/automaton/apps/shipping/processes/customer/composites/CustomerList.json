@@ -12,11 +12,12 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "mobx-react",
+            "source": "mobx-react-lite",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "observer"
+                    "name": "fnObserver",
+                    "aliasOf": "observer"
                 }
             ]
         },
@@ -61,7 +62,7 @@
                                 }
                             ]
                         },
-                        "init": "this.props"
+                        "init": "props"
                     }
                 ]
             },
@@ -99,7 +100,7 @@
                     "kids": [
                         {
                             "type": "JSXExpressionContainer",
-                            "code": "{i18n('Customer List')}"
+                            "code": "{i18n(\"Customer List\")}"
                         }
                     ],
                     "type": "JSXElement"
@@ -248,12 +249,7 @@
                 }
             ],
             "type": "JSXElement"
-        },
-        "decorators": [
-            {
-                "name": "observer"
-            }
-        ]
+        }
     },
-    "export": "CustomerList"
+    "export": "fnObserver(CustomerList)"
 }

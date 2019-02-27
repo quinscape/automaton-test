@@ -12,21 +12,12 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "classnames",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "cx"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "mobx-react",
+            "source": "mobx-react-lite",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "observer"
+                    "name": "fnObserver",
+                    "aliasOf": "observer"
                 }
             ]
         },
@@ -36,19 +27,15 @@
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
+                    "name": "Button"
+                },
+                {
+                    "type": "ImportSpecifier",
                     "name": "config"
                 },
                 {
                     "type": "ImportSpecifier",
                     "name": "i18n"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "Icon"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "Button"
                 }
             ]
         },
@@ -67,10 +54,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "TextArea"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "withForm"
                 }
             ]
         },
@@ -81,6 +64,26 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "ButtonToolbar"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../../../services/validation",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "validation"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../../../components/withAppForm",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "withAppForm"
                 }
             ]
         }
@@ -107,7 +110,7 @@
                                 }
                             ]
                         },
-                        "init": "this.props"
+                        "init": "props"
                     }
                 ]
             },
@@ -168,6 +171,17 @@
             "attrs": [],
             "kids": [
                 {
+                    "name": "h1",
+                    "attrs": [],
+                    "kids": [
+                        {
+                            "type": "JSXExpressionContainer",
+                            "code": "{i18n(\"Foo Detail\")}"
+                        }
+                    ],
+                    "type": "JSXElement"
+                },
+                {
                     "name": "GlobalErrors",
                     "attrs": [],
                     "kids": [],
@@ -211,7 +225,7 @@
                             "name": "name",
                             "value": {
                                 "type": "Expression",
-                                "code": "\"num\""
+                                "code": "\"created\""
                             }
                         }
                     ],
@@ -226,7 +240,22 @@
                             "name": "name",
                             "value": {
                                 "type": "Expression",
-                                "code": "\"created\""
+                                "code": "\"flag\""
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "Field",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"num\""
                             }
                         }
                     ],
@@ -359,8 +388,7 @@
                 }
             ],
             "type": "JSXElement"
-        },
-        "decorators": []
+        }
     },
-    "export": "withForm(observer(FooForm), { type: \"FooInput\" })"
+    "export": "withAppForm(fnObserver(FooForm), { type: \"FooInput\", validation: validation(\"FooInput\") })"
 }

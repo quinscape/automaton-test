@@ -62,7 +62,7 @@
                             "params": [
                                 "t"
                             ],
-                            "code": "WireTestQuery.execute({ target: { ...t.context, ownerId: config.auth.id || \"\" }, count: 123 }).then(({ wireTestMutation }) => scope.updateMutationResult(wireTestMutation), err => scope.updateMutationResult(mutationError(err)))"
+                            "code": "WireTestQuery.execute({ target: { ...t.context, flag: true, ownerId: config.auth.id || \"\" }, count: 123 }).then(({ wireTestMutation }) => scope.updateMutationResult(wireTestMutation), err => scope.updateMutationResult(mutationError(err)))"
                         }
                     }
                 }

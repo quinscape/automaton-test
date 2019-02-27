@@ -12,39 +12,11 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "mobx-react",
-            "specifiers": [
-                {
-                    "type": "ImportSpecifier",
-                    "name": "observer"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
             "source": "@quinscape/automaton-js",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "DataGrid"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "Button"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "i18n"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "./CustomerForm",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "CustomerForm"
                 }
             ]
         },
@@ -55,6 +27,17 @@
                 {
                     "type": "ImportDefaultSpecifier",
                     "name": "JSONData"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx-react-lite",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "fnObserver",
+                    "aliasOf": "observer"
                 }
             ]
         }
@@ -81,7 +64,7 @@
                                 }
                             ]
                         },
-                        "init": "this.props"
+                        "init": "props"
                     }
                 ]
             },
@@ -149,12 +132,7 @@
                 }
             ],
             "type": "JSXElement"
-        },
-        "decorators": [
-            {
-                "name": "observer"
-            }
-        ]
+        }
     },
-    "export": "CustomerDetail"
+    "export": "fnObserver(CustomerDetail)"
 }

@@ -1,0 +1,134 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"BackTestHome\"",
+            "states": {
+                "BackTestHome": {
+                    "to-counter": {
+                        "to": "BackTestCounter"
+                    }
+                },
+                "BackTestCounter": {
+                    "increment": {
+                        "to": "BackTestCounter",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ scope.currentCounter++; }"
+                        }
+                    },
+                    "decrement": {
+                        "to": "BackTestCounter",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ scope.currentCounter--; }"
+                        }
+                    },
+                    "increment-nv": {
+                        "to": "BackTestCounter",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ scope.nonVersioned++; }"
+                        }
+                    },
+                    "decrement-nv": {
+                        "to": "BackTestCounter",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ scope.nonVersioned--; }"
+                        }
+                    },
+                    "back": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ t.back(); }"
+                        }
+                    },
+                    "back-2": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ t.back(2); }"
+                        }
+                    },
+                    "back-fn": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ t.back(backToParent(t)); }"
+                        }
+                    },
+                    "back-home": {
+                        "to": "BackTestHome"
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "BackTestScope",
+            "observables": [
+                {
+                    "name": "currentCounter",
+                    "defaultValue": "0",
+                    "description": null
+                },
+                {
+                    "name": "nonVersioned",
+                    "defaultValue": "0",
+                    "description": null
+                },
+                {
+                    "name": "nested",
+                    "defaultValue": "new Nested()",
+                    "description": null
+                }
+            ],
+            "actions": [],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": []
+    }
+}

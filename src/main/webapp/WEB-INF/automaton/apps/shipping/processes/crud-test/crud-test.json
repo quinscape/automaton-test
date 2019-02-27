@@ -130,7 +130,7 @@
                 },
                 {
                     "name": "foos",
-                    "defaultValue": "injection( // language=GraphQL\n`{\n            getFoos{\n                rows{\n                    id\n                    name\n                    num\n                    created\n                    description\n                    owner{\n                        login\n                    }\n                    type \n                    \n                }\n                rowCount\n            }\n        }`)",
+                    "defaultValue": "injection( // language=GraphQL\n`{\n            getFoos{\n                rows{\n                    id\n                    name\n                    num\n                    created\n                    description\n                    owner{\n                        login\n                    }\n                    type\n                    flag\n                    \n                }\n                rowCount\n            }\n        }`)",
                     "description": "* Current todos"
                 }
             ],
@@ -164,8 +164,8 @@
             "helpers": []
         },
         "extraConstants": [
-            "// language=GraphQL\nconst CreateFooMutation = new GraphQLQuery(`\n    mutation createFoo($name: String!){\n         createFoo(name: $name)\n         {\n             id\n             name\n             num\n             created\n             owner{\n                 login\n             }\n             type\n\n        }\n    }\n    `); // language=GraphQL",
-            "// language=GraphQL\nconst GetFoosQuery = new GraphQLQuery(`\n    query getFoos{\n        getFoos{\n            rows{\n                id\n                name\n                num\n                created\n                description\n                owner{\n                    login\n                }\n                type\n\n            }\n            rowCount\n        }\n    }\n    `); // noinspection JSUnusedGlobalSymbols"
+            "// language=GraphQL\nconst CreateFooMutation = new GraphQLQuery(`\n    mutation createFoo($name: String!){\n         createFoo(name: $name)\n         {\n             id\n             name\n             num\n             created\n             owner{\n                 login\n             }\n             type\n             flag\n\n        }\n    }\n    `); // language=GraphQL",
+            "// language=GraphQL\nconst GetFoosQuery = new GraphQLQuery(`\n    query getFoos{\n        getFoos{\n            rows{\n                id\n                name\n                num\n                created\n                description\n                owner{\n                    login\n                }\n                type\n                flag\n\n            }\n            rowCount\n        }\n    }\n    `); // noinspection JSUnusedGlobalSymbols"
         ]
     }
 }

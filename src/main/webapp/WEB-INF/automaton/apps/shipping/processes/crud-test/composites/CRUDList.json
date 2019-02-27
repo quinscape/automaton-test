@@ -12,16 +12,6 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "mobx-react",
-            "specifiers": [
-                {
-                    "type": "ImportSpecifier",
-                    "name": "observer"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
             "source": "reactstrap",
             "specifiers": [
                 {
@@ -45,6 +35,17 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "i18n"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx-react-lite",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "fnObserver",
+                    "aliasOf": "observer"
                 }
             ]
         }
@@ -71,7 +72,7 @@
                                 }
                             ]
                         },
-                        "init": "this.props"
+                        "init": "props"
                     }
                 ]
             },
@@ -109,7 +110,7 @@
                     "kids": [
                         {
                             "type": "JSXExpressionContainer",
-                            "code": "{i18n('Foo List')}"
+                            "code": "{i18n(\"Foo List\")}"
                         }
                     ],
                     "type": "JSXElement"
@@ -304,12 +305,7 @@
                 }
             ],
             "type": "JSXElement"
-        },
-        "decorators": [
-            {
-                "name": "observer"
-            }
-        ]
+        }
     },
-    "export": "CRUDList"
+    "export": "fnObserver(CRUDList)"
 }

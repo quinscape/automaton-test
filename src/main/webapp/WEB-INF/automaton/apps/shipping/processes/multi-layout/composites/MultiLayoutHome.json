@@ -12,11 +12,12 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "mobx-react",
+            "source": "mobx-react-lite",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "observer"
+                    "name": "fnObserver",
+                    "aliasOf": "observer"
                 }
             ]
         },
@@ -67,7 +68,7 @@
                                 }
                             ]
                         },
-                        "init": "this.props"
+                        "init": "props"
                     }
                 ]
             }
@@ -213,12 +214,7 @@
                 }
             ],
             "type": "JSXElement"
-        },
-        "decorators": [
-            {
-                "name": "observer"
-            }
-        ]
+        }
     },
-    "export": "MultiLayoutHome"
+    "export": "fnObserver(MultiLayoutHome)"
 }

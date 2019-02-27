@@ -12,11 +12,12 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "mobx-react",
+            "source": "mobx-react-lite",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "observer"
+                    "name": "fnObserver",
+                    "aliasOf": "observer"
                 }
             ]
         },
@@ -53,7 +54,7 @@
                                 }
                             ]
                         },
-                        "init": "this.props"
+                        "init": "props"
                     }
                 ]
             }
@@ -68,7 +69,7 @@
                     "kids": [
                         {
                             "type": "JSXExpressionContainer",
-                            "code": "{i18n('Multi-Layout Home')}"
+                            "code": "{i18n(\"Multi-Layout Home\")}"
                         }
                     ],
                     "type": "JSXElement"
@@ -110,12 +111,7 @@
                 }
             ],
             "type": "JSXElement"
-        },
-        "decorators": [
-            {
-                "name": "observer"
-            }
-        ]
+        }
     },
-    "export": "Home"
+    "export": "fnObserver(Home)"
 }

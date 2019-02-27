@@ -23,11 +23,22 @@
         },
         {
             "type": "ImportDeclaration",
+            "source": "reactstrap",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ButtonToolbar"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
             "source": "@quinscape/automaton-js",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "DataGrid"
+                    "name": "DataGrid",
+                    "aliasOf": "IQueryGrid"
                 },
                 {
                     "type": "ImportSpecifier",
@@ -100,7 +111,7 @@
                     "kids": [
                         {
                             "type": "JSXExpressionContainer",
-                            "code": "{i18n(\"Customer List\")}"
+                            "code": "{i18n(\"DataGrid Home\")}"
                         }
                     ],
                     "type": "JSXElement"
@@ -113,7 +124,7 @@
                             "name": "value",
                             "value": {
                                 "type": "JSXExpressionContainer",
-                                "code": "{scope.customers}"
+                                "code": "{scope.foos}"
                             }
                         }
                     ],
@@ -136,7 +147,7 @@
                                     "params": [
                                         {
                                             "type": "Identifier",
-                                            "name": "customer"
+                                            "name": "foo"
                                         }
                                     ],
                                     "constants": [],
@@ -169,18 +180,10 @@
                                             },
                                             {
                                                 "type": "JSXAttribute",
-                                                "name": "transition",
-                                                "value": {
-                                                    "type": "Expression",
-                                                    "code": "\"to-detail\""
-                                                }
-                                            },
-                                            {
-                                                "type": "JSXAttribute",
-                                                "name": "context",
+                                                "name": "action",
                                                 "value": {
                                                     "type": "JSXExpressionContainer",
-                                                    "code": "{customer}"
+                                                    "code": "{() => alert(\"Button for \" + JSON.stringify(foo))}"
                                                 }
                                             }
                                         ],
@@ -199,7 +202,7 @@
                                     "name": "name",
                                     "value": {
                                         "type": "Expression",
-                                        "code": "\"number\""
+                                        "code": "\"name\""
                                     }
                                 }
                             ],
@@ -214,7 +217,82 @@
                                     "name": "name",
                                     "value": {
                                         "type": "Expression",
-                                        "code": "\"name\""
+                                        "code": "\"num\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "DataGrid.Column",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "name",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"description\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "DataGrid.Column",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "name",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"created\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "DataGrid.Column",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "name",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"type\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "DataGrid.Column",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "name",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"flag\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "DataGrid.Column",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "name",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"owner.login\""
                                     }
                                 },
                                 {
@@ -222,26 +300,11 @@
                                     "name": "heading",
                                     "value": {
                                         "type": "JSXExpressionContainer",
-                                        "code": "{i18n(\"Customer:fullName\")}"
+                                        "code": "{i18n(\"owner\")}"
                                     }
                                 }
                             ],
-                            "kids": [
-                                {
-                                    "type": "JSXRenderFunction",
-                                    "params": [
-                                        {
-                                            "type": "Identifier",
-                                            "name": "customer"
-                                        }
-                                    ],
-                                    "constants": [],
-                                    "root": {
-                                        "type": "Expression",
-                                        "code": "customer.salutation ? customer.salutation + \" \" + customer.name : customer.name"
-                                    }
-                                }
-                            ],
+                            "kids": [],
                             "type": "JSXElement"
                         }
                     ],
@@ -251,5 +314,5 @@
             "type": "JSXElement"
         }
     },
-    "export": "fnObserver(CustomerForm)"
+    "export": "fnObserver(DataGridHome)"
 }

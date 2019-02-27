@@ -12,21 +12,12 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "mobx",
+            "source": "mobx-react-lite",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "toJS"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "mobx-react",
-            "specifiers": [
-                {
-                    "type": "ImportSpecifier",
-                    "name": "observer"
+                    "name": "fnObserver",
+                    "aliasOf": "observer"
                 }
             ]
         },
@@ -36,11 +27,11 @@
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "DataGrid"
+                    "name": "Button"
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "Button"
+                    "name": "DataGrid"
                 },
                 {
                     "type": "ImportSpecifier",
@@ -71,7 +62,7 @@
                                 }
                             ]
                         },
-                        "init": "this.props"
+                        "init": "props"
                     }
                 ]
             },
@@ -382,12 +373,7 @@
                 }
             ],
             "type": "JSXElement"
-        },
-        "decorators": [
-            {
-                "name": "observer"
-            }
-        ]
+        }
     },
-    "export": "SubProcessHome"
+    "export": "fnObserver(SubProcessHome)"
 }
