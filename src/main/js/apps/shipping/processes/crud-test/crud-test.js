@@ -10,7 +10,8 @@ import {
     config,
     storeDomainObject,
     deleteDomainObject,
-    GraphQLQuery
+    GraphQLQuery,
+    backToParent
 } from "@quinscape/automaton-js";
 
 // language=GraphQL
@@ -92,7 +93,6 @@ export function initProcess(process, scope)
                 ,
                 "CRUDDetail": {
                     "save": {
-                        to: "CRUDList",
                         action: t =>
                             storeDomainObject({
                                 ... t.context,
@@ -100,6 +100,7 @@ export function initProcess(process, scope)
                             })
                             .then(() => GetFoosQuery.execute())
                             .then(({getFoos}) => scope.updateFoos(getFoos))
+                            .then(() => t.back(backToParent(t)))
                     },
                     "delete": {
                         to: "CRUDList",
