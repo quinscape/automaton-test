@@ -36,7 +36,7 @@ const CRUDDetail = props => {
             <div className="row">
 
                 <div className="col">
-                    <FooForm value={scope.currentFoo} {...control} />
+                    <FooForm value={scope.currentFoo} options={ control } />
                 </div>
             </div>
 
