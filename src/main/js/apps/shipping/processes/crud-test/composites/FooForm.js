@@ -1,12 +1,11 @@
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
-import { Button, config, i18n } from "@quinscape/automaton-js"
+import { Button, config, i18n, ScrollTracker } from "@quinscape/automaton-js"
 
-import { Field, GlobalErrors, TextArea } from "domainql-form"
+import { Field, GlobalErrors, TextArea, withForm } from "domainql-form"
 import { ButtonToolbar } from "reactstrap";
 
 import validation from "../../../../../services/validation"
-import withAppForm from "../../../../../components/withAppForm";
 
 
 const FooForm = props => {
@@ -23,7 +22,7 @@ const FooForm = props => {
     const canAccess = auth.id === root.owner.id;
 
     return (
-        <React.Fragment>
+        <ScrollTracker formConfig={ formConfig }>
             <h1>
                 {
                     i18n("Foo Detail")
@@ -60,11 +59,11 @@ const FooForm = props => {
 
             </ButtonToolbar>
 
-        </React.Fragment>
+        </ScrollTracker>
     )
 };
 
-export default withAppForm(
+export default withForm(
     fnObserver(
         FooForm
     ),

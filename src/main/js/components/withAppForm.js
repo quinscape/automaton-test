@@ -1,7 +1,7 @@
-import React, { useState, useCallback } from "react"
+import React from "react"
 
-import { Form, FormConfig, getDisplayName, useFormConfig } from "domainql-form";
-import ScrollTracker from "./ScrollTracker";
+import { Form, getDisplayName } from "domainql-form";
+import { ScrollTracker } from "@quinscape/automaton-js";
 
 
 /**
@@ -19,22 +19,7 @@ export default function(Component, formProps)
     const EnhancedComponent = props => {
 
         const { value, options, onSubmit } = props;
-
-        const [ focused, setFocused ] = useState(null);
-
-        const onFocus = ev => {
-
-            setFocused(ev.target);
-        };
-
-        const onBlur = ev => {
-            if (focused === ev.target)
-            {
-                setFocused(null);
-            }
-        };
-
-
+        
         return (
             <Form
                 { ... formProps}
@@ -45,12 +30,9 @@ export default function(Component, formProps)
                 {
                     formConfig => (
                         <div
-                            onFocusCapture={ onFocus }
-                            onBlurCapture={ onBlur }
                         >
                             <ScrollTracker
                                 formConfig={ formConfig }
-                                focused={ focused }
                             >
                                 <Component
                                     { ... props }
