@@ -30,15 +30,16 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@quinscape/automaton-js@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.0.5.tgz#6d052a46d527e37cd17c672cb44dab6079031d2e"
-  integrity sha512-zWVhkDkaatNVP05NMUDpHYY4nn2SIWxZUk64HEpSD8bZ1dstdJqwUrdT3VrmQTzWYcQHzVtH5VJmTkfHjAFr6w==
+"@quinscape/automaton-js@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.0.6.tgz#0e3a07d694db4b1bf6fbbee33871738807daf81c"
+  integrity sha512-dRNF3xUMryQsJ+IINmGy/mJMNZO3N7xZJITA7po9xrFDD9FRhqx9sXKUKZQpJzjUPmnFhRU9DQwztmI5DGrfzA==
   dependencies:
     classnames "^2.2.6"
     graphql "^14.0.2"
     prop-types "^15.6.2"
     react-json-tree "^0.11.0"
+    recursive-readdir "^2.2.2"
 
 "@webassemblyjs/ast@1.7.11":
   version "1.7.11"
@@ -3625,6 +3626,13 @@ rechoir@^0.6.2:
   resolved "https://registry.yarnpkg.com/rechoir/-/rechoir-0.6.2.tgz#85204b54dba82d5742e28c96756ef43af50e3384"
   dependencies:
     resolve "^1.1.6"
+
+recursive-readdir@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/recursive-readdir/-/recursive-readdir-2.2.2.tgz#9946fb3274e1628de6e36b2f6714953b4845094f"
+  integrity sha512-nRCcW9Sj7NuZwa2XvH9co8NPeXUBhZP7CRKJtU+cS6PW9FpCIFoI5ib0NT1ZrbNuPoRy0ylyCaUL8Gih4LSyFg==
+  dependencies:
+    minimatch "3.0.4"
 
 regenerate@^1.2.1:
   version "1.4.0"

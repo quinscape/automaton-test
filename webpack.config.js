@@ -47,6 +47,7 @@ module.exports = {
             "domainql-form": path.resolve("./node_modules/domainql-form"),
             "reactstrap": path.resolve("./node_modules/reactstrap"),
             "mobx-react": path.resolve("./node_modules/mobx-react"),
+            "mobx-react-lite": path.resolve("./node_modules/mobx-react-lite"),
             "mobx-react-devtools": path.resolve("./node_modules/mobx-react-devtools"),
             "mobx-utils": path.resolve("./node_modules/mobx-utils"),
             "history": path.resolve("./node_modules/history"),
