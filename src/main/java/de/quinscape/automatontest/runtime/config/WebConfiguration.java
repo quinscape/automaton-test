@@ -93,24 +93,12 @@ public class WebConfiguration
                 // inject by hand in a Spring-JsView application
                 .withViewDataProvider(
                     new AutomatonJsViewProvider(
-                        dslContext, processInjectionService,
-                        translationService, automatonTestWebSocketHandler,
+                        dslContext,
+                        domainQL,
+                        processInjectionService,
+                        translationService,
+                        automatonTestWebSocketHandler,
                         scopeTableConfig
-                    )
-                )
-
-//                // queries defined via PRELOADED_QUERIES
-//                .withViewDataProvider(
-//                    new PreloadedGraphQLQueryProvider(
-//                        graphQLSchema,
-//                        resourceLoader
-//                    )
-//                )
-
-                // schema data for domainql-form and automaton-js
-                .withViewDataProvider(
-                    new SchemaDataProvider(
-                        graphQLSchema
                     )
                 )
 
