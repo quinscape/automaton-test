@@ -4,7 +4,7 @@
 package de.quinscape.automatontest.domain.tables.pojos;
 
 
-import de.quinscape.domainql.generic.DomainObject;
+import de.quinscape.domainql.generic.GeneratedDomainObject;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -38,9 +38,9 @@ import javax.validation.constraints.Size;
     @Index(name = "pk_app_translation", unique = true, columnList = "id ASC"),
     @Index(name = "uc_app_translation", unique = true, columnList = "locale ASC, tag ASC, process_name ASC")
 })
-public class AppTranslation implements DomainObject, Serializable {
+public class AppTranslation extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = 395783909;
+    private static final long serialVersionUID = -388226620;
 
     private String    id;
     private String    locale;

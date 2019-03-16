@@ -4,7 +4,7 @@
 package de.quinscape.automatontest.domain.tables.pojos;
 
 
-import de.quinscape.domainql.generic.DomainObject;
+import de.quinscape.domainql.generic.GeneratedDomainObject;
 import de.quinscape.domainql.jsonb.JSONB;
 
 import java.io.Serializable;
@@ -34,9 +34,9 @@ import javax.validation.constraints.Size;
 @Table(name = "app_config", schema = "public", indexes = {
     @Index(name = "pk_app_config", unique = true, columnList = "name ASC")
 })
-public class AppConfig implements DomainObject, Serializable {
+public class AppConfig extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = -2141046015;
+    private static final long serialVersionUID = -840575318;
 
     private String name;
     private JSONB  scope;

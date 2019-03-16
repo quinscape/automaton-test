@@ -4,7 +4,7 @@
 package de.quinscape.automatontest.domain.tables.pojos;
 
 
-import de.quinscape.domainql.generic.DomainObject;
+import de.quinscape.domainql.generic.GeneratedDomainObject;
 
 import java.io.Serializable;
 
@@ -34,9 +34,9 @@ import javax.validation.constraints.Size;
     @Index(name = "foo_type_name_key", unique = true, columnList = "name ASC"),
     @Index(name = "pk_foo_type", unique = true, columnList = "ordinal ASC")
 })
-public class FooType implements DomainObject, Serializable {
+public class FooType extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = 2010184275;
+    private static final long serialVersionUID = -1778956268;
 
     private Integer ordinal;
     private String  name;

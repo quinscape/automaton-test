@@ -4,7 +4,7 @@
 package de.quinscape.automatontest.domain.tables.pojos;
 
 
-import de.quinscape.domainql.generic.DomainObject;
+import de.quinscape.domainql.generic.GeneratedDomainObject;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -36,9 +36,9 @@ import javax.validation.constraints.Size;
     @Index(name = "fki_order_order_status", columnList = "status ASC"),
     @Index(name = "pk_order", unique = true, columnList = "id ASC")
 })
-public class Order implements DomainObject, Serializable {
+public class Order extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = 1650316248;
+    private static final long serialVersionUID = 1155410841;
 
     private String    id;
     private Long      sum;

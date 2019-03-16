@@ -4,7 +4,7 @@
 package de.quinscape.automatontest.domain.tables.pojos;
 
 
-import de.quinscape.domainql.generic.DomainObject;
+import de.quinscape.domainql.generic.GeneratedDomainObject;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -34,9 +34,9 @@ import javax.validation.constraints.Size;
 @Table(name = "app_login", schema = "public", indexes = {
     @Index(name = "pk_app_login", unique = true, columnList = "series ASC")
 })
-public class AppLogin implements DomainObject, Serializable {
+public class AppLogin extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = -1820205277;
+    private static final long serialVersionUID = -310210612;
 
     private String    username;
     private String    series;
