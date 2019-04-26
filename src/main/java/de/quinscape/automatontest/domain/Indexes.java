@@ -14,6 +14,7 @@ import de.quinscape.automatontest.domain.tables.AppUserConfig;
 import de.quinscape.automatontest.domain.tables.Customer;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
+import de.quinscape.automatontest.domain.tables.Node;
 import de.quinscape.automatontest.domain.tables.Order;
 import de.quinscape.automatontest.domain.tables.OrderItem;
 import de.quinscape.automatontest.domain.tables.OrderStatus;
@@ -57,6 +58,8 @@ public class Indexes {
     public static final Index PK_FOO = Indexes0.PK_FOO;
     public static final Index FOO_TYPE_NAME_KEY = Indexes0.FOO_TYPE_NAME_KEY;
     public static final Index PK_FOO_TYPE = Indexes0.PK_FOO_TYPE;
+    public static final Index PK_NODE = Indexes0.PK_NODE;
+    public static final Index UC_NODE_NAME = Indexes0.UC_NODE_NAME;
     public static final Index FKI_ORDER_ORDER_SHIPPING_TYPE = Indexes0.FKI_ORDER_ORDER_SHIPPING_TYPE;
     public static final Index FKI_ORDER_ORDER_STATUS = Indexes0.FKI_ORDER_ORDER_STATUS;
     public static final Index PK_ORDER = Indexes0.PK_ORDER;
@@ -84,6 +87,8 @@ public class Indexes {
         public static Index PK_FOO = Internal.createIndex("pk_foo", Foo.FOO, new OrderField[] { Foo.FOO.ID }, true);
         public static Index FOO_TYPE_NAME_KEY = Internal.createIndex("foo_type_name_key", FooType.FOO_TYPE, new OrderField[] { FooType.FOO_TYPE.NAME }, true);
         public static Index PK_FOO_TYPE = Internal.createIndex("pk_foo_type", FooType.FOO_TYPE, new OrderField[] { FooType.FOO_TYPE.ORDINAL }, true);
+        public static Index PK_NODE = Internal.createIndex("pk_node", Node.NODE, new OrderField[] { Node.NODE.ID }, true);
+        public static Index UC_NODE_NAME = Internal.createIndex("uc_node_name", Node.NODE, new OrderField[] { Node.NODE.NAME }, true);
         public static Index FKI_ORDER_ORDER_SHIPPING_TYPE = Internal.createIndex("fki_order_order_shipping_type", Order.ORDER, new OrderField[] { Order.ORDER.SHIPPING_TYPE }, false);
         public static Index FKI_ORDER_ORDER_STATUS = Internal.createIndex("fki_order_order_status", Order.ORDER, new OrderField[] { Order.ORDER.STATUS }, false);
         public static Index PK_ORDER = Internal.createIndex("pk_order", Order.ORDER, new OrderField[] { Order.ORDER.ID }, true);

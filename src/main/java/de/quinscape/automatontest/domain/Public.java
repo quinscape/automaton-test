@@ -11,9 +11,11 @@ import de.quinscape.automatontest.domain.tables.AppLogin;
 import de.quinscape.automatontest.domain.tables.AppTranslation;
 import de.quinscape.automatontest.domain.tables.AppUser;
 import de.quinscape.automatontest.domain.tables.AppUserConfig;
+import de.quinscape.automatontest.domain.tables.Bar;
 import de.quinscape.automatontest.domain.tables.Customer;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
+import de.quinscape.automatontest.domain.tables.Node;
 import de.quinscape.automatontest.domain.tables.Order;
 import de.quinscape.automatontest.domain.tables.OrderItem;
 import de.quinscape.automatontest.domain.tables.OrderStatus;
@@ -44,7 +46,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = 333191668;
+    private static final long serialVersionUID = -482212214;
 
     /**
      * The reference instance of <code>public</code>
@@ -87,6 +89,11 @@ public class Public extends SchemaImpl {
     public final AppUserConfig APP_USER_CONFIG = de.quinscape.automatontest.domain.tables.AppUserConfig.APP_USER_CONFIG;
 
     /**
+     * The table <code>public.bar</code>.
+     */
+    public final Bar BAR = de.quinscape.automatontest.domain.tables.Bar.BAR;
+
+    /**
      * The table <code>public.customer</code>.
      */
     public final Customer CUSTOMER = de.quinscape.automatontest.domain.tables.Customer.CUSTOMER;
@@ -100,6 +107,11 @@ public class Public extends SchemaImpl {
      * The table <code>public.foo_type</code>.
      */
     public final FooType FOO_TYPE = de.quinscape.automatontest.domain.tables.FooType.FOO_TYPE;
+
+    /**
+     * The table <code>public.node</code>.
+     */
+    public final Node NODE = de.quinscape.automatontest.domain.tables.Node.NODE;
 
     /**
      * The table <code>public.order</code>.
@@ -158,9 +170,11 @@ public class Public extends SchemaImpl {
             AppTranslation.APP_TRANSLATION,
             AppUser.APP_USER,
             AppUserConfig.APP_USER_CONFIG,
+            Bar.BAR,
             Customer.CUSTOMER,
             Foo.FOO,
             FooType.FOO_TYPE,
+            Node.NODE,
             Order.ORDER,
             OrderItem.ORDER_ITEM,
             OrderStatus.ORDER_STATUS,
