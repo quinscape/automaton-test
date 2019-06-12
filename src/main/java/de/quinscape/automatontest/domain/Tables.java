@@ -14,6 +14,7 @@ import de.quinscape.automatontest.domain.tables.AppUserConfig;
 import de.quinscape.automatontest.domain.tables.Bar;
 import de.quinscape.automatontest.domain.tables.Customer;
 import de.quinscape.automatontest.domain.tables.Foo;
+import de.quinscape.automatontest.domain.tables.FooColumns;
 import de.quinscape.automatontest.domain.tables.FooType;
 import de.quinscape.automatontest.domain.tables.Node;
 import de.quinscape.automatontest.domain.tables.Order;
@@ -87,6 +88,11 @@ public class Tables {
      * The table <code>public.foo</code>.
      */
     public static final Foo FOO = de.quinscape.automatontest.domain.tables.Foo.FOO;
+
+    /**
+     * The table <code>public.foo_columns</code>.
+     */
+    public static final FooColumns FOO_COLUMNS = de.quinscape.automatontest.domain.tables.FooColumns.FOO_COLUMNS;
 
     /**
      * The table <code>public.foo_type</code>.

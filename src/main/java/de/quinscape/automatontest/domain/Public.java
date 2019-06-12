@@ -14,6 +14,7 @@ import de.quinscape.automatontest.domain.tables.AppUserConfig;
 import de.quinscape.automatontest.domain.tables.Bar;
 import de.quinscape.automatontest.domain.tables.Customer;
 import de.quinscape.automatontest.domain.tables.Foo;
+import de.quinscape.automatontest.domain.tables.FooColumns;
 import de.quinscape.automatontest.domain.tables.FooType;
 import de.quinscape.automatontest.domain.tables.Node;
 import de.quinscape.automatontest.domain.tables.Order;
@@ -46,7 +47,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = -482212214;
+    private static final long serialVersionUID = 675721212;
 
     /**
      * The reference instance of <code>public</code>
@@ -102,6 +103,11 @@ public class Public extends SchemaImpl {
      * The table <code>public.foo</code>.
      */
     public final Foo FOO = de.quinscape.automatontest.domain.tables.Foo.FOO;
+
+    /**
+     * The table <code>public.foo_columns</code>.
+     */
+    public final FooColumns FOO_COLUMNS = de.quinscape.automatontest.domain.tables.FooColumns.FOO_COLUMNS;
 
     /**
      * The table <code>public.foo_type</code>.
@@ -173,6 +179,7 @@ public class Public extends SchemaImpl {
             Bar.BAR,
             Customer.CUSTOMER,
             Foo.FOO,
+            FooColumns.FOO_COLUMNS,
             FooType.FOO_TYPE,
             Node.NODE,
             Order.ORDER,
