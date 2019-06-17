@@ -35,7 +35,7 @@ import javax.validation.constraints.Size;
 })
 public class AppAttachment extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = 220253474;
+    private static final long serialVersionUID = 977079230;
 
     private String id;
     private String description;

@@ -36,7 +36,7 @@ import javax.validation.constraints.Size;
 })
 public class AppConfig extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = -840575318;
+    private static final long serialVersionUID = -492043706;
 
     private String name;
     private JSONB  scope;

@@ -41,7 +41,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class GridColumns extends TableImpl<GridColumnsRecord> {
 
-    private static final long serialVersionUID = 250457097;
+    private static final long serialVersionUID = -320341660;
 
     /**
      * The reference instance of <code>public.grid_columns</code>
@@ -62,9 +62,9 @@ public class GridColumns extends TableImpl<GridColumnsRecord> {
     public final TableField<GridColumnsRecord, String> ID = createField("id", org.jooq.impl.SQLDataType.VARCHAR(36).nullable(false), this, "");
 
     /**
-     * The column <code>public.grid_columns.type_name</code>.
+     * The column <code>public.grid_columns.name</code>.
      */
-    public final TableField<GridColumnsRecord, String> TYPE_NAME = createField("type_name", org.jooq.impl.SQLDataType.VARCHAR(100).nullable(false), this, "");
+    public final TableField<GridColumnsRecord, String> NAME = createField("name", org.jooq.impl.SQLDataType.VARCHAR(100).nullable(false), this, "");
 
     /**
      * The column <code>public.grid_columns.columns</code>.
@@ -118,7 +118,7 @@ public class GridColumns extends TableImpl<GridColumnsRecord> {
      */
     @Override
     public List<Index> getIndexes() {
-        return Arrays.<Index>asList(Indexes.GRID_COLUMNS_TYPE_NAME_OWNER_ID_KEY, Indexes.PK_GRID_COLUMNS);
+        return Arrays.<Index>asList(Indexes.GRID_COLUMNS_NAME_OWNER_ID_KEY, Indexes.PK_GRID_COLUMNS);
     }
 
     /**
@@ -134,7 +134,7 @@ public class GridColumns extends TableImpl<GridColumnsRecord> {
      */
     @Override
     public List<UniqueKey<GridColumnsRecord>> getKeys() {
-        return Arrays.<UniqueKey<GridColumnsRecord>>asList(Keys.PK_GRID_COLUMNS, Keys.GRID_COLUMNS_TYPE_NAME_OWNER_ID_KEY);
+        return Arrays.<UniqueKey<GridColumnsRecord>>asList(Keys.PK_GRID_COLUMNS, Keys.GRID_COLUMNS_NAME_OWNER_ID_KEY);
     }
 
     /**

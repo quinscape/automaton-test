@@ -37,14 +37,14 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 @Entity
 @Table(name = "grid_columns", schema = "public", uniqueConstraints = {
-    @UniqueConstraint(columnNames = {"type_name", "owner_id"})
+    @UniqueConstraint(columnNames = {"name", "owner_id"})
 }, indexes = {
-    @Index(name = "grid_columns_type_name_owner_id_key", unique = true, columnList = "type_name ASC, owner_id ASC"),
+    @Index(name = "grid_columns_name_owner_id_key", unique = true, columnList = "name ASC, owner_id ASC"),
     @Index(name = "pk_grid_columns", unique = true, columnList = "id ASC")
 })
 public class GridColumnsRecord extends UpdatableRecordImpl<GridColumnsRecord> implements Record4<String, String, JSONB, String> {
 
-    private static final long serialVersionUID = -1461965148;
+    private static final long serialVersionUID = 1722288479;
 
     /**
      * Setter for <code>public.grid_columns.id</code>.
@@ -65,19 +65,19 @@ public class GridColumnsRecord extends UpdatableRecordImpl<GridColumnsRecord> im
     }
 
     /**
-     * Setter for <code>public.grid_columns.type_name</code>.
+     * Setter for <code>public.grid_columns.name</code>.
      */
-    public void setTypeName(String value) {
+    public void setName(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>public.grid_columns.type_name</code>.
+     * Getter for <code>public.grid_columns.name</code>.
      */
-    @Column(name = "type_name", nullable = false, length = 100)
+    @Column(name = "name", nullable = false, length = 100)
     @NotNull
     @Size(max = 100)
-    public String getTypeName() {
+    public String getName() {
         return (String) get(1);
     }
 
@@ -158,7 +158,7 @@ public class GridColumnsRecord extends UpdatableRecordImpl<GridColumnsRecord> im
      */
     @Override
     public Field<String> field2() {
-        return GridColumns.GRID_COLUMNS.TYPE_NAME;
+        return GridColumns.GRID_COLUMNS.NAME;
     }
 
     /**
@@ -190,7 +190,7 @@ public class GridColumnsRecord extends UpdatableRecordImpl<GridColumnsRecord> im
      */
     @Override
     public String component2() {
-        return getTypeName();
+        return getName();
     }
 
     /**
@@ -222,7 +222,7 @@ public class GridColumnsRecord extends UpdatableRecordImpl<GridColumnsRecord> im
      */
     @Override
     public String value2() {
-        return getTypeName();
+        return getName();
     }
 
     /**
@@ -255,7 +255,7 @@ public class GridColumnsRecord extends UpdatableRecordImpl<GridColumnsRecord> im
      */
     @Override
     public GridColumnsRecord value2(String value) {
-        setTypeName(value);
+        setName(value);
         return this;
     }
 
@@ -303,11 +303,11 @@ public class GridColumnsRecord extends UpdatableRecordImpl<GridColumnsRecord> im
     /**
      * Create a detached, initialised GridColumnsRecord
      */
-    public GridColumnsRecord(String id, String typeName, JSONB columns, String ownerId) {
+    public GridColumnsRecord(String id, String name, JSONB columns, String ownerId) {
         super(GridColumns.GRID_COLUMNS);
 
         set(0, id);
-        set(1, typeName);
+        set(1, name);
         set(2, columns);
         set(3, ownerId);
     }

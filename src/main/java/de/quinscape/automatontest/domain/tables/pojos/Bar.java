@@ -32,7 +32,7 @@ import javax.validation.constraints.Size;
 @Table(name = "bar", schema = "public")
 public class Bar extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = 27295823;
+    private static final long serialVersionUID = 1251083827;
 
     private String    id;
     private String    name;

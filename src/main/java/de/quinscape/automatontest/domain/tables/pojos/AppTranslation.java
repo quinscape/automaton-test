@@ -40,7 +40,7 @@ import javax.validation.constraints.Size;
 })
 public class AppTranslation extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = -388226620;
+    private static final long serialVersionUID = -1846058840;
 
     private String    id;
     private String    locale;

@@ -14,8 +14,8 @@ import de.quinscape.automatontest.domain.tables.AppUserConfig;
 import de.quinscape.automatontest.domain.tables.Bar;
 import de.quinscape.automatontest.domain.tables.Customer;
 import de.quinscape.automatontest.domain.tables.Foo;
-import de.quinscape.automatontest.domain.tables.FooColumns;
 import de.quinscape.automatontest.domain.tables.FooType;
+import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.Node;
 import de.quinscape.automatontest.domain.tables.Order;
 import de.quinscape.automatontest.domain.tables.OrderItem;
@@ -47,7 +47,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = 675721212;
+    private static final long serialVersionUID = -3099822;
 
     /**
      * The reference instance of <code>public</code>
@@ -105,14 +105,14 @@ public class Public extends SchemaImpl {
     public final Foo FOO = de.quinscape.automatontest.domain.tables.Foo.FOO;
 
     /**
-     * The table <code>public.foo_columns</code>.
-     */
-    public final FooColumns FOO_COLUMNS = de.quinscape.automatontest.domain.tables.FooColumns.FOO_COLUMNS;
-
-    /**
      * The table <code>public.foo_type</code>.
      */
     public final FooType FOO_TYPE = de.quinscape.automatontest.domain.tables.FooType.FOO_TYPE;
+
+    /**
+     * The table <code>public.grid_columns</code>.
+     */
+    public final GridColumns GRID_COLUMNS = de.quinscape.automatontest.domain.tables.GridColumns.GRID_COLUMNS;
 
     /**
      * The table <code>public.node</code>.
@@ -179,8 +179,8 @@ public class Public extends SchemaImpl {
             Bar.BAR,
             Customer.CUSTOMER,
             Foo.FOO,
-            FooColumns.FOO_COLUMNS,
             FooType.FOO_TYPE,
+            GridColumns.GRID_COLUMNS,
             Node.NODE,
             Order.ORDER,
             OrderItem.ORDER_ITEM,

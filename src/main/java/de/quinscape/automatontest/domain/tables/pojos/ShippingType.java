@@ -35,7 +35,7 @@ import javax.validation.constraints.Size;
 })
 public class ShippingType extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = -1273413471;
+    private static final long serialVersionUID = 1907975813;
 
     private Integer ordinal;
     private String  name;

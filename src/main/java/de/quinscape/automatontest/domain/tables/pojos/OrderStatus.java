@@ -36,7 +36,7 @@ import javax.validation.constraints.Size;
 })
 public class OrderStatus extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = -100592452;
+    private static final long serialVersionUID = -1989050280;
 
     private Integer ordinal;
     private String  name;

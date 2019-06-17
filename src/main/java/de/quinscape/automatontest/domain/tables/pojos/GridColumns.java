@@ -33,17 +33,17 @@ import javax.validation.constraints.Size;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 @Entity
 @Table(name = "grid_columns", schema = "public", uniqueConstraints = {
-    @UniqueConstraint(columnNames = {"type_name", "owner_id"})
+    @UniqueConstraint(columnNames = {"name", "owner_id"})
 }, indexes = {
-    @Index(name = "grid_columns_type_name_owner_id_key", unique = true, columnList = "type_name ASC, owner_id ASC"),
+    @Index(name = "grid_columns_name_owner_id_key", unique = true, columnList = "name ASC, owner_id ASC"),
     @Index(name = "pk_grid_columns", unique = true, columnList = "id ASC")
 })
 public class GridColumns extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = -412792571;
+    private static final long serialVersionUID = 1869570887;
 
     private String id;
-    private String typeName;
+    private String name;
     private JSONB  columns;
     private String ownerId;
 
@@ -51,19 +51,19 @@ public class GridColumns extends GeneratedDomainObject implements Serializable {
 
     public GridColumns(GridColumns value) {
         this.id = value.id;
-        this.typeName = value.typeName;
+        this.name = value.name;
         this.columns = value.columns;
         this.ownerId = value.ownerId;
     }
 
     public GridColumns(
         String id,
-        String typeName,
+        String name,
         JSONB  columns,
         String ownerId
     ) {
         this.id = id;
-        this.typeName = typeName;
+        this.name = name;
         this.columns = columns;
         this.ownerId = ownerId;
     }
@@ -80,15 +80,15 @@ public class GridColumns extends GeneratedDomainObject implements Serializable {
         this.id = id;
     }
 
-    @Column(name = "type_name", nullable = false, length = 100)
+    @Column(name = "name", nullable = false, length = 100)
     @NotNull
     @Size(max = 100)
-    public String getTypeName() {
-        return this.typeName;
+    public String getName() {
+        return this.name;
     }
 
-    public void setTypeName(String typeName) {
-        this.typeName = typeName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Column(name = "columns")
@@ -116,7 +116,7 @@ public class GridColumns extends GeneratedDomainObject implements Serializable {
         StringBuilder sb = new StringBuilder("GridColumns (");
 
         sb.append(id);
-        sb.append(", ").append(typeName);
+        sb.append(", ").append(name);
         sb.append(", ").append(columns);
         sb.append(", ").append(ownerId);
 
