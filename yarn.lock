@@ -847,10 +847,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@quinscape/automaton-js@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.0.11.tgz#39adbe84d50c2a108e22e37fc0d51046bc9e82d4"
-  integrity sha512-uyCwEuG6FjHTIDrTO0KJ+9kT/4bIOhj0feJ+Jvl73dFnzNLlExVobSaMMcZQNyV6tJLIpWgqXaWof/U/GudRYQ==
+"@quinscape/automaton-js@^0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.0.12.tgz#48b20f7981ecd63a482558e036149526c0739a81"
+  integrity sha512-EimjbnH5bjpWrxewM0SUL1gUAwhy7jWGNV+FNUtYDKzinxLr0EsrNvSmbmbemAlorT0ifcSGMZwepG+9aT+76Q==
   dependencies:
     classnames "^2.2.6"
     graphql "^14.0.2"
@@ -858,6 +858,7 @@
     prop-types "^15.6.2"
     react-json-tree "^0.11.0"
     recursive-readdir "^2.2.2"
+    uuid "^3.3.2"
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
@@ -1248,10 +1249,10 @@ babel-plugin-syntax-decorators@^6.1.18:
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-decorators/-/babel-plugin-syntax-decorators-6.13.0.tgz#312563b4dbde3cc806cee3e416cceeaddd11ac0b"
   integrity sha1-MSVjtNvePMgGzuPkFszurd0RrAs=
 
-babel-plugin-track-usage@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/babel-plugin-track-usage/-/babel-plugin-track-usage-0.2.3.tgz#a8394d99c30dee79d35353201135614ca647726d"
-  integrity sha512-AqcG0fP6W8BOirW24EVAMbHMhyLty8m2cBUn8kjE5LpiFQeuTc4maMDOWO7P40NJAmsbeovrWuBhn+ZjLRbrQg==
+babel-plugin-track-usage@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/babel-plugin-track-usage/-/babel-plugin-track-usage-0.2.4.tgz#a6668e79860cdb093b38ea551586a09ef415f69d"
+  integrity sha512-3lbzs582JdqTV+XQQc4USUQjfuI5R57SEe051qCKKjvxqubw5Yq3yXi4NLakf5jpFHfC16IAnCFpdNENm7twVg==
   dependencies:
     "@babel/runtime" "^7.4.5"
     deep-equal "^1.0.1"
