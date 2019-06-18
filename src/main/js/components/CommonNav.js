@@ -40,15 +40,26 @@ const CommonNav = props => {
                     >
                         CRUD-Test
                     </DropdownItem>
+                    <DropdownItem divider/>
                     <DropdownItem
                         onClick={ () => runProcessURI("/shipping/datagrid-test") }
                     >
                         DataGrid-Test
                     </DropdownItem>
                     <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/process-test") }
+                        onClick={ () => runProcessURI("/shipping/animalgrid-test") }
                     >
-                        Process-Test
+                        Animals Grid
+                    </DropdownItem>
+                    <DropdownItem
+                        onClick={ () => runProcessURI("/shipping/extfilter-test") }
+                    >
+                        External Filter Grid
+                    </DropdownItem>
+                    <DropdownItem
+                        onClick={ () => runProcessURI("/shipping/colcfg-test") }
+                    >
+                        Column Config Grid
                     </DropdownItem>
                     <DropdownItem divider/>
                     <DropdownItem

@@ -8,11 +8,40 @@ import {
 import {
     injection,
     config,
+    createDomainObject,
     storeDomainObject,
     deleteDomainObject,
-    GraphQLQuery
+    GraphQLQuery,
+    backToParent,
+
+    FilterDSL
 } from "@quinscape/automaton-js";
 
+
+// deconstruct FilterDSL methods
+const { field, value } = FilterDSL;
+
+// language=GraphQL
+const FooDetailQuery = new GraphQLQuery(`query queryFooDetail($config: QueryConfigInput!)
+{
+    iQueryFoo(config: $config)
+    {
+        rows{
+            id
+            name
+            num
+            description
+            created
+            flag
+            type
+            owner{
+                id
+                login
+            }
+        }
+    }
+}`
+);
 
 // noinspection JSUnusedGlobalSymbols
 export function initProcess(process, scope)
@@ -23,10 +52,86 @@ export function initProcess(process, scope)
     // return process states and transitions
     return (
         {
-            startState: "DataGridHome",
+            startState: "CRUDList",
             states: {
-                "DataGridHome":
+                "CRUDList":
                     {
+                        "new-foo": {
+                            to: "CRUDDetail",
+                            action: t => {
+                                const newObj = createDomainObject("FooInput");
+
+                                newObj.name = "Unnamed Foo";
+                                newObj.desc = "";
+                                newObj.num = 0;
+                                newObj.flag = false;
+                                newObj.created = new Date();
+                                newObj.type = "TYPE_A";
+
+                                return scope.updateCurrent(newObj);
+                            }
+                        },
+                        "to-detail": {
+                            to: "CRUDDetail",
+                            action: t => {
+
+                                console.log("to-detail, context = ", t.context);
+
+                                return FooDetailQuery.execute({
+                                    config: {
+                                        condition:
+                                            field("id")
+                                                .eq(
+                                                    value(
+                                                        "String",
+                                                        t.context
+                                                    )
+                                                )
+                                    }
+                                }).then(({iQueryFoo}) => {
+
+                                    if (iQueryFoo.rows.length === 0)
+                                    {
+                                        alert("Could not load Foo with id '" + t.context)
+                                    }
+                                    return scope.updateCurrent(iQueryFoo.rows[0]);
+                                });
+                            }
+                        }
+                    }
+                ,
+                "CRUDDetail": {
+                    "save": {
+                        action: t =>
+                            storeDomainObject({
+                                ... t.context,
+                                ownerId:  config.auth.id || "",
+                            })
+                                .then(() => scope.foos.update())
+                                .then(() => t.back(backToParent(t)))
+                    },
+                    "delete": {
+                        to: "CRUDList",
+                        discard: true,
+                        confirmation: context => `Delete ${context.name} ?`,
+
+                        action: t => {
+                            const { id } = t.context;
+
+                            return deleteDomainObject("Foo", id)
+                                .then(
+                                    didDelete => didDelete && scope.foos.update()
+                                )
+                        }
+                    },
+                    "cancel": {
+                        to: "CRUDList",
+                        discard: true,
+                        action: t => {
+
+                            console.log("Transition 'cancel'")
+                        }
+                    }
                 }
             }
         }
@@ -42,10 +147,11 @@ export default class CRUDTestScope {
     @observable
     foos = injection(
         // language=GraphQL
-        `query iQueryFoo
+        `query iQueryFoo($config: QueryConfigInput!)
         {
-            iQueryFoo
+            iQueryFoo(config: $config)
             {
+                type
                 columnConfig{
                     columnStates{
                         name
@@ -54,33 +160,35 @@ export default class CRUDTestScope {
                     }
                 }
                 queryConfig{
-                    filter{
-                        fieldFilters{
-                            fields
-                            values
-                            filterType
-                        }
-                        filterTransformer
+                    id
+                    condition
+                    currentPage
+                    pageSize
+                    sortOrder{
+                        fields
                     }
                 }
                 rows{
                     id
                     name
-                    num
                     description
-                    created
-                    type
                     flag
+                    type
                     owner{
                         id
                         login
                     }
-                    
                 }
+                rowCount
             }
-        }`
+        }`,
+        {
+            "config": {
+                "pageSize": 20
+            }
+        }
     );
-    
+
     @action
     updateFoos(foos)
     {

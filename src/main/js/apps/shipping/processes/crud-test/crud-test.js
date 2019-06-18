@@ -33,6 +33,18 @@ const CreateFooMutation = new GraphQLQuery(`
     }
     `
 );
+
+
+// language=GraphQL
+const ComplexStoreMutation = new GraphQLQuery(`
+    mutation complexStore($container: ComplexContainerInput)
+    {
+        complexStore(container : $container)
+    }
+    `
+);
+
+
 // language=GraphQL
 const GetFoosQuery = new GraphQLQuery(`
     query getFoos{
@@ -97,6 +109,16 @@ export function initProcess(process, scope)
                             storeDomainObject({
                                 ... t.context,
                                 ownerId:  config.auth.id || "",
+                            })
+                            .then(() => GetFoosQuery.execute())
+                            .then(({getFoos}) => scope.updateFoos(getFoos))
+                            .then(() => t.back(backToParent(t)))
+                    },
+                    "complex-save": {
+                        action: t =>
+                            storeDomainObject({
+                                foo: t.context,
+                                other: node
                             })
                             .then(() => GetFoosQuery.execute())
                             .then(({getFoos}) => scope.updateFoos(getFoos))

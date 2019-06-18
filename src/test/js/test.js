@@ -1,12 +1,52 @@
-import assert from "power-assert"
+import { parse } from "graphql/language/parser"
 
-describe("Testing", function () {
 
-    it("Mocha is integrated", function () {
-        const array = test("x");
-        const array2 = test("x", 2);
+describe("Test", function () {
 
-            console.log({array, array2});
+    it("fn", function () {
+
+        const doc = parse(
+            // language=GraphQL
+                `query iQuerywithColumnConfigFoo($config: QueryConfigInput)
+            {
+                iQuerywithColumnConfigFoo(config: $config)
+                {
+                    type
+                    columnConfig{
+                        columnStates{
+                            name
+                            enabled
+                            sortable
+                        }
+                    }
+                    queryConfig{
+                        condition
+                        currentPage
+                        pageSize
+                        sortOrder{
+                            fields
+                        }
+                    }
+                    rows{
+                        id
+                        name
+                        num
+                        description
+                        created
+                        type
+                        flag
+                        owner{
+                            id
+                            login
+                        }
+
+                    }
+                    rowCount
+                }
+            }`,
+        )
+
+        console.log(JSON.stringify(doc, null, 4))
 
     });
 

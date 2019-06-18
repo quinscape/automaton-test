@@ -1,8 +1,12 @@
 package de.quinscape.automatontest.runtime.config;
 
+import de.quinscape.automaton.runtime.scalar.ConditionScalar;
+import de.quinscape.automaton.runtime.scalar.ConditionType;
 import de.quinscape.automatontest.domain.Public;
 import de.quinscape.automatontest.domain.tables.pojos.Address;
+import de.quinscape.automatontest.domain.tables.pojos.Bar;
 import de.quinscape.automatontest.domain.tables.pojos.Customer;
+import de.quinscape.automatontest.domain.tables.pojos.Node;
 import de.quinscape.automatontest.domain.tables.pojos.Order;
 import de.quinscape.automatontest.domain.tables.pojos.OrderItem;
 import de.quinscape.automatontest.model.ValidationRules;
@@ -12,6 +16,8 @@ import de.quinscape.domainql.config.SourceField;
 import de.quinscape.domainql.config.TargetField;
 import de.quinscape.domainql.generic.DomainObject;
 import de.quinscape.domainql.generic.DomainObjectScalar;
+import de.quinscape.domainql.generic.GenericScalar;
+import de.quinscape.domainql.generic.GenericScalarType;
 import de.quinscape.domainql.jsonb.JSONB;
 import de.quinscape.domainql.jsonb.JSONBScalar;
 import graphql.GraphQL;
@@ -66,14 +72,17 @@ public class GraphQLConfiguration
             .objectTypes(Public.PUBLIC)
 
             .withAdditionalScalar( DomainObject.class, DomainObjectScalar.newDomainObjectScalar())
-
-            .withAdditionalScalar(JSONB.class, new JSONBScalar())
+            .withAdditionalScalar( GenericScalar.class, GenericScalarType.newGenericScalar())
+            .withAdditionalScalar( JSONB.class, new JSONBScalar())
+            .withAdditionalScalar( ConditionScalar.class, ConditionType.newConditionType())
 
             .withAdditionalInputTypes(
                 Customer.class,
                 Order.class,
                 OrderItem.class,
                 Address.class,
+                Node.class,
+                Bar.class,
                 ValidationRules.class
             )
 
@@ -86,6 +95,7 @@ public class GraphQLConfiguration
             .configureRelation( ORDER_ITEM.PRODUCT_ID       , SourceField.OBJECT, TargetField.NONE)
             .configureRelation( FOO.OWNER_ID       , SourceField.OBJECT, TargetField.MANY)
             .configureRelation( FOO.TYPE       , SourceField.SCALAR, TargetField.NONE)
+            .configureRelation( NODE.PARENT_ID , SourceField.OBJECT, TargetField.NONE)
             .build();
     }
 

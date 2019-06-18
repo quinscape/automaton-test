@@ -27,3 +27,16 @@ body
 {
     font-family: "GT-Walsheim-Medium", sans-serif;
 }
+
+.fa-space:before
+{
+    font-weight: 900;
+    width: 1em;
+    content: "\00a0";
+}
+
+
+.btn.disabled
+{
+    cursor: not-allowed;
+}

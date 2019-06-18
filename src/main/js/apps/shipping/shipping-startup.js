@@ -1,7 +1,7 @@
 import "whatwg-fetch"
 import bootstrap from 'jsview-bootstrap'
-import { configure, runInAction } from "mobx"
-import { startup, config, getCurrentProcess, addConfig, shutdown } from "@quinscape/automaton-js"
+import { configure, observable, runInAction, toJS } from "mobx"
+import { startup, config, getCurrentProcess, addConfig, shutdown, InteractiveQuery } from "@quinscape/automaton-js"
 import Layout from "../../components/Layout";
 
 // noinspection ES6UnusedImports
@@ -16,6 +16,7 @@ bootstrap(
     initial => {
 
         console.log("INITIAL", initial);
+        console.log("INJECTED VALUES", Object.values(initial.injections))
 
         return startup(
             require.context("./", true, /\.js$/),
@@ -31,9 +32,10 @@ bootstrap(
 );
 
 
-module.exports = {
+export default {
     config,
     currentProcess: getCurrentProcess,
     runInAction,
-    shutdown
+    shutdown,
+    toJS
 };
