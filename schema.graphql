@@ -1,0 +1,729 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: QueryType
+    mutation: MutationType
+}
+
+"Generated from public.address"
+type Address {
+    "DB column 'address_extra'"
+    addressExtra: String
+    "DB column 'address_line'"
+    addressLine: String!
+    "DB column 'country'"
+    country: String!
+    "DB column 'id'"
+    id: String!
+    "DB column 'postal'"
+    postal: String!
+    "DB column 'recipient'"
+    recipient: String!
+}
+
+"Generated from public.app_attachment"
+type AppAttachment {
+    "DB column 'content_id'"
+    contentId: String
+    "DB column 'description'"
+    description: String
+    "DB column 'id'"
+    id: String!
+    "DB column 'type'"
+    type: String!
+}
+
+"Generated from public.app_config"
+type AppConfig {
+    "DB column 'name'"
+    name: String!
+    "DB column 'scope'"
+    scope: JSONB!
+}
+
+"Generated from public.app_login"
+type AppLogin {
+    "DB column 'last_used'"
+    lastUsed: Timestamp!
+    "DB column 'series'"
+    series: String!
+    "DB column 'token'"
+    token: String!
+    "DB column 'username'"
+    username: String!
+}
+
+"Generated from public.app_translation"
+type AppTranslation {
+    "DB column 'created'"
+    created: Timestamp!
+    "DB column 'id'"
+    id: String!
+    "DB column 'locale'"
+    locale: String!
+    "DB column 'modified'"
+    modified: Timestamp!
+    "DB column 'process_name'"
+    processName: String!
+    "DB column 'tag'"
+    tag: String!
+    "DB column 'translation'"
+    translation: String!
+}
+
+"Generated from public.app_user"
+type AppUser {
+    "DB column 'created'"
+    created: Timestamp!
+    "DB column 'disabled'"
+    disabled: Boolean
+    "Many-to-many objects from 'foo.owner_id'"
+    foos: [Foo]!
+    "DB column 'id'"
+    id: String!
+    "DB column 'last_login'"
+    lastLogin: Timestamp
+    "DB column 'login'"
+    login: String!
+    "DB column 'password'"
+    password: String!
+    "DB column 'roles'"
+    roles: String!
+}
+
+"Generated from public.app_user_config"
+type AppUserConfig {
+    "DB foreign key column 'attachment_id'"
+    attachmentId: String!
+    "DB column 'login'"
+    login: String!
+    "DB foreign key column 'user_id'"
+    userId: String!
+}
+
+"Generated for AutomatonApplication"
+type AutomatonApplication {
+    "Domain.domain"
+    domain: Domain
+    "String.name"
+    name: String
+    "List.processes"
+    processes: [Process]
+}
+
+"Generated from public.bar"
+type Bar {
+    "DB column 'created'"
+    created: Timestamp
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "DB column 'numa'"
+    numa: Int!
+    "DB column 'numb'"
+    numb: Int!
+}
+
+"Generated for ColumnConfig"
+type ColumnConfig {
+    "List.columnStates"
+    columnStates: [ColumnState]
+    "String.type"
+    type: String
+}
+
+"Generated for ColumnState"
+type ColumnState {
+    "boolean.enabled"
+    enabled: Boolean
+    "String.name"
+    name: String
+    "boolean.sortable"
+    sortable: Boolean
+}
+
+"Generated for ConfigValue"
+type ConfigValue {
+    "String.name"
+    name: String
+    "String.value"
+    value: String
+}
+
+"Generated from public.customer"
+type Customer {
+    "Target of 'billing_address_id'"
+    billingAddress: Address!
+    "Target of 'delivery_address_id'"
+    deliveryAddress: Address
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "DB column 'number'"
+    number: String!
+    "Many-to-many objects from 'order.customer_id'"
+    orders: [Order]!
+    "DB column 'salutation'"
+    salutation: String
+}
+
+"Generated for DTLayout"
+type DTLayout {
+    "String.color"
+    color: String
+    "double.x"
+    x: Float
+    "double.y"
+    y: Float
+}
+
+"Generated for Domain"
+type Domain {
+    "String.description"
+    description: String
+    "List.domainTypes"
+    domainTypes: [DomainType]
+    "List.enumTypes"
+    enumTypes: [EnumType]
+}
+
+"Generated for DomainField"
+type DomainField {
+    "List.config"
+    config: [ConfigValue]
+    "String.description"
+    description: String
+    "int.maxLength"
+    maxLength: Int!
+    "String.name"
+    name: String!
+    "boolean.notNull"
+    notNull: Boolean!
+    "String.sqlType"
+    sqlType: String
+    "FieldType.type"
+    type: FieldType!
+    "boolean.unique"
+    unique: Boolean
+}
+
+"Generated for DomainType"
+type DomainType {
+    "DTLayout._"
+    _: DTLayout
+    "String.description"
+    description: String
+    "List.fields"
+    fields: [DomainField]!
+    "List.foreignKeys"
+    foreignKeys: [ForeignKey]!
+    "String.name"
+    name: String!
+    "UniqueConstraint.primaryKey"
+    primaryKey: UniqueConstraint!
+    "List.uniqueConstraints"
+    uniqueConstraints: [UniqueConstraint]!
+}
+
+"Generated for EnumType"
+type EnumType {
+    "String.description"
+    description: String
+    "String.name"
+    name: String!
+    "List.values"
+    values: [String]!
+}
+
+"Generated for FKLayout"
+type FKLayout {
+    "double.x"
+    x: Float
+    "double.y"
+    y: Float
+}
+
+"Generated from public.foo"
+type Foo {
+    "DB column 'created'"
+    created: Timestamp!
+    "DB column 'description'"
+    description: String
+    "DB column 'flag'"
+    flag: Boolean!
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "DB column 'num'"
+    num: Int!
+    "Target of 'owner_id'"
+    owner: AppUser!
+    "DB foreign key column 'type'"
+    type: String!
+}
+
+"Generated from public.foo_type"
+type FooType {
+    "DB column 'name'"
+    name: String!
+    "DB column 'ordinal'"
+    ordinal: Int!
+}
+
+"Generated for ForeignKey"
+type ForeignKey {
+    "FKLayout._"
+    _: FKLayout
+    "String.description"
+    description: String
+    "List.fields"
+    fields: [String]!
+    "List.targetFields"
+    targetFields: [String]
+    "String.targetType"
+    targetType: String!
+}
+
+"Generated from public.grid_columns"
+type GridColumns {
+    "DB column 'columns'"
+    columns: JSONB
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "DB foreign key column 'owner_id'"
+    ownerId: String!
+}
+
+"Generated for InteractiveQuery<AppUser>"
+type InteractiveQueryAppUser {
+    "ColumnConfig.columnConfig"
+    columnConfig: ColumnConfig
+    "QueryConfig.queryConfig"
+    queryConfig: QueryConfig
+    "int.rowCount"
+    rowCount: Int
+    "List.rows"
+    rows: [AppUser]
+    "String.type"
+    type: String
+}
+
+"Generated for InteractiveQuery<Bar>"
+type InteractiveQueryBar {
+    "ColumnConfig.columnConfig"
+    columnConfig: ColumnConfig
+    "QueryConfig.queryConfig"
+    queryConfig: QueryConfig
+    "int.rowCount"
+    rowCount: Int
+    "List.rows"
+    rows: [Bar]
+    "String.type"
+    type: String
+}
+
+"Generated for InteractiveQuery<Foo>"
+type InteractiveQueryFoo {
+    "ColumnConfig.columnConfig"
+    columnConfig: ColumnConfig
+    "QueryConfig.queryConfig"
+    queryConfig: QueryConfig
+    "int.rowCount"
+    rowCount: Int
+    "List.rows"
+    rows: [Foo]
+    "String.type"
+    type: String
+}
+
+"Generated for InteractiveQuery<Node>"
+type InteractiveQueryNode {
+    "ColumnConfig.columnConfig"
+    columnConfig: ColumnConfig
+    "QueryConfig.queryConfig"
+    queryConfig: QueryConfig
+    "int.rowCount"
+    rowCount: Int
+    "List.rows"
+    rows: [Node]
+    "String.type"
+    type: String
+}
+
+"Auto-generated from DataGridLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
+type MutationType {
+    complexStore(container: ComplexContainerInput): Boolean
+    configureColumns(columns: JSONB, name: String!): Boolean
+    createFoo(name: String!): Foo
+    deleteDomainObject(id: String!, type: String!): Boolean
+    merge(domainObject: DomainObject!): Boolean
+    storeDomainObject(domainObject: DomainObject!): Boolean
+    wireTestMutation(count: Int, input: FooInput): WireTestResult
+}
+
+"Generated from public.node"
+type Node {
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "Target of 'parent_id'"
+    parent: Node
+}
+
+"Generated from public.order"
+type Order {
+    "DB column 'accepted'"
+    accepted: Timestamp
+    "Target of 'customer_id'"
+    customer: Customer!
+    "DB column 'id'"
+    id: String!
+    "DB column 'number'"
+    number: String!
+    "Target of 'shipping_type'"
+    shippingType: ShippingType!
+    "DB foreign key column 'status'"
+    status: String!
+    "DB column 'sum'"
+    sum: Long!
+    "DB column 'tracking_number'"
+    trackingNumber: String
+}
+
+"Generated from public.order_item"
+type OrderItem {
+    "DB column 'id'"
+    id: String!
+    "DB foreign key column 'order_id'"
+    orderId: String!
+    "Target of 'product_id'"
+    product: Product!
+    "DB column 'quantity'"
+    quantity: Int!
+}
+
+"Generated from public.order_status"
+type OrderStatus {
+    "DB column 'name'"
+    name: String!
+    "DB column 'ordinal'"
+    ordinal: Int!
+}
+
+"Generated for Paged<Customer>"
+type PagedCustomer {
+    "int.rowCount"
+    rowCount: Int!
+    "List.rows"
+    rows: [Customer]!
+}
+
+"Generated for Paged<Foo>"
+type PagedFoo {
+    "int.rowCount"
+    rowCount: Int!
+    "List.rows"
+    rows: [Foo]!
+}
+
+"Generated for Paged<Order>"
+type PagedOrder {
+    "int.rowCount"
+    rowCount: Int!
+    "List.rows"
+    rows: [Order]!
+}
+
+"Generated for Paged<Product>"
+type PagedProduct {
+    "int.rowCount"
+    rowCount: Int!
+    "List.rows"
+    rows: [Product]!
+}
+
+"Generated for Process"
+type Process {
+    "String.inputType"
+    inputType: String
+    "String.name"
+    name: String
+    "String.resultType"
+    resultType: String
+    "ScopeModel.scope"
+    scope: ScopeModel
+    "List.states"
+    states: [ProcessState]
+}
+
+"Generated for ProcessState"
+type ProcessState {
+    "String.name"
+    name: String
+    "List.transitions"
+    transitions: [Transition]
+}
+
+"Generated from public.product"
+type Product {
+    "DB column 'description'"
+    description: String
+    "DB column 'discontinued'"
+    discontinued: Boolean!
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "DB column 'number'"
+    number: String!
+    "DB column 'price'"
+    price: Long!
+}
+
+"Generated for QueryConfig"
+type QueryConfig {
+    "ConditionScalar.condition"
+    condition: Condition
+    "int.currentPage"
+    currentPage: Int
+    "String.id"
+    id: String
+    "int.pageSize"
+    pageSize: Int
+    "SortOrder.sortOrder"
+    sortOrder: SortOrder
+}
+
+"Auto-generated from DataGridLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
+type QueryType {
+    currentAppModel: AutomatonApplication
+    currentDomain: Domain
+    getAppConfig(name: String): AppConfig
+    getCustomers(limit: Int = 10, offset: Int = 0): PagedCustomer
+    getFoos(limit: Int = 10, offset: Int = 0): PagedFoo
+    getOrders(limit: Int = 10, offset: Int = 0): PagedOrder
+    getProducts(limit: Int = 10, offset: Int = 0): PagedProduct
+    getUserConfig(login: String): AppUserConfig
+    iQueryAppUser(config: QueryConfigInput!): InteractiveQueryAppUser
+    iQueryBar(config: QueryConfigInput!): InteractiveQueryBar
+    iQueryFoo(config: QueryConfigInput!): InteractiveQueryFoo
+    iQueryNode(config: QueryConfigInput!): InteractiveQueryNode
+    iQuerywithColumnConfigFoo(config: QueryConfigInput): InteractiveQueryFoo
+    queryWithComplexList: [Foo]
+    queryWithList: [Int]
+    queryWithScalar: Timestamp
+}
+
+"Generated for ScopeModel"
+type ScopeModel {
+    "String.name"
+    name: String
+}
+
+"Generated from public.shipping_type"
+type ShippingType {
+    "DB column 'name'"
+    name: String!
+    "DB column 'ordinal'"
+    ordinal: Int!
+}
+
+"Generated for SortOrder"
+type SortOrder {
+    "List.fields"
+    fields: [String]
+}
+
+"Generated for Transition"
+type Transition {
+    "String.code"
+    code: String
+    "String.name"
+    name: String
+    "String.to"
+    to: String
+}
+
+"Generated for UniqueConstraint"
+type UniqueConstraint {
+    "List.fields"
+    fields: [String]!
+}
+
+"Generated for WireTestResult"
+type WireTestResult {
+    "String.check"
+    check: String
+    "Timestamp.created"
+    created: Timestamp
+    "String.id"
+    id: String
+}
+
+enum FieldMode {
+    DISABLED
+    INVISIBLE
+    NORMAL
+    PLAIN_TEXT
+    READ_ONLY
+}
+
+enum FieldType {
+    BIG_DECIMAL
+    BOOLEAN
+    CUSTOM_SQL
+    DATE
+    INTEGER
+    LONG
+    STRING
+    TIMESTAMP
+    UUID
+}
+
+enum ModePolicy {
+    IGNORE_LOCAL
+    OVERRIDE
+}
+
+"Generated for de.quinscape.automatontest.domain.tables.pojos.Address"
+input AddressInput {
+    addressExtra: String
+    addressLine: String!
+    country: String!
+    id: String!
+    postal: String!
+    recipient: String!
+}
+
+"Generated for de.quinscape.automatontest.domain.tables.pojos.Bar"
+input BarInput {
+    created: Timestamp
+    id: String!
+    name: String!
+    numa: Int!
+    numb: Int!
+}
+
+"Generated for de.quinscape.automatontest.runtime.service.ComplexContainer"
+input ComplexContainerInput {
+    foo: FooInput
+    other: NodeInput
+}
+
+"Generated for de.quinscape.automatontest.domain.tables.pojos.Customer"
+input CustomerInput {
+    billingAddressId: String!
+    deliveryAddressId: String
+    id: String!
+    name: String!
+    number: String!
+    salutation: String
+}
+
+"Generated for de.quinscape.automatontest.domain.tables.pojos.Foo"
+input FooInput {
+    created: Timestamp!
+    description: String
+    flag: Boolean!
+    id: String!
+    name: String!
+    num: Int!
+    ownerId: String!
+    type: String!
+}
+
+"Generated for de.quinscape.automatontest.domain.tables.pojos.Node"
+input NodeInput {
+    id: String!
+    name: String!
+    parentId: String
+}
+
+"Generated for de.quinscape.automatontest.domain.tables.pojos.Order"
+input OrderInput {
+    accepted: Timestamp
+    customerId: String!
+    id: String!
+    number: String!
+    shippingType: Int!
+    status: String!
+    sum: Long!
+    trackingNumber: String
+}
+
+"Generated for de.quinscape.automatontest.domain.tables.pojos.OrderItem"
+input OrderItemInput {
+    id: String!
+    orderId: String!
+    productId: String!
+    quantity: Int!
+}
+
+"Generated for de.quinscape.automaton.model.data.QueryConfig"
+input QueryConfigInput {
+    condition: Condition
+    currentPage: Int
+    id: String
+    pageSize: Int
+    sortOrder: SortOrderInput
+}
+
+"Generated for de.quinscape.automatontest.model.RuleField"
+input RuleFieldInput {
+    length: Int
+    mode: FieldMode
+    modePolicy: ModePolicy
+    name: String
+    placeholder: String
+    required: Boolean
+    tooltip: String
+    validations: [RuleFieldValidationInput]
+}
+
+"Generated for de.quinscape.automatontest.model.RuleFieldValidation"
+input RuleFieldValidationInput {
+    caseInsensitive: Boolean
+    message: String
+    multiLine: Boolean
+    regexp: String
+}
+
+"Generated for de.quinscape.automatontest.model.Rule"
+input RuleInput {
+    fields: [RuleFieldInput]
+    name: String
+}
+
+"Generated for de.quinscape.automaton.model.data.SortOrder"
+input SortOrderInput {
+    fields: [String]
+}
+
+"Generated for de.quinscape.automatontest.model.ValidationRules"
+input ValidationRulesInput {
+    _: String
+    rules: [RuleInput]
+    writable: Boolean
+}
+
+
+"Long type"
+scalar Long
+
+"SQL timestamp equivalent"
+scalar Timestamp
+
+"Map graph representing JOOQ conditions"
+scalar Condition
+
+"Postgresql jsonb type equivalent"
+scalar JSONB
+
+"Container for generic domain objects as scalar"
+scalar DomainObject
