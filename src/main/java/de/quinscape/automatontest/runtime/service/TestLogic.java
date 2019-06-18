@@ -71,7 +71,7 @@ public class TestLogic
 
         return new Paged<>(foos, dslContext.fetchCount(FOO));
     }
-
+    
 
 //    @GraphQLQuery
 //    public Filtered<Foo> getFoos(
@@ -112,6 +112,13 @@ public class TestLogic
         foo.setOwnerId(AutomatonAuthentication.current().getId());
 
         return foo;
+    }
+
+    @GraphQLMutation
+    public boolean complexStore(ComplexContainer container)
+    {
+
+        return true;
     }
 
 
