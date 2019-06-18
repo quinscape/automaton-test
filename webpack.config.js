@@ -35,12 +35,13 @@ module.exports = {
         // TODO: change exposed entry-point
         library: "App",
         libraryTarget: "var",
+        libraryExport: "default",
     },
 
     // aliases to be able to use "yarn link automaton-js"
     resolve: {
         alias: {
-            react: path.resolve("./node_modules/react"),
+            "react": path.resolve("./node_modules/react"),
             "react-dom": path.resolve("./node_modules/react-dom"),
             "create-react-class": path.resolve("./node_modules/create-react-class"),
             "mobx": path.resolve("./node_modules/mobx"),
@@ -51,7 +52,8 @@ module.exports = {
             "mobx-react-devtools": path.resolve("./node_modules/mobx-react-devtools"),
             "mobx-utils": path.resolve("./node_modules/mobx-utils"),
             "history": path.resolve("./node_modules/history"),
-            "bignumber.js": path.resolve("./node_modules/bignumber.js")
+            "bignumber.js": path.resolve("./node_modules/bignumber.js"),
+            "react-calendar": path.resolve("./node_modules/react-calendar")
         }
     },
 

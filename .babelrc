@@ -1,8 +1,7 @@
 {
     "presets": [
-        "react",
-        "es2015",
-        "stage-1"
+        "@babel/preset-react",
+        "@babel/preset-env"
     ],
     "plugins": [
         [
@@ -22,10 +21,9 @@
                 "debug": false
             }
         ],
-        "transform-decorators-legacy",
-        "transform-class-properties",
-        "transform-object-rest-spread",
-        "syntax-dynamic-import"
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        ["@babel/plugin-proposal-class-properties", { "loose": true }],
+        "@babel/plugin-syntax-dynamic-import"
     ],
     "env": {
         "test": {
