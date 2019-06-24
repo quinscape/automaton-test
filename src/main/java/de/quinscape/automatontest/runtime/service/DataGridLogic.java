@@ -33,7 +33,7 @@ import java.util.UUID;
 import static org.jooq.impl.DSL.and;
 import static de.quinscape.automatontest.domain.Tables.*;
 
- @GraphQLLogic
+@GraphQLLogic
 public class DataGridLogic
 {
     private final static Logger log = LoggerFactory.getLogger(DataGridLogic.class);
@@ -58,10 +58,10 @@ public class DataGridLogic
      * This example uses the most simple standard configuration for interactive query.
      *
      * The query method defines a GraphQL query for every concrete type annotated with {@link GraphQLTypeParam}.
-     *
+     * 
      * @param type
      * @param env
-     * @param config
+     * @param config    configuration for the Interactive query.
      * @param <T>
      * @return
      */

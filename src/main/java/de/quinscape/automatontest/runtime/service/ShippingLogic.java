@@ -19,7 +19,7 @@ import java.util.List;
 import static de.quinscape.automatontest.domain.Tables.*;
 
 @GraphQLLogic
-    public class ShippingLogic
+public class ShippingLogic
 {
     private final DSLContext dslContext;
 
