@@ -17,13 +17,6 @@ const CommonNav = props => {
 
     return (
         <Nav className="ml-auto" navbar>
-            <NavItem>
-                <Link className="nav-link" href={ uri("/shipping/order/") }>Orders</Link>
-            </NavItem>
-            <Link className="nav-link" href={ uri("/shipping/products/") }>Products</Link>
-            <NavItem>
-                <Link className="nav-link" href={ uri("/shipping/customer/") }>Customers</Link>
-            </NavItem>
 
             <Dropdown nav isOpen={ dropdownOpen } toggle={ toggle }>
                 <DropdownToggle nav caret>
