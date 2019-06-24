@@ -23,6 +23,8 @@ export default class Foo {
 
     @observable type;
 
+    @observable flag;
+
     @observable owner;
 
     @computed get code()
