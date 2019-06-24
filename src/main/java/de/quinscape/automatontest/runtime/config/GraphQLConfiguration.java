@@ -9,6 +9,7 @@ import de.quinscape.automatontest.domain.tables.pojos.Customer;
 import de.quinscape.automatontest.domain.tables.pojos.Node;
 import de.quinscape.automatontest.domain.tables.pojos.Order;
 import de.quinscape.automatontest.domain.tables.pojos.OrderItem;
+import de.quinscape.automatontest.model.SumPerMonth;
 import de.quinscape.automatontest.model.ValidationRules;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.domainql.annotation.GraphQLLogic;

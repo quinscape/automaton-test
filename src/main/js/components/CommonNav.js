@@ -61,6 +61,11 @@ const CommonNav = props => {
                     >
                         Column Config Grid
                     </DropdownItem>
+                    <DropdownItem
+                        onClick={ () => runProcessURI("/shipping/dbview-test") }
+                    >
+                        DB-View in Grid
+                    </DropdownItem>
                     <DropdownItem divider/>
                     <DropdownItem
                         onClick={ () => runProcessURI("/shipping/multi-layout") }

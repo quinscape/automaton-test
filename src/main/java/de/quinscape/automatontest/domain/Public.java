@@ -22,6 +22,7 @@ import de.quinscape.automatontest.domain.tables.OrderItem;
 import de.quinscape.automatontest.domain.tables.OrderStatus;
 import de.quinscape.automatontest.domain.tables.Product;
 import de.quinscape.automatontest.domain.tables.ShippingType;
+import de.quinscape.automatontest.domain.tables.SumPerMonth;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,7 +48,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = -3099822;
+    private static final long serialVersionUID = -1242744836;
 
     /**
      * The reference instance of <code>public</code>
@@ -145,6 +146,11 @@ public class Public extends SchemaImpl {
     public final ShippingType SHIPPING_TYPE = de.quinscape.automatontest.domain.tables.ShippingType.SHIPPING_TYPE;
 
     /**
+     * The table <code>public.sum_per_month</code>.
+     */
+    public final SumPerMonth SUM_PER_MONTH = de.quinscape.automatontest.domain.tables.SumPerMonth.SUM_PER_MONTH;
+
+    /**
      * No further instances allowed
      */
     private Public() {
@@ -186,6 +192,7 @@ public class Public extends SchemaImpl {
             OrderItem.ORDER_ITEM,
             OrderStatus.ORDER_STATUS,
             Product.PRODUCT,
-            ShippingType.SHIPPING_TYPE);
+            ShippingType.SHIPPING_TYPE,
+            SumPerMonth.SUM_PER_MONTH);
     }
 }

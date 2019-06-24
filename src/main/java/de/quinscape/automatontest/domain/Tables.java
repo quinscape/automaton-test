@@ -22,6 +22,7 @@ import de.quinscape.automatontest.domain.tables.OrderItem;
 import de.quinscape.automatontest.domain.tables.OrderStatus;
 import de.quinscape.automatontest.domain.tables.Product;
 import de.quinscape.automatontest.domain.tables.ShippingType;
+import de.quinscape.automatontest.domain.tables.SumPerMonth;
 
 import javax.annotation.Generated;
 
@@ -128,4 +129,9 @@ public class Tables {
      * The table <code>public.shipping_type</code>.
      */
     public static final ShippingType SHIPPING_TYPE = de.quinscape.automatontest.domain.tables.ShippingType.SHIPPING_TYPE;
+
+    /**
+     * The table <code>public.sum_per_month</code>.
+     */
+    public static final SumPerMonth SUM_PER_MONTH = de.quinscape.automatontest.domain.tables.SumPerMonth.SUM_PER_MONTH;
 }

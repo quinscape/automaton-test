@@ -355,6 +355,20 @@ type InteractiveQueryNode {
     type: String
 }
 
+"Generated for InteractiveQuery<SumPerMonth>"
+type InteractiveQuerySumPerMonth {
+    "ColumnConfig.columnConfig"
+    columnConfig: ColumnConfig
+    "QueryConfig.queryConfig"
+    queryConfig: QueryConfig
+    "int.rowCount"
+    rowCount: Int
+    "List.rows"
+    rows: [SumPerMonth]
+    "String.type"
+    type: String
+}
+
 "Auto-generated from DataGridLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type MutationType {
     complexStore(container: ComplexContainerInput): Boolean
@@ -514,6 +528,7 @@ type QueryType {
     iQueryBar(config: QueryConfigInput!): InteractiveQueryBar
     iQueryFoo(config: QueryConfigInput!): InteractiveQueryFoo
     iQueryNode(config: QueryConfigInput!): InteractiveQueryNode
+    iQuerySumPerMonth(config: QueryConfigInput!): InteractiveQuerySumPerMonth
     iQuerywithColumnConfigFoo(config: QueryConfigInput): InteractiveQueryFoo
     queryWithComplexList: [Foo]
     queryWithList: [Int]
@@ -538,6 +553,16 @@ type ShippingType {
 type SortOrder {
     "List.fields"
     fields: [String]
+}
+
+"Generated for SumPerMonth"
+type SumPerMonth {
+    "int.month"
+    month: Int
+    "int.sum"
+    sum: Int
+    "int.year"
+    year: Int
 }
 
 "Generated for Transition"
