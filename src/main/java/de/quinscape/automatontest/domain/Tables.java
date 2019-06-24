@@ -4,7 +4,6 @@
 package de.quinscape.automatontest.domain;
 
 
-import de.quinscape.automatontest.domain.tables.Address;
 import de.quinscape.automatontest.domain.tables.AppAttachment;
 import de.quinscape.automatontest.domain.tables.AppConfig;
 import de.quinscape.automatontest.domain.tables.AppLogin;
@@ -12,16 +11,10 @@ import de.quinscape.automatontest.domain.tables.AppTranslation;
 import de.quinscape.automatontest.domain.tables.AppUser;
 import de.quinscape.automatontest.domain.tables.AppUserConfig;
 import de.quinscape.automatontest.domain.tables.Bar;
-import de.quinscape.automatontest.domain.tables.Customer;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
 import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.Node;
-import de.quinscape.automatontest.domain.tables.Order;
-import de.quinscape.automatontest.domain.tables.OrderItem;
-import de.quinscape.automatontest.domain.tables.OrderStatus;
-import de.quinscape.automatontest.domain.tables.Product;
-import de.quinscape.automatontest.domain.tables.ShippingType;
 import de.quinscape.automatontest.domain.tables.SumPerMonth;
 
 import javax.annotation.Generated;
@@ -39,11 +32,6 @@ import javax.annotation.Generated;
 )
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
-
-    /**
-     * The table <code>public.address</code>.
-     */
-    public static final Address ADDRESS = de.quinscape.automatontest.domain.tables.Address.ADDRESS;
 
     /**
      * The table <code>public.app_attachment</code>.
@@ -81,11 +69,6 @@ public class Tables {
     public static final Bar BAR = de.quinscape.automatontest.domain.tables.Bar.BAR;
 
     /**
-     * The table <code>public.customer</code>.
-     */
-    public static final Customer CUSTOMER = de.quinscape.automatontest.domain.tables.Customer.CUSTOMER;
-
-    /**
      * The table <code>public.foo</code>.
      */
     public static final Foo FOO = de.quinscape.automatontest.domain.tables.Foo.FOO;
@@ -104,31 +87,6 @@ public class Tables {
      * The table <code>public.node</code>.
      */
     public static final Node NODE = de.quinscape.automatontest.domain.tables.Node.NODE;
-
-    /**
-     * The table <code>public.order</code>.
-     */
-    public static final Order ORDER = de.quinscape.automatontest.domain.tables.Order.ORDER;
-
-    /**
-     * The table <code>public.order_item</code>.
-     */
-    public static final OrderItem ORDER_ITEM = de.quinscape.automatontest.domain.tables.OrderItem.ORDER_ITEM;
-
-    /**
-     * The table <code>public.order_status</code>.
-     */
-    public static final OrderStatus ORDER_STATUS = de.quinscape.automatontest.domain.tables.OrderStatus.ORDER_STATUS;
-
-    /**
-     * The table <code>public.product</code>.
-     */
-    public static final Product PRODUCT = de.quinscape.automatontest.domain.tables.Product.PRODUCT;
-
-    /**
-     * The table <code>public.shipping_type</code>.
-     */
-    public static final ShippingType SHIPPING_TYPE = de.quinscape.automatontest.domain.tables.ShippingType.SHIPPING_TYPE;
 
     /**
      * The table <code>public.sum_per_month</code>.

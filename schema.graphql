@@ -5,22 +5,6 @@ schema {
     mutation: MutationType
 }
 
-"Generated from public.address"
-type Address {
-    "DB column 'address_extra'"
-    addressExtra: String
-    "DB column 'address_line'"
-    addressLine: String!
-    "DB column 'country'"
-    country: String!
-    "DB column 'id'"
-    id: String!
-    "DB column 'postal'"
-    postal: String!
-    "DB column 'recipient'"
-    recipient: String!
-}
-
 "Generated from public.app_attachment"
 type AppAttachment {
     "DB column 'content_id'"
@@ -101,13 +85,6 @@ type AppUserConfig {
     userId: String!
 }
 
-"Root model of the application models."
-type AutomatonApplication {
-    domain: Domain
-    name: String
-    processes: [Process]
-}
-
 "Domain object used in ext-filter-test. Generated from public.bar in the database dump."
 type Bar {
     "DB column 'created'"
@@ -138,80 +115,6 @@ type ColumnState {
     sortable: Boolean
 }
 
-"Generated for de.quinscape.domainql.model.ConfigValue"
-type ConfigValue {
-    name: String
-    value: String
-}
-
-"Generated from public.customer"
-type Customer {
-    "Target of 'billing_address_id'"
-    billingAddress: Address!
-    "Target of 'delivery_address_id'"
-    deliveryAddress: Address
-    "DB column 'id'"
-    id: String!
-    "DB column 'name'"
-    name: String!
-    "DB column 'number'"
-    number: String!
-    "Many-to-many objects from 'order.customer_id'"
-    orders: [Order]!
-    "DB column 'salutation'"
-    salutation: String
-}
-
-"Generated for de.quinscape.domainql.model.DTLayout"
-type DTLayout {
-    color: String
-    x: Float
-    y: Float
-}
-
-"Generated for de.quinscape.domainql.model.Domain"
-type Domain {
-    description: String
-    domainTypes: [DomainType]
-    enumTypes: [EnumType]
-}
-
-"Generated for de.quinscape.domainql.model.DomainField"
-type DomainField {
-    config: [ConfigValue]
-    description: String
-    maxLength: Int!
-    name: String!
-    notNull: Boolean!
-    sqlType: String
-    type: FieldType!
-    unique: Boolean
-}
-
-"Generated for de.quinscape.domainql.model.DomainType"
-type DomainType {
-    _: DTLayout
-    description: String
-    fields: [DomainField]!
-    foreignKeys: [ForeignKey]!
-    name: String!
-    primaryKey: UniqueConstraint!
-    uniqueConstraints: [UniqueConstraint]!
-}
-
-"Generated for de.quinscape.domainql.model.EnumType"
-type EnumType {
-    description: String
-    name: String!
-    values: [String]!
-}
-
-"Generated for de.quinscape.domainql.model.FKLayout"
-type FKLayout {
-    x: Float
-    y: Float
-}
-
 "Generic domain object. Used as target in datagrid-test. Generated from public.foo in the database dump."
 type Foo {
     "DB column 'created'"
@@ -238,15 +141,6 @@ type FooType {
     name: String!
     "DB column 'ordinal'"
     ordinal: Int!
-}
-
-"Generated for de.quinscape.domainql.model.ForeignKey"
-type ForeignKey {
-    _: FKLayout
-    description: String
-    fields: [String]!
-    targetFields: [String]
-    targetType: String!
 }
 
 "Generated from public.grid_columns"
@@ -368,106 +262,10 @@ type Node {
     parent: Node
 }
 
-"Generated from public.order"
-type Order {
-    "DB column 'accepted'"
-    accepted: Timestamp
-    "Target of 'customer_id'"
-    customer: Customer!
-    "DB column 'id'"
-    id: String!
-    "DB column 'number'"
-    number: String!
-    "Target of 'shipping_type'"
-    shippingType: ShippingType!
-    "DB foreign key column 'status'"
-    status: String!
-    "DB column 'sum'"
-    sum: Long!
-    "DB column 'tracking_number'"
-    trackingNumber: String
-}
-
-"Generated from public.order_item"
-type OrderItem {
-    "DB column 'id'"
-    id: String!
-    "DB foreign key column 'order_id'"
-    orderId: String!
-    "Target of 'product_id'"
-    product: Product!
-    "DB column 'quantity'"
-    quantity: Int!
-}
-
-"Generated from public.order_status"
-type OrderStatus {
-    "DB column 'name'"
-    name: String!
-    "DB column 'ordinal'"
-    ordinal: Int!
-}
-
-"Generated for de.quinscape.domainql.util.Paged<Customer>"
-type PagedCustomer {
-    rowCount: Int!
-    rows: [Customer]!
-}
-
 "Generated for de.quinscape.domainql.util.Paged<Foo>"
 type PagedFoo {
     rowCount: Int!
     rows: [Foo]!
-}
-
-"Generated for de.quinscape.domainql.util.Paged<Order>"
-type PagedOrder {
-    rowCount: Int!
-    rows: [Order]!
-}
-
-"Generated for de.quinscape.domainql.util.Paged<Product>"
-type PagedProduct {
-    rowCount: Int!
-    rows: [Product]!
-}
-
-type Process {
-    """
-    GraphQL type to use as input type. For root processes these inputs are mapped by name from the HTTP parameters,
-    for sub-processes, the sub-process state
-    """
-    inputType: String
-    name: String
-    """
-    GraphQL type to use as result type when using this process as sub process. A sub-process must have an result type,
-    a normal process usually doesn't need one.
-    """
-    resultType: String
-    scope: ScopeModel
-    states: [ProcessState]
-}
-
-"Generated for de.quinscape.automaton.model.process.ProcessState"
-type ProcessState {
-    name: String
-    transitions: [Transition]
-}
-
-"Generated from public.product"
-type Product {
-    "DB column 'description'"
-    description: String
-    "DB column 'discontinued'"
-    discontinued: Boolean!
-    "DB column 'id'"
-    id: String!
-    "DB column 'name'"
-    name: String!
-    "DB column 'number'"
-    number: String!
-    "DB column 'price'"
-    price: Long!
 }
 
 "Encapsulates all parameters of an interactive query."
@@ -486,14 +284,7 @@ type QueryConfig {
 
 "Auto-generated from DataGridLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type QueryType {
-    currentAppModel: AutomatonApplication
-    currentDomain: Domain
-    getAppConfig(name: String): AppConfig
-    getCustomers(limit: Int = 10, offset: Int = 0): PagedCustomer
     getFoos(limit: Int = 10, offset: Int = 0): PagedFoo
-    getOrders(limit: Int = 10, offset: Int = 0): PagedOrder
-    getProducts(limit: Int = 10, offset: Int = 0): PagedProduct
-    getUserConfig(login: String): AppUserConfig
     "Queries AppUser objects based on the given query config"
     iQueryAppUser(config: QueryConfigInput!): InteractiveQueryAppUser
     "Queries Bar objects based on the given query config"
@@ -512,19 +303,6 @@ type QueryType {
     queryWithScalar: Timestamp
 }
 
-"Generated for de.quinscape.automaton.model.scope.ScopeModel"
-type ScopeModel {
-    name: String
-}
-
-"Generated from public.shipping_type"
-type ShippingType {
-    "DB column 'name'"
-    name: String!
-    "DB column 'ordinal'"
-    ordinal: Int!
-}
-
 "Contains the list of field expressions to sort an interactive query by."
 type SortOrder {
     "Field expressions. Either a field name or a field name prefixed with '!' for descending sort order."
@@ -539,18 +317,6 @@ type SumPerMonth {
     sum: Long
     "DB column 'year'"
     year: Int
-}
-
-"Generated for de.quinscape.automaton.model.process.Transition"
-type Transition {
-    code: String
-    name: String
-    to: String
-}
-
-"Generated for de.quinscape.domainql.model.UniqueConstraint"
-type UniqueConstraint {
-    fields: [String]!
 }
 
 "Generated for de.quinscape.automatontest.runtime.service.TestLogic$WireTestResult"
@@ -568,34 +334,12 @@ enum FieldMode {
     READ_ONLY
 }
 
-enum FieldType {
-    BIG_DECIMAL
-    BOOLEAN
-    CUSTOM_SQL
-    DATE
-    INTEGER
-    LONG
-    STRING
-    TIMESTAMP
-    UUID
-}
-
 "Enumerates all policies of how to combine rule-based mode values with the effective field modes before rule application."
 enum ModePolicy {
     #Ignore local mode attribute completely.
     IGNORE_LOCAL
     #Override if effective mode is be NORMAL
     OVERRIDE
-}
-
-"Generated for de.quinscape.automatontest.domain.tables.pojos.Address"
-input AddressInput {
-    addressExtra: String
-    addressLine: String!
-    country: String!
-    id: String!
-    postal: String!
-    recipient: String!
 }
 
 "Domain object used in ext-filter-test. Generated from public.bar in the database dump."
@@ -611,16 +355,6 @@ input BarInput {
 input ComplexContainerInput {
     foo: FooInput
     other: NodeInput
-}
-
-"Generated for de.quinscape.automatontest.domain.tables.pojos.Customer"
-input CustomerInput {
-    billingAddressId: String!
-    deliveryAddressId: String
-    id: String!
-    name: String!
-    number: String!
-    salutation: String
 }
 
 "Generic domain object. Used as target in datagrid-test. Generated from public.foo in the database dump."
@@ -640,26 +374,6 @@ input NodeInput {
     id: String!
     name: String!
     parentId: String
-}
-
-"Generated for de.quinscape.automatontest.domain.tables.pojos.Order"
-input OrderInput {
-    accepted: Timestamp
-    customerId: String!
-    id: String!
-    number: String!
-    shippingType: Int!
-    status: String!
-    sum: Long!
-    trackingNumber: String
-}
-
-"Generated for de.quinscape.automatontest.domain.tables.pojos.OrderItem"
-input OrderItemInput {
-    id: String!
-    orderId: String!
-    productId: String!
-    quantity: Int!
 }
 
 "Encapsulates all parameters of an interactive query."

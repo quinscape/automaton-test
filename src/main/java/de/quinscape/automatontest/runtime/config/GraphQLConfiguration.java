@@ -3,13 +3,8 @@ package de.quinscape.automatontest.runtime.config;
 import de.quinscape.automaton.runtime.scalar.ConditionScalar;
 import de.quinscape.automaton.runtime.scalar.ConditionType;
 import de.quinscape.automatontest.domain.Public;
-import de.quinscape.automatontest.domain.tables.pojos.Address;
 import de.quinscape.automatontest.domain.tables.pojos.Bar;
-import de.quinscape.automatontest.domain.tables.pojos.Customer;
 import de.quinscape.automatontest.domain.tables.pojos.Node;
-import de.quinscape.automatontest.domain.tables.pojos.Order;
-import de.quinscape.automatontest.domain.tables.pojos.OrderItem;
-import de.quinscape.automatontest.model.SumPerMonth;
 import de.quinscape.automatontest.model.ValidationRules;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.domainql.annotation.GraphQLLogic;
@@ -17,12 +12,9 @@ import de.quinscape.domainql.config.SourceField;
 import de.quinscape.domainql.config.TargetField;
 import de.quinscape.domainql.generic.DomainObject;
 import de.quinscape.domainql.generic.DomainObjectScalar;
-import de.quinscape.domainql.generic.GenericScalar;
-import de.quinscape.domainql.generic.GenericScalarType;
 import de.quinscape.domainql.jsonb.JSONB;
 import de.quinscape.domainql.jsonb.JSONBScalar;
 import graphql.GraphQL;
-import graphql.schema.GraphQLSchema;
 import org.jooq.DSLContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -78,22 +70,12 @@ public class GraphQLConfiguration
             .withAdditionalScalar(ConditionScalar.class, ConditionType.newConditionType())
 
             .withAdditionalInputTypes(
-                Customer.class,
-                Order.class,
-                OrderItem.class,
-                Address.class,
                 Node.class,
                 Bar.class,
                 ValidationRules.class
             )
 
             // configure object creation for schema relationships
-            .configureRelation(CUSTOMER.BILLING_ADDRESS_ID, SourceField.OBJECT, TargetField.NONE)
-            .configureRelation(CUSTOMER.DELIVERY_ADDRESS_ID, SourceField.OBJECT, TargetField.NONE)
-            .configureRelation(ORDER.CUSTOMER_ID, SourceField.OBJECT, TargetField.MANY)
-            .configureRelation(ORDER.STATUS, SourceField.SCALAR, TargetField.NONE)
-            .configureRelation(ORDER.SHIPPING_TYPE, SourceField.OBJECT, TargetField.NONE)
-            .configureRelation(ORDER_ITEM.PRODUCT_ID, SourceField.OBJECT, TargetField.NONE)
             .configureRelation(FOO.OWNER_ID, SourceField.OBJECT, TargetField.MANY)
             .configureRelation(FOO.TYPE, SourceField.SCALAR, TargetField.NONE)
             .configureRelation(NODE.PARENT_ID, SourceField.OBJECT, TargetField.NONE)

@@ -4,7 +4,6 @@
 package de.quinscape.automatontest.domain;
 
 
-import de.quinscape.automatontest.domain.tables.Address;
 import de.quinscape.automatontest.domain.tables.AppAttachment;
 import de.quinscape.automatontest.domain.tables.AppConfig;
 import de.quinscape.automatontest.domain.tables.AppLogin;
@@ -12,16 +11,10 @@ import de.quinscape.automatontest.domain.tables.AppTranslation;
 import de.quinscape.automatontest.domain.tables.AppUser;
 import de.quinscape.automatontest.domain.tables.AppUserConfig;
 import de.quinscape.automatontest.domain.tables.Bar;
-import de.quinscape.automatontest.domain.tables.Customer;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
 import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.Node;
-import de.quinscape.automatontest.domain.tables.Order;
-import de.quinscape.automatontest.domain.tables.OrderItem;
-import de.quinscape.automatontest.domain.tables.OrderStatus;
-import de.quinscape.automatontest.domain.tables.Product;
-import de.quinscape.automatontest.domain.tables.ShippingType;
 import de.quinscape.automatontest.domain.tables.SumPerMonth;
 
 import java.util.ArrayList;
@@ -48,17 +41,12 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = -1242744836;
+    private static final long serialVersionUID = -2033382752;
 
     /**
      * The reference instance of <code>public</code>
      */
     public static final Public PUBLIC = new Public();
-
-    /**
-     * The table <code>public.address</code>.
-     */
-    public final Address ADDRESS = de.quinscape.automatontest.domain.tables.Address.ADDRESS;
 
     /**
      * The table <code>public.app_attachment</code>.
@@ -96,11 +84,6 @@ public class Public extends SchemaImpl {
     public final Bar BAR = de.quinscape.automatontest.domain.tables.Bar.BAR;
 
     /**
-     * The table <code>public.customer</code>.
-     */
-    public final Customer CUSTOMER = de.quinscape.automatontest.domain.tables.Customer.CUSTOMER;
-
-    /**
      * The table <code>public.foo</code>.
      */
     public final Foo FOO = de.quinscape.automatontest.domain.tables.Foo.FOO;
@@ -119,31 +102,6 @@ public class Public extends SchemaImpl {
      * The table <code>public.node</code>.
      */
     public final Node NODE = de.quinscape.automatontest.domain.tables.Node.NODE;
-
-    /**
-     * The table <code>public.order</code>.
-     */
-    public final Order ORDER = de.quinscape.automatontest.domain.tables.Order.ORDER;
-
-    /**
-     * The table <code>public.order_item</code>.
-     */
-    public final OrderItem ORDER_ITEM = de.quinscape.automatontest.domain.tables.OrderItem.ORDER_ITEM;
-
-    /**
-     * The table <code>public.order_status</code>.
-     */
-    public final OrderStatus ORDER_STATUS = de.quinscape.automatontest.domain.tables.OrderStatus.ORDER_STATUS;
-
-    /**
-     * The table <code>public.product</code>.
-     */
-    public final Product PRODUCT = de.quinscape.automatontest.domain.tables.Product.PRODUCT;
-
-    /**
-     * The table <code>public.shipping_type</code>.
-     */
-    public final ShippingType SHIPPING_TYPE = de.quinscape.automatontest.domain.tables.ShippingType.SHIPPING_TYPE;
 
     /**
      * The table <code>public.sum_per_month</code>.
@@ -175,7 +133,6 @@ public class Public extends SchemaImpl {
 
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
-            Address.ADDRESS,
             AppAttachment.APP_ATTACHMENT,
             AppConfig.APP_CONFIG,
             AppLogin.APP_LOGIN,
@@ -183,16 +140,10 @@ public class Public extends SchemaImpl {
             AppUser.APP_USER,
             AppUserConfig.APP_USER_CONFIG,
             Bar.BAR,
-            Customer.CUSTOMER,
             Foo.FOO,
             FooType.FOO_TYPE,
             GridColumns.GRID_COLUMNS,
             Node.NODE,
-            Order.ORDER,
-            OrderItem.ORDER_ITEM,
-            OrderStatus.ORDER_STATUS,
-            Product.PRODUCT,
-            ShippingType.SHIPPING_TYPE,
             SumPerMonth.SUM_PER_MONTH);
     }
 }

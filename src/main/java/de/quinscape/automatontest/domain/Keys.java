@@ -4,40 +4,26 @@
 package de.quinscape.automatontest.domain;
 
 
-import de.quinscape.automatontest.domain.tables.Address;
 import de.quinscape.automatontest.domain.tables.AppAttachment;
 import de.quinscape.automatontest.domain.tables.AppConfig;
 import de.quinscape.automatontest.domain.tables.AppLogin;
 import de.quinscape.automatontest.domain.tables.AppTranslation;
 import de.quinscape.automatontest.domain.tables.AppUser;
 import de.quinscape.automatontest.domain.tables.AppUserConfig;
-import de.quinscape.automatontest.domain.tables.Customer;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
 import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.Node;
-import de.quinscape.automatontest.domain.tables.Order;
-import de.quinscape.automatontest.domain.tables.OrderItem;
-import de.quinscape.automatontest.domain.tables.OrderStatus;
-import de.quinscape.automatontest.domain.tables.Product;
-import de.quinscape.automatontest.domain.tables.ShippingType;
-import de.quinscape.automatontest.domain.tables.records.AddressRecord;
 import de.quinscape.automatontest.domain.tables.records.AppAttachmentRecord;
 import de.quinscape.automatontest.domain.tables.records.AppConfigRecord;
 import de.quinscape.automatontest.domain.tables.records.AppLoginRecord;
 import de.quinscape.automatontest.domain.tables.records.AppTranslationRecord;
 import de.quinscape.automatontest.domain.tables.records.AppUserConfigRecord;
 import de.quinscape.automatontest.domain.tables.records.AppUserRecord;
-import de.quinscape.automatontest.domain.tables.records.CustomerRecord;
 import de.quinscape.automatontest.domain.tables.records.FooRecord;
 import de.quinscape.automatontest.domain.tables.records.FooTypeRecord;
 import de.quinscape.automatontest.domain.tables.records.GridColumnsRecord;
 import de.quinscape.automatontest.domain.tables.records.NodeRecord;
-import de.quinscape.automatontest.domain.tables.records.OrderItemRecord;
-import de.quinscape.automatontest.domain.tables.records.OrderRecord;
-import de.quinscape.automatontest.domain.tables.records.OrderStatusRecord;
-import de.quinscape.automatontest.domain.tables.records.ProductRecord;
-import de.quinscape.automatontest.domain.tables.records.ShippingTypeRecord;
 
 import javax.annotation.Generated;
 
@@ -69,7 +55,6 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final UniqueKey<AddressRecord> PK_ADDRESS = UniqueKeys0.PK_ADDRESS;
     public static final UniqueKey<AppAttachmentRecord> PK_APP_ATTACHMENT = UniqueKeys0.PK_APP_ATTACHMENT;
     public static final UniqueKey<AppConfigRecord> PK_APP_CONFIG = UniqueKeys0.PK_APP_CONFIG;
     public static final UniqueKey<AppLoginRecord> PK_APP_LOGIN = UniqueKeys0.PK_APP_LOGIN;
@@ -78,7 +63,6 @@ public class Keys {
     public static final UniqueKey<AppUserRecord> PK_APP_USER = UniqueKeys0.PK_APP_USER;
     public static final UniqueKey<AppUserRecord> UC_APP_USER_LOGIN = UniqueKeys0.UC_APP_USER_LOGIN;
     public static final UniqueKey<AppUserConfigRecord> PK_APP_USER_CONFIG = UniqueKeys0.PK_APP_USER_CONFIG;
-    public static final UniqueKey<CustomerRecord> PK_CUSTOMER = UniqueKeys0.PK_CUSTOMER;
     public static final UniqueKey<FooRecord> PK_FOO = UniqueKeys0.PK_FOO;
     public static final UniqueKey<FooTypeRecord> PK_FOO_TYPE = UniqueKeys0.PK_FOO_TYPE;
     public static final UniqueKey<FooTypeRecord> FOO_TYPE_NAME_KEY = UniqueKeys0.FOO_TYPE_NAME_KEY;
@@ -86,12 +70,6 @@ public class Keys {
     public static final UniqueKey<GridColumnsRecord> GRID_COLUMNS_NAME_OWNER_ID_KEY = UniqueKeys0.GRID_COLUMNS_NAME_OWNER_ID_KEY;
     public static final UniqueKey<NodeRecord> PK_NODE = UniqueKeys0.PK_NODE;
     public static final UniqueKey<NodeRecord> UC_NODE_NAME = UniqueKeys0.UC_NODE_NAME;
-    public static final UniqueKey<OrderRecord> PK_ORDER = UniqueKeys0.PK_ORDER;
-    public static final UniqueKey<OrderItemRecord> PK_ORDER_ITEM = UniqueKeys0.PK_ORDER_ITEM;
-    public static final UniqueKey<OrderStatusRecord> PK_ORDER_STATUS = UniqueKeys0.PK_ORDER_STATUS;
-    public static final UniqueKey<OrderStatusRecord> ORDER_STATUS_NAME_KEY = UniqueKeys0.ORDER_STATUS_NAME_KEY;
-    public static final UniqueKey<ProductRecord> PK_PRODUCT = UniqueKeys0.PK_PRODUCT;
-    public static final UniqueKey<ShippingTypeRecord> PK_SHIPPING_TYPE = UniqueKeys0.PK_SHIPPING_TYPE;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
@@ -99,24 +77,16 @@ public class Keys {
 
     public static final ForeignKey<AppUserConfigRecord, AppUserRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_USER_ID = ForeignKeys0.APP_USER_CONFIG__FK_APP_USER_CONFIG_USER_ID;
     public static final ForeignKey<AppUserConfigRecord, AppAttachmentRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_ATTACHMENT_ID = ForeignKeys0.APP_USER_CONFIG__FK_APP_USER_CONFIG_ATTACHMENT_ID;
-    public static final ForeignKey<CustomerRecord, AddressRecord> CUSTOMER__FK_CUSTOMER_BILLING_ADDRESS_ID = ForeignKeys0.CUSTOMER__FK_CUSTOMER_BILLING_ADDRESS_ID;
-    public static final ForeignKey<CustomerRecord, AddressRecord> CUSTOMER__FK_CUSTOMER_DELIVERY_ADDRESS_ID = ForeignKeys0.CUSTOMER__FK_CUSTOMER_DELIVERY_ADDRESS_ID;
     public static final ForeignKey<FooRecord, FooTypeRecord> FOO__FK_FOO_TYPE_ID = ForeignKeys0.FOO__FK_FOO_TYPE_ID;
     public static final ForeignKey<FooRecord, AppUserRecord> FOO__FK_FOO_OWNER_ID = ForeignKeys0.FOO__FK_FOO_OWNER_ID;
     public static final ForeignKey<GridColumnsRecord, AppUserRecord> GRID_COLUMNS__FK_GRID_COLUMNS_OWNER_ID = ForeignKeys0.GRID_COLUMNS__FK_GRID_COLUMNS_OWNER_ID;
     public static final ForeignKey<NodeRecord, NodeRecord> NODE__FK_NODE_PARENT_ID = ForeignKeys0.NODE__FK_NODE_PARENT_ID;
-    public static final ForeignKey<OrderRecord, ShippingTypeRecord> ORDER__FK_ORDER_SHIPPING_TYPE = ForeignKeys0.ORDER__FK_ORDER_SHIPPING_TYPE;
-    public static final ForeignKey<OrderRecord, OrderStatusRecord> ORDER__FK_ORDER_ORDER_STATUS = ForeignKeys0.ORDER__FK_ORDER_ORDER_STATUS;
-    public static final ForeignKey<OrderRecord, CustomerRecord> ORDER__FK_ORDER_CUSTOMER_ID = ForeignKeys0.ORDER__FK_ORDER_CUSTOMER_ID;
-    public static final ForeignKey<OrderItemRecord, ProductRecord> ORDER_ITEM__FK_ORDER_ITEM_PRODUCT_ID = ForeignKeys0.ORDER_ITEM__FK_ORDER_ITEM_PRODUCT_ID;
-    public static final ForeignKey<OrderItemRecord, OrderRecord> ORDER_ITEM__FK_ORDER_ITEM_ORDER_ID = ForeignKeys0.ORDER_ITEM__FK_ORDER_ITEM_ORDER_ID;
 
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
     // -------------------------------------------------------------------------
 
     private static class UniqueKeys0 {
-        public static final UniqueKey<AddressRecord> PK_ADDRESS = Internal.createUniqueKey(Address.ADDRESS, "pk_address", Address.ADDRESS.ID);
         public static final UniqueKey<AppAttachmentRecord> PK_APP_ATTACHMENT = Internal.createUniqueKey(AppAttachment.APP_ATTACHMENT, "pk_app_attachment", AppAttachment.APP_ATTACHMENT.ID);
         public static final UniqueKey<AppConfigRecord> PK_APP_CONFIG = Internal.createUniqueKey(AppConfig.APP_CONFIG, "pk_app_config", AppConfig.APP_CONFIG.NAME);
         public static final UniqueKey<AppLoginRecord> PK_APP_LOGIN = Internal.createUniqueKey(AppLogin.APP_LOGIN, "pk_app_login", AppLogin.APP_LOGIN.SERIES);
@@ -125,7 +95,6 @@ public class Keys {
         public static final UniqueKey<AppUserRecord> PK_APP_USER = Internal.createUniqueKey(AppUser.APP_USER, "pk_app_user", AppUser.APP_USER.ID);
         public static final UniqueKey<AppUserRecord> UC_APP_USER_LOGIN = Internal.createUniqueKey(AppUser.APP_USER, "uc_app_user_login", AppUser.APP_USER.LOGIN);
         public static final UniqueKey<AppUserConfigRecord> PK_APP_USER_CONFIG = Internal.createUniqueKey(AppUserConfig.APP_USER_CONFIG, "pk_app_user_config", AppUserConfig.APP_USER_CONFIG.LOGIN);
-        public static final UniqueKey<CustomerRecord> PK_CUSTOMER = Internal.createUniqueKey(Customer.CUSTOMER, "pk_customer", Customer.CUSTOMER.ID);
         public static final UniqueKey<FooRecord> PK_FOO = Internal.createUniqueKey(Foo.FOO, "pk_foo", Foo.FOO.ID);
         public static final UniqueKey<FooTypeRecord> PK_FOO_TYPE = Internal.createUniqueKey(FooType.FOO_TYPE, "pk_foo_type", FooType.FOO_TYPE.ORDINAL);
         public static final UniqueKey<FooTypeRecord> FOO_TYPE_NAME_KEY = Internal.createUniqueKey(FooType.FOO_TYPE, "foo_type_name_key", FooType.FOO_TYPE.NAME);
@@ -133,27 +102,14 @@ public class Keys {
         public static final UniqueKey<GridColumnsRecord> GRID_COLUMNS_NAME_OWNER_ID_KEY = Internal.createUniqueKey(GridColumns.GRID_COLUMNS, "grid_columns_name_owner_id_key", GridColumns.GRID_COLUMNS.NAME, GridColumns.GRID_COLUMNS.OWNER_ID);
         public static final UniqueKey<NodeRecord> PK_NODE = Internal.createUniqueKey(Node.NODE, "pk_node", Node.NODE.ID);
         public static final UniqueKey<NodeRecord> UC_NODE_NAME = Internal.createUniqueKey(Node.NODE, "uc_node_name", Node.NODE.NAME);
-        public static final UniqueKey<OrderRecord> PK_ORDER = Internal.createUniqueKey(Order.ORDER, "pk_order", Order.ORDER.ID);
-        public static final UniqueKey<OrderItemRecord> PK_ORDER_ITEM = Internal.createUniqueKey(OrderItem.ORDER_ITEM, "pk_order_item", OrderItem.ORDER_ITEM.ID);
-        public static final UniqueKey<OrderStatusRecord> PK_ORDER_STATUS = Internal.createUniqueKey(OrderStatus.ORDER_STATUS, "pk_order_status", OrderStatus.ORDER_STATUS.ORDINAL);
-        public static final UniqueKey<OrderStatusRecord> ORDER_STATUS_NAME_KEY = Internal.createUniqueKey(OrderStatus.ORDER_STATUS, "order_status_name_key", OrderStatus.ORDER_STATUS.NAME);
-        public static final UniqueKey<ProductRecord> PK_PRODUCT = Internal.createUniqueKey(Product.PRODUCT, "pk_product", Product.PRODUCT.ID);
-        public static final UniqueKey<ShippingTypeRecord> PK_SHIPPING_TYPE = Internal.createUniqueKey(ShippingType.SHIPPING_TYPE, "pk_shipping_type", ShippingType.SHIPPING_TYPE.ORDINAL);
     }
 
     private static class ForeignKeys0 {
         public static final ForeignKey<AppUserConfigRecord, AppUserRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_USER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, AppUserConfig.APP_USER_CONFIG, "app_user_config__fk_app_user_config_user_id", AppUserConfig.APP_USER_CONFIG.USER_ID);
         public static final ForeignKey<AppUserConfigRecord, AppAttachmentRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_ATTACHMENT_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_ATTACHMENT, AppUserConfig.APP_USER_CONFIG, "app_user_config__fk_app_user_config_attachment_id", AppUserConfig.APP_USER_CONFIG.ATTACHMENT_ID);
-        public static final ForeignKey<CustomerRecord, AddressRecord> CUSTOMER__FK_CUSTOMER_BILLING_ADDRESS_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_ADDRESS, Customer.CUSTOMER, "customer__fk_customer_billing_address_id", Customer.CUSTOMER.BILLING_ADDRESS_ID);
-        public static final ForeignKey<CustomerRecord, AddressRecord> CUSTOMER__FK_CUSTOMER_DELIVERY_ADDRESS_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_ADDRESS, Customer.CUSTOMER, "customer__fk_customer_delivery_address_id", Customer.CUSTOMER.DELIVERY_ADDRESS_ID);
         public static final ForeignKey<FooRecord, FooTypeRecord> FOO__FK_FOO_TYPE_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.FOO_TYPE_NAME_KEY, Foo.FOO, "foo__fk_foo_type_id", Foo.FOO.TYPE);
         public static final ForeignKey<FooRecord, AppUserRecord> FOO__FK_FOO_OWNER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, Foo.FOO, "foo__fk_foo_owner_id", Foo.FOO.OWNER_ID);
         public static final ForeignKey<GridColumnsRecord, AppUserRecord> GRID_COLUMNS__FK_GRID_COLUMNS_OWNER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, GridColumns.GRID_COLUMNS, "grid_columns__fk_grid_columns_owner_id", GridColumns.GRID_COLUMNS.OWNER_ID);
         public static final ForeignKey<NodeRecord, NodeRecord> NODE__FK_NODE_PARENT_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_NODE, Node.NODE, "node__fk_node_parent_id", Node.NODE.PARENT_ID);
-        public static final ForeignKey<OrderRecord, ShippingTypeRecord> ORDER__FK_ORDER_SHIPPING_TYPE = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_SHIPPING_TYPE, Order.ORDER, "order__fk_order_shipping_type", Order.ORDER.SHIPPING_TYPE);
-        public static final ForeignKey<OrderRecord, OrderStatusRecord> ORDER__FK_ORDER_ORDER_STATUS = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.ORDER_STATUS_NAME_KEY, Order.ORDER, "order__fk_order_order_status", Order.ORDER.STATUS);
-        public static final ForeignKey<OrderRecord, CustomerRecord> ORDER__FK_ORDER_CUSTOMER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_CUSTOMER, Order.ORDER, "order__fk_order_customer_id", Order.ORDER.CUSTOMER_ID);
-        public static final ForeignKey<OrderItemRecord, ProductRecord> ORDER_ITEM__FK_ORDER_ITEM_PRODUCT_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_PRODUCT, OrderItem.ORDER_ITEM, "order_item__fk_order_item_product_id", OrderItem.ORDER_ITEM.PRODUCT_ID);
-        public static final ForeignKey<OrderItemRecord, OrderRecord> ORDER_ITEM__FK_ORDER_ITEM_ORDER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_ORDER, OrderItem.ORDER_ITEM, "order_item__fk_order_item_order_id", OrderItem.ORDER_ITEM.ORDER_ID);
     }
 }
