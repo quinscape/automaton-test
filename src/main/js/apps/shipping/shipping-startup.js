@@ -15,9 +15,6 @@ configure({
 bootstrap(
     initial => {
 
-        console.log("INITIAL", initial);
-        console.log("INJECTED VALUES", Object.values(initial.injections))
-
         return startup(
             require.context("./", true, /\.js$/),
             initial,
