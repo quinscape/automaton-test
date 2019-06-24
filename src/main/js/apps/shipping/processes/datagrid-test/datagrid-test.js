@@ -143,7 +143,7 @@ export default class CRUDTestScope {
     @observable
     currentFoo = null;
 
-    /** Current todos */
+    /** Foo iQuery  */
     @observable
     foos = injection(
         // language=GraphQL
@@ -189,6 +189,39 @@ export default class CRUDTestScope {
         }
     );
 
+    /**
+     *  Example for an iQuery being used to drive a <Select/>
+     *
+     *  We could just as well define the values cas constants in this case
+     *
+     * const FOO_TYPES = [
+     *     "TYPE_A",
+     *     "TYPE_B",
+     *     "TYPE_C",
+     *     "TYPE_D"
+     * ];
+     *  */
+    @observable
+    fooTypes = injection(
+        // language=GraphQL
+        `query iQueryFooType($config: QueryConfigInput!)
+        {
+            iQueryFooType(config: $config)
+            {
+                rows{
+                    name
+                }
+                rowCount
+            }
+        }`,
+        {
+            "config": {
+                // deactivate paging
+                "pageSize": 0
+            }
+        }
+    );
+    
     @action
     updateFoos(foos)
     {

@@ -341,6 +341,20 @@ type InteractiveQueryFoo {
     type: String
 }
 
+"Generated for InteractiveQuery<FooType>"
+type InteractiveQueryFooType {
+    "ColumnConfig.columnConfig"
+    columnConfig: ColumnConfig
+    "QueryConfig.queryConfig"
+    queryConfig: QueryConfig
+    "int.rowCount"
+    rowCount: Int
+    "List.rows"
+    rows: [FooType]
+    "String.type"
+    type: String
+}
+
 "Generated for InteractiveQuery<Node>"
 type InteractiveQueryNode {
     "ColumnConfig.columnConfig"
@@ -527,6 +541,7 @@ type QueryType {
     iQueryAppUser(config: QueryConfigInput!): InteractiveQueryAppUser
     iQueryBar(config: QueryConfigInput!): InteractiveQueryBar
     iQueryFoo(config: QueryConfigInput!): InteractiveQueryFoo
+    iQueryFooType(config: QueryConfigInput!): InteractiveQueryFooType
     iQueryNode(config: QueryConfigInput!): InteractiveQueryNode
     iQuerySumPerMonth(config: QueryConfigInput!): InteractiveQuerySumPerMonth
     iQuerywithColumnConfigFoo(config: QueryConfigInput): InteractiveQueryFoo

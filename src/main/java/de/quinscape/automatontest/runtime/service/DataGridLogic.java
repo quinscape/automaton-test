@@ -10,6 +10,7 @@ import de.quinscape.automaton.runtime.data.InteractiveQueryService;
 import de.quinscape.automatontest.domain.tables.pojos.AppUser;
 import de.quinscape.automatontest.domain.tables.pojos.Bar;
 import de.quinscape.automatontest.domain.tables.pojos.Foo;
+import de.quinscape.automatontest.domain.tables.pojos.FooType;
 import de.quinscape.automatontest.domain.tables.pojos.GridColumns;
 import de.quinscape.automatontest.domain.tables.pojos.Node;
 import de.quinscape.automatontest.domain.tables.pojos.SumPerMonth;
@@ -69,6 +70,7 @@ public class DataGridLogic
         @GraphQLTypeParam(
             types = {
                 Foo.class,
+                FooType.class,
                 Bar.class,
                 Node.class,
                 AppUser.class,
