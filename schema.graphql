@@ -101,17 +101,14 @@ type AppUserConfig {
     userId: String!
 }
 
-"Generated for AutomatonApplication"
+"Root model of the application models."
 type AutomatonApplication {
-    "Domain.domain"
     domain: Domain
-    "String.name"
     name: String
-    "List.processes"
     processes: [Process]
 }
 
-"Generated from public.bar"
+"Domain object used in ext-filter-test. Generated from public.bar in the database dump."
 type Bar {
     "DB column 'created'"
     created: Timestamp
@@ -125,29 +122,25 @@ type Bar {
     numb: Int!
 }
 
-"Generated for ColumnConfig"
+"Encapsulates the column configuration for an interactive query."
 type ColumnConfig {
-    "List.columnStates"
+    "List of column states"
     columnStates: [ColumnState]
-    "String.type"
-    type: String
 }
 
-"Generated for ColumnState"
+"The state of a column within an interactive query."
 type ColumnState {
-    "boolean.enabled"
+    "True if column is enabled. Server might disabled columns."
     enabled: Boolean
-    "String.name"
+    "Column name"
     name: String
-    "boolean.sortable"
+    "True if the column is sortable."
     sortable: Boolean
 }
 
-"Generated for ConfigValue"
+"Generated for de.quinscape.domainql.model.ConfigValue"
 type ConfigValue {
-    "String.name"
     name: String
-    "String.value"
     value: String
 }
 
@@ -169,83 +162,57 @@ type Customer {
     salutation: String
 }
 
-"Generated for DTLayout"
+"Generated for de.quinscape.domainql.model.DTLayout"
 type DTLayout {
-    "String.color"
     color: String
-    "double.x"
     x: Float
-    "double.y"
     y: Float
 }
 
-"Generated for Domain"
+"Generated for de.quinscape.domainql.model.Domain"
 type Domain {
-    "String.description"
     description: String
-    "List.domainTypes"
     domainTypes: [DomainType]
-    "List.enumTypes"
     enumTypes: [EnumType]
 }
 
-"Generated for DomainField"
+"Generated for de.quinscape.domainql.model.DomainField"
 type DomainField {
-    "List.config"
     config: [ConfigValue]
-    "String.description"
     description: String
-    "int.maxLength"
     maxLength: Int!
-    "String.name"
     name: String!
-    "boolean.notNull"
     notNull: Boolean!
-    "String.sqlType"
     sqlType: String
-    "FieldType.type"
     type: FieldType!
-    "boolean.unique"
     unique: Boolean
 }
 
-"Generated for DomainType"
+"Generated for de.quinscape.domainql.model.DomainType"
 type DomainType {
-    "DTLayout._"
     _: DTLayout
-    "String.description"
     description: String
-    "List.fields"
     fields: [DomainField]!
-    "List.foreignKeys"
     foreignKeys: [ForeignKey]!
-    "String.name"
     name: String!
-    "UniqueConstraint.primaryKey"
     primaryKey: UniqueConstraint!
-    "List.uniqueConstraints"
     uniqueConstraints: [UniqueConstraint]!
 }
 
-"Generated for EnumType"
+"Generated for de.quinscape.domainql.model.EnumType"
 type EnumType {
-    "String.description"
     description: String
-    "String.name"
     name: String!
-    "List.values"
     values: [String]!
 }
 
-"Generated for FKLayout"
+"Generated for de.quinscape.domainql.model.FKLayout"
 type FKLayout {
-    "double.x"
     x: Float
-    "double.y"
     y: Float
 }
 
-"Generated from public.foo"
+"Generic domain object. Used as target in datagrid-test. Generated from public.foo in the database dump."
 type Foo {
     "DB column 'created'"
     created: Timestamp!
@@ -265,7 +232,7 @@ type Foo {
     type: String!
 }
 
-"Generated from public.foo_type"
+"Catalog-like domain object, referenced by Foo. Generated from public.foo_type in the database dump."
 type FooType {
     "DB column 'name'"
     name: String!
@@ -273,17 +240,12 @@ type FooType {
     ordinal: Int!
 }
 
-"Generated for ForeignKey"
+"Generated for de.quinscape.domainql.model.ForeignKey"
 type ForeignKey {
-    "FKLayout._"
     _: FKLayout
-    "String.description"
     description: String
-    "List.fields"
     fields: [String]!
-    "List.targetFields"
     targetFields: [String]
-    "String.targetType"
     targetType: String!
 }
 
@@ -299,102 +261,104 @@ type GridColumns {
     ownerId: String!
 }
 
-"Generated for InteractiveQuery<AppUser>"
+"Interactive Query with AppUser payload."
 type InteractiveQueryAppUser {
-    "ColumnConfig.columnConfig"
+    "Column configuration for the current result."
     columnConfig: ColumnConfig
-    "QueryConfig.queryConfig"
+    "Query configuration the current result was produced with."
     queryConfig: QueryConfig
-    "int.rowCount"
+    "Total row count available."
     rowCount: Int
-    "List.rows"
+    "List with current rows of AppUser."
     rows: [AppUser]
-    "String.type"
+    "Name of payload type (always 'AppUser')"
     type: String
 }
 
-"Generated for InteractiveQuery<Bar>"
+"Interactive Query with Bar payload."
 type InteractiveQueryBar {
-    "ColumnConfig.columnConfig"
+    "Column configuration for the current result."
     columnConfig: ColumnConfig
-    "QueryConfig.queryConfig"
+    "Query configuration the current result was produced with."
     queryConfig: QueryConfig
-    "int.rowCount"
+    "Total row count available."
     rowCount: Int
-    "List.rows"
+    "List with current rows of Bar."
     rows: [Bar]
-    "String.type"
+    "Name of payload type (always 'Bar')"
     type: String
 }
 
-"Generated for InteractiveQuery<Foo>"
+"Interactive Query with Foo payload."
 type InteractiveQueryFoo {
-    "ColumnConfig.columnConfig"
+    "Column configuration for the current result."
     columnConfig: ColumnConfig
-    "QueryConfig.queryConfig"
+    "Query configuration the current result was produced with."
     queryConfig: QueryConfig
-    "int.rowCount"
+    "Total row count available."
     rowCount: Int
-    "List.rows"
+    "List with current rows of Foo."
     rows: [Foo]
-    "String.type"
+    "Name of payload type (always 'Foo')"
     type: String
 }
 
-"Generated for InteractiveQuery<FooType>"
+"Interactive Query with FooType payload."
 type InteractiveQueryFooType {
-    "ColumnConfig.columnConfig"
+    "Column configuration for the current result."
     columnConfig: ColumnConfig
-    "QueryConfig.queryConfig"
+    "Query configuration the current result was produced with."
     queryConfig: QueryConfig
-    "int.rowCount"
+    "Total row count available."
     rowCount: Int
-    "List.rows"
+    "List with current rows of FooType."
     rows: [FooType]
-    "String.type"
+    "Name of payload type (always 'FooType')"
     type: String
 }
 
-"Generated for InteractiveQuery<Node>"
+"Interactive Query with Node payload."
 type InteractiveQueryNode {
-    "ColumnConfig.columnConfig"
+    "Column configuration for the current result."
     columnConfig: ColumnConfig
-    "QueryConfig.queryConfig"
+    "Query configuration the current result was produced with."
     queryConfig: QueryConfig
-    "int.rowCount"
+    "Total row count available."
     rowCount: Int
-    "List.rows"
+    "List with current rows of Node."
     rows: [Node]
-    "String.type"
+    "Name of payload type (always 'Node')"
     type: String
 }
 
-"Generated for InteractiveQuery<SumPerMonth>"
+"Interactive Query with SumPerMonth payload."
 type InteractiveQuerySumPerMonth {
-    "ColumnConfig.columnConfig"
+    "Column configuration for the current result."
     columnConfig: ColumnConfig
-    "QueryConfig.queryConfig"
+    "Query configuration the current result was produced with."
     queryConfig: QueryConfig
-    "int.rowCount"
+    "Total row count available."
     rowCount: Int
-    "List.rows"
+    "List with current rows of SumPerMonth."
     rows: [SumPerMonth]
-    "String.type"
+    "Name of payload type (always 'SumPerMonth')"
     type: String
 }
 
 "Auto-generated from DataGridLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type MutationType {
     complexStore(container: ComplexContainerInput): Boolean
+    "Example for Datagrid column configuration. Stores columns in public.grid_columns"
     configureColumns(columns: JSONB, name: String!): Boolean
     createFoo(name: String!): Foo
+    "Deletes the domain object of the given type and with the given id."
     deleteDomainObject(id: String!, type: String!): Boolean
-    merge(domainObject: DomainObject!): Boolean
+    "Stores a any domain object. Note that you might have to manually register an input type."
     storeDomainObject(domainObject: DomainObject!): Boolean
     wireTestMutation(count: Int, input: FooInput): WireTestResult
 }
 
-"Generated from public.node"
+"Recursive domain object used in animal-test. Generated from public.node in the database dump."
 type Node {
     "DB column 'id'"
     id: String!
@@ -444,57 +408,49 @@ type OrderStatus {
     ordinal: Int!
 }
 
-"Generated for Paged<Customer>"
+"Generated for de.quinscape.domainql.util.Paged<Customer>"
 type PagedCustomer {
-    "int.rowCount"
     rowCount: Int!
-    "List.rows"
     rows: [Customer]!
 }
 
-"Generated for Paged<Foo>"
+"Generated for de.quinscape.domainql.util.Paged<Foo>"
 type PagedFoo {
-    "int.rowCount"
     rowCount: Int!
-    "List.rows"
     rows: [Foo]!
 }
 
-"Generated for Paged<Order>"
+"Generated for de.quinscape.domainql.util.Paged<Order>"
 type PagedOrder {
-    "int.rowCount"
     rowCount: Int!
-    "List.rows"
     rows: [Order]!
 }
 
-"Generated for Paged<Product>"
+"Generated for de.quinscape.domainql.util.Paged<Product>"
 type PagedProduct {
-    "int.rowCount"
     rowCount: Int!
-    "List.rows"
     rows: [Product]!
 }
 
-"Generated for Process"
 type Process {
-    "String.inputType"
+    """
+    GraphQL type to use as input type. For root processes these inputs are mapped by name from the HTTP parameters,
+    for sub-processes, the sub-process state
+    """
     inputType: String
-    "String.name"
     name: String
-    "String.resultType"
+    """
+    GraphQL type to use as result type when using this process as sub process. A sub-process must have an result type,
+    a normal process usually doesn't need one.
+    """
     resultType: String
-    "ScopeModel.scope"
     scope: ScopeModel
-    "List.states"
     states: [ProcessState]
 }
 
-"Generated for ProcessState"
+"Generated for de.quinscape.automaton.model.process.ProcessState"
 type ProcessState {
-    "String.name"
     name: String
-    "List.transitions"
     transitions: [Transition]
 }
 
@@ -514,17 +470,17 @@ type Product {
     price: Long!
 }
 
-"Generated for QueryConfig"
+"Encapsulates all parameters of an interactive query."
 type QueryConfig {
-    "ConditionScalar.condition"
+    "FilterDSL condition graph or null"
     condition: Condition
-    "int.currentPage"
+    "Current page within the paginated results"
     currentPage: Int
-    "String.id"
+    "Optional unique query identifier. Useful for server-side query implementations."
     id: String
-    "int.pageSize"
+    "Maximum number of paginated results.,"
     pageSize: Int
-    "SortOrder.sortOrder"
+    "Current sort order for the query."
     sortOrder: SortOrder
 }
 
@@ -538,11 +494,17 @@ type QueryType {
     getOrders(limit: Int = 10, offset: Int = 0): PagedOrder
     getProducts(limit: Int = 10, offset: Int = 0): PagedProduct
     getUserConfig(login: String): AppUserConfig
+    "Queries AppUser objects based on the given query config"
     iQueryAppUser(config: QueryConfigInput!): InteractiveQueryAppUser
+    "Queries Bar objects based on the given query config"
     iQueryBar(config: QueryConfigInput!): InteractiveQueryBar
+    "Queries Foo objects based on the given query config"
     iQueryFoo(config: QueryConfigInput!): InteractiveQueryFoo
+    "Queries FooType objects based on the given query config"
     iQueryFooType(config: QueryConfigInput!): InteractiveQueryFooType
+    "Queries Node objects based on the given query config"
     iQueryNode(config: QueryConfigInput!): InteractiveQueryNode
+    "Queries SumPerMonth objects based on the given query config"
     iQuerySumPerMonth(config: QueryConfigInput!): InteractiveQuerySumPerMonth
     iQuerywithColumnConfigFoo(config: QueryConfigInput): InteractiveQueryFoo
     queryWithComplexList: [Foo]
@@ -550,9 +512,8 @@ type QueryType {
     queryWithScalar: Timestamp
 }
 
-"Generated for ScopeModel"
+"Generated for de.quinscape.automaton.model.scope.ScopeModel"
 type ScopeModel {
-    "String.name"
     name: String
 }
 
@@ -564,45 +525,38 @@ type ShippingType {
     ordinal: Int!
 }
 
-"Generated for SortOrder"
+"Contains the list of field expressions to sort an interactive query by."
 type SortOrder {
-    "List.fields"
+    "Field expressions. Either a field name or a field name prefixed with '!' for descending sort order."
     fields: [String]
 }
 
-"Generated for SumPerMonth"
+"Domain object from Java POJO de.quinscape.automatontest.model.SumPerMonth shaped like the sum_per_month view in the database dump"
 type SumPerMonth {
-    "int.month"
+    "DB column 'month'"
     month: Int
-    "int.sum"
-    sum: Int
-    "int.year"
+    "DB column 'sum'"
+    sum: Long
+    "DB column 'year'"
     year: Int
 }
 
-"Generated for Transition"
+"Generated for de.quinscape.automaton.model.process.Transition"
 type Transition {
-    "String.code"
     code: String
-    "String.name"
     name: String
-    "String.to"
     to: String
 }
 
-"Generated for UniqueConstraint"
+"Generated for de.quinscape.domainql.model.UniqueConstraint"
 type UniqueConstraint {
-    "List.fields"
     fields: [String]!
 }
 
-"Generated for WireTestResult"
+"Generated for de.quinscape.automatontest.runtime.service.TestLogic$WireTestResult"
 type WireTestResult {
-    "String.check"
     check: String
-    "Timestamp.created"
     created: Timestamp
-    "String.id"
     id: String
 }
 
@@ -626,8 +580,11 @@ enum FieldType {
     UUID
 }
 
+"Enumerates all policies of how to combine rule-based mode values with the effective field modes before rule application."
 enum ModePolicy {
+    #Ignore local mode attribute completely.
     IGNORE_LOCAL
+    #Override if effective mode is be NORMAL
     OVERRIDE
 }
 
@@ -641,7 +598,7 @@ input AddressInput {
     recipient: String!
 }
 
-"Generated for de.quinscape.automatontest.domain.tables.pojos.Bar"
+"Domain object used in ext-filter-test. Generated from public.bar in the database dump."
 input BarInput {
     created: Timestamp
     id: String!
@@ -666,7 +623,7 @@ input CustomerInput {
     salutation: String
 }
 
-"Generated for de.quinscape.automatontest.domain.tables.pojos.Foo"
+"Generic domain object. Used as target in datagrid-test. Generated from public.foo in the database dump."
 input FooInput {
     created: Timestamp!
     description: String
@@ -678,7 +635,7 @@ input FooInput {
     type: String!
 }
 
-"Generated for de.quinscape.automatontest.domain.tables.pojos.Node"
+"Recursive domain object used in animal-test. Generated from public.node in the database dump."
 input NodeInput {
     id: String!
     name: String!
@@ -705,18 +662,23 @@ input OrderItemInput {
     quantity: Int!
 }
 
-"Generated for de.quinscape.automaton.model.data.QueryConfig"
+"Encapsulates all parameters of an interactive query."
 input QueryConfigInput {
+    "FilterDSL condition graph or null"
     condition: Condition
+    "Current page within the paginated results"
     currentPage: Int
+    "Optional unique query identifier. Useful for server-side query implementations."
     id: String
+    "Maximum number of paginated results.,"
     pageSize: Int
+    "Current sort order for the query."
     sortOrder: SortOrderInput
 }
 
-"Generated for de.quinscape.automatontest.model.RuleField"
 input RuleFieldInput {
     length: Int
+    "Returns the fixed mode for this field. How this mode is applied depends on the #modePolicy."
     mode: FieldMode
     modePolicy: ModePolicy
     name: String
@@ -740,12 +702,13 @@ input RuleInput {
     name: String
 }
 
-"Generated for de.quinscape.automaton.model.data.SortOrder"
+"Contains the list of field expressions to sort an interactive query by."
 input SortOrderInput {
+    "Field expressions. Either a field name or a field name prefixed with '!' for descending sort order."
     fields: [String]
 }
 
-"Generated for de.quinscape.automatontest.model.ValidationRules"
+"Encapsulates the set of all named validation rules. Corresponds to the top-level rules.json file."
 input ValidationRulesInput {
     _: String
     rules: [RuleInput]

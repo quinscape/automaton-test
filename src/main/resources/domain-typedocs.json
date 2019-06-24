@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Foo",
+        "description": "Generic domain object. Used as target in datagrid-test. Generated from public.foo in the database dump.",
+        "fieldDocs": []
+    },
+    {
+        "name": "FooType",
+        "description": "Catalog-like domain object, referenced by Foo. Generated from public.foo_type in the database dump.",
+        "fieldDocs": []
+    },
+    {
+        "name": "Bar",
+        "description": "Domain object used in ext-filter-test. Generated from public.bar in the database dump.",
+        "fieldDocs": []
+    },
+    {
+        "name": "SumPerMonth",
+        "description": "Domain object from Java POJO de.quinscape.automatontest.model.SumPerMonth shaped like the sum_per_month view in the database dump",
+        "fieldDocs": []
+    },
+    {
+        "name": "Node",
+        "description": "Recursive domain object used in animal-test. Generated from public.node in the database dump.",
+        "fieldDocs": []
+    }
+]

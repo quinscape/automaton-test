@@ -81,7 +81,7 @@
         <dependency>
             <groupId>de.quinscape.domainql</groupId>
             <artifactId>domainql</artifactId>
-            <version>0.22</version>
+            <version>0.23-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -174,7 +174,7 @@
         <dependency>
             <groupId>de.quinscape.domainql</groupId>
             <artifactId>automaton</artifactId>
-            <version>0.5</version>
+            <version>0.6-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -197,7 +197,6 @@
             <groupId>com.github.javaparser</groupId>
             <artifactId>javaparser-core</artifactId>
             <version>3.13.10</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -207,6 +206,35 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!-- Update DomainQL type documentation from Java source -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <executions>
+                    <execution>
+                        <id>update-typedocs</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>de.quinscape.domainql.docs.DocsExtractor</mainClass>
+                    <arguments>
+                        <argument>--sourceRoot</argument>
+                        <argument>${project.basedir}/src/main/java</argument>
+                        <argument>--package</argument>
+                        <argument>de.quinscape.automatontest.runtime.service</argument>
+                        <argument>--package</argument>
+                        <argument>de.quinscape.automatontest.model</argument>
+                        <argument>--output</argument>
+                        <argument>${project.basedir}/src/main/resources/source-typedocs.json</argument>
+                    </arguments>
+                </configuration>
             </plugin>
 
             <!-- MAVEN FRONTEND PLUGIN: INTEGRATES JAVASCRIPT BUILD -->

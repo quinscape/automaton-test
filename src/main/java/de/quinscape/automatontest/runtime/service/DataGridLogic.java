@@ -53,12 +53,8 @@ public class DataGridLogic
 
 
     /**
-     * InteractiveQuery example
+     * Queries [T] objects based on the given query config
      *
-     * This example uses the most simple standard configuration for interactive query.
-     *
-     * The query method defines a GraphQL query for every concrete type annotated with {@link GraphQLTypeParam}.
-     * 
      * @param type
      * @param env
      * @param config    configuration for the Interactive query.
@@ -123,6 +119,15 @@ public class DataGridLogic
         return builder.execute();
     }
 
+
+    /**
+     * Example for Datagrid column configuration. Stores columns in public.grid_columns
+     *
+     * @param name          query name
+     * @param columns       columns JSONB object
+     *
+     * @return always true
+     */
     @GraphQLMutation
     public boolean configureColumns(@NotNull String name, JSONB columns)
     {

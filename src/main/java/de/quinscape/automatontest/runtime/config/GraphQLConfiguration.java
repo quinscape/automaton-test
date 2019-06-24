@@ -30,7 +30,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 
+import java.io.IOException;
 import java.util.Collection;
 
 import static de.quinscape.automatontest.domain.Tables.*;
@@ -60,22 +62,20 @@ public class GraphQLConfiguration
 
     
     @Bean
-    public DomainQL domainQL()
+    public DomainQL domainQL() throws IOException
     {
         final Collection<Object> logicBeans = applicationContext.getBeansWithAnnotation(GraphQLLogic.class).values();
 
-        return
-            DomainQL.newDomainQL(dslContext)
+        final DomainQL domainQL = DomainQL.newDomainQL(dslContext)
             //.parameterProvider(new AutomatonConnectionProviderFactory(applicationContext))
 
             .logicBeans(logicBeans)
 
             .objectTypes(Public.PUBLIC)
 
-            .withAdditionalScalar( DomainObject.class, DomainObjectScalar.newDomainObjectScalar())
-            .withAdditionalScalar( GenericScalar.class, GenericScalarType.newGenericScalar())
-            .withAdditionalScalar( JSONB.class, new JSONBScalar())
-            .withAdditionalScalar( ConditionScalar.class, ConditionType.newConditionType())
+            .withAdditionalScalar(DomainObject.class, DomainObjectScalar.newDomainObjectScalar())
+            .withAdditionalScalar(JSONB.class, new JSONBScalar())
+            .withAdditionalScalar(ConditionScalar.class, ConditionType.newConditionType())
 
             .withAdditionalInputTypes(
                 Customer.class,
@@ -88,16 +88,37 @@ public class GraphQLConfiguration
             )
 
             // configure object creation for schema relationships
-            .configureRelation( CUSTOMER.BILLING_ADDRESS_ID , SourceField.OBJECT, TargetField.NONE)
-            .configureRelation( CUSTOMER.DELIVERY_ADDRESS_ID, SourceField.OBJECT, TargetField.NONE)
-            .configureRelation( ORDER.CUSTOMER_ID           , SourceField.OBJECT, TargetField.MANY)
-            .configureRelation( ORDER.STATUS                , SourceField.SCALAR, TargetField.NONE)
-            .configureRelation( ORDER.SHIPPING_TYPE         , SourceField.OBJECT, TargetField.NONE)
-            .configureRelation( ORDER_ITEM.PRODUCT_ID       , SourceField.OBJECT, TargetField.NONE)
-            .configureRelation( FOO.OWNER_ID       , SourceField.OBJECT, TargetField.MANY)
-            .configureRelation( FOO.TYPE       , SourceField.SCALAR, TargetField.NONE)
-            .configureRelation( NODE.PARENT_ID , SourceField.OBJECT, TargetField.NONE)
+            .configureRelation(CUSTOMER.BILLING_ADDRESS_ID, SourceField.OBJECT, TargetField.NONE)
+            .configureRelation(CUSTOMER.DELIVERY_ADDRESS_ID, SourceField.OBJECT, TargetField.NONE)
+            .configureRelation(ORDER.CUSTOMER_ID, SourceField.OBJECT, TargetField.MANY)
+            .configureRelation(ORDER.STATUS, SourceField.SCALAR, TargetField.NONE)
+            .configureRelation(ORDER.SHIPPING_TYPE, SourceField.OBJECT, TargetField.NONE)
+            .configureRelation(ORDER_ITEM.PRODUCT_ID, SourceField.OBJECT, TargetField.NONE)
+            .configureRelation(FOO.OWNER_ID, SourceField.OBJECT, TargetField.MANY)
+            .configureRelation(FOO.TYPE, SourceField.SCALAR, TargetField.NONE)
+            .configureRelation(NODE.PARENT_ID, SourceField.OBJECT, TargetField.NONE)
+
+            /*
+                documentation for the types defined in the automaton library
+             */
+            .withTypeDocsFrom(
+                new ClassPathResource("automaton-typedocs.json").getInputStream()
+            )
+            /*
+                hand-written JSON docs for example
+             */
+            .withTypeDocsFrom(
+                new ClassPathResource("domain-typedocs.json").getInputStream()
+            )
+            /*
+                local source docs
+             */
+            .withTypeDocsFrom(
+                new ClassPathResource("source-typedocs.json").getInputStream()
+            )
             .build();
+            
+        return domainQL;
     }
 
     @Bean

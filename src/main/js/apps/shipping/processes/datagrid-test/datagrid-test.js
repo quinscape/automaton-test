@@ -192,7 +192,7 @@ export default class CRUDTestScope {
     /**
      *  Example for an iQuery being used to drive a <Select/>
      *
-     *  We could just as well define the values cas constants in this case
+     *  We could just as well define the values as constants in this case
      *
      * const FOO_TYPES = [
      *     "TYPE_A",
