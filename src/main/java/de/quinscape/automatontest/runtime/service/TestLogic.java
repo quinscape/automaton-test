@@ -2,6 +2,7 @@ package de.quinscape.automatontest.runtime.service;
 
 import de.quinscape.automaton.runtime.auth.AutomatonAuthentication;
 import de.quinscape.automatontest.domain.tables.pojos.Foo;
+import de.quinscape.automatontest.model.ComplexContainer;
 import de.quinscape.domainql.annotation.GraphQLField;
 import de.quinscape.domainql.annotation.GraphQLLogic;
 import de.quinscape.domainql.annotation.GraphQLMutation;

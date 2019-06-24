@@ -1,4 +1,4 @@
-package de.quinscape.automatontest.runtime.service;
+package de.quinscape.automatontest.model;
 
 import de.quinscape.automatontest.domain.tables.pojos.Foo;
 import de.quinscape.automatontest.domain.tables.pojos.Node;

@@ -610,7 +610,7 @@ input BarInput {
     numb: Int!
 }
 
-"Generated for de.quinscape.automatontest.runtime.service.ComplexContainer"
+"Generated for de.quinscape.automatontest.model.ComplexContainer"
 input ComplexContainerInput {
     foo: FooInput
     other: NodeInput
