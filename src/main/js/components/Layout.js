@@ -1,6 +1,6 @@
 import React, { useReducer } from "react"
 
-import { AutomatonDevTools } from "@quinscape/automaton-js"
+import { AutomatonDevTools, LogoutForm } from "@quinscape/automaton-js"
 
 import {
     Collapse,
@@ -50,6 +50,9 @@ const Layout = props => {
             {
                 children
             }
+            <div className="footer">
+                <LogoutForm/>
+            </div>
             <AutomatonDevTools/>
         </Container>
     );

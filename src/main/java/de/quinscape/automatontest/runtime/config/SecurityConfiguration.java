@@ -4,7 +4,7 @@ import de.quinscape.automaton.runtime.config.AllowDevGraphQLAccess;
 import de.quinscape.automaton.runtime.auth.AppAuthenticationService;
 import de.quinscape.automaton.runtime.auth.DefaultPersistentTokenRepository;
 import de.quinscape.automaton.runtime.controller.GraphQLController;
-import de.quinscape.automatontest.domain.tables.AppLogin;
+import de.quinscape.automatontest.domain.tables.pojos.AppLogin;
 import de.quinscape.automatontest.domain.tables.pojos.AppUser;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,14 +69,14 @@ public class SecurityConfiguration
             .antMatchers("/admin/**")
                 .hasRole("ADMIN")
 
-            .antMatchers("/_automaton/**")
+            .antMatchers("**")
                 .hasRole("USER")
 
             .and()
                 .formLogin()
                     .loginPage("/login")
                     .loginProcessingUrl("/login_check")
-                    .defaultSuccessUrl("/game/")
+                    .defaultSuccessUrl("/shipping/")
                     .permitAll()
             .and()
 
@@ -92,7 +92,7 @@ public class SecurityConfiguration
                 .deleteCookies("remember-me")
                 .and()
                 .rememberMe()
-                    .key("tv1-Ser8O=x;#kjNthN8")
+                    .key("Y.hOf+S/Ze3MY@O5bSxt")
                     .tokenRepository(persistentTokenRepository())
                     .userDetailsService(userDetailsServiceBean());
 
