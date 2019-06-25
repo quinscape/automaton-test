@@ -35,7 +35,7 @@
     "dependencies": {
         "@quinscape/automaton-js": "^0.0.12",
         "bignumber.js": "^9.0.0",
-        "domainql-form": "^2.2.3",
+        "domainql-form": "^2.2.4",
         "history": "^4.9.0",
         "jsview-bootstrap": "^0.1.1",
         "lodash.get": "^4.4.2",
