@@ -13,6 +13,10 @@ import de.quinscape.automatontest.domain.tables.pojos.Foo;
 import de.quinscape.automatontest.domain.tables.pojos.FooType;
 import de.quinscape.automatontest.domain.tables.pojos.GridColumns;
 import de.quinscape.automatontest.domain.tables.pojos.Node;
+import de.quinscape.automatontest.domain.tables.pojos.QuxA;
+import de.quinscape.automatontest.domain.tables.pojos.QuxB;
+import de.quinscape.automatontest.domain.tables.pojos.QuxC;
+import de.quinscape.automatontest.domain.tables.pojos.QuxMain;
 import de.quinscape.automatontest.domain.tables.pojos.SumPerMonth;
 import de.quinscape.domainql.annotation.GraphQLLogic;
 import de.quinscape.domainql.annotation.GraphQLMutation;
@@ -70,7 +74,12 @@ public class DataGridLogic
                 Bar.class,
                 Node.class,
                 AppUser.class,
-                SumPerMonth.class
+                SumPerMonth.class,
+
+                QuxMain.class,
+                QuxA.class,
+                QuxB.class,
+                QuxC.class,
             }
         )
         Class<T> type,

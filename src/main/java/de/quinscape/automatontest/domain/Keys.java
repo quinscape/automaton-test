@@ -14,6 +14,10 @@ import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
 import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.Node;
+import de.quinscape.automatontest.domain.tables.QuxA;
+import de.quinscape.automatontest.domain.tables.QuxB;
+import de.quinscape.automatontest.domain.tables.QuxC;
+import de.quinscape.automatontest.domain.tables.QuxMain;
 import de.quinscape.automatontest.domain.tables.records.AppAttachmentRecord;
 import de.quinscape.automatontest.domain.tables.records.AppConfigRecord;
 import de.quinscape.automatontest.domain.tables.records.AppLoginRecord;
@@ -24,6 +28,10 @@ import de.quinscape.automatontest.domain.tables.records.FooRecord;
 import de.quinscape.automatontest.domain.tables.records.FooTypeRecord;
 import de.quinscape.automatontest.domain.tables.records.GridColumnsRecord;
 import de.quinscape.automatontest.domain.tables.records.NodeRecord;
+import de.quinscape.automatontest.domain.tables.records.QuxARecord;
+import de.quinscape.automatontest.domain.tables.records.QuxBRecord;
+import de.quinscape.automatontest.domain.tables.records.QuxCRecord;
+import de.quinscape.automatontest.domain.tables.records.QuxMainRecord;
 
 import javax.annotation.Generated;
 
@@ -70,6 +78,13 @@ public class Keys {
     public static final UniqueKey<GridColumnsRecord> GRID_COLUMNS_NAME_OWNER_ID_KEY = UniqueKeys0.GRID_COLUMNS_NAME_OWNER_ID_KEY;
     public static final UniqueKey<NodeRecord> PK_NODE = UniqueKeys0.PK_NODE;
     public static final UniqueKey<NodeRecord> UC_NODE_NAME = UniqueKeys0.UC_NODE_NAME;
+    public static final UniqueKey<QuxARecord> PK_QUX_A = UniqueKeys0.PK_QUX_A;
+    public static final UniqueKey<QuxARecord> QUX_A_NAME_KEY = UniqueKeys0.QUX_A_NAME_KEY;
+    public static final UniqueKey<QuxBRecord> PK_QUX_B = UniqueKeys0.PK_QUX_B;
+    public static final UniqueKey<QuxBRecord> QUX_B_NAME_KEY = UniqueKeys0.QUX_B_NAME_KEY;
+    public static final UniqueKey<QuxCRecord> PK_QUX_C = UniqueKeys0.PK_QUX_C;
+    public static final UniqueKey<QuxCRecord> QUX_C_NAME_KEY = UniqueKeys0.QUX_C_NAME_KEY;
+    public static final UniqueKey<QuxMainRecord> PK_QUX_MAIN = UniqueKeys0.PK_QUX_MAIN;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
@@ -81,6 +96,10 @@ public class Keys {
     public static final ForeignKey<FooRecord, AppUserRecord> FOO__FK_FOO_OWNER_ID = ForeignKeys0.FOO__FK_FOO_OWNER_ID;
     public static final ForeignKey<GridColumnsRecord, AppUserRecord> GRID_COLUMNS__FK_GRID_COLUMNS_OWNER_ID = ForeignKeys0.GRID_COLUMNS__FK_GRID_COLUMNS_OWNER_ID;
     public static final ForeignKey<NodeRecord, NodeRecord> NODE__FK_NODE_PARENT_ID = ForeignKeys0.NODE__FK_NODE_PARENT_ID;
+    public static final ForeignKey<QuxMainRecord, QuxARecord> QUX_MAIN__FK_QUX_A_ID = ForeignKeys0.QUX_MAIN__FK_QUX_A_ID;
+    public static final ForeignKey<QuxMainRecord, QuxBRecord> QUX_MAIN__FK_QUX_B_NAME = ForeignKeys0.QUX_MAIN__FK_QUX_B_NAME;
+    public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID1 = ForeignKeys0.QUX_MAIN__FK_QUX_C_ID1;
+    public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID2 = ForeignKeys0.QUX_MAIN__FK_QUX_C_ID2;
 
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
@@ -102,6 +121,13 @@ public class Keys {
         public static final UniqueKey<GridColumnsRecord> GRID_COLUMNS_NAME_OWNER_ID_KEY = Internal.createUniqueKey(GridColumns.GRID_COLUMNS, "grid_columns_name_owner_id_key", GridColumns.GRID_COLUMNS.NAME, GridColumns.GRID_COLUMNS.OWNER_ID);
         public static final UniqueKey<NodeRecord> PK_NODE = Internal.createUniqueKey(Node.NODE, "pk_node", Node.NODE.ID);
         public static final UniqueKey<NodeRecord> UC_NODE_NAME = Internal.createUniqueKey(Node.NODE, "uc_node_name", Node.NODE.NAME);
+        public static final UniqueKey<QuxARecord> PK_QUX_A = Internal.createUniqueKey(QuxA.QUX_A, "pk_qux_a", QuxA.QUX_A.ID);
+        public static final UniqueKey<QuxARecord> QUX_A_NAME_KEY = Internal.createUniqueKey(QuxA.QUX_A, "qux_a_name_key", QuxA.QUX_A.NAME);
+        public static final UniqueKey<QuxBRecord> PK_QUX_B = Internal.createUniqueKey(QuxB.QUX_B, "pk_qux_b", QuxB.QUX_B.ID);
+        public static final UniqueKey<QuxBRecord> QUX_B_NAME_KEY = Internal.createUniqueKey(QuxB.QUX_B, "qux_b_name_key", QuxB.QUX_B.NAME);
+        public static final UniqueKey<QuxCRecord> PK_QUX_C = Internal.createUniqueKey(QuxC.QUX_C, "pk_qux_c", QuxC.QUX_C.ID);
+        public static final UniqueKey<QuxCRecord> QUX_C_NAME_KEY = Internal.createUniqueKey(QuxC.QUX_C, "qux_c_name_key", QuxC.QUX_C.NAME);
+        public static final UniqueKey<QuxMainRecord> PK_QUX_MAIN = Internal.createUniqueKey(QuxMain.QUX_MAIN, "pk_qux_main", QuxMain.QUX_MAIN.ID);
     }
 
     private static class ForeignKeys0 {
@@ -111,5 +137,9 @@ public class Keys {
         public static final ForeignKey<FooRecord, AppUserRecord> FOO__FK_FOO_OWNER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, Foo.FOO, "foo__fk_foo_owner_id", Foo.FOO.OWNER_ID);
         public static final ForeignKey<GridColumnsRecord, AppUserRecord> GRID_COLUMNS__FK_GRID_COLUMNS_OWNER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, GridColumns.GRID_COLUMNS, "grid_columns__fk_grid_columns_owner_id", GridColumns.GRID_COLUMNS.OWNER_ID);
         public static final ForeignKey<NodeRecord, NodeRecord> NODE__FK_NODE_PARENT_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_NODE, Node.NODE, "node__fk_node_parent_id", Node.NODE.PARENT_ID);
+        public static final ForeignKey<QuxMainRecord, QuxARecord> QUX_MAIN__FK_QUX_A_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_A, QuxMain.QUX_MAIN, "qux_main__fk_qux_a_id", QuxMain.QUX_MAIN.QUX_A_ID);
+        public static final ForeignKey<QuxMainRecord, QuxBRecord> QUX_MAIN__FK_QUX_B_NAME = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.QUX_B_NAME_KEY, QuxMain.QUX_MAIN, "qux_main__fk_qux_b_name", QuxMain.QUX_MAIN.QUX_B_NAME);
+        public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID1 = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_C, QuxMain.QUX_MAIN, "qux_main__fk_qux_c_id1", QuxMain.QUX_MAIN.QUX_C_ID1);
+        public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID2 = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_C, QuxMain.QUX_MAIN, "qux_main__fk_qux_c_id2", QuxMain.QUX_MAIN.QUX_C_ID2);
     }
 }

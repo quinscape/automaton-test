@@ -15,6 +15,10 @@ import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
 import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.Node;
+import de.quinscape.automatontest.domain.tables.QuxA;
+import de.quinscape.automatontest.domain.tables.QuxB;
+import de.quinscape.automatontest.domain.tables.QuxC;
+import de.quinscape.automatontest.domain.tables.QuxMain;
 import de.quinscape.automatontest.domain.tables.SumPerMonth;
 
 import javax.annotation.Generated;
@@ -87,6 +91,26 @@ public class Tables {
      * The table <code>public.node</code>.
      */
     public static final Node NODE = de.quinscape.automatontest.domain.tables.Node.NODE;
+
+    /**
+     * The table <code>public.qux_a</code>.
+     */
+    public static final QuxA QUX_A = de.quinscape.automatontest.domain.tables.QuxA.QUX_A;
+
+    /**
+     * The table <code>public.qux_b</code>.
+     */
+    public static final QuxB QUX_B = de.quinscape.automatontest.domain.tables.QuxB.QUX_B;
+
+    /**
+     * The table <code>public.qux_c</code>.
+     */
+    public static final QuxC QUX_C = de.quinscape.automatontest.domain.tables.QuxC.QUX_C;
+
+    /**
+     * The table <code>public.qux_main</code>.
+     */
+    public static final QuxMain QUX_MAIN = de.quinscape.automatontest.domain.tables.QuxMain.QUX_MAIN;
 
     /**
      * The table <code>public.sum_per_month</code>.

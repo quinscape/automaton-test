@@ -3,8 +3,12 @@ package de.quinscape.automatontest.runtime.config;
 import de.quinscape.automaton.runtime.scalar.ConditionScalar;
 import de.quinscape.automaton.runtime.scalar.ConditionType;
 import de.quinscape.automatontest.domain.Public;
+import de.quinscape.automatontest.domain.tables.pojos.QuxMain;
 import de.quinscape.automatontest.domain.tables.pojos.Bar;
 import de.quinscape.automatontest.domain.tables.pojos.Node;
+import de.quinscape.automatontest.domain.tables.pojos.QuxA;
+import de.quinscape.automatontest.domain.tables.pojos.QuxB;
+import de.quinscape.automatontest.domain.tables.pojos.QuxC;
 import de.quinscape.automatontest.model.ValidationRules;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.domainql.annotation.GraphQLLogic;
@@ -68,17 +72,27 @@ public class GraphQLConfiguration
             .withAdditionalScalar(DomainObject.class, DomainObjectScalar.newDomainObjectScalar())
             .withAdditionalScalar(JSONB.class, new JSONBScalar())
             .withAdditionalScalar(ConditionScalar.class, ConditionType.newConditionType())
+            .withAdditionalScalar(FieldExpressionScalar.class, FieldExpressionType.newFieldExpressionType())
 
             .withAdditionalInputTypes(
                 Node.class,
                 Bar.class,
-                ValidationRules.class
+                ValidationRules.class,
+                QuxMain.class,
+                QuxA.class,
+                QuxB.class,
+                QuxC.class
             )
 
             // configure object creation for schema relationships
             .configureRelation(FOO.OWNER_ID, SourceField.OBJECT, TargetField.MANY)
             .configureRelation(FOO.TYPE, SourceField.SCALAR, TargetField.NONE)
             .configureRelation(NODE.PARENT_ID, SourceField.OBJECT, TargetField.NONE)
+
+            .configureRelation(QUX_MAIN.QUX_A_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
+            .configureRelation(QUX_MAIN.QUX_B_NAME, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxB", null)
+            .configureRelation(QUX_MAIN.QUX_C_ID1, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxC1", null)
+            .configureRelation(QUX_MAIN.QUX_C_ID2, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxC2", null)
 
             /*
                 documentation for the types defined in the automaton library
