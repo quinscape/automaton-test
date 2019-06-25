@@ -1,5 +1,6 @@
 import React from "react"
 import bootstrap from "jsview-bootstrap"
+import { Icon } from "@quinscape/automaton-js";
 
 bootstrap(
     function (initial) {
@@ -10,7 +11,10 @@ bootstrap(
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <h1>TODO Login</h1>
+                        <h1>
+                            <Icon className="fa-flask mr-1 text-success mt-3"/>
+
+                            Automaton-Test Login</h1>
                         <hr/>
                         {
                             location.search.indexOf("error") >= 0 && (
