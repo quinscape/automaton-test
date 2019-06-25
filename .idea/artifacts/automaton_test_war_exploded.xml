@@ -112,6 +112,7 @@
           <element id="library" level="project" name="Maven: com.github.ziplet:ziplet:2.3.0" />
           <element id="library" level="project" name="Maven: com.google.googlejavaformat:google-java-format:1.4" />
           <element id="library" level="project" name="Maven: com.google.errorprone:javac-shaded:9-dev-r4023-3" />
+          <element id="library" level="project" name="Maven: com.github.javaparser:javaparser-core:3.13.10" />
         </element>
       </element>
       <element id="directory" name="META-INF">
