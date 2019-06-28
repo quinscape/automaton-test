@@ -2052,10 +2052,10 @@ domain-browser@^1.1.1:
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
   integrity sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA==
 
-domainql-form@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-2.2.3.tgz#b968739510445b1249a2d017177be45062887cc2"
-  integrity sha512-O+2paxIh8BUTsXgODBYwGMbmm3nYZp6b2CsaVPciGZpTMuq2oZGODyMgiriXW39y2zoIM19fY34B6JWhL38v5g==
+domainql-form@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-2.2.4.tgz#993b979aa2c259f7009d612b734f7c0f1ad78ad4"
+  integrity sha512-CJhVav66zSA/YLEfIJoXNxFtYj7juhPyAWo177Qu28AkGjoYzcm2Rb1urDE2HxhgZTudkqDZx2MZfMWfsuY6/g==
   dependencies:
     classnames "^2.2.5"
     lodash.debounce "^4.0.8"
