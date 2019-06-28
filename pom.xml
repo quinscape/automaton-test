@@ -219,20 +219,27 @@
                         <goals>
                             <goal>java</goal>
                         </goals>
-                        <phase>generate-resources</phase>
+                        <phase>generate-sources</phase>
                     </execution>
                 </executions>
                 <configuration>
                     <mainClass>de.quinscape.domainql.docs.DocsExtractor</mainClass>
                     <arguments>
+
                         <argument>--sourceRoot</argument>
                         <argument>${project.basedir}/src/main/java</argument>
+
                         <argument>--package</argument>
                         <argument>de.quinscape.automatontest.runtime.service</argument>
+
                         <argument>--package</argument>
                         <argument>de.quinscape.automatontest.model</argument>
+
                         <argument>--output</argument>
                         <argument>${project.basedir}/src/main/resources/source-typedocs.json</argument>
+
+                        <argument>--pretty</argument>
+
                     </arguments>
                 </configuration>
             </plugin>
