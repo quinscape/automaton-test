@@ -1,1 +1,86 @@
-[{"name":"RuleField","description":null,"fieldDocs":[{"name":"mode","description":"Returns the fixed mode for this field. How this mode is applied depends on the #modePolicy.","paramDocs":[]}]},{"name":"ModePolicy","description":"Enumerates all policies of how to combine rule-based mode values with the effective field modes before rule application.","fieldDocs":[{"name":"IGNORE_LOCAL","description":"Ignore local mode attribute completely.","paramDocs":[]},{"name":"OVERRIDE","description":"Override if effective mode is be NORMAL","paramDocs":[]}]},{"name":"MutationType","description":null,"fieldDocs":[{"name":"configureColumns","description":"Example for Datagrid column configuration. Stores columns in public.grid_columns","paramDocs":[{"name":"name","description":"query name"},{"name":"columns","description":"columns JSONB object"}]}]},{"name":"QueryType","description":null,"fieldDocs":[{"name":"iQuery","description":"Queries [T] objects based on the given query config","paramDocs":[{"name":"type","description":""},{"name":"env","description":""},{"name":"config","description":"configuration for the Interactive query."}]}]},{"name":"ValidationRules","description":"Encapsulates the set of all named validation rules. Corresponds to the top-level rules.json file.","fieldDocs":[]}]
+[
+  {
+    "name":"QueryType",
+    "description":null,
+    "fieldDocs":[
+      {
+        "name":"iQuery",
+        "description":"Queries [T] objects based on the given query config",
+        "paramDocs":[
+          {
+            "name":"type",
+            "description":""
+          },
+          {
+            "name":"env",
+            "description":""
+          },
+          {
+            "name":"config",
+            "description":"configuration for the Interactive query."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name":"MutationType",
+    "description":null,
+    "fieldDocs":[
+      {
+        "name":"configureColumns",
+        "description":"Example for Datagrid column configuration. Stores columns in public.grid_columns",
+        "paramDocs":[
+          {
+            "name":"name",
+            "description":"query name"
+          },
+          {
+            "name":"columns",
+            "description":"columns JSONB object"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name":"ModePolicy",
+    "description":"Enumerates all policies of how to combine rule-based mode values with the effective field modes before rule application.",
+    "fieldDocs":[
+      {
+        "name":"IGNORE_LOCAL",
+        "description":"Ignore local mode attribute completely.",
+        "paramDocs":[
+          
+        ]
+      },
+      {
+        "name":"OVERRIDE",
+        "description":"Override if effective mode is be NORMAL",
+        "paramDocs":[
+          
+        ]
+      }
+    ]
+  },
+  {
+    "name":"RuleField",
+    "description":null,
+    "fieldDocs":[
+      {
+        "name":"mode",
+        "description":"Returns the fixed mode for this field. How this mode is applied depends on the #modePolicy.",
+        "paramDocs":[
+          
+        ]
+      }
+    ]
+  },
+  {
+    "name":"ValidationRules",
+    "description":"Encapsulates the set of all named validation rules. Corresponds to the top-level rules.json file.",
+    "fieldDocs":[
+      
+    ]
+  }
+]

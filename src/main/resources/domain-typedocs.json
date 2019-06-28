@@ -23,5 +23,25 @@
         "name": "Node",
         "description": "Recursive domain object used in animal-test. Generated from public.node in the database dump.",
         "fieldDocs": []
+    },
+    {
+        "name": "QuxMain",
+        "description": "Main object for fk_test",
+        "fieldDocs": []
+    },
+    {
+        "name": "QuxA",
+        "description": "Catalog-like connected via id foreign key to QuxMain",
+        "fieldDocs": []
+    },
+    {
+        "name": "QuxB",
+        "description": "Catalog-like connected via name foreign key to QuxMain",
+        "fieldDocs": []
+    },
+    {
+        "name": "QuxC",
+        "description": "Catalog-like connected via id foreign keys to QuxMain twice",
+        "fieldDocs": []
     }
 ]
