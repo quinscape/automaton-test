@@ -40,3 +40,10 @@ body
 {
     cursor: not-allowed;
 }
+
+
+.fk-selector .fks-display
+{
+    background: #e8e8e8;
+    cursor: not-allowed;
+}
