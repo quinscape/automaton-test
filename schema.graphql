@@ -99,12 +99,6 @@ type Bar {
     numb: Int!
 }
 
-"Encapsulates the column configuration for an interactive query."
-type ColumnConfig {
-    "List of column states"
-    columnStates: [ColumnState]
-}
-
 "The state of a column within an interactive query."
 type ColumnState {
     "True if column is enabled. Server might disabled columns."
@@ -157,8 +151,7 @@ type GridColumns {
 
 "Interactive Query with AppUser payload."
 type InteractiveQueryAppUser {
-    "Column configuration for the current result."
-    columnConfig: ColumnConfig
+    columnStates: [ColumnState]
     "Query configuration the current result was produced with."
     queryConfig: QueryConfig
     "Total row count available."
@@ -171,8 +164,7 @@ type InteractiveQueryAppUser {
 
 "Interactive Query with Bar payload."
 type InteractiveQueryBar {
-    "Column configuration for the current result."
-    columnConfig: ColumnConfig
+    columnStates: [ColumnState]
     "Query configuration the current result was produced with."
     queryConfig: QueryConfig
     "Total row count available."
@@ -185,8 +177,7 @@ type InteractiveQueryBar {
 
 "Interactive Query with Foo payload."
 type InteractiveQueryFoo {
-    "Column configuration for the current result."
-    columnConfig: ColumnConfig
+    columnStates: [ColumnState]
     "Query configuration the current result was produced with."
     queryConfig: QueryConfig
     "Total row count available."
@@ -199,8 +190,7 @@ type InteractiveQueryFoo {
 
 "Interactive Query with FooType payload."
 type InteractiveQueryFooType {
-    "Column configuration for the current result."
-    columnConfig: ColumnConfig
+    columnStates: [ColumnState]
     "Query configuration the current result was produced with."
     queryConfig: QueryConfig
     "Total row count available."
@@ -213,8 +203,7 @@ type InteractiveQueryFooType {
 
 "Interactive Query with Node payload."
 type InteractiveQueryNode {
-    "Column configuration for the current result."
-    columnConfig: ColumnConfig
+    columnStates: [ColumnState]
     "Query configuration the current result was produced with."
     queryConfig: QueryConfig
     "Total row count available."
@@ -227,8 +216,7 @@ type InteractiveQueryNode {
 
 "Interactive Query with QuxA payload."
 type InteractiveQueryQuxA {
-    "Column configuration for the current result."
-    columnConfig: ColumnConfig
+    columnStates: [ColumnState]
     "Query configuration the current result was produced with."
     queryConfig: QueryConfig
     "Total row count available."
@@ -241,8 +229,7 @@ type InteractiveQueryQuxA {
 
 "Interactive Query with QuxB payload."
 type InteractiveQueryQuxB {
-    "Column configuration for the current result."
-    columnConfig: ColumnConfig
+    columnStates: [ColumnState]
     "Query configuration the current result was produced with."
     queryConfig: QueryConfig
     "Total row count available."
@@ -255,8 +242,7 @@ type InteractiveQueryQuxB {
 
 "Interactive Query with QuxC payload."
 type InteractiveQueryQuxC {
-    "Column configuration for the current result."
-    columnConfig: ColumnConfig
+    columnStates: [ColumnState]
     "Query configuration the current result was produced with."
     queryConfig: QueryConfig
     "Total row count available."
@@ -269,8 +255,7 @@ type InteractiveQueryQuxC {
 
 "Interactive Query with QuxMain payload."
 type InteractiveQueryQuxMain {
-    "Column configuration for the current result."
-    columnConfig: ColumnConfig
+    columnStates: [ColumnState]
     "Query configuration the current result was produced with."
     queryConfig: QueryConfig
     "Total row count available."
@@ -283,8 +268,7 @@ type InteractiveQueryQuxMain {
 
 "Interactive Query with SumPerMonth payload."
 type InteractiveQuerySumPerMonth {
-    "Column configuration for the current result."
-    columnConfig: ColumnConfig
+    columnStates: [ColumnState]
     "Query configuration the current result was produced with."
     queryConfig: QueryConfig
     "Total row count available."
@@ -334,6 +318,7 @@ type QueryConfig {
     id: String
     "Maximum number of paginated results.,"
     pageSize: Int
+    "Current sort order for the query."
     sortFields: [FieldExpression]
 }
 
@@ -503,6 +488,7 @@ input QueryConfigInput {
     id: String
     "Maximum number of paginated results.,"
     pageSize: Int
+    "Current sort order for the query."
     sortFields: [FieldExpression]
 }
 

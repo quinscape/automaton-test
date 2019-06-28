@@ -33,12 +33,10 @@ export default class ColumnConfigTestScope {
             iQuerywithColumnConfigFoo(config: $config)
             {
                 type
-                columnConfig{
-                    columnStates{
-                        name
-                        enabled
-                        sortable
-                    }
+                columnStates{
+                    name
+                    enabled
+                    sortable
                 }
                 queryConfig{
                     id

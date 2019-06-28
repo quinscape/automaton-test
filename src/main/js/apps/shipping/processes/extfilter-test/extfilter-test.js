@@ -76,12 +76,10 @@ export default class ExternalDataGridFilterTestScope {
                 iQueryBar(config: $config)
                 {
                     type
-                    columnConfig{
-                        columnStates{
-                            name
-                            enabled
-                            sortable
-                        }
+                    columnStates{
+                        name
+                        enabled
+                        sortable
                     }
                     queryConfig{
                         id

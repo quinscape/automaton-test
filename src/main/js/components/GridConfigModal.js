@@ -19,13 +19,12 @@ const configureColumnsMutation = new GraphQLQuery(
     }`
 );
 
-function convertToMap(columnConfig)
+function convertToMap(columnStates)
 {
     const obj = {};
 
     const objectsUsed = new Set();
 
-    const {columnStates} = columnConfig;
     for (let i = 0; i < columnStates.length; i++)
     {
         const {name, enabled} = columnStates[i];
@@ -64,7 +63,7 @@ const GridConfigModal = fnObserver(props => {
     const formObj = useMemo(
         () => observable(
             convertToMap(
-                iQuery.columnConfig
+                iQuery.columnStates
             )
         )
         ,
@@ -78,7 +77,7 @@ const GridConfigModal = fnObserver(props => {
         () => reaction(
             () => {
                 return convertToMap(
-                    iQuery.columnConfig
+                    iQuery.columnStates
                 );
             },
             map => {
@@ -96,7 +95,7 @@ const GridConfigModal = fnObserver(props => {
         // deep copy of observable column config
         const columns = {};
 
-        const { columnStates } = iQuery.columnConfig;
+        const { columnStates } = iQuery;
 
         for (let name in formObj)
         {

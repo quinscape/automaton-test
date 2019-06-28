@@ -73,12 +73,10 @@ export default class DBViewProcess {
             iQuerySumPerMonth(config: $config)
             {
                 type
-                columnConfig{
-                    columnStates{
-                        name
-                        enabled
-                        sortable
-                    }
+                columnStates{
+                    name
+                    enabled
+                    sortable
                 }
                 queryConfig{
                     id

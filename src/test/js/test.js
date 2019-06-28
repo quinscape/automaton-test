@@ -12,20 +12,16 @@ describe("Test", function () {
                 iQuerywithColumnConfigFoo(config: $config)
                 {
                     type
-                    columnConfig{
                         columnStates{
                             name
                             enabled
                             sortable
                         }
-                    }
                     queryConfig{
                         condition
                         currentPage
                         pageSize
-                        sortOrder{
-                            fields
-                        }
+                        sortFields
                     }
                     rows{
                         id

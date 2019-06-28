@@ -16,12 +16,10 @@ const QueryQuxA = new GraphQLQuery(
         iQueryQuxA(config: $config)
         {
             type
-            columnConfig {
-                columnStates{
-                    name
-                    enabled
-                    sortable
-                }
+            columnStates{
+                name
+                enabled
+                sortable
             }
             queryConfig {
                 id
@@ -54,12 +52,10 @@ const QueryQuxB = new GraphQLQuery(
         iQueryQuxB(config: $config)
         {
             type
-            columnConfig {
-                columnStates{
-                    name
-                    enabled
-                    sortable
-                }
+            columnStates{
+                name
+                enabled
+                sortable
             }
             queryConfig {
                 id
@@ -91,12 +87,10 @@ const QueryQuxC =  new GraphQLQuery(
         iQueryQuxC(config: $config)
         {
             type
-            columnConfig {
-                columnStates{
-                    name
-                    enabled
-                    sortable
-                }
+            columnStates{
+                name
+                enabled
+                sortable
             }
             queryConfig {
                 id

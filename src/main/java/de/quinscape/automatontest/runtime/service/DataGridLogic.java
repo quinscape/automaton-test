@@ -1,6 +1,5 @@
  package de.quinscape.automatontest.runtime.service;
 
-import de.quinscape.automaton.model.data.ColumnConfig;
 import de.quinscape.automaton.model.data.ColumnState;
 import de.quinscape.automaton.model.data.InteractiveQuery;
 import de.quinscape.automaton.model.data.QueryConfig;
@@ -31,6 +30,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.constraints.NotNull;
 
+import java.util.List;
 import java.util.UUID;
 
 import static org.jooq.impl.DSL.and;
@@ -115,14 +115,14 @@ public class DataGridLogic
         ).withColumnsFromQuery();
 
 
-        final ColumnConfig columnConfig = builder.getColumnConfig();
+        final List<ColumnState> columnStates = builder.getColumnStates();
         final JSONB columns = getColumnConfigForUser(config.getId());
 
         log.info("Columns configuration for current user and id = '{}': {}", config.getId(), columns);
 
         if (columns != null)
         {
-            reconfigureColumns(columnConfig, columns);
+            reconfigureColumns(columnStates, columns);
         }
         return builder.execute();
     }
@@ -178,9 +178,9 @@ public class DataGridLogic
         return true;
     }
 
-    private <T> void reconfigureColumns(ColumnConfig columnConfig, @NotNull JSONB columns)
+    private <T> void reconfigureColumns(List<ColumnState> columnStates, @NotNull JSONB columns)
     {
-        for (ColumnState columnState : columnConfig.getColumnStates())
+        for (ColumnState columnState : columnStates)
         {
             final boolean isEnabled = columns.getProperty(columnState.getName()).equals(true);
             columnState.setEnabled(isEnabled);
