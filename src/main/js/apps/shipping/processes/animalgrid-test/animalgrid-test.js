@@ -97,9 +97,7 @@ export default class AnimalGridTestScope {
                         condition
                         currentPage
                         pageSize
-                        sortOrder{
-                            fields
-                        }
+                        sortFields
                     }
                     rows{
                         name

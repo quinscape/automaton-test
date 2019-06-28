@@ -85,9 +85,7 @@ export default class DBViewProcess {
                     condition
                     currentPage
                     pageSize
-                    sortOrder{
-                        fields
-                    }
+                    sortFields
                 }
                 rows{
                     year
@@ -100,9 +98,7 @@ export default class DBViewProcess {
         {
             "config": {
                 pageSize: 12,
-                sortOrder: {
-                    fields : ["year", "month"]
-                }
+                sortFields : ["year", "month"]
             }
         }
     );

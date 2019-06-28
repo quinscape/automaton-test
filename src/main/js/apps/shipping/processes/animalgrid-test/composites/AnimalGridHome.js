@@ -27,9 +27,7 @@ const AnimalGridHome = props => {
                     className="btn btn-primary mr-1"
                     onClick={
                         () => scope.nodes.update({
-                            sortOrder: {
-                                fields: ["parent.name", "!name"]
-                            }
+                            sortFields: ["parent.name", "!name"]
                         })
                     }
                 >

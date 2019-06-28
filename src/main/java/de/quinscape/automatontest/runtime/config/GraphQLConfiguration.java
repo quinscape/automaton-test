@@ -2,6 +2,8 @@ package de.quinscape.automatontest.runtime.config;
 
 import de.quinscape.automaton.runtime.scalar.ConditionScalar;
 import de.quinscape.automaton.runtime.scalar.ConditionType;
+import de.quinscape.automaton.runtime.scalar.FieldExpressionScalar;
+import de.quinscape.automaton.runtime.scalar.FieldExpressionType;
 import de.quinscape.automatontest.domain.Public;
 import de.quinscape.automatontest.domain.tables.pojos.QuxMain;
 import de.quinscape.automatontest.domain.tables.pojos.Bar;

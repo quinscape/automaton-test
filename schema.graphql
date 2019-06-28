@@ -334,8 +334,7 @@ type QueryConfig {
     id: String
     "Maximum number of paginated results.,"
     pageSize: Int
-    "Current sort order for the query."
-    sortOrder: SortOrder
+    sortFields: [FieldExpression]
 }
 
 "Auto-generated from DataGridLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
@@ -504,8 +503,7 @@ input QueryConfigInput {
     id: String
     "Maximum number of paginated results.,"
     pageSize: Int
-    "Current sort order for the query."
-    sortOrder: SortOrderInput
+    sortFields: [FieldExpression]
 }
 
 "Catalog-like connected via id foreign key to QuxMain"
@@ -568,12 +566,6 @@ input RuleInput {
     name: String
 }
 
-"Contains the list of field expressions to sort an interactive query by."
-input SortOrderInput {
-    "Field expressions. Either a field name or a field name prefixed with '!' for descending sort order."
-    fields: [String]
-}
-
 "Encapsulates the set of all named validation rules. Corresponds to the top-level rules.json file."
 input ValidationRulesInput {
     _: String
@@ -581,6 +573,9 @@ input ValidationRulesInput {
     writable: Boolean
 }
 
+
+"Map graph representing a JOOQ field expression"
+scalar FieldExpression
 
 "Long type"
 scalar Long

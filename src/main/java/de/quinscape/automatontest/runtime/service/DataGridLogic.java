@@ -5,7 +5,7 @@ import de.quinscape.automaton.model.data.ColumnState;
 import de.quinscape.automaton.model.data.InteractiveQuery;
 import de.quinscape.automaton.model.data.QueryConfig;
 import de.quinscape.automaton.runtime.auth.AutomatonAuthentication;
-import de.quinscape.automaton.runtime.data.InteractiveQueryBuilder;
+import de.quinscape.automaton.runtime.data.RuntimeQuery;
 import de.quinscape.automaton.runtime.data.InteractiveQueryService;
 import de.quinscape.automatontest.domain.tables.pojos.AppUser;
 import de.quinscape.automatontest.domain.tables.pojos.Bar;
@@ -28,7 +28,6 @@ import org.jooq.DSLContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.svenson.JSON;
 
 import javax.validation.constraints.NotNull;
 
@@ -109,7 +108,7 @@ public class DataGridLogic
     {
         log.info("iQuerywithColumnConfig<{}>, config = {}", type, config);
 
-        final InteractiveQueryBuilder<T> builder = interactiveQueryService.buildInteractiveQuery(
+        final RuntimeQuery<T> builder = interactiveQueryService.buildInteractiveQuery(
             type,
             env,
             config

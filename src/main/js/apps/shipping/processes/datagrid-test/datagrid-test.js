@@ -164,9 +164,7 @@ export default class CRUDTestScope {
                     condition
                     currentPage
                     pageSize
-                    sortOrder{
-                        fields
-                    }
+                    sortFields
                 }
                 rows{
                     id

@@ -136,7 +136,11 @@ const ExtFilterHome = props => {
                                     max
                                 )
                             )
-                    ) }
+                        )
+                    }
+                    sort={
+                        field("numa").add(field("numb")) 
+                    }
                 >
                     {
                         bar => bar.numa + bar.numb

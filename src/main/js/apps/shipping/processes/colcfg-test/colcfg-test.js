@@ -45,9 +45,7 @@ export default class ColumnConfigTestScope {
                     condition
                     currentPage
                     pageSize
-                    sortOrder{
-                        fields
-                    }
+                    sortFields
                 }
                 rows{
                     id

@@ -88,9 +88,7 @@ export default class ExternalDataGridFilterTestScope {
                         condition
                         currentPage
                         pageSize
-                        sortOrder{
-                            fields
-                        }
+                        sortFields
                     }
                     rows{
                         id
@@ -103,10 +101,35 @@ export default class ExternalDataGridFilterTestScope {
                 }
             }`,
         {
-            config: {
-                sortOrder: {fields: ["name"]},
-                pageSize: 5,
-            }
+            config:
+            //     {
+            //     sortFields: ["name"],
+            //     pageSize: 5,
+            // }
+                {
+                    "pageSize": 5,
+                    "sortFields": [
+                        {
+                            "type": "Operation",
+                            "name": "desc",
+                            "operands": [
+                                {
+                                    "type": "Operation",
+                                    "name": "add",
+                                    "operands": [
+                                        {
+                                            "type": "Field",
+                                            "name": "numa"
+                                        }, {
+                                            "type": "Field",
+                                            "name": "numb"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
         }
     );
 
