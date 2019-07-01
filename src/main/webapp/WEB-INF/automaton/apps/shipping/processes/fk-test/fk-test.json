@@ -1,0 +1,173 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "createDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "deleteDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "extractTypeData"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FilterDSL"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "storeDomainObject"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_QuxMain",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_QuxMain"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_QuxDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_QuxDetail"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"FKTestList\"",
+            "states": {
+                "FKTestList": {
+                    "new-qux": {
+                        "to": "FKTestDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const newObj = createDomainObject(\"QuxMainInput\"); newObj.name = \"Unnamed Qux\"; newObj.desc = \"\"; newObj.num = 0; newObj.flag = false; newObj.created = new Date(); newObj.type = \"TYPE_A\"; return scope.updateCurrent(newObj); }"
+                        }
+                    },
+                    "to-detail": {
+                        "to": "FKTestDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"to-detail, context = \", t.context); return Q_QuxDetail.execute({ config: { condition: field(\"id\").eq(value(\"String\", t.context)) } }).then(({ iQueryQuxMain }) => { if (iQueryQuxMain.rows.length === 0) { alert(\"Could not load Qux with id '\" + t.context); } return scope.updateCurrent(iQueryQuxMain.rows[0]); }); }"
+                        }
+                    }
+                },
+                "FKTestDetail": {
+                    "save": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "storeDomainObject(extractTypeData(\"QuxMainInput\", t.context)).then(() => scope.quxes.update()).then(() => t.back(backToParent(t)))"
+                        }
+                    },
+                    "delete": {
+                        "to": "FKTestList",
+                        "discard": true,
+                        "confirmation": {
+                            "type": "Action",
+                            "params": [
+                                "context"
+                            ],
+                            "code": "`Delete ${context.name} ?`"
+                        },
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const { id } = t.context; return deleteDomainObject(\"QuxMain\", id).then(didDelete => didDelete && scope.quxes.update()); }"
+                        }
+                    },
+                    "cancel": {
+                        "to": "FKTestList",
+                        "discard": true,
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"Transition 'cancel'\"); }"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "FKTestScope",
+            "observables": [
+                {
+                    "name": "currentQux",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "name": "quxes",
+                    "defaultValue": "injection(Q_QuxMain)",
+                    "description": "* Qux iQuery"
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateCurrent",
+                    "params": [
+                        "qux"
+                    ],
+                    "code": "this.currentQux = qux;",
+                    "bound": false
+                }
+            ],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": [
+            "// deconstruct FilterDSL methods\nconst { field, value } = FilterDSL; // noinspection JSUnusedGlobalSymbols"
+        ]
+    }
+}

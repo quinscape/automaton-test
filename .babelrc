@@ -11,7 +11,12 @@
                 "trackedFunctions": {
                     "injection": {
                         "module": "@quinscape/automaton-js",
-                        "fn": "injection"
+                        "fn": "injection",
+                        "allowIdentifier" : true
+                    },
+                    "query": {
+                        "module": "@quinscape/automaton-js",
+                        "fn": "query"
                     },
                     "i18n": {
                         "module": "@quinscape/automaton-js",

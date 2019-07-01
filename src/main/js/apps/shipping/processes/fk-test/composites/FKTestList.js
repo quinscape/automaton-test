@@ -1,12 +1,8 @@
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { ButtonToolbar } from "reactstrap";
-import { Button, i18n, IQueryGrid as DataGrid, CalendarField } from "@quinscape/automaton-js"
-import { Select, FieldMode } from "domainql-form";
+import { Button, i18n, IQueryGrid as DataGrid } from "@quinscape/automaton-js"
 
-
-const MIN_DATE = new Date("2018-11-01T00:00:00Z");
-const MAX_DATE = new Date("2019-03-30T23:59:59Z");
 
 const FKTestList = props => {
 

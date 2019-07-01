@@ -1,0 +1,18 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "query iQueryQuxMain($config: QueryConfigInput!)\n    {\n        iQueryQuxMain(config: $config)\n        {\n            rows{\n                id\n                name\n                quxAId\n                quxA{\n                    name\n                    value\n                }\n                quxBName\n                quxB{\n                    id\n                    value\n                }\n                quxCId1\n                quxC1{\n                    name\n                    value\n                }\n                quxCId2\n                quxC2{\n                    name\n                    value\n                }\n            }\n        }\n    }",
+        "variables": null
+    }
+}

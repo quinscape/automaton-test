@@ -1,120 +1,15 @@
 import React from "react"
-import { toJS } from "mobx";
 import { observer as fnObserver } from "mobx-react-lite";
-import { Button, config, i18n, ScrollTracker, CalendarField, FKSelector, GraphQLQuery } from "@quinscape/automaton-js"
+import { Button, config, FKSelector, i18n, ScrollTracker } from "@quinscape/automaton-js"
 
-import { Field, GlobalErrors, TextArea, withForm, FieldMode } from "domainql-form"
+import { Field, GlobalErrors, withForm } from "domainql-form"
 import { ButtonToolbar } from "reactstrap";
 
 import validation from "../../../../../services/validation"
 
-
-const QueryQuxA = new GraphQLQuery(
-// language=GraphQL
-    `query iQueryQuxA($config: QueryConfigInput!)
-    {
-        iQueryQuxA(config: $config)
-        {
-            type
-            columnStates{
-                name
-                enabled
-                sortable
-            }
-            queryConfig {
-                id
-                condition
-                currentPage
-                pageSize
-                sortFields
-            }
-            rows {
-                id
-                name
-                value
-                description
-            }
-            rowCount
-        }
-    }`,
-    {
-        config: {
-            pageSize: 5,
-            sortFields: ["name"]
-        }
-    }
-);
-
-const QueryQuxB = new GraphQLQuery(
-// language=GraphQL
-    `query iQueryQuxB($config: QueryConfigInput!)
-    {
-        iQueryQuxB(config: $config)
-        {
-            type
-            columnStates{
-                name
-                enabled
-                sortable
-            }
-            queryConfig {
-                id
-                condition
-                currentPage
-                pageSize
-                sortFields
-            }
-            rows {
-                id
-                name
-                value
-                description
-            }
-            rowCount
-        }
-    }`,{
-        config: {
-            pageSize: 5,
-            sortFields: ["name"]
-        }
-    }
-);
-
-const QueryQuxC =  new GraphQLQuery(
-    // language=GraphQL
-    `query iQueryQuxC($config: QueryConfigInput!)
-    {
-        iQueryQuxC(config: $config)
-        {
-            type
-            columnStates{
-                name
-                enabled
-                sortable
-            }
-            queryConfig {
-                id
-                condition
-                currentPage
-                pageSize
-                sortFields
-            }
-            rows {
-                id
-                name
-                value
-                description
-            }
-            rowCount
-        }
-    }`,
-    {
-        config: {
-            pageSize: 5,
-            sortFields: ["name"]
-        }
-    }
-);
+import Q_QuxA from "../queries/Q_QuxA";
+import Q_QuxB from "../queries/Q_QuxB";
+import Q_QuxC from "../queries/Q_QuxC";
 
 
 const QuxMainForm = props => {
@@ -144,13 +39,13 @@ const QuxMainForm = props => {
                 name="quxAId"
                 display={ () => root.quxA.name }
                 required={ true }
-                query={ QueryQuxA }
+                query={ Q_QuxA }
             />
 
             <FKSelector
                 name="quxBName"
                 targetField="name"
-                query={ QueryQuxB }
+                query={ Q_QuxB }
             />
 
             <FKSelector
@@ -159,7 +54,7 @@ const QuxMainForm = props => {
                 onUpdate={
                     row => formConfig.root.quxC1 = row || {}
                 }
-                query={ QueryQuxC }
+                query={ Q_QuxC }
             />
 
             <FKSelector
@@ -168,7 +63,7 @@ const QuxMainForm = props => {
                 onUpdate={
                     row => formConfig.root.quxC2 = row || {}
                 }
-                query={ QueryQuxC }
+                query={ Q_QuxC }
             />
 
 

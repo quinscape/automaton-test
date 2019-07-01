@@ -18,43 +18,13 @@ import {
     extractTypeData
 } from "@quinscape/automaton-js";
 
+import Q_QuxMain from "./queries/Q_QuxMain";
+import Q_QuxDetail from "./queries/Q_QuxDetail";
+
 
 // deconstruct FilterDSL methods
 const { field, value } = FilterDSL;
 
-const QuxDetailQuery = new GraphQLQuery(
-    // language=GraphQL
-    `query iQueryQuxMain($config: QueryConfigInput!)
-    {
-        iQueryQuxMain(config: $config)
-        {
-            rows{
-                id
-                name
-                quxAId
-                quxA{
-                    name
-                    value
-                }
-                quxBName
-                quxB{
-                    id
-                    value
-                }
-                quxCId1
-                quxC1{
-                    name
-                    value
-                }
-                quxCId2
-                quxC2{
-                    name
-                    value
-                }
-            }
-        }
-    }`
-);
 
 // noinspection JSUnusedGlobalSymbols
 export function initProcess(process, scope)
@@ -90,7 +60,7 @@ export function initProcess(process, scope)
 
                                 console.log("to-detail, context = ", t.context);
 
-                                return QuxDetailQuery.execute({
+                                return Q_QuxDetail.execute({
                                     config: {
                                         condition:
                                             field("id")
@@ -157,49 +127,7 @@ export default class FKTestScope {
 
     /** Qux iQuery  */
     @observable
-    quxes = injection(
-        // language=GraphQL
-        `query iQueryQuxMain($config: QueryConfigInput!)
-        {
-            iQueryQuxMain(config: $config)
-            {
-                type
-                columnStates{
-                    name
-                    enabled
-                    sortable
-                }
-                queryConfig{
-                    id
-                    condition
-                    currentPage
-                    pageSize
-                    sortFields
-                }
-                rows{
-                    id
-                    name
-                    quxA{
-                        name
-                    }
-                    quxBName
-                    quxC1{
-                        name
-                    }
-                    quxC2{
-                        name
-                    }
-                }
-                rowCount
-            }
-        }`,
-        {
-            "config": {
-                "pageSize": 20,
-                "sortFields" : ["name"]
-            }
-        }
-    );
+    quxes = injection( Q_QuxMain );
 
     @action
     updateCurrent(qux)
