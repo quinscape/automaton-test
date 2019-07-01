@@ -1,26 +1,17 @@
-import {
-    observable,
-    computed,
-    action,
-    toJS
-} from "mobx";
+import { action, observable } from "mobx";
 
 import {
-    injection,
-    config,
-    createDomainObject,
-    storeDomainObject,
-    deleteDomainObject,
-    GraphQLQuery,
     backToParent,
-
+    createDomainObject,
+    deleteDomainObject,
+    extractTypeData,
     FilterDSL,
-    extractTypeData
+    injection,
+    storeDomainObject
 } from "@quinscape/automaton-js";
 
 import Q_QuxMain from "./queries/Q_QuxMain";
 import Q_QuxDetail from "./queries/Q_QuxDetail";
-
 
 // deconstruct FilterDSL methods
 const { field, value } = FilterDSL;
@@ -86,9 +77,10 @@ export function initProcess(process, scope)
                 "FKTestDetail": {
                     "save": {
                         action: t =>
-                            storeDomainObject(
-                                extractTypeData("QuxMainInput", t.context)
-                            )
+                            storeDomainObject({
+                                ... extractTypeData("QuxMainInput", t.context),
+                                quxDId: t.context.quxD && t.context.quxD.id
+                            })
                             .then(() => scope.quxes.update())
                             .then(() => t.back(backToParent(t)))
                     },
@@ -100,7 +92,7 @@ export function initProcess(process, scope)
                         action: t => {
                             const { id } = t.context;
 
-                            return deleteDomainObject("Qux", id)
+                            return deleteDomainObject("QuxMain", id)
                                 .then(
                                     didDelete => didDelete && scope.quxes.update()
                                 )

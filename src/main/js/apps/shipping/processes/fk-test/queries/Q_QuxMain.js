@@ -32,6 +32,9 @@ export default query(
                 quxC2{
                     name
                 }
+                quxD{
+                    name
+                }
             }
             rowCount
         }

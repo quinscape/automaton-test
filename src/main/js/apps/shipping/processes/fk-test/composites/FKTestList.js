@@ -51,6 +51,7 @@ const FKTestList = props => {
                 <DataGrid.Column name="quxBName" />
                 <DataGrid.Column name="quxC1.name" />
                 <DataGrid.Column name="quxC2.name"/>
+                <DataGrid.Column name="quxD.name"/>
             </DataGrid>
 
         </React.Fragment>

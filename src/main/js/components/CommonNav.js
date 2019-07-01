@@ -59,6 +59,11 @@ const CommonNav = props => {
                     >
                         DB-View in Grid
                     </DropdownItem>
+                    <DropdownItem
+                        onClick={ () => runProcessURI("/shipping/fk-test") }
+                    >
+                        ForeignKey-Test
+                    </DropdownItem>
                     <DropdownItem divider/>
                     <DropdownItem
                         onClick={ () => runProcessURI("/shipping/multi-layout") }

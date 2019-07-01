@@ -16,7 +16,7 @@ export default query(
                 }
                 quxBName
                 quxB{
-                    id
+                    # name is embedded for this key
                     value
                 }
                 quxCId1
@@ -26,6 +26,12 @@ export default query(
                 }
                 quxCId2
                 quxC2{
+                    name
+                    value
+                }
+                quxD{
+                    # without scalar field and with id-FK, we need the id here
+                    id
                     name
                     value
                 }

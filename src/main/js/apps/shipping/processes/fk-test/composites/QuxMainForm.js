@@ -7,9 +7,10 @@ import { ButtonToolbar } from "reactstrap";
 
 import validation from "../../../../../services/validation"
 
-import Q_QuxA from "../queries/Q_QuxA";
-import Q_QuxB from "../queries/Q_QuxB";
-import Q_QuxC from "../queries/Q_QuxC";
+import Q_QuxA from "../../../queries/Q_QuxA";
+import Q_QuxB from "../../../queries/Q_QuxB";
+import Q_QuxC from "../../../queries/Q_QuxC";
+import Q_QuxD from "../../../queries/Q_QuxD";
 
 
 const QuxMainForm = props => {
@@ -33,7 +34,7 @@ const QuxMainForm = props => {
 
 
             <GlobalErrors/>
-            <Field name="name"/>
+            <Field name="name" helpText="Field A!"/>
 
             <FKSelector
                 name="quxAId"
@@ -45,6 +46,7 @@ const QuxMainForm = props => {
             <FKSelector
                 name="quxBName"
                 targetField="name"
+                helpText={ "Select a QuxB"}
                 query={ Q_QuxB }
             />
 
@@ -52,18 +54,24 @@ const QuxMainForm = props => {
                 name="quxCId1"
                 display={ () => root.quxC1.name }
                 onUpdate={
-                    row => formConfig.root.quxC1 = row || {}
+                    row => formConfig.root.quxC1 = row
                 }
                 query={ Q_QuxC }
             />
 
             <FKSelector
                 name="quxCId2"
-                display={ () => root.quxC2.name }
+                display={ () => root.quxC2 && root.quxC2.name }
                 onUpdate={
-                    row => formConfig.root.quxC2 = row || {}
+                    row => formConfig.root.quxC2 = row
                 }
                 query={ Q_QuxC }
+            />
+
+            <FKSelector
+                label="quxD"
+                display={ () => root.quxD && root.quxD.name }
+                query={ Q_QuxD }
             />
 
 
