@@ -1249,10 +1249,10 @@ babel-plugin-syntax-decorators@^6.1.18:
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-decorators/-/babel-plugin-syntax-decorators-6.13.0.tgz#312563b4dbde3cc806cee3e416cceeaddd11ac0b"
   integrity sha1-MSVjtNvePMgGzuPkFszurd0RrAs=
 
-babel-plugin-track-usage@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/babel-plugin-track-usage/-/babel-plugin-track-usage-0.2.4.tgz#a6668e79860cdb093b38ea551586a09ef415f69d"
-  integrity sha512-3lbzs582JdqTV+XQQc4USUQjfuI5R57SEe051qCKKjvxqubw5Yq3yXi4NLakf5jpFHfC16IAnCFpdNENm7twVg==
+babel-plugin-track-usage@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-track-usage/-/babel-plugin-track-usage-0.3.0.tgz#ce2b144a3c34845d816ae7fa37f52d4ec52fbb7a"
+  integrity sha512-m6jgFNCY1gsPQDgRjKL1omfV90QniSk0ddsB2oFb/RYOiwIpITpZ5OdDLNVrUh8xEgh9LW7z9BHothsdyikHKw==
   dependencies:
     "@babel/runtime" "^7.4.5"
     deep-equal "^1.0.1"
