@@ -96,6 +96,7 @@
             ]
         }
     ],
+    "extraConstants": [],
     "composite": {
         "type": "CompositeComponent",
         "constants": [

@@ -104,7 +104,7 @@
                             "params": [
                                 "t"
                             ],
-                            "code": "storeDomainObject(extractTypeData(\"QuxMainInput\", t.context)).then(() => scope.quxes.update()).then(() => t.back(backToParent(t)))"
+                            "code": "storeDomainObject({ ...extractTypeData(\"QuxMainInput\", t.context), quxDId: t.context.quxD && t.context.quxD.id }).then(() => scope.quxes.update()).then(() => t.back(backToParent(t)))"
                         }
                     },
                     "delete": {

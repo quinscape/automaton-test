@@ -1,0 +1,25 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "query iQueryQuxD($config: QueryConfigInput!)\n    {\n        iQueryQuxD(config: $config)\n        {\n            type\n            columnStates{\n                name\n                enabled\n                sortable\n            }\n            queryConfig {\n                id\n                condition\n                currentPage\n                pageSize\n                sortFields\n            }\n            rows {\n                id\n                name\n                value\n                description\n            }\n            rowCount\n        }\n    }",
+        "variables": {
+            "config": {
+                "pageSize": 5,
+                "sortFields": [
+                    "name"
+                ]
+            }
+        }
+    }
+}

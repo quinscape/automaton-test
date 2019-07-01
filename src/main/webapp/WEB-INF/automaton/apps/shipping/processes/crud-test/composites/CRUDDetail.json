@@ -7,16 +7,10 @@
                 {
                     "type": "ImportDefaultSpecifier",
                     "name": "React"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "mobx",
-            "specifiers": [
+                },
                 {
                     "type": "ImportSpecifier",
-                    "name": "toJS"
+                    "name": "useState"
                 }
             ]
         },
@@ -33,11 +27,31 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "./QuxMainForm",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "DEFAULT_OPTIONS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./FooForm",
             "specifiers": [
                 {
                     "type": "ImportDefaultSpecifier",
-                    "name": "QuxMainForm"
+                    "name": "FooForm"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./FormOptions",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "FormOptions"
                 }
             ]
         }
@@ -46,6 +60,43 @@
     "composite": {
         "type": "CompositeComponent",
         "constants": [
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ArrayPattern",
+                            "elements": [
+                                {
+                                    "type": "Identifier",
+                                    "name": "control"
+                                },
+                                {
+                                    "type": "Identifier",
+                                    "name": "setControl"
+                                }
+                            ]
+                        },
+                        "init": "useState(DEFAULT_OPTIONS)"
+                    }
+                ]
+            },
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "Identifier",
+                            "name": "changeControl"
+                        },
+                        "init": "(k, v) => setControl({ ...control, [k]: v })"
+                    }
+                ]
+            },
             {
                 "type": "VariableDeclaration",
                 "kind": "const",
@@ -98,6 +149,29 @@
             "attrs": [],
             "kids": [
                 {
+                    "name": "FormOptions",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "control",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{control}"
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "changeControl",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{changeControl}"
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
                     "name": "div",
                     "attrs": [
                         {
@@ -124,14 +198,22 @@
                             ],
                             "kids": [
                                 {
-                                    "name": "QuxMainForm",
+                                    "name": "FooForm",
                                     "attrs": [
                                         {
                                             "type": "JSXAttribute",
                                             "name": "value",
                                             "value": {
                                                 "type": "JSXExpressionContainer",
-                                                "code": "{scope.currentQux}"
+                                                "code": "{scope.currentFoo}"
+                                            }
+                                        },
+                                        {
+                                            "type": "JSXAttribute",
+                                            "name": "options",
+                                            "value": {
+                                                "type": "JSXExpressionContainer",
+                                                "code": "{control}"
                                             }
                                         }
                                     ],
@@ -148,5 +230,5 @@
             "type": "JSXElement"
         }
     },
-    "export": "fnObserver(FKTestDetail)"
+    "export": "fnObserver(CRUDDetail)"
 }

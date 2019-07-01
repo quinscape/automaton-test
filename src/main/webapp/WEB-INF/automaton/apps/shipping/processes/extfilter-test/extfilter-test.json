@@ -1,0 +1,142 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "computed"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "storeDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "deleteDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "GraphQLQuery"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"ExtFilterHome\"",
+            "states": {
+                "ExtFilterHome": {
+                    "to-detail": {
+                        "to": "ExtFilterDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ scope.currentBar = t.context; }"
+                        }
+                    }
+                },
+                "ExtFilterDetail": {
+                    "back": {
+                        "discard": true,
+                        "to": "ExtFilterHome",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"Back to Home\"); }"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "ExternalDataGridFilterTestScope",
+            "observables": [
+                {
+                    "name": "externalFilter",
+                    "defaultValue": "{ minCreated: MIN_DATE, maxCreated: MAX_DATE }",
+                    "description": null
+                },
+                {
+                    "name": "currentBar",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "name": "bars",
+                    "defaultValue": "injection( // language=GraphQL\n`query iQueryBar($config: QueryConfigInput!)\n            {\n                iQueryBar(config: $config)\n                {\n                    type\n                    columnStates{\n                        name\n                        enabled\n                        sortable\n                    }\n                    queryConfig{\n                        id\n                        condition\n                        currentPage\n                        pageSize\n                        sortFields\n                    }\n                    rows{\n                        id\n                        created\n                        name\n                        numa\n                        numb\n                    }\n                    rowCount\n                }\n            }`, { config: //     {\n//     sortFields: [\"name\"],\n//     pageSize: 5,\n// }\n{ \"pageSize\": 5, \"sortFields\": [{ \"type\": \"Operation\", \"name\": \"desc\", \"operands\": [{ \"type\": \"Operation\", \"name\": \"add\", \"operands\": [{ \"type\": \"Field\", \"name\": \"numa\" }, { \"type\": \"Field\", \"name\": \"numb\" }] }] }] } })",
+                    "description": "* Current todos"
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateBars",
+                    "params": [
+                        "bars"
+                    ],
+                    "code": "this.bars = bars;",
+                    "bound": false
+                },
+                {
+                    "name": "removeBar",
+                    "params": [
+                        "id"
+                    ],
+                    "code": "this.bars.rows = this.bars.rows.filter(bar => bar.id !== id);",
+                    "bound": false
+                },
+                {
+                    "name": "updateCurrent",
+                    "params": [
+                        "bar"
+                    ],
+                    "code": "this.currentBar = bar;",
+                    "bound": false
+                }
+            ],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": [
+            "export const MIN_DATE = new Date(\"2018-03-01T00:00:00Z\");",
+            "export const MAX_DATE = new Date(\"2019-04-30T00:00:00Z\");"
+        ]
+    }
+}

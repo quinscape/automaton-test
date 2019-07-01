@@ -20,30 +20,20 @@
                     "aliasOf": "observer"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./AnimalForm",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "NodeForm"
+                }
+            ]
         }
     ],
-    "extraConstants": [],
-    "composite": {
-        "type": "CompositeComponent",
-        "constants": [],
-        "root": {
-            "name": "div",
-            "attrs": [],
-            "kids": [
-                {
-                    "name": "h1",
-                    "attrs": [],
-                    "kids": [
-                        {
-                            "type": "JSXText",
-                            "value": "ShippingHome"
-                        }
-                    ],
-                    "type": "JSXElement"
-                }
-            ],
-            "type": "JSXElement"
-        }
-    },
-    "export": "ShippingHome"
+    "extraConstants": [
+        "const CRUDDetail = props => { const { env } = props; const { scope } = env; return <React.Fragment><div className=\"row\"><div className=\"col\"><NodeForm value={scope.currentNode} /></div></div></React.Fragment>; };"
+    ],
+    "export": "fnObserver(CRUDDetail)"
 }

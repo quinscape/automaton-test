@@ -1,0 +1,91 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "computed"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "createDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "storeDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "deleteDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "GraphQLQuery"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FilterDSL"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"DBViewHome\"",
+            "states": {
+                "DBViewHome": {}
+            }
+        },
+        "scope": {
+            "name": "DBViewProcess",
+            "observables": [
+                {
+                    "name": "statistics",
+                    "defaultValue": "injection( // language=GraphQL\n`query iQuerySumPerMonth($config: QueryConfigInput!)\n        {\n            iQuerySumPerMonth(config: $config)\n            {\n                type\n                columnStates{\n                    name\n                    enabled\n                    sortable\n                }\n                queryConfig{\n                    id\n                    condition\n                    currentPage\n                    pageSize\n                    sortFields\n                }\n                rows{\n                    year\n                    month\n                    sum\n                }\n                rowCount\n            }\n        }`, { \"config\": { pageSize: 12, sortFields: [\"year\", \"month\"] } })",
+                    "description": null
+                }
+            ],
+            "actions": [],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": [
+            "// deconstruct FilterDSL methods\nconst { field, value } = FilterDSL; // language=GraphQL",
+            "// language=GraphQL\nconst FooDetailQuery = new GraphQLQuery(`query queryFooDetail($config: QueryConfigInput!)\n{\n    iQueryFoo(config: $config)\n    {\n        rows{\n            id\n            name\n            num\n            description\n            created\n            flag\n            type\n            owner{\n                id\n                login\n            }\n        }\n    }\n}`); // noinspection JSUnusedGlobalSymbols"
+        ]
+    }
+}

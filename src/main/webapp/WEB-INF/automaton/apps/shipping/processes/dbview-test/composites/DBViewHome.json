@@ -23,16 +23,6 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "reactstrap",
-            "specifiers": [
-                {
-                    "type": "ImportSpecifier",
-                    "name": "ButtonToolbar"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
             "source": "@quinscape/automaton-js",
             "specifiers": [
                 {
@@ -49,9 +39,41 @@
                     "aliasOf": "IQueryGrid"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Select"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "reactstrap/es/Card",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Card"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "reactstrap/es/CardBody",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "CardBody"
+                }
+            ]
         }
     ],
-    "extraConstants": [],
+    "extraConstants": [
+        "/**\n * Localized array of month names.\n\n * @return {{name: string, value: number}[]}\n */ const MONTHS = (() => { const date = new Date(\"1970-01-15\"); const array = new Array(12); for (let i = 0; i < 12; i++) { date.setMonth(i); array[i] = { name: date.toLocaleString('en-us', { month: 'long' }), value: i }; } return array; })();"
+    ],
     "composite": {
         "type": "CompositeComponent",
         "constants": [
@@ -112,52 +134,33 @@
                     "kids": [
                         {
                             "type": "JSXExpressionContainer",
-                            "code": "{i18n(\"CRUD List\")}"
+                            "code": "{i18n(\"DB-View Home\")}"
                         }
                     ],
                     "type": "JSXElement"
                 },
                 {
-                    "name": "ButtonToolbar",
-                    "attrs": [],
+                    "name": "Card",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "color",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"info\""
+                            }
+                        }
+                    ],
                     "kids": [
                         {
-                            "name": "Button",
-                            "attrs": [
+                            "name": "CardBody",
+                            "attrs": [],
+                            "kids": [
                                 {
-                                    "type": "JSXAttribute",
-                                    "name": "className",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"btn btn-primary mr-1\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "transition",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"new-qux\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "icon",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"fa-save mr-1\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "text",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"New\""
-                                    }
+                                    "type": "JSXText",
+                                    "value": "Sums per month statistic."
                                 }
                             ],
-                            "kids": [],
                             "type": "JSXElement"
                         }
                     ],
@@ -179,7 +182,7 @@
                             "name": "value",
                             "value": {
                                 "type": "JSXExpressionContainer",
-                                "code": "{scope.quxes}"
+                                "code": "{scope.statistics}"
                             }
                         }
                     ],
@@ -202,7 +205,7 @@
                                     "params": [
                                         {
                                             "type": "Identifier",
-                                            "name": "qux"
+                                            "name": "sumPerMonth"
                                         }
                                     ],
                                     "constants": [],
@@ -214,7 +217,7 @@
                                                 "name": "className",
                                                 "value": {
                                                     "type": "Expression",
-                                                    "code": "\"btn btn-secondary text-nowrap\""
+                                                    "code": "\"btn btn-secondary text-nowrap disabled\""
                                                 }
                                             },
                                             {
@@ -235,18 +238,18 @@
                                             },
                                             {
                                                 "type": "JSXAttribute",
-                                                "name": "transition",
+                                                "name": "action",
                                                 "value": {
-                                                    "type": "Expression",
-                                                    "code": "\"to-detail\""
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{() => null}"
                                                 }
                                             },
                                             {
                                                 "type": "JSXAttribute",
-                                                "name": "context",
+                                                "name": "disabled",
                                                 "value": {
                                                     "type": "JSXExpressionContainer",
-                                                    "code": "{qux.id}"
+                                                    "code": "{() => true}"
                                                 }
                                             }
                                         ],
@@ -265,7 +268,15 @@
                                     "name": "name",
                                     "value": {
                                         "type": "Expression",
-                                        "code": "\"name\""
+                                        "code": "\"year\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "filter",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"eq\""
                                     }
                                 }
                             ],
@@ -280,7 +291,84 @@
                                     "name": "name",
                                     "value": {
                                         "type": "Expression",
-                                        "code": "\"quxA.name\""
+                                        "code": "\"month\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "filter",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"eq\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "renderFilter",
+                                    "value": {
+                                        "type": "JSXRenderFunction",
+                                        "params": [
+                                            {
+                                                "type": "Identifier",
+                                                "name": "name"
+                                            },
+                                            {
+                                                "type": "Identifier",
+                                                "name": "scalarType"
+                                            },
+                                            {
+                                                "type": "Identifier",
+                                                "name": "label"
+                                            }
+                                        ],
+                                        "constants": [],
+                                        "root": {
+                                            "name": "Select",
+                                            "attrs": [
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "name",
+                                                    "value": {
+                                                        "type": "JSXExpressionContainer",
+                                                        "code": "{name}"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "values",
+                                                    "value": {
+                                                        "type": "JSXExpressionContainer",
+                                                        "code": "{MONTHS}"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "type",
+                                                    "value": {
+                                                        "type": "JSXExpressionContainer",
+                                                        "code": "{scalarType}"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "label",
+                                                    "value": {
+                                                        "type": "JSXExpressionContainer",
+                                                        "code": "{label}"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "labelClass",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"sr-only\""
+                                                    }
+                                                }
+                                            ],
+                                            "kids": [],
+                                            "type": "JSXElement"
+                                        }
                                     }
                                 }
                             ],
@@ -295,52 +383,15 @@
                                     "name": "name",
                                     "value": {
                                         "type": "Expression",
-                                        "code": "\"quxBName\""
+                                        "code": "\"sum\""
                                     }
-                                }
-                            ],
-                            "kids": [],
-                            "type": "JSXElement"
-                        },
-                        {
-                            "name": "DataGrid.Column",
-                            "attrs": [
+                                },
                                 {
                                     "type": "JSXAttribute",
-                                    "name": "name",
+                                    "name": "filter",
                                     "value": {
                                         "type": "Expression",
-                                        "code": "\"quxC1.name\""
-                                    }
-                                }
-                            ],
-                            "kids": [],
-                            "type": "JSXElement"
-                        },
-                        {
-                            "name": "DataGrid.Column",
-                            "attrs": [
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "name",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"quxC2.name\""
-                                    }
-                                }
-                            ],
-                            "kids": [],
-                            "type": "JSXElement"
-                        },
-                        {
-                            "name": "DataGrid.Column",
-                            "attrs": [
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "name",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"quxD.name\""
+                                        "code": "\"between\""
                                     }
                                 }
                             ],
@@ -354,5 +405,5 @@
             "type": "JSXElement"
         }
     },
-    "export": "fnObserver(FKTestList)"
+    "export": "fnObserver(DBViewHome)"
 }

@@ -1,0 +1,149 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "computed"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "storeDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "deleteDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "GraphQLQuery"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"AnimalGridHome\"",
+            "states": {
+                "AnimalGridHome": {
+                    "to-detail": {
+                        "to": "AnimalDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ scope.currentNode = t.context; }"
+                        }
+                    }
+                },
+                "AnimalDetail": {
+                    "back": {
+                        "discard": true,
+                        "to": "AnimalGridHome",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"Back to Home\"); }"
+                        }
+                    },
+                    "save": {
+                        "to": "AnimalGridHome",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ storeDomainObject({ _type: \"NodeInput\", id: t.context.id, name: t.context.name, parentId: t.context.parent.id }); }"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "AnimalGridTestScope",
+            "observables": [
+                {
+                    "name": "currentNode",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "name": "selectedAnimals",
+                    "defaultValue": "new Set([\"e67fef00-5940-4449-9913-df9a00973c1b\", \"5c36b60c-7dc7-4df1-a1cb-6e7199db62ba\"])",
+                    "description": null
+                },
+                {
+                    "name": "nodes",
+                    "defaultValue": "injection( // language=GraphQL\n`query iQueryNode($config: QueryConfigInput!)\n            {\n                iQueryNode(config: $config)\n                {\n                    type\n                    columnStates{\n                        name\n                        enabled\n                        sortable\n                    }\n                    queryConfig{\n                        id\n                        condition\n                        currentPage\n                        pageSize\n                        sortFields\n                    }\n                    rows{\n                        name\n                        id\n                        parent{\n                            id\n                            name\n                            parent\n                            {\n                                name\n                            }\n                        }\n\n                    }\n                    rowCount\n                }\n            }`, { config: { pageSize: 5 // Example of statically predefining a filter in JavaScript.\n// The static evaluation is too stupid to understand the JavaScript Filter DSL at this point\n//\n// condition:             {\n//     \"operands\": [\n//         {\n//             \"condition\": {\n//                 \"operands\": [\n//                     {\n//                         \"operands\": [\n//                             {\n//                                 \"name\": \"name\",\n//                                 \"type\": \"Field\"\n//                             },\n//                             {\n//                                 \"scalarType\": \"String\",\n//                                 \"type\": \"Value\",\n//                                 \"value\": \"b\"\n//                             }\n//                         ],\n//                         \"name\": \"containsIgnoreCase\",\n//                         \"type\": \"Condition\"\n//                     },\n//                     {\n//                         \"operands\": [\n//                             {\n//                                 \"name\": \"parent.name\",\n//                                 \"type\": \"Field\"\n//                             },\n//                             {\n//                                 \"scalarType\": \"String\",\n//                                 \"type\": \"Value\",\n//                                 \"value\": \"Fish\"\n//                             }\n//                         ],\n//                         \"name\": \"containsIgnoreCase\",\n//                         \"type\": \"Condition\"\n//                     }\n//                 ],\n//                 \"name\": \"and\",\n//                 \"type\": \"Condition\"\n//             },\n//             \"id\": \"animals-grid\",\n//             \"type\": \"Component\"\n//         }\n//     ],\n//     \"name\": \"and\",\n//     \"type\": \"Condition\"\n// }\n} })",
+                    "description": "* Current todos"
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateNodes",
+                    "params": [
+                        "nodes"
+                    ],
+                    "code": "this.nodes = nodes;",
+                    "bound": false
+                },
+                {
+                    "name": "removeNode",
+                    "params": [
+                        "id"
+                    ],
+                    "code": "this.nodes.rows = this.nodes.rows.filter(node => node.id !== id);",
+                    "bound": false
+                },
+                {
+                    "name": "updateCurrent",
+                    "params": [
+                        "node"
+                    ],
+                    "code": "this.currentNode = node;",
+                    "bound": false
+                }
+            ],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": []
+    }
+}

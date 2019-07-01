@@ -45,6 +45,10 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "GraphQLQuery"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
                 }
             ]
         }
@@ -79,13 +83,21 @@
                 },
                 "CRUDDetail": {
                     "save": {
-                        "to": "CRUDList",
                         "action": {
                             "type": "Action",
                             "params": [
                                 "t"
                             ],
-                            "code": "storeDomainObject({ ...t.context, ownerId: config.auth.id || \"\" }).then(() => GetFoosQuery.execute()).then(({ getFoos }) => scope.updateFoos(getFoos))"
+                            "code": "storeDomainObject({ ...t.context, ownerId: config.auth.id || \"\" }).then(() => GetFoosQuery.execute()).then(({ getFoos }) => scope.updateFoos(getFoos)).then(() => t.back(backToParent(t)))"
+                        }
+                    },
+                    "complex-save": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "storeDomainObject({ foo: t.context, other: node }).then(() => GetFoosQuery.execute()).then(({ getFoos }) => scope.updateFoos(getFoos)).then(() => t.back(backToParent(t)))"
                         }
                     },
                     "delete": {
@@ -165,6 +177,7 @@
         },
         "extraConstants": [
             "// language=GraphQL\nconst CreateFooMutation = new GraphQLQuery(`\n    mutation createFoo($name: String!){\n         createFoo(name: $name)\n         {\n             id\n             name\n             num\n             created\n             owner{\n                 login\n             }\n             type\n             flag\n\n        }\n    }\n    `); // language=GraphQL",
+            "// language=GraphQL\nconst ComplexStoreMutation = new GraphQLQuery(`\n    mutation complexStore($container: ComplexContainerInput)\n    {\n        complexStore(container : $container)\n    }\n    `); // language=GraphQL",
             "// language=GraphQL\nconst GetFoosQuery = new GraphQLQuery(`\n    query getFoos{\n        getFoos{\n            rows{\n                id\n                name\n                num\n                created\n                description\n                owner{\n                    login\n                }\n                type\n                flag\n\n            }\n            rowCount\n        }\n    }\n    `); // noinspection JSUnusedGlobalSymbols"
         ]
     }

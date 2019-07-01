@@ -114,8 +114,19 @@
                     "name": "Q_QuxC"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../queries/Q_QuxD",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_QuxD"
+                }
+            ]
         }
     ],
+    "extraConstants": [],
     "composite": {
         "type": "CompositeComponent",
         "constants": [
@@ -220,6 +231,14 @@
                                 "type": "Expression",
                                 "code": "\"name\""
                             }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "helpText",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"Field A!\""
+                            }
                         }
                     ],
                     "kids": [],
@@ -285,6 +304,14 @@
                         },
                         {
                             "type": "JSXAttribute",
+                            "name": "helpText",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{\"Select a QuxB\"}"
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
                             "name": "query",
                             "value": {
                                 "type": "JSXExpressionContainer",
@@ -328,7 +355,7 @@
                                 "constants": [],
                                 "root": {
                                     "type": "Expression",
-                                    "code": "formConfig.root.quxC1 = row || {}"
+                                    "code": "formConfig.root.quxC1 = row"
                                 }
                             }
                         },
@@ -360,7 +387,7 @@
                             "name": "display",
                             "value": {
                                 "type": "JSXExpressionContainer",
-                                "code": "{() => root.quxC2.name}"
+                                "code": "{() => root.quxC2 && root.quxC2.name}"
                             }
                         },
                         {
@@ -377,7 +404,7 @@
                                 "constants": [],
                                 "root": {
                                     "type": "Expression",
-                                    "code": "formConfig.root.quxC2 = row || {}"
+                                    "code": "formConfig.root.quxC2 = row"
                                 }
                             }
                         },
@@ -387,6 +414,37 @@
                             "value": {
                                 "type": "JSXExpressionContainer",
                                 "code": "{Q_QuxC}"
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "FKSelector",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "label",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"quxD\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "display",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{() => root.quxD && root.quxD.name}"
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "query",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{Q_QuxD}"
                             }
                         }
                     ],

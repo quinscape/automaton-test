@@ -40,6 +40,10 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "ScrollTracker"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "CalendarField"
                 }
             ]
         },
@@ -62,6 +66,10 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "withForm"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FieldMode"
                 }
             ]
         },
@@ -149,20 +157,6 @@
                         "init": "config.auth"
                     }
                 ]
-            },
-            {
-                "type": "VariableDeclaration",
-                "kind": "const",
-                "declarations": [
-                    {
-                        "type": "VariableDeclarator",
-                        "id": {
-                            "type": "Identifier",
-                            "name": "canAccess"
-                        },
-                        "init": "auth.id === root.owner.id"
-                    }
-                ]
             }
         ],
         "root": {
@@ -203,6 +197,29 @@
                             "name": "name",
                             "value": {
                                 "type": "Expression",
+                                "code": "\"id\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "mode",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{FieldMode.PLAIN_TEXT}"
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "Field",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
                                 "code": "\"name\""
                             }
                         }
@@ -226,7 +243,7 @@
                     "type": "JSXElement"
                 },
                 {
-                    "name": "Field",
+                    "name": "CalendarField",
                     "attrs": [
                         {
                             "type": "JSXAttribute",
@@ -264,6 +281,21 @@
                             "value": {
                                 "type": "Expression",
                                 "code": "\"num\""
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "Field",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"type\""
                             }
                         }
                     ],

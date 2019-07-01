@@ -1,0 +1,48 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"ColumnConfigHome\"",
+            "states": {
+                "ColumnConfigHome": {}
+            }
+        },
+        "scope": {
+            "name": "ColumnConfigTestScope",
+            "observables": [
+                {
+                    "name": "foos",
+                    "defaultValue": "injection( // language=GraphQL\n`query iQuerywithColumnConfigFoo($config: QueryConfigInput)\n        {\n            iQuerywithColumnConfigFoo(config: $config)\n            {\n                type\n                columnStates{\n                    name\n                    enabled\n                    sortable\n                }\n                queryConfig{\n                    id\n                    condition\n                    currentPage\n                    pageSize\n                    sortFields\n                }\n                rows{\n                    id\n                    name\n                    num\n                    description\n                    created\n                    type\n                    flag\n                    owner{\n                        id\n                        login\n                    }\n                    \n                }\n                rowCount\n            }\n        }`, { \"config\": { \"id\": \"configurable-foo-grid\", \"pageSize\": 20 } })",
+                    "description": "* Current todos"
+                }
+            ],
+            "actions": [],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": []
+    }
+}

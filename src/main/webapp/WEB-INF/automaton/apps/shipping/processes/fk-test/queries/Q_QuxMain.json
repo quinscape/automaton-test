@@ -12,7 +12,7 @@
         }
     ],
     "query": {
-        "query": "query iQueryQuxMain($config: QueryConfigInput!)\n    {\n        iQueryQuxMain(config: $config)\n        {\n            type\n            columnStates{\n                name\n                enabled\n                sortable\n            }\n            queryConfig{\n                id\n                condition\n                currentPage\n                pageSize\n                sortFields\n            }\n            rows{\n                id\n                name\n                quxA{\n                    name\n                }\n                quxBName\n                quxC1{\n                    name\n                }\n                quxC2{\n                    name\n                }\n            }\n            rowCount\n        }\n    }",
+        "query": "query iQueryQuxMain($config: QueryConfigInput!)\n    {\n        iQueryQuxMain(config: $config)\n        {\n            type\n            columnStates{\n                name\n                enabled\n                sortable\n            }\n            queryConfig{\n                id\n                condition\n                currentPage\n                pageSize\n                sortFields\n            }\n            rows{\n                id\n                name\n                quxA{\n                    name\n                }\n                quxBName\n                quxC1{\n                    name\n                }\n                quxC2{\n                    name\n                }\n                quxD{\n                    name\n                }\n            }\n            rowCount\n        }\n    }",
         "variables": {
             "config": {
                 "pageSize": 20,
