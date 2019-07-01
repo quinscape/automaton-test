@@ -95,6 +95,7 @@ public class GraphQLConfiguration
             .configureRelation(QUX_MAIN.QUX_B_NAME, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxB", null)
             .configureRelation(QUX_MAIN.QUX_C_ID1, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxC1", null)
             .configureRelation(QUX_MAIN.QUX_C_ID2, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxC2", null)
+            .configureRelation(QUX_MAIN.QUX_D_ID, SourceField.OBJECT, TargetField.NONE, "quxD", null)
 
             /*
                 documentation for the types defined in the automaton library

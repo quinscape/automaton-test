@@ -253,6 +253,19 @@ type InteractiveQueryQuxC {
     type: String
 }
 
+"Interactive Query with QuxD payload."
+type InteractiveQueryQuxD {
+    columnStates: [ColumnState]
+    "Query configuration the current result was produced with."
+    queryConfig: QueryConfig
+    "Total row count available."
+    rowCount: Int
+    "List with current rows of QuxD."
+    rows: [QuxD]
+    "Name of payload type (always 'QuxD')"
+    type: String
+}
+
 "Interactive Query with QuxMain payload."
 type InteractiveQueryQuxMain {
     columnStates: [ColumnState]
@@ -341,6 +354,8 @@ type QueryType {
     iQueryQuxB(config: QueryConfigInput!): InteractiveQueryQuxB
     "Queries QuxC objects based on the given query config"
     iQueryQuxC(config: QueryConfigInput!): InteractiveQueryQuxC
+    "Queries QuxD objects based on the given query config"
+    iQueryQuxD(config: QueryConfigInput!): InteractiveQueryQuxD
     "Queries QuxMain objects based on the given query config"
     iQueryQuxMain(config: QueryConfigInput!): InteractiveQueryQuxMain
     "Queries SumPerMonth objects based on the given query config"
@@ -387,6 +402,18 @@ type QuxC {
     value: Int!
 }
 
+"Catalog-like connected via id foreign QuxMain without scalar field"
+type QuxD {
+    "DB column 'description'"
+    description: String
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "DB column 'value'"
+    value: Int!
+}
+
 "Main object for fk_test"
 type QuxMain {
     "DB column 'id'"
@@ -409,6 +436,8 @@ type QuxMain {
     quxCId1: String!
     "DB foreign key column 'qux_c_id2'"
     quxCId2: String
+    "Target of 'qux_d_id'"
+    quxD: QuxD
 }
 
 "Domain object from Java POJO de.quinscape.automatontest.model.SumPerMonth shaped like the sum_per_month view in the database dump"
@@ -524,6 +553,7 @@ input QuxMainInput {
     quxBName: String
     quxCId1: String!
     quxCId2: String
+    quxDId: String
 }
 
 input RuleFieldInput {

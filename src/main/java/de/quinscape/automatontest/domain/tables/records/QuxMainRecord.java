@@ -17,8 +17,8 @@ import javax.validation.constraints.Size;
 
 import org.jooq.Field;
 import org.jooq.Record1;
-import org.jooq.Record6;
-import org.jooq.Row6;
+import org.jooq.Record7;
+import org.jooq.Row7;
 import org.jooq.impl.UpdatableRecordImpl;
 
 
@@ -37,9 +37,9 @@ import org.jooq.impl.UpdatableRecordImpl;
 @Table(name = "qux_main", schema = "public", indexes = {
     @Index(name = "pk_qux_main", unique = true, columnList = "id ASC")
 })
-public class QuxMainRecord extends UpdatableRecordImpl<QuxMainRecord> implements Record6<String, String, String, String, String, String> {
+public class QuxMainRecord extends UpdatableRecordImpl<QuxMainRecord> implements Record7<String, String, String, String, String, String, String> {
 
-    private static final long serialVersionUID = 1443326191;
+    private static final long serialVersionUID = 645366200;
 
     /**
      * Setter for <code>public.qux_main.id</code>.
@@ -142,6 +142,22 @@ public class QuxMainRecord extends UpdatableRecordImpl<QuxMainRecord> implements
         return (String) get(5);
     }
 
+    /**
+     * Setter for <code>public.qux_main.qux_d_id</code>.
+     */
+    public void setQuxDId(String value) {
+        set(6, value);
+    }
+
+    /**
+     * Getter for <code>public.qux_main.qux_d_id</code>.
+     */
+    @Column(name = "qux_d_id", length = 36)
+    @Size(max = 36)
+    public String getQuxDId() {
+        return (String) get(6);
+    }
+
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -155,23 +171,23 @@ public class QuxMainRecord extends UpdatableRecordImpl<QuxMainRecord> implements
     }
 
     // -------------------------------------------------------------------------
-    // Record6 type implementation
+    // Record7 type implementation
     // -------------------------------------------------------------------------
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Row6<String, String, String, String, String, String> fieldsRow() {
-        return (Row6) super.fieldsRow();
+    public Row7<String, String, String, String, String, String, String> fieldsRow() {
+        return (Row7) super.fieldsRow();
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Row6<String, String, String, String, String, String> valuesRow() {
-        return (Row6) super.valuesRow();
+    public Row7<String, String, String, String, String, String, String> valuesRow() {
+        return (Row7) super.valuesRow();
     }
 
     /**
@@ -226,6 +242,14 @@ public class QuxMainRecord extends UpdatableRecordImpl<QuxMainRecord> implements
      * {@inheritDoc}
      */
     @Override
+    public Field<String> field7() {
+        return QuxMain.QUX_MAIN.QUX_D_ID;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public String component1() {
         return getId();
     }
@@ -274,6 +298,14 @@ public class QuxMainRecord extends UpdatableRecordImpl<QuxMainRecord> implements
      * {@inheritDoc}
      */
     @Override
+    public String component7() {
+        return getQuxDId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public String value1() {
         return getId();
     }
@@ -316,6 +348,14 @@ public class QuxMainRecord extends UpdatableRecordImpl<QuxMainRecord> implements
     @Override
     public String value6() {
         return getQuxCId2();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String value7() {
+        return getQuxDId();
     }
 
     /**
@@ -376,13 +416,23 @@ public class QuxMainRecord extends UpdatableRecordImpl<QuxMainRecord> implements
      * {@inheritDoc}
      */
     @Override
-    public QuxMainRecord values(String value1, String value2, String value3, String value4, String value5, String value6) {
+    public QuxMainRecord value7(String value) {
+        setQuxDId(value);
+        return this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public QuxMainRecord values(String value1, String value2, String value3, String value4, String value5, String value6, String value7) {
         value1(value1);
         value2(value2);
         value3(value3);
         value4(value4);
         value5(value5);
         value6(value6);
+        value7(value7);
         return this;
     }
 
@@ -400,7 +450,7 @@ public class QuxMainRecord extends UpdatableRecordImpl<QuxMainRecord> implements
     /**
      * Create a detached, initialised QuxMainRecord
      */
-    public QuxMainRecord(String id, String name, String quxAId, String quxBName, String quxCId1, String quxCId2) {
+    public QuxMainRecord(String id, String name, String quxAId, String quxBName, String quxCId1, String quxCId2, String quxDId) {
         super(QuxMain.QUX_MAIN);
 
         set(0, id);
@@ -409,5 +459,6 @@ public class QuxMainRecord extends UpdatableRecordImpl<QuxMainRecord> implements
         set(3, quxBName);
         set(4, quxCId1);
         set(5, quxCId2);
+        set(6, quxDId);
     }
 }

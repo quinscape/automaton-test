@@ -39,7 +39,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class QuxMain extends TableImpl<QuxMainRecord> {
 
-    private static final long serialVersionUID = -1851759679;
+    private static final long serialVersionUID = 947083991;
 
     /**
      * The reference instance of <code>public.qux_main</code>
@@ -83,6 +83,11 @@ public class QuxMain extends TableImpl<QuxMainRecord> {
      * The column <code>public.qux_main.qux_c_id2</code>.
      */
     public final TableField<QuxMainRecord, String> QUX_C_ID2 = createField("qux_c_id2", org.jooq.impl.SQLDataType.VARCHAR(36), this, "");
+
+    /**
+     * The column <code>public.qux_main.qux_d_id</code>.
+     */
+    public final TableField<QuxMainRecord, String> QUX_D_ID = createField("qux_d_id", org.jooq.impl.SQLDataType.VARCHAR(36), this, "");
 
     /**
      * Create a <code>public.qux_main</code> table reference
@@ -150,7 +155,7 @@ public class QuxMain extends TableImpl<QuxMainRecord> {
      */
     @Override
     public List<ForeignKey<QuxMainRecord, ?>> getReferences() {
-        return Arrays.<ForeignKey<QuxMainRecord, ?>>asList(Keys.QUX_MAIN__FK_QUX_A_ID, Keys.QUX_MAIN__FK_QUX_B_NAME, Keys.QUX_MAIN__FK_QUX_C_ID1, Keys.QUX_MAIN__FK_QUX_C_ID2);
+        return Arrays.<ForeignKey<QuxMainRecord, ?>>asList(Keys.QUX_MAIN__FK_QUX_A_ID, Keys.QUX_MAIN__FK_QUX_B_NAME, Keys.QUX_MAIN__FK_QUX_C_ID1, Keys.QUX_MAIN__FK_QUX_C_ID2, Keys.QUX_MAIN__FK_QUX_D_ID);
     }
 
     /**

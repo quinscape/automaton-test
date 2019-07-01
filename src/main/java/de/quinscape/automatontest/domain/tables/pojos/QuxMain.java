@@ -35,7 +35,7 @@ import javax.validation.constraints.Size;
 })
 public class QuxMain extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = 189500697;
+    private static final long serialVersionUID = 1144777370;
 
     private String id;
     private String name;
@@ -43,6 +43,7 @@ public class QuxMain extends GeneratedDomainObject implements Serializable {
     private String quxBName;
     private String quxCId1;
     private String quxCId2;
+    private String quxDId;
 
     public QuxMain() {}
 
@@ -53,6 +54,7 @@ public class QuxMain extends GeneratedDomainObject implements Serializable {
         this.quxBName = value.quxBName;
         this.quxCId1 = value.quxCId1;
         this.quxCId2 = value.quxCId2;
+        this.quxDId = value.quxDId;
     }
 
     public QuxMain(
@@ -61,7 +63,8 @@ public class QuxMain extends GeneratedDomainObject implements Serializable {
         String quxAId,
         String quxBName,
         String quxCId1,
-        String quxCId2
+        String quxCId2,
+        String quxDId
     ) {
         this.id = id;
         this.name = name;
@@ -69,6 +72,7 @@ public class QuxMain extends GeneratedDomainObject implements Serializable {
         this.quxBName = quxBName;
         this.quxCId1 = quxCId1;
         this.quxCId2 = quxCId2;
+        this.quxDId = quxDId;
     }
 
     @Id
@@ -136,6 +140,16 @@ public class QuxMain extends GeneratedDomainObject implements Serializable {
         this.quxCId2 = quxCId2;
     }
 
+    @Column(name = "qux_d_id", length = 36)
+    @Size(max = 36)
+    public String getQuxDId() {
+        return this.quxDId;
+    }
+
+    public void setQuxDId(String quxDId) {
+        this.quxDId = quxDId;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("QuxMain (");
@@ -146,6 +160,7 @@ public class QuxMain extends GeneratedDomainObject implements Serializable {
         sb.append(", ").append(quxBName);
         sb.append(", ").append(quxCId1);
         sb.append(", ").append(quxCId2);
+        sb.append(", ").append(quxDId);
 
         sb.append(")");
         return sb.toString();

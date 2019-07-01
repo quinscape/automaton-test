@@ -17,6 +17,7 @@ import de.quinscape.automatontest.domain.tables.Node;
 import de.quinscape.automatontest.domain.tables.QuxA;
 import de.quinscape.automatontest.domain.tables.QuxB;
 import de.quinscape.automatontest.domain.tables.QuxC;
+import de.quinscape.automatontest.domain.tables.QuxD;
 import de.quinscape.automatontest.domain.tables.QuxMain;
 import de.quinscape.automatontest.domain.tables.records.AppAttachmentRecord;
 import de.quinscape.automatontest.domain.tables.records.AppConfigRecord;
@@ -31,6 +32,7 @@ import de.quinscape.automatontest.domain.tables.records.NodeRecord;
 import de.quinscape.automatontest.domain.tables.records.QuxARecord;
 import de.quinscape.automatontest.domain.tables.records.QuxBRecord;
 import de.quinscape.automatontest.domain.tables.records.QuxCRecord;
+import de.quinscape.automatontest.domain.tables.records.QuxDRecord;
 import de.quinscape.automatontest.domain.tables.records.QuxMainRecord;
 
 import javax.annotation.Generated;
@@ -84,6 +86,8 @@ public class Keys {
     public static final UniqueKey<QuxBRecord> QUX_B_NAME_KEY = UniqueKeys0.QUX_B_NAME_KEY;
     public static final UniqueKey<QuxCRecord> PK_QUX_C = UniqueKeys0.PK_QUX_C;
     public static final UniqueKey<QuxCRecord> QUX_C_NAME_KEY = UniqueKeys0.QUX_C_NAME_KEY;
+    public static final UniqueKey<QuxDRecord> PK_QUX_D = UniqueKeys0.PK_QUX_D;
+    public static final UniqueKey<QuxDRecord> QUX_D_NAME_KEY = UniqueKeys0.QUX_D_NAME_KEY;
     public static final UniqueKey<QuxMainRecord> PK_QUX_MAIN = UniqueKeys0.PK_QUX_MAIN;
 
     // -------------------------------------------------------------------------
@@ -100,6 +104,7 @@ public class Keys {
     public static final ForeignKey<QuxMainRecord, QuxBRecord> QUX_MAIN__FK_QUX_B_NAME = ForeignKeys0.QUX_MAIN__FK_QUX_B_NAME;
     public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID1 = ForeignKeys0.QUX_MAIN__FK_QUX_C_ID1;
     public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID2 = ForeignKeys0.QUX_MAIN__FK_QUX_C_ID2;
+    public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D_ID = ForeignKeys0.QUX_MAIN__FK_QUX_D_ID;
 
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
@@ -127,6 +132,8 @@ public class Keys {
         public static final UniqueKey<QuxBRecord> QUX_B_NAME_KEY = Internal.createUniqueKey(QuxB.QUX_B, "qux_b_name_key", QuxB.QUX_B.NAME);
         public static final UniqueKey<QuxCRecord> PK_QUX_C = Internal.createUniqueKey(QuxC.QUX_C, "pk_qux_c", QuxC.QUX_C.ID);
         public static final UniqueKey<QuxCRecord> QUX_C_NAME_KEY = Internal.createUniqueKey(QuxC.QUX_C, "qux_c_name_key", QuxC.QUX_C.NAME);
+        public static final UniqueKey<QuxDRecord> PK_QUX_D = Internal.createUniqueKey(QuxD.QUX_D, "pk_qux_d", QuxD.QUX_D.ID);
+        public static final UniqueKey<QuxDRecord> QUX_D_NAME_KEY = Internal.createUniqueKey(QuxD.QUX_D, "qux_d_name_key", QuxD.QUX_D.NAME);
         public static final UniqueKey<QuxMainRecord> PK_QUX_MAIN = Internal.createUniqueKey(QuxMain.QUX_MAIN, "pk_qux_main", QuxMain.QUX_MAIN.ID);
     }
 
@@ -141,5 +148,6 @@ public class Keys {
         public static final ForeignKey<QuxMainRecord, QuxBRecord> QUX_MAIN__FK_QUX_B_NAME = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.QUX_B_NAME_KEY, QuxMain.QUX_MAIN, "qux_main__fk_qux_b_name", QuxMain.QUX_MAIN.QUX_B_NAME);
         public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID1 = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_C, QuxMain.QUX_MAIN, "qux_main__fk_qux_c_id1", QuxMain.QUX_MAIN.QUX_C_ID1);
         public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID2 = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_C, QuxMain.QUX_MAIN, "qux_main__fk_qux_c_id2", QuxMain.QUX_MAIN.QUX_C_ID2);
+        public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_D, QuxMain.QUX_MAIN, "qux_main__fk_qux_d_id", QuxMain.QUX_MAIN.QUX_D_ID);
     }
 }

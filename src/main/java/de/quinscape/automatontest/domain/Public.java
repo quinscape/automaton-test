@@ -18,6 +18,7 @@ import de.quinscape.automatontest.domain.tables.Node;
 import de.quinscape.automatontest.domain.tables.QuxA;
 import de.quinscape.automatontest.domain.tables.QuxB;
 import de.quinscape.automatontest.domain.tables.QuxC;
+import de.quinscape.automatontest.domain.tables.QuxD;
 import de.quinscape.automatontest.domain.tables.QuxMain;
 import de.quinscape.automatontest.domain.tables.SumPerMonth;
 
@@ -45,7 +46,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = 610855478;
+    private static final long serialVersionUID = 1563450374;
 
     /**
      * The reference instance of <code>public</code>
@@ -123,6 +124,11 @@ public class Public extends SchemaImpl {
     public final QuxC QUX_C = de.quinscape.automatontest.domain.tables.QuxC.QUX_C;
 
     /**
+     * The table <code>public.qux_d</code>.
+     */
+    public final QuxD QUX_D = de.quinscape.automatontest.domain.tables.QuxD.QUX_D;
+
+    /**
      * The table <code>public.qux_main</code>.
      */
     public final QuxMain QUX_MAIN = de.quinscape.automatontest.domain.tables.QuxMain.QUX_MAIN;
@@ -171,6 +177,7 @@ public class Public extends SchemaImpl {
             QuxA.QUX_A,
             QuxB.QUX_B,
             QuxC.QUX_C,
+            QuxD.QUX_D,
             QuxMain.QUX_MAIN,
             SumPerMonth.SUM_PER_MONTH);
     }

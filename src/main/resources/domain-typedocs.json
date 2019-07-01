@@ -43,5 +43,10 @@
         "name": "QuxC",
         "description": "Catalog-like connected via id foreign keys to QuxMain twice",
         "fieldDocs": []
+    },
+    {
+        "name": "QuxD",
+        "description": "Catalog-like connected via id foreign QuxMain without scalar field",
+        "fieldDocs": []
     }
 ]
