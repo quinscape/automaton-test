@@ -1,6 +1,6 @@
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
-import { Button, ButtonToolbar, ListGroup } from "reactstrap";
+import { Button, ButtonToolbar, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from "reactstrap";
 import { i18n, Pagination } from "@quinscape/automaton-js"
 
 const IteratorTestList = props => {
@@ -20,32 +20,31 @@ const IteratorTestList = props => {
             <ListGroup>
                 {
                     scope.foos.rows.map(foo => (
-                        <React.Fragment>
+                        <ListGroupItem className="bg-light">
 
-                            <h3>
+                            <ListGroupItemHeading>
                                 { foo.name}
                                 <br/>
                                 <small className="text-muted">
                                     Owner: { foo.owner.login }
                                 </small>
-                            </h3>
-                            <p>
+                            </ListGroupItemHeading>
+                            <ListGroupItemText>
                             {
                                 foo.description
                             }
-                            </p>
-                            <hr/>
-                            <div className="row">
+                            </ListGroupItemText>
+                            <div className="row bg-white">
                                 <div className="col">
                                     <button
-                                        className="btn btn-success disabled float-right"
+                                        className="btn btn-link disabled float-right"
                                         disabled={ true}
                                     >
-                                        Button
+                                        Details
                                     </button>
                                 </div>
                             </div>
-                        </React.Fragment>
+                        </ListGroupItem>
                     ))
                 }
             </ListGroup>
