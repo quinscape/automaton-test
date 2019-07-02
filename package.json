@@ -33,9 +33,9 @@
         "webpack-cli": "^3.3.4"
     },
     "dependencies": {
-        "@quinscape/automaton-js": "^0.0.13",
+        "@quinscape/automaton-js": "^0.0.14",
         "bignumber.js": "^9.0.0",
-        "domainql-form": "^2.2.5",
+        "domainql-form": "^2.2.6",
         "history": "^4.9.0",
         "jsview-bootstrap": "^0.1.1",
         "lodash.get": "^4.4.2",
