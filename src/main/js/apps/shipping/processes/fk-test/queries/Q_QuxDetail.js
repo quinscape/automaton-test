@@ -2,7 +2,7 @@ import { query } from "@quinscape/automaton-js"
 
 export default query(
     // language=GraphQL
-        `query iQueryQuxMain($config: QueryConfigInput!)
+        `query iQueryQuxDetail($config: QueryConfigInput!)
     {
         iQueryQuxMain(config: $config)
         {
