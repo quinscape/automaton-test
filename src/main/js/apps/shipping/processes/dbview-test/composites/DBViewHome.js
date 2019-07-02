@@ -20,7 +20,7 @@ const MONTHS = (() => {
         date.setMonth(i);
         array[i] = {
             name: date.toLocaleString('en-us', {month: 'long'}),
-            value: i
+            value: i + 1
         };
     }
     return array;
