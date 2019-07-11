@@ -42,7 +42,7 @@ describe("Test", function () {
             }`,
         )
 
-        console.log(JSON.stringify(doc, null, 4))
+        //console.log(JSON.stringify(doc, null, 4))
 
     });
 
