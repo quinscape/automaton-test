@@ -24,6 +24,12 @@
         <java.version>1.8</java.version>
         <spring.core.version>5.1.0.RELEASE</spring.core.version>
         <atomikos.version>3.9.3</atomikos.version>
+        <!--
+            Integration tests are disabled by default and require the application running on localhost:8080
+            and the system property `webdriver.gecko.driver` being set to the external installation of geckodriver
+            ( See https://github.com/mozilla/geckodriver )
+        -->
+        <skipITs>true</skipITs>
     </properties>
 
     <dependencies>
@@ -165,10 +171,11 @@
         </dependency>
         <!-- ATOMIKOS END-->
 
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.14.0</version>
+            <version>3.141.59</version>
         </dependency>
 
         <dependency>
@@ -415,6 +422,23 @@
                         <arg>-parameters</arg>
                     </compilerArgs>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <configuration>
+                    <skipITs>${skipITs}</skipITs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>
