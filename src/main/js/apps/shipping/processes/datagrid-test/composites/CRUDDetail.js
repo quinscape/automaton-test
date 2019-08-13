@@ -1,13 +1,16 @@
 import React, { useState } from "react"
 import { observer as fnObserver } from "mobx-react-lite";
-import { DEFAULT_OPTIONS } from "domainql-form"
+import { DEFAULT_OPTIONS, FormLayout } from "domainql-form"
 import FooForm from "./FooForm";
 import FormOptions from "./FormOptions";
 
 
 const CRUDDetail = props => {
 
-    const [ control, setControl] = useState(DEFAULT_OPTIONS);
+    const [ control, setControl] = useState(() => ({
+        ... DEFAULT_OPTIONS,
+        layout: FormLayout.HORIZONTAL
+    }));
 
     const changeControl = (k, v) => setControl({
         ...control,

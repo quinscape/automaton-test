@@ -2,7 +2,7 @@ import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { Button, config, i18n, ScrollTracker, CalendarField } from "@quinscape/automaton-js"
 
-import { Field, GlobalErrors, TextArea, withForm, FieldMode } from "domainql-form"
+import { Field, GlobalErrors, TextArea, withForm, FieldMode, FieldGroup } from "domainql-form"
 import { ButtonToolbar } from "reactstrap";
 
 import validation from "../../../../../services/validation"
@@ -30,13 +30,14 @@ const FooForm = props => {
 
             <GlobalErrors/>
             <Field name="id" mode={ FieldMode.PLAIN_TEXT }/>
-            <Field name="name"/>
+            <FieldGroup>
+                <Field name="name" wrapperColumnClass="col-md-4"/>
+                <Field name="num"  wrapperColumnClass="col-md-3"/>
+            </FieldGroup>
             <TextArea name="description"/>
             <CalendarField name="created"/>
             <Field name="flag"/>
-            <Field name="num"/>
-            <Field name="type"/>
-
+            <Field name="type" wrapperColumnClass="col-md-1"/>
             <ButtonToolbar>
                 <Button
                     className="btn btn-primary mr-1"
