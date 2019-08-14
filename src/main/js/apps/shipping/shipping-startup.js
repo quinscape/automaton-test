@@ -13,20 +13,21 @@ configure({
 });
 
 bootstrap(
-    initial => {
+        initial => {
 
-        return startup(
-            require.context("./", true, /\.js$/),
-            initial,
-            config => {
+            return startup(
+                require.context("./", true, /\.js$/),
+                initial,
+                config => {
 
-                config.layout = Layout;
-                addConfig("validationRules", initial.validationRules)
-            }
-        );
-    },
-    () => console.log("ready.")
-);
+                    config.layout = Layout;
+                    addConfig("validationRules", initial.validationRules)
+                }
+            );
+        }
+    ).then(
+        () => console.log("ready.")
+    );
 
 
 export default {
