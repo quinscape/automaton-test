@@ -1,8 +1,6 @@
 import {
     observable,
-    computed,
-    action,
-    toJS
+    action
 } from "mobx";
 
 import {
@@ -11,37 +9,19 @@ import {
     createDomainObject,
     storeDomainObject,
     deleteDomainObject,
-    GraphQLQuery,
     backToParent,
 
     FilterDSL
 } from "@quinscape/automaton-js";
 
+import Q_FooType from "./queries/Q_FooType";
+import Q_FooDetail from "./queries/Q_FooDetail";
+import Q_FooList from "./queries/Q_FooList";
+
 
 // deconstruct FilterDSL methods
 const { field, value } = FilterDSL;
 
-// language=GraphQL
-const FooDetailQuery = new GraphQLQuery(`query queryFooDetail($config: QueryConfigInput!)
-{
-    iQueryFoo(config: $config)
-    {
-        rows{
-            id
-            name
-            num
-            description
-            created
-            flag
-            type
-            owner{
-                id
-                login
-            }
-        }
-    }
-}`
-);
 
 // noinspection JSUnusedGlobalSymbols
 export function initProcess(process, scope)
@@ -77,7 +57,7 @@ export function initProcess(process, scope)
 
                                 console.log("to-detail, context = ", t.context);
 
-                                return FooDetailQuery.execute({
+                                return Q_FooDetail.execute({
                                     config: {
                                         condition:
                                             field("id")
@@ -145,45 +125,7 @@ export default class CRUDTestScope {
 
     /** Foo iQuery  */
     @observable
-    foos = injection(
-        // language=GraphQL
-        `query iQueryFoo($config: QueryConfigInput!)
-        {
-            iQueryFoo(config: $config)
-            {
-                type
-                columnStates{
-                    name
-                    enabled
-                    sortable
-                }
-                queryConfig{
-                    id
-                    condition
-                    currentPage
-                    pageSize
-                    sortFields
-                }
-                rows{
-                    id
-                    name
-                    description
-                    flag
-                    type
-                    owner{
-                        id
-                        login
-                    }
-                }
-                rowCount
-            }
-        }`,
-        {
-            "config": {
-                "pageSize": 20
-            }
-        }
-    );
+    foos = injection(Q_FooList);
 
     /**
      *  Example for an iQuery being used to drive a <Select/>
@@ -199,23 +141,7 @@ export default class CRUDTestScope {
      *  */
     @observable
     fooTypes = injection(
-        // language=GraphQL
-        `query iQueryFooType($config: QueryConfigInput!)
-        {
-            iQueryFooType(config: $config)
-            {
-                rows{
-                    name
-                }
-                rowCount
-            }
-        }`,
-        {
-            "config": {
-                // deactivate paging
-                "pageSize": 0
-            }
-        }
+        Q_FooType
     );
     
     @action
