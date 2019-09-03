@@ -8,6 +8,9 @@ import de.quinscape.automaton.runtime.data.RuntimeQuery;
 import de.quinscape.automaton.runtime.data.InteractiveQueryService;
 import de.quinscape.automatontest.domain.tables.pojos.AppUser;
 import de.quinscape.automatontest.domain.tables.pojos.Bar;
+import de.quinscape.automatontest.domain.tables.pojos.Baz;
+import de.quinscape.automatontest.domain.tables.pojos.BazLink;
+import de.quinscape.automatontest.domain.tables.pojos.BazValue;
 import de.quinscape.automatontest.domain.tables.pojos.Foo;
 import de.quinscape.automatontest.domain.tables.pojos.FooType;
 import de.quinscape.automatontest.domain.tables.pojos.GridColumns;
@@ -80,7 +83,11 @@ public class DataGridLogic
                 QuxA.class,
                 QuxB.class,
                 QuxC.class,
-                QuxD.class
+                QuxD.class,
+
+                Baz.class,
+                BazValue.class,
+                BazLink.class
             }
         )
         Class<T> type,

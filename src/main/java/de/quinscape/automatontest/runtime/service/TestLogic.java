@@ -1,15 +1,23 @@
 package de.quinscape.automatontest.runtime.service;
 
+import de.quinscape.automaton.model.data.QueryConfig;
 import de.quinscape.automaton.runtime.auth.AutomatonAuthentication;
+import de.quinscape.automatontest.domain.tables.pojos.Baz;
+import de.quinscape.automatontest.domain.tables.pojos.BazValue;
 import de.quinscape.automatontest.domain.tables.pojos.Foo;
 import de.quinscape.automatontest.model.ComplexContainer;
+import de.quinscape.domainql.DomainQL;
 import de.quinscape.domainql.annotation.GraphQLField;
 import de.quinscape.domainql.annotation.GraphQLLogic;
 import de.quinscape.domainql.annotation.GraphQLMutation;
 import de.quinscape.domainql.annotation.GraphQLQuery;
+import de.quinscape.domainql.annotation.GraphQLTypeParam;
 import de.quinscape.domainql.util.Paged;
+import graphql.schema.DataFetchingEnvironment;
 import org.jooq.DSLContext;
+import org.jooq.Table;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
@@ -19,18 +27,24 @@ import java.util.List;
 import java.util.UUID;
 
 import static de.quinscape.automatontest.domain.Tables.*;
+import static org.jooq.impl.DSL.*;
 
 @GraphQLLogic
 public class TestLogic
 {
     private final DSLContext dslContext;
 
+    private final DomainQL domainQL;
+
+
     @Autowired
     public TestLogic(
-        DSLContext dslContext
+        DSLContext dslContext,
+        @Lazy DomainQL domainQL
     )
     {
         this.dslContext = dslContext;
+        this.domainQL = domainQL;
     }
 
     @GraphQLQuery
@@ -162,5 +176,25 @@ public class TestLogic
         {
             return check;
         }
+    }
+
+
+    @GraphQLQuery
+    public <T> T detailQuery(
+        @GraphQLTypeParam(
+            types = {
+                Baz.class,
+                BazValue.class
+            }
+        )
+        Class<T> type,
+        String id
+    )
+    {
+        final Table<?> table = domainQL.getJooqTable(type.getSimpleName());
+
+        return dslContext.select().from(table).where(
+            field("id").eq(id)
+        ).fetchOneInto(type);
     }
 }
