@@ -2,7 +2,7 @@ import { query } from "@quinscape/automaton-js"
 
 export default query(
     // language=GraphQL
-        `query iQueryBazValueDetail($id: String!)
+        `query detailQueryBazValue($id: String!)
     {
         detailQueryBazValue(id: $id)
         {
