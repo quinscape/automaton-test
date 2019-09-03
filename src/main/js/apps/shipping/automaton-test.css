@@ -42,9 +42,9 @@ body
 }
 
 
-.fk-selector .fks-display
+.fk-selector .fks-display.disabled
 {
     background: #e8e8e8;
     cursor: not-allowed;
 }
-                                                  
+
