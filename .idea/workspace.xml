@@ -9,12 +9,26 @@
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_automaton_0_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_automaton_0_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_1_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automatontest.backup" beforeDir="false" afterPath="$PROJECT_DIR$/automatontest.backup" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/WebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/WebConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Indexes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Indexes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Keys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Keys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Public.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Public.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Tables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Tables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/AutomatonTestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/AutomatonTestApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/DataGridLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/DataGridLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/TestLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/TestLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/datagrid-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/datagrid-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/composites/FKTestDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/composites/FKTestDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/composites/QuxMainForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/composites/QuxMainForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/domain-typedocs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/domain-typedocs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/TestCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,10 +59,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="Enum" />
         <option value="JUnit4 Test Class" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -75,6 +89,9 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/../automaton-js/package.json" />
   </component>
   <component name="ProjectId" id="1PNZC7ncKvcZbu7SWEnxMUSkScW" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -301,7 +318,9 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="GoToClass.includeLibraries" value="false" />
@@ -324,7 +343,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="8.16.0" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../automaton-js/src/message" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -342,13 +361,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="de.quinscape.automaton.runtime.message" />
+      <recent name="de.quinscape.automaton.runtime.ws" />
       <recent name="de.quinscape.automaton.runtime.data" />
       <recent name="de.quinscape.automaton.model.filter" />
       <recent name="de.quinscape.automatontest.runtime.service" />
-      <recent name="de.quinscape.automaton.model.data" />
-      <recent name="de.quinscape.automaton.runtime" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="de.quinscape.automaton.runtime.ws" />
       <recent name="de.quinscape.automaton.runtime.scalar" />
       <recent name="de.quinscape.automaton.model.filter" />
       <recent name="de.quinscape.automaton.runtime.provider" />
@@ -371,18 +391,18 @@
       <recent name="de.quinscape.automaton.runtime" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.quinscape.automaton.runtime.ws" />
       <recent name="de.quinscape.automaton.runtime.data" />
       <recent name="de.quinscape.automaton.runtime.scalar" />
       <recent name="" />
       <recent name="de.quinscape.automaton.model.filter" />
-      <recent name="de.quinscape.automaton.model.data" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../automaton-js/src/message" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src/ui" />
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/assoc-entity-test/queries" />
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/assoc-entity-test/composites" />
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes" />
       <recent name="$PROJECT_DIR$/../automaton-js/test/ui" />
-      <recent name="$PROJECT_DIR$/../automaton-js/test" />
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/queries" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src" />
     </key>
     <key name="es6.move.members.recent.items">
       <recent name="$PROJECT_DIR$/../automaton-js/src/DialogMode.js" />
@@ -411,7 +431,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Local Tomcat">
+  <component name="RunManager" selected="Mocha.FKSelector">
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -424,6 +444,18 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in automaton-test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automaton-test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -457,11 +489,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCase.name" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCase.linkBaz" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="automaton-test" />
       <option name="PACKAGE_NAME" value="de.quinscape.automatontest" />
       <option name="MAIN_CLASS_NAME" value="de.quinscape.automatontest.TestCase" />
-      <option name="METHOD_NAME" value="name" />
+      <option name="METHOD_NAME" value="linkBaz" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCase.testPlural" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automaton-test" />
+      <option name="PACKAGE_NAME" value="de.quinscape.automatontest" />
+      <option name="MAIN_CLASS_NAME" value="de.quinscape.automatontest.TestCase" />
+      <option name="METHOD_NAME" value="testPlural" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -599,45 +645,7 @@
       <recursive>false</recursive>
       <method v="2" />
     </configuration>
-    <configuration name="FKSelector.selects foreign key targets" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options>-r @babel/register -r ./test/setup.js</node-options>
-      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs>
-        <env name="BABEL_ENV" value="test" />
-      </envs>
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/fk-selector.js</test-file>
-      <test-names>
-        <name value="FKSelector" />
-        <name value="selects foreign key targets" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Pagination.controls iQuery pagination" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options>-r @babel/register -r ./test/setup.js</node-options>
-      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs>
-        <env name="BABEL_ENV" value="test" />
-      </envs>
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/pagination.js</test-file>
-      <test-names>
-        <name value="Pagination" />
-        <name value="controls iQuery pagination" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="hasOpenChanges" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="FKSelector" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options>-r @babel/register -r ./test/setup.js</node-options>
       <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
@@ -649,9 +657,9 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/../automaton-js/test/model2js/has-open-changes.js</test-file>
+      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/fk-selector.js</test-file>
       <test-names>
-        <name value="hasOpenChanges" />
+        <name value="FKSelector" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -675,24 +683,24 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.InteractiveQueryJoinTest" />
-      <item itemvalue="JUnit.TestCase.name" />
       <item itemvalue="JUnit.SeleniumTestITCase" />
+      <item itemvalue="JUnit.All in automaton-test" />
+      <item itemvalue="JUnit.TestCase.linkBaz" />
+      <item itemvalue="JUnit.TestCase.testPlural" />
       <item itemvalue="Mocha.Automaton-Js Tests" />
       <item itemvalue="Mocha.Automaton-Test Tests" />
       <item itemvalue="Mocha.matchPath" />
-      <item itemvalue="Mocha.Pagination.controls iQuery pagination" />
-      <item itemvalue="Mocha.FKSelector.selects foreign key targets" />
-      <item itemvalue="Mocha.hasOpenChanges" />
+      <item itemvalue="Mocha.FKSelector" />
       <item itemvalue="Spring Boot.DQLMobxApplication" />
       <item itemvalue="Tomcat Server.Local Tomcat" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.FKSelector" />
+        <item itemvalue="JUnit.TestCase.testPlural" />
+        <item itemvalue="JUnit.TestCase.linkBaz" />
+        <item itemvalue="JUnit.All in automaton-test" />
         <item itemvalue="JUnit.SeleniumTestITCase" />
-        <item itemvalue="Mocha.hasOpenChanges" />
-        <item itemvalue="JUnit.TestCase.name" />
-        <item itemvalue="Mocha.FKSelector.selects foreign key targets" />
-        <item itemvalue="Mocha.Pagination.controls iQuery pagination" />
       </list>
     </recent_temporary>
   </component>
@@ -954,7 +962,26 @@
       <workItem from="1565736499374" duration="797000" />
       <workItem from="1565737709610" duration="61000" />
       <workItem from="1565737913701" duration="4906000" />
-      <workItem from="1565771976225" duration="11867000" />
+      <workItem from="1565771976225" duration="21140000" />
+      <workItem from="1566215015178" duration="1869000" />
+      <workItem from="1566219163934" duration="12076000" />
+      <workItem from="1566379635236" duration="27000" />
+      <workItem from="1566382996820" duration="7570000" />
+      <workItem from="1566467068239" duration="3106000" />
+      <workItem from="1566491436454" duration="3696000" />
+      <workItem from="1566553913192" duration="2890000" />
+      <workItem from="1566649300095" duration="5094000" />
+      <workItem from="1566763333983" duration="629000" />
+      <workItem from="1566810161288" duration="15867000" />
+      <workItem from="1566901534753" duration="3646000" />
+      <workItem from="1566930401200" duration="6558000" />
+      <workItem from="1566991554574" duration="18053000" />
+      <workItem from="1567019753362" duration="4050000" />
+      <workItem from="1567069277753" duration="18946000" />
+      <workItem from="1567169954444" duration="6991000" />
+      <workItem from="1567336145588" duration="16435000" />
+      <workItem from="1567413531862" duration="25285000" />
+      <workItem from="1567496992290" duration="8841000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
@@ -1029,33 +1056,8 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/../automaton-js/tooling/build-component-docs.js</url>
-          <line>121</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/../automaton-js/test/lookup-type.js</url>
-          <line>13</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/node_modules/domainql-form/src/InputSchema.js</url>
-          <line>268</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/../automaton-js/src/util/lookupType.js</url>
-          <line>31</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/../automaton-js/src/ui/FKSelector.js</url>
-          <line>262</line>
-          <option name="timeStamp" value="64" />
+          <line>108</line>
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1067,113 +1069,5 @@
         <watch expression="converted._type" language="JavaScript" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="watch">
-      <expression>
-        <expression-string>converted._type</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>((FieldAlias&lt;?&gt;)fkField).getQualifiedName()</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>org.jooq.impl.FieldAlias</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>env.getSelectionSet().getField(&quot;rows&quot;).getSelectionSet().getFields().get(1).getQualifiedName()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>env.getSelectionSet().getField(&quot;rows&quot;).getSelectionSet().getFields().get(1).getFieldDefinition().getName()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>env.getSelectionSet().getField(&quot;rows&quot;).getSelectionSet().getFields().get(0).getFieldDefinition().getName()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>env.getSelectionSet().getField(&quot;rows&quot;).getSelectionSet().getFields().get(0).getQualifiedName()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>env.getSelectionSet().getField(&quot;rows&quot;).getSelectionSet().getFields()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>env.getSelectionSet().getField(&quot;rows&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>scalarTypeByClass.keySet().toString()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>map.keySet().toString()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>config.inputSchema</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>joinAliases.values()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>joinAliases.keySet()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>new HashSet&lt;String&gt;(dbFieldLookup.keySet())</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>java.util.Collections,java.util.stream.Collectors</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>new HashSet&lt;String&gt;(dbFieldLookup.keySet()).stream().filter( n -&gt; n.startsWith(&quot;Sum&quot;)).collect(Collectors.toList())</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>java.util.Collections,java.util.stream.Collectors</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>dbFieldLookup.keySet().stream().filter( n -&gt; n.toString().startsWith(&quot;Sum&quot;)).collect(Collectors.toList())</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>java.util.Collections,java.util.stream.Collectors</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>((Collections.UnmodifiableMap) dbFieldLookup).keySet().stream().filter( n -&gt; n.toString().startsWith(&quot;Sum&quot;)).collect(Collectors.toList())</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>java.util.Collections,java.util.stream.Collectors</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>((Collections.UnmodifiableMap) dbFieldLookup).keySet().stream().collect(Collectors.toList())</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>java.util.Collections,java.util.stream.Collectors</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>((Collections.UnmodifiableMap) dbFieldLookup).keySet()</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>java.util.Collections</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
   </component>
 </project>
