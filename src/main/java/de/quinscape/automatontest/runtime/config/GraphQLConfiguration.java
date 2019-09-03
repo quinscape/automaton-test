@@ -5,6 +5,9 @@ import de.quinscape.automaton.runtime.scalar.ConditionType;
 import de.quinscape.automaton.runtime.scalar.FieldExpressionScalar;
 import de.quinscape.automaton.runtime.scalar.FieldExpressionType;
 import de.quinscape.automatontest.domain.Public;
+import de.quinscape.automatontest.domain.tables.pojos.Baz;
+import de.quinscape.automatontest.domain.tables.pojos.BazLink;
+import de.quinscape.automatontest.domain.tables.pojos.BazValue;
 import de.quinscape.automatontest.domain.tables.pojos.QuxMain;
 import de.quinscape.automatontest.domain.tables.pojos.Bar;
 import de.quinscape.automatontest.domain.tables.pojos.Node;
@@ -18,6 +21,8 @@ import de.quinscape.domainql.config.SourceField;
 import de.quinscape.domainql.config.TargetField;
 import de.quinscape.domainql.generic.DomainObject;
 import de.quinscape.domainql.generic.DomainObjectScalar;
+import de.quinscape.domainql.generic.GenericScalar;
+import de.quinscape.domainql.generic.GenericScalarType;
 import de.quinscape.domainql.jsonb.JSONB;
 import de.quinscape.domainql.jsonb.JSONBScalar;
 import graphql.GraphQL;
@@ -75,6 +80,7 @@ public class GraphQLConfiguration
             .withAdditionalScalar(JSONB.class, new JSONBScalar())
             .withAdditionalScalar(ConditionScalar.class, ConditionType.newConditionType())
             .withAdditionalScalar(FieldExpressionScalar.class, FieldExpressionType.newFieldExpressionType())
+            .withAdditionalScalar(GenericScalar.class, GenericScalarType.newGenericScalar())
 
             .withAdditionalInputTypes(
                 Node.class,
@@ -83,7 +89,11 @@ public class GraphQLConfiguration
                 QuxMain.class,
                 QuxA.class,
                 QuxB.class,
-                QuxC.class
+                QuxC.class,
+
+                Baz.class,
+                BazValue.class,
+                BazLink.class
             )
 
             // configure object creation for schema relationships
@@ -96,6 +106,9 @@ public class GraphQLConfiguration
             .configureRelation(QUX_MAIN.QUX_C_ID1, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxC1", null)
             .configureRelation(QUX_MAIN.QUX_C_ID2, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxC2", null)
             .configureRelation(QUX_MAIN.QUX_D_ID, SourceField.OBJECT, TargetField.NONE, "quxD", null)
+
+            .configureRelation(BAZ_LINK.BAZ_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
+            .configureRelation(BAZ_LINK.VALUE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
 
             /*
                 documentation for the types defined in the automaton library

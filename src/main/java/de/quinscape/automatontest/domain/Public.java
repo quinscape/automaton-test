@@ -11,6 +11,9 @@ import de.quinscape.automatontest.domain.tables.AppTranslation;
 import de.quinscape.automatontest.domain.tables.AppUser;
 import de.quinscape.automatontest.domain.tables.AppUserConfig;
 import de.quinscape.automatontest.domain.tables.Bar;
+import de.quinscape.automatontest.domain.tables.Baz;
+import de.quinscape.automatontest.domain.tables.BazLink;
+import de.quinscape.automatontest.domain.tables.BazValue;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
 import de.quinscape.automatontest.domain.tables.GridColumns;
@@ -46,7 +49,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = 1563450374;
+    private static final long serialVersionUID = -2046957608;
 
     /**
      * The reference instance of <code>public</code>
@@ -87,6 +90,21 @@ public class Public extends SchemaImpl {
      * The table <code>public.bar</code>.
      */
     public final Bar BAR = de.quinscape.automatontest.domain.tables.Bar.BAR;
+
+    /**
+     * The table <code>public.baz</code>.
+     */
+    public final Baz BAZ = de.quinscape.automatontest.domain.tables.Baz.BAZ;
+
+    /**
+     * The table <code>public.baz_link</code>.
+     */
+    public final BazLink BAZ_LINK = de.quinscape.automatontest.domain.tables.BazLink.BAZ_LINK;
+
+    /**
+     * The table <code>public.baz_value</code>.
+     */
+    public final BazValue BAZ_VALUE = de.quinscape.automatontest.domain.tables.BazValue.BAZ_VALUE;
 
     /**
      * The table <code>public.foo</code>.
@@ -170,6 +188,9 @@ public class Public extends SchemaImpl {
             AppUser.APP_USER,
             AppUserConfig.APP_USER_CONFIG,
             Bar.BAR,
+            Baz.BAZ,
+            BazLink.BAZ_LINK,
+            BazValue.BAZ_VALUE,
             Foo.FOO,
             FooType.FOO_TYPE,
             GridColumns.GRID_COLUMNS,

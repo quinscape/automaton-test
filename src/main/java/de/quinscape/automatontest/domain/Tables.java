@@ -11,6 +11,9 @@ import de.quinscape.automatontest.domain.tables.AppTranslation;
 import de.quinscape.automatontest.domain.tables.AppUser;
 import de.quinscape.automatontest.domain.tables.AppUserConfig;
 import de.quinscape.automatontest.domain.tables.Bar;
+import de.quinscape.automatontest.domain.tables.Baz;
+import de.quinscape.automatontest.domain.tables.BazLink;
+import de.quinscape.automatontest.domain.tables.BazValue;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
 import de.quinscape.automatontest.domain.tables.GridColumns;
@@ -72,6 +75,21 @@ public class Tables {
      * The table <code>public.bar</code>.
      */
     public static final Bar BAR = de.quinscape.automatontest.domain.tables.Bar.BAR;
+
+    /**
+     * The table <code>public.baz</code>.
+     */
+    public static final Baz BAZ = de.quinscape.automatontest.domain.tables.Baz.BAZ;
+
+    /**
+     * The table <code>public.baz_link</code>.
+     */
+    public static final BazLink BAZ_LINK = de.quinscape.automatontest.domain.tables.BazLink.BAZ_LINK;
+
+    /**
+     * The table <code>public.baz_value</code>.
+     */
+    public static final BazValue BAZ_VALUE = de.quinscape.automatontest.domain.tables.BazValue.BAZ_VALUE;
 
     /**
      * The table <code>public.foo</code>.

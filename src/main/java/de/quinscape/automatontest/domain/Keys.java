@@ -10,6 +10,9 @@ import de.quinscape.automatontest.domain.tables.AppLogin;
 import de.quinscape.automatontest.domain.tables.AppTranslation;
 import de.quinscape.automatontest.domain.tables.AppUser;
 import de.quinscape.automatontest.domain.tables.AppUserConfig;
+import de.quinscape.automatontest.domain.tables.Baz;
+import de.quinscape.automatontest.domain.tables.BazLink;
+import de.quinscape.automatontest.domain.tables.BazValue;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
 import de.quinscape.automatontest.domain.tables.GridColumns;
@@ -25,6 +28,9 @@ import de.quinscape.automatontest.domain.tables.records.AppLoginRecord;
 import de.quinscape.automatontest.domain.tables.records.AppTranslationRecord;
 import de.quinscape.automatontest.domain.tables.records.AppUserConfigRecord;
 import de.quinscape.automatontest.domain.tables.records.AppUserRecord;
+import de.quinscape.automatontest.domain.tables.records.BazLinkRecord;
+import de.quinscape.automatontest.domain.tables.records.BazRecord;
+import de.quinscape.automatontest.domain.tables.records.BazValueRecord;
 import de.quinscape.automatontest.domain.tables.records.FooRecord;
 import de.quinscape.automatontest.domain.tables.records.FooTypeRecord;
 import de.quinscape.automatontest.domain.tables.records.GridColumnsRecord;
@@ -73,6 +79,10 @@ public class Keys {
     public static final UniqueKey<AppUserRecord> PK_APP_USER = UniqueKeys0.PK_APP_USER;
     public static final UniqueKey<AppUserRecord> UC_APP_USER_LOGIN = UniqueKeys0.UC_APP_USER_LOGIN;
     public static final UniqueKey<AppUserConfigRecord> PK_APP_USER_CONFIG = UniqueKeys0.PK_APP_USER_CONFIG;
+    public static final UniqueKey<BazRecord> PK_BAZ = UniqueKeys0.PK_BAZ;
+    public static final UniqueKey<BazLinkRecord> PK_BAZ_LINK = UniqueKeys0.PK_BAZ_LINK;
+    public static final UniqueKey<BazLinkRecord> BAZ_LINK_BAZ_ID_VALUE_ID_KEY = UniqueKeys0.BAZ_LINK_BAZ_ID_VALUE_ID_KEY;
+    public static final UniqueKey<BazValueRecord> PK_BAZ_VALUE = UniqueKeys0.PK_BAZ_VALUE;
     public static final UniqueKey<FooRecord> PK_FOO = UniqueKeys0.PK_FOO;
     public static final UniqueKey<FooTypeRecord> PK_FOO_TYPE = UniqueKeys0.PK_FOO_TYPE;
     public static final UniqueKey<FooTypeRecord> FOO_TYPE_NAME_KEY = UniqueKeys0.FOO_TYPE_NAME_KEY;
@@ -96,6 +106,8 @@ public class Keys {
 
     public static final ForeignKey<AppUserConfigRecord, AppUserRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_USER_ID = ForeignKeys0.APP_USER_CONFIG__FK_APP_USER_CONFIG_USER_ID;
     public static final ForeignKey<AppUserConfigRecord, AppAttachmentRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_ATTACHMENT_ID = ForeignKeys0.APP_USER_CONFIG__FK_APP_USER_CONFIG_ATTACHMENT_ID;
+    public static final ForeignKey<BazLinkRecord, BazRecord> BAZ_LINK__FK_BAZ_LINK_BAZ_ID = ForeignKeys0.BAZ_LINK__FK_BAZ_LINK_BAZ_ID;
+    public static final ForeignKey<BazLinkRecord, BazValueRecord> BAZ_LINK__FK_BAZ_LINK_VALUE_ID = ForeignKeys0.BAZ_LINK__FK_BAZ_LINK_VALUE_ID;
     public static final ForeignKey<FooRecord, FooTypeRecord> FOO__FK_FOO_TYPE_ID = ForeignKeys0.FOO__FK_FOO_TYPE_ID;
     public static final ForeignKey<FooRecord, AppUserRecord> FOO__FK_FOO_OWNER_ID = ForeignKeys0.FOO__FK_FOO_OWNER_ID;
     public static final ForeignKey<GridColumnsRecord, AppUserRecord> GRID_COLUMNS__FK_GRID_COLUMNS_OWNER_ID = ForeignKeys0.GRID_COLUMNS__FK_GRID_COLUMNS_OWNER_ID;
@@ -119,6 +131,10 @@ public class Keys {
         public static final UniqueKey<AppUserRecord> PK_APP_USER = Internal.createUniqueKey(AppUser.APP_USER, "pk_app_user", AppUser.APP_USER.ID);
         public static final UniqueKey<AppUserRecord> UC_APP_USER_LOGIN = Internal.createUniqueKey(AppUser.APP_USER, "uc_app_user_login", AppUser.APP_USER.LOGIN);
         public static final UniqueKey<AppUserConfigRecord> PK_APP_USER_CONFIG = Internal.createUniqueKey(AppUserConfig.APP_USER_CONFIG, "pk_app_user_config", AppUserConfig.APP_USER_CONFIG.LOGIN);
+        public static final UniqueKey<BazRecord> PK_BAZ = Internal.createUniqueKey(Baz.BAZ, "pk_baz", Baz.BAZ.ID);
+        public static final UniqueKey<BazLinkRecord> PK_BAZ_LINK = Internal.createUniqueKey(BazLink.BAZ_LINK, "pk_baz_link", BazLink.BAZ_LINK.ID);
+        public static final UniqueKey<BazLinkRecord> BAZ_LINK_BAZ_ID_VALUE_ID_KEY = Internal.createUniqueKey(BazLink.BAZ_LINK, "baz_link_baz_id_value_id_key", BazLink.BAZ_LINK.BAZ_ID, BazLink.BAZ_LINK.VALUE_ID);
+        public static final UniqueKey<BazValueRecord> PK_BAZ_VALUE = Internal.createUniqueKey(BazValue.BAZ_VALUE, "pk_baz_value", BazValue.BAZ_VALUE.ID);
         public static final UniqueKey<FooRecord> PK_FOO = Internal.createUniqueKey(Foo.FOO, "pk_foo", Foo.FOO.ID);
         public static final UniqueKey<FooTypeRecord> PK_FOO_TYPE = Internal.createUniqueKey(FooType.FOO_TYPE, "pk_foo_type", FooType.FOO_TYPE.ORDINAL);
         public static final UniqueKey<FooTypeRecord> FOO_TYPE_NAME_KEY = Internal.createUniqueKey(FooType.FOO_TYPE, "foo_type_name_key", FooType.FOO_TYPE.NAME);
@@ -140,6 +156,8 @@ public class Keys {
     private static class ForeignKeys0 {
         public static final ForeignKey<AppUserConfigRecord, AppUserRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_USER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, AppUserConfig.APP_USER_CONFIG, "app_user_config__fk_app_user_config_user_id", AppUserConfig.APP_USER_CONFIG.USER_ID);
         public static final ForeignKey<AppUserConfigRecord, AppAttachmentRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_ATTACHMENT_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_ATTACHMENT, AppUserConfig.APP_USER_CONFIG, "app_user_config__fk_app_user_config_attachment_id", AppUserConfig.APP_USER_CONFIG.ATTACHMENT_ID);
+        public static final ForeignKey<BazLinkRecord, BazRecord> BAZ_LINK__FK_BAZ_LINK_BAZ_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_BAZ, BazLink.BAZ_LINK, "baz_link__fk_baz_link_baz_id", BazLink.BAZ_LINK.BAZ_ID);
+        public static final ForeignKey<BazLinkRecord, BazValueRecord> BAZ_LINK__FK_BAZ_LINK_VALUE_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_BAZ_VALUE, BazLink.BAZ_LINK, "baz_link__fk_baz_link_value_id", BazLink.BAZ_LINK.VALUE_ID);
         public static final ForeignKey<FooRecord, FooTypeRecord> FOO__FK_FOO_TYPE_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.FOO_TYPE_NAME_KEY, Foo.FOO, "foo__fk_foo_type_id", Foo.FOO.TYPE);
         public static final ForeignKey<FooRecord, AppUserRecord> FOO__FK_FOO_OWNER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, Foo.FOO, "foo__fk_foo_owner_id", Foo.FOO.OWNER_ID);
         public static final ForeignKey<GridColumnsRecord, AppUserRecord> GRID_COLUMNS__FK_GRID_COLUMNS_OWNER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, GridColumns.GRID_COLUMNS, "grid_columns__fk_grid_columns_owner_id", GridColumns.GRID_COLUMNS.OWNER_ID);

@@ -48,5 +48,20 @@
         "name": "QuxD",
         "description": "Catalog-like connected via id foreign QuxMain without scalar field",
         "fieldDocs": []
+    },
+    {
+        "name": "Baz",
+        "description": "Associated Entity A (see BazLink)",
+        "fieldDocs": []
+    },
+    {
+        "name": "BazValue",
+        "description": "Associated Entity B (see BazLink)",
+        "fieldDocs": []
+    },
+    {
+        "name": "BazLink",
+        "description": "Associative entity m-to-n connecting Baz and BazValue",
+        "fieldDocs": []
     }
 ]
