@@ -7,29 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_automaton_0_1_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automatontest.backup" beforeDir="false" afterPath="$PROJECT_DIR$/automatontest.backup" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Indexes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Indexes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Keys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Keys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Public.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Public.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Tables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Tables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/AutomatonTestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/AutomatonTestApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/DataGridLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/DataGridLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/TestLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/TestLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/datagrid-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/datagrid-test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/composites/FKTestDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/composites/FKTestDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/composites/QuxMainForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/composites/QuxMainForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/domain-typedocs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/domain-typedocs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-test/composites/EffectList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-test/composites/EffectList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-test/composites/FooForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-test/composites/FooForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-test/effect-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-test/effect-test.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,15 +45,15 @@
       <list>
         <option value="TypeScript File" />
         <option value="JUnit4 Test Class" />
-        <option value="Class" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="JavaScript File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../automaton" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -343,7 +328,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="8.16.0" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-sub-full/composites" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -356,17 +341,10 @@
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28390804" />
-    <property name="settings.editor.selected.configurable" value="Console" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="de.quinscape.automaton.runtime.message" />
-      <recent name="de.quinscape.automaton.runtime.ws" />
-      <recent name="de.quinscape.automaton.runtime.data" />
-      <recent name="de.quinscape.automaton.model.filter" />
-      <recent name="de.quinscape.automatontest.runtime.service" />
-    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="de.quinscape.automaton.runtime.ws" />
       <recent name="de.quinscape.automaton.runtime.scalar" />
@@ -390,30 +368,37 @@
       <recent name="de.quinscape.automaton.model.data" />
       <recent name="de.quinscape.automaton.runtime" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="de.quinscape.automaton.runtime.ws" />
-      <recent name="de.quinscape.automaton.runtime.data" />
-      <recent name="de.quinscape.automaton.runtime.scalar" />
-      <recent name="" />
-      <recent name="de.quinscape.automaton.model.filter" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../automaton-js/src/ui" />
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/assoc-entity-test/queries" />
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/assoc-entity-test/composites" />
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes" />
-      <recent name="$PROJECT_DIR$/../automaton-js/test/ui" />
-    </key>
-    <key name="es6.move.members.recent.items">
-      <recent name="$PROJECT_DIR$/../automaton-js/src/DialogMode.js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/sync.js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/../automaton-js/test/ui" />
       <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/queries" />
       <recent name="$PROJECT_DIR$/../automaton-js/src" />
       <recent name="$PROJECT_DIR$/../automaton/src/test" />
       <recent name="$PROJECT_DIR$/../automaton-js/src/util" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.quinscape.automaton.runtime.domain" />
+      <recent name="de.quinscape.automaton.runtime.idgen" />
+      <recent name="de.quinscape.automaton.runtime.ws" />
+      <recent name="de.quinscape.automaton.runtime.data" />
+      <recent name="de.quinscape.automaton.runtime.scalar" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-sub-full/composites" />
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-sub-dialog/composites" />
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src/ui" />
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/assoc-entity-test/queries" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/../automaton-js/src/DialogMode.js" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src/sync.js" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="de.quinscape.automaton.runtime.message" />
+      <recent name="de.quinscape.automaton.runtime.ws" />
+      <recent name="de.quinscape.automaton.runtime.data" />
+      <recent name="de.quinscape.automaton.model.filter" />
+      <recent name="de.quinscape.automatontest.runtime.service" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -431,7 +416,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.FKSelector">
+  <component name="RunManager" selected="Tomcat Server.Local Tomcat">
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -982,6 +967,13 @@
       <workItem from="1567336145588" duration="16435000" />
       <workItem from="1567413531862" duration="25285000" />
       <workItem from="1567496992290" duration="8841000" />
+      <workItem from="1567590590531" duration="5987000" />
+      <workItem from="1567754694616" duration="6916000" />
+      <workItem from="1567855036931" duration="28000" />
+      <workItem from="1567855094077" duration="3231000" />
+      <workItem from="1567952726236" duration="639000" />
+      <workItem from="1568021699791" duration="17389000" />
+      <workItem from="1568116198849" duration="1218000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
@@ -1056,8 +1048,13 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java</url>
-          <line>108</line>
+          <line>130</line>
           <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.1.2/domainql-0.1.2-sources.jar!/de/quinscape/domainql/DomainQL.java</url>
+          <line>268</line>
+          <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
