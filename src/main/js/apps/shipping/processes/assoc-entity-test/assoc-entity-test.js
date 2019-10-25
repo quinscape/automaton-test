@@ -63,9 +63,15 @@ export function initProcess(process, scope)
                             console.log("to-baz-detail, context = ", t.context);
 
                             return Q_BazDetail.execute({
-                                id: t.context
+                                config: {
+                                    condition:
+                                        field("id")
+                                            .eq(
+                                                value("String", t.context)
+                                            )
+                                }
                             }).then(
-                                ({detailQueryBaz}) => scope.updateBaz(detailQueryBaz)
+                                ({iQueryBaz}) => scope.updateBaz(iQueryBaz.rows[0])
                             );
                         }
                     },
@@ -77,9 +83,15 @@ export function initProcess(process, scope)
                             console.log("to-baz-value-detail, context = ", t.context);
 
                             return Q_BazValueDetail.execute({
-                                id: t.context
+                                config: {
+                                    condition:
+                                        field("id")
+                                            .eq(
+                                                value("String", t.context)
+                                            )
+                                }
                             }).then(
-                                ({detailQueryBazValue}) => scope.updateBazValue(detailQueryBazValue)
+                                ({iQueryBazValue}) => scope.updateBazValue(iQueryBazValue.rows[0])
                             );
                         }
                     }
@@ -93,13 +105,18 @@ export function initProcess(process, scope)
                             console.log("SAVE BAZ", toJS(t.context));
 
                             return storeDomainObject(t.context)
-                                .then(() => updateAssociations(
-                                    "BazLink",
-                                    "bazId",
-                                    "valueId",
-                                    t.context.id,
-                                    t.context.bazLinks.map(link => link.value.id)
-                                ))
+                                .then(
+                                    () => updateAssociations({
+                                        domainType: "BazLink",
+                                        leftSideType: "Baz",
+                                        sourceIds:[ t.context.id ],
+                                        domainObjects: t.context.bazLinks.map( bl => ({
+                                            id: bl.id,
+                                            bazId: t.context.id,
+                                            valueId: bl.value.id
+                                        }))
+                                    })
+                                )
                                 .then(() => Promise.all([
                                     scope.links.update(),
                                     scope.bazes.update()
@@ -141,13 +158,18 @@ export function initProcess(process, scope)
                             console.log("SAVE BAZ VALUE", toJS(t.context));
 
                             return storeDomainObject(t.context)
-                                .then(() => updateAssociations(
-                                    "BazLink",
-                                    "valueId",
-                                    "bazId",
-                                    t.context.id,
-                                    t.context.bazLinks.map(link => link.baz.id)
-                                ))
+                                .then(
+                                    () => updateAssociations({
+                                        domainType: "BazLink",
+                                        leftSideType: "BazValue",
+                                        sourceIds: [ t.context.id ],
+                                        domainObjects: t.context.bazLinks.map( bl => ({
+                                            id: bl.id,
+                                            bazId: bl.baz.id,
+                                            valueId: t.context.id
+                                        }))
+                                    })
+                                )
                                 .then(() => Promise.all([
                                     scope.links.update(),
                                     scope.bazValues.update()

@@ -176,24 +176,4 @@ public class TestLogic
             return check;
         }
     }
-
-
-    @GraphQLQuery
-    public <T> T detailQuery(
-        @GraphQLTypeParam(
-            types = {
-                Baz.class,
-                BazValue.class
-            }
-        )
-        Class<T> type,
-        String id
-    )
-    {
-        final Table<?> table = domainQL.getJooqTable(type.getSimpleName());
-
-        return dslContext.select().from(table).where(
-            field(DomainObject.ID).eq(id)
-        ).fetchOneInto(type);
-    }
 }

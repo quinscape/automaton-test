@@ -17,17 +17,17 @@ const AssocEntityList = props => {
     return (
         <React.Fragment>
 
-            <h2>
+            <h1>
                 {
-                    i18n("Associations")
+                    ("Associations")
                 }
-            </h2>
+            </h1>
             <DataGrid
                 id="assoc-grid"
                 value={ scope.links }
             >
                 <DataGrid.Column
-                    heading={ i18n("Left") }
+                    heading={ ("Left") }
                     filter={
                         val => field("baz.name")
                             .containsIgnoreCase(
@@ -51,7 +51,7 @@ const AssocEntityList = props => {
                     }
                 </DataGrid.Column>
                 <DataGrid.Column
-                    heading={ i18n("Right") }
+                    heading={ ("Right") }
                     filter={
                         val => field("value.name")
                             .containsIgnoreCase(
@@ -91,17 +91,17 @@ const AssocEntityList = props => {
                 />
             </ButtonToolbar>
 
-            <h1>
+            <h2>
                 {
-                    i18n("Left-side Entities")
+                    ("Left-side Entities (Baz)")
                 }
-            </h1>
+            </h2>
             <DataGrid
                 id="baz-grid"
                 value={ scope.bazes }
             >
                 <DataGrid.Column
-                    heading={ i18n("Action") }
+                    heading={ ("Action") }
                 >
                     {
                         baz => (
@@ -116,19 +116,20 @@ const AssocEntityList = props => {
                     }
                 </DataGrid.Column>
                 <DataGrid.Column name="name" filter="containsIgnoreCase"/>
+                <DataGrid.Column name="owner.login" filter="containsIgnoreCase"/>
             </DataGrid>
 
-            <h1>
+            <h2>
                 {
-                    i18n("Right-side Entities")
+                    ("Right-side Entities (BazValue)")
                 }
-            </h1>
+            </h2>
             <DataGrid
                 id="baz-value-grid"
                 value={ scope.bazValues }
             >
                 <DataGrid.Column
-                    heading={ i18n("Action") }
+                    heading={ ("Action") }
                 >
                     {
                         bazValue => (

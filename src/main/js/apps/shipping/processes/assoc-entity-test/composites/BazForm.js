@@ -1,10 +1,12 @@
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
-import { Button, i18n, AssociationSelector, useAutomatonEnv } from "@quinscape/automaton-js"
+import { Button, i18n, AssociationSelector, FKSelector, useAutomatonEnv } from "@quinscape/automaton-js"
 
 import { Field, FieldMode, GlobalErrors, withForm } from "domainql-form"
 import { ButtonToolbar } from "reactstrap";
 import Q_BazValueList from "../queries/Q_BazValueList";
+import Q_QuxA from "../../../queries/Q_QuxA";
+import Q_AppUser from "../../../queries/Q_AppUser";
 
 
 const BazForm = props => {
@@ -37,6 +39,16 @@ const BazForm = props => {
                 }
 
             />
+
+            <FKSelector
+                name="ownerId"
+                display="owner.login"
+                validateInput="login"
+                tooltip="Baz-Owner"
+                required={ true }
+                query={ Q_AppUser }
+            />
+
             <ButtonToolbar>
                 <Button
                     className="btn btn-primary mr-1"

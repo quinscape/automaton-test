@@ -2,21 +2,34 @@ import { query } from "@quinscape/automaton-js"
 
 export default query(
     // language=GraphQL
-        `query detailQueryBaz($id: String!)
+        `
+    query iQueryBazList($config: QueryConfigInput!)
     {
-        detailQueryBaz(id: $id)
+        iQueryBaz(config: $config)
         {
-            id
-            name
-            bazLinks{
+            rows{
                 id
-                value{
+                name
+                ownerId
+                owner{
+                    login
+                }
+                bazLinks{
                     id
-                    name
+                    bazId
+                    valueId
+                    value{
+                        id
+                        name
+                    }
                 }
             }
+    
+            rowCount
         }
     }`,
     {
+        "config": {
+        }
     }
 )

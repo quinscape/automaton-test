@@ -1,10 +1,12 @@
 import { query } from "@quinscape/automaton-js"
 
+
 export default query(
     // language=GraphQL
-        `query iQueryBazList($config: QueryConfigInput!)
+    `
+    query iQueryAppUser($config: QueryConfigInput!)
     {
-        iQueryBaz(config: $config)
+        iQueryAppUser(config: $config)
         {
             type
             columnStates{
@@ -12,19 +14,17 @@ export default query(
                 enabled
                 sortable
             }
-            queryConfig{
+            queryConfig {
                 id
                 condition
                 currentPage
                 pageSize
                 sortFields
             }
-            rows{
+            rows {
                 id
-                name
-                owner{
-                    login
-                }
+                login
+                roles
             }
             rowCount
         }
@@ -32,7 +32,7 @@ export default query(
     {
         "config": {
             "pageSize": 5,
-            "sortFields" : ["name"]
+            "sortFields": ["login"]
         }
     }
 )

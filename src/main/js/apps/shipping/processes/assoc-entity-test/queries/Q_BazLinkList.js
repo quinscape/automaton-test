@@ -20,10 +20,12 @@ export default query(
                 sortFields
             }
             rows{
+                bazId
                 baz {
                     id
                     name
                 }
+                valueId
                 value {
                     id
                     name
