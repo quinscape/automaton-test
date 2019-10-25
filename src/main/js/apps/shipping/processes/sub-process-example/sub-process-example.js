@@ -6,6 +6,8 @@ import {
 } from "mobx";
 
 import { injection, type } from "@quinscape/automaton-js";
+import Q_Foo from "../iterator-test/queries/Q_Foo";
+import Q_FooList from "../datagrid-test/queries/Q_FooList";
 
 // noinspection JSUnusedGlobalSymbols
 export function initProcess(process, scope)
@@ -36,27 +38,6 @@ export default class MySubProcessScope {
 
     /** Current orders */
     @observable
-    orders = injection(
-        // language=GraphQL
-        `{
-                getOrders
-                {
-                    rowCount
-                    rows{
-                        accepted
-                        customer{
-                            salutation
-                            name
-                        },
-                        id
-                        number
-                        shippingType{
-                            name
-                        }
-                        status
-                    }
-                }
-        }`
-    );
+    foos = injection( Q_FooList );
 
 }

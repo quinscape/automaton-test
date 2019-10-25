@@ -4,7 +4,6 @@ import { observer as fnObserver } from "mobx-react-lite";
 
 import { Button, DataGrid, i18n } from "@quinscape/automaton-js"
 
-
 const SubProcessHome = props => {
 
     const { env } = props;
@@ -22,21 +21,11 @@ const SubProcessHome = props => {
                     transition="close"
                 />
             </div>
+
             <DataGrid
-                value={ scope.orders }
+                id="iquery-test"
+                value={ scope.foos }
             >
-                <DataGrid.Column name="number" heading={ i18n("Order:number") }/>
-                <DataGrid.Column name="shippingType" heading={ i18n("Customer:shippingType") }>
-                    {
-                        order => order.shippingType.name
-                    }
-                </DataGrid.Column>
-                <DataGrid.Column name="customer" heading={ i18n("Order:customer") }>
-                    {
-                        order => order.customer.salutation ? order.customer.salutation + " " + order.customer.name : order.customer.name
-                    }
-                </DataGrid.Column>
-                <DataGrid.Column name="accepted" heading={ i18n("Order:accepted") }/>
                 <DataGrid.Column
                     heading={ i18n("Action") }
                 >
@@ -54,6 +43,10 @@ const SubProcessHome = props => {
                         }
                     }
                 </DataGrid.Column>
+                <DataGrid.Column name="name" filter="containsIgnoreCase"/>
+                <DataGrid.Column name="description" filter="containsIgnoreCase"/>
+                <DataGrid.Column name="flag" filter="eq"/>
+                <DataGrid.Column name="owner.login" filter="containsIgnoreCase" heading={ i18n("owner") }/>
             </DataGrid>
         </div>
     )
