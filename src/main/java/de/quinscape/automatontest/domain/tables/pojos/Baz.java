@@ -31,28 +31,33 @@ import javax.validation.constraints.Size;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 @Entity
 @Table(name = "baz", schema = "public", indexes = {
+    @Index(name = "fki_baz_owner_id", columnList = "owner_id ASC"),
     @Index(name = "pk_baz", unique = true, columnList = "id ASC")
 })
 public class Baz extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = -89932105;
+    private static final long serialVersionUID = -184025922;
 
     private String id;
     private String name;
+    private String ownerId;
 
     public Baz() {}
 
     public Baz(Baz value) {
         this.id = value.id;
         this.name = value.name;
+        this.ownerId = value.ownerId;
     }
 
     public Baz(
         String id,
-        String name
+        String name,
+        String ownerId
     ) {
         this.id = id;
         this.name = name;
+        this.ownerId = ownerId;
     }
 
     @Id
@@ -78,12 +83,24 @@ public class Baz extends GeneratedDomainObject implements Serializable {
         this.name = name;
     }
 
+    @Column(name = "owner_id", nullable = false, length = 36)
+    @NotNull
+    @Size(max = 36)
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Baz (");
 
         sb.append(id);
         sb.append(", ").append(name);
+        sb.append(", ").append(ownerId);
 
         sb.append(")");
         return sb.toString();

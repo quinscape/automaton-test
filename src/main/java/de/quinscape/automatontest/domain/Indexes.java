@@ -55,6 +55,7 @@ public class Indexes {
     public static final Index PK_APP_USER = Indexes0.PK_APP_USER;
     public static final Index UC_APP_USER_LOGIN = Indexes0.UC_APP_USER_LOGIN;
     public static final Index PK_APP_USER_CONFIG = Indexes0.PK_APP_USER_CONFIG;
+    public static final Index FKI_BAZ_OWNER_ID = Indexes0.FKI_BAZ_OWNER_ID;
     public static final Index PK_BAZ = Indexes0.PK_BAZ;
     public static final Index BAZ_LINK_BAZ_ID_VALUE_ID_KEY = Indexes0.BAZ_LINK_BAZ_ID_VALUE_ID_KEY;
     public static final Index PK_BAZ_LINK = Indexes0.PK_BAZ_LINK;
@@ -89,6 +90,7 @@ public class Indexes {
         public static Index PK_APP_USER = Internal.createIndex("pk_app_user", AppUser.APP_USER, new OrderField[] { AppUser.APP_USER.ID }, true);
         public static Index UC_APP_USER_LOGIN = Internal.createIndex("uc_app_user_login", AppUser.APP_USER, new OrderField[] { AppUser.APP_USER.LOGIN }, true);
         public static Index PK_APP_USER_CONFIG = Internal.createIndex("pk_app_user_config", AppUserConfig.APP_USER_CONFIG, new OrderField[] { AppUserConfig.APP_USER_CONFIG.LOGIN }, true);
+        public static Index FKI_BAZ_OWNER_ID = Internal.createIndex("fki_baz_owner_id", Baz.BAZ, new OrderField[] { Baz.BAZ.OWNER_ID }, false);
         public static Index PK_BAZ = Internal.createIndex("pk_baz", Baz.BAZ, new OrderField[] { Baz.BAZ.ID }, true);
         public static Index BAZ_LINK_BAZ_ID_VALUE_ID_KEY = Internal.createIndex("baz_link_baz_id_value_id_key", BazLink.BAZ_LINK, new OrderField[] { BazLink.BAZ_LINK.BAZ_ID, BazLink.BAZ_LINK.VALUE_ID }, true);
         public static Index PK_BAZ_LINK = Internal.createIndex("pk_baz_link", BazLink.BAZ_LINK, new OrderField[] { BazLink.BAZ_LINK.ID }, true);

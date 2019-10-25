@@ -106,6 +106,7 @@ public class Keys {
 
     public static final ForeignKey<AppUserConfigRecord, AppUserRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_USER_ID = ForeignKeys0.APP_USER_CONFIG__FK_APP_USER_CONFIG_USER_ID;
     public static final ForeignKey<AppUserConfigRecord, AppAttachmentRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_ATTACHMENT_ID = ForeignKeys0.APP_USER_CONFIG__FK_APP_USER_CONFIG_ATTACHMENT_ID;
+    public static final ForeignKey<BazRecord, AppUserRecord> BAZ__FK_BAZ_OWNER_ID = ForeignKeys0.BAZ__FK_BAZ_OWNER_ID;
     public static final ForeignKey<BazLinkRecord, BazRecord> BAZ_LINK__FK_BAZ_LINK_BAZ_ID = ForeignKeys0.BAZ_LINK__FK_BAZ_LINK_BAZ_ID;
     public static final ForeignKey<BazLinkRecord, BazValueRecord> BAZ_LINK__FK_BAZ_LINK_VALUE_ID = ForeignKeys0.BAZ_LINK__FK_BAZ_LINK_VALUE_ID;
     public static final ForeignKey<FooRecord, FooTypeRecord> FOO__FK_FOO_TYPE_ID = ForeignKeys0.FOO__FK_FOO_TYPE_ID;
@@ -156,6 +157,7 @@ public class Keys {
     private static class ForeignKeys0 {
         public static final ForeignKey<AppUserConfigRecord, AppUserRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_USER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, AppUserConfig.APP_USER_CONFIG, "app_user_config__fk_app_user_config_user_id", AppUserConfig.APP_USER_CONFIG.USER_ID);
         public static final ForeignKey<AppUserConfigRecord, AppAttachmentRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_ATTACHMENT_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_ATTACHMENT, AppUserConfig.APP_USER_CONFIG, "app_user_config__fk_app_user_config_attachment_id", AppUserConfig.APP_USER_CONFIG.ATTACHMENT_ID);
+        public static final ForeignKey<BazRecord, AppUserRecord> BAZ__FK_BAZ_OWNER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, Baz.BAZ, "baz__fk_baz_owner_id", Baz.BAZ.OWNER_ID);
         public static final ForeignKey<BazLinkRecord, BazRecord> BAZ_LINK__FK_BAZ_LINK_BAZ_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_BAZ, BazLink.BAZ_LINK, "baz_link__fk_baz_link_baz_id", BazLink.BAZ_LINK.BAZ_ID);
         public static final ForeignKey<BazLinkRecord, BazValueRecord> BAZ_LINK__FK_BAZ_LINK_VALUE_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_BAZ_VALUE, BazLink.BAZ_LINK, "baz_link__fk_baz_link_value_id", BazLink.BAZ_LINK.VALUE_ID);
         public static final ForeignKey<FooRecord, FooTypeRecord> FOO__FK_FOO_TYPE_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.FOO_TYPE_NAME_KEY, Foo.FOO, "foo__fk_foo_type_id", Foo.FOO.TYPE);

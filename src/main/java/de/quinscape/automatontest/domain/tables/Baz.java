@@ -15,6 +15,7 @@ import java.util.List;
 import javax.annotation.Generated;
 
 import org.jooq.Field;
+import org.jooq.ForeignKey;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Schema;
@@ -38,7 +39,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Baz extends TableImpl<BazRecord> {
 
-    private static final long serialVersionUID = 646282217;
+    private static final long serialVersionUID = -376178525;
 
     /**
      * The reference instance of <code>public.baz</code>
@@ -62,6 +63,11 @@ public class Baz extends TableImpl<BazRecord> {
      * The column <code>public.baz.name</code>.
      */
     public final TableField<BazRecord, String> NAME = createField("name", org.jooq.impl.SQLDataType.VARCHAR(100).nullable(false), this, "");
+
+    /**
+     * The column <code>public.baz.owner_id</code>.
+     */
+    public final TableField<BazRecord, String> OWNER_ID = createField("owner_id", org.jooq.impl.SQLDataType.VARCHAR(36).nullable(false), this, "");
 
     /**
      * Create a <code>public.baz</code> table reference
@@ -105,7 +111,7 @@ public class Baz extends TableImpl<BazRecord> {
      */
     @Override
     public List<Index> getIndexes() {
-        return Arrays.<Index>asList(Indexes.PK_BAZ);
+        return Arrays.<Index>asList(Indexes.FKI_BAZ_OWNER_ID, Indexes.PK_BAZ);
     }
 
     /**
@@ -122,6 +128,14 @@ public class Baz extends TableImpl<BazRecord> {
     @Override
     public List<UniqueKey<BazRecord>> getKeys() {
         return Arrays.<UniqueKey<BazRecord>>asList(Keys.PK_BAZ);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<ForeignKey<BazRecord, ?>> getReferences() {
+        return Arrays.<ForeignKey<BazRecord, ?>>asList(Keys.BAZ__FK_BAZ_OWNER_ID);
     }
 
     /**

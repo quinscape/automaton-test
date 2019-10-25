@@ -17,8 +17,8 @@ import javax.validation.constraints.Size;
 
 import org.jooq.Field;
 import org.jooq.Record1;
-import org.jooq.Record2;
-import org.jooq.Row2;
+import org.jooq.Record3;
+import org.jooq.Row3;
 import org.jooq.impl.UpdatableRecordImpl;
 
 
@@ -35,11 +35,12 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 @Entity
 @Table(name = "baz", schema = "public", indexes = {
+    @Index(name = "fki_baz_owner_id", columnList = "owner_id ASC"),
     @Index(name = "pk_baz", unique = true, columnList = "id ASC")
 })
-public class BazRecord extends UpdatableRecordImpl<BazRecord> implements Record2<String, String> {
+public class BazRecord extends UpdatableRecordImpl<BazRecord> implements Record3<String, String, String> {
 
-    private static final long serialVersionUID = -1079515123;
+    private static final long serialVersionUID = -1907212209;
 
     /**
      * Setter for <code>public.baz.id</code>.
@@ -76,6 +77,23 @@ public class BazRecord extends UpdatableRecordImpl<BazRecord> implements Record2
         return (String) get(1);
     }
 
+    /**
+     * Setter for <code>public.baz.owner_id</code>.
+     */
+    public void setOwnerId(String value) {
+        set(2, value);
+    }
+
+    /**
+     * Getter for <code>public.baz.owner_id</code>.
+     */
+    @Column(name = "owner_id", nullable = false, length = 36)
+    @NotNull
+    @Size(max = 36)
+    public String getOwnerId() {
+        return (String) get(2);
+    }
+
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -89,23 +107,23 @@ public class BazRecord extends UpdatableRecordImpl<BazRecord> implements Record2
     }
 
     // -------------------------------------------------------------------------
-    // Record2 type implementation
+    // Record3 type implementation
     // -------------------------------------------------------------------------
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Row2<String, String> fieldsRow() {
-        return (Row2) super.fieldsRow();
+    public Row3<String, String, String> fieldsRow() {
+        return (Row3) super.fieldsRow();
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Row2<String, String> valuesRow() {
-        return (Row2) super.valuesRow();
+    public Row3<String, String, String> valuesRow() {
+        return (Row3) super.valuesRow();
     }
 
     /**
@@ -128,6 +146,14 @@ public class BazRecord extends UpdatableRecordImpl<BazRecord> implements Record2
      * {@inheritDoc}
      */
     @Override
+    public Field<String> field3() {
+        return Baz.BAZ.OWNER_ID;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public String component1() {
         return getId();
     }
@@ -144,6 +170,14 @@ public class BazRecord extends UpdatableRecordImpl<BazRecord> implements Record2
      * {@inheritDoc}
      */
     @Override
+    public String component3() {
+        return getOwnerId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public String value1() {
         return getId();
     }
@@ -154,6 +188,14 @@ public class BazRecord extends UpdatableRecordImpl<BazRecord> implements Record2
     @Override
     public String value2() {
         return getName();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String value3() {
+        return getOwnerId();
     }
 
     /**
@@ -178,9 +220,19 @@ public class BazRecord extends UpdatableRecordImpl<BazRecord> implements Record2
      * {@inheritDoc}
      */
     @Override
-    public BazRecord values(String value1, String value2) {
+    public BazRecord value3(String value) {
+        setOwnerId(value);
+        return this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public BazRecord values(String value1, String value2, String value3) {
         value1(value1);
         value2(value2);
+        value3(value3);
         return this;
     }
 
@@ -198,10 +250,11 @@ public class BazRecord extends UpdatableRecordImpl<BazRecord> implements Record2
     /**
      * Create a detached, initialised BazRecord
      */
-    public BazRecord(String id, String name) {
+    public BazRecord(String id, String name, String ownerId) {
         super(Baz.BAZ);
 
         set(0, id);
         set(1, name);
+        set(2, ownerId);
     }
 }
