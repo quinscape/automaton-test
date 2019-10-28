@@ -48,12 +48,12 @@
         "mobx-utils": "^5.5.1",
         "prop-types": "^15.7.2",
         "react": "^16.11.0",
-        "react-calendar": "^2.19.1",
+        "react-calendar": "^2.19.2",
         "react-dom": "^16.11.0",
         "react-json-pretty": "^2.2.0",
         "react-json-view": "^1.19.1",
         "reactstrap": "^8.1.1",
-        "uuid": "^3.3.2",
+        "uuid": "^3.3.3",
         "whatwg-fetch": "^3.0.0"
     },
     "scripts": {
