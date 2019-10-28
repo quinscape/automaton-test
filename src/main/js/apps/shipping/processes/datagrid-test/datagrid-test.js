@@ -39,7 +39,9 @@ export function initProcess(process, scope)
                         "new-foo": {
                             to: "CRUDDetail",
                             action: t => {
-                                const newObj = createDomainObject("FooInput");
+
+                                // use empty id to be replaced by a new id server-side (
+                                const newObj = createDomainObject("FooInput", "");
 
                                 newObj.name = "Unnamed Foo";
                                 newObj.desc = "";
