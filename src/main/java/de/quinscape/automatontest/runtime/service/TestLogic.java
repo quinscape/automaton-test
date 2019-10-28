@@ -1,6 +1,5 @@
 package de.quinscape.automatontest.runtime.service;
 
-import de.quinscape.automaton.model.data.QueryConfig;
 import de.quinscape.automaton.runtime.auth.AutomatonAuthentication;
 import de.quinscape.automatontest.domain.tables.pojos.Baz;
 import de.quinscape.automatontest.domain.tables.pojos.BazValue;
@@ -12,8 +11,8 @@ import de.quinscape.domainql.annotation.GraphQLLogic;
 import de.quinscape.domainql.annotation.GraphQLMutation;
 import de.quinscape.domainql.annotation.GraphQLQuery;
 import de.quinscape.domainql.annotation.GraphQLTypeParam;
+import de.quinscape.domainql.generic.DomainObject;
 import de.quinscape.domainql.util.Paged;
-import graphql.schema.DataFetchingEnvironment;
 import org.jooq.DSLContext;
 import org.jooq.Table;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -194,7 +193,7 @@ public class TestLogic
         final Table<?> table = domainQL.getJooqTable(type.getSimpleName());
 
         return dslContext.select().from(table).where(
-            field("id").eq(id)
+            field(DomainObject.ID).eq(id)
         ).fetchOneInto(type);
     }
 }
