@@ -65,6 +65,11 @@ const CommonNav = props => {
                         ForeignKey-Test
                     </DropdownItem>
                     <DropdownItem
+                        onClick={ () => runProcessURI("/shipping/query-test") }
+                    >
+                        Advanced iQueries
+                    </DropdownItem>
+                    <DropdownItem
                         onClick={ () => runProcessURI("/shipping/iterator-test") }
                     >
                         Iterator-Test
