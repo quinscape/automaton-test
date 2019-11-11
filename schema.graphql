@@ -165,6 +165,8 @@ type Foo {
     num: Int!
     "Target of 'owner_id'"
     owner: AppUser!
+    "DB foreign key column 'owner_id'"
+    ownerId: String!
     "DB foreign key column 'type'"
     type: String!
 }

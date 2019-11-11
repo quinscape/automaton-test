@@ -14,6 +14,7 @@ export default query(
                 created
                 flag
                 type
+                ownerId
                 owner{
                     id
                     login

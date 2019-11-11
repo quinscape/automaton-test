@@ -97,7 +97,7 @@ public class GraphQLConfiguration
             )
             
             // configure object creation for schema relationships
-            .configureRelation(FOO.OWNER_ID, SourceField.OBJECT, TargetField.MANY)
+            .configureRelation(FOO.OWNER_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
             .configureRelation(FOO.TYPE, SourceField.SCALAR, TargetField.NONE)
             .configureRelation(NODE.PARENT_ID, SourceField.OBJECT, TargetField.NONE)
 
