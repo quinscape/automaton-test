@@ -70,6 +70,11 @@ const CommonNav = props => {
                         Advanced iQueries
                     </DropdownItem>
                     <DropdownItem
+                        onClick={ () => runProcessURI("/shipping/workingset-test") }
+                    >
+                        WorkingSet-CRUD
+                    </DropdownItem>
+                    <DropdownItem
                         onClick={ () => runProcessURI("/shipping/iterator-test") }
                     >
                         Iterator-Test
