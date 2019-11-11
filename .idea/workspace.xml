@@ -7,9 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_automaton_0_1_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_2_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/queries/Q_FooDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/queries/Q_FooDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/queries/Q_FooList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/queries/Q_FooList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/components/CommonNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/components/CommonNav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,9 +52,9 @@
         <option value="TypeScript File" />
         <option value="JUnit4 Test Class" />
         <option value="Enum" />
-        <option value="JavaScript File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -327,7 +338,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="8.16.0" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/js/apps/shipping/processes/query-test/queries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../automaton-js/src/util" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -384,11 +395,11 @@
       <recent name="de.quinscape.automaton.runtime.scalar" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/query-test/queries" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src/util" />
+      <recent name="$PROJECT_DIR$/src/test/js" />
       <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes" />
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/query-test/queries" />
       <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/queries" />
-      <recent name="$PROJECT_DIR$/../dragon" />
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-sub-full/composites" />
     </key>
     <key name="es6.move.members.recent.items">
       <recent name="$PROJECT_DIR$/../automaton-js/src/DialogMode.js" />
@@ -491,20 +502,6 @@
       <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.data" />
       <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.runtime.data.InteractiveQueryManyTest" />
       <option name="METHOD_NAME" value="testSortQuery" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestCase.name" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton" />
-      <option name="PACKAGE_NAME" value="de.quinscape.automaton" />
-      <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.TestCase" />
-      <option name="METHOD_NAME" value="name" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -642,6 +639,25 @@
       <recursive>false</recursive>
       <method v="2" />
     </configuration>
+    <configuration name="Mobx.Map.size triggers refresh" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options>-r @babel/register</node-options>
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs>
+        <env name="BABEL_ENV" value="test" />
+      </envs>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/src/test/js/test2.js</test-file>
+      <test-names>
+        <name value="Mobx" />
+        <name value="Map.size triggers refresh" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="matchPath" type="mocha-javascript-test-runner" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options>-r @babel/register -r ./test/setup.js</node-options>
@@ -663,23 +679,23 @@
     <list>
       <item itemvalue="JUnit.InteractiveQueryJoinTest" />
       <item itemvalue="JUnit.All in automaton" />
-      <item itemvalue="JUnit.TestCase.name" />
       <item itemvalue="JUnit.InteractiveQueryManyTest.testSortQuery" />
       <item itemvalue="JUnit.InteractiveQueryManyTest" />
       <item itemvalue="JUnit.InteractiveQueryManyTest2" />
       <item itemvalue="Mocha.Automaton-Js Tests" />
       <item itemvalue="Mocha.Automaton-Test Tests" />
       <item itemvalue="Mocha.matchPath" />
+      <item itemvalue="Mocha.Mobx.Map.size triggers refresh" />
       <item itemvalue="Spring Boot.DQLMobxApplication" />
       <item itemvalue="Tomcat Server.Local Tomcat" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.Mobx.Map.size triggers refresh" />
         <item itemvalue="JUnit.All in automaton" />
         <item itemvalue="JUnit.InteractiveQueryManyTest2" />
         <item itemvalue="JUnit.InteractiveQueryManyTest" />
         <item itemvalue="JUnit.InteractiveQueryManyTest.testSortQuery" />
-        <item itemvalue="JUnit.TestCase.name" />
       </list>
     </recent_temporary>
   </component>
@@ -1012,7 +1028,19 @@
       <workItem from="1572279366645" duration="2495000" />
       <workItem from="1572354767170" duration="14000" />
       <workItem from="1572354796370" duration="1367000" />
-      <workItem from="1572356606807" duration="4943000" />
+      <workItem from="1572356606807" duration="6827000" />
+      <workItem from="1572436347310" duration="20000" />
+      <workItem from="1572530387743" duration="7557000" />
+      <workItem from="1572610300908" duration="2988000" />
+      <workItem from="1572701588591" duration="2320000" />
+      <workItem from="1572871848699" duration="5037000" />
+      <workItem from="1572974762069" duration="18000" />
+      <workItem from="1572974806032" duration="608000" />
+      <workItem from="1573042129290" duration="17898000" />
+      <workItem from="1573127540484" duration="3438000" />
+      <workItem from="1573152602035" duration="4508000" />
+      <workItem from="1573220705498" duration="3742000" />
+      <workItem from="1573487910390" duration="4809000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
@@ -1092,13 +1120,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java</url>
-          <line>246</line>
+          <line>250</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java</url>
-          <line>319</line>
+          <line>323</line>
           <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.2.1/domainql-0.2.1-sources.jar!/de/quinscape/domainql/generic/DomainObjectCoercing.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
