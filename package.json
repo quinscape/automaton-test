@@ -16,7 +16,7 @@
         "@babel/preset-react": "^7.6.3",
         "@babel/register": "^7.6.2",
         "babel-loader": "^8.0.6",
-        "babel-plugin-automaton": "^0.0.13",
+        "babel-plugin-automaton": "^0.0.14",
         "babel-plugin-espower": "^3.0.1",
         "babel-plugin-track-usage": "^0.3.0",
         "babel-plugin-transform-decorators-legacy": "^1.3.5",
@@ -34,7 +34,7 @@
         "webpack-cli": "^3.3.9"
     },
     "dependencies": {
-        "@quinscape/automaton-js": "^0.0.20",
+        "@quinscape/automaton-js": "^0.0.21",
         "bignumber.js": "^9.0.0",
         "domainql-form": "^2.2.11",
         "history": "^4.10.1",
@@ -62,7 +62,7 @@
         "watch": "cross-env NODE_ENV=development webpack --debug --output-pathinfo -w",
         "test": "cross-env NODE_ENV=production BABEL_ENV=test mocha --require @babel/register -R spec src/test/js/",
         "model-to-js": "model-to-js",
-        "js-to-model": "cross-env NODE_ENV=development BABEL_ENV=analyze webpack --silent"
+        "js-to-model": "cross-env NODE_ENV=development BABEL_ENV=analyze webpack --display=minimal"
     },
     "browserslist": [
         "> 0.25%",

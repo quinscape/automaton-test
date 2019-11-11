@@ -395,13 +395,15 @@ type MutationType {
     createFoo(name: String!): Foo
     "Deletes the domain object of the given type and with the given id."
     deleteDomainObject(id: String!, type: String!): Boolean
-   "Generate a new domain object id using the application specific IdGenerator implementation."
+    "Generate a new domain object id using the application specific IdGenerator implementation."
     generateDomainObjectId(count: Int = 1, domainType: String!): [GenericScalar]
+    "Server-side end-point for WorkingSet.persist()"
+    persistWorkingSet(deletions: [WorkingSetDeletionInput]!, domainObjects: [DomainObject]!): Boolean
     "Stores a single domain object of any type. Note that you might have to manually register an input type."
     storeDomainObject(domainObject: DomainObject!): GenericScalar
     "Stores a list of domain object of any type. Note that you might have to manually register an input type."
     storeDomainObjects(domainObjects: [DomainObject]!): [GenericScalar]
-    "Updates the associations of one source domain over a many-to-many connection / an associative entity"
+    "Updates the associations of one source domain object over a many-to-many connection / an associative entity"
     updateAssociations(domainObjects: [DomainObject]!, domainType: String!, leftSideRelation: String!, sourceIds: [GenericScalar]!): [GenericScalar]
     wireTestMutation(count: Int, input: FooInput): WireTestResult
 }
@@ -714,6 +716,14 @@ input ValidationRulesInput {
     _: String
     rules: [RuleInput]
     writable: Boolean
+}
+
+"Encapsulates the type and id of on object deletion in a working set."
+input WorkingSetDeletionInput {
+    "Id of deleted object as generic scalar."
+    id: GenericScalar
+    "Domain type of deleted object"
+    type: String
 }
 
 
