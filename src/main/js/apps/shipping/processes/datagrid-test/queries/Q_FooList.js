@@ -35,7 +35,7 @@ export default query(
     }`,
     {
         "config": {
-            "pageSize": 20,
+            "pageSize": 5,
             "sortFields" : ["name"]
         }
     }
