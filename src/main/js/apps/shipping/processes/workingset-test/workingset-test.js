@@ -34,8 +34,7 @@ export function initProcess(process, scope)
                     "new-foo": {
                         action: t => {
 
-                            // use empty id to be replaced by a new id server-side (
-                            const newObj = createDomainObject("FooInput");
+                            const newObj = createDomainObject("Foo");
 
                             newObj.name = "Unnamed Foo";
                             newObj.description = "";
@@ -60,7 +59,7 @@ export function initProcess(process, scope)
                             //console.log("edit-foo, context = ", id);
 
                             // Either edit the working set instance...
-                            const entry = scope.workingSet.lookup("FooInput", id);
+                            const entry = scope.workingSet.lookup("Foo", id);
                             if (entry)
                             {
                                 scope.updateCurrent(entry.domainObject)
@@ -98,7 +97,7 @@ export function initProcess(process, scope)
                     },
                     "delete-foo": {
                         action: t => {
-                            scope.workingSet.markDeleted(t.context)
+                            scope.workingSet.markDeleted(t.context);
 
                             if (scope.currentFoo && scope.currentFoo.id === t.context.id)
                             {
