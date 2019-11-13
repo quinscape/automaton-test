@@ -786,10 +786,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@quinscape/automaton-js@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.0.22.tgz#0081d2347899cb9487c02dc43a9b82ce050493af"
-  integrity sha512-Fzk9hiKCNafD7/W7YxWYbw5HerzqrWDqYhTeJY2qklVUpyHYWxiFSSkduipeF3z7i9/pqkuK8sRk4KwL9T4yuw==
+"@quinscape/automaton-js@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.0.23.tgz#2b73cac51b866713491a01331b649ca8aaa8817e"
+  integrity sha512-002sJSO/8wUSlCDhwLWQRBujo1V9mT6yJf710cD9/d4jsUg3rdTdJvWKS2io2cEHaq9TKG+JVpH1ySXpkNtnLQ==
   dependencies:
     classnames "^2.2.6"
     create-react-class "^15.6.3"
