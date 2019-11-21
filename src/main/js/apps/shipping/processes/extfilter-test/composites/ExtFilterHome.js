@@ -71,7 +71,8 @@ const ExtFilterHome = props => {
             <Form
                 value={ scope.externalFilter }
                 options={{
-                    autoSubmit: true
+                    autoSubmit: true,
+                    isolation: false
                 }}
             >
                 <CalendarField
