@@ -9,18 +9,10 @@
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_automaton_0_1_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_automaton_0_1_12.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/queries/Q_FooDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/queries/Q_FooDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/queries/Q_FooList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/queries/Q_FooList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/components/CommonNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/components/CommonNav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -355,13 +347,6 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="de.quinscape.automaton.runtime.data" />
-      <recent name="de.quinscape.automaton.runtime.config" />
-      <recent name="de.quinscape.automaton.runtime.domain.op" />
-      <recent name="de.quinscape.automaton.runtime.message" />
-      <recent name="de.quinscape.automaton.runtime.ws" />
-    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="de.quinscape.automaton.runtime.ws" />
       <recent name="de.quinscape.automaton.runtime.scalar" />
@@ -387,6 +372,13 @@
       <recent name="de.quinscape.automaton.model.data" />
       <recent name="de.quinscape.automaton.runtime" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../automaton-js/test/ui" />
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/queries" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src" />
+      <recent name="$PROJECT_DIR$/../automaton/src/test" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src/util" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="de.quinscape.automaton.runtime.data" />
       <recent name="de.quinscape.automaton.runtime.domain" />
@@ -405,12 +397,12 @@
       <recent name="$PROJECT_DIR$/../automaton-js/src/DialogMode.js" />
       <recent name="$PROJECT_DIR$/../automaton-js/src/sync.js" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../automaton-js/test/ui" />
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/queries" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src" />
-      <recent name="$PROJECT_DIR$/../automaton/src/test" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/util" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="de.quinscape.automaton.runtime.data" />
+      <recent name="de.quinscape.automaton.runtime.config" />
+      <recent name="de.quinscape.automaton.runtime.domain.op" />
+      <recent name="de.quinscape.automaton.runtime.message" />
+      <recent name="de.quinscape.automaton.runtime.ws" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -1041,6 +1033,7 @@
       <workItem from="1573152602035" duration="4508000" />
       <workItem from="1573220705498" duration="3742000" />
       <workItem from="1573487910390" duration="4809000" />
+      <workItem from="1574361502750" duration="2926000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
