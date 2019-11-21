@@ -791,24 +791,24 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@quinscape/automaton-js@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.0.24.tgz#75675e952b97bc567b514a8dbdf472261eb4ef55"
-  integrity sha512-d58rJ0kzMDYn7Vp+IyaHrV82H0wv12pHPAwCKwTibQxPDxRj4KCh5GFrFa7JE9tk7TU847rksUJ/9zFy9tAPEQ==
+"@quinscape/automaton-js@^0.0.27":
+  version "0.0.27"
+  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.0.27.tgz#ca861d4b6203de55732db3681b8b8bb7fe5878c0"
+  integrity sha512-KZaVoJMEpozDH5/NM2xiFD+ySYSFGca1s0sYHyOt0QQbChKIhcNwTBsomwL25FmmFqnk+QDc144x7xXxjMVdiw==
   dependencies:
     classnames "^2.2.6"
     create-react-class "^15.6.3"
-    domainql-form "^2.2.11"
+    domainql-form "^3.0.0"
     graphql "^14.5.8"
     history "^4.10.1"
     lodash.set "^4.3.2"
-    mobx "^5.14.2"
+    mobx "^5.15.0"
     mobx-react "^6.1.4"
     mobx-react-devtools "^6.1.1"
-    mobx-react-lite "^1.5.0"
-    mobx-utils "^5.5.1"
+    mobx-react-lite "^1.5.1"
+    mobx-utils "^5.5.2"
     prop-types "^15.7.2"
-    react "^16.11.0"
+    react "^16.12.0"
     react-calendar "^2.19.2"
     react-json-tree "^0.11.2"
     reactstrap "^8.1.1"
@@ -1969,10 +1969,17 @@ domain-browser@^1.1.1:
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
   integrity sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA==
 
+<<<<<<< HEAD
 domainql-form@^2.2.11:
   version "2.2.11"
   resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-2.2.11.tgz#828ddf09b0831a0d2a978aae9b919a65663acc6f"
   integrity sha512-lTL92zinn0+b8zFA69/n5qdKNeFgSTRUaTG1nzcstJQkPFGpZ3aKDQ2A6Fu1uUXZshgXbcV92Wu4FrH2XSK8cg==
+=======
+domainql-form@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.0.0.tgz#ce1bda6722cbf1d8502b1c777bfde49e9d8940c7"
+  integrity sha512-l3P+yieub4G5HeKs53S7WslJkdEP6ZzzXm/+V1dQ8LoZk2lqW0sCFNnoFHsilAvi0weA10B9dDRpWkHbu8d8jQ==
+>>>>>>> 0b6b661... Upgrade to automaton-js 0.0.27
   dependencies:
     classnames "^2.2.5"
     lodash.debounce "^4.0.8"
@@ -1980,6 +1987,7 @@ domainql-form@^2.2.11:
     lodash.isequal "^4.5.0"
     lodash.set "^4.3.2"
     lodash.topath "^4.5.2"
+<<<<<<< HEAD
     mobx "^5.14.2"
     mobx-react "^6.1.4"
     mobx-react-devtools "^6.1.1"
@@ -1987,6 +1995,15 @@ domainql-form@^2.2.11:
     mobx-utils "^5.5.1"
     prop-types "^15.7.2"
     react "^16.11.0"
+=======
+    mobx "^5.15.0"
+    mobx-react "^6.1.4"
+    mobx-react-devtools "^6.1.1"
+    mobx-react-lite "^1.5.1"
+    mobx-utils "^5.5.2"
+    prop-types "^15.7.2"
+    react "^16.12.0"
+>>>>>>> 0b6b661... Upgrade to automaton-js 0.0.27
     use-debounce "^3.1.0"
 
 domainql-webpack-plugin@^0.0.3:
@@ -3373,7 +3390,7 @@ mobx-react-devtools@^6.1.1:
   resolved "https://registry.yarnpkg.com/mobx-react-devtools/-/mobx-react-devtools-6.1.1.tgz#a462b944085cf11ff96fc937d12bf31dab4c8984"
   integrity sha512-nc5IXLdEUFLn3wZal65KF3/JFEFd+mbH4KTz/IG5BOPyw7jo8z29w/8qm7+wiCyqVfUIgJ1gL4+HVKmcXIOgqA==
 
-mobx-react-lite@^1.4.2, mobx-react-lite@^1.5.0, mobx-react-lite@^1.5.1:
+mobx-react-lite@^1.4.2, mobx-react-lite@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-1.5.1.tgz#8eac90985b4d2bee475dd90a0d4d903be578f154"
   integrity sha512-40Gn8hFq+MuNHqCaeSo2adN4WvpWkIeSYZVJWzRzm0rbEf0BFow6Ir9IefErql0pX9q650TN1JAQXvrXxKR8Mg==
@@ -3385,12 +3402,12 @@ mobx-react@^6.1.4:
   dependencies:
     mobx-react-lite "^1.4.2"
 
-mobx-utils@^5.5.1, mobx-utils@^5.5.2:
+mobx-utils@^5.5.2:
   version "5.5.2"
   resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.5.2.tgz#3d3230067f14e9315559d2bfd31d86ec2e8999f0"
   integrity sha512-cOlFJDWU/NHyGKvdhWqPdHmhPfeKewElAIZp5XticWIsSLGAA+4Uou3+8ookhQ/yG7qZXzvjAq90TZWXiR5+XA==
 
-mobx@^5.14.2, mobx@^5.15.0:
+mobx@^5.15.0:
   version "5.15.0"
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-5.15.0.tgz#3ef34ac4965169698eff6df72f18c2a735e8e7f8"
   integrity sha512-Ax7vE32zBRgO0A3Yu12RXaFwIhBzpGQXZjRHiDvKLrqpDEijhNTSuXJ1Ci+L30BSa/Mb3by9+3nuKq15YoH5dA==
@@ -4289,7 +4306,7 @@ react-transition-group@^2.3.1:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react@^16.11.0, react@^16.12.0:
+react@^16.12.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
   integrity sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==
