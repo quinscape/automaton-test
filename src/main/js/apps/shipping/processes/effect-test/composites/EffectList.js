@@ -1,7 +1,9 @@
+import { Icon } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { ButtonToolbar } from "reactstrap";
 import { Button, i18n, IQueryGrid as DataGrid } from "@quinscape/automaton-js"
+
 
 const EffectList = props => {
 
@@ -18,12 +20,10 @@ const EffectList = props => {
             </h1>
 
             <ButtonToolbar>
-                <Button
-                    className="btn btn-primary mr-1"
-                    transition="new-foo"
-                    icon="fa-save mr-1"
-                    text="New"
-                />
+                <Button className="btn btn-primary mr-1" transition="new-foo">
+                    <Icon className="fa-save mr-1" />
+                    New
+                </Button>
             </ButtonToolbar>
 
             <DataGrid
@@ -37,11 +37,11 @@ const EffectList = props => {
                         foo => (
                             <Button
                                 className="btn btn-secondary text-nowrap"
-                                icon="fa-edit"
-                                text="Detail"
                                 transition="to-detail"
-                                context={ foo.id }
-                            />
+                                context={ foo.id }>
+                                <Icon className="fa-edit" />
+                                Detail
+                            </Button>
                         )
                     }
                 </DataGrid.Column>
@@ -51,7 +51,7 @@ const EffectList = props => {
             </DataGrid>
 
         </React.Fragment>
-    )
+    );
 };
 
 export default fnObserver(EffectList);

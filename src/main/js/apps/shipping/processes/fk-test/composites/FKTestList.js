@@ -1,3 +1,4 @@
+import { Icon } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { ButtonToolbar } from "reactstrap";
@@ -19,12 +20,10 @@ const FKTestList = props => {
             </h1>
 
             <ButtonToolbar>
-                <Button
-                    className="btn btn-primary mr-1"
-                    transition="new-qux"
-                    icon="fa-save mr-1"
-                    text="New"
-                />
+                <Button className="btn btn-primary mr-1" transition="new-qux">
+                    <Icon className="fa-save mr-1" />
+                    New
+                </Button>
             </ButtonToolbar>
 
             <DataGrid
@@ -38,11 +37,11 @@ const FKTestList = props => {
                         qux => (
                             <Button
                                 className="btn btn-secondary text-nowrap"
-                                icon="fa-edit"
-                                text="Detail"
                                 transition="to-detail"
-                                context={ qux.id }
-                            />
+                                context={ qux.id }>
+                                <Icon className="fa-edit" />
+                                Detail
+                            </Button>
                         )
                     }
                 </DataGrid.Column>
@@ -55,7 +54,7 @@ const FKTestList = props => {
             </DataGrid>
 
         </React.Fragment>
-    )
+    );
 };
 
 export default fnObserver(FKTestList);

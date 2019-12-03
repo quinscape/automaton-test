@@ -1,8 +1,7 @@
+import { Field, GlobalErrors, Icon, TextArea, withForm } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { Button, config, i18n, ScrollTracker } from "@quinscape/automaton-js"
-
-import { Field, GlobalErrors, TextArea, withForm } from "domainql-form"
 import { ButtonToolbar } from "reactstrap";
 
 import validation from "../../../../../services/validation"
@@ -38,29 +37,23 @@ const FooForm = props => {
             <Field name="num"/>
 
             <ButtonToolbar>
-                <Button
-                    className="btn btn-primary mr-1"
-                    transition="save"
-                    icon="fa-save mr-1"
-                    text="Save"
-                />
-                <Button
-                    className="btn btn-danger mr-1"
-                    transition="delete"
-                    icon="fa-times mr-1"
-                    text="Delete"
-                />
-                <Button
-                    className="btn btn-secondary mr-1"
-                    transition="cancel"
-                    icon="fa-times mr-1"
-                    text="Cancel"
-                />
+                <Button className="btn btn-primary mr-1" transition="save">
+                    <Icon className="fa-save mr-1" />
+                    Save
+                </Button>
+                <Button className="btn btn-danger mr-1" transition="delete">
+                    <Icon className="fa-times mr-1" />
+                    Delete
+                </Button>
+                <Button className="btn btn-secondary mr-1" transition="cancel">
+                    <Icon className="fa-times mr-1" />
+                    Cancel
+                </Button>
 
             </ButtonToolbar>
 
         </ScrollTracker>
-    )
+    );
 };
 
 export default withForm(

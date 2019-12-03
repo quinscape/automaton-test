@@ -1,13 +1,12 @@
+import { Form, Icon } from "domainql-form"
 import React, { useEffect } from "react"
 import { reaction } from "mobx";
 import { observer as fnObserver } from "mobx-react-lite";
-import { Field, Form } from "domainql-form"
-import { Button, FilterDSL, i18n, IQueryGrid as DataGrid, CalendarField } from "@quinscape/automaton-js"
+import { Button, CalendarField, FilterDSL, i18n, IQueryGrid as DataGrid } from "@quinscape/automaton-js"
+import { MAX_DATE, MIN_DATE } from "../extfilter-test"
 
 // deconstruct FilterDSL methods
 const { and, field, value, component } = FilterDSL;
-
-import { MIN_DATE, MAX_DATE } from "../extfilter-test"
 
 const ExtFilterHome = props => {
 
@@ -104,13 +103,10 @@ const ExtFilterHome = props => {
                     {
                         bar => (
                             <React.Fragment>
-                                <Button
-                                    className="btn btn-secondary"
-                                    icon="fa-edit"
-                                    text="Detail"
-                                    transition="to-detail"
-                                    context={ bar }
-                                />
+                                <Button className="btn btn-secondary" transition="to-detail" context={ bar }>
+                                    <Icon className="fa-edit" />
+                                    Detail
+                                </Button>
                             </React.Fragment>
                         )
                     }
@@ -150,7 +146,7 @@ const ExtFilterHome = props => {
             </DataGrid>
 
         </React.Fragment>
-    )
+    );
 };
 
 export default fnObserver(ExtFilterHome);

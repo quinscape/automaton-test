@@ -1,9 +1,11 @@
+import { Icon } from "domainql-form"
 import React from "react"
 
 import { observer as fnObserver } from "mobx-react-lite";
 
 import { Button, DataGrid, i18n } from "@quinscape/automaton-js"
 import { ButtonToolbar } from "reactstrap";
+
 
 const SubProcessFullHome = props => {
 
@@ -21,12 +23,10 @@ const SubProcessFullHome = props => {
             </h3>
             
             <div className="btn-toolbar">
-                <Button
-                    className="btn btn-danger"
-                    icon="fa-close"
-                    text="Close"
-                    transition="close"
-                />
+                <Button className="btn btn-danger" transition="close">
+                    <Icon className="fa-close" />
+                    Close
+                </Button>
             </div>
 
             <DataGrid
@@ -40,21 +40,15 @@ const SubProcessFullHome = props => {
                         foo => {
                             return (
                                 <React.Fragment>
-                                    <Button
-                                        className="btn btn-success mr-1"
-                                        icon="fa-clipboard-check"
-                                        text="Choose"
-                                        transition="choose"
-                                        context={ foo }
-                                    />
+                                    <Button className="btn btn-success mr-1" transition="choose" context={ foo }>
+                                        <Icon className="fa-clipboard-check" />
+                                        Choose
+                                    </Button>
 
-                                    <Button
-                                        className="btn btn-success mr-1"
-                                        icon="fa-forward"
-                                        text="Open in Detail"
-                                        transition="pick"
-                                        context={ foo.id }
-                                    />
+                                    <Button className="btn btn-success mr-1" transition="pick" context={ foo.id }>
+                                        <Icon className="fa-forward" />
+                                        Open in Detail
+                                    </Button>
                                 </React.Fragment>
                             );
                         }
@@ -66,22 +60,18 @@ const SubProcessFullHome = props => {
                 <DataGrid.Column name="owner.login" filter="containsIgnoreCase" heading={ i18n("owner") }/>
             </DataGrid>
             <ButtonToolbar>
-                <Button
-                    className="btn btn-secondary mr-1"
-                    transition="open-dialog"
-                    icon="fa-th-list mr-1"
-                    text="Open Dialog Sub"
-                />
-                <Button
-                    className="btn btn-secondary mr-1"
-                    transition="open-full"
-                    icon="fa-th-list mr-1"
-                    text="Open Fullscreen Sub"
-                />
+                <Button className="btn btn-secondary mr-1" transition="open-dialog">
+                    <Icon className="fa-th-list mr-1" />
+                    Open Dialog Sub
+                </Button>
+                <Button className="btn btn-secondary mr-1" transition="open-full">
+                    <Icon className="fa-th-list mr-1" />
+                    Open Fullscreen Sub
+                </Button>
 
             </ButtonToolbar>
         </div>
-    )
+    );
 }
 
 export default fnObserver(SubProcessFullHome)

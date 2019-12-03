@@ -1,9 +1,11 @@
+import { Icon } from "domainql-form"
 import React from "react"
 
 import { ButtonToolbar } from "reactstrap"
-import { DataGrid, Button, i18n } from "@quinscape/automaton-js"
+import { Button, DataGrid, i18n } from "@quinscape/automaton-js"
 
 import { observer as fnObserver } from "mobx-react-lite";
+
 
 const CRUDList = props => {
 
@@ -19,12 +21,10 @@ const CRUDList = props => {
                 }
             </h1>
             <ButtonToolbar>
-                <Button
-                    className="btn btn-secondary mr-1"
-                    icon="fa-plus-circle"
-                    text="New Foo"
-                    transition="new-foo"
-                />
+                <Button className="btn btn-secondary mr-1" transition="new-foo">
+                    <Icon className="fa-plus-circle" />
+                    New Foo
+                </Button>
             </ButtonToolbar>
 
 
@@ -36,13 +36,10 @@ const CRUDList = props => {
                 >
                     {
                         foo => (
-                            <Button
-                                className="btn btn-secondary"
-                                icon="fa-edit"
-                                text="Detail"
-                                transition="to-detail"
-                                context={ foo }
-                            />
+                            <Button className="btn btn-secondary" transition="to-detail" context={ foo }>
+                                <Icon className="fa-edit" />
+                                Detail
+                            </Button>
                         )
                     }
                 </DataGrid.Column>
@@ -51,7 +48,7 @@ const CRUDList = props => {
                 <DataGrid.Column name="owner.login" heading={ i18n("owner") }/>
             </DataGrid>
         </div>
-    )
+    );
 };
 
 export default fnObserver(CRUDList)

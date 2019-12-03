@@ -1,3 +1,4 @@
+import { Icon } from "domainql-form"
 import React from "react"
 
 import { ButtonToolbar } from "reactstrap"
@@ -36,18 +37,16 @@ const BackTestHome = props => {
             <div className="row">
                 <div className="col">
                     <ButtonToolbar>
-                        <Button
-                            className="btn btn-primary mr-1"
-                            icon="fa-play"
-                            text="Counter"
-                            transition="to-counter"
-                        />
+                        <Button className="btn btn-primary mr-1" transition="to-counter">
+                            <Icon className="fa-play" />
+                            Counter
+                        </Button>
                     </ButtonToolbar>
                 </div>
 
             </div>
         </React.Fragment>
-    )
+    );
 };
 
 export default fnObserver(BackTestHome)

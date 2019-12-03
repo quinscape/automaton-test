@@ -1,7 +1,8 @@
+import { Icon } from "domainql-form"
 import React from "react"
 
 import { ButtonToolbar } from "reactstrap"
-import { Button, i18n } from "@quinscape/automaton-js"
+import { Button } from "@quinscape/automaton-js"
 
 import { observer as fnObserver } from "mobx-react-lite";
 import CounterCard from "./CounterCard";
@@ -26,62 +27,46 @@ const BackTestCounter = props => {
             <div className="row">
                 <div className="col">
                     <ButtonToolbar className="m-1">
-                        <Button
-                            className="btn btn-secondary mr-1"
-                            icon="fa-plus-square"
-                            text="Increment"
-                            transition="increment"
-                        />
-                        <Button
-                            className="btn btn-secondary mr-1"
-                            icon="fa-minus-square"
-                            text="Decrement"
-                            transition="decrement"
-                        />
-                        <Button
-                            className="btn btn-secondary mr-1"
-                            icon="fa-plus-square"
-                            text="Increment Non-Versioned"
-                            transition="increment-nv"
-                        />
-                        <Button
-                            className="btn btn-secondary mr-1"
-                            icon="fa-minus-square"
-                            text="Decrement Non-Versioned"
-                            transition="decrement-nv"
-                        />
+                        <Button className="btn btn-secondary mr-1" transition="increment">
+                            <Icon className="fa-plus-square" />
+                            Increment
+                        </Button>
+                        <Button className="btn btn-secondary mr-1" transition="decrement">
+                            <Icon className="fa-minus-square" />
+                            Decrement
+                        </Button>
+                        <Button className="btn btn-secondary mr-1" transition="increment-nv">
+                            <Icon className="fa-plus-square" />
+                            Increment Non-Versioned
+                        </Button>
+                        <Button className="btn btn-secondary mr-1" transition="decrement-nv">
+                            <Icon className="fa-minus-square" />
+                            Decrement Non-Versioned
+                        </Button>
                     </ButtonToolbar>
                     <ButtonToolbar className="m-1">
-                        <Button
-                            className="btn btn-secondary mr-1"
-                            icon="fa-arrow-left"
-                            text="Back"
-                            transition="back"
-                        />
-                        <Button
-                            className="btn btn-secondary mr-1"
-                            icon="fa-arrow-left"
-                            text="Back 2"
-                            transition="back-2"
-                        />
-                        <Button
-                            className="btn btn-success mr-1"
-                            icon="fa-arrow-left"
-                            text="Back to Parent"
-                            transition="back-fn"
-                        />
-                        <Button
-                            className="btn btn-primary mr-1"
-                            icon="fa-arrow-left"
-                            text="Back to Home"
-                            transition="back-home"
-                        />
+                        <Button className="btn btn-secondary mr-1" transition="back">
+                            <Icon className="fa-arrow-left" />
+                            Back
+                        </Button>
+                        <Button className="btn btn-secondary mr-1" transition="back-2">
+                            <Icon className="fa-arrow-left" />
+                            Back 2
+                        </Button>
+                        <Button className="btn btn-success mr-1" transition="back-fn">
+                            <Icon className="fa-arrow-left" />
+                            Back to Parent
+                        </Button>
+                        <Button className="btn btn-primary mr-1" transition="back-home">
+                            <Icon className="fa-arrow-left" />
+                            Back to Home
+                        </Button>
                     </ButtonToolbar>
                 </div>
 
             </div>
         </React.Fragment>
-    )
+    );
 };
 
 export default fnObserver(BackTestCounter)

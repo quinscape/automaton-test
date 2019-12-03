@@ -1,7 +1,8 @@
+import { Icon } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
-import { Button, i18n, IQueryGrid as DataGrid, FilterDSL } from "@quinscape/automaton-js"
-import { ButtonToolbar, ListGroup, ListGroupItem, Card, CardBody, CardTitle, CardText } from "reactstrap/lib";
+import { Button, FilterDSL, i18n, IQueryGrid as DataGrid } from "@quinscape/automaton-js"
+import { ButtonToolbar, Card, CardBody, CardTitle, ListGroup, ListGroupItem } from "reactstrap/lib";
 
 // deconstruct FilterDSL methods
 const { and, field, value, component } = FilterDSL;
@@ -100,13 +101,10 @@ const AnimalGridHome = props => {
                     {
                         node => (
                             <React.Fragment>
-                                <Button
-                                    className="btn btn-secondary"
-                                    icon="fa-edit"
-                                    text="Detail"
-                                    transition="to-detail"
-                                    context={ node }
-                                />
+                                <Button className="btn btn-secondary" transition="to-detail" context={ node }>
+                                    <Icon className="fa-edit" />
+                                    Detail
+                                </Button>
                                 <DataGrid.RowSelector
                                     id={ node.id }
                                     selectedValues={ scope.selectedAnimals }
@@ -143,7 +141,7 @@ const AnimalGridHome = props => {
                 </CardBody>
             </Card>
         </React.Fragment>
-    )
+    );
 };
 
 export default fnObserver(AnimalGridHome);

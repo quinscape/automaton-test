@@ -1,8 +1,8 @@
+import { Icon } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { ButtonToolbar } from "reactstrap";
-import { Button, i18n, IQueryGrid as DataGrid, FilterDSL } from "@quinscape/automaton-js"
-import { Select } from "domainql-form";
+import { Button, FilterDSL, IQueryGrid as DataGrid } from "@quinscape/automaton-js"
 
 // deconstruct FilterDSL methods
 const { field, value } = FilterDSL;
@@ -43,10 +43,10 @@ const AssocEntityList = props => {
                         link => (
                             <Button
                                 className="btn btn btn-link"
-                                text={ link.baz.name }
                                 transition="to-baz-detail"
-                                context={ link.baz.id }
-                            />
+                                context={ link.baz.id }>
+                                { link.baz.name }
+                            </Button>
                         )
                     }
                 </DataGrid.Column>
@@ -67,28 +67,24 @@ const AssocEntityList = props => {
                         link => (
                             <Button
                                 className="btn btn btn-link"
-                                text={ link.value.name }
                                 transition="to-baz-value-detail"
-                                context={ link.value.id }
-                            />
+                                context={ link.value.id }>
+                                { link.value.name }
+                            </Button>
                         )
                     }
                 </DataGrid.Column>
             </DataGrid>
 
             <ButtonToolbar>
-                <Button
-                    className="btn btn-secondary mr-1"
-                    transition="new-baz"
-                    icon="fa-save mr-1"
-                    text="New"
-                />
-                <Button
-                    className="btn btn-secondary mr-1"
-                    transition="new-baz-value"
-                    icon="fa-save mr-1"
-                    text="New Value"
-                />
+                <Button className="btn btn-secondary mr-1" transition="new-baz">
+                    <Icon className="fa-save mr-1" />
+                    New
+                </Button>
+                <Button className="btn btn-secondary mr-1" transition="new-baz-value">
+                    <Icon className="fa-save mr-1" />
+                    New Value
+                </Button>
             </ButtonToolbar>
 
             <h2>
@@ -107,11 +103,11 @@ const AssocEntityList = props => {
                         baz => (
                             <Button
                                 className="btn btn-secondary text-nowrap"
-                                icon="fa-edit"
-                                text="Detail"
                                 transition="to-baz-detail"
-                                context={ baz.id }
-                            />
+                                context={ baz.id }>
+                                <Icon className="fa-edit" />
+                                Detail
+                            </Button>
                         )
                     }
                 </DataGrid.Column>
@@ -135,11 +131,11 @@ const AssocEntityList = props => {
                         bazValue => (
                             <Button
                                 className="btn btn-secondary text-nowrap"
-                                icon="fa-edit"
-                                text="Detail"
                                 transition="to-baz-value-detail"
-                                context={ bazValue.id }
-                            />
+                                context={ bazValue.id }>
+                                <Icon className="fa-edit" />
+                                Detail
+                            </Button>
                         )
                     }
                 </DataGrid.Column>
@@ -148,7 +144,7 @@ const AssocEntityList = props => {
 
 
         </React.Fragment>
-    )
+    );
 };
 
 export default fnObserver(AssocEntityList);

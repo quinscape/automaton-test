@@ -1,7 +1,8 @@
+import { Icon } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 
-import { DataGrid, Button, i18n } from "@quinscape/automaton-js"
+import { Button, DataGrid, i18n } from "@quinscape/automaton-js"
 
 
 const CustomerList = props => {
@@ -25,13 +26,10 @@ const CustomerList = props => {
                 >
                     {
                         customer => (
-                            <Button
-                                className="btn btn-secondary"
-                                icon="fa-edit"
-                                text="Detail"
-                                transition="to-detail"
-                                context={ customer }
-                            />
+                            <Button className="btn btn-secondary" transition="to-detail" context={ customer }>
+                                <Icon className="fa-edit" />
+                                Detail
+                            </Button>
                         )
                     }
                 </DataGrid.Column>
@@ -43,7 +41,7 @@ const CustomerList = props => {
                 </DataGrid.Column>
             </DataGrid>
         </div>
-    )
+    );
 };
 
 export default fnObserver(CustomerList);

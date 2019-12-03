@@ -1,8 +1,7 @@
+import { Field, FieldMode, GlobalErrors, Icon, TextArea, withForm } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
-import { Button, config, i18n, ScrollTracker, CalendarField } from "@quinscape/automaton-js"
-
-import { Field, GlobalErrors, TextArea, withForm, FieldMode, FieldGroup } from "domainql-form"
+import { Button, CalendarField, config, i18n, ScrollTracker } from "@quinscape/automaton-js"
 import { ButtonToolbar } from "reactstrap";
 
 import validation from "../../../../../services/validation"
@@ -37,42 +36,31 @@ const FooForm = props => {
             <Field name="flag"/>
             <Field name="type" wrapperColumnClass="col-md-1"/>
             <ButtonToolbar>
-                <Button
-                    className="btn btn-success mr-1"
-                    icon="fa-clipboard-check"
-                    text="Choose"
-                    transition="choose"
-                    context={ root.id }
-                />
-                <Button
-                    className="btn btn-secondary mr-1"
-                    transition="next"
-                    icon="fa-forward mr-1"
-                    text="Next"
-                />
-                <Button
-                    className="btn btn-secondary mr-1"
-                    transition="open-dialog"
-                    icon="fa-th-list mr-1"
-                    text="Open Dialog Sub"
-                />
-                <Button
-                    className="btn btn-secondary mr-1"
-                    transition="open-full"
-                    icon="fa-th-list mr-1"
-                    text="Open Fullscreen Sub"
-                />
-                <Button
-                    className="btn btn-secondary mr-1"
-                    transition="cancel"
-                    icon="fa-times mr-1"
-                    text="Cancel"
-                />
+                <Button className="btn btn-success mr-1" transition="choose" context={ root.id }>
+                    <Icon className="fa-clipboard-check" />
+                    Choose
+                </Button>
+                <Button className="btn btn-secondary mr-1" transition="next">
+                    <Icon className="fa-forward mr-1" />
+                    Next
+                </Button>
+                <Button className="btn btn-secondary mr-1" transition="open-dialog">
+                    <Icon className="fa-th-list mr-1" />
+                    Open Dialog Sub
+                </Button>
+                <Button className="btn btn-secondary mr-1" transition="open-full">
+                    <Icon className="fa-th-list mr-1" />
+                    Open Fullscreen Sub
+                </Button>
+                <Button className="btn btn-secondary mr-1" transition="cancel">
+                    <Icon className="fa-times mr-1" />
+                    Cancel
+                </Button>
 
             </ButtonToolbar>
 
         </ScrollTracker>
-    )
+    );
 };
 
 export default withForm(

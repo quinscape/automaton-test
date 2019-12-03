@@ -25,18 +25,18 @@ const WSTestList = props => {
                 <Button
                     className="btn btn-primary mr-1"
                     transition="save-all"
-                    icon="fa-save mr-1"
-                    text="Save All"
-                    disabled={ () => !scope.workingSet.hasChanges }
-                />
+                    disabled={ () => !scope.workingSet.hasChanges }>
+                    <Icon className="fa-save mr-1" />
+                    Save All
+                </Button>
 
                 <Button
                     className="btn btn-secondary mr-1"
                     transition="revert-all"
-                    icon="fa-save mr-1"
-                    text="Revert"
-                    disabled={ () => !scope.workingSet.hasChanges }
-                />
+                    disabled={ () => !scope.workingSet.hasChanges }>
+                    <Icon className="fa-save mr-1" />
+                    Revert
+                </Button>
             </ButtonToolbar>
 
             <DataGrid
@@ -89,38 +89,36 @@ const WSTestList = props => {
 
                                 <Button
                                     className="btn btn-secondary btn-sm mr-1 mb-1"
-                                    icon="fa-edit"
-                                    text="Edit"
                                     transition="edit-foo"
-                                    context={ foo.id }
-                                />
+                                    context={ foo.id }>
+                                    <Icon className="fa-edit" />
+                                    Edit
+                                </Button>
                                 <Button
                                     className="btn btn-secondary btn-sm mr-1 mb-1"
-                                    icon="fa-trash-alt"
-                                    text="Delete"
                                     transition="delete-foo"
-                                    context={ foo }
-                                />
+                                    context={ foo }>
+                                    <Icon className="fa-trash-alt" />
+                                    Delete
+                                </Button>
                                 <Button
                                     className="btn btn-secondary btn-sm mr-1 mb-1"
-                                    icon="fa-history"
-                                    text="Revert"
                                     disabled={ () => !scope.workingSet.lookup(foo._type, foo.id)}
                                     transition="revert-foo"
-                                    context={ foo }
-                                />
+                                    context={ foo }>
+                                    <Icon className="fa-history" />
+                                    Revert
+                                </Button>
                             </React.Fragment>
                         )
                     }
                 </DataGrid.Column>
             </DataGrid>
             <ButtonToolbar>
-                <Button
-                    className="btn btn-primary mr-1"
-                    transition="new-foo"
-                    icon="fa-save mr-1"
-                    text="New"
-                />
+                <Button className="btn btn-primary mr-1" transition="new-foo">
+                    <Icon className="fa-save mr-1" />
+                    New
+                </Button>
             </ButtonToolbar>
             {
                 scope.currentFoo &&
@@ -140,7 +138,7 @@ const WSTestList = props => {
             }
 
         </React.Fragment>
-    )
+    );
 };
 
 export default fnObserver(WSTestList);

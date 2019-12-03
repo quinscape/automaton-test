@@ -1,13 +1,10 @@
-import React, { useMemo, useState, useEffect, useRef } from "react"
-import { action, observable, reaction, toJS } from "mobx"
+import React, { useEffect, useMemo } from "react"
+import { observable, reaction } from "mobx"
 import { observer as fnObserver } from "mobx-react-lite"
 
 import { ButtonToolbar, Container, Modal, ModalBody, ModalHeader } from "reactstrap"
-import { i18n, Icon, GraphQLQuery } from "@quinscape/automaton-js"
-import { Field, Form, FieldMode } from "domainql-form"
-import Calendar from "react-calendar"
-
-import set from "lodash.set"
+import { GraphQLQuery, i18n } from "@quinscape/automaton-js"
+import { Field, FieldMode, Form, Icon } from "domainql-form"
 
 
 const configureColumnsMutation = new GraphQLQuery(

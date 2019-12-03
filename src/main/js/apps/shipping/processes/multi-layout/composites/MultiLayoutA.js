@@ -3,6 +3,7 @@ import { observer as fnObserver } from "mobx-react-lite";
 
 import { Button, i18n } from "@quinscape/automaton-js"
 
+
 const MultiLayoutA = props => {
 
     const { env } = props;
@@ -15,13 +16,11 @@ const MultiLayoutA = props => {
                 }
             </h1>
 
-            <Button
-                transition="back"
-                className="mr-1 btn btn-secondary"
-                text="Back"
-            />
+            <Button transition="back" className="mr-1 btn btn-secondary">
+                Back
+            </Button>
         </React.Fragment>
-    )
+    );
 };
 
 export default fnObserver(MultiLayoutA);

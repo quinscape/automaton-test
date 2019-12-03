@@ -1,8 +1,10 @@
+import { Icon } from "domainql-form"
 import React from "react"
 
 import { observer as fnObserver } from "mobx-react-lite";
 
 import { Button, DataGrid, i18n } from "@quinscape/automaton-js"
+
 
 const SubProcessHome = props => {
 
@@ -14,12 +16,10 @@ const SubProcessHome = props => {
         <div>
             <h1>SubProcessHome</h1>
             <div className="btn-toolbar">
-                <Button
-                    className="btn btn-danger"
-                    icon="fa-close"
-                    text="Close"
-                    transition="close"
-                />
+                <Button className="btn btn-danger" transition="close">
+                    <Icon className="fa-close" />
+                    Close
+                </Button>
             </div>
 
             <DataGrid
@@ -32,13 +32,10 @@ const SubProcessHome = props => {
                     {
                         order => {
                             return (
-                                <Button
-                                    className="btn btn-success"
-                                    icon="fa-clipboard-check"
-                                    text="Choose"
-                                    transition="choose"
-                                    context={ order }
-                                />
+                                <Button className="btn btn-success" transition="choose" context={ order }>
+                                    <Icon className="fa-clipboard-check" />
+                                    Choose
+                                </Button>
                             );
                         }
                     }
@@ -49,7 +46,7 @@ const SubProcessHome = props => {
                 <DataGrid.Column name="owner.login" filter="containsIgnoreCase" heading={ i18n("owner") }/>
             </DataGrid>
         </div>
-    )
+    );
 }
 
 export default fnObserver(SubProcessHome)

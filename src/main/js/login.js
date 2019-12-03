@@ -1,6 +1,6 @@
 import React from "react"
 import bootstrap from "jsview-bootstrap"
-import { Icon } from "@quinscape/automaton-js";
+import { Icon } from "domainql-form";
 
 bootstrap(
     function (initial) {

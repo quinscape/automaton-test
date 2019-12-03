@@ -17,25 +17,19 @@ const MultiLayoutHome = props =>  {
                 }
             </h1>
 
-            <Button
-                transition="to-a"
-                className="mr-1 btn btn-secondary"
-                text="To A"
-            />
-            <Button
-                transition="to-b"
-                className="mr-1 btn btn-secondary"
-                text="To B"
-            />
-            <Button
-                transition="to-c"
-                className="mr-1 btn btn-secondary"
-                text="To C"
-            />
+            <Button transition="to-a" className="mr-1 btn btn-secondary">
+                To A
+            </Button>
+            <Button transition="to-b" className="mr-1 btn btn-secondary">
+                To B
+            </Button>
+            <Button transition="to-c" className="mr-1 btn btn-secondary">
+                To C
+            </Button>
 
             <JSONData name="processLayout" flatten={ true } value={ env.process.options.layout }/>
         </React.Fragment>
-    )
+    );
 };
 
 export default fnObserver(MultiLayoutHome);

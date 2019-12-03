@@ -1,8 +1,7 @@
+import { Addon, Field, GlobalConfig, GlobalErrors, Icon, withForm } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
-import { Button, config, FKSelector, i18n, ScrollTracker, FilterDSL, useAutomatonEnv } from "@quinscape/automaton-js"
-
-import { Field, GlobalErrors, withForm, Addon, GlobalConfig } from "domainql-form"
+import { Button, FilterDSL, FKSelector, i18n, ScrollTracker } from "@quinscape/automaton-js"
 import { ButtonToolbar } from "reactstrap";
 
 import validation from "../../../../../services/validation"
@@ -111,29 +110,23 @@ const QuxMainForm = props => {
             </FKSelector>
 
             <ButtonToolbar>
-                <Button
-                    className="btn btn-primary mr-1"
-                    transition="save"
-                    icon="fa-save mr-1"
-                    text="Save"
-                />
-                <Button
-                    className="btn btn-danger mr-1"
-                    transition="delete"
-                    icon="fa-times mr-1"
-                    text="Delete"
-                />
-                <Button
-                    className="btn btn-secondary mr-1"
-                    transition="cancel"
-                    icon="fa-times mr-1"
-                    text="Cancel"
-                />
+                <Button className="btn btn-primary mr-1" transition="save">
+                    <Icon className="fa-save mr-1" />
+                    Save
+                </Button>
+                <Button className="btn btn-danger mr-1" transition="delete">
+                    <Icon className="fa-times mr-1" />
+                    Delete
+                </Button>
+                <Button className="btn btn-secondary mr-1" transition="cancel">
+                    <Icon className="fa-times mr-1" />
+                    Cancel
+                </Button>
 
             </ButtonToolbar>
 
         </ScrollTracker>
-    )
+    );
 };
 
 export default withForm(

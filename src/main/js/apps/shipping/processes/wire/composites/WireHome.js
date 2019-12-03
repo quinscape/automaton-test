@@ -1,11 +1,12 @@
+import { Icon } from "domainql-form"
 import React from "react"
 import cx from "classnames"
 import { observer as fnObserver } from "mobx-react-lite";
 
-import { i18n, Button } from "@quinscape/automaton-js"
+import { Button, i18n } from "@quinscape/automaton-js"
 import FooList from "../../../../../components/FooList";
 import Calendar from "react-calendar"
-import { ButtonToolbar, Row, Col, Card, CardHeader, CardBody } from "reactstrap";
+import { ButtonToolbar, Card, CardBody, CardHeader, Col, Row } from "reactstrap";
 
 
 const WireHome = props => {
@@ -49,11 +50,11 @@ const WireHome = props => {
                 <ButtonToolbar>
                     <Button
                         className={ cx("btn", scope.mutationResult ? scope.mutationResult.successful ? "btn-success" : "btn-danger" : "btn-primary") }
-                        icon="fa-check"
-                        text="Test Mutation"
                         transition="test-target"
-                        context={ scope.complexList[0] }
-                    />
+                        context={ scope.complexList[0] }>
+                        <Icon className="fa-check" />
+                        Test Mutation
+                    </Button>
                 </ButtonToolbar>
                 {
                     scope.mutationResult && (
@@ -89,7 +90,7 @@ const WireHome = props => {
                 }
             </Col>
         </Row>
-    )
+    );
 };
 
 export default fnObserver(WireHome);

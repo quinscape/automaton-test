@@ -1,7 +1,7 @@
+import { Icon, Select } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { Button, i18n, IQueryGrid as DataGrid } from "@quinscape/automaton-js"
-import { Select } from "domainql-form";
 import Card from "reactstrap/es/Card";
 import CardBody from "reactstrap/es/CardBody";
 
@@ -57,11 +57,11 @@ const DBViewHome = props => {
                         sumPerMonth => (
                             <Button
                                 className="btn btn-secondary text-nowrap disabled"
-                                icon="fa-edit"
-                                text="Detail"
                                 action={ () => null}
-                                disabled={ () => true }
-                            />
+                                disabled={ () => true }>
+                                <Icon className="fa-edit" />
+                                Detail
+                            </Button>
                         )
                     }
                 </DataGrid.Column>
@@ -83,7 +83,7 @@ const DBViewHome = props => {
             </DataGrid>
 
         </React.Fragment>
-    )
+    );
 };
 
 export default fnObserver(DBViewHome);

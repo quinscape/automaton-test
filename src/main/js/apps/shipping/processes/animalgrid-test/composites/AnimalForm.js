@@ -1,8 +1,7 @@
+import { Field, GlobalErrors, Icon, withForm } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { Button, i18n, ScrollTracker } from "@quinscape/automaton-js"
-
-import { Field, GlobalErrors, withForm } from "domainql-form"
 import { ButtonToolbar } from "reactstrap";
 
 
@@ -24,23 +23,19 @@ const AnimalForm = props => {
             <Field name="name"/>
 
             <ButtonToolbar>
-                <Button
-                    className="btn btn-secondary mr-1"
-                    transition="back"
-                    icon="fa-times mr-1"
-                    text="Back"
-                />
-                <Button
-                    className="btn btn-primary mr-1"
-                    transition="save"
-                    icon="fa-times mr-1"
-                    text="Save"
-                />
+                <Button className="btn btn-secondary mr-1" transition="back">
+                    <Icon className="fa-times mr-1" />
+                    Back
+                </Button>
+                <Button className="btn btn-primary mr-1" transition="save">
+                    <Icon className="fa-times mr-1" />
+                    Save
+                </Button>
 
             </ButtonToolbar>
             </ScrollTracker>
         </React.Fragment>
-    )
+    );
 };
 
 export default withForm(

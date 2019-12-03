@@ -1,3 +1,4 @@
+import { Icon } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 
@@ -20,26 +21,20 @@ const ProcessTestHome = props => {
                 }
             </h1>
 
-            <Button
-                transition="open-sub"
-                className="mr-1 btn btn-secondary"
-                icon="fa-subway"
-                text="Open Sub-Process"
-            />
+            <Button transition="open-sub" className="mr-1 btn btn-secondary">
+                <Icon className="fa-subway" />
+                Open Sub-Process
+            </Button>
 
-            <Button
-                transition="open-sub2"
-                className="mr-1 btn btn-secondary"
-                icon="fa-subway"
-                text="Open Customer as Sub"
-            />
+            <Button transition="open-sub2" className="mr-1 btn btn-secondary">
+                <Icon className="fa-subway" />
+                Open Customer as Sub
+            </Button>
 
-            <Button
-                transition="clear"
-                className="mr-1 btn btn-secondary"
-                icon="fa-minus-circle"
-                text="Clear"
-            />
+            <Button transition="clear" className="mr-1 btn btn-secondary">
+                <Icon className="fa-minus-circle" />
+                Clear
+            </Button>
 
 
 
@@ -51,7 +46,7 @@ const ProcessTestHome = props => {
 
 
         </React.Fragment>
-    )
+    );
 };
 
 export default fnObserver(ProcessTestHome);
