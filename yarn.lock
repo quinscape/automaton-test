@@ -791,14 +791,14 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@quinscape/automaton-js@^0.0.28":
-  version "0.0.28"
-  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.0.28.tgz#db49d51f8dd125dbcf54f8095502c7ef12b21196"
-  integrity sha512-VQAkXm97SIu3weZZPlaSYDiuJP2Be4pqBfpfYsjFx7/FHEcHXP1t0djiYjbJVccmdmEsYIfOB1wPW3pb/ekI+A==
+"@quinscape/automaton-js@^0.0.29":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.0.29.tgz#c43dbd5bf553f6bc552d12470583e98eebde95e0"
+  integrity sha512-T2Etknd1+v+O4rxMmxor3hGfySXWngbdiWZG5pQEEN27+pSvlQPZ926eisuvyT7I0PWUeKjw0m5cmjAwEE9kcw==
   dependencies:
     classnames "^2.2.6"
     create-react-class "^15.6.3"
-    domainql-form "^3.0.0"
+    domainql-form "^3.0.1"
     graphql "^14.5.8"
     history "^4.10.1"
     lodash.set "^4.3.2"
@@ -1969,10 +1969,10 @@ domain-browser@^1.1.1:
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
   integrity sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA==
 
-domainql-form@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.0.0.tgz#ce1bda6722cbf1d8502b1c777bfde49e9d8940c7"
-  integrity sha512-l3P+yieub4G5HeKs53S7WslJkdEP6ZzzXm/+V1dQ8LoZk2lqW0sCFNnoFHsilAvi0weA10B9dDRpWkHbu8d8jQ==
+domainql-form@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.0.1.tgz#36554a3dcde03d1951fa9442cc248a1db90d6fc4"
+  integrity sha512-Bax+KlFBHehuEjgipfcSv9Hvj5I1elVYnkaj3/dIEW7aID81zGM/e0ZR57RQ0EIsWBePTwdPwvR3Cug0wHjjqA==
   dependencies:
     classnames "^2.2.5"
     lodash.debounce "^4.0.8"
