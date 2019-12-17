@@ -16,7 +16,7 @@
         "@babel/preset-react": "^7.7.0",
         "@babel/register": "^7.7.0",
         "babel-loader": "^8.0.6",
-        "babel-plugin-automaton": "^0.0.14",
+        "babel-plugin-automaton": "^0.0.15",
         "babel-plugin-espower": "^3.0.1",
         "babel-plugin-track-usage": "^0.3.0",
         "babel-plugin-transform-decorators-legacy": "^1.3.5",
