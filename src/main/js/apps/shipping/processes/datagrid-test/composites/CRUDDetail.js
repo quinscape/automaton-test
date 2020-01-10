@@ -9,7 +9,8 @@ const CRUDDetail = props => {
 
     const [ control, setControl] = useState(() => ({
         ... DEFAULT_OPTIONS,
-        layout: FormLayout.HORIZONTAL
+        layout: FormLayout.HORIZONTAL,
+        isolation: false
     }));
 
     const changeControl = (k, v) => setControl({

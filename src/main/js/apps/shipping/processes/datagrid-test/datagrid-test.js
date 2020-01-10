@@ -1,6 +1,6 @@
 import {
     observable,
-    action
+    action, isObservable
 } from "mobx";
 
 import {
@@ -76,7 +76,7 @@ export function initProcess(process, scope)
                                     {
                                         alert("Could not load Foo with id '" + t.context)
                                     }
-                                    return scope.updateCurrent(iQueryFoo.rows[0]);
+                                    return scope.updateCurrent(config.inputSchema.clone(iQueryFoo.rows[0]));
                                 });
                             }
                         }
