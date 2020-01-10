@@ -1,23 +1,11 @@
-import {
-    observable,
-    action, runInAction
-} from "mobx";
+import { action, observable, runInAction } from "mobx";
 
-import {
-    injection,
-    config,
-    createDomainObject,
-    storeDomainObject,
-    deleteDomainObject,
-    backToParent,
-
-    FilterDSL
-} from "@quinscape/automaton-js";
+import { FilterDSL, injection } from "@quinscape/automaton-js";
 
 import Q_FooList from "../datagrid-test/queries/Q_FooList";
-import report from "../../../../util/report";
 import Q_FooDetail from "../datagrid-test/queries/Q_FooDetail";
 import Q_FooType from "../datagrid-test/queries/Q_FooType";
+import EffectLayout, { registerAppEffect, unregisterAppEffect } from "../../../../components/EffectLayout";
 
 // deconstruct FilterDSL methods
 const { field, value } = FilterDSL;
@@ -52,14 +40,15 @@ export function initProcess(process, scope)
 
     // process config
     process.options.forceSubProcess = true;
+    process.options.layout = EffectLayout;
 
     process.addProcessEffect(
         () => {
-            report("Run process effect for effect-sub-dialog");
+            registerAppEffect("Process:effect-sub-dialog");
 
             return (
                 () => {
-                    report("Cancel process effect for effect-sub-dialog");
+                    unregisterAppEffect("Process:effect-sub-dialog");
                 }
             )
         }
@@ -68,11 +57,11 @@ export function initProcess(process, scope)
     process.addEffect(
         "SubProcessDialogHome",
         () => {
-            report("Run effect for SubProcessDialogHome");
+            registerAppEffect("SubProcessDialogHome");
 
             return (
                 () => {
-                    report("Cancel effect for SubProcessDialogHome");
+                    unregisterAppEffect("SubProcessDialogHome");
                 }
             )
         }
@@ -81,12 +70,12 @@ export function initProcess(process, scope)
     process.addEffect(
         "SubProcessDialogDetail",
         () => {
-            const name = scope.currentFoo && scope.currentFoo.name;
-            report("Run effect for SubProcessDialogDetail for " + name);
+            const name = "SubProcessDialogDetail '" + (scope.currentFoo && scope.currentFoo.name) + "'";
+            registerAppEffect(name);
 
             return (
                 () => {
-                    report("Cancel effect for SubProcessDialogDetail for " + name);
+                    unregisterAppEffect(name);
                 }
             )
         },

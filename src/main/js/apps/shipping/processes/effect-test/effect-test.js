@@ -1,23 +1,18 @@
-import {
-    observable,
-    action, runInAction
-} from "mobx";
+import { action, observable, runInAction } from "mobx";
 
 import {
-    injection,
+    backToParent,
     config,
     createDomainObject,
-    storeDomainObject,
-    deleteDomainObject,
-    backToParent,
-
-    FilterDSL
+    FilterDSL,
+    injection,
+    storeDomainObject
 } from "@quinscape/automaton-js";
 
 import Q_FooList from "../datagrid-test/queries/Q_FooList";
 import Q_FooDetail from "../datagrid-test/queries/Q_FooDetail";
 import Q_FooType from "../datagrid-test/queries/Q_FooType";
-import report from "../../../../util/report";
+import EffectLayout, { registerAppEffect, unregisterAppEffect } from "../../../../components/EffectLayout";
 
 // deconstruct FilterDSL methods
 const { field, value } = FilterDSL;
@@ -53,14 +48,14 @@ export function initProcess(process, scope)
 {
 
     // process config
+    process.options.layout = EffectLayout;
 
     process.addProcessEffect(
         () => {
-            report("Run process effect for effect-test");
-
+            registerAppEffect("Process:effect-test");
             return (
                 () => {
-                    report("Cancel process effect for effect-test");
+                    unregisterAppEffect("Process:effect-test");
                 }
             )
         }
@@ -69,11 +64,11 @@ export function initProcess(process, scope)
     process.addEffect(
         "EffectList",
         () => {
-            report("Run effect for EffectList");
+            registerAppEffect("EffectList");
 
             return (
                 () => {
-                    report("Cancel effect for EffectList");
+                    unregisterAppEffect("EffectList");
                 }
             )
         }
@@ -82,12 +77,14 @@ export function initProcess(process, scope)
     process.addEffect(
         "EffectDetail",
         () => {
-            const name = scope.currentFoo && scope.currentFoo.name;
-            report("Run effect for EffectDetail for " + name);
+            const name = "EffectDetail ' "+ (scope.currentFoo && scope.currentFoo.name) + "'";
+
+            registerAppEffect(name);
+
 
             return (
                 () => {
-                    report("Cancel effect for EffectDetail for " + name);
+                    unregisterAppEffect(name);
                 }
             )
         },

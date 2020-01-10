@@ -1,24 +1,11 @@
-import {
-    observable,
-    action, runInAction
-} from "mobx";
+import { action, observable, runInAction } from "mobx";
 
-import {
-    injection,
-    config,
-    createDomainObject,
-    storeDomainObject,
-    deleteDomainObject,
-    backToParent,
-
-    FilterDSL
-} from "@quinscape/automaton-js";
-
+import { FilterDSL, injection } from "@quinscape/automaton-js";
 
 import Q_FooList from "../datagrid-test/queries/Q_FooList";
-import report from "../../../../util/report";
 import Q_FooDetail from "../datagrid-test/queries/Q_FooDetail";
 import Q_FooType from "../datagrid-test/queries/Q_FooType";
+import EffectLayout, { registerAppEffect, unregisterAppEffect } from "../../../../components/EffectLayout";
 
 // deconstruct FilterDSL methods
 const { field, value } = FilterDSL;
@@ -54,14 +41,16 @@ export function initProcess(process, scope)
     // process config
     process.options.asDialog = false;
     process.options.forceSubProcess = true;
+    process.options.layout = EffectLayout;
+
 
     process.addProcessEffect(
         () => {
-            report("Run process effect for effect-sub-full");
+            registerAppEffect("Process:effect-sub-full");
 
             return (
                 () => {
-                    report("Cancel process effect for effect-sub-full");
+                    unregisterAppEffect("Process:effect-sub-full");
                 }
             )
         }
@@ -70,11 +59,11 @@ export function initProcess(process, scope)
     process.addEffect(
         "SubProcessFullHome",
         () => {
-            report("Run effect for fullscreen SubProcessFullHome");
+            registerAppEffect("SubProcessFullHome");
 
             return (
                 () => {
-                    report("Cancel effect for fullscreen SubProcessFullHome");
+                    unregisterAppEffect("SubProcessFullHome");
                 }
             )
         }
@@ -83,12 +72,12 @@ export function initProcess(process, scope)
     process.addEffect(
         "SubProcessFullDetail",
         () => {
-            const name = scope.currentFoo && scope.currentFoo.name;
-            report("Run effect for SubProcessFullDetail for " + name);
+            const name = "SubProcessFullDetail '" + (scope.currentFoo && scope.currentFoo.name) + "'";
+            registerAppEffect(name);
 
             return (
                 () => {
-                    report("Cancel effect for SubProcessFullDetail for " + name);
+                    unregisterAppEffect(name);
                 }
             )
         },
