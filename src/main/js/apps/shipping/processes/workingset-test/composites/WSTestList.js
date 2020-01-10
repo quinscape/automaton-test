@@ -90,24 +90,27 @@ const WSTestList = props => {
                                 <Button
                                     className="btn btn-secondary btn-sm mr-1 mb-1"
                                     transition="edit-foo"
-                                    context={ foo.id }>
+                                    context={ foo.id }
+                                    text="edit in working set"
+                                >
                                     <Icon className="fa-edit" />
-                                    Edit
                                 </Button>
                                 <Button
                                     className="btn btn-secondary btn-sm mr-1 mb-1"
                                     transition="delete-foo"
-                                    context={ foo }>
+                                    context={ foo }
+                                    text="Delete in working set"
+                                >
                                     <Icon className="fa-trash-alt" />
-                                    Delete
                                 </Button>
                                 <Button
                                     className="btn btn-secondary btn-sm mr-1 mb-1"
                                     disabled={ () => !scope.workingSet.lookup(foo._type, foo.id)}
                                     transition="revert-foo"
-                                    context={ foo }>
+                                    text="Revert changes in working set"
+                                    context={ foo }
+                                >
                                     <Icon className="fa-history" />
-                                    Revert
                                 </Button>
                             </React.Fragment>
                         )
@@ -140,5 +143,7 @@ const WSTestList = props => {
         </React.Fragment>
     );
 };
+
+WSTestList.displayName = "WSTestList";
 
 export default fnObserver(WSTestList);
