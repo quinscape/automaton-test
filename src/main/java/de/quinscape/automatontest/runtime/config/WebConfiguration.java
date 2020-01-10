@@ -2,8 +2,11 @@ package de.quinscape.automatontest.runtime.config;
 
 import de.quinscape.automaton.runtime.config.ScopeTableConfig;
 import de.quinscape.automaton.runtime.i18n.TranslationService;
+import de.quinscape.automaton.runtime.provider.AlternateStyleProvider;
 import de.quinscape.automaton.runtime.provider.AutomatonJsViewProvider;
 import de.quinscape.automaton.runtime.provider.ProcessInjectionService;
+import de.quinscape.automaton.runtime.provider.StyleSheetDefinition;
+import de.quinscape.automaton.runtime.provider.StyleSheetSelector;
 import de.quinscape.automaton.runtime.ws.AutomatonWebSocketHandler;
 import de.quinscape.automatontest.model.ValidationRules;
 import de.quinscape.domainql.DomainQL;
@@ -12,6 +15,7 @@ import de.quinscape.spring.jsview.JsViewResolver;
 import de.quinscape.spring.jsview.loader.ResourceHandle;
 import de.quinscape.spring.jsview.loader.ResourceLoader;
 import graphql.schema.GraphQLSchema;
+import org.apache.commons.collections.ArrayStack;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -24,6 +28,7 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.ServletContext;
+import java.util.Arrays;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
@@ -86,7 +91,7 @@ public class WebConfiguration
     {
         final GraphQLSchema graphQLSchema = domainQL.getGraphQLSchema();
         registry.viewResolver(
-            JsViewResolver.newResolver(servletContext, "WEB-INF/template.html")
+            JsViewResolver.newResolver(servletContext, "WEB-INF/template-alternate-styles.html")
                 .withResourceLoader(resourceLoader)
 
                 // Process injections and general miscellaneous data we would normally
@@ -99,6 +104,16 @@ public class WebConfiguration
                         translationService,
                         automatonTestWebSocketHandler,
                         scopeTableConfig
+                    )
+                )
+
+                .withViewDataProvider(
+                    new AlternateStyleProvider(
+                        servletContext.getContextPath(),
+                        Arrays.asList(
+                            new StyleSheetDefinition("QS", "/css/bootstrap-automaton.min.css"),
+                            new StyleSheetDefinition("QS condensed", "/css/bootstrap-automaton-condensed.min.css")
+                        )
                     )
                 )
 
