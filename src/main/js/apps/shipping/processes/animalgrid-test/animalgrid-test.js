@@ -93,7 +93,7 @@ export default class AnimalGridTestScope {
                     queryConfig{
                         id
                         condition
-                        currentPage
+                        offset
                         pageSize
                         sortFields
                     }

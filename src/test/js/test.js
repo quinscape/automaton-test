@@ -19,7 +19,7 @@ describe("Test", function () {
                         }
                     queryConfig{
                         condition
-                        currentPage
+                        offset
                         pageSize
                         sortFields
                     }

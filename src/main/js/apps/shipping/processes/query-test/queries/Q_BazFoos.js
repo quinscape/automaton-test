@@ -17,7 +17,7 @@ export default query(
             queryConfig{
                 id
                 condition
-                currentPage
+                offset
                 pageSize
                 sortFields
             }

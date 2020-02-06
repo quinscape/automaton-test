@@ -1,6 +1,5 @@
 body
 {
-    overflow: scroll;
 }
 
 .brand-icon
@@ -57,3 +56,101 @@ body
 {
     color: #888 !important;
 }
+
+/*ul.tree-widget*/
+/*{*/
+/*    max-height: 81vh;*/
+/*    overflow: auto;*/
+/*}*/
+
+ul.tree-widget,ul.tree-widget ul
+{
+    list-style: none;
+    padding: 0;
+}
+
+ul.tree-widget .dropdown
+{
+    display: inline-block;
+}
+
+ul.tree-widget button.caret
+{
+    align-items: flex-start;
+}
+
+ul.tree-widget .header
+{
+    display: inline-block;
+}
+
+ul.tree-widget .caret
+{
+    position: relative;
+    width: 3ex;
+}
+
+ul.tree-widget li:focus
+{
+    outline: 0;
+}
+
+ul.tree-widget .focus
+{
+    background: var(--light);
+}
+
+ul.tree-widget:focus-within .focus
+{
+    background: var(--primary);
+    color: var(--white);
+    outline: 1px dotted #212121;
+}
+
+ul.tree-widget .caret i
+{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 4px;
+}
+
+
+ul.tree-widget button.caret:focus
+{
+    color: var(--info);
+
+}
+
+ul.tree-widget button.caret:hover
+{
+    color: var(--info);
+    background: rgba(59, 58, 58, 0.1);
+
+}
+
+ul.tree-widget .focus .btn-link
+{
+    color: var(--white);
+
+}
+
+/*
+ul.tree-widget .dropdown-item
+{
+    padding: 0.125rem 0.25rem;
+    font-size: 0.7875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem; 
+}
+*/
+
+/** Replace with sass original for theme */
+ul.tree-widget:focus-within {
+    color: #595959;
+    background-color: #ffffff;
+    border-color: #3658fd;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(2, 32, 177, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(2, 32, 177, 0.25); }
+

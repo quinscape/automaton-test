@@ -1,7 +1,7 @@
 import "whatwg-fetch"
 import bootstrap from 'jsview-bootstrap'
 import { configure, observable, runInAction, toJS } from "mobx"
-import { startup, config, getCurrentProcess, addConfig, shutdown, InteractiveQuery } from "@quinscape/automaton-js"
+import { startup, config, getCurrentProcess, addConfig, shutdown, pickSchemaTypes } from "@quinscape/automaton-js"
 import Layout from "../../components/Layout";
 
 // noinspection ES6UnusedImports
@@ -35,5 +35,6 @@ export default {
     currentProcess: getCurrentProcess,
     runInAction,
     shutdown,
+    pickSchemaTypes,
     toJS
 };

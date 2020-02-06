@@ -81,7 +81,7 @@ export default class DBViewProcess {
                 queryConfig{
                     id
                     condition
-                    currentPage
+                    offset
                     pageSize
                     sortFields
                 }

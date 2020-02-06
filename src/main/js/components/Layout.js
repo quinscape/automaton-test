@@ -1,6 +1,6 @@
 import React, { useReducer } from "react"
 
-import { AutomatonDevTools, LogoutForm, StyleSwitcher } from "@quinscape/automaton-js"
+import { LogoutForm, StyleSwitcher } from "@quinscape/automaton-js"
 
 import {
     Collapse,
@@ -55,7 +55,6 @@ const Layout = props => {
                 <StyleSwitcher/>
                 <LogoutForm/>
             </div>
-            <AutomatonDevTools/>
         </Container>
     );
 };

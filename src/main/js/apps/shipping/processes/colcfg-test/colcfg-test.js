@@ -41,7 +41,7 @@ export default class ColumnConfigTestScope {
                 queryConfig{
                     id
                     condition
-                    currentPage
+                    offset
                     pageSize
                     sortFields
                 }

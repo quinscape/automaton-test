@@ -1,4 +1,28 @@
+import { field, not, value, and, component } from "@quinscape/automaton-js/lib/FilterDSL"
 
-global._DEV = true;
 
-import { FilterDSL } from "@quinscape/automaton-js"
+console.log(
+    JSON.stringify(
+        and(
+            component(null,
+                and(
+                    not(
+                        field("type").eq(
+                            value(
+                                "Integer",
+                                2
+                            )
+                        )
+                    ),
+                    field("name").lt(
+                        value("String", "h")
+                    )
+                )
+            )
+        ),
+        null,
+        4
+    )
+)
+
+

@@ -84,7 +84,7 @@ export default class ExternalDataGridFilterTestScope {
                     queryConfig{
                         id
                         condition
-                        currentPage
+                        offset
                         pageSize
                         sortFields
                     }

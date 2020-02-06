@@ -21,6 +21,7 @@ import de.quinscape.automatontest.domain.tables.pojos.QuxC;
 import de.quinscape.automatontest.domain.tables.pojos.QuxD;
 import de.quinscape.automatontest.domain.tables.pojos.QuxMain;
 import de.quinscape.automatontest.domain.tables.pojos.SumPerMonth;
+import de.quinscape.domainql.DomainQL;
 import de.quinscape.domainql.annotation.GraphQLLogic;
 import de.quinscape.domainql.annotation.GraphQLMutation;
 import de.quinscape.domainql.annotation.GraphQLQuery;
@@ -28,16 +29,20 @@ import de.quinscape.domainql.annotation.GraphQLTypeParam;
 import de.quinscape.domainql.jsonb.JSONB;
 import graphql.schema.DataFetchingEnvironment;
 import org.jooq.DSLContext;
+import org.jooq.Field;
+import org.jooq.Table;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 
 import javax.validation.constraints.NotNull;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-import static org.jooq.impl.DSL.and;
+import static org.jooq.impl.DSL.*;
 import static de.quinscape.automatontest.domain.Tables.*;
 
 @GraphQLLogic
@@ -46,15 +51,20 @@ public class DataGridLogic
     private final static Logger log = LoggerFactory.getLogger(DataGridLogic.class);
 
     private final DSLContext dslContext;
+
+    private final DomainQL domainQL;
+
     private final InteractiveQueryService interactiveQueryService;
 
     @Autowired
     public DataGridLogic(
         DSLContext dslContext,
+        @Lazy DomainQL domainQL,
         InteractiveQueryService interactiveQueryService
     )
     {
         this.dslContext = dslContext;
+        this.domainQL = domainQL;
         this.interactiveQueryService = interactiveQueryService;
     }
 
@@ -213,4 +223,5 @@ public class DataGridLogic
 
         return pojo != null ? pojo.getColumns() : null;
     }
+
 }

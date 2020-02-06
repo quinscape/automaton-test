@@ -416,6 +416,8 @@ type Node {
     name: String!
     "Target of 'parent_id'"
     parent: Node
+    "DB column 'type'"
+    type: Int!
 }
 
 "Generated for de.quinscape.domainql.util.Paged<Foo>"
@@ -428,10 +430,10 @@ type PagedFoo {
 type QueryConfig {
     "FilterDSL condition graph or null"
     condition: Condition
-    "Current page within the paginated results"
-    currentPage: Int
     "Optional unique query identifier. Useful for server-side query implementations."
     id: String
+    "Current offset within the paginated results. The number of rows to skip in the results."
+    offset: Int
     "Maximum number of paginated results.,"
     pageSize: Int
     "Current sort order for the query."
@@ -440,6 +442,7 @@ type QueryConfig {
 
 "Auto-generated from DataGridLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type QueryType {
+    getDomainTypeIndex(condition: Condition, domainType: String!, field: String!): [String]
     getFoos(limit: Int = 10, offset: Int = 0): PagedFoo
     "Queries AppUser objects based on the given query config"
     iQueryAppUser(config: QueryConfigInput!): InteractiveQueryAppUser
@@ -634,16 +637,17 @@ input NodeInput {
     id: String!
     name: String!
     parentId: String
+    type: Int!
 }
 
 "Encapsulates all parameters of an interactive query."
 input QueryConfigInput {
     "FilterDSL condition graph or null"
     condition: Condition
-    "Current page within the paginated results"
-    currentPage: Int
     "Optional unique query identifier. Useful for server-side query implementations."
     id: String
+    "Current offset within the paginated results. The number of rows to skip in the results."
+    offset: Int
     "Maximum number of paginated results.,"
     pageSize: Int
     "Current sort order for the query."
