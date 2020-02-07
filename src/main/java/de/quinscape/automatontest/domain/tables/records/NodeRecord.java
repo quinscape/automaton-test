@@ -17,8 +17,8 @@ import javax.validation.constraints.Size;
 
 import org.jooq.Field;
 import org.jooq.Record1;
-import org.jooq.Record3;
-import org.jooq.Row3;
+import org.jooq.Record4;
+import org.jooq.Row4;
 import org.jooq.impl.UpdatableRecordImpl;
 
 
@@ -38,9 +38,9 @@ import org.jooq.impl.UpdatableRecordImpl;
     @Index(name = "pk_node", unique = true, columnList = "id ASC"),
     @Index(name = "uc_node_name", unique = true, columnList = "name ASC")
 })
-public class NodeRecord extends UpdatableRecordImpl<NodeRecord> implements Record3<String, String, String> {
+public class NodeRecord extends UpdatableRecordImpl<NodeRecord> implements Record4<String, String, String, Integer> {
 
-    private static final long serialVersionUID = 1217299129;
+    private static final long serialVersionUID = -77601526;
 
     /**
      * Setter for <code>public.node.id</code>.
@@ -93,6 +93,22 @@ public class NodeRecord extends UpdatableRecordImpl<NodeRecord> implements Recor
         return (String) get(2);
     }
 
+    /**
+     * Setter for <code>public.node.type</code>.
+     */
+    public void setType(Integer value) {
+        set(3, value);
+    }
+
+    /**
+     * Getter for <code>public.node.type</code>.
+     */
+    @Column(name = "type", nullable = false, precision = 32)
+    @NotNull
+    public Integer getType() {
+        return (Integer) get(3);
+    }
+
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -106,23 +122,23 @@ public class NodeRecord extends UpdatableRecordImpl<NodeRecord> implements Recor
     }
 
     // -------------------------------------------------------------------------
-    // Record3 type implementation
+    // Record4 type implementation
     // -------------------------------------------------------------------------
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Row3<String, String, String> fieldsRow() {
-        return (Row3) super.fieldsRow();
+    public Row4<String, String, String, Integer> fieldsRow() {
+        return (Row4) super.fieldsRow();
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Row3<String, String, String> valuesRow() {
-        return (Row3) super.valuesRow();
+    public Row4<String, String, String, Integer> valuesRow() {
+        return (Row4) super.valuesRow();
     }
 
     /**
@@ -153,6 +169,14 @@ public class NodeRecord extends UpdatableRecordImpl<NodeRecord> implements Recor
      * {@inheritDoc}
      */
     @Override
+    public Field<Integer> field4() {
+        return Node.NODE.TYPE;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public String component1() {
         return getId();
     }
@@ -177,6 +201,14 @@ public class NodeRecord extends UpdatableRecordImpl<NodeRecord> implements Recor
      * {@inheritDoc}
      */
     @Override
+    public Integer component4() {
+        return getType();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public String value1() {
         return getId();
     }
@@ -195,6 +227,14 @@ public class NodeRecord extends UpdatableRecordImpl<NodeRecord> implements Recor
     @Override
     public String value3() {
         return getParentId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Integer value4() {
+        return getType();
     }
 
     /**
@@ -228,10 +268,20 @@ public class NodeRecord extends UpdatableRecordImpl<NodeRecord> implements Recor
      * {@inheritDoc}
      */
     @Override
-    public NodeRecord values(String value1, String value2, String value3) {
+    public NodeRecord value4(Integer value) {
+        setType(value);
+        return this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public NodeRecord values(String value1, String value2, String value3, Integer value4) {
         value1(value1);
         value2(value2);
         value3(value3);
+        value4(value4);
         return this;
     }
 
@@ -249,11 +299,12 @@ public class NodeRecord extends UpdatableRecordImpl<NodeRecord> implements Recor
     /**
      * Create a detached, initialised NodeRecord
      */
-    public NodeRecord(String id, String name, String parentId) {
+    public NodeRecord(String id, String name, String parentId, Integer type) {
         super(Node.NODE);
 
         set(0, id);
         set(1, name);
         set(2, parentId);
+        set(3, type);
     }
 }

@@ -39,7 +39,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Node extends TableImpl<NodeRecord> {
 
-    private static final long serialVersionUID = -1477899447;
+    private static final long serialVersionUID = 1901009669;
 
     /**
      * The reference instance of <code>public.node</code>
@@ -68,6 +68,11 @@ public class Node extends TableImpl<NodeRecord> {
      * The column <code>public.node.parent_id</code>.
      */
     public final TableField<NodeRecord, String> PARENT_ID = createField("parent_id", org.jooq.impl.SQLDataType.VARCHAR(36), this, "");
+
+    /**
+     * The column <code>public.node.type</code>.
+     */
+    public final TableField<NodeRecord, Integer> TYPE = createField("type", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
      * Create a <code>public.node</code> table reference

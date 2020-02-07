@@ -36,11 +36,12 @@ import javax.validation.constraints.Size;
 })
 public class Node extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = 173061356;
+    private static final long serialVersionUID = -76373292;
 
-    private String id;
-    private String name;
-    private String parentId;
+    private String  id;
+    private String  name;
+    private String  parentId;
+    private Integer type;
 
     public Node() {}
 
@@ -48,16 +49,19 @@ public class Node extends GeneratedDomainObject implements Serializable {
         this.id = value.id;
         this.name = value.name;
         this.parentId = value.parentId;
+        this.type = value.type;
     }
 
     public Node(
-        String id,
-        String name,
-        String parentId
+        String  id,
+        String  name,
+        String  parentId,
+        Integer type
     ) {
         this.id = id;
         this.name = name;
         this.parentId = parentId;
+        this.type = type;
     }
 
     @Id
@@ -93,6 +97,16 @@ public class Node extends GeneratedDomainObject implements Serializable {
         this.parentId = parentId;
     }
 
+    @Column(name = "type", nullable = false, precision = 32)
+    @NotNull
+    public Integer getType() {
+        return this.type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Node (");
@@ -100,6 +114,7 @@ public class Node extends GeneratedDomainObject implements Serializable {
         sb.append(id);
         sb.append(", ").append(name);
         sb.append(", ").append(parentId);
+        sb.append(", ").append(type);
 
         sb.append(")");
         return sb.toString();
