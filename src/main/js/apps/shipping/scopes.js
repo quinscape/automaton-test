@@ -3,8 +3,6 @@ import {
     observable
 } from "mobx";
 
-import { type } from "@quinscape/automaton-js"
-
 export class AppScope
 {
     @observable value = "foo";
