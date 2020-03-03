@@ -1,12 +1,18 @@
 package de.quinscape.automatontest.runtime.config;
 
+import com.google.common.collect.ImmutableMap;
 import de.quinscape.automaton.runtime.domain.IdGenerator;
-import de.quinscape.automaton.runtime.domain.SequenceIdGenerator;
 import de.quinscape.automaton.runtime.domain.UUIDGenerator;
 import de.quinscape.automaton.runtime.domain.op.BatchStoreOperation;
 import de.quinscape.automaton.runtime.domain.op.DefaultBatchStoreOperation;
 import de.quinscape.automaton.runtime.domain.op.DefaultStoreOperation;
 import de.quinscape.automaton.runtime.domain.op.StoreOperation;
+import de.quinscape.automaton.runtime.filter.JavaFilterTransformer;
+import de.quinscape.automaton.runtime.pubsub.DefaultPubSubService;
+import de.quinscape.automaton.runtime.pubsub.PubSubMessageHandler;
+import de.quinscape.automaton.runtime.pubsub.PubSubService;
+import de.quinscape.automaton.runtime.ws.AutomatonWebSocketHandler;
+import de.quinscape.automaton.runtime.ws.DefaultAutomatonWebSocketHandler;
 import de.quinscape.automatontest.model.ValidationRules;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.spring.jsview.loader.FileResourceLoader;
@@ -25,6 +31,8 @@ import org.springframework.util.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
 
 @Configuration
 public class ServiceConfiguration
@@ -90,5 +98,26 @@ public class ServiceConfiguration
             dslContext,
             domainQL
         );
+    }
+
+
+    @Bean
+    public AutomatonWebSocketHandler automatonWebSocketHandler(
+        PubSubService pubSubService,
+        JavaFilterTransformer javaFilterTransformer,
+        @Lazy DomainQL domainQL
+    )
+    {
+        return new DefaultAutomatonWebSocketHandler(
+            Collections.singletonList(
+                new PubSubMessageHandler(domainQL, pubSubService, javaFilterTransformer)
+            )
+        );
+    }
+
+    @Bean
+    public PubSubService topicService()
+    {
+        return new DefaultPubSubService();
     }
 }
