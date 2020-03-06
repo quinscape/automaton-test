@@ -106,9 +106,9 @@ const TreeLayout = fnObserver( props => {
             </Navbar>
             <Row>
                 <Col md={ 3 }>
-                    <h1 id="animal-tree-title" className="sr-only">Animals</h1>
                     <Tree
-                        id="animal-tree" aria-labelledby="animal-tree-title">
+                        id="animal-tree"
+                    >
                         {
                             scope.useIndex ? (
                                 <Tree.IndexedObjects
