@@ -129,10 +129,14 @@ ul.tree-widget button.caret:hover
 
 }
 
-ul.tree-widget .focus .btn-link
+ul.tree-widget:focus-within .focus .btn-link
 {
     color: var(--white);
+}
 
+ul.tree-widget .focus .btn-link
+{
+    color: var(--dark);
 }
 
 /*
