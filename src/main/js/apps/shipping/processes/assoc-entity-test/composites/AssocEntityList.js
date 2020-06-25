@@ -32,7 +32,6 @@ const AssocEntityList = props => {
                         val => field("baz.name")
                             .containsIgnoreCase(
                                 value(
-                                    "String",
                                     val
                                 )
                             )
@@ -56,7 +55,6 @@ const AssocEntityList = props => {
                         val => field("value.name")
                             .containsIgnoreCase(
                                 value(
-                                    "String",
                                     val
                                 )
                             )

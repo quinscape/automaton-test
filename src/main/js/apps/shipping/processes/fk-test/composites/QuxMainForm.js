@@ -86,14 +86,12 @@ const QuxMainForm = props => {
                         field("id")
                             .startsWith(
                                 value(
-                                    "String",
                                     val
                                 )
                             ),
                         field("name")
                             .startsWith(
                                 value(
-                                    "String",
                                     val
                                 )
                             )

@@ -18,7 +18,6 @@ function updateDetail(scope, id)
                 field("id")
                     .eq(
                         value(
-                            "String",
                             id
                         )
                     )

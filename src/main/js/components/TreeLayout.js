@@ -192,7 +192,6 @@ const TreeLayout = fnObserver( props => {
                                                         config: {
                                                             condition: field("bazId").eq(
                                                                 value(
-                                                                    "String",
                                                                     row.id
                                                                 )
                                                             )

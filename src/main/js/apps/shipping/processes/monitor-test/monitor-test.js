@@ -14,14 +14,12 @@ import {
     FilterDSL
 } from "@quinscape/automaton-js";
 
-import Q_FooType from "./queries/Q_FooType";
-import Q_FooDetail from "./queries/Q_FooDetail";
-import Q_FooList from "./queries/Q_FooList";
-
+import Q_FooType from "../datagrid-test/queries/Q_FooType"
+import Q_FooDetail from "../datagrid-test/queries/Q_FooDetail"
+import Q_FooList from "../datagrid-test/queries/Q_FooList"
 
 // deconstruct FilterDSL methods
 const { field, value } = FilterDSL;
-
 
 // noinspection JSUnusedGlobalSymbols
 export function initProcess(process, scope)
@@ -119,7 +117,7 @@ export function initProcess(process, scope)
     );
 }
 
-export default class CRUDTestScope {
+export default class MonitorTestScope {
 
     @observable
     currentFoo = null;

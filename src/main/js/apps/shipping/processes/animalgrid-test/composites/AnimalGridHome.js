@@ -44,14 +44,12 @@ const AnimalGridHome = props => {
                                 field("name")
                                     .containsIgnoreCase(
                                         value(
-                                            "String",
                                             "b"
                                         )
                                     ),
                                 field("parent.name")
                                     .containsIgnoreCase(
                                         value(
-                                            "String",
                                             "Fish"
                                         )
                                     )

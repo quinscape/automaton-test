@@ -22,7 +22,7 @@ import Q_BazValueDetail from "./queries/Q_BazValueDetail";
 
 
 // deconstruct FilterDSL methods
-const { field, value } = FilterDSL;
+const { field, value, and, or, not } = FilterDSL;
 
 
 // noinspection JSUnusedGlobalSymbols
@@ -67,7 +67,7 @@ export function initProcess(process, scope)
                                     condition:
                                         field("id")
                                             .eq(
-                                                value("String", t.context)
+                                                value(t.context)
                                             )
                                 }
                             }).then(
@@ -87,7 +87,7 @@ export function initProcess(process, scope)
                                     condition:
                                         field("id")
                                             .eq(
-                                                value("String", t.context)
+                                                value(t.context)
                                             )
                                 }
                             }).then(

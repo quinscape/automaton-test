@@ -29,11 +29,9 @@ const ExtFilterHome = props => {
                     // create new filter condition for filter value
                     field("created").between(
                         value(
-                            "Timestamp",
                             scope.externalFilter.minCreated
                         ),
                         value(
-                            "Timestamp",
                             scope.externalFilter.maxCreated
                         )
                     )
@@ -125,11 +123,9 @@ const ExtFilterHome = props => {
                             )
                             .between(
                                 value(
-                                    "Int",
                                     min
                                 ),
                                 value(
-                                    "Int",
                                     max
                                 )
                             )
