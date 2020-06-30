@@ -9,7 +9,11 @@ import de.quinscape.automatontest.runtime.config.WebConfiguration;
 import de.quinscape.automaton.runtime.config.WebsocketConfiguration;
 import de.quinscape.automatontest.runtime.controller.JsEntryPointController;
 import de.quinscape.automatontest.runtime.service.ShippingLogic;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -51,6 +55,17 @@ public class AutomatonTestApplication
     implements ApplicationContextAware
 {
     private ApplicationContext applicationContext;
+
+    private final static Logger log = LoggerFactory.getLogger(AutomatonTestApplication.class);
+
+
+    @Autowired
+    public void setConfigFileLocation(
+        @Value("automatontest-${spring.profiles.active}.properties") String config
+    )
+    {
+        log.info("Using configuration from {}", config);
+    }
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application)
