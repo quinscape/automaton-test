@@ -10,10 +10,15 @@ import de.quinscape.automatontest.domain.tables.AppLogin;
 import de.quinscape.automatontest.domain.tables.AppTranslation;
 import de.quinscape.automatontest.domain.tables.AppUser;
 import de.quinscape.automatontest.domain.tables.AppUserConfig;
+import de.quinscape.automatontest.domain.tables.AppVersion;
 import de.quinscape.automatontest.domain.tables.Bar;
 import de.quinscape.automatontest.domain.tables.Baz;
 import de.quinscape.automatontest.domain.tables.BazLink;
 import de.quinscape.automatontest.domain.tables.BazValue;
+import de.quinscape.automatontest.domain.tables.Corge;
+import de.quinscape.automatontest.domain.tables.CorgeAssoc;
+import de.quinscape.automatontest.domain.tables.CorgeLink;
+import de.quinscape.automatontest.domain.tables.CorgeType;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
 import de.quinscape.automatontest.domain.tables.GridColumns;
@@ -72,6 +77,11 @@ public class Tables {
     public static final AppUserConfig APP_USER_CONFIG = de.quinscape.automatontest.domain.tables.AppUserConfig.APP_USER_CONFIG;
 
     /**
+     * The table <code>public.app_version</code>.
+     */
+    public static final AppVersion APP_VERSION = de.quinscape.automatontest.domain.tables.AppVersion.APP_VERSION;
+
+    /**
      * The table <code>public.bar</code>.
      */
     public static final Bar BAR = de.quinscape.automatontest.domain.tables.Bar.BAR;
@@ -90,6 +100,26 @@ public class Tables {
      * The table <code>public.baz_value</code>.
      */
     public static final BazValue BAZ_VALUE = de.quinscape.automatontest.domain.tables.BazValue.BAZ_VALUE;
+
+    /**
+     * The table <code>public.corge</code>.
+     */
+    public static final Corge CORGE = de.quinscape.automatontest.domain.tables.Corge.CORGE;
+
+    /**
+     * The table <code>public.corge_assoc</code>.
+     */
+    public static final CorgeAssoc CORGE_ASSOC = de.quinscape.automatontest.domain.tables.CorgeAssoc.CORGE_ASSOC;
+
+    /**
+     * The table <code>public.corge_link</code>.
+     */
+    public static final CorgeLink CORGE_LINK = de.quinscape.automatontest.domain.tables.CorgeLink.CORGE_LINK;
+
+    /**
+     * The table <code>public.corge_type</code>.
+     */
+    public static final CorgeType CORGE_TYPE = de.quinscape.automatontest.domain.tables.CorgeType.CORGE_TYPE;
 
     /**
      * The table <code>public.foo</code>.

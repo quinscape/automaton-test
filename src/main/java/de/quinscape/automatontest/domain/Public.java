@@ -10,10 +10,15 @@ import de.quinscape.automatontest.domain.tables.AppLogin;
 import de.quinscape.automatontest.domain.tables.AppTranslation;
 import de.quinscape.automatontest.domain.tables.AppUser;
 import de.quinscape.automatontest.domain.tables.AppUserConfig;
+import de.quinscape.automatontest.domain.tables.AppVersion;
 import de.quinscape.automatontest.domain.tables.Bar;
 import de.quinscape.automatontest.domain.tables.Baz;
 import de.quinscape.automatontest.domain.tables.BazLink;
 import de.quinscape.automatontest.domain.tables.BazValue;
+import de.quinscape.automatontest.domain.tables.Corge;
+import de.quinscape.automatontest.domain.tables.CorgeAssoc;
+import de.quinscape.automatontest.domain.tables.CorgeLink;
+import de.quinscape.automatontest.domain.tables.CorgeType;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
 import de.quinscape.automatontest.domain.tables.GridColumns;
@@ -49,7 +54,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = -2046957608;
+    private static final long serialVersionUID = -1837053552;
 
     /**
      * The reference instance of <code>public</code>
@@ -87,6 +92,11 @@ public class Public extends SchemaImpl {
     public final AppUserConfig APP_USER_CONFIG = de.quinscape.automatontest.domain.tables.AppUserConfig.APP_USER_CONFIG;
 
     /**
+     * The table <code>public.app_version</code>.
+     */
+    public final AppVersion APP_VERSION = de.quinscape.automatontest.domain.tables.AppVersion.APP_VERSION;
+
+    /**
      * The table <code>public.bar</code>.
      */
     public final Bar BAR = de.quinscape.automatontest.domain.tables.Bar.BAR;
@@ -105,6 +115,26 @@ public class Public extends SchemaImpl {
      * The table <code>public.baz_value</code>.
      */
     public final BazValue BAZ_VALUE = de.quinscape.automatontest.domain.tables.BazValue.BAZ_VALUE;
+
+    /**
+     * The table <code>public.corge</code>.
+     */
+    public final Corge CORGE = de.quinscape.automatontest.domain.tables.Corge.CORGE;
+
+    /**
+     * The table <code>public.corge_assoc</code>.
+     */
+    public final CorgeAssoc CORGE_ASSOC = de.quinscape.automatontest.domain.tables.CorgeAssoc.CORGE_ASSOC;
+
+    /**
+     * The table <code>public.corge_link</code>.
+     */
+    public final CorgeLink CORGE_LINK = de.quinscape.automatontest.domain.tables.CorgeLink.CORGE_LINK;
+
+    /**
+     * The table <code>public.corge_type</code>.
+     */
+    public final CorgeType CORGE_TYPE = de.quinscape.automatontest.domain.tables.CorgeType.CORGE_TYPE;
 
     /**
      * The table <code>public.foo</code>.
@@ -187,10 +217,15 @@ public class Public extends SchemaImpl {
             AppTranslation.APP_TRANSLATION,
             AppUser.APP_USER,
             AppUserConfig.APP_USER_CONFIG,
+            AppVersion.APP_VERSION,
             Bar.BAR,
             Baz.BAZ,
             BazLink.BAZ_LINK,
             BazValue.BAZ_VALUE,
+            Corge.CORGE,
+            CorgeAssoc.CORGE_ASSOC,
+            CorgeLink.CORGE_LINK,
+            CorgeType.CORGE_TYPE,
             Foo.FOO,
             FooType.FOO_TYPE,
             GridColumns.GRID_COLUMNS,

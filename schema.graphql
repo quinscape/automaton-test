@@ -87,6 +87,26 @@ type AppUserConfig {
     userId: String!
 }
 
+"Stores merge version metadata"
+type AppVersion {
+    "Timestamp when the version was created"
+    created: Timestamp!
+    "DB column 'entity_id'"
+    entityId: String!
+    "DB column 'entity_type'"
+    entityType: String!
+    "DB column 'field_mask'"
+    fieldMask: BigInteger!
+    "Id of the version. Is the same as the version field in the entity."
+    id: String!
+    "Target of 'owner_id'"
+    owner: AppUser!
+    "DB foreign key column 'owner_id'"
+    ownerId: String!
+    "DB column 'prev'"
+    prev: String
+}
+
 "Domain object used in ext-filter-test. Generated from public.bar in the database dump."
 type Bar {
     "DB column 'created'"
@@ -147,6 +167,85 @@ type ColumnState {
     name: String
     "True if the column is sortable."
     sortable: Boolean
+}
+
+"Type complex used in merge-test"
+type Corge {
+    "Many-to-many objects from corge_link.corge_id"
+    corgeLinks: [CorgeLink]!
+    "DB column 'created'"
+    created: Timestamp!
+    "DB column 'description'"
+    description: String
+    "DB column 'flag'"
+    flag: Boolean!
+    "DB column 'id'"
+    id: String!
+    "DB column 'modified'"
+    modified: Timestamp!
+    "DB column 'name'"
+    name: String!
+    "DB column 'num'"
+    num: Int!
+    "DB column 'num2'"
+    num2: Int
+    "Target of 'owner_id'"
+    owner: AppUser!
+    "DB foreign key column 'owner_id'"
+    ownerId: String!
+    "Target of 'type_id'"
+    type: CorgeType!
+    "DB column 'type2'"
+    type2: String!
+    "DB foreign key column 'type_id'"
+    typeId: String!
+    "DB column 'version'"
+    version: String!
+}
+
+"Many-to-many associated type to Corge"
+type CorgeAssoc {
+    "DB column 'description'"
+    description: String
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "DB column 'num'"
+    num: Int!
+    "DB column 'version'"
+    version: String!
+}
+
+"Many-to-many link type between Corge and CorgeAssoc"
+type CorgeLink {
+    "Target of 'assoc_id'"
+    assoc: CorgeAssoc!
+    "DB foreign key column 'assoc_id'"
+    assocId: String!
+    "Target of 'corge_id'"
+    corge: Corge!
+    "DB foreign key column 'corge_id'"
+    corgeId: String!
+    "DB column 'id'"
+    id: String!
+    "DB column 'version'"
+    version: String!
+}
+
+"Type of Corges, connected via relation"
+type CorgeType {
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+}
+
+"Reference to a specific entity or entity version"
+type EntityReference {
+    id: GenericScalar!
+    type: String!
+    version: String
 }
 
 "Generic domain object. Used as target in datagrid-test. Generated from public.foo in the database dump."
@@ -258,6 +357,62 @@ type InteractiveQueryBazValue {
     "List with current rows of BazValue."
     rows: [BazValue]
     "Name of payload type (always 'BazValue')"
+    type: String
+}
+
+"Interactive Query with Corge payload."
+type InteractiveQueryCorge {
+    "Column states for the current result."
+    columnStates: [ColumnState]
+    "Query configuration the current result was produced with."
+    queryConfig: QueryConfig
+    "Total row count available."
+    rowCount: Int
+    "List with current rows of Corge."
+    rows: [Corge]
+    "Name of payload type (always 'Corge')"
+    type: String
+}
+
+"Interactive Query with CorgeAssoc payload."
+type InteractiveQueryCorgeAssoc {
+    "Column states for the current result."
+    columnStates: [ColumnState]
+    "Query configuration the current result was produced with."
+    queryConfig: QueryConfig
+    "Total row count available."
+    rowCount: Int
+    "List with current rows of CorgeAssoc."
+    rows: [CorgeAssoc]
+    "Name of payload type (always 'CorgeAssoc')"
+    type: String
+}
+
+"Interactive Query with CorgeLink payload."
+type InteractiveQueryCorgeLink {
+    "Column states for the current result."
+    columnStates: [ColumnState]
+    "Query configuration the current result was produced with."
+    queryConfig: QueryConfig
+    "Total row count available."
+    rowCount: Int
+    "List with current rows of CorgeLink."
+    rows: [CorgeLink]
+    "Name of payload type (always 'CorgeLink')"
+    type: String
+}
+
+"Interactive Query with CorgeType payload."
+type InteractiveQueryCorgeType {
+    "Column states for the current result."
+    columnStates: [ColumnState]
+    "Query configuration the current result was produced with."
+    queryConfig: QueryConfig
+    "Total row count available."
+    rowCount: Int
+    "List with current rows of CorgeType."
+    rows: [CorgeType]
+    "Name of payload type (always 'CorgeType')"
     type: String
 }
 
@@ -387,6 +542,87 @@ type InteractiveQuerySumPerMonth {
     type: String
 }
 
+"A merge conflict for one entity."
+type MergeConflict {
+    "Returns true if all conflict fields are decided or if there are no conflict fields."
+    decided: Boolean
+    "True if the entity has been deleted on the other side"
+    deleted: Boolean!
+    """
+
+    Conflicted fields. Will be both conflicts on scalar fields as well as conflicts on object fields representing
+    foreign key and many-to-many conflicts and the informational/user-facing data to resolve those.
+    """
+    fields: [MergeConflictField]!
+    "Id of the entity as generic scalar"
+    id: GenericScalar!
+    "The version of the currently stored entity."
+    theirVersion: String
+    "Type of the entity."
+    type: String!
+}
+
+"A field within a merge conflict."
+type MergeConflictField {
+    """
+
+    True if the conflict is only sent for informational purposes and for the "apply" function. It marks conflicts
+    that are already resolved.
+    """
+    informational: Boolean
+    name: String!
+    "The user's value for the conflict."
+    ours: GenericScalar
+    """
+
+    In case of a pseudo conflict on a many-to-many field this contains entity references to the current set of link
+    type entities.
+    """
+    references: [EntityReference]
+    """
+
+    Field status for the conflict. If MergeOptions#isAllowAutoMerge() is enabled, this will always be MergeFieldStatus#UNDECIDED, if auto-merge
+    is disabled, the system will report back successful merges with the respective choices made.
+    """
+    status: MergeFieldStatus
+    "The currently stored value for the conflict."
+    theirs: GenericScalar
+}
+
+"Encapsulates the result of a merge operation. Used in-memory on the client-side."
+type MergeResolution {
+    "Operation selected by the user."
+    operation: MergeResolutionOperation
+    "Resolutions to apply to the working set."
+    resolutions: [MergeResolutionEntity]!
+}
+
+"Encapsulates the merge resolution for one of the entities involved. Used in-memory on the client-side."
+type MergeResolutionEntity {
+    deleted: Boolean!
+    fields: [MergeResolutionField]!
+    id: GenericScalar!
+    type: String!
+    version: String
+}
+
+"Encapsulates the merge resolution of a single field. Used in-memory on the client-side."
+type MergeResolutionField {
+    fieldType: MergeResolutionFieldType
+    "GraphQL name of the field."
+    name: String!
+    status: MergeFieldStatus!
+    "Wrapped value"
+    value: GenericScalar
+}
+
+"Encapsulates the result of a merge process, i.e. a list of domain object conflicts."
+type MergeResult {
+    conflicts: [MergeConflict]!
+    "Returns true when the merge is done because there were no conflicts."
+    done: Boolean
+}
+
 "Auto-generated from DataGridLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type MutationType {
     complexStore(container: ComplexContainerInput): Boolean
@@ -397,8 +633,12 @@ type MutationType {
     deleteDomainObject(cascade: [String], id: GenericScalar!, type: String!): Boolean
     "Generate a new domain object id using the application specific IdGenerator implementation."
     generateDomainObjectId(count: Int = 1, domainType: String!): [GenericScalar]
+    "Server-side end-point for WorkingSet.merge()"
+    mergeWorkingSet(changes: [EntityChangeInput]!, deletions: [EntityDeletionInput]!, mergeConfig: MergeConfigInput): MergeResult
     "Server-side end-point for WorkingSet.persist()"
-    persistWorkingSet(deletions: [WorkingSetDeletionInput]!, domainObjects: [DomainObject]!): Boolean
+    persistWorkingSet(deletions: [EntityDeletionInput]!, domainObjects: [DomainObject]!): Boolean
+    "Dummy end-point to define the types involved in resolving a merge conflict, which happens on the client side only. This is only exists for documentation purposes."
+    resolveMerge(mergeConfig: MergeConfigInput, mergeConflict: MergeConflictInput): MergeResolution
     "Stores a single domain object of any type. Note that you might have to manually register an input type."
     storeDomainObject(domainObject: DomainObject!): GenericScalar
     "Stores a list of domain object of any type. Note that you might have to manually register an input type."
@@ -454,6 +694,14 @@ type QueryType {
     iQueryBazLink(config: QueryConfigInput!): InteractiveQueryBazLink
     "Queries BazValue objects based on the given query config"
     iQueryBazValue(config: QueryConfigInput!): InteractiveQueryBazValue
+    "Queries Corge objects based on the given query config"
+    iQueryCorge(config: QueryConfigInput!): InteractiveQueryCorge
+    "Queries CorgeAssoc objects based on the given query config"
+    iQueryCorgeAssoc(config: QueryConfigInput!): InteractiveQueryCorgeAssoc
+    "Queries CorgeLink objects based on the given query config"
+    iQueryCorgeLink(config: QueryConfigInput!): InteractiveQueryCorgeLink
+    "Queries CorgeType objects based on the given query config"
+    iQueryCorgeType(config: QueryConfigInput!): InteractiveQueryCorgeType
     "Queries Foo objects based on the given query config"
     iQueryFoo(config: QueryConfigInput!): InteractiveQueryFoo
     "Queries FooType objects based on the given query config"
@@ -577,11 +825,51 @@ enum FieldMode {
     READ_ONLY
 }
 
+enum MergeFieldStatus {
+    "We took the original value."
+    OURS
+    "We took over the current database value"
+    THEIRS
+    "User has not yet decided."
+    UNDECIDED
+    "The user specified an alternate third value."
+    VALUE
+}
+
+enum MergeResolutionFieldType {
+    "Normal input field"
+    FIELD
+    "Foreign key raw key id field"
+    FK_KEY
+    "Embedded object for a foreign key"
+    FK_OBJECT
+    "Ignored field"
+    IGNORE
+    "Embedded list of objects for a m-to-n relation"
+    MANY_TO_MANY
+}
+
+"User selected operation for a merge"
+enum MergeResolutionOperation {
+    """
+
+    The merge resolutions are to be applied without executing the final store operation. The user can inspect the merge
+    result in the original form context.
+    """
+    APPLY
+    "The store operation was canceled. The working set remains as-is."
+    CANCEL
+    "The whole process is aborted and the current working set data is to be discarded."
+    DISCARD
+    "Merge resolutions are applied to the working set and the final store operation is performed."
+    STORE
+}
+
 "Enumerates all policies of how to combine rule-based mode values with the effective field modes before rule application."
 enum ModePolicy {
-    #Ignore local mode attribute completely.
+    "Ignore local mode attribute completely."
     IGNORE_LOCAL
-    #Override if effective mode is be NORMAL
+    "Override if effective mode is be NORMAL"
     OVERRIDE
 }
 
@@ -620,6 +908,82 @@ input ComplexContainerInput {
     other: NodeInput
 }
 
+"Many-to-many associated type to Corge"
+input CorgeAssocInput {
+    description: String
+    id: String!
+    name: String!
+    num: Int!
+    version: String!
+}
+
+"Type complex used in merge-test"
+input CorgeInput {
+    created: Timestamp!
+    description: String
+    flag: Boolean!
+    id: String!
+    modified: Timestamp!
+    name: String!
+    num: Int!
+    num2: Int
+    ownerId: String!
+    type2: String!
+    typeId: String!
+    version: String!
+}
+
+"Many-to-many link type between Corge and CorgeAssoc"
+input CorgeLinkInput {
+    assocId: String!
+    corgeId: String!
+    id: String!
+    version: String!
+}
+
+"Type of Corges, connected via relation"
+input CorgeTypeInput {
+    id: String!
+    name: String!
+}
+
+"Encapsulates multiple changes for a single entity / domain object."
+input EntityChangeInput {
+    "List of changes"
+    changes: [EntityFieldChangeInput]!
+    "Id value of the entity/domain object"
+    id: GenericScalar!
+    new: Boolean
+    "Domain type of the object"
+    type: String!
+    "Version of the entity/domain object"
+    version: String
+}
+
+"Encapsulates the type and id of on object deletion in a working set."
+input EntityDeletionInput {
+    "Id of deleted object as generic scalar."
+    id: GenericScalar!
+    "Domain type of deleted object"
+    type: String!
+    version: String
+}
+
+"A change for one domain object field"
+input EntityFieldChangeInput {
+    "Field the change applies to"
+    field: String!
+    "Generic scalar value of the field. Must match the underlying GraphQL field type."
+    value: GenericScalar
+}
+
+"Reference to a specific entity or entity version"
+input EntityReferenceInput {
+    id: GenericScalar!
+    type: String!
+    version: String
+}
+
 "Generic domain object. Used as target in datagrid-test. Generated from public.foo in the database dump."
 input FooInput {
     created: Timestamp!
@@ -630,6 +994,82 @@ input FooInput {
     num: Int!
     ownerId: String!
     type: String!
+}
+
+"Generated for de.quinscape.automaton.model.merge.MergeConfig"
+input MergeConfigInput {
+    allowApply: Boolean
+    allowDiscard: Boolean
+    typeConfigs: [MergeTypeConfigInput]!
+}
+
+"A field within a merge conflict."
+input MergeConflictFieldInput {
+    """
+
+    True if the conflict is only sent for informational purposes and for the "apply" function. It marks conflicts
+    that are already resolved.
+    """
+    informational: Boolean
+    name: String!
+    "The user's value for the conflict."
+    ours: GenericScalar
+    """
+
+    In case of a pseudo conflict on a many-to-many field this contains entity references to the current set of link
+    type entities.
+    """
+    references: [EntityReferenceInput]
+    """
+
+    Field status for the conflict. If MergeOptions#isAllowAutoMerge() is enabled, this will always be MergeFieldStatus#UNDECIDED, if auto-merge
+    is disabled, the system will report back successful merges with the respective choices made.
+    """
+    status: MergeFieldStatus
+    "The currently stored value for the conflict."
+    theirs: GenericScalar
+}
+
+"A merge conflict for one entity."
+input MergeConflictInput {
+    "Returns true if all conflict fields are decided or if there are no conflict fields."
+    decided: Boolean
+    "True if the entity has been deleted on the other side"
+    deleted: Boolean!
+    """
+
+    Conflicted fields. Will be both conflicts on scalar fields as well as conflicts on object fields representing
+    foreign key and many-to-many conflicts and the informational/user-facing data to resolve those.
+    """
+    fields: [MergeConflictFieldInput]!
+    "Id of the entity as generic scalar"
+    id: GenericScalar!
+    "The version of the currently stored entity."
+    theirVersion: String
+    "Type of the entity."
+    type: String!
+}
+
+"Generated for de.quinscape.automaton.model.merge.MergeGroup"
+input MergeGroupInput {
+    fields: [String]!
+}
+
+input MergeTypeConfigInput {
+    """
+
+    List of fields that are ignored in the merge, i.e. the last value always wins. This is useful for
+    meta-data fields like creation time or change author
+    """
+    ignored: [String]
+    """
+
+    List of field groups are that only merged together. A change in one field of a merge-group always creates a
+    conflict
+    for the whole group.
+    """
+    mergeGroups: [MergeGroupInput]
+    name: String!
 }
 
 "Recursive domain object used in animal-test. Generated from public.node in the database dump."
@@ -722,20 +1162,6 @@ input ValidationRulesInput {
     writable: Boolean
 }
 
-"Encapsulates the type and id of on object deletion in a working set."
-input WorkingSetDeletionInput {
-    "Id of deleted object as generic scalar."
-    id: GenericScalar
-    "Domain type of deleted object"
-    type: String
-}
-
-
-"Map graph representing a JOOQ field expression"
-scalar FieldExpression
-
-"Long type"
-scalar Long
 
 "SQL timestamp equivalent"
 scalar Timestamp
@@ -743,11 +1169,20 @@ scalar Timestamp
 "Container for generic scalar values"
 scalar GenericScalar
 
-"Map graph representing JOOQ conditions"
-scalar Condition
-
 "Postgresql jsonb type equivalent"
 scalar JSONB
 
 "Container for generic domain objects as scalar"
 scalar DomainObject
+
+"Map graph representing a JOOQ field expression"
+scalar FieldExpression
+
+"Long type"
+scalar Long
+
+"Built-in java.math.BigInteger"
+scalar BigInteger
+
+"Map graph representing JOOQ conditions"
+scalar Condition
