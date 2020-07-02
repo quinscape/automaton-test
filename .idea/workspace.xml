@@ -5,18 +5,54 @@
       <artifact name="automaton-test:war exploded" />
     </artifacts-to-build>
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:maven" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:qsbb" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_svenson_svenson_1_5_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_7.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton/automaton.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/automaton.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/domain/DomainMonitorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/domain/DomainMonitorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/ws/DefaultAutomatonWebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/ws/DefaultAutomatonWebSocketHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +82,11 @@
       <list>
         <option value="TypeScript File" />
         <option value="AnnotationType" />
-        <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="Enum" />
         <option value="JUnit4 Test Class" />
+        <option value="Enum" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -70,15 +106,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/../automaton-js/package.json" />
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectId" id="1PNZC7ncKvcZbu7SWEnxMUSkScW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -86,7 +116,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -102,6 +131,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="setupSc&#9;null&#9;null&#10;endSu&#9;null&#9;null&#10;runSubProcess&#9;null&#9;null&#10;getOrders&#9;PSI&#9;JAVA://de.quinscape.automatontest.runtime.service.ShippingLogic#getOrders&#10;fetchProc&#9;null&#9;null&#10;MyS&#9;null&#9;null&#10;ensureV&#9;null&#9;null&#10;automatonWe&#9;PSI&#9;JAVA://de.quinscape.automaton.runtime.ws.AutomatonWebSocketHandler" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -112,10 +143,10 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="javascript.nodejs.core.library.configured.version" value="8.16.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.18.1" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../svenson" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-jsview/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -125,26 +156,37 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28390804" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../spring-jsview/pom.xml" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="de.quinscape.automaton.model" />
+      <recent name="de.quinscape.automaton.model.merge" />
+      <recent name="de.quinscape.automaton.runtime.merge" />
+      <recent name="de.quinscape.automaton.runtime.domain" />
+      <recent name="de.quinscape.automaton.runtime.util" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="de.quinscape.automaton.runtime.merge" />
       <recent name="de.quinscape.automaton.runtime.topic" />
       <recent name="de.quinscape.automaton.runtime.ws" />
       <recent name="de.quinscape.automaton.runtime.scalar" />
       <recent name="de.quinscape.automaton.model.filter" />
-      <recent name="de.quinscape.automaton.runtime.provider" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="de.quinscape.automaton.runtime.util" />
+      <recent name="de.quinscape.automaton.runtime.merge" />
       <recent name="de.quinscape.automaton.runtime.pubsub" />
       <recent name="de.quinscape.automaton.runtime.data" />
       <recent name="de.quinscape.automaton.runtime.scalar" />
-      <recent name="de.quinscape.automaton.model.data" />
+    </key>
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="de.quinscape.automaton.runtime.merge" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="de.quinscape.automaton.runtime.data.QueryExecution" />
@@ -158,46 +200,44 @@
       <recent name="de.quinscape.automaton.model.filter" />
       <recent name="de.quinscape.automaton.model.data" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../automaton-js/tooling/snippets" />
-      <recent name="$PROJECT_DIR$/../automaton-js/test" />
-      <recent name="$PROJECT_DIR$/../automaton-js/test/ui/tree" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/message" />
-      <recent name="$PROJECT_DIR$/../automaton-js/test/ui" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.quinscape.automatontest.runtime.controller" />
+      <recent name="de.quinscape.automaton.runtime.merge" />
+      <recent name="de.quinscape.automaton.model.merge" />
       <recent name="de.quinscape.automaton.runtime.util" />
       <recent name="de.quinscape.automaton.runtime.domain" />
-      <recent name="de.quinscape.automaton.runtime.filter" />
-      <recent name="de.quinscape.automaton.runtime.filter.anno" />
-      <recent name="de.quinscape.automaton.runtime.filter.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/filter/impl" />
-      <recent name="$PROJECT_DIR$/../automaton-js/docs" />
-      <recent name="$PROJECT_DIR$/../automaton-js/test/ui/tree" />
-      <recent name="$PROJECT_DIR$/../automaton-js/test/ui" />
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/tree-test/composites" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/js/data/merge-test" />
+      <recent name="$PROJECT_DIR$/../automaton-js/test/merge" />
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/data" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src/ui" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/../automaton-js/test/ui/merge/table-summary.js" />
+      <recent name="$PROJECT_DIR$/../automaton-js/test/merge/loadScenario.js" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src/util/type-utils.js" />
       <recent name="$PROJECT_DIR$/../automaton-js/test/ui/tree/getText.js" />
       <recent name="$PROJECT_DIR$/../automaton-js/src/ui/tree/CaretButton.js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/test/ui/createMockedQuery.js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/DialogMode.js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/sync.js" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="de.quinscape.automaton.runtime.domain" />
-      <recent name="de.quinscape.automaton.runtime.util" />
-      <recent name="de.quinscape.automaton.runtime.pubsub" />
-      <recent name="de.quinscape.automaton.runtime.ws" />
-      <recent name="de.quinscape.automaton.runtime.filter" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/js/data" />
+      <recent name="$PROJECT_DIR$/src/main/js/data/merge-test" />
+      <recent name="$PROJECT_DIR$/src/main/js" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UtilTest">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="key" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Mocha.Automaton-Js Tests">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -214,8 +254,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in automaton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton" />
+    <configuration name="All in automaton-test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automaton-test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -239,10 +279,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton" />
-      <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.util" />
-      <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.runtime.util.UtilTest" />
+    <configuration name="MergeServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automaton-test" />
+      <option name="PACKAGE_NAME" value="de.quinscape.automatontest.runtime.merge" />
+      <option name="MAIN_CLASS_NAME" value="de.quinscape.automatontest.runtime.merge.MergeServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -252,11 +292,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UtilTest.testRecasting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton" />
-      <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.util" />
-      <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.runtime.util.UtilTest" />
-      <option name="METHOD_NAME" value="testRecasting" />
+    <configuration name="MergeServiceTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="automaton-test" />
+      <useClassPathOnly />
+      <option name="PACKAGE_NAME" value="de.quinscape.automatontest.runtime.merge" />
+      <option name="MAIN_CLASS_NAME" value="de.quinscape.automatontest.runtime.merge.MergeServiceTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea -Dspring.profiles.active=integration-test" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MergeServiceTest.setMergeService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automaton-test" />
+      <option name="PACKAGE_NAME" value="de.quinscape.automatontest.runtime.merge" />
+      <option name="MAIN_CLASS_NAME" value="de.quinscape.automatontest.runtime.merge.MergeServiceTest" />
+      <option name="METHOD_NAME" value="setMergeService" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -266,12 +323,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UtilTest.testRecastingPOJOs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton" />
-      <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.util" />
-      <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.runtime.util.UtilTest" />
-      <option name="METHOD_NAME" value="testRecastingPOJOs" />
+    <configuration name="MergeServiceTest.testMergeService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automaton-test" />
+      <option name="PACKAGE_NAME" value="de.quinscape.automatontest.runtime.merge" />
+      <option name="MAIN_CLASS_NAME" value="de.quinscape.automatontest.runtime.merge.MergeServiceTest" />
+      <option name="METHOD_NAME" value="testMergeService" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SeleniumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automaton-test" />
+      <option name="PACKAGE_NAME" value="de.quinscape.automatontest" />
+      <option name="MAIN_CLASS_NAME" value="de.quinscape.automatontest.SeleniumTest" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -309,7 +379,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Local Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Local Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.28" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="GraalVM 1.8">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -408,25 +478,6 @@
       <recursive>false</recursive>
       <method v="2" />
     </configuration>
-    <configuration name="Tree.IndexedObjects.organizes objects by initial" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options>-r @babel/register -r ./test/setup.js -r ignore-styles</node-options>
-      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs>
-        <env name="BABEL_ENV" value="test" />
-      </envs>
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/tree/tree-indexed.js</test-file>
-      <test-names>
-        <name value="Tree.IndexedObjects" />
-        <name value="organizes objects by initial" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="matchPath" type="mocha-javascript-test-runner" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options>-r @babel/register -r ./test/setup.js</node-options>
@@ -447,38 +498,27 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.InteractiveQueryJoinTest" />
-      <item itemvalue="JUnit.All in automaton" />
-      <item itemvalue="JUnit.UtilTest" />
-      <item itemvalue="JUnit.UtilTest.testRecasting" />
-      <item itemvalue="JUnit.UtilTest.testRecastingPOJOs" />
-      <item itemvalue="Mocha.Automaton-Js Tests" />
+      <item itemvalue="JUnit.MergeServiceTest" />
+      <item itemvalue="JUnit.All in automaton-test" />
+      <item itemvalue="JUnit.MergeServiceTest.testMergeService" />
+      <item itemvalue="JUnit.MergeServiceTest.setMergeService" />
+      <item itemvalue="JUnit.MergeServiceTest (1)" />
+      <item itemvalue="JUnit.SeleniumTest" />
       <item itemvalue="Mocha.Automaton-Test Tests" />
       <item itemvalue="Mocha.matchPath" />
-      <item itemvalue="Mocha.Tree.IndexedObjects.organizes objects by initial" />
+      <item itemvalue="Mocha.Automaton-Js Tests" />
       <item itemvalue="Spring Boot.DQLMobxApplication" />
       <item itemvalue="Tomcat Server.Local Tomcat" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UtilTest" />
-        <item itemvalue="JUnit.UtilTest.testRecastingPOJOs" />
-        <item itemvalue="JUnit.UtilTest.testRecasting" />
-        <item itemvalue="JUnit.All in automaton" />
-        <item itemvalue="Mocha.Tree.IndexedObjects.organizes objects by initial" />
+        <item itemvalue="JUnit.SeleniumTest" />
+        <item itemvalue="JUnit.MergeServiceTest.testMergeService" />
+        <item itemvalue="JUnit.MergeServiceTest (1)" />
+        <item itemvalue="JUnit.MergeServiceTest.setMergeService" />
+        <item itemvalue="JUnit.All in automaton-test" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -902,6 +942,125 @@
       <workItem from="1583262111983" duration="13854000" />
       <workItem from="1583326978768" duration="861000" />
       <workItem from="1583415641572" duration="1086000" />
+      <workItem from="1583619813131" duration="38000" />
+      <workItem from="1583701877341" duration="2993000" />
+      <workItem from="1583757583741" duration="15581000" />
+      <workItem from="1583847460054" duration="558000" />
+      <workItem from="1583858790287" duration="4040000" />
+      <workItem from="1583939917017" duration="7297000" />
+      <workItem from="1583949858965" duration="10745000" />
+      <workItem from="1584010356643" duration="1878000" />
+      <workItem from="1584105470436" duration="10635000" />
+      <workItem from="1584195513173" duration="2186000" />
+      <workItem from="1584287886317" duration="82000" />
+      <workItem from="1584355070045" duration="2000" />
+      <workItem from="1584355109766" duration="5346000" />
+      <workItem from="1584446704935" duration="1256000" />
+      <workItem from="1584540768448" duration="5637000" />
+      <workItem from="1584620890529" duration="306000" />
+      <workItem from="1584630141815" duration="8731000" />
+      <workItem from="1584703768934" duration="13765000" />
+      <workItem from="1584974790668" duration="8117000" />
+      <workItem from="1585052124551" duration="10753000" />
+      <workItem from="1585135064387" duration="2822000" />
+      <workItem from="1585222504505" duration="8364000" />
+      <workItem from="1585310964494" duration="4150000" />
+      <workItem from="1585578143530" duration="23000" />
+      <workItem from="1585578194967" duration="6084000" />
+      <workItem from="1585656668959" duration="14541000" />
+      <workItem from="1585740321921" duration="10911000" />
+      <workItem from="1585825890158" duration="1223000" />
+      <workItem from="1585837776521" duration="5514000" />
+      <workItem from="1585916044040" duration="8959000" />
+      <workItem from="1585932246527" duration="11788000" />
+      <workItem from="1586015044573" duration="3791000" />
+      <workItem from="1586177974348" duration="7981000" />
+      <workItem from="1586259564428" duration="4842000" />
+      <workItem from="1586354348113" duration="9655000" />
+      <workItem from="1586437048576" duration="3295000" />
+      <workItem from="1586530987537" duration="253000" />
+      <workItem from="1586531290790" duration="13000" />
+      <workItem from="1586863813991" duration="626000" />
+      <workItem from="1586950973462" duration="23543000" />
+      <workItem from="1587034380586" duration="7810000" />
+      <workItem from="1587123172620" duration="18265000" />
+      <workItem from="1587202516013" duration="3941000" />
+      <workItem from="1587301741924" duration="599000" />
+      <workItem from="1587382244838" duration="3033000" />
+      <workItem from="1587394512507" duration="5026000" />
+      <workItem from="1587471269111" duration="6195000" />
+      <workItem from="1587563211917" duration="1297000" />
+      <workItem from="1587573918171" duration="2916000" />
+      <workItem from="1587642288127" duration="5224000" />
+      <workItem from="1587728919448" duration="4161000" />
+      <workItem from="1587757069883" duration="603000" />
+      <workItem from="1587984343338" duration="8426000" />
+      <workItem from="1588070446454" duration="1300000" />
+      <workItem from="1588080439197" duration="11804000" />
+      <workItem from="1588118883696" duration="1257000" />
+      <workItem from="1588159031511" duration="13013000" />
+      <workItem from="1588195634875" duration="3636000" />
+      <workItem from="1588241071002" duration="2698000" />
+      <workItem from="1588340313356" duration="534000" />
+      <workItem from="1588340863829" duration="3404000" />
+      <workItem from="1588364109727" duration="1372000" />
+      <workItem from="1588592645705" duration="7115000" />
+      <workItem from="1588676813702" duration="14501000" />
+      <workItem from="1588761006288" duration="18404000" />
+      <workItem from="1588794164247" duration="600000" />
+      <workItem from="1588845084539" duration="18890000" />
+      <workItem from="1588928976352" duration="19643000" />
+      <workItem from="1589195397680" duration="2562000" />
+      <workItem from="1589278183614" duration="17375000" />
+      <workItem from="1589365552556" duration="6979000" />
+      <workItem from="1589450971532" duration="10745000" />
+      <workItem from="1589486207047" duration="1383000" />
+      <workItem from="1589537233053" duration="1105000" />
+      <workItem from="1589547614207" duration="9153000" />
+      <workItem from="1589639157435" duration="3800000" />
+      <workItem from="1589721384412" duration="290000" />
+      <workItem from="1589852988062" duration="9000" />
+      <workItem from="1589884021479" duration="599000" />
+      <workItem from="1589889986913" duration="1956000" />
+      <workItem from="1589935630426" duration="738000" />
+      <workItem from="1589970964532" duration="3704000" />
+      <workItem from="1590060421442" duration="1548000" />
+      <workItem from="1590410287753" duration="7685000" />
+      <workItem from="1590498923829" duration="10340000" />
+      <workItem from="1590574173355" duration="20645000" />
+      <workItem from="1590667087058" duration="12343000" />
+      <workItem from="1590752053662" duration="14440000" />
+      <workItem from="1591100240413" duration="2051000" />
+      <workItem from="1591206484590" duration="630000" />
+      <workItem from="1591233936987" duration="3521000" />
+      <workItem from="1591246767471" duration="5215000" />
+      <workItem from="1591278414450" duration="609000" />
+      <workItem from="1591281256507" duration="5890000" />
+      <workItem from="1591349201222" duration="18684000" />
+      <workItem from="1591455635203" duration="1360000" />
+      <workItem from="1591525068245" duration="966000" />
+      <workItem from="1591621089955" duration="14600000" />
+      <workItem from="1591695611564" duration="8825000" />
+      <workItem from="1591780850025" duration="15080000" />
+      <workItem from="1591886943441" duration="646000" />
+      <workItem from="1591958250666" duration="55000" />
+      <workItem from="1592223815910" duration="2695000" />
+      <workItem from="1592304036751" duration="8481000" />
+      <workItem from="1592328375478" duration="38000" />
+      <workItem from="1592384622802" duration="18823000" />
+      <workItem from="1592482357513" duration="11186000" />
+      <workItem from="1592562855055" duration="4900000" />
+      <workItem from="1592825061467" duration="7096000" />
+      <workItem from="1592912572677" duration="7869000" />
+      <workItem from="1592999929071" duration="16792000" />
+      <workItem from="1593081556728" duration="30399000" />
+      <workItem from="1593165421835" duration="25968000" />
+      <workItem from="1593261087423" duration="1202000" />
+      <workItem from="1593429178480" duration="19412000" />
+      <workItem from="1593515179113" duration="24848000" />
+      <workItem from="1593619311219" duration="3076000" />
+      <workItem from="1593683120450" duration="6501000" />
+      <workItem from="1593692013753" duration="11258000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
@@ -914,7 +1073,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
     <option name="includedJSSourcePackages">
       <set>
         <option value="mobx" />
@@ -934,13 +1093,41 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="MAIN">
+        <entry key="1">
           <value>
             <State>
-              <option name="COLUMN_ORDER" />
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/home/sven/ideaprojects/automaton-js/src/ui/tree" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
             </State>
           </value>
         </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="RECENT_FILTERS">
@@ -957,6 +1144,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -968,266 +1156,294 @@
     <option name="LAST_COMMIT_MESSAGE" value="Mention Conway's Law" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="555" y="215" width="800" height="729" key="#Intentions" timestamp="1583335782201">
+    <state x="696" y="44" width="517" height="1017" key="#Editor_|_Color_Scheme_|_General" timestamp="1593180801683">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="215" width="800" height="729" key="#Intentions/0.27.1920.1053@0.27.1920.1053" timestamp="1583335782201" />
-    <state x="555" y="214" width="800" height="677" key="#Notifications" timestamp="1575030821226">
+    <state x="696" y="44" width="517" height="1017" key="#Editor_|_Color_Scheme_|_General/0.27.1920.1053@0.27.1920.1053" timestamp="1593180801683" />
+    <state x="443" y="130" width="1024" height="845" key="#Project_Structure" timestamp="1592223971630">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="214" width="800" height="677" key="#Notifications/0.27.1920.1053@0.27.1920.1053" timestamp="1575030821226" />
-    <state x="664" y="223" width="591" height="668" key="#Tree" timestamp="1582143092638">
+    <state x="443" y="130" width="1024" height="845" key="#Project_Structure/0.27.1920.1053@0.27.1920.1053" timestamp="1592223971630" />
+    <state x="734" y="434" width="431" height="236" key="#Tomcat_Server" timestamp="1593008903500">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="664" y="223" width="591" height="668" key="#Tree/0.27.1920.1053@0.27.1920.1053" timestamp="1582143092638" />
-    <state x="418" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583335761364">
+    <state x="734" y="434" width="431" height="236" key="#Tomcat_Server/0.27.1920.1053@0.27.1920.1053" timestamp="1593008903500" />
+    <state x="307" y="343" width="551" height="338" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1593452437263">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="418" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1583335761364" />
-    <state x="100" y="125" width="1720" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1582639750479">
+    <state x="307" y="343" width="551" height="338" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593452437263" />
+    <state x="743" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593540789231">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="100" y="125" width="1720" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1582639750479" />
-    <state x="695" y="360" width="520" height="394" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580303700079">
+    <state x="743" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593540789231" />
+    <state x="100" y="125" width="1720" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1593710705715">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="695" y="360" width="520" height="394" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1580303700079" />
-    <state x="768" y="264" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1583342004850">
+    <state x="100" y="125" width="1720" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593710705715" />
+    <state x="695" y="360" width="520" height="394" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586967618591">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="768" y="264" width="522" height="577" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1583342004850" />
-    <state x="3936" y="625" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576168021363" />
-    <state x="663" y="307" width="583" height="490" key="#com.intellij.refactoring.memberPullUp.PullUpDialog" timestamp="1576153377377">
+    <state x="695" y="360" width="520" height="394" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1586967618591" />
+    <state x="768" y="264" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1593545297871">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="663" y="307" width="583" height="490" key="#com.intellij.refactoring.memberPullUp.PullUpDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576153377377" />
-    <state x="699" y="415" width="514" height="284" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583339189834">
+    <state x="768" y="264" width="522" height="577" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1593545297871" />
+    <state x="687" y="331" width="524" height="441" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1593530957933">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="699" y="415" width="514" height="284" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1920.1053@0.27.1920.1053" timestamp="1583339189834" />
-    <state x="517" y="27" width="867" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1576152729989">
+    <state x="687" y="331" width="524" height="441" key="#com.intellij.ide.util.PackageChooserDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593530957933" />
+    <state x="862" y="500" width="196" height="113" key="#com.intellij.ide.util.TreeDirectoryChooserDialog" timestamp="1587127061914">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="517" y="27" width="867" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576152729989" />
-    <state x="693" y="303" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583284629533">
+    <state x="862" y="500" width="196" height="113" key="#com.intellij.ide.util.TreeDirectoryChooserDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1587127061914" />
+    <state x="689" y="236" width="531" height="632" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1593008905175">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="693" y="303" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1583284629533" />
-    <state x="4046" y="783" width="524" height="500" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1576166179583">
-      <screen x="2560" y="301" width="3440" height="1440" />
-    </state>
-    <state x="4046" y="783" width="524" height="500" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576166179583" />
-    <state x="718" y="261" key="#xdebugger.evaluate" timestamp="1580165318439">
+    <state x="689" y="236" width="531" height="632" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.27.1920.1053@0.27.1920.1053" timestamp="1593008905175" />
+    <state x="643" y="293" width="624" height="527" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1588080413977">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="718" y="261" key="#xdebugger.evaluate/0.27.1920.1053@0.27.1920.1053" timestamp="1580165318439" />
-    <state x="100" y="125" width="1710" height="862" maximized="true" key="DiffContextDialog" timestamp="1582302143573">
+    <state x="643" y="293" width="624" height="527" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1588080413977" />
+    <state x="742" y="401" width="426" height="302" key="#com.intellij.refactoring.move.moveInner.MoveInnerDialog" timestamp="1589291885249">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="100" y="125" width="1710" height="862" maximized="true" key="DiffContextDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1582302143573" />
-    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583278611314">
+    <state x="742" y="401" width="426" height="302" key="#com.intellij.refactoring.move.moveInner.MoveInnerDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1589291885249" />
+    <state x="517" y="27" width="867" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591795357660">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1583278611314" />
-    <state width="1373" height="342" key="GridCell.Tab.0.bottom" timestamp="1583378699242">
+    <state x="517" y="27" width="867" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1591795357660" />
+    <state x="693" y="303" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593548042825">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1373" height="342" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1583378699242" />
-    <state width="2913" height="396" key="GridCell.Tab.0.bottom/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576169441850" />
-    <state width="1373" height="342" key="GridCell.Tab.0.center" timestamp="1583378699242">
+    <state x="693" y="303" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593548042825" />
+    <state x="693" y="303" width="524" height="499" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1588609665627">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1373" height="342" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1583378699242" />
-    <state width="2913" height="396" key="GridCell.Tab.0.center/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576169441850" />
-    <state width="1373" height="342" key="GridCell.Tab.0.left" timestamp="1583378699242">
+    <state x="693" y="303" width="524" height="499" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1588609665627" />
+    <state x="718" y="261" key="#xdebugger.evaluate" timestamp="1593108125137">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1373" height="342" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1583378699242" />
-    <state width="2913" height="396" key="GridCell.Tab.0.left/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576169441850" />
-    <state width="1373" height="342" key="GridCell.Tab.0.right" timestamp="1583378699242">
+    <state x="718" y="261" key="#xdebugger.evaluate/0.27.1920.1053@0.27.1920.1053" timestamp="1593108125137" />
+    <state x="100" y="125" width="1710" height="862" maximized="true" key="DiffContextDialog" timestamp="1593712862551">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1373" height="342" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1583378699242" />
-    <state width="2913" height="396" key="GridCell.Tab.0.right/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576169441850" />
-    <state width="1373" height="342" key="GridCell.Tab.1.bottom" timestamp="1583378699242">
+    <state x="100" y="125" width="1710" height="862" maximized="true" key="DiffContextDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593712862551" />
+    <state x="827" y="324" width="256" height="456" key="EnvironmentVariablesDialog" timestamp="1593540775480">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1373" height="342" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1583378699242" />
-    <state width="2913" height="488" key="GridCell.Tab.1.bottom/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576168946175" />
-    <state width="1373" height="342" key="GridCell.Tab.1.center" timestamp="1583378699241">
+    <state x="827" y="324" width="256" height="456" key="EnvironmentVariablesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593540775480" />
+    <state x="743" y="310" width="439" height="484" key="FileChooserDialogImpl" timestamp="1593711090868">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1373" height="342" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1583378699241" />
-    <state width="2913" height="488" key="GridCell.Tab.1.center/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576168946175" />
-    <state width="1373" height="342" key="GridCell.Tab.1.left" timestamp="1583378699241">
+    <state x="743" y="310" width="439" height="484" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1593711090868" />
+    <state width="1279" height="348" key="GridCell.Tab.0.bottom" timestamp="1593707082149">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1373" height="342" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1583378699241" />
-    <state width="2913" height="488" key="GridCell.Tab.1.left/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576168946175" />
-    <state width="1373" height="342" key="GridCell.Tab.1.right" timestamp="1583378699242">
+    <state width="1279" height="348" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
+    <state width="1279" height="348" key="GridCell.Tab.0.center" timestamp="1593707082149">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1373" height="342" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1583378699241" />
-    <state width="2913" height="488" key="GridCell.Tab.1.right/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576168946175" />
-    <state width="1373" height="303" key="GridCell.Tab.2.bottom" timestamp="1583378699226">
+    <state width="1279" height="348" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
+    <state width="1279" height="348" key="GridCell.Tab.0.left" timestamp="1593707082149">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1373" height="303" key="GridCell.Tab.2.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1583378699226" />
-    <state width="1373" height="303" key="GridCell.Tab.2.center" timestamp="1583378699225">
+    <state width="1279" height="348" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
+    <state width="1279" height="348" key="GridCell.Tab.0.right" timestamp="1593707082149">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1373" height="303" key="GridCell.Tab.2.center/0.27.1920.1053@0.27.1920.1053" timestamp="1583378699225" />
-    <state width="1373" height="303" key="GridCell.Tab.2.left" timestamp="1583378699225">
+    <state width="1279" height="348" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
+    <state width="1279" height="348" key="GridCell.Tab.1.bottom" timestamp="1593707082149">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1373" height="303" key="GridCell.Tab.2.left/0.27.1920.1053@0.27.1920.1053" timestamp="1583378699225" />
-    <state width="1373" height="303" key="GridCell.Tab.2.right" timestamp="1583378699226">
+    <state width="1279" height="348" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
+    <state width="1279" height="348" key="GridCell.Tab.1.center" timestamp="1593707082149">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1373" height="303" key="GridCell.Tab.2.right/0.27.1920.1053@0.27.1920.1053" timestamp="1583378699226" />
-    <state width="1200" height="342" key="GridCell.Tab.3.bottom" timestamp="1580780286898">
+    <state width="1279" height="348" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
+    <state width="1279" height="348" key="GridCell.Tab.1.left" timestamp="1593707082149">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1200" height="342" key="GridCell.Tab.3.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1580780286898" />
-    <state width="1200" height="342" key="GridCell.Tab.3.center" timestamp="1580780286898">
+    <state width="1279" height="348" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
+    <state width="1279" height="348" key="GridCell.Tab.1.right" timestamp="1593707082149">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1200" height="342" key="GridCell.Tab.3.center/0.27.1920.1053@0.27.1920.1053" timestamp="1580780286898" />
-    <state width="1200" height="342" key="GridCell.Tab.3.left" timestamp="1580780286897">
+    <state width="1279" height="348" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
+    <state width="1014" height="259" key="GridCell.Tab.14.bottom" timestamp="1588161304741">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1200" height="342" key="GridCell.Tab.3.left/0.27.1920.1053@0.27.1920.1053" timestamp="1580780286897" />
-    <state width="1200" height="342" key="GridCell.Tab.3.right" timestamp="1580780286898">
+    <state width="1014" height="259" key="GridCell.Tab.14.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1588161304741" />
+    <state width="1014" height="259" key="GridCell.Tab.14.center" timestamp="1588161304739">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1200" height="342" key="GridCell.Tab.3.right/0.27.1920.1053@0.27.1920.1053" timestamp="1580780286898" />
-    <state x="751" y="216" width="407" height="682" key="RollbackChangesDialog" timestamp="1583283050034">
+    <state width="1014" height="259" key="GridCell.Tab.14.center/0.27.1920.1053@0.27.1920.1053" timestamp="1588161304739" />
+    <state width="1014" height="259" key="GridCell.Tab.14.left" timestamp="1588161304737">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="751" y="216" width="407" height="682" key="RollbackChangesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1583283050034" />
-    <state x="471" y="188" width="977" height="737" key="SettingsEditor" timestamp="1582307444165">
+    <state width="1014" height="259" key="GridCell.Tab.14.left/0.27.1920.1053@0.27.1920.1053" timestamp="1588161304737" />
+    <state width="1014" height="259" key="GridCell.Tab.14.right" timestamp="1588161304740">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="471" y="188" width="977" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1582307444165" />
-    <state x="689" y="286" width="639" height="524" key="StructurePopup" timestamp="1583416721880">
+    <state width="1014" height="259" key="GridCell.Tab.14.right/0.27.1920.1053@0.27.1920.1053" timestamp="1588161304740" />
+    <state width="1014" height="259" key="GridCell.Tab.15.bottom" timestamp="1588161305892">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="689" y="286" width="639" height="524" key="StructurePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1583416721880" />
-    <state x="3794" y="655" width="1145" height="717" key="StructurePopup/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576169376505" />
-    <state width="610" height="555" key="SwitcherDM" timestamp="1583283073183">
+    <state width="1014" height="259" key="GridCell.Tab.15.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1588161305892" />
+    <state width="1014" height="259" key="GridCell.Tab.15.center" timestamp="1588161305890">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="610" height="555" key="SwitcherDM/0.27.1920.1053@0.27.1920.1053" timestamp="1583283073183" />
-    <state width="1093" height="624" key="SwitcherDM/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576168999966" />
-    <state x="100" y="125" width="1720" height="855" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1582302102409">
+    <state width="1014" height="259" key="GridCell.Tab.15.center/0.27.1920.1053@0.27.1920.1053" timestamp="1588161305890" />
+    <state width="1014" height="259" key="GridCell.Tab.15.left" timestamp="1588161305889">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="100" y="125" width="1720" height="855" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1582302102409" />
-    <state x="100" y="125" width="1720" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1582302192560">
+    <state width="1014" height="259" key="GridCell.Tab.15.left/0.27.1920.1053@0.27.1920.1053" timestamp="1588161305889" />
+    <state width="1014" height="259" key="GridCell.Tab.15.right" timestamp="1588161305891">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="100" y="125" width="1720" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1582302192560" />
-    <state x="613" y="170" width="683" height="764" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582299966139">
+    <state width="1014" height="259" key="GridCell.Tab.15.right/0.27.1920.1053@0.27.1920.1053" timestamp="1588161305891" />
+    <state width="1279" height="348" key="GridCell.Tab.2.bottom" timestamp="1593707082150">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="613" y="170" width="683" height="764" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1582299966139" />
-    <state x="751" y="473" width="417" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582131084132">
+    <state width="1279" height="348" key="GridCell.Tab.2.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082150" />
+    <state width="1279" height="348" key="GridCell.Tab.2.center" timestamp="1593707082150">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="751" y="473" width="417" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1582131084132" />
-    <state x="679" y="271" width="551" height="562" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1583335390548">
+    <state width="1279" height="348" key="GridCell.Tab.2.center/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
+    <state width="1279" height="348" key="GridCell.Tab.2.left" timestamp="1593707082149">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="679" y="271" width="551" height="562" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1583335390548" />
-    <state x="507" y="292" width="896" height="529" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1579824874992">
+    <state width="1279" height="348" key="GridCell.Tab.2.left/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
+    <state width="1279" height="348" key="GridCell.Tab.2.right" timestamp="1593707082150">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="507" y="292" width="896" height="529" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.27.1920.1053@0.27.1920.1053" timestamp="1579824874992" />
-    <state x="693" y="311" width="524" height="483" key="extract.method.dialog" timestamp="1576153051630">
+    <state width="1279" height="348" key="GridCell.Tab.2.right/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082150" />
+    <state width="1315" height="275" key="GridCell.Tab.3.bottom" timestamp="1593114409514">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="693" y="311" width="524" height="483" key="extract.method.dialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576153051630" />
-    <state x="629" y="300" width="824" height="610" key="find.popup" timestamp="1583341501443">
+    <state width="1315" height="275" key="GridCell.Tab.3.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1593114409514" />
+    <state width="1315" height="275" key="GridCell.Tab.3.center" timestamp="1593114409514">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="629" y="300" width="824" height="610" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1583341501443" />
-    <state x="3687" y="674" width="1477" height="769" key="find.popup/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576167717745" />
-    <state width="495" height="73" key="javadoc.popup.new" timestamp="1583372849220">
+    <state width="1315" height="275" key="GridCell.Tab.3.center/0.27.1920.1053@0.27.1920.1053" timestamp="1593114409514" />
+    <state width="1315" height="275" key="GridCell.Tab.3.left" timestamp="1593114409514">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="495" height="73" key="javadoc.popup.new/0.27.1920.1053@0.27.1920.1053" timestamp="1583372849220" />
-    <state width="887" height="100" key="javadoc.popup.new/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576169359601" />
-    <state x="704" y="186" width="587" height="737" key="refactoring.ChangeSignatureDialog" timestamp="1583344884064">
+    <state width="1315" height="275" key="GridCell.Tab.3.left/0.27.1920.1053@0.27.1920.1053" timestamp="1593114409514" />
+    <state width="1315" height="275" key="GridCell.Tab.3.right" timestamp="1593114409514">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="704" y="186" width="501" height="732" key="refactoring.ChangeSignatureDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1583344884064" />
-    <state x="3821" y="518" width="587" height="737" key="refactoring.ChangeSignatureDialog/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576167052375" />
-    <state x="624" y="253" width="672" height="677" key="run.anything.popup" timestamp="1583284326662">
+    <state width="1315" height="275" key="GridCell.Tab.3.right/0.27.1920.1053@0.27.1920.1053" timestamp="1593114409514" />
+    <state x="778" y="489" width="354" height="126" key="ReplaceDuplicatesPrompt" timestamp="1588701561111">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="624" y="253" width="672" height="677" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1583284326662" />
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1583416724698">
+    <state x="778" y="489" width="354" height="126" key="ReplaceDuplicatesPrompt/0.27.1920.1053@0.27.1920.1053" timestamp="1588701561111" />
+    <state x="99" y="144" width="977" height="737" key="SettingsEditor" timestamp="1593452437656">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1583416724698" />
-    <state x="3676" y="616" width="1204" height="928" key="search.everywhere.popup/2560.301.3440.1440/0.0.2560.1440@2560.301.3440.1440" timestamp="1576167514898" />
+    <state x="471" y="285" key="SettingsEditor/0.120.1920.1080/1920.0.2560.1440@0.120.1920.1080" timestamp="1587563153265" />
+    <state x="99" y="144" width="977" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1593452437656" />
+    <state x="689" y="286" width="639" height="524" key="StructurePopup" timestamp="1593711333654">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="689" y="286" width="639" height="524" key="StructurePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1593711333654" />
+    <state width="610" height="555" key="SwitcherDM" timestamp="1593711275709">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="610" height="555" key="SwitcherDM/0.27.1920.1053@0.27.1920.1053" timestamp="1593711275709" />
+    <state x="735" y="254" width="990" height="596" key="VCS.ChangeListViewerDialog" timestamp="1592825111478">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="735" y="254" width="990" height="596" key="VCS.ChangeListViewerDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1592825111478" />
+    <state x="787" y="290" width="335" height="525" key="VcsDiffUtil.ChangesDialog" timestamp="1593095133512">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="787" y="290" width="335" height="525" key="VcsDiffUtil.ChangesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593095133512" />
+    <state x="100" y="125" width="1720" height="855" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593712818701">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="100" y="125" width="1720" height="855" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593712818701" />
+    <state x="100" y="125" width="1720" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1593692244418">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="100" y="125" width="1720" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593692244418" />
+    <state x="643" y="398" key="com.intellij.ide.util.TipDialog" timestamp="1588246695741">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="643" y="500" key="com.intellij.ide.util.TipDialog/0.120.1920.1080/1920.0.2560.1440@0.120.1920.1080" timestamp="1587563213461" />
+    <state x="643" y="398" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1588246695741" />
+    <state x="613" y="170" width="683" height="764" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1593708641488">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="613" y="170" width="683" height="764" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1593708641488" />
+    <state x="751" y="473" width="424" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593691818898">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="751" y="473" width="424" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1593691818898" />
+    <state x="679" y="271" width="551" height="562" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1593530970283">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="679" y="271" width="551" height="562" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593530970283" />
+    <state x="507" y="292" width="896" height="614" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1593122305308">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="507" y="292" width="896" height="614" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.27.1920.1053@0.27.1920.1053" timestamp="1593122305308" />
+    <state x="693" y="322" width="524" height="490" key="extract.method.dialog" timestamp="1591805197199">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="693" y="322" width="524" height="490" key="extract.method.dialog/0.27.1920.1053@0.27.1920.1053" timestamp="1591805197199" />
+    <state x="718" y="302" width="824" height="610" key="find.popup" timestamp="1593710303693">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="629" y="400" width="824" height="626" key="find.popup/0.120.1920.1080/1920.0.2560.1440@0.120.1920.1080" timestamp="1587565531563" />
+    <state x="718" y="302" width="824" height="610" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1593710303693" />
+    <state width="495" height="149" key="javadoc.popup.new" timestamp="1593708827912">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="495" height="149" key="javadoc.popup.new/0.27.1920.1053@0.27.1920.1053" timestamp="1593708827912" />
+    <state x="1175" y="237" width="587" height="737" key="refactoring.ChangeSignatureDialog" timestamp="1593545599999">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="1175" y="237" width="501" height="732" key="refactoring.ChangeSignatureDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593545599999" />
+    <state x="624" y="253" width="672" height="677" key="run.anything.popup" timestamp="1593692174908">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="624" y="253" width="672" height="677" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1593692174908" />
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1593711263447">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="356" width="672" height="696" key="search.everywhere.popup/0.120.1920.1080/1920.0.2560.1440@0.120.1920.1080" timestamp="1587565486804" />
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1593711263447" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="24" />
-        </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/org/jooq/jooq/3.10.6/jooq-3.10.6-sources.jar!/org/jooq/impl/CombinedCondition.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="38" />
+          <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/config/AutomatonCSRFExceptions.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java</url>
-          <line>337</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/logic/AutomatonStandardLogic.java</url>
-          <line>410</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/domainql/0.2.1/domainql-0.2.1-sources.jar!/de/quinscape/domainql/generic/DomainObjectCoercing.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../automaton/src/test/java/de/quinscape/automaton/runtime/pubsub/PubSubServiceTest.java</url>
-          <line>127</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/com/google/code/svenson/svenson/1.5.8/svenson-1.5.8-sources.jar!/org/svenson/info/JavaObjectPropertyInfo.java</url>
-          <line>286</line>
-          <option name="timeStamp" value="51" />
+          <url>file://$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/controller/MergeServiceController.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/../automaton-js/src/ui/tree/IndexedObjects.js</url>
-          <line>305</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/../automaton-js/src/ui/tree/Tree.js</url>
-          <line>74</line>
-          <option name="timeStamp" value="50" />
+          <url>file://$PROJECT_DIR$/../automaton-js/src/ui/ChangeConflictDialog.js</url>
+          <line>267</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="javascript-exception" />
+      </default-breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="env.getSelectionSet().getFields(&quot;rows/*&quot;).stream().map( f -&gt; f.getName()).collect(Collectors.joining(&quot;, &quot;))" language="JAVA" custom="org.jooq.impl.FieldAlias,java.util.stream.Collectors" />
       </configuration>
-      <configuration name="mocha-javascript-test-runner">
-        <watch expression="converted._type" language="JavaScript" />
-      </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/automaton_test$WorkingSet_Merge.dat" NAME="WorkingSet Merge Coverage Results" MODIFIED="1593180697311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/automaton_test$Automaton_Js_Tests.dat" NAME="Automaton-Js Tests Coverage Results" MODIFIED="1593174492998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
