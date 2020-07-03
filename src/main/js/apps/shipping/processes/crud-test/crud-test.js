@@ -98,7 +98,7 @@ export function initProcess(process, scope)
                         "to-detail": {
                             to: "CRUDDetail",
                             action: t => {
-                                scope.currentFoo = t.context;
+                                scope.currentFoo = config.inputSchema.clone(t.context);
                             }
                         }
                     }

@@ -7,7 +7,10 @@ import FormOptions from "./FormOptions";
 
 const CRUDDetail = props => {
 
-    const [ control, setControl] = useState(DEFAULT_OPTIONS);
+    const [ control, setControl] = useState(() => ({
+        ... DEFAULT_OPTIONS,
+        isolation: false
+    }));
 
     const changeControl = (k, v) => setControl({
         ...control,
@@ -28,7 +31,10 @@ const CRUDDetail = props => {
             <div className="row">
 
                 <div className="col">
-                    <FooForm value={scope.currentFoo} options={ control } />
+                    <FooForm
+                        value={scope.currentFoo}
+                        options={ control }
+                    />
                 </div>
             </div>
 
