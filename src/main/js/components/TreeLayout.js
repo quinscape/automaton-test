@@ -112,6 +112,7 @@ const TreeLayout = fnObserver( props => {
                         {
                             scope.useIndex ? (
                                 <Tree.IndexedObjects
+                                    heading="Animals"
                                     values={ scope.nodes }
                                     render={ (row, iSelected) => ( <>{getIcon(row.parent.name, iSelected) } { row.name }</> )}
                                     renderIndex={ letter => ( <b>{ letter + ":" }</b> )}
