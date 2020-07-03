@@ -50,9 +50,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.graphqlconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.graphqlconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_automaton_0_2_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/reset-corge.sql" beforeDir="false" afterPath="$PROJECT_DIR$/misc/reset-corge.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/AutomatonTestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/AutomatonTestApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/DomainConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/DomainConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/ServiceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/ServiceConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/WebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/WebConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/DataGridLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/DataGridLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/TestLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/TestLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/components/CommonNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/components/CommonNav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/components/TreeLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/components/TreeLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/automatontest-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/automatontest-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/domain-typedocs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/domain-typedocs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/AutomatonTestApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/AutomatonTestApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/SeleniumTestITCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/TestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/js/temp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/js/temp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton/automaton.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/automaton.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/merge/MergeConflictField.java" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model/merge/MergeConflictField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +265,7 @@
       <command value="key" />
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.Automaton-Js Tests">
+  <component name="RunManager" selected="Tomcat Server.Local Tomcat">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -1060,7 +1088,8 @@
       <workItem from="1593515179113" duration="24848000" />
       <workItem from="1593619311219" duration="3076000" />
       <workItem from="1593683120450" duration="6501000" />
-      <workItem from="1593692013753" duration="11258000" />
+      <workItem from="1593692013753" duration="13847000" />
+      <workItem from="1593773544612" duration="705000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
@@ -1236,38 +1265,38 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="310" width="439" height="484" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1593711090868" />
-    <state width="1279" height="348" key="GridCell.Tab.0.bottom" timestamp="1593707082149">
+    <state width="1279" height="348" key="GridCell.Tab.0.bottom" timestamp="1593738439424">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1279" height="348" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
-    <state width="1279" height="348" key="GridCell.Tab.0.center" timestamp="1593707082149">
+    <state width="1279" height="348" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1593738439424" />
+    <state width="1279" height="348" key="GridCell.Tab.0.center" timestamp="1593738439423">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1279" height="348" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
-    <state width="1279" height="348" key="GridCell.Tab.0.left" timestamp="1593707082149">
+    <state width="1279" height="348" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1593738439423" />
+    <state width="1279" height="348" key="GridCell.Tab.0.left" timestamp="1593738439423">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1279" height="348" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
-    <state width="1279" height="348" key="GridCell.Tab.0.right" timestamp="1593707082149">
+    <state width="1279" height="348" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1593738439423" />
+    <state width="1279" height="348" key="GridCell.Tab.0.right" timestamp="1593738439424">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1279" height="348" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
-    <state width="1279" height="348" key="GridCell.Tab.1.bottom" timestamp="1593707082149">
+    <state width="1279" height="348" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1593738439424" />
+    <state width="1279" height="348" key="GridCell.Tab.1.bottom" timestamp="1593738439426">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1279" height="348" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
-    <state width="1279" height="348" key="GridCell.Tab.1.center" timestamp="1593707082149">
+    <state width="1279" height="348" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1593738439426" />
+    <state width="1279" height="348" key="GridCell.Tab.1.center" timestamp="1593738439425">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1279" height="348" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
-    <state width="1279" height="348" key="GridCell.Tab.1.left" timestamp="1593707082149">
+    <state width="1279" height="348" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1593738439425" />
+    <state width="1279" height="348" key="GridCell.Tab.1.left" timestamp="1593738439425">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1279" height="348" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
-    <state width="1279" height="348" key="GridCell.Tab.1.right" timestamp="1593707082149">
+    <state width="1279" height="348" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1593738439425" />
+    <state width="1279" height="348" key="GridCell.Tab.1.right" timestamp="1593738439426">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1279" height="348" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
+    <state width="1279" height="348" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1593738439426" />
     <state width="1014" height="259" key="GridCell.Tab.14.bottom" timestamp="1588161304741">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -1300,22 +1329,22 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1014" height="259" key="GridCell.Tab.15.right/0.27.1920.1053@0.27.1920.1053" timestamp="1588161305891" />
-    <state width="1279" height="348" key="GridCell.Tab.2.bottom" timestamp="1593707082150">
+    <state width="1279" height="348" key="GridCell.Tab.2.bottom" timestamp="1593738439426">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1279" height="348" key="GridCell.Tab.2.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082150" />
-    <state width="1279" height="348" key="GridCell.Tab.2.center" timestamp="1593707082150">
+    <state width="1279" height="348" key="GridCell.Tab.2.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1593738439426" />
+    <state width="1279" height="348" key="GridCell.Tab.2.center" timestamp="1593738439426">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1279" height="348" key="GridCell.Tab.2.center/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
-    <state width="1279" height="348" key="GridCell.Tab.2.left" timestamp="1593707082149">
+    <state width="1279" height="348" key="GridCell.Tab.2.center/0.27.1920.1053@0.27.1920.1053" timestamp="1593738439426" />
+    <state width="1279" height="348" key="GridCell.Tab.2.left" timestamp="1593738439426">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1279" height="348" key="GridCell.Tab.2.left/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082149" />
-    <state width="1279" height="348" key="GridCell.Tab.2.right" timestamp="1593707082150">
+    <state width="1279" height="348" key="GridCell.Tab.2.left/0.27.1920.1053@0.27.1920.1053" timestamp="1593738439426" />
+    <state width="1279" height="348" key="GridCell.Tab.2.right" timestamp="1593738439426">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1279" height="348" key="GridCell.Tab.2.right/0.27.1920.1053@0.27.1920.1053" timestamp="1593707082150" />
+    <state width="1279" height="348" key="GridCell.Tab.2.right/0.27.1920.1053@0.27.1920.1053" timestamp="1593738439426" />
     <state width="1315" height="275" key="GridCell.Tab.3.bottom" timestamp="1593114409514">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -1341,10 +1370,10 @@
     </state>
     <state x="471" y="285" key="SettingsEditor/0.120.1920.1080/1920.0.2560.1440@0.120.1920.1080" timestamp="1587563153265" />
     <state x="99" y="144" width="977" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1593452437656" />
-    <state x="689" y="286" width="639" height="524" key="StructurePopup" timestamp="1593711333654">
+    <state x="689" y="286" width="639" height="524" key="StructurePopup" timestamp="1593713888600">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="689" y="286" width="639" height="524" key="StructurePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1593711333654" />
+    <state x="689" y="286" width="639" height="524" key="StructurePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1593713888600" />
     <state width="610" height="555" key="SwitcherDM" timestamp="1593711275709">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -1390,11 +1419,11 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="693" y="322" width="524" height="490" key="extract.method.dialog/0.27.1920.1053@0.27.1920.1053" timestamp="1591805197199" />
-    <state x="718" y="302" width="824" height="610" key="find.popup" timestamp="1593710303693">
+    <state x="718" y="302" width="824" height="610" key="find.popup" timestamp="1593773613427">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="629" y="400" width="824" height="626" key="find.popup/0.120.1920.1080/1920.0.2560.1440@0.120.1920.1080" timestamp="1587565531563" />
-    <state x="718" y="302" width="824" height="610" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1593710303693" />
+    <state x="718" y="302" width="824" height="610" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1593773613427" />
     <state width="495" height="149" key="javadoc.popup.new" timestamp="1593708827912">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -1407,11 +1436,11 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="624" y="253" width="672" height="677" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1593692174908" />
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1593711263447">
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1593773549000">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="623" y="356" width="672" height="696" key="search.everywhere.popup/0.120.1920.1080/1920.0.2560.1440@0.120.1920.1080" timestamp="1587565486804" />
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1593711263447" />
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1593773549000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
