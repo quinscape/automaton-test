@@ -2,20 +2,19 @@ package de.quinscape.automatontest.runtime.config;
 
 import de.quinscape.automaton.runtime.config.ScopeTableConfig;
 import de.quinscape.automaton.runtime.i18n.TranslationService;
+import de.quinscape.automaton.runtime.merge.MergeOptions;
+import de.quinscape.automaton.runtime.merge.MergeService;
 import de.quinscape.automaton.runtime.provider.AlternateStyleProvider;
 import de.quinscape.automaton.runtime.provider.AutomatonJsViewProvider;
 import de.quinscape.automaton.runtime.provider.ProcessInjectionService;
 import de.quinscape.automaton.runtime.provider.StyleSheetDefinition;
-import de.quinscape.automaton.runtime.provider.StyleSheetSelector;
 import de.quinscape.automaton.runtime.ws.AutomatonWebSocketHandler;
 import de.quinscape.automatontest.model.ValidationRules;
 import de.quinscape.domainql.DomainQL;
-import de.quinscape.domainql.schema.SchemaDataProvider;
 import de.quinscape.spring.jsview.JsViewResolver;
 import de.quinscape.spring.jsview.loader.ResourceHandle;
 import de.quinscape.spring.jsview.loader.ResourceLoader;
 import graphql.schema.GraphQLSchema;
-import org.apache.commons.collections.ArrayStack;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -29,6 +28,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.ServletContext;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
@@ -36,6 +36,7 @@ import java.util.concurrent.TimeUnit;
 public class WebConfiguration
     implements WebMvcConfigurer
 {
+
 
     private final Environment env;
 
@@ -56,6 +57,8 @@ public class WebConfiguration
 
     private final ResourceHandle<ValidationRules> validationRulesHandle;
 
+    private final MergeOptions mergeOptions;
+
 
     @Autowired
     public WebConfiguration(
@@ -69,11 +72,14 @@ public class WebConfiguration
         @Qualifier("validationRules")
         ResourceHandle<ValidationRules> validationRulesHandle,
         @Lazy Optional<AutomatonWebSocketHandler> optionalSocketHandler,
+        @Lazy @Autowired(required = false) MergeService mergeService,
         @Lazy DomainQL domainQL
     )
     {
         this.env = env;
         this.servletContext = servletContext;
+
+        this.mergeOptions = mergeService != null ? mergeService.getOptions() : MergeOptions.DEFAULT;
         this.domainQL = domainQL;
         this.resourceLoader = resourceLoader;
 
@@ -103,7 +109,8 @@ public class WebConfiguration
                         processInjectionService,
                         translationService,
                         automatonTestWebSocketHandler,
-                        scopeTableConfig
+                        scopeTableConfig,
+                        mergeOptions
                     )
                 )
 

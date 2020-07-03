@@ -6,15 +6,21 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.EnabledIf;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(
+    // prevent websocket errors
+    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
+)
 @ContextConfiguration(classes = {
     AutomatonTestApplication.class
 })
+@EnabledIf(expression ="${ spring.profiles.active === 'integration-test'}")
 
-//XXX: deactivated because it is slow and we have no context-requiring tests yet but keep this as example of how to do it.
+//XXX: This test is only an example how to setup a complete integration-test. Also see MergeServiceTest for an example
+//     of a partial context loading test.
 @Ignore
 public class AutomatonTestApplicationTests
 {

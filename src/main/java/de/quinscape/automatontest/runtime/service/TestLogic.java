@@ -1,8 +1,6 @@
 package de.quinscape.automatontest.runtime.service;
 
 import de.quinscape.automaton.runtime.auth.AutomatonAuthentication;
-import de.quinscape.automatontest.domain.tables.pojos.Baz;
-import de.quinscape.automatontest.domain.tables.pojos.BazValue;
 import de.quinscape.automatontest.domain.tables.pojos.Foo;
 import de.quinscape.automatontest.model.ComplexContainer;
 import de.quinscape.domainql.DomainQL;
@@ -10,11 +8,12 @@ import de.quinscape.domainql.annotation.GraphQLField;
 import de.quinscape.domainql.annotation.GraphQLLogic;
 import de.quinscape.domainql.annotation.GraphQLMutation;
 import de.quinscape.domainql.annotation.GraphQLQuery;
-import de.quinscape.domainql.annotation.GraphQLTypeParam;
 import de.quinscape.domainql.generic.DomainObject;
 import de.quinscape.domainql.util.Paged;
+import de.quinscape.spring.jsview.util.JSONUtil;
 import org.jooq.DSLContext;
-import org.jooq.Table;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 
@@ -26,11 +25,12 @@ import java.util.List;
 import java.util.UUID;
 
 import static de.quinscape.automatontest.domain.Tables.*;
-import static org.jooq.impl.DSL.*;
 
 @GraphQLLogic
 public class TestLogic
 {
+    private final static Logger log = LoggerFactory.getLogger(TestLogic.class);
+
     private final DSLContext dslContext;
 
     private final DomainQL domainQL;

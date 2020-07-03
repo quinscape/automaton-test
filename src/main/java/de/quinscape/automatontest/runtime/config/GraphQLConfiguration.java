@@ -9,6 +9,10 @@ import de.quinscape.automatontest.domain.tables.pojos.Bar;
 import de.quinscape.automatontest.domain.tables.pojos.Baz;
 import de.quinscape.automatontest.domain.tables.pojos.BazLink;
 import de.quinscape.automatontest.domain.tables.pojos.BazValue;
+import de.quinscape.automatontest.domain.tables.pojos.Corge;
+import de.quinscape.automatontest.domain.tables.pojos.CorgeAssoc;
+import de.quinscape.automatontest.domain.tables.pojos.CorgeLink;
+import de.quinscape.automatontest.domain.tables.pojos.CorgeType;
 import de.quinscape.automatontest.domain.tables.pojos.Node;
 import de.quinscape.automatontest.domain.tables.pojos.QuxA;
 import de.quinscape.automatontest.domain.tables.pojos.QuxB;
@@ -93,7 +97,12 @@ public class GraphQLConfiguration
 
                 Baz.class,
                 BazValue.class,
-                BazLink.class
+                BazLink.class,
+
+                Corge.class,
+                CorgeAssoc.class,
+                CorgeLink.class,
+                CorgeType.class
             )
             
             // configure object creation for schema relationships
@@ -110,6 +119,16 @@ public class GraphQLConfiguration
             .configureRelation(BAZ_LINK.BAZ_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
             .configureRelation(BAZ_LINK.VALUE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
             .configureRelation(BAZ.OWNER_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
+
+            .configureRelation(APP_VERSION.OWNER_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
+
+            .configureRelation(CORGE.TYPE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
+            .configureRelation(CORGE.OWNER_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
+
+            .configureRelation(CORGE_LINK.CORGE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
+            .configureRelation(CORGE_LINK.ASSOC_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
+
+            .configureNameField("name")
 
             /*
                 documentation for the types defined in the automaton library

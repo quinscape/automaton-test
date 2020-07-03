@@ -11,6 +11,10 @@ import de.quinscape.automatontest.domain.tables.pojos.Bar;
 import de.quinscape.automatontest.domain.tables.pojos.Baz;
 import de.quinscape.automatontest.domain.tables.pojos.BazLink;
 import de.quinscape.automatontest.domain.tables.pojos.BazValue;
+import de.quinscape.automatontest.domain.tables.pojos.Corge;
+import de.quinscape.automatontest.domain.tables.pojos.CorgeAssoc;
+import de.quinscape.automatontest.domain.tables.pojos.CorgeLink;
+import de.quinscape.automatontest.domain.tables.pojos.CorgeType;
 import de.quinscape.automatontest.domain.tables.pojos.Foo;
 import de.quinscape.automatontest.domain.tables.pojos.FooType;
 import de.quinscape.automatontest.domain.tables.pojos.GridColumns;
@@ -97,7 +101,12 @@ public class DataGridLogic
 
                 Baz.class,
                 BazValue.class,
-                BazLink.class
+                BazLink.class,
+
+                Corge.class,
+                CorgeAssoc.class,
+                CorgeType.class,
+                CorgeLink.class
             }
         )
         Class<T> type,

@@ -75,6 +75,21 @@ const CommonNav = props => {
                         WorkingSet-CRUD
                     </DropdownItem>
                     <DropdownItem
+                        onClick={ () => runProcessURI("/shipping/tree-test") }
+                    >
+                        Tree Test
+                    </DropdownItem>
+                    <DropdownItem
+                        onClick={ () => runProcessURI("/shipping/monitor-test") }
+                    >
+                        Monitor Test
+                    </DropdownItem>
+                    <DropdownItem
+                        onClick={ () => runProcessURI("/shipping/merge-test") }
+                    >
+                        Merge Test
+                    </DropdownItem>
+                    <DropdownItem
                         onClick={ () => runProcessURI("/shipping/iterator-test") }
                     >
                         Iterator-Test

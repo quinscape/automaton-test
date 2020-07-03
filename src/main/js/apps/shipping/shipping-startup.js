@@ -1,11 +1,23 @@
 import "whatwg-fetch"
-import bootstrap from 'jsview-bootstrap'
-import { configure, observable, runInAction, toJS } from "mobx"
-import { startup, config, getCurrentProcess, addConfig, shutdown, pickSchemaTypes } from "@quinscape/automaton-js"
+import bootstrap from "jsview-bootstrap"
+import { configure, observable, runInAction, spy, toJS } from "mobx"
+import {
+    startup,
+    config,
+    getCurrentProcess,
+    addConfig,
+    shutdown,
+    pickSchemaTypes,
+    Hub,
+    subscribeToTopic,
+    publish,
+    GraphQLQuery
+} from "@quinscape/automaton-js"
 import Layout from "../../components/Layout";
 
 // noinspection ES6UnusedImports
 import AUTOMATON_CSS from "./automaton-test.css"
+import 'react-calendar/dist/Calendar.css';
 
 // set MobX configuration
 configure({
@@ -13,22 +25,32 @@ configure({
 });
 
 bootstrap(
-        initial => {
+    initial => {
+        return startup(
+            require.context("./", true, /\.js$/),
+            initial,
+            config => {
 
-            return startup(
-                require.context("./", true, /\.js$/),
-                initial,
-                config => {
+                config.layout = Layout;
+                addConfig("validationRules", initial.validationRules)
 
-                    config.layout = Layout;
-                    addConfig("validationRules", initial.validationRules)
-                }
-            );
-        }
-    ).then(
+                // spy(ev => {
+                //     ev.type === "update" && console.log("MOBX", ev)
+                //
+                //     if (ev.oldValue === "ec2ae4c3-6615-4c77-b07e-d1c879dc69cb")
+                //     {
+                //         debugger;
+                //     }
+                // })
+
+                return Hub.init(initial.connectionId)
+            }
+        );
+    }
+)
+    .then(
         () => console.log("ready.")
     );
-
 
 export default {
     config,
@@ -36,5 +58,8 @@ export default {
     runInAction,
     shutdown,
     pickSchemaTypes,
-    toJS
+    toJS,
+    publish,
+    subscribeToTopic,
+    GraphQLQuery
 };

@@ -130,21 +130,6 @@ public class DomainConfiguration
     }
 
 
-    @Bean
-    public TranslationService translationService(
-        DSLContext dslContext,
-
-        @Qualifier("jsFunctionReferences")
-        ResourceHandle<StaticFunctionReferences> jsFunctionReferencesHandle
-    )
-    {
-        return new DefaultTranslationService(
-            dslContext,
-            jsFunctionReferencesHandle,
-            APP_TRANSLATION,
-            AppTranslation.class
-        );
-    }
 
     @Bean
     public ScopeTableConfig scopeTableConfig()

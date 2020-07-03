@@ -6,14 +6,16 @@ import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.springframework.test.context.junit.jupiter.EnabledIf;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 
 /**
- * The inclusion of this test into the integration tests happens by following the "*ITCase.java" naming convention
+ * Example of a selenium integration-test with gecko-driver
  */
-public class SeleniumTestITCase
+@EnabledIf(expression ="#{ systemProperties['spring.profiles.active'] === 'integration-test' && systemProperties['webdriver.gecko.driver'] !== '' }")
+public class SeleniumTest
 {
     private static FirefoxDriver driver;
 

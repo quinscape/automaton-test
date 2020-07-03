@@ -1,6 +1,7 @@
 package de.quinscape.automatontest.runtime.config;
 
-import com.google.common.collect.ImmutableMap;
+import de.quinscape.automaton.model.js.StaticFunctionReferences;
+import de.quinscape.automaton.runtime.domain.DomainMonitorService;
 import de.quinscape.automaton.runtime.domain.IdGenerator;
 import de.quinscape.automaton.runtime.domain.UUIDGenerator;
 import de.quinscape.automaton.runtime.domain.op.BatchStoreOperation;
@@ -8,11 +9,15 @@ import de.quinscape.automaton.runtime.domain.op.DefaultBatchStoreOperation;
 import de.quinscape.automaton.runtime.domain.op.DefaultStoreOperation;
 import de.quinscape.automaton.runtime.domain.op.StoreOperation;
 import de.quinscape.automaton.runtime.filter.JavaFilterTransformer;
+import de.quinscape.automaton.runtime.i18n.DefaultTranslationService;
+import de.quinscape.automaton.runtime.i18n.TranslationService;
+import de.quinscape.automaton.runtime.merge.MergeService;
 import de.quinscape.automaton.runtime.pubsub.DefaultPubSubService;
 import de.quinscape.automaton.runtime.pubsub.PubSubMessageHandler;
 import de.quinscape.automaton.runtime.pubsub.PubSubService;
 import de.quinscape.automaton.runtime.ws.AutomatonWebSocketHandler;
 import de.quinscape.automaton.runtime.ws.DefaultAutomatonWebSocketHandler;
+import de.quinscape.automatontest.domain.tables.pojos.AppTranslation;
 import de.quinscape.automatontest.model.ValidationRules;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.spring.jsview.loader.FileResourceLoader;
@@ -31,8 +36,9 @@ import org.springframework.util.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Collections;
+
+import static de.quinscape.automatontest.domain.Tables.*;
 
 @Configuration
 public class ServiceConfiguration
@@ -116,8 +122,44 @@ public class ServiceConfiguration
     }
 
     @Bean
-    public PubSubService topicService()
+    public PubSubService pubSubService()
     {
         return new DefaultPubSubService();
+    }
+
+    @Bean
+    public DomainMonitorService domainMonitorService()
+    {
+        return new DomainMonitorService(
+            pubSubService()
+        );
+    }
+
+    @Bean
+    public MergeService mergeService(
+        @Lazy DomainQL domainQL,
+        DSLContext dslContext
+    )
+    {
+        final MergeService mergeService = MergeService.build(domainQL, dslContext)
+            .buildService();
+        log.info("Created MergeService with {}", mergeService.getOptions());
+        return mergeService;
+    }
+
+    @Bean
+    public TranslationService translationService(
+        DSLContext dslContext,
+
+        @Qualifier("jsFunctionReferences")
+            ResourceHandle<StaticFunctionReferences> jsFunctionReferencesHandle
+    )
+    {
+        return new DefaultTranslationService(
+            dslContext,
+            jsFunctionReferencesHandle,
+            APP_TRANSLATION,
+            AppTranslation.class
+        );
     }
 }
