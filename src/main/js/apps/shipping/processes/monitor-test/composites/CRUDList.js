@@ -1,6 +1,6 @@
 import { Icon, Select } from "domainql-form"
 import React from "react"
-import { observer as fnObserver } from "mobx-react-lite";
+import { observer as fnObserver, useObserver } from "mobx-react-lite";
 import { ButtonToolbar } from "reactstrap";
 import { Button, i18n, IQueryGrid as DataGrid, useDomainMonitor, FilterDSL, DomainActivityIndicator } from "@quinscape/automaton-js"
 
