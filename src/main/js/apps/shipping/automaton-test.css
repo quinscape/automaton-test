@@ -158,3 +158,7 @@ ul.tree-widget:focus-within {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(2, 32, 177, 0.25);
     box-shadow: 0 0 0 0.2rem rgba(2, 32, 177, 0.25); }
 
+
+button[disabled] {
+    cursor: not-allowed;
+}
