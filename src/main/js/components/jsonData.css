@@ -1,0 +1,34 @@
+
+.json-data-container
+{
+    position: relative;
+    border: 1px solid #ccc;
+}
+.json-data
+{
+    background: #f8f8f8;
+    overflow: scroll;
+}
+.json-data .json-key
+{
+    color: #dc3545;
+}
+
+
+.json-data .json-string
+{
+    color: #28a745;
+}
+
+.json-data .json-value
+{
+    color: #17a2b8;
+}
+
+.json-data-container .toolbar
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+

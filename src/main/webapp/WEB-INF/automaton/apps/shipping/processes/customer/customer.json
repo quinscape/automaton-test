@@ -1,0 +1,111 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "computed"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "type"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "CustomerList",
+            "states": {
+                "CustomerList": {
+                    "to-detail": {
+                        "to": "CustomerDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"Transition 'to-detail'\", toJS(t.context)); }"
+                        }
+                    }
+                },
+                "CustomerDetail": {
+                    "save": {
+                        "to": "CustomerList",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"Transition 'save'\"); }"
+                        }
+                    },
+                    "cancel": {
+                        "to": "CustomerList",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"Transition 'cancel'\"); }"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "CustomerScope",
+            "observables": [
+                {
+                    "type": "DomainObject",
+                    "name": "currentObject",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "type": "PagedCustomer",
+                    "name": "customers",
+                    "defaultValue": "injection( // language=GraphQL\n`{\n                getCustomers{\n                    rows{\n                        id\n                        number\n                        salutation\n                        name\n                    }\n                }\n            }`)",
+                    "description": "* Current todos"
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateCustomers",
+                    "params": [
+                        "customers"
+                    ],
+                    "code": "this.customers = customers;"
+                }
+            ],
+            "computeds": [],
+            "helpers": []
+        }
+    }
+}

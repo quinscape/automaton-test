@@ -1,0 +1,52 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx-react",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observer"
+                }
+            ]
+        }
+    ],
+    "composite": {
+        "type": "CompositeComponent",
+        "constants": [],
+        "root": {
+            "name": "div",
+            "attrs": [],
+            "kids": [
+                {
+                    "name": "h1",
+                    "attrs": [],
+                    "kids": [
+                        {
+                            "type": "JSXText",
+                            "value": "ShippingHome"
+                        }
+                    ],
+                    "type": "JSXElement"
+                }
+            ],
+            "type": "JSXElement"
+        },
+        "decorators": [
+            {
+                "name": "observer"
+            }
+        ]
+    },
+    "export": "ShippingHome"
+}

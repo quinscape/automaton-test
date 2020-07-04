@@ -1,0 +1,42 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "type"
+                }
+            ]
+        }
+    ],
+    "userScope": {
+        "name": "UserScope",
+        "observables": [
+            {
+                "type": "String",
+                "name": "value",
+                "defaultValue": "\"bar\"",
+                "description": null
+            }
+        ],
+        "actions": [],
+        "computeds": [],
+        "helpers": []
+    }
+}

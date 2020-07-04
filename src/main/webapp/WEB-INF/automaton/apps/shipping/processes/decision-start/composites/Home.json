@@ -1,0 +1,121 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx-react",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observer"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                }
+            ]
+        }
+    ],
+    "composite": {
+        "type": "CompositeComponent",
+        "constants": [
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ObjectPattern",
+                            "properties": [
+                                {
+                                    "type": "ObjectProperty",
+                                    "key": "env",
+                                    "value": {
+                                        "type": "Identifier",
+                                        "name": "env"
+                                    }
+                                }
+                            ]
+                        },
+                        "init": "this.props"
+                    }
+                ]
+            }
+        ],
+        "root": {
+            "name": "React.Fragment",
+            "attrs": [],
+            "kids": [
+                {
+                    "name": "h1",
+                    "attrs": [],
+                    "kids": [
+                        {
+                            "type": "JSXExpressionContainer",
+                            "code": "{i18n('Multi-Layout Home')}"
+                        }
+                    ],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "p",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "className",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"text-info\""
+                            }
+                        }
+                    ],
+                    "kids": [
+                        {
+                            "name": "i",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "className",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"fas fa-info-circle\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "type": "JSXText",
+                            "value": "Use input parameters to choose sub view."
+                        }
+                    ],
+                    "type": "JSXElement"
+                }
+            ],
+            "type": "JSXElement"
+        },
+        "decorators": [
+            {
+                "name": "observer"
+            }
+        ]
+    },
+    "export": "Home"
+}

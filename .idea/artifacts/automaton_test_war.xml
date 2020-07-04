@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="automaton-test:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="automaton-test.war">
+      <element id="artifact" artifact-name="automaton-test:war exploded" />
+    </root>
+  </artifact>
+</component>
