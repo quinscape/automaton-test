@@ -23,7 +23,7 @@ at times and a running example in any case.
  
 The file [automatontest.backup](https://github.com/quinscape/automaton-test/blob/master/automatontest.backup) contains a Postgresql 10 database dump of the database from which the current
 GraphQL schema in [schema.graphql](https://github.com/quinscape/automaton-test/blob/master/schema.graphql) was created.
-(Where still doing database-schema-first at this point)
+(We're still doing database-schema-first at this point)
 
 
 
