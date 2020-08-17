@@ -123,10 +123,12 @@ const ExtFilterHome = props => {
                             )
                             .between(
                                 value(
-                                    min
+                                    min,
+                                    "Int"
                                 ),
                                 value(
-                                    max
+                                    max,
+                                    "Int"
                                 )
                             )
                         )
