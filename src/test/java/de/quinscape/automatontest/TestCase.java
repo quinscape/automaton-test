@@ -1,6 +1,6 @@
 package de.quinscape.automatontest;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -28,3 +28,4 @@ public class TestCase
         log.info("INSERT INTO app_user (id,login,password,roles,created, last_login) VALUES ('{}', '{}', '{}', '{}', now(), now());", UUID.randomUUID().toString(), name, encoder.encode(name), "ROLE_" + name.toUpperCase());
     }
 }
+

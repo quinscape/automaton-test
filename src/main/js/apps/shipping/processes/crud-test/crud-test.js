@@ -11,6 +11,7 @@ import {
     storeDomainObject,
     deleteDomainObject,
     GraphQLQuery,
+    FilterDSL,
     backToParent
 } from "@quinscape/automaton-js";
 

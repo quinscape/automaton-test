@@ -2372,6 +2372,26 @@ domainql-form@^3.1.1:
     react "^16.12.0"
     use-debounce "^3.1.0"
 
+domainql-form@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.1.2.tgz#fd379bf7914bd4128c0a879e479526d341a41005"
+  integrity sha512-FQwKSlKblqTxJ3JSTP30vtpGZ7icEmLOe3lcg2kzTP43eKbJhKV/efsvEZDDZC2ModbuaA9RXOo0qbCijPSQAw==
+  dependencies:
+    classnames "^2.2.6"
+    lodash.debounce "^4.0.8"
+    lodash.get "^4.4.2"
+    lodash.isequal "^4.5.0"
+    lodash.set "^4.3.2"
+    lodash.topath "^4.5.2"
+    mobx "^5.15.0"
+    mobx-react "^6.1.4"
+    mobx-react-devtools "^6.1.1"
+    mobx-react-lite "^1.5.1"
+    mobx-utils "^5.5.2"
+    prop-types "^15.7.2"
+    react "^16.12.0"
+    use-debounce "^3.1.0"
+
 domainql-webpack-plugin@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/domainql-webpack-plugin/-/domainql-webpack-plugin-0.0.3.tgz#301778845140f2b14ad4b5c5a97c8884e0d1441e"

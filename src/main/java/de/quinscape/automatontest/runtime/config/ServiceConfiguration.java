@@ -1,6 +1,12 @@
 package de.quinscape.automatontest.runtime.config;
 
 import de.quinscape.automaton.model.js.StaticFunctionReferences;
+import de.quinscape.automaton.runtime.attachment.AttachmentRepository;
+import de.quinscape.automaton.runtime.attachment.DatabaseAttachmentContentRepository;
+import de.quinscape.automaton.runtime.attachment.DefaultAttachmentRepository;
+import de.quinscape.automaton.runtime.attachment.FileBasedAttachmentContentRepository;
+import de.quinscape.automaton.runtime.data.FilterContextConfiguration;
+import de.quinscape.automaton.runtime.data.FilterContextRegistry;
 import de.quinscape.automaton.runtime.domain.DomainMonitorService;
 import de.quinscape.automaton.runtime.domain.IdGenerator;
 import de.quinscape.automaton.runtime.domain.UUIDGenerator;
@@ -11,11 +17,11 @@ import de.quinscape.automaton.runtime.domain.op.StoreOperation;
 import de.quinscape.automaton.runtime.filter.JavaFilterTransformer;
 import de.quinscape.automaton.runtime.i18n.DefaultTranslationService;
 import de.quinscape.automaton.runtime.i18n.TranslationService;
-import de.quinscape.automaton.runtime.merge.MergeService;
 import de.quinscape.automaton.runtime.pubsub.DefaultPubSubService;
 import de.quinscape.automaton.runtime.pubsub.PubSubMessageHandler;
 import de.quinscape.automaton.runtime.pubsub.PubSubService;
-import de.quinscape.automaton.runtime.ws.AutomatonWebSocketHandler;
+import de.quinscape.automaton.runtime.userinfo.IQueryUserInfoProvider;
+import de.quinscape.automaton.runtime.userinfo.UserInfoService;
 import de.quinscape.automaton.runtime.ws.DefaultAutomatonWebSocketHandler;
 import de.quinscape.automatontest.domain.tables.pojos.AppTranslation;
 import de.quinscape.automatontest.model.ValidationRules;
@@ -108,7 +114,7 @@ public class ServiceConfiguration
 
 
     @Bean
-    public AutomatonWebSocketHandler automatonWebSocketHandler(
+    public DefaultAutomatonWebSocketHandler automatonWebSocketHandler(
         PubSubService pubSubService,
         JavaFilterTransformer javaFilterTransformer,
         @Lazy DomainQL domainQL
@@ -122,29 +128,17 @@ public class ServiceConfiguration
     }
 
     @Bean
-    public PubSubService pubSubService()
+    public PubSubService pubSubService(FilterContextRegistry registry)
     {
-        return new DefaultPubSubService();
+        return new DefaultPubSubService(registry);
     }
 
     @Bean
-    public DomainMonitorService domainMonitorService()
+    public DomainMonitorService domainMonitorService(PubSubService pubSubService)
     {
         return new DomainMonitorService(
-            pubSubService()
+            pubSubService
         );
-    }
-
-    @Bean
-    public MergeService mergeService(
-        @Lazy DomainQL domainQL,
-        DSLContext dslContext
-    )
-    {
-        final MergeService mergeService = MergeService.build(domainQL, dslContext)
-            .buildService();
-        log.info("Created MergeService with {}", mergeService.getOptions());
-        return mergeService;
     }
 
     @Bean
@@ -162,4 +156,77 @@ public class ServiceConfiguration
             AppTranslation.class
         );
     }
+
+    @Bean
+    public FilterContextConfiguration filterContextConfiguration(DSLContext dslContext)
+    {
+        return registry -> {
+            registry.register("param","https://quinscape.de");
+            registry.register("userCount", ctx -> dslContext.selectCount().from(APP_USER).fetchOne().value1());
+        };
+    }
+
+    @Bean
+    public UserInfoService userInfoService(
+        @Lazy DomainQL domainQL
+    )
+    {
+        return new UserInfoService(
+            new IQueryUserInfoProvider(
+                domainQL,
+                // language=GraphQL
+                "query getUserInfo($config: QueryConfigInput!)\n" +
+                "{\n" +
+                "    iQueryAppUser(config: $config)\n" +
+                "    {\n" +
+                "        rows{\n" +
+                "            id\n" +
+                "            created\n" +
+                "            lastLogin\n" +
+                "            foos{\n" +
+                "                name\n" +
+                "            }\n" +
+                "            bazes{\n" +
+                "                name\n" +
+                "            }\n" +
+                "        }\n" +
+                "    }\n" +
+                "}"
+            )
+        );
+    }
+
+// Alternative: File based attachment repository
+//    @Bean
+//    public AttachmentRepository attachmentRepository(
+//        DSLContext dslContext,
+//        @Lazy DomainQL domainQL,
+//        @Value("${automatontest.attachments}") String attachmentDirectory
+//    )
+//    {
+//        return new DefaultAttachmentRepository(
+//            dslContext,
+//            domainQL,
+//            new FileBasedAttachmentContentRepository(
+//                new File(attachmentDirectory)
+//            )
+//        );
+//    }
+
+    @Bean
+    public AttachmentRepository attachmentRepository(
+        DSLContext dslContext,
+        @Lazy DomainQL domainQL
+    )
+    {
+        return new DefaultAttachmentRepository(
+            dslContext,
+            domainQL,
+            new DatabaseAttachmentContentRepository(
+                dslContext,
+                domainQL
+            )
+        );
+    }
+
 }

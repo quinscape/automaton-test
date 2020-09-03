@@ -2,4 +2,7 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml" />
     <logger name="org.apache.commons.beanutils" level="INFO"/>
+
+    <!-- We get enough transaction info without this -->
+    <logger name="com.atomikos" level="WARN"/>
 </configuration>

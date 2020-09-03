@@ -120,52 +120,51 @@ export default class AnimalGridTestScope {
                 // Example of statically predefining a filter in JavaScript.
                 // The static evaluation is too stupid to understand the JavaScript Filter DSL at this point
                 //
-                // condition:             {
-                //     "operands": [
-                //         {
-                //             "condition": {
-                //                 "operands": [
-                //                     {
-                //                         "operands": [
-                //                             {
-                //                                 "name": "name",
-                //                                 "type": "Field"
-                //                             },
-                //                             {
-                //                                 "scalarType": "String",
-                //                                 "type": "Value",
-                //                                 "value": "b"
-                //                             }
-                //                         ],
-                //                         "name": "containsIgnoreCase",
-                //                         "type": "Condition"
-                //                     },
-                //                     {
-                //                         "operands": [
-                //                             {
-                //                                 "name": "parent.name",
-                //                                 "type": "Field"
-                //                             },
-                //                             {
-                //                                 "scalarType": "String",
-                //                                 "type": "Value",
-                //                                 "value": "Fish"
-                //                             }
-                //                         ],
-                //                         "name": "containsIgnoreCase",
-                //                         "type": "Condition"
-                //                     }
-                //                 ],
-                //                 "name": "and",
-                //                 "type": "Condition"
-                //             },
-                //             "id": "animals-grid",
-                //             "type": "Component"
-                //         }
-                //     ],
-                //     "name": "and",
-                //     "type": "Condition"
-                // }
+                condition: {
+                    "operands": [
+                        {
+                            "condition": {
+                                "operands": [
+                                    {
+                                        "operands": [
+                                            {
+                                                "name": "name",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "scalarType": "String",
+                                                "value": "b"
+                                            }
+                                        ],
+                                        "name": "containsIgnoreCase",
+                                        "type": "Condition"
+                                    },
+                                    {
+                                        "operands": [
+                                            {
+                                                "name": "parent.name",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "scalarType": "String",
+                                                "type": "Value",
+                                                "value": "Fish"
+                                            }
+                                        ],
+                                        "name": "containsIgnoreCase",
+                                        "type": "Condition"
+                                    }
+                                ],
+                                "name": "and",
+                                "type": "Condition"
+                            },
+                            "id": "animals-grid",
+                            "type": "Component"
+                        }
+                    ],
+                    "name": "and",
+                    "type": "Condition"
+                }
 
             }
         }

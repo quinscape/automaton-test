@@ -11,7 +11,8 @@ import {
     Hub,
     subscribeToTopic,
     publish,
-    GraphQLQuery
+    GraphQLQuery,
+    Attachments
 } from "@quinscape/automaton-js"
 import Layout from "../../components/Layout";
 
@@ -61,5 +62,6 @@ export default {
     toJS,
     publish,
     subscribeToTopic,
-    GraphQLQuery
+    GraphQLQuery,
+    Attachments
 };

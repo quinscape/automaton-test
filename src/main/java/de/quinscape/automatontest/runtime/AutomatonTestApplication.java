@@ -2,6 +2,7 @@ package de.quinscape.automatontest.runtime;
 
 import de.quinscape.automaton.runtime.config.AutomatonConfiguration;
 import de.quinscape.automaton.runtime.config.WebsocketConfiguration;
+import de.quinscape.automaton.runtime.data.FilterContextRegistry;
 import de.quinscape.automatontest.runtime.config.DomainConfiguration;
 import de.quinscape.automatontest.runtime.config.GraphQLConfiguration;
 import de.quinscape.automatontest.runtime.config.SecurityConfiguration;
@@ -24,6 +25,8 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
+import javax.annotation.PostConstruct;
 
 @SpringBootApplication(
     exclude = {
@@ -82,4 +85,5 @@ public class AutomatonTestApplication
     {
         this.applicationContext = applicationContext;
     }
+
 }

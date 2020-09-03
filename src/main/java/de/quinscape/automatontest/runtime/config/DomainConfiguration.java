@@ -6,7 +6,9 @@ import de.quinscape.automaton.model.js.StaticFunctionReferences;
 import de.quinscape.automaton.runtime.config.ScopeTableConfig;
 import de.quinscape.automaton.runtime.i18n.DefaultTranslationService;
 import de.quinscape.automaton.runtime.i18n.TranslationService;
+import de.quinscape.automaton.runtime.merge.MergeService;
 import de.quinscape.automatontest.domain.tables.pojos.AppTranslation;
+import de.quinscape.domainql.DomainQL;
 import de.quinscape.spring.jsview.loader.ResourceHandle;
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
@@ -20,6 +22,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jta.atomikos.AtomikosDataSourceBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.transaction.jta.JtaTransactionManager;
 
 import javax.sql.DataSource;
@@ -138,6 +141,19 @@ public class DomainConfiguration
             APP_CONFIG,
             APP_USER_CONFIG
         );
+    }
+
+
+    @Bean
+    public MergeService mergeService(
+        @Lazy DomainQL domainQL,
+        DSLContext dslContext
+    )
+    {
+        final MergeService mergeService = MergeService.build(domainQL, dslContext)
+            .buildService();
+        log.info("Created MergeService with {}", mergeService.getOptions());
+        return mergeService;
     }
 
 }

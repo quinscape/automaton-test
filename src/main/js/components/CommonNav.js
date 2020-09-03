@@ -90,6 +90,11 @@ const CommonNav = props => {
                         Merge Test
                     </DropdownItem>
                     <DropdownItem
+                        onClick={ () => runProcessURI("/shipping/attachment-test") }
+                    >
+                        Attachment Test
+                    </DropdownItem>
+                    <DropdownItem
                         onClick={ () => runProcessURI("/shipping/iterator-test") }
                     >
                         Iterator-Test

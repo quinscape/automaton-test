@@ -8,7 +8,8 @@ import de.quinscape.domainql.model.DomainType;
 import de.quinscape.spring.jsview.util.JSONUtil;
 import org.apache.commons.io.FileUtils;
 import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,6 +23,7 @@ public class DomainTest
 
 
     @Test
+    @Disabled
     public void name() throws IOException
     {
 

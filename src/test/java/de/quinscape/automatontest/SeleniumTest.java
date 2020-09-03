@@ -1,12 +1,13 @@
 package de.quinscape.automatontest;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.springframework.test.context.junit.jupiter.EnabledIf;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
@@ -14,12 +15,13 @@ import static org.hamcrest.Matchers.*;
 /**
  * Example of a selenium integration-test with gecko-driver
  */
-@EnabledIf(expression ="#{ systemProperties['spring.profiles.active'] === 'integration-test' && systemProperties['webdriver.gecko.driver'] !== '' }")
+@Tag("integration")
+@EnabledIfSystemProperty(named = "webdriver.gecko.driver", matches = ".+")
 public class SeleniumTest
 {
     private static FirefoxDriver driver;
 
-    @BeforeClass
+    @BeforeAll
     public static void initDriver()
     {
         final FirefoxOptions options = new FirefoxOptions();
@@ -27,7 +29,7 @@ public class SeleniumTest
         driver = new FirefoxDriver(options);
     }
 
-    @AfterClass
+    @AfterAll
     public static void deinitDriver()
     {
         driver.close();

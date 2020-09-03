@@ -13,6 +13,7 @@ import de.quinscape.automatontest.domain.tables.pojos.Corge;
 import de.quinscape.automatontest.domain.tables.pojos.CorgeAssoc;
 import de.quinscape.automatontest.domain.tables.pojos.CorgeLink;
 import de.quinscape.automatontest.domain.tables.pojos.CorgeType;
+import de.quinscape.automatontest.domain.tables.pojos.Grault;
 import de.quinscape.automatontest.domain.tables.pojos.Node;
 import de.quinscape.automatontest.domain.tables.pojos.QuxA;
 import de.quinscape.automatontest.domain.tables.pojos.QuxB;
@@ -102,7 +103,9 @@ public class GraphQLConfiguration
                 Corge.class,
                 CorgeAssoc.class,
                 CorgeLink.class,
-                CorgeType.class
+                CorgeType.class,
+
+                Grault.class
             )
             
             // configure object creation for schema relationships
@@ -127,6 +130,8 @@ public class GraphQLConfiguration
 
             .configureRelation(CORGE_LINK.CORGE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
             .configureRelation(CORGE_LINK.ASSOC_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
+
+            .configureRelation(GRAULT.ATTACHMENT_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
 
             .configureNameField("name")
 

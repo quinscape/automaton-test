@@ -1,14 +1,8 @@
 package de.quinscape.automatontest.runtime.config;
 
-import de.quinscape.automaton.runtime.config.ScopeTableConfig;
-import de.quinscape.automaton.runtime.i18n.TranslationService;
-import de.quinscape.automaton.runtime.merge.MergeOptions;
-import de.quinscape.automaton.runtime.merge.MergeService;
 import de.quinscape.automaton.runtime.provider.AlternateStyleProvider;
 import de.quinscape.automaton.runtime.provider.AutomatonJsViewProvider;
-import de.quinscape.automaton.runtime.provider.ProcessInjectionService;
 import de.quinscape.automaton.runtime.provider.StyleSheetDefinition;
-import de.quinscape.automaton.runtime.ws.AutomatonWebSocketHandler;
 import de.quinscape.automatontest.model.ValidationRules;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.spring.jsview.JsViewResolver;
@@ -28,8 +22,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.ServletContext;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 @Configuration
@@ -46,48 +38,31 @@ public class WebConfiguration
 
     private final ResourceLoader resourceLoader;
 
-    private final AutomatonWebSocketHandler automatonTestWebSocketHandler;
-
-    private final ProcessInjectionService processInjectionService;
-    private final TranslationService translationService;
-
     private final DSLContext dslContext;
 
-    private final ScopeTableConfig scopeTableConfig;
+    private final AutomatonJsViewProvider automatonJsViewProvider;
 
     private final ResourceHandle<ValidationRules> validationRulesHandle;
-
-    private final MergeOptions mergeOptions;
-
 
     @Autowired
     public WebConfiguration(
         Environment env,
         ServletContext servletContext,
         ResourceLoader resourceLoader,
-        ProcessInjectionService processInjectionService,
-        TranslationService translationService,
+        @Lazy DomainQL domainQL,
         DSLContext dslContext,
-        ScopeTableConfig scopeTableConfig,
+        AutomatonJsViewProvider automatonJsViewProvider,
         @Qualifier("validationRules")
-        ResourceHandle<ValidationRules> validationRulesHandle,
-        @Lazy Optional<AutomatonWebSocketHandler> optionalSocketHandler,
-        @Lazy @Autowired(required = false) MergeService mergeService,
-        @Lazy DomainQL domainQL
+        ResourceHandle<ValidationRules> validationRulesHandle
     )
     {
         this.env = env;
         this.servletContext = servletContext;
 
-        this.mergeOptions = mergeService != null ? mergeService.getOptions() : MergeOptions.DEFAULT;
         this.domainQL = domainQL;
         this.resourceLoader = resourceLoader;
-
-        this.automatonTestWebSocketHandler = optionalSocketHandler.orElse(null);
-        this.processInjectionService = processInjectionService;
-        this.translationService = translationService;
         this.dslContext = dslContext;
-        this.scopeTableConfig = scopeTableConfig;
+        this.automatonJsViewProvider = automatonJsViewProvider;
         this.validationRulesHandle = validationRulesHandle;
     }
 
@@ -103,15 +78,7 @@ public class WebConfiguration
                 // Process injections and general miscellaneous data we would normally
                 // inject by hand in a Spring-JsView application
                 .withViewDataProvider(
-                    new AutomatonJsViewProvider(
-                        dslContext,
-                        domainQL,
-                        processInjectionService,
-                        translationService,
-                        automatonTestWebSocketHandler,
-                        scopeTableConfig,
-                        mergeOptions
-                    )
+                    automatonJsViewProvider
                 )
 
                 .withViewDataProvider(

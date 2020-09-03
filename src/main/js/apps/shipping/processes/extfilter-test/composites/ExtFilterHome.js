@@ -1,5 +1,5 @@
 import { Form, Icon } from "domainql-form"
-import React, { useEffect } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import { reaction } from "mobx";
 import { observer as fnObserver } from "mobx-react-lite";
 import { Button, CalendarField, FilterDSL, i18n, IQueryGrid as DataGrid } from "@quinscape/automaton-js"
@@ -10,9 +10,12 @@ const { and, field, value, component } = FilterDSL;
 
 const ExtFilterHome = props => {
 
-    const { env } = props;
+    const { env, name } = props;
 
     const { scope } = env;
+
+
+    const [ ding, setDing ] = useState("bla");
 
     // we use an effect that depends on nothing / has no inputs and thus is removed when the component unmounts
     // the mobx reaction returns the deregister function expected from react
