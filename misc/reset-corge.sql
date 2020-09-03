@@ -22,6 +22,9 @@ delete from public.corge_link;
 delete from public.corge_assoc;
 delete from public.corge;
 
+-- unversioned foo #1 is part of the merge service test
+delete from foo where id = '13a4ad86-e2c3-4979-81e2-a8f102b501c1';
+
 delete from public.app_version where (entity_type = 'Corge' or entity_type = 'CorgeLink' or entity_type = 'CorgeAssoc');
 
 -- Data for Name: corge; Type: TABLE DATA; Schema: public; Owner: automatontest
@@ -52,10 +55,6 @@ INSERT INTO public.corge_assoc (id, version, name, num, description) VALUES ('3a
 INSERT INTO public.corge_assoc (id, version, name, num, description) VALUES ('af086502-27c0-4a07-8d8b-07568ecbc448', 'df49f6ec-2381-4e36-ace0-5898985a41a0', 'Assoc #4', 1004, 'Description #4');
 INSERT INTO public.corge_assoc (id, version, name, num, description) VALUES ('d254bfb0-8413-4106-9f80-885d1bdd3ef8', '42920f67-0e60-4a04-ab81-9cca14cd7b0a', 'Assoc #5', 1005, 'Description #5');
 
-
-
-
-
 --
 -- Data for Name: corge_link; Type: TABLE DATA; Schema: public; Owner: automatontest
 --
@@ -71,7 +70,8 @@ INSERT INTO public.corge_link (id, version, corge_id, assoc_id) VALUES ('f3a9834
 INSERT INTO public.corge_link (id, version, corge_id, assoc_id) VALUES ('54bdc406-e970-434e-b239-35ae8d0140b9', 'b98821b4-52c5-4c35-8119-b5b0a24360dd', '87a07c18-896c-4114-8f86-00e39b64a79a', '269fe0b9-4d22-4f2d-adc4-541bc9f719b3');
 INSERT INTO public.corge_link (id, version, corge_id, assoc_id) VALUES ('ecfe1e62-a3a5-4ea1-b29a-55351b692100', 'ae42e310-86e4-4006-abf6-9c311f52f8a5', '20bbb666-79d1-4a50-8b23-4442be8b615e', '3a66eec3-2cea-4385-9205-c197e587b5c5');
 
-
+-- unversioned foo #1 is part of the merge service test
+INSERT INTO public.foo VALUES ('13a4ad86-e2c3-4979-81e2-a8f102b501c1', 'Foo #1', 1234, 'TYPE_A', '2018-12-01 18:58:59', 'K̇', 'd7df0f2c-9aa8-4845-b2bf-1d02abd3666e', false);
 
 
 --
