@@ -17,6 +17,7 @@ import de.quinscape.automatontest.runtime.config.GraphQLConfiguration;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.spring.jsview.util.JSONUtil;
 import org.jooq.DSLContext;
+import org.junit.Ignore;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -203,6 +204,7 @@ public class MergeServiceTest
     }
 
     @Test
+    @Ignore // not complete yet
     public void testChangeConflict() throws IOException
     {
         //mergeService.flush();
