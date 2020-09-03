@@ -1,0 +1,27 @@
+[
+    {
+        "_type": "Corge",
+        "flag": false,
+        "type2": "ec2ae4c3-6615-4c77-b07e-d1c879dc69cb",
+        "created": "2020-03-19T15:16:31.945Z",
+        "num": 1324,
+        "description": "Description #1",
+        "version": "e136483c-c365-467d-877f-fb6248704f18",
+        "name": "Corge #123",
+        "modified": "2020-07-07T15:05:16.373Z",
+        "id": "20bbb666-79d1-4a50-8b23-4442be8b615e",
+        "num2": 1447,
+        "typeId": "ec2ae4c3-6615-4c77-b07e-d1c879dc69cb",
+        "ownerId": "d7df0f2c-9aa8-4845-b2bf-1d02abd3666e"
+    },
+    {
+        "_type": "AppVersion",
+        "fieldMask": 192,
+        "created": "2020-07-15T15:13:48.909Z",
+        "entityType": "Corge",
+        "prev": "9920a2aa-8554-4396-95ba-70ca9cb9bca1",
+        "entityId": "20bbb666-79d1-4a50-8b23-4442be8b615e",
+        "id": "e136483c-c365-467d-877f-fb6248704f18",
+        "ownerId": "af432487-a1b1-4f99-96d4-3b8e9796c95a"
+    }
+]
