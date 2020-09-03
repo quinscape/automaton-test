@@ -35,12 +35,12 @@ import javax.validation.constraints.Size;
 })
 public class AppAttachment extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = 977079230;
+    private static final long serialVersionUID = 2060108671;
 
     private String id;
     private String description;
     private String type;
-    private String contentId;
+    private String url;
 
     public AppAttachment() {}
 
@@ -48,19 +48,19 @@ public class AppAttachment extends GeneratedDomainObject implements Serializable
         this.id = value.id;
         this.description = value.description;
         this.type = value.type;
-        this.contentId = value.contentId;
+        this.url = value.url;
     }
 
     public AppAttachment(
         String id,
         String description,
         String type,
-        String contentId
+        String url
     ) {
         this.id = id;
         this.description = description;
         this.type = type;
-        this.contentId = contentId;
+        this.url = url;
     }
 
     @Id
@@ -95,13 +95,14 @@ public class AppAttachment extends GeneratedDomainObject implements Serializable
         this.type = type;
     }
 
-    @Column(name = "content_id")
-    public String getContentId() {
-        return this.contentId;
+    @Column(name = "url", length = 255)
+    @Size(max = 255)
+    public String getUrl() {
+        return this.url;
     }
 
-    public void setContentId(String contentId) {
-        this.contentId = contentId;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Override
@@ -111,7 +112,7 @@ public class AppAttachment extends GeneratedDomainObject implements Serializable
         sb.append(id);
         sb.append(", ").append(description);
         sb.append(", ").append(type);
-        sb.append(", ").append(contentId);
+        sb.append(", ").append(url);
 
         sb.append(")");
         return sb.toString();

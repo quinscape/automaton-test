@@ -5,79 +5,89 @@ schema {
     mutation: MutationType
 }
 
-"Generated from public.app_attachment"
+"File/image attachments"
 type AppAttachment {
-    "DB column 'content_id'"
-    contentId: String
-    "DB column 'description'"
+    "Description of the attachment, might be former filename"
     description: String
-    "DB column 'id'"
+    "attachment id"
     id: String!
-    "DB column 'type'"
+    "Attachment media type"
     type: String!
+    "Attachment url as alternative to binary content"
+    url: String
 }
 
-"Generated from public.app_config"
+"Data-base backed attachments"
+type AppAttachmentData {
+    "DB column 'attachment_id'"
+    attachmentId: String!
+    "attachement as binary data"
+    data: [Byte]!
+    "attachment data id"
+    id: String!
+}
+
+"Database backing for the AppScope"
 type AppConfig {
-    "DB column 'name'"
+    "Application name"
     name: String!
-    "DB column 'scope'"
+    "JSON of the current application scope"
     scope: JSONB!
 }
 
-"Generated from public.app_login"
+"Database storage for spring security's remember-me feature"
 type AppLogin {
-    "DB column 'last_used'"
+    "Last access of the login"
     lastUsed: Timestamp!
-    "DB column 'series'"
+    "Token series"
     series: String!
-    "DB column 'token'"
+    "Token"
     token: String!
-    "DB column 'username'"
+    "User name of the login"
     username: String!
 }
 
-"Generated from public.app_translation"
+"Datase backing for the application translations"
 type AppTranslation {
-    "DB column 'created'"
+    "creation date of the translation entry"
     created: Timestamp!
-    "DB column 'id'"
+    "translation id"
     id: String!
-    "DB column 'locale'"
+    "locale code of the translation'"
     locale: String!
-    "DB column 'modified'"
+    "last modified date for the translation entry"
     modified: Timestamp!
-    "DB column 'process_name'"
+    "can contain a process name to limit the to just that process"
     processName: String!
-    "DB column 'tag'"
+    "translation tag/key"
     tag: String!
-    "DB column 'translation'"
+    "translation text"
     translation: String!
 }
 
-"Generated from public.app_user"
+"Application users. Used to authenticate users by spring security. Can have additional fields/relations (See UserInfoService)"
 type AppUser {
     "Many-to-many objects from baz.owner_id"
     bazes: [Baz]!
-    "DB column 'created'"
+    "Creation date of the user entry"
     created: Timestamp!
-    "DB column 'disabled'"
+    "true if the user account was disabled"
     disabled: Boolean
     "Many-to-many objects from foo.owner_id"
     foos: [Foo]!
-    "DB column 'id'"
+    "user database id"
     id: String!
-    "DB column 'last_login'"
+    "last login of the user"
     lastLogin: Timestamp
-    "DB column 'login'"
+    "User name / login"
     login: String!
-    "DB column 'password'"
+    "encrypted password"
     password: String!
-    "DB column 'roles'"
+    "Spring security roles of the user within the application"
     roles: String!
 }
 
-"Generated from public.app_user_config"
+"Database backing for the UserScope"
 type AppUserConfig {
     "DB column 'attachment_id'"
     attachmentId: String!
@@ -91,9 +101,9 @@ type AppUserConfig {
 type AppVersion {
     "Timestamp when the version was created"
     created: Timestamp!
-    "DB column 'entity_id'"
+    "Id of the entity"
     entityId: String!
-    "DB column 'entity_type'"
+    "Entity type the version refers to"
     entityType: String!
     "DB column 'field_mask'"
     fieldMask: BigInteger!
@@ -103,7 +113,7 @@ type AppVersion {
     owner: AppUser!
     "DB foreign key column 'owner_id'"
     ownerId: String!
-    "DB column 'prev'"
+    "Previous version for that entity or null"
     prev: String
 }
 
@@ -278,6 +288,18 @@ type FooType {
     ordinal: Int!
 }
 
+"Generated from public.grault"
+type Grault {
+    "Target of 'attachment_id'"
+    attachment: AppAttachment
+    "DB foreign key column 'attachment_id'"
+    attachmentId: String
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+}
+
 "Generated from public.grid_columns"
 type GridColumns {
     "DB column 'columns'"
@@ -444,6 +466,20 @@ type InteractiveQueryFooType {
     type: String
 }
 
+"Interactive Query with Grault payload."
+type InteractiveQueryGrault {
+    "Column states for the current result."
+    columnStates: [ColumnState]
+    "Query configuration the current result was produced with."
+    queryConfig: QueryConfig
+    "Total row count available."
+    rowCount: Int
+    "List with current rows of Grault."
+    rows: [Grault]
+    "Name of payload type (always 'Grault')"
+    type: String
+}
+
 "Interactive Query with Node payload."
 type InteractiveQueryNode {
     "Column states for the current result."
@@ -579,11 +615,7 @@ type MergeConflictField {
     type entities.
     """
     references: [EntityReference]
-    """
-
-    Field status for the conflict. If MergeOptions#isAllowAutoMerge() is enabled, this will always be MergeFieldStatus#UNDECIDED, if auto-merge
-    is disabled, the system will report back successful merges with the respective choices made.
-    """
+    "Field status for the conflict."
     status: MergeFieldStatus
     "The currently stored value for the conflict."
     theirs: GenericScalar
@@ -706,6 +738,8 @@ type QueryType {
     iQueryFoo(config: QueryConfigInput!): InteractiveQueryFoo
     "Queries FooType objects based on the given query config"
     iQueryFooType(config: QueryConfigInput!): InteractiveQueryFooType
+    "Queries Grault objects based on the given query config"
+    iQueryGrault(config: QueryConfigInput!): InteractiveQueryGrault
     "Queries Node objects based on the given query config"
     iQueryNode(config: QueryConfigInput!): InteractiveQueryNode
     "Queries QuxA objects based on the given query config"
@@ -724,6 +758,13 @@ type QueryType {
     queryWithComplexList: [Foo]
     queryWithList: [Int]
     queryWithScalar: Timestamp
+    """
+
+    Resolves filter context values without executing them in a filter. Only use this if you need the actual values of
+    filter contexts on the client side. The normal usage of context values is to embed <code>context()</code> nodes
+    in filters.
+    """
+    resolveFilterContext(names: [String]!): [GenericScalar]
 }
 
 "Catalog-like connected via id foreign key to QuxMain"
@@ -996,6 +1037,13 @@ input FooInput {
     type: String!
 }
 
+"Generated for de.quinscape.automatontest.domain.tables.pojos.Grault"
+input GraultInput {
+    attachmentId: String
+    id: String!
+    name: String!
+}
+
 "Generated for de.quinscape.automaton.model.merge.MergeConfig"
 input MergeConfigInput {
     allowApply: Boolean
@@ -1020,11 +1068,7 @@ input MergeConflictFieldInput {
     type entities.
     """
     references: [EntityReferenceInput]
-    """
-
-    Field status for the conflict. If MergeOptions#isAllowAutoMerge() is enabled, this will always be MergeFieldStatus#UNDECIDED, if auto-merge
-    is disabled, the system will report back successful merges with the respective choices made.
-    """
+    "Field status for the conflict."
     status: MergeFieldStatus
     "The currently stored value for the conflict."
     theirs: GenericScalar
@@ -1162,6 +1206,9 @@ input ValidationRulesInput {
     writable: Boolean
 }
 
+
+"Built-in Byte as Int"
+scalar Byte
 
 "SQL timestamp equivalent"
 scalar Timestamp

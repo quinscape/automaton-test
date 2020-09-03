@@ -5,6 +5,7 @@ package de.quinscape.automatontest.domain;
 
 
 import de.quinscape.automatontest.domain.tables.AppAttachment;
+import de.quinscape.automatontest.domain.tables.AppAttachmentData;
 import de.quinscape.automatontest.domain.tables.AppConfig;
 import de.quinscape.automatontest.domain.tables.AppLogin;
 import de.quinscape.automatontest.domain.tables.AppTranslation;
@@ -21,6 +22,7 @@ import de.quinscape.automatontest.domain.tables.CorgeLink;
 import de.quinscape.automatontest.domain.tables.CorgeType;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
+import de.quinscape.automatontest.domain.tables.Grault;
 import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.Node;
 import de.quinscape.automatontest.domain.tables.QuxA;
@@ -54,7 +56,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = -1837053552;
+    private static final long serialVersionUID = 1916833506;
 
     /**
      * The reference instance of <code>public</code>
@@ -65,6 +67,11 @@ public class Public extends SchemaImpl {
      * The table <code>public.app_attachment</code>.
      */
     public final AppAttachment APP_ATTACHMENT = de.quinscape.automatontest.domain.tables.AppAttachment.APP_ATTACHMENT;
+
+    /**
+     * The table <code>public.app_attachment_data</code>.
+     */
+    public final AppAttachmentData APP_ATTACHMENT_DATA = de.quinscape.automatontest.domain.tables.AppAttachmentData.APP_ATTACHMENT_DATA;
 
     /**
      * The table <code>public.app_config</code>.
@@ -147,6 +154,11 @@ public class Public extends SchemaImpl {
     public final FooType FOO_TYPE = de.quinscape.automatontest.domain.tables.FooType.FOO_TYPE;
 
     /**
+     * The table <code>public.grault</code>.
+     */
+    public final Grault GRAULT = de.quinscape.automatontest.domain.tables.Grault.GRAULT;
+
+    /**
      * The table <code>public.grid_columns</code>.
      */
     public final GridColumns GRID_COLUMNS = de.quinscape.automatontest.domain.tables.GridColumns.GRID_COLUMNS;
@@ -212,6 +224,7 @@ public class Public extends SchemaImpl {
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
             AppAttachment.APP_ATTACHMENT,
+            AppAttachmentData.APP_ATTACHMENT_DATA,
             AppConfig.APP_CONFIG,
             AppLogin.APP_LOGIN,
             AppTranslation.APP_TRANSLATION,
@@ -228,6 +241,7 @@ public class Public extends SchemaImpl {
             CorgeType.CORGE_TYPE,
             Foo.FOO,
             FooType.FOO_TYPE,
+            Grault.GRAULT,
             GridColumns.GRID_COLUMNS,
             Node.NODE,
             QuxA.QUX_A,

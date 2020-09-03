@@ -4,7 +4,7 @@
 package de.quinscape.automatontest.domain.tables.records;
 
 
-import de.quinscape.automatontest.domain.tables.AppAttachment;
+import de.quinscape.automatontest.domain.tables.Grault;
 
 import javax.annotation.Generated;
 import javax.persistence.Column;
@@ -17,8 +17,8 @@ import javax.validation.constraints.Size;
 
 import org.jooq.Field;
 import org.jooq.Record1;
-import org.jooq.Record4;
-import org.jooq.Row4;
+import org.jooq.Record3;
+import org.jooq.Row3;
 import org.jooq.impl.UpdatableRecordImpl;
 
 
@@ -34,22 +34,22 @@ import org.jooq.impl.UpdatableRecordImpl;
 )
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 @Entity
-@Table(name = "app_attachment", schema = "public", indexes = {
-    @Index(name = "pk_app_attachment", unique = true, columnList = "id ASC")
+@Table(name = "grault", schema = "public", indexes = {
+    @Index(name = "pk_grault", unique = true, columnList = "id ASC")
 })
-public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord> implements Record4<String, String, String, String> {
+public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements Record3<String, String, String> {
 
-    private static final long serialVersionUID = -1029164467;
+    private static final long serialVersionUID = -1385565502;
 
     /**
-     * Setter for <code>public.app_attachment.id</code>.
+     * Setter for <code>public.grault.id</code>.
      */
     public void setId(String value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>public.app_attachment.id</code>.
+     * Getter for <code>public.grault.id</code>.
      */
     @Id
     @Column(name = "id", unique = true, nullable = false, length = 36)
@@ -60,51 +60,36 @@ public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord
     }
 
     /**
-     * Setter for <code>public.app_attachment.description</code>.
+     * Setter for <code>public.grault.name</code>.
      */
-    public void setDescription(String value) {
+    public void setName(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>public.app_attachment.description</code>.
+     * Getter for <code>public.grault.name</code>.
      */
-    @Column(name = "description")
-    public String getDescription() {
+    @Column(name = "name", nullable = false, length = 100)
+    @NotNull
+    @Size(max = 100)
+    public String getName() {
         return (String) get(1);
     }
 
     /**
-     * Setter for <code>public.app_attachment.type</code>.
+     * Setter for <code>public.grault.attachment_id</code>.
      */
-    public void setType(String value) {
+    public void setAttachmentId(String value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>public.app_attachment.type</code>.
+     * Getter for <code>public.grault.attachment_id</code>.
      */
-    @Column(name = "type", nullable = false, length = 64)
-    @NotNull
-    @Size(max = 64)
-    public String getType() {
+    @Column(name = "attachment_id", length = 36)
+    @Size(max = 36)
+    public String getAttachmentId() {
         return (String) get(2);
-    }
-
-    /**
-     * Setter for <code>public.app_attachment.url</code>.
-     */
-    public void setUrl(String value) {
-        set(3, value);
-    }
-
-    /**
-     * Getter for <code>public.app_attachment.url</code>.
-     */
-    @Column(name = "url", length = 255)
-    @Size(max = 255)
-    public String getUrl() {
-        return (String) get(3);
     }
 
     // -------------------------------------------------------------------------
@@ -120,23 +105,23 @@ public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord
     }
 
     // -------------------------------------------------------------------------
-    // Record4 type implementation
+    // Record3 type implementation
     // -------------------------------------------------------------------------
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Row4<String, String, String, String> fieldsRow() {
-        return (Row4) super.fieldsRow();
+    public Row3<String, String, String> fieldsRow() {
+        return (Row3) super.fieldsRow();
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Row4<String, String, String, String> valuesRow() {
-        return (Row4) super.valuesRow();
+    public Row3<String, String, String> valuesRow() {
+        return (Row3) super.valuesRow();
     }
 
     /**
@@ -144,7 +129,7 @@ public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord
      */
     @Override
     public Field<String> field1() {
-        return AppAttachment.APP_ATTACHMENT.ID;
+        return Grault.GRAULT.ID;
     }
 
     /**
@@ -152,7 +137,7 @@ public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord
      */
     @Override
     public Field<String> field2() {
-        return AppAttachment.APP_ATTACHMENT.DESCRIPTION;
+        return Grault.GRAULT.NAME;
     }
 
     /**
@@ -160,15 +145,7 @@ public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord
      */
     @Override
     public Field<String> field3() {
-        return AppAttachment.APP_ATTACHMENT.TYPE;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Field<String> field4() {
-        return AppAttachment.APP_ATTACHMENT.URL;
+        return Grault.GRAULT.ATTACHMENT_ID;
     }
 
     /**
@@ -184,7 +161,7 @@ public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord
      */
     @Override
     public String component2() {
-        return getDescription();
+        return getName();
     }
 
     /**
@@ -192,15 +169,7 @@ public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord
      */
     @Override
     public String component3() {
-        return getType();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String component4() {
-        return getUrl();
+        return getAttachmentId();
     }
 
     /**
@@ -216,7 +185,7 @@ public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord
      */
     @Override
     public String value2() {
-        return getDescription();
+        return getName();
     }
 
     /**
@@ -224,22 +193,14 @@ public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord
      */
     @Override
     public String value3() {
-        return getType();
+        return getAttachmentId();
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public String value4() {
-        return getUrl();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public AppAttachmentRecord value1(String value) {
+    public GraultRecord value1(String value) {
         setId(value);
         return this;
     }
@@ -248,8 +209,8 @@ public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord
      * {@inheritDoc}
      */
     @Override
-    public AppAttachmentRecord value2(String value) {
-        setDescription(value);
+    public GraultRecord value2(String value) {
+        setName(value);
         return this;
     }
 
@@ -257,8 +218,8 @@ public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord
      * {@inheritDoc}
      */
     @Override
-    public AppAttachmentRecord value3(String value) {
-        setType(value);
+    public GraultRecord value3(String value) {
+        setAttachmentId(value);
         return this;
     }
 
@@ -266,20 +227,10 @@ public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord
      * {@inheritDoc}
      */
     @Override
-    public AppAttachmentRecord value4(String value) {
-        setUrl(value);
-        return this;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public AppAttachmentRecord values(String value1, String value2, String value3, String value4) {
+    public GraultRecord values(String value1, String value2, String value3) {
         value1(value1);
         value2(value2);
         value3(value3);
-        value4(value4);
         return this;
     }
 
@@ -288,21 +239,20 @@ public class AppAttachmentRecord extends UpdatableRecordImpl<AppAttachmentRecord
     // -------------------------------------------------------------------------
 
     /**
-     * Create a detached AppAttachmentRecord
+     * Create a detached GraultRecord
      */
-    public AppAttachmentRecord() {
-        super(AppAttachment.APP_ATTACHMENT);
+    public GraultRecord() {
+        super(Grault.GRAULT);
     }
 
     /**
-     * Create a detached, initialised AppAttachmentRecord
+     * Create a detached, initialised GraultRecord
      */
-    public AppAttachmentRecord(String id, String description, String type, String url) {
-        super(AppAttachment.APP_ATTACHMENT);
+    public GraultRecord(String id, String name, String attachmentId) {
+        super(Grault.GRAULT);
 
         set(0, id);
-        set(1, description);
-        set(2, type);
-        set(3, url);
+        set(1, name);
+        set(2, attachmentId);
     }
 }

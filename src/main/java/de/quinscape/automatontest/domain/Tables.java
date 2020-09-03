@@ -5,6 +5,7 @@ package de.quinscape.automatontest.domain;
 
 
 import de.quinscape.automatontest.domain.tables.AppAttachment;
+import de.quinscape.automatontest.domain.tables.AppAttachmentData;
 import de.quinscape.automatontest.domain.tables.AppConfig;
 import de.quinscape.automatontest.domain.tables.AppLogin;
 import de.quinscape.automatontest.domain.tables.AppTranslation;
@@ -21,6 +22,7 @@ import de.quinscape.automatontest.domain.tables.CorgeLink;
 import de.quinscape.automatontest.domain.tables.CorgeType;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
+import de.quinscape.automatontest.domain.tables.Grault;
 import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.Node;
 import de.quinscape.automatontest.domain.tables.QuxA;
@@ -50,6 +52,11 @@ public class Tables {
      * The table <code>public.app_attachment</code>.
      */
     public static final AppAttachment APP_ATTACHMENT = de.quinscape.automatontest.domain.tables.AppAttachment.APP_ATTACHMENT;
+
+    /**
+     * The table <code>public.app_attachment_data</code>.
+     */
+    public static final AppAttachmentData APP_ATTACHMENT_DATA = de.quinscape.automatontest.domain.tables.AppAttachmentData.APP_ATTACHMENT_DATA;
 
     /**
      * The table <code>public.app_config</code>.
@@ -130,6 +137,11 @@ public class Tables {
      * The table <code>public.foo_type</code>.
      */
     public static final FooType FOO_TYPE = de.quinscape.automatontest.domain.tables.FooType.FOO_TYPE;
+
+    /**
+     * The table <code>public.grault</code>.
+     */
+    public static final Grault GRAULT = de.quinscape.automatontest.domain.tables.Grault.GRAULT;
 
     /**
      * The table <code>public.grid_columns</code>.

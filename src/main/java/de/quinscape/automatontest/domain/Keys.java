@@ -5,6 +5,7 @@ package de.quinscape.automatontest.domain;
 
 
 import de.quinscape.automatontest.domain.tables.AppAttachment;
+import de.quinscape.automatontest.domain.tables.AppAttachmentData;
 import de.quinscape.automatontest.domain.tables.AppConfig;
 import de.quinscape.automatontest.domain.tables.AppLogin;
 import de.quinscape.automatontest.domain.tables.AppTranslation;
@@ -20,6 +21,7 @@ import de.quinscape.automatontest.domain.tables.CorgeLink;
 import de.quinscape.automatontest.domain.tables.CorgeType;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
+import de.quinscape.automatontest.domain.tables.Grault;
 import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.Node;
 import de.quinscape.automatontest.domain.tables.QuxA;
@@ -27,6 +29,7 @@ import de.quinscape.automatontest.domain.tables.QuxB;
 import de.quinscape.automatontest.domain.tables.QuxC;
 import de.quinscape.automatontest.domain.tables.QuxD;
 import de.quinscape.automatontest.domain.tables.QuxMain;
+import de.quinscape.automatontest.domain.tables.records.AppAttachmentDataRecord;
 import de.quinscape.automatontest.domain.tables.records.AppAttachmentRecord;
 import de.quinscape.automatontest.domain.tables.records.AppConfigRecord;
 import de.quinscape.automatontest.domain.tables.records.AppLoginRecord;
@@ -43,6 +46,7 @@ import de.quinscape.automatontest.domain.tables.records.CorgeRecord;
 import de.quinscape.automatontest.domain.tables.records.CorgeTypeRecord;
 import de.quinscape.automatontest.domain.tables.records.FooRecord;
 import de.quinscape.automatontest.domain.tables.records.FooTypeRecord;
+import de.quinscape.automatontest.domain.tables.records.GraultRecord;
 import de.quinscape.automatontest.domain.tables.records.GridColumnsRecord;
 import de.quinscape.automatontest.domain.tables.records.NodeRecord;
 import de.quinscape.automatontest.domain.tables.records.QuxARecord;
@@ -82,6 +86,8 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     public static final UniqueKey<AppAttachmentRecord> PK_APP_ATTACHMENT = UniqueKeys0.PK_APP_ATTACHMENT;
+    public static final UniqueKey<AppAttachmentDataRecord> PK_APP_ATTACHMENT_DATA = UniqueKeys0.PK_APP_ATTACHMENT_DATA;
+    public static final UniqueKey<AppAttachmentDataRecord> UC_APP_ATTACHMENT_DATA_ATTACHMENT_ID = UniqueKeys0.UC_APP_ATTACHMENT_DATA_ATTACHMENT_ID;
     public static final UniqueKey<AppConfigRecord> PK_APP_CONFIG = UniqueKeys0.PK_APP_CONFIG;
     public static final UniqueKey<AppLoginRecord> PK_APP_LOGIN = UniqueKeys0.PK_APP_LOGIN;
     public static final UniqueKey<AppTranslationRecord> PK_APP_TRANSLATION = UniqueKeys0.PK_APP_TRANSLATION;
@@ -101,6 +107,7 @@ public class Keys {
     public static final UniqueKey<FooRecord> PK_FOO = UniqueKeys0.PK_FOO;
     public static final UniqueKey<FooTypeRecord> PK_FOO_TYPE = UniqueKeys0.PK_FOO_TYPE;
     public static final UniqueKey<FooTypeRecord> FOO_TYPE_NAME_KEY = UniqueKeys0.FOO_TYPE_NAME_KEY;
+    public static final UniqueKey<GraultRecord> PK_GRAULT = UniqueKeys0.PK_GRAULT;
     public static final UniqueKey<GridColumnsRecord> PK_GRID_COLUMNS = UniqueKeys0.PK_GRID_COLUMNS;
     public static final UniqueKey<GridColumnsRecord> GRID_COLUMNS_NAME_OWNER_ID_KEY = UniqueKeys0.GRID_COLUMNS_NAME_OWNER_ID_KEY;
     public static final UniqueKey<NodeRecord> PK_NODE = UniqueKeys0.PK_NODE;
@@ -119,6 +126,7 @@ public class Keys {
     // FOREIGN KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final ForeignKey<AppAttachmentDataRecord, AppAttachmentRecord> APP_ATTACHMENT_DATA__FK_APP_ATTACHMENT_DATA_ATTACHMENT_ID = ForeignKeys0.APP_ATTACHMENT_DATA__FK_APP_ATTACHMENT_DATA_ATTACHMENT_ID;
     public static final ForeignKey<AppUserConfigRecord, AppUserRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_USER_ID = ForeignKeys0.APP_USER_CONFIG__FK_APP_USER_CONFIG_USER_ID;
     public static final ForeignKey<AppUserConfigRecord, AppAttachmentRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_ATTACHMENT_ID = ForeignKeys0.APP_USER_CONFIG__FK_APP_USER_CONFIG_ATTACHMENT_ID;
     public static final ForeignKey<AppVersionRecord, AppUserRecord> APP_VERSION__FK_APP_VERSION_OWNER_ID = ForeignKeys0.APP_VERSION__FK_APP_VERSION_OWNER_ID;
@@ -131,6 +139,7 @@ public class Keys {
     public static final ForeignKey<CorgeLinkRecord, CorgeAssocRecord> CORGE_LINK__FK_CORGE_LINK_ASSOC = ForeignKeys0.CORGE_LINK__FK_CORGE_LINK_ASSOC;
     public static final ForeignKey<FooRecord, FooTypeRecord> FOO__FK_FOO_TYPE_ID = ForeignKeys0.FOO__FK_FOO_TYPE_ID;
     public static final ForeignKey<FooRecord, AppUserRecord> FOO__FK_FOO_OWNER_ID = ForeignKeys0.FOO__FK_FOO_OWNER_ID;
+    public static final ForeignKey<GraultRecord, AppAttachmentRecord> GRAULT__FK_GRAULT_ATTACHMENT_ID = ForeignKeys0.GRAULT__FK_GRAULT_ATTACHMENT_ID;
     public static final ForeignKey<GridColumnsRecord, AppUserRecord> GRID_COLUMNS__FK_GRID_COLUMNS_OWNER_ID = ForeignKeys0.GRID_COLUMNS__FK_GRID_COLUMNS_OWNER_ID;
     public static final ForeignKey<NodeRecord, NodeRecord> NODE__FK_NODE_PARENT_ID = ForeignKeys0.NODE__FK_NODE_PARENT_ID;
     public static final ForeignKey<QuxMainRecord, QuxARecord> QUX_MAIN__FK_QUX_A_ID = ForeignKeys0.QUX_MAIN__FK_QUX_A_ID;
@@ -145,6 +154,8 @@ public class Keys {
 
     private static class UniqueKeys0 {
         public static final UniqueKey<AppAttachmentRecord> PK_APP_ATTACHMENT = Internal.createUniqueKey(AppAttachment.APP_ATTACHMENT, "pk_app_attachment", AppAttachment.APP_ATTACHMENT.ID);
+        public static final UniqueKey<AppAttachmentDataRecord> PK_APP_ATTACHMENT_DATA = Internal.createUniqueKey(AppAttachmentData.APP_ATTACHMENT_DATA, "pk_app_attachment_data", AppAttachmentData.APP_ATTACHMENT_DATA.ID);
+        public static final UniqueKey<AppAttachmentDataRecord> UC_APP_ATTACHMENT_DATA_ATTACHMENT_ID = Internal.createUniqueKey(AppAttachmentData.APP_ATTACHMENT_DATA, "uc_app_attachment_data_attachment_id", AppAttachmentData.APP_ATTACHMENT_DATA.ATTACHMENT_ID);
         public static final UniqueKey<AppConfigRecord> PK_APP_CONFIG = Internal.createUniqueKey(AppConfig.APP_CONFIG, "pk_app_config", AppConfig.APP_CONFIG.NAME);
         public static final UniqueKey<AppLoginRecord> PK_APP_LOGIN = Internal.createUniqueKey(AppLogin.APP_LOGIN, "pk_app_login", AppLogin.APP_LOGIN.SERIES);
         public static final UniqueKey<AppTranslationRecord> PK_APP_TRANSLATION = Internal.createUniqueKey(AppTranslation.APP_TRANSLATION, "pk_app_translation", AppTranslation.APP_TRANSLATION.ID);
@@ -164,6 +175,7 @@ public class Keys {
         public static final UniqueKey<FooRecord> PK_FOO = Internal.createUniqueKey(Foo.FOO, "pk_foo", Foo.FOO.ID);
         public static final UniqueKey<FooTypeRecord> PK_FOO_TYPE = Internal.createUniqueKey(FooType.FOO_TYPE, "pk_foo_type", FooType.FOO_TYPE.ORDINAL);
         public static final UniqueKey<FooTypeRecord> FOO_TYPE_NAME_KEY = Internal.createUniqueKey(FooType.FOO_TYPE, "foo_type_name_key", FooType.FOO_TYPE.NAME);
+        public static final UniqueKey<GraultRecord> PK_GRAULT = Internal.createUniqueKey(Grault.GRAULT, "pk_grault", Grault.GRAULT.ID);
         public static final UniqueKey<GridColumnsRecord> PK_GRID_COLUMNS = Internal.createUniqueKey(GridColumns.GRID_COLUMNS, "pk_grid_columns", GridColumns.GRID_COLUMNS.ID);
         public static final UniqueKey<GridColumnsRecord> GRID_COLUMNS_NAME_OWNER_ID_KEY = Internal.createUniqueKey(GridColumns.GRID_COLUMNS, "grid_columns_name_owner_id_key", GridColumns.GRID_COLUMNS.NAME, GridColumns.GRID_COLUMNS.OWNER_ID);
         public static final UniqueKey<NodeRecord> PK_NODE = Internal.createUniqueKey(Node.NODE, "pk_node", Node.NODE.ID);
@@ -180,6 +192,7 @@ public class Keys {
     }
 
     private static class ForeignKeys0 {
+        public static final ForeignKey<AppAttachmentDataRecord, AppAttachmentRecord> APP_ATTACHMENT_DATA__FK_APP_ATTACHMENT_DATA_ATTACHMENT_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_ATTACHMENT, AppAttachmentData.APP_ATTACHMENT_DATA, "app_attachment_data__fk_app_attachment_data_attachment_id", AppAttachmentData.APP_ATTACHMENT_DATA.ATTACHMENT_ID);
         public static final ForeignKey<AppUserConfigRecord, AppUserRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_USER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, AppUserConfig.APP_USER_CONFIG, "app_user_config__fk_app_user_config_user_id", AppUserConfig.APP_USER_CONFIG.USER_ID);
         public static final ForeignKey<AppUserConfigRecord, AppAttachmentRecord> APP_USER_CONFIG__FK_APP_USER_CONFIG_ATTACHMENT_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_ATTACHMENT, AppUserConfig.APP_USER_CONFIG, "app_user_config__fk_app_user_config_attachment_id", AppUserConfig.APP_USER_CONFIG.ATTACHMENT_ID);
         public static final ForeignKey<AppVersionRecord, AppUserRecord> APP_VERSION__FK_APP_VERSION_OWNER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, AppVersion.APP_VERSION, "app_version__fk_app_version_owner_id", AppVersion.APP_VERSION.OWNER_ID);
@@ -192,6 +205,7 @@ public class Keys {
         public static final ForeignKey<CorgeLinkRecord, CorgeAssocRecord> CORGE_LINK__FK_CORGE_LINK_ASSOC = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_CORGE_ASSOC, CorgeLink.CORGE_LINK, "corge_link__fk_corge_link_assoc", CorgeLink.CORGE_LINK.ASSOC_ID);
         public static final ForeignKey<FooRecord, FooTypeRecord> FOO__FK_FOO_TYPE_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.FOO_TYPE_NAME_KEY, Foo.FOO, "foo__fk_foo_type_id", Foo.FOO.TYPE);
         public static final ForeignKey<FooRecord, AppUserRecord> FOO__FK_FOO_OWNER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, Foo.FOO, "foo__fk_foo_owner_id", Foo.FOO.OWNER_ID);
+        public static final ForeignKey<GraultRecord, AppAttachmentRecord> GRAULT__FK_GRAULT_ATTACHMENT_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_ATTACHMENT, Grault.GRAULT, "grault__fk_grault_attachment_id", Grault.GRAULT.ATTACHMENT_ID);
         public static final ForeignKey<GridColumnsRecord, AppUserRecord> GRID_COLUMNS__FK_GRID_COLUMNS_OWNER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, GridColumns.GRID_COLUMNS, "grid_columns__fk_grid_columns_owner_id", GridColumns.GRID_COLUMNS.OWNER_ID);
         public static final ForeignKey<NodeRecord, NodeRecord> NODE__FK_NODE_PARENT_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_NODE, Node.NODE, "node__fk_node_parent_id", Node.NODE.PARENT_ID);
         public static final ForeignKey<QuxMainRecord, QuxARecord> QUX_MAIN__FK_QUX_A_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_A, QuxMain.QUX_MAIN, "qux_main__fk_qux_a_id", QuxMain.QUX_MAIN.QUX_A_ID);

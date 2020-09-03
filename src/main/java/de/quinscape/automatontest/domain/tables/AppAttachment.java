@@ -38,7 +38,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class AppAttachment extends TableImpl<AppAttachmentRecord> {
 
-    private static final long serialVersionUID = 1653890653;
+    private static final long serialVersionUID = -1217721609;
 
     /**
      * The reference instance of <code>public.app_attachment</code>
@@ -69,9 +69,9 @@ public class AppAttachment extends TableImpl<AppAttachmentRecord> {
     public final TableField<AppAttachmentRecord, String> TYPE = createField("type", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false), this, "");
 
     /**
-     * The column <code>public.app_attachment.content_id</code>.
+     * The column <code>public.app_attachment.url</code>.
      */
-    public final TableField<AppAttachmentRecord, String> CONTENT_ID = createField("content_id", org.jooq.impl.SQLDataType.CLOB, this, "");
+    public final TableField<AppAttachmentRecord, String> URL = createField("url", org.jooq.impl.SQLDataType.VARCHAR(255), this, "");
 
     /**
      * Create a <code>public.app_attachment</code> table reference

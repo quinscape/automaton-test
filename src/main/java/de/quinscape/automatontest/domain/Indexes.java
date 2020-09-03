@@ -5,6 +5,7 @@ package de.quinscape.automatontest.domain;
 
 
 import de.quinscape.automatontest.domain.tables.AppAttachment;
+import de.quinscape.automatontest.domain.tables.AppAttachmentData;
 import de.quinscape.automatontest.domain.tables.AppConfig;
 import de.quinscape.automatontest.domain.tables.AppLogin;
 import de.quinscape.automatontest.domain.tables.AppTranslation;
@@ -20,6 +21,7 @@ import de.quinscape.automatontest.domain.tables.CorgeLink;
 import de.quinscape.automatontest.domain.tables.CorgeType;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
+import de.quinscape.automatontest.domain.tables.Grault;
 import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.Node;
 import de.quinscape.automatontest.domain.tables.QuxA;
@@ -53,6 +55,8 @@ public class Indexes {
     // -------------------------------------------------------------------------
 
     public static final Index PK_APP_ATTACHMENT = Indexes0.PK_APP_ATTACHMENT;
+    public static final Index PK_APP_ATTACHMENT_DATA = Indexes0.PK_APP_ATTACHMENT_DATA;
+    public static final Index UC_APP_ATTACHMENT_DATA_ATTACHMENT_ID = Indexes0.UC_APP_ATTACHMENT_DATA_ATTACHMENT_ID;
     public static final Index PK_APP_CONFIG = Indexes0.PK_APP_CONFIG;
     public static final Index PK_APP_LOGIN = Indexes0.PK_APP_LOGIN;
     public static final Index PK_APP_TRANSLATION = Indexes0.PK_APP_TRANSLATION;
@@ -73,6 +77,7 @@ public class Indexes {
     public static final Index PK_FOO = Indexes0.PK_FOO;
     public static final Index FOO_TYPE_NAME_KEY = Indexes0.FOO_TYPE_NAME_KEY;
     public static final Index PK_FOO_TYPE = Indexes0.PK_FOO_TYPE;
+    public static final Index PK_GRAULT = Indexes0.PK_GRAULT;
     public static final Index GRID_COLUMNS_NAME_OWNER_ID_KEY = Indexes0.GRID_COLUMNS_NAME_OWNER_ID_KEY;
     public static final Index PK_GRID_COLUMNS = Indexes0.PK_GRID_COLUMNS;
     public static final Index PK_NODE = Indexes0.PK_NODE;
@@ -93,6 +98,8 @@ public class Indexes {
 
     private static class Indexes0 {
         public static Index PK_APP_ATTACHMENT = Internal.createIndex("pk_app_attachment", AppAttachment.APP_ATTACHMENT, new OrderField[] { AppAttachment.APP_ATTACHMENT.ID }, true);
+        public static Index PK_APP_ATTACHMENT_DATA = Internal.createIndex("pk_app_attachment_data", AppAttachmentData.APP_ATTACHMENT_DATA, new OrderField[] { AppAttachmentData.APP_ATTACHMENT_DATA.ID }, true);
+        public static Index UC_APP_ATTACHMENT_DATA_ATTACHMENT_ID = Internal.createIndex("uc_app_attachment_data_attachment_id", AppAttachmentData.APP_ATTACHMENT_DATA, new OrderField[] { AppAttachmentData.APP_ATTACHMENT_DATA.ATTACHMENT_ID }, true);
         public static Index PK_APP_CONFIG = Internal.createIndex("pk_app_config", AppConfig.APP_CONFIG, new OrderField[] { AppConfig.APP_CONFIG.NAME }, true);
         public static Index PK_APP_LOGIN = Internal.createIndex("pk_app_login", AppLogin.APP_LOGIN, new OrderField[] { AppLogin.APP_LOGIN.SERIES }, true);
         public static Index PK_APP_TRANSLATION = Internal.createIndex("pk_app_translation", AppTranslation.APP_TRANSLATION, new OrderField[] { AppTranslation.APP_TRANSLATION.ID }, true);
@@ -113,6 +120,7 @@ public class Indexes {
         public static Index PK_FOO = Internal.createIndex("pk_foo", Foo.FOO, new OrderField[] { Foo.FOO.ID }, true);
         public static Index FOO_TYPE_NAME_KEY = Internal.createIndex("foo_type_name_key", FooType.FOO_TYPE, new OrderField[] { FooType.FOO_TYPE.NAME }, true);
         public static Index PK_FOO_TYPE = Internal.createIndex("pk_foo_type", FooType.FOO_TYPE, new OrderField[] { FooType.FOO_TYPE.ORDINAL }, true);
+        public static Index PK_GRAULT = Internal.createIndex("pk_grault", Grault.GRAULT, new OrderField[] { Grault.GRAULT.ID }, true);
         public static Index GRID_COLUMNS_NAME_OWNER_ID_KEY = Internal.createIndex("grid_columns_name_owner_id_key", GridColumns.GRID_COLUMNS, new OrderField[] { GridColumns.GRID_COLUMNS.NAME, GridColumns.GRID_COLUMNS.OWNER_ID }, true);
         public static Index PK_GRID_COLUMNS = Internal.createIndex("pk_grid_columns", GridColumns.GRID_COLUMNS, new OrderField[] { GridColumns.GRID_COLUMNS.ID }, true);
         public static Index PK_NODE = Internal.createIndex("pk_node", Node.NODE, new OrderField[] { Node.NODE.ID }, true);
