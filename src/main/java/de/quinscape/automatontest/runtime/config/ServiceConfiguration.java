@@ -39,6 +39,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.util.StringUtils;
 
+import javax.sql.DataSource;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
@@ -144,7 +145,7 @@ public class ServiceConfiguration
     public TranslationService translationService(
         DSLContext dslContext,
 
-        @Qualifier("jsFunctionReferences")
+        @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection") @Qualifier("jsFunctionReferences")
             ResourceHandle<StaticFunctionReferences> jsFunctionReferencesHandle
     )
     {
@@ -178,12 +179,14 @@ public class ServiceConfiguration
                 "{\n" +
                 "    iQueryAppUser(config: $config)\n" +
                 "    {\n" +
+                "        type" +
                 "        rows{\n" +
                 "            id\n" +
                 "            created\n" +
                 "            lastLogin\n" +
                 "            foos{\n" +
                 "                name\n" +
+                "                created\n" +
                 "            }\n" +
                 "            bazes{\n" +
                 "                name\n" +
@@ -227,5 +230,4 @@ public class ServiceConfiguration
             )
         );
     }
-
 }

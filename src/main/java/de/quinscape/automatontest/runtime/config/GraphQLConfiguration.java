@@ -15,6 +15,7 @@ import de.quinscape.automatontest.domain.tables.pojos.CorgeLink;
 import de.quinscape.automatontest.domain.tables.pojos.CorgeType;
 import de.quinscape.automatontest.domain.tables.pojos.Garply;
 import de.quinscape.automatontest.domain.tables.pojos.Grault;
+import de.quinscape.automatontest.domain.tables.pojos.MetaConfig;
 import de.quinscape.automatontest.domain.tables.pojos.Node;
 import de.quinscape.automatontest.domain.tables.pojos.QuxA;
 import de.quinscape.automatontest.domain.tables.pojos.QuxB;
@@ -110,7 +111,8 @@ public class GraphQLConfiguration
                 CorgeType.class,
 
                 Grault.class,
-                Garply.class
+                Garply.class,
+                MetaConfig.class
             )
             
             // configure object creation for schema relationships
@@ -137,6 +139,9 @@ public class GraphQLConfiguration
             .configureRelation(CORGE_LINK.ASSOC_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
 
             .configureRelation(GRAULT.ATTACHMENT_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
+            .configureRelation(META_CONFIG.ATTACHMENT_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
+            .configureRelation(META_CONFIG.CORGE_TYPE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
+            .configureRelation(META_CONFIG.TYPE, SourceField.SCALAR, TargetField.NONE)
 
             .configureNameField("name")
 
