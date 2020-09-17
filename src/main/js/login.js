@@ -51,7 +51,8 @@ bootstrap(
                 </div>
             </div>
         );
-    },
+    }
+).then(
     () => console.info("ready!")
 );
 
