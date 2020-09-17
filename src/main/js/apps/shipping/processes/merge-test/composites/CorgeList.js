@@ -15,6 +15,10 @@ import nonFKSelectData from "../../../../../data/merge-test/select-field-merge.j
 import timeStampData from "../../../../../data/merge-test/timestamp-merge.json"
 import mergeResultConverter from "../../../../../data/mergeResultConverter";
 
+mergeResultConverter(simpleMergeData);
+mergeResultConverter(fKMergeData);
+mergeResultConverter(manyToManyMergeData);
+mergeResultConverter(nonFKSelectData);
 mergeResultConverter(timeStampData);
 //console.log({timeStampData})
 
