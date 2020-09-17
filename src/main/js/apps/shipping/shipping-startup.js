@@ -12,13 +12,17 @@ import {
     subscribeToTopic,
     publish,
     GraphQLQuery,
-    Attachments
+    Attachments,
+    uploadAttachment,
+    registerBigDecimalConverter
 } from "@quinscape/automaton-js"
 import Layout from "../../components/Layout";
 
 // noinspection ES6UnusedImports
 import AUTOMATON_CSS from "./automaton-test.css"
 import 'react-calendar/dist/Calendar.css';
+import BigNumber from "bignumber.js";
+import { GlobalConfig } from "domainql-form";
 
 // set MobX configuration
 configure({
@@ -34,6 +38,24 @@ bootstrap(
 
                 config.layout = Layout;
                 addConfig("validationRules", initial.validationRules)
+
+                // Configure German bignumber format for decimal-test/meta-config
+                BigNumber.config({
+                    FORMAT:{
+                        "prefix": "",
+                        "groupSize": 3,
+                        "secondaryGroupSize": 0,
+                        "groupSeparator": ".",
+                        "decimalSeparator": ",",
+                        "fractionGroupSize": 3,
+                        "fractionGroupSeparator": " ",
+                        "suffix": ""
+                    }
+                })
+
+                //console.log(JSON.stringify(BigNumber.config(),null, 4))
+
+                registerBigDecimalConverter();
 
                 // spy(ev => {
                 //     ev.type === "update" && console.log("MOBX", ev)
@@ -63,5 +85,6 @@ export default {
     publish,
     subscribeToTopic,
     GraphQLQuery,
-    Attachments
+    Attachments,
+    uploadAttachment
 };

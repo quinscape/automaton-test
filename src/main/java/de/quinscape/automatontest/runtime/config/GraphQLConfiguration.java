@@ -13,6 +13,7 @@ import de.quinscape.automatontest.domain.tables.pojos.Corge;
 import de.quinscape.automatontest.domain.tables.pojos.CorgeAssoc;
 import de.quinscape.automatontest.domain.tables.pojos.CorgeLink;
 import de.quinscape.automatontest.domain.tables.pojos.CorgeType;
+import de.quinscape.automatontest.domain.tables.pojos.Garply;
 import de.quinscape.automatontest.domain.tables.pojos.Grault;
 import de.quinscape.automatontest.domain.tables.pojos.Node;
 import de.quinscape.automatontest.domain.tables.pojos.QuxA;
@@ -30,6 +31,7 @@ import de.quinscape.domainql.generic.GenericScalar;
 import de.quinscape.domainql.generic.GenericScalarType;
 import de.quinscape.domainql.jsonb.JSONB;
 import de.quinscape.domainql.jsonb.JSONBScalar;
+import de.quinscape.domainql.scalar.BigDecimalScalar;
 import graphql.GraphQL;
 import org.jooq.DSLContext;
 import org.slf4j.Logger;
@@ -41,6 +43,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.Collection;
 
 import static de.quinscape.automatontest.domain.Tables.*;
@@ -86,6 +89,7 @@ public class GraphQLConfiguration
             .withAdditionalScalar(ConditionScalar.class, ConditionType.newConditionType())
             .withAdditionalScalar(FieldExpressionScalar.class, FieldExpressionType.newFieldExpressionType())
             .withAdditionalScalar(GenericScalar.class, GenericScalarType.newGenericScalar())
+            .withAdditionalScalar(BigDecimal.class, new BigDecimalScalar())
 
             .withAdditionalInputTypes(
                 Node.class,
@@ -105,7 +109,8 @@ public class GraphQLConfiguration
                 CorgeLink.class,
                 CorgeType.class,
 
-                Grault.class
+                Grault.class,
+                Garply.class
             )
             
             // configure object creation for schema relationships

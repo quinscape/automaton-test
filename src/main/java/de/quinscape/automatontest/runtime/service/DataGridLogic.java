@@ -17,6 +17,7 @@ import de.quinscape.automatontest.domain.tables.pojos.CorgeLink;
 import de.quinscape.automatontest.domain.tables.pojos.CorgeType;
 import de.quinscape.automatontest.domain.tables.pojos.Foo;
 import de.quinscape.automatontest.domain.tables.pojos.FooType;
+import de.quinscape.automatontest.domain.tables.pojos.Garply;
 import de.quinscape.automatontest.domain.tables.pojos.Grault;
 import de.quinscape.automatontest.domain.tables.pojos.GridColumns;
 import de.quinscape.automatontest.domain.tables.pojos.Node;
@@ -109,7 +110,8 @@ public class DataGridLogic
                 CorgeType.class,
                 CorgeLink.class,
 
-                Grault.class
+                Grault.class,
+                Garply.class
             }
         )
         Class<T> type,

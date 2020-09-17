@@ -4,7 +4,6 @@ import de.quinscape.automaton.model.js.StaticFunctionReferences;
 import de.quinscape.automaton.runtime.attachment.AttachmentRepository;
 import de.quinscape.automaton.runtime.attachment.DatabaseAttachmentContentRepository;
 import de.quinscape.automaton.runtime.attachment.DefaultAttachmentRepository;
-import de.quinscape.automaton.runtime.attachment.FileBasedAttachmentContentRepository;
 import de.quinscape.automaton.runtime.data.FilterContextConfiguration;
 import de.quinscape.automaton.runtime.data.FilterContextRegistry;
 import de.quinscape.automaton.runtime.domain.DomainMonitorService;

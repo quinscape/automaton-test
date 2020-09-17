@@ -109,5 +109,27 @@
         "name": "CorgeAssoc",
         "description": "Many-to-many associated type to Corge",
         "fieldDocs": []
+    },
+    {
+        "name": "Garply",
+        "description": "Entity containing BigDecimal fields",
+        "fieldDocs": [
+            {
+                "name": "id",
+                "description": "garply id"
+            },
+            {
+                "name": "name",
+                "description": "garply name"
+            },
+            {
+                "name": "value",
+                "description": "big decimal field"
+            },
+            {
+                "name": "opt",
+                "description": "optional big decimal field"
+            }
+        ]
     }
 ]
