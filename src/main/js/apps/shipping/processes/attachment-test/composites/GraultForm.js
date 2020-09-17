@@ -1,22 +1,14 @@
-import { Field, GlobalErrors, Icon, TextArea, withForm, FieldMode } from "domainql-form"
-import React from "react"
+import { Field, GlobalErrors, Icon, TextArea, withForm, FieldMode, Addon } from "domainql-form"
+import React, { useRef } from "react"
+import cx from "classnames"
 import { observer as fnObserver } from "mobx-react-lite";
-import { Button, config, i18n, ScrollTracker,AttachmentField } from "@quinscape/automaton-js"
+import { Button, config, i18n, useAutomatonEnv,AttachmentField, URLField } from "@quinscape/automaton-js"
 import { ButtonToolbar } from "reactstrap";
 
 import validation from "../../../../../services/validation"
 
 
 const GraultForm = props => {
-
-    const { formConfig } = props;
-
-    const { root } = formConfig;
-
-    //console.log("FOO FORM", root);
-
-    const auth = config.auth;
-    //console.log({ auth, root });
 
     return (
         <React.Fragment>
@@ -29,7 +21,9 @@ const GraultForm = props => {
 
             <GlobalErrors/>
             <Field name="name"/>
-            <AttachmentField name="attachmentId"/>
+            <AttachmentField
+                name="attachmentId"
+            />
 
             <ButtonToolbar>
                 <Button className="btn btn-primary mr-1" transition="save">

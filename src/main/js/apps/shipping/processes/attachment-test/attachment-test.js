@@ -16,6 +16,7 @@ import {
     extractTypeData,
     Attachments
 } from "@quinscape/automaton-js";
+import {  FieldMode  } from "domainql-form";
 import Q_GraultList from "./queries/Q_GraultList";
 import Q_GraultDetail from "./queries/Q_GraultDetail";
 
@@ -67,7 +68,11 @@ export function initProcess(process, scope)
                                         alert("Could not load Grault with id '" + id)
                                     }
 
-                                    scope.updateCurrent(config.inputSchema.clone(iQueryGrault.rows[0]));
+                                    scope.updateCurrent(
+                                        config.inputSchema.clone(
+                                            iQueryGrault.rows[0]
+                                        )
+                                    );
                                 })
                             }
                         }
@@ -76,11 +81,17 @@ export function initProcess(process, scope)
                 "GraultDetail": {
                     "save": {
 
-                        action: t => Attachments.uploadPending(t.context)
+                        action: t =>
+                            // 1.
+                            Attachments.uploadPending(t.context)
+
+                            // 2.
                             .then( () => storeDomainObject({
                                 ... extractTypeData("GraultInput", t.context),
                             }))
+                            // 3.
                             .then(() => Attachments.deletePending(t.context))
+
                             .then(() => scope.graults.update())
                             .then(() => t.back(backToParent(t)))
                     },
@@ -101,9 +112,10 @@ export function initProcess(process, scope)
                     "cancel": {
                         to: "GraultList",
                         discard: true,
-                        action: t => {
 
+                        action: t => {
                             console.log("Transition 'cancel'")
+                            return Attachments.clearAll(t.context)
                         }
                     }
                 }

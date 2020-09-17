@@ -23,6 +23,7 @@ export default query(
                 id
                 name
                 attachmentId
+                url
                 attachment{
                     id
                     type
