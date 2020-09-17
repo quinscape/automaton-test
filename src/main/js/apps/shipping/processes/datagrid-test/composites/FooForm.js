@@ -1,7 +1,7 @@
-import { Field, FieldGroup, FieldMode, GlobalErrors, Icon, TextArea, withForm } from "domainql-form"
+import { Field, FieldGroup, FieldMode, GlobalErrors, Icon, Select, TextArea, withForm } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
-import { Button, CalendarField, config, i18n, ScrollTracker } from "@quinscape/automaton-js"
+import { Button, CalendarField, config, i18n, ScrollTracker, useAutomatonEnv } from "@quinscape/automaton-js"
 import { ButtonToolbar } from "reactstrap";
 
 import validation from "../../../../../services/validation"
@@ -11,7 +11,9 @@ const FooForm = props => {
 
     const { formConfig } = props;
 
-    const { root } = formConfig;
+    const env = useAutomatonEnv();
+
+    const { scope } = env;
 
     //console.log("FOO FORM", root);
 
@@ -36,7 +38,12 @@ const FooForm = props => {
             <TextArea name="description"/>
             <CalendarField name="created"/>
             <Field name="flag"/>
-            <Field name="type" wrapperColumnClass="col-md-1"/>
+            <Select
+                name="type"
+                values={ scope.fooTypes.rows }
+                nameProperty={ "name" }
+                valueProperty={ "name" }
+            />
             <ButtonToolbar>
                 <Button className="btn btn-primary mr-1" transition="save">
                     <Icon className="fa-save mr-1" />
