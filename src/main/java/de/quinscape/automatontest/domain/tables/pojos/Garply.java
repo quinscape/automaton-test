@@ -7,6 +7,7 @@ package de.quinscape.automatontest.domain.tables.pojos;
 import de.quinscape.domainql.jooq.GeneratedDomainObject;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.annotation.Generated;
 import javax.persistence.Column;
@@ -30,37 +31,37 @@ import javax.validation.constraints.Size;
 )
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 @Entity
-@Table(name = "grault", schema = "public", indexes = {
-    @Index(name = "pk_grault", unique = true, columnList = "id ASC")
+@Table(name = "garply", schema = "public", indexes = {
+    @Index(name = "pk_garply", unique = true, columnList = "id ASC")
 })
-public class Grault extends GeneratedDomainObject implements Serializable {
+public class Garply extends GeneratedDomainObject implements Serializable {
 
-    private static final long serialVersionUID = 1966762660;
+    private static final long serialVersionUID = 847147801;
 
-    private String id;
-    private String name;
-    private String attachmentId;
-    private String url;
+    private String     id;
+    private String     name;
+    private BigDecimal value;
+    private BigDecimal opt;
 
-    public Grault() {}
+    public Garply() {}
 
-    public Grault(Grault value) {
+    public Garply(Garply value) {
         this.id = value.id;
         this.name = value.name;
-        this.attachmentId = value.attachmentId;
-        this.url = value.url;
+        this.value = value.value;
+        this.opt = value.opt;
     }
 
-    public Grault(
-        String id,
-        String name,
-        String attachmentId,
-        String url
+    public Garply(
+        String     id,
+        String     name,
+        BigDecimal value,
+        BigDecimal opt
     ) {
         this.id = id;
         this.name = name;
-        this.attachmentId = attachmentId;
-        this.url = url;
+        this.value = value;
+        this.opt = opt;
     }
 
     @Id
@@ -86,33 +87,33 @@ public class Grault extends GeneratedDomainObject implements Serializable {
         this.name = name;
     }
 
-    @Column(name = "attachment_id", length = 36)
-    @Size(max = 36)
-    public String getAttachmentId() {
-        return this.attachmentId;
+    @Column(name = "value", nullable = false, precision = 19, scale = 2)
+    @NotNull
+    public BigDecimal getValue() {
+        return this.value;
     }
 
-    public void setAttachmentId(String attachmentId) {
-        this.attachmentId = attachmentId;
+    public void setValue(BigDecimal value) {
+        this.value = value;
     }
 
-    @Column(name = "url")
-    public String getUrl() {
-        return this.url;
+    @Column(name = "opt", precision = 19, scale = 2)
+    public BigDecimal getOpt() {
+        return this.opt;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setOpt(BigDecimal opt) {
+        this.opt = opt;
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("Grault (");
+        StringBuilder sb = new StringBuilder("Garply (");
 
         sb.append(id);
         sb.append(", ").append(name);
-        sb.append(", ").append(attachmentId);
-        sb.append(", ").append(url);
+        sb.append(", ").append(value);
+        sb.append(", ").append(opt);
 
         sb.append(")");
         return sb.toString();

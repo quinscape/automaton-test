@@ -22,8 +22,10 @@ import de.quinscape.automatontest.domain.tables.CorgeLink;
 import de.quinscape.automatontest.domain.tables.CorgeType;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
+import de.quinscape.automatontest.domain.tables.Garply;
 import de.quinscape.automatontest.domain.tables.Grault;
 import de.quinscape.automatontest.domain.tables.GridColumns;
+import de.quinscape.automatontest.domain.tables.MetaConfig;
 import de.quinscape.automatontest.domain.tables.Node;
 import de.quinscape.automatontest.domain.tables.QuxA;
 import de.quinscape.automatontest.domain.tables.QuxB;
@@ -139,6 +141,11 @@ public class Tables {
     public static final FooType FOO_TYPE = de.quinscape.automatontest.domain.tables.FooType.FOO_TYPE;
 
     /**
+     * The table <code>public.garply</code>.
+     */
+    public static final Garply GARPLY = de.quinscape.automatontest.domain.tables.Garply.GARPLY;
+
+    /**
      * The table <code>public.grault</code>.
      */
     public static final Grault GRAULT = de.quinscape.automatontest.domain.tables.Grault.GRAULT;
@@ -147,6 +154,11 @@ public class Tables {
      * The table <code>public.grid_columns</code>.
      */
     public static final GridColumns GRID_COLUMNS = de.quinscape.automatontest.domain.tables.GridColumns.GRID_COLUMNS;
+
+    /**
+     * The table <code>public.meta_config</code>.
+     */
+    public static final MetaConfig META_CONFIG = de.quinscape.automatontest.domain.tables.MetaConfig.META_CONFIG;
 
     /**
      * The table <code>public.node</code>.

@@ -39,7 +39,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Grault extends TableImpl<GraultRecord> {
 
-    private static final long serialVersionUID = -1155764186;
+    private static final long serialVersionUID = 1559230543;
 
     /**
      * The reference instance of <code>public.grault</code>
@@ -68,6 +68,11 @@ public class Grault extends TableImpl<GraultRecord> {
      * The column <code>public.grault.attachment_id</code>.
      */
     public final TableField<GraultRecord, String> ATTACHMENT_ID = createField("attachment_id", org.jooq.impl.SQLDataType.VARCHAR(36), this, "");
+
+    /**
+     * The column <code>public.grault.url</code>.
+     */
+    public final TableField<GraultRecord, String> URL = createField("url", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
      * Create a <code>public.grault</code> table reference

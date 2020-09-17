@@ -169,6 +169,11 @@ type BazValue {
     name: String!
 }
 
+"Generated for java.math.BigInteger"
+type BigInteger {
+    lowestSetBit: Int
+}
+
 "The state of a column within an interactive query."
 type ColumnState {
     "True if column is enabled. Server might disabled columns."
@@ -288,6 +293,18 @@ type FooType {
     ordinal: Int!
 }
 
+"Entity containing BigDecimal fields"
+type Garply {
+    "garply id"
+    id: String!
+    "garply name"
+    name: String!
+    "optional big decimal field"
+    opt: BigDecimal
+    "big decimal field"
+    value: BigDecimal!
+}
+
 "Generated from public.grault"
 type Grault {
     "Target of 'attachment_id'"
@@ -298,6 +315,8 @@ type Grault {
     id: String!
     "DB column 'name'"
     name: String!
+    "DB column 'url'"
+    url: String
 }
 
 "Generated from public.grid_columns"
@@ -466,6 +485,20 @@ type InteractiveQueryFooType {
     type: String
 }
 
+"Interactive Query with Garply payload."
+type InteractiveQueryGarply {
+    "Column states for the current result."
+    columnStates: [ColumnState]
+    "Query configuration the current result was produced with."
+    queryConfig: QueryConfig
+    "Total row count available."
+    rowCount: Int
+    "List with current rows of Garply."
+    rows: [Garply]
+    "Name of payload type (always 'Garply')"
+    type: String
+}
+
 "Interactive Query with Grault payload."
 type InteractiveQueryGrault {
     "Column states for the current result."
@@ -477,6 +510,20 @@ type InteractiveQueryGrault {
     "List with current rows of Grault."
     rows: [Grault]
     "Name of payload type (always 'Grault')"
+    type: String
+}
+
+"Interactive Query with MetaConfig payload."
+type InteractiveQueryMetaConfig {
+    "Column states for the current result."
+    columnStates: [ColumnState]
+    "Query configuration the current result was produced with."
+    queryConfig: QueryConfig
+    "Total row count available."
+    rowCount: Int
+    "List with current rows of MetaConfig."
+    rows: [MetaConfig]
+    "Name of payload type (always 'MetaConfig')"
     type: String
 }
 
@@ -655,6 +702,38 @@ type MergeResult {
     done: Boolean
 }
 
+"Container type to test <FieldMetaButton/> on different field types"
+type MetaConfig {
+    "Target of 'attachment_id'"
+    attachment: AppAttachment
+    "DB foreign key column 'attachment_id'"
+    attachmentId: String
+    "DB column 'big_num'"
+    bigNum: BigDecimal
+    "Target of 'corge_type_id'"
+    corgeType: CorgeType
+    "DB foreign key column 'corge_type_id'"
+    corgeTypeId: String
+    "DB column 'date'"
+    date: Date
+    "DB column 'flag'"
+    flag: Boolean
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "DB column 'num'"
+    num: Int
+    "DB column 'text'"
+    text: String
+    "DB column 'timestamp'"
+    timestamp: Timestamp
+    "DB foreign key column 'type'"
+    type: String
+    "DB column 'url'"
+    url: String!
+}
+
 "Auto-generated from DataGridLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type MutationType {
     complexStore(container: ComplexContainerInput): Boolean
@@ -738,8 +817,12 @@ type QueryType {
     iQueryFoo(config: QueryConfigInput!): InteractiveQueryFoo
     "Queries FooType objects based on the given query config"
     iQueryFooType(config: QueryConfigInput!): InteractiveQueryFooType
+    "Queries Garply objects based on the given query config"
+    iQueryGarply(config: QueryConfigInput!): InteractiveQueryGarply
     "Queries Grault objects based on the given query config"
     iQueryGrault(config: QueryConfigInput!): InteractiveQueryGrault
+    "Queries MetaConfig objects based on the given query config"
+    iQueryMetaConfig(config: QueryConfigInput!): InteractiveQueryMetaConfig
     "Queries Node objects based on the given query config"
     iQueryNode(config: QueryConfigInput!): InteractiveQueryNode
     "Queries QuxA objects based on the given query config"
@@ -1037,11 +1120,24 @@ input FooInput {
     type: String!
 }
 
+"Entity containing BigDecimal fields"
+input GarplyInput {
+    "garply id"
+    id: String!
+    "garply name"
+    name: String!
+    "optional big decimal field"
+    opt: BigDecimal
+    "big decimal field"
+    value: BigDecimal!
+}
+
 "Generated for de.quinscape.automatontest.domain.tables.pojos.Grault"
 input GraultInput {
     attachmentId: String
     id: String!
     name: String!
+    url: String
 }
 
 "Generated for de.quinscape.automaton.model.merge.MergeConfig"
@@ -1114,6 +1210,22 @@ input MergeTypeConfigInput {
     """
     mergeGroups: [MergeGroupInput]
     name: String!
+}
+
+"Container type to test <FieldMetaButton/> on different field types"
+input MetaConfigInput {
+    attachmentId: String
+    bigNum: BigDecimal
+    corgeTypeId: String
+    date: Date
+    flag: Boolean
+    id: String!
+    name: String!
+    num: Int
+    text: String
+    timestamp: Timestamp
+    type: String
+    url: String!
 }
 
 "Recursive domain object used in animal-test. Generated from public.node in the database dump."
@@ -1228,8 +1340,11 @@ scalar FieldExpression
 "Long type"
 scalar Long
 
-"Built-in java.math.BigInteger"
-scalar BigInteger
-
 "Map graph representing JOOQ conditions"
 scalar Condition
+
+"SQL date equivalent"
+scalar Date
+
+"BigDecimal wrapped as string"
+scalar BigDecimal

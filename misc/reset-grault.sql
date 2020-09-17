@@ -5,7 +5,6 @@
 -- Dumped from database version 10.14 (Ubuntu 10.14-0ubuntu0.18.04.1)
 -- Dumped by pg_dump version 10.14 (Ubuntu 10.14-0ubuntu0.18.04.1)
 
-
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
@@ -40,8 +39,8 @@ INSERT INTO public.app_attachment_data VALUES ('f46df0ff-0069-40c3-8fb8-e249a91d
 -- Data for Name: grault; Type: TABLE DATA; Schema: public; Owner: automatontest
 --
 
-INSERT INTO public.grault VALUES ('981e7df8-dfd5-4247-a3bf-d2951f33a67d', 'Grault #2', NULL);
-INSERT INTO public.grault VALUES ('88efc85e-27de-4d2a-bedb-d0bbb3dab2d0', 'Grault #1', '8973dd4f-2c76-45ab-9da8-f08a5d9e9f1e');
+INSERT INTO public.grault VALUES ('88efc85e-27de-4d2a-bedb-d0bbb3dab2d0', 'Grault #1', '8973dd4f-2c76-45ab-9da8-f08a5d9e9f1e', 'https://quinscape.de');
+INSERT INTO public.grault VALUES ('981e7df8-dfd5-4247-a3bf-d2951f33a67d', 'Grault #2', NULL, NULL);
 
 
 --

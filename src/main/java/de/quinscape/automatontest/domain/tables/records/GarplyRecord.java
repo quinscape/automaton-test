@@ -4,7 +4,9 @@
 package de.quinscape.automatontest.domain.tables.records;
 
 
-import de.quinscape.automatontest.domain.tables.Grault;
+import de.quinscape.automatontest.domain.tables.Garply;
+
+import java.math.BigDecimal;
 
 import javax.annotation.Generated;
 import javax.persistence.Column;
@@ -34,22 +36,22 @@ import org.jooq.impl.UpdatableRecordImpl;
 )
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 @Entity
-@Table(name = "grault", schema = "public", indexes = {
-    @Index(name = "pk_grault", unique = true, columnList = "id ASC")
+@Table(name = "garply", schema = "public", indexes = {
+    @Index(name = "pk_garply", unique = true, columnList = "id ASC")
 })
-public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements Record4<String, String, String, String> {
+public class GarplyRecord extends UpdatableRecordImpl<GarplyRecord> implements Record4<String, String, BigDecimal, BigDecimal> {
 
-    private static final long serialVersionUID = -524405094;
+    private static final long serialVersionUID = -762705889;
 
     /**
-     * Setter for <code>public.grault.id</code>.
+     * Setter for <code>public.garply.id</code>.
      */
     public void setId(String value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>public.grault.id</code>.
+     * Getter for <code>public.garply.id</code>.
      */
     @Id
     @Column(name = "id", unique = true, nullable = false, length = 36)
@@ -60,14 +62,14 @@ public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements R
     }
 
     /**
-     * Setter for <code>public.grault.name</code>.
+     * Setter for <code>public.garply.name</code>.
      */
     public void setName(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>public.grault.name</code>.
+     * Getter for <code>public.garply.name</code>.
      */
     @Column(name = "name", nullable = false, length = 100)
     @NotNull
@@ -77,34 +79,34 @@ public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements R
     }
 
     /**
-     * Setter for <code>public.grault.attachment_id</code>.
+     * Setter for <code>public.garply.value</code>.
      */
-    public void setAttachmentId(String value) {
+    public void setValue(BigDecimal value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>public.grault.attachment_id</code>.
+     * Getter for <code>public.garply.value</code>.
      */
-    @Column(name = "attachment_id", length = 36)
-    @Size(max = 36)
-    public String getAttachmentId() {
-        return (String) get(2);
+    @Column(name = "value", nullable = false, precision = 19, scale = 2)
+    @NotNull
+    public BigDecimal getValue() {
+        return (BigDecimal) get(2);
     }
 
     /**
-     * Setter for <code>public.grault.url</code>.
+     * Setter for <code>public.garply.opt</code>.
      */
-    public void setUrl(String value) {
+    public void setOpt(BigDecimal value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>public.grault.url</code>.
+     * Getter for <code>public.garply.opt</code>.
      */
-    @Column(name = "url")
-    public String getUrl() {
-        return (String) get(3);
+    @Column(name = "opt", precision = 19, scale = 2)
+    public BigDecimal getOpt() {
+        return (BigDecimal) get(3);
     }
 
     // -------------------------------------------------------------------------
@@ -127,7 +129,7 @@ public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements R
      * {@inheritDoc}
      */
     @Override
-    public Row4<String, String, String, String> fieldsRow() {
+    public Row4<String, String, BigDecimal, BigDecimal> fieldsRow() {
         return (Row4) super.fieldsRow();
     }
 
@@ -135,7 +137,7 @@ public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements R
      * {@inheritDoc}
      */
     @Override
-    public Row4<String, String, String, String> valuesRow() {
+    public Row4<String, String, BigDecimal, BigDecimal> valuesRow() {
         return (Row4) super.valuesRow();
     }
 
@@ -144,7 +146,7 @@ public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements R
      */
     @Override
     public Field<String> field1() {
-        return Grault.GRAULT.ID;
+        return Garply.GARPLY.ID;
     }
 
     /**
@@ -152,23 +154,23 @@ public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements R
      */
     @Override
     public Field<String> field2() {
-        return Grault.GRAULT.NAME;
+        return Garply.GARPLY.NAME;
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Field<String> field3() {
-        return Grault.GRAULT.ATTACHMENT_ID;
+    public Field<BigDecimal> field3() {
+        return Garply.GARPLY.VALUE;
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Field<String> field4() {
-        return Grault.GRAULT.URL;
+    public Field<BigDecimal> field4() {
+        return Garply.GARPLY.OPT;
     }
 
     /**
@@ -191,16 +193,16 @@ public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements R
      * {@inheritDoc}
      */
     @Override
-    public String component3() {
-        return getAttachmentId();
+    public BigDecimal component3() {
+        return getValue();
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public String component4() {
-        return getUrl();
+    public BigDecimal component4() {
+        return getOpt();
     }
 
     /**
@@ -223,23 +225,23 @@ public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements R
      * {@inheritDoc}
      */
     @Override
-    public String value3() {
-        return getAttachmentId();
+    public BigDecimal value3() {
+        return getValue();
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public String value4() {
-        return getUrl();
+    public BigDecimal value4() {
+        return getOpt();
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public GraultRecord value1(String value) {
+    public GarplyRecord value1(String value) {
         setId(value);
         return this;
     }
@@ -248,7 +250,7 @@ public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements R
      * {@inheritDoc}
      */
     @Override
-    public GraultRecord value2(String value) {
+    public GarplyRecord value2(String value) {
         setName(value);
         return this;
     }
@@ -257,8 +259,8 @@ public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements R
      * {@inheritDoc}
      */
     @Override
-    public GraultRecord value3(String value) {
-        setAttachmentId(value);
+    public GarplyRecord value3(BigDecimal value) {
+        setValue(value);
         return this;
     }
 
@@ -266,8 +268,8 @@ public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements R
      * {@inheritDoc}
      */
     @Override
-    public GraultRecord value4(String value) {
-        setUrl(value);
+    public GarplyRecord value4(BigDecimal value) {
+        setOpt(value);
         return this;
     }
 
@@ -275,7 +277,7 @@ public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements R
      * {@inheritDoc}
      */
     @Override
-    public GraultRecord values(String value1, String value2, String value3, String value4) {
+    public GarplyRecord values(String value1, String value2, BigDecimal value3, BigDecimal value4) {
         value1(value1);
         value2(value2);
         value3(value3);
@@ -288,21 +290,21 @@ public class GraultRecord extends UpdatableRecordImpl<GraultRecord> implements R
     // -------------------------------------------------------------------------
 
     /**
-     * Create a detached GraultRecord
+     * Create a detached GarplyRecord
      */
-    public GraultRecord() {
-        super(Grault.GRAULT);
+    public GarplyRecord() {
+        super(Garply.GARPLY);
     }
 
     /**
-     * Create a detached, initialised GraultRecord
+     * Create a detached, initialised GarplyRecord
      */
-    public GraultRecord(String id, String name, String attachmentId, String url) {
-        super(Grault.GRAULT);
+    public GarplyRecord(String id, String name, BigDecimal value, BigDecimal opt) {
+        super(Garply.GARPLY);
 
         set(0, id);
         set(1, name);
-        set(2, attachmentId);
-        set(3, url);
+        set(2, value);
+        set(3, opt);
     }
 }

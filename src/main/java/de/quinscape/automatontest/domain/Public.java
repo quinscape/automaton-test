@@ -22,8 +22,10 @@ import de.quinscape.automatontest.domain.tables.CorgeLink;
 import de.quinscape.automatontest.domain.tables.CorgeType;
 import de.quinscape.automatontest.domain.tables.Foo;
 import de.quinscape.automatontest.domain.tables.FooType;
+import de.quinscape.automatontest.domain.tables.Garply;
 import de.quinscape.automatontest.domain.tables.Grault;
 import de.quinscape.automatontest.domain.tables.GridColumns;
+import de.quinscape.automatontest.domain.tables.MetaConfig;
 import de.quinscape.automatontest.domain.tables.Node;
 import de.quinscape.automatontest.domain.tables.QuxA;
 import de.quinscape.automatontest.domain.tables.QuxB;
@@ -56,7 +58,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = 1916833506;
+    private static final long serialVersionUID = 1605329332;
 
     /**
      * The reference instance of <code>public</code>
@@ -154,6 +156,11 @@ public class Public extends SchemaImpl {
     public final FooType FOO_TYPE = de.quinscape.automatontest.domain.tables.FooType.FOO_TYPE;
 
     /**
+     * The table <code>public.garply</code>.
+     */
+    public final Garply GARPLY = de.quinscape.automatontest.domain.tables.Garply.GARPLY;
+
+    /**
      * The table <code>public.grault</code>.
      */
     public final Grault GRAULT = de.quinscape.automatontest.domain.tables.Grault.GRAULT;
@@ -162,6 +169,11 @@ public class Public extends SchemaImpl {
      * The table <code>public.grid_columns</code>.
      */
     public final GridColumns GRID_COLUMNS = de.quinscape.automatontest.domain.tables.GridColumns.GRID_COLUMNS;
+
+    /**
+     * The table <code>public.meta_config</code>.
+     */
+    public final MetaConfig META_CONFIG = de.quinscape.automatontest.domain.tables.MetaConfig.META_CONFIG;
 
     /**
      * The table <code>public.node</code>.
@@ -241,8 +253,10 @@ public class Public extends SchemaImpl {
             CorgeType.CORGE_TYPE,
             Foo.FOO,
             FooType.FOO_TYPE,
+            Garply.GARPLY,
             Grault.GRAULT,
             GridColumns.GRID_COLUMNS,
+            MetaConfig.META_CONFIG,
             Node.NODE,
             QuxA.QUX_A,
             QuxB.QUX_B,
