@@ -3,7 +3,7 @@ import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { ButtonToolbar, Container, Modal, ModalBody, ModalHeader } from "reactstrap";
 import { Button, i18n, IQueryGrid as DataGrid, useDomainMonitor, FilterDSL, DomainActivityIndicator, openDialog } from "@quinscape/automaton-js"
-import MergeDialog from "@quinscape/automaton-js/lib/ui/MergeDialog"
+import MergeDialog from "@quinscape/automaton-js/lib/ui/ChangeConflictDialog"
 
 const { and, field, value, component } = FilterDSL;
 
