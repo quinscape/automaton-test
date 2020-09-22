@@ -133,6 +133,7 @@ export default class AnimalGridTestScope {
                                             },
                                             {
                                                 "scalarType": "String",
+                                                "type": "Value",
                                                 "value": "b"
                                             }
                                         ],
