@@ -69,8 +69,7 @@ export default withForm(
         FooForm
     ),
     {
-        type: "FooInput",
-        validation: validation("FooInput")
+        type: "FooInput"
     }
 )
 

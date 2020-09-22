@@ -43,13 +43,34 @@ export function initProcess(process, scope)
                                 // use empty id to be replaced by a new id server-side (
                                 const newObj = createDomainObject("FooInput", "");
 
-                                newObj.name = "Unnamed Foo";
-                                newObj.desc = "";
+                                newObj.name = "Unnamed";
+                                newObj.description = null;
                                 newObj.num = 0;
                                 newObj.flag = false;
                                 newObj.created = new Date();
                                 newObj.type = "TYPE_A";
 
+                                return scope.updateCurrent(newObj);
+                            }
+                        },
+                        "new-foo-no-ddefaults": {
+                            to: "CRUDDetail",
+                            action: t => {
+
+                                // use empty id to be replaced by a new id server-side (
+                                const newObj = createDomainObject("FooInput", "");
+
+                                // test required
+                                newObj.name = null;
+                                // test highlevel validation
+                                newObj.description = "AAA";
+                                newObj.flag = false;
+                                newObj.created = new Date();
+                                newObj.type = "TYPE_A";
+
+                                // XXX: even though we don't set ownerId here, we won't get an
+                                //      revalidation error because there's no field for it
+                                
                                 return scope.updateCurrent(newObj);
                             }
                         },

@@ -10,7 +10,16 @@ const CRUDDetail = props => {
     const [ control, setControl] = useState(() => ({
         ... DEFAULT_OPTIONS,
         layout: FormLayout.HORIZONTAL,
-        isolation: false
+        isolation: false,
+        validation: {
+            validateField: (ctx, value) => {
+                if (ctx.qualifiedName === "description" && value === "AAA")
+                {
+                    console.log("ERR", ctx, value)
+                    return "HighLevel-Validation: Value can't be AAA"
+                }
+            }
+        }
     }));
 
     const changeControl = (k, v) => setControl({

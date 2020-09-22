@@ -27,6 +27,10 @@ const CRUDList = props => {
                     <Icon className="fa-save mr-1" />
                     New
                 </Button>
+                <Button className="btn btn-primary mr-1" transition="new-foo-no-ddefaults" tooltip="Revalidation example">
+                    <Icon className="fa-save mr-1" />
+                    New w/o defaults
+                </Button>
             </ButtonToolbar>
 
             <DataGrid
