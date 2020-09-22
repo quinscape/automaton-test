@@ -12,8 +12,7 @@ import {
     subscribeToTopic,
     publish,
     GraphQLQuery,
-    Attachments,
-    uploadAttachment,
+    createDomainObject,
     registerBigDecimalConverter
 } from "@quinscape/automaton-js"
 import Layout from "../../components/Layout";
@@ -36,6 +35,7 @@ bootstrap(
             initial,
             config => {
 
+                config.markUntranslated = true;
                 config.layout = Layout;
                 addConfig("validationRules", initial.validationRules)
 
@@ -85,6 +85,5 @@ export default {
     publish,
     subscribeToTopic,
     GraphQLQuery,
-    Attachments,
-    uploadAttachment
+    createDomainObject
 };
