@@ -106,13 +106,13 @@ const MetaConfigForm = props => {
 
                 <Field name="name">
                     <Addon placement={Addon.RIGHT} moveIfPlainText={true}>
-                        <FieldMetaButton subProcess="meta-config-sub"/>
+                        <FieldMetaButton subProcess="meta-config-sub" dialogOptions={ { title: "xxx"}}/>
                     </Addon>
                 </Field>
 
                 <Field name="num">
                     <Addon placement={Addon.RIGHT} moveIfPlainText={true}>
-                        <FieldMetaButton subProcess="meta-config-sub"/>
+                        <FieldMetaButton subProcess="meta-config-sub" dialogOptions={ { title: "" }}/>
                     </Addon>
                 </Field>
 
