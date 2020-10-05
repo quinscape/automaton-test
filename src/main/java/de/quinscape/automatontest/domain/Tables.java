@@ -33,6 +33,7 @@ import de.quinscape.automatontest.domain.tables.QuxC;
 import de.quinscape.automatontest.domain.tables.QuxD;
 import de.quinscape.automatontest.domain.tables.QuxMain;
 import de.quinscape.automatontest.domain.tables.SumPerMonth;
+import de.quinscape.automatontest.domain.tables.Waldo;
 
 import javax.annotation.Generated;
 
@@ -194,4 +195,9 @@ public class Tables {
      * The table <code>public.sum_per_month</code>.
      */
     public static final SumPerMonth SUM_PER_MONTH = de.quinscape.automatontest.domain.tables.SumPerMonth.SUM_PER_MONTH;
+
+    /**
+     * The table <code>public.waldo</code>.
+     */
+    public static final Waldo WALDO = de.quinscape.automatontest.domain.tables.Waldo.WALDO;
 }

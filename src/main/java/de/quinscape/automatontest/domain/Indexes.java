@@ -31,6 +31,7 @@ import de.quinscape.automatontest.domain.tables.QuxB;
 import de.quinscape.automatontest.domain.tables.QuxC;
 import de.quinscape.automatontest.domain.tables.QuxD;
 import de.quinscape.automatontest.domain.tables.QuxMain;
+import de.quinscape.automatontest.domain.tables.Waldo;
 
 import javax.annotation.Generated;
 
@@ -95,6 +96,7 @@ public class Indexes {
     public static final Index PK_QUX_D = Indexes0.PK_QUX_D;
     public static final Index QUX_D_NAME_KEY = Indexes0.QUX_D_NAME_KEY;
     public static final Index PK_QUX_MAIN = Indexes0.PK_QUX_MAIN;
+    public static final Index PK_WALDO = Indexes0.PK_WALDO;
 
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
@@ -140,5 +142,6 @@ public class Indexes {
         public static Index PK_QUX_D = Internal.createIndex("pk_qux_d", QuxD.QUX_D, new OrderField[] { QuxD.QUX_D.ID }, true);
         public static Index QUX_D_NAME_KEY = Internal.createIndex("qux_d_name_key", QuxD.QUX_D, new OrderField[] { QuxD.QUX_D.NAME }, true);
         public static Index PK_QUX_MAIN = Internal.createIndex("pk_qux_main", QuxMain.QUX_MAIN, new OrderField[] { QuxMain.QUX_MAIN.ID }, true);
+        public static Index PK_WALDO = Internal.createIndex("pk_waldo", Waldo.WALDO, new OrderField[] { Waldo.WALDO.ID }, true);
     }
 }

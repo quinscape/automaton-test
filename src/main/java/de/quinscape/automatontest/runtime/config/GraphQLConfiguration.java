@@ -21,6 +21,7 @@ import de.quinscape.automatontest.domain.tables.pojos.QuxA;
 import de.quinscape.automatontest.domain.tables.pojos.QuxB;
 import de.quinscape.automatontest.domain.tables.pojos.QuxC;
 import de.quinscape.automatontest.domain.tables.pojos.QuxMain;
+import de.quinscape.automatontest.domain.tables.pojos.Waldo;
 import de.quinscape.automatontest.model.ValidationRules;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.domainql.annotation.GraphQLLogic;
@@ -112,7 +113,8 @@ public class GraphQLConfiguration
 
                 Grault.class,
                 Garply.class,
-                MetaConfig.class
+                MetaConfig.class,
+                Waldo.class
             )
             
             // configure object creation for schema relationships

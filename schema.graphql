@@ -625,6 +625,20 @@ type InteractiveQuerySumPerMonth {
     type: String
 }
 
+"Interactive Query with Waldo payload."
+type InteractiveQueryWaldo {
+    "Column states for the current result."
+    columnStates: [ColumnState]
+    "Query configuration the current result was produced with."
+    queryConfig: QueryConfig
+    "Total row count available."
+    rowCount: Int
+    "List with current rows of Waldo."
+    rows: [Waldo]
+    "Name of payload type (always 'Waldo')"
+    type: String
+}
+
 "A merge conflict for one entity."
 type MergeConflict {
     "Returns true if all conflict fields are decided or if there are no conflict fields."
@@ -731,7 +745,7 @@ type MetaConfig {
     "DB foreign key column 'type'"
     type: String
     "DB column 'url'"
-    url: String!
+    url: String
 }
 
 "Auto-generated from DataGridLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
@@ -837,6 +851,8 @@ type QueryType {
     iQueryQuxMain(config: QueryConfigInput!): InteractiveQueryQuxMain
     "Queries SumPerMonth objects based on the given query config"
     iQuerySumPerMonth(config: QueryConfigInput!): InteractiveQuerySumPerMonth
+    "Queries Waldo objects based on the given query config"
+    iQueryWaldo(config: QueryConfigInput!): InteractiveQueryWaldo
     iQuerywithColumnConfigFoo(config: QueryConfigInput): InteractiveQueryFoo
     queryWithComplexList: [Foo]
     queryWithList: [Int]
@@ -932,6 +948,22 @@ type SumPerMonth {
     sum: Long
     "DB column 'year'"
     year: Int
+}
+
+"Generated from public.waldo"
+type Waldo {
+    "DB column 'date'"
+    date: Date!
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "DB column 'opt1'"
+    opt1: Timestamp
+    "DB column 'opt2'"
+    opt2: Date
+    "DB column 'timestamp'"
+    timestamp: Timestamp!
 }
 
 "Generated for de.quinscape.automatontest.runtime.service.TestLogic$WireTestResult"
@@ -1225,7 +1257,7 @@ input MetaConfigInput {
     text: String
     timestamp: Timestamp
     type: String
-    url: String!
+    url: String
 }
 
 "Recursive domain object used in animal-test. Generated from public.node in the database dump."
@@ -1316,6 +1348,16 @@ input ValidationRulesInput {
     _: String
     rules: [RuleInput]
     writable: Boolean
+}
+
+"Generated for de.quinscape.automatontest.domain.tables.pojos.Waldo"
+input WaldoInput {
+    date: Date!
+    id: String!
+    name: String!
+    opt1: Timestamp
+    opt2: Date
+    timestamp: Timestamp!
 }
 
 

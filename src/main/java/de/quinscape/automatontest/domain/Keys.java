@@ -31,6 +31,7 @@ import de.quinscape.automatontest.domain.tables.QuxB;
 import de.quinscape.automatontest.domain.tables.QuxC;
 import de.quinscape.automatontest.domain.tables.QuxD;
 import de.quinscape.automatontest.domain.tables.QuxMain;
+import de.quinscape.automatontest.domain.tables.Waldo;
 import de.quinscape.automatontest.domain.tables.records.AppAttachmentDataRecord;
 import de.quinscape.automatontest.domain.tables.records.AppAttachmentRecord;
 import de.quinscape.automatontest.domain.tables.records.AppConfigRecord;
@@ -58,6 +59,7 @@ import de.quinscape.automatontest.domain.tables.records.QuxBRecord;
 import de.quinscape.automatontest.domain.tables.records.QuxCRecord;
 import de.quinscape.automatontest.domain.tables.records.QuxDRecord;
 import de.quinscape.automatontest.domain.tables.records.QuxMainRecord;
+import de.quinscape.automatontest.domain.tables.records.WaldoRecord;
 
 import javax.annotation.Generated;
 
@@ -127,6 +129,7 @@ public class Keys {
     public static final UniqueKey<QuxDRecord> PK_QUX_D = UniqueKeys0.PK_QUX_D;
     public static final UniqueKey<QuxDRecord> QUX_D_NAME_KEY = UniqueKeys0.QUX_D_NAME_KEY;
     public static final UniqueKey<QuxMainRecord> PK_QUX_MAIN = UniqueKeys0.PK_QUX_MAIN;
+    public static final UniqueKey<WaldoRecord> PK_WALDO = UniqueKeys0.PK_WALDO;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
@@ -200,6 +203,7 @@ public class Keys {
         public static final UniqueKey<QuxDRecord> PK_QUX_D = Internal.createUniqueKey(QuxD.QUX_D, "pk_qux_d", QuxD.QUX_D.ID);
         public static final UniqueKey<QuxDRecord> QUX_D_NAME_KEY = Internal.createUniqueKey(QuxD.QUX_D, "qux_d_name_key", QuxD.QUX_D.NAME);
         public static final UniqueKey<QuxMainRecord> PK_QUX_MAIN = Internal.createUniqueKey(QuxMain.QUX_MAIN, "pk_qux_main", QuxMain.QUX_MAIN.ID);
+        public static final UniqueKey<WaldoRecord> PK_WALDO = Internal.createUniqueKey(Waldo.WALDO, "pk_waldo", Waldo.WALDO.ID);
     }
 
     private static class ForeignKeys0 {
