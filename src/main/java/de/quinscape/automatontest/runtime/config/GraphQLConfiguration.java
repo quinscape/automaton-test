@@ -135,6 +135,7 @@ public class GraphQLConfiguration
             .configureRelation(APP_VERSION.OWNER_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
 
             .configureRelation(CORGE.TYPE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
+            .configureRelation(CORGE.TYPE2, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "type2Obj", null)
             .configureRelation(CORGE.OWNER_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
 
             .configureRelation(CORGE_LINK.CORGE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)

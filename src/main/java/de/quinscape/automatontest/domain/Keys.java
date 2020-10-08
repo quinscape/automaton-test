@@ -144,6 +144,7 @@ public class Keys {
     public static final ForeignKey<BazLinkRecord, BazValueRecord> BAZ_LINK__FK_BAZ_LINK_VALUE_ID = ForeignKeys0.BAZ_LINK__FK_BAZ_LINK_VALUE_ID;
     public static final ForeignKey<CorgeRecord, CorgeTypeRecord> CORGE__FK_CORGE_TYPE_ID = ForeignKeys0.CORGE__FK_CORGE_TYPE_ID;
     public static final ForeignKey<CorgeRecord, AppUserRecord> CORGE__FK_CORGE_OWNER_ID = ForeignKeys0.CORGE__FK_CORGE_OWNER_ID;
+    public static final ForeignKey<CorgeRecord, CorgeTypeRecord> CORGE__FK_CORGE_TYPE2 = ForeignKeys0.CORGE__FK_CORGE_TYPE2;
     public static final ForeignKey<CorgeLinkRecord, CorgeRecord> CORGE_LINK__FK_CORGE_LINK_CORGE = ForeignKeys0.CORGE_LINK__FK_CORGE_LINK_CORGE;
     public static final ForeignKey<CorgeLinkRecord, CorgeAssocRecord> CORGE_LINK__FK_CORGE_LINK_ASSOC = ForeignKeys0.CORGE_LINK__FK_CORGE_LINK_ASSOC;
     public static final ForeignKey<FooRecord, FooTypeRecord> FOO__FK_FOO_TYPE_ID = ForeignKeys0.FOO__FK_FOO_TYPE_ID;
@@ -216,6 +217,7 @@ public class Keys {
         public static final ForeignKey<BazLinkRecord, BazValueRecord> BAZ_LINK__FK_BAZ_LINK_VALUE_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_BAZ_VALUE, BazLink.BAZ_LINK, "baz_link__fk_baz_link_value_id", BazLink.BAZ_LINK.VALUE_ID);
         public static final ForeignKey<CorgeRecord, CorgeTypeRecord> CORGE__FK_CORGE_TYPE_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_CORGE_TYPE, Corge.CORGE, "corge__fk_corge_type_id", Corge.CORGE.TYPE_ID);
         public static final ForeignKey<CorgeRecord, AppUserRecord> CORGE__FK_CORGE_OWNER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, Corge.CORGE, "corge__fk_corge_owner_id", Corge.CORGE.OWNER_ID);
+        public static final ForeignKey<CorgeRecord, CorgeTypeRecord> CORGE__FK_CORGE_TYPE2 = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_CORGE_TYPE, Corge.CORGE, "corge__fk_corge_type2", Corge.CORGE.TYPE2);
         public static final ForeignKey<CorgeLinkRecord, CorgeRecord> CORGE_LINK__FK_CORGE_LINK_CORGE = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_CORGE, CorgeLink.CORGE_LINK, "corge_link__fk_corge_link_corge", CorgeLink.CORGE_LINK.CORGE_ID);
         public static final ForeignKey<CorgeLinkRecord, CorgeAssocRecord> CORGE_LINK__FK_CORGE_LINK_ASSOC = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_CORGE_ASSOC, CorgeLink.CORGE_LINK, "corge_link__fk_corge_link_assoc", CorgeLink.CORGE_LINK.ASSOC_ID);
         public static final ForeignKey<FooRecord, FooTypeRecord> FOO__FK_FOO_TYPE_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.FOO_TYPE_NAME_KEY, Foo.FOO, "foo__fk_foo_type_id", Foo.FOO.TYPE);

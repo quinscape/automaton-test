@@ -210,8 +210,10 @@ type Corge {
     ownerId: String!
     "Target of 'type_id'"
     type: CorgeType!
-    "DB column 'type2'"
+    "DB foreign key column 'type2'"
     type2: String!
+    "Target of 'type2'"
+    type2Obj: CorgeType!
     "DB foreign key column 'type_id'"
     typeId: String!
     "DB column 'version'"

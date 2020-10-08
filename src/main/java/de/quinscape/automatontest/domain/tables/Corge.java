@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Corge extends TableImpl<CorgeRecord> {
 
-    private static final long serialVersionUID = 1115487046;
+    private static final long serialVersionUID = -1251764379;
 
     /**
      * The reference instance of <code>public.corge</code>
@@ -181,7 +181,7 @@ public class Corge extends TableImpl<CorgeRecord> {
      */
     @Override
     public List<ForeignKey<CorgeRecord, ?>> getReferences() {
-        return Arrays.<ForeignKey<CorgeRecord, ?>>asList(Keys.CORGE__FK_CORGE_TYPE_ID, Keys.CORGE__FK_CORGE_OWNER_ID);
+        return Arrays.<ForeignKey<CorgeRecord, ?>>asList(Keys.CORGE__FK_CORGE_TYPE_ID, Keys.CORGE__FK_CORGE_OWNER_ID, Keys.CORGE__FK_CORGE_TYPE2);
     }
 
     /**
