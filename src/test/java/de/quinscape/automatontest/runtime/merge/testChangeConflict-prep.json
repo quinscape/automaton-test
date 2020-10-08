@@ -16,7 +16,7 @@
     },
     {
         "_type": "AppVersion",
-        "fieldMask": 192,
+        "fieldMask": 32,
         "created": "2020-07-15T15:13:48.909Z",
         "entityType": "Corge",
         "prev": "9920a2aa-8554-4396-95ba-70ca9cb9bca1",

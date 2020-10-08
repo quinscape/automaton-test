@@ -1,0 +1,126 @@
+[
+    {
+        "type" : "Corge",
+        "id": {
+            "type": "String",
+            "value": "0b44436f-2756-490f-add0-9b286ed65765"
+        },
+        "version" : null,
+        "new" : true,
+        "changes": [
+            {
+                "field": "id",
+                "value": {
+                    "type": "String",
+                    "value" : "0b44436f-2756-490f-add0-9b286ed65765"
+                }
+            },
+            {
+                "field": "name",
+                "value": {
+                    "type": "String",
+                    "value" : "Corge #124"
+                }
+            },
+            {
+                "field": "created",
+                "value": {
+                    "type": "Timestamp",
+                    "value" : "2020-10-08T00:00:00.000Z"
+                }
+            },
+            {
+                "field": "flag",
+                "value": {
+                    "type": "Boolean",
+                    "value" : "true"
+                }
+            },
+            {
+                "field": "modified",
+                "value": {
+                    "type": "Timestamp",
+                    "value" : "2020-10-08T00:00:00.000Z"
+                }
+            },
+            {
+                "field": "num",
+                "value": {
+                    "type": "Int",
+                    "value" : 20984
+                }
+            },
+            {
+                "field": "ownerId",
+                "value": {
+                    "type": "String",
+                    "value" : "dd7924d2-4692-4112-b418-3fce8a3eab30"
+                }
+            },
+            {
+                "field": "typeId",
+                "value": {
+                    "type": "String",
+                    "value" : "c7e3f280-b105-4e52-883e-4843781eb0e1"
+                }
+            },
+            {
+                "field": "type2",
+                "value": {
+                    "type": "String",
+                    "value" : "c0c740fc-2a8a-4c1a-a211-078ec7c3968c"
+                }
+            }
+        ]
+    },
+    {
+        "type" : "CorgeType",
+        "id": {
+            "type": "String",
+            "value": "c7e3f280-b105-4e52-883e-4843781eb0e1"
+        },
+        "version" : null,
+        "new" : true,
+        "changes": [
+            {
+                "field": "id",
+                "value": {
+                    "type": "String",
+                    "value" : "c7e3f280-b105-4e52-883e-4843781eb0e1"
+                }
+            },
+            {
+                "field": "name",
+                "value": {
+                    "type": "String",
+                    "value" : "TestType"
+                }
+            }
+        ]
+    },
+    {
+        "type" : "CorgeType",
+        "id": {
+            "type": "String",
+            "value": "c0c740fc-2a8a-4c1a-a211-078ec7c3968c"
+        },
+        "version" : null,
+        "new" : true,
+        "changes": [
+            {
+                "field": "id",
+                "value": {
+                    "type": "String",
+                    "value" : "c0c740fc-2a8a-4c1a-a211-078ec7c3968c"
+                }
+            },
+            {
+                "field": "name",
+                "value": {
+                    "type": "String",
+                    "value" : "TestType #2"
+                }
+            }
+        ]
+    }
+]

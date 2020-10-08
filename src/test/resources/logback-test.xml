@@ -2,6 +2,10 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml" />
     <logger name="org.apache.commons.beanutils" level="INFO"/>
+    <logger name="org.jooq.tools.LoggerListener" level="DEBUG"/>
+
+    <!-- Get rid of JOOQ advertising in error logs -->
+    <logger name="org.jooq.Constants" level="WARN"/>
 
     <!-- We get enough transaction info without this -->
     <logger name="com.atomikos" level="WARN"/>
