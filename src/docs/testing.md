@@ -22,13 +22,13 @@ You can run integration or selenium tests by overriding the `automaton.tests.exc
 (default is `integration,selenium`).
 
 ```shell script 
-mvn -D automaton.tests.exclude=selenium clean test 
+mvn -D automaton.tests.excluded=selenium clean test 
 ```                                               
 
 Runs unit and integration tests.
 
 ```shell script 
-mvn -D automaton.tests.exclude= -Dwebdriver.gecko.driver=<path-of-executable> clean test 
+mvn -D automaton.tests.excluded= -Dwebdriver.gecko.driver=<path-of-executable> clean test 
 ```                                               
 
 if you set `<path-of-executable>` to the install location of the external gecko driver executable, maven will run all 
