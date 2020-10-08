@@ -1,0 +1,7 @@
+/*
+    Static css rules with post-processing
+ */
+.field-mode-control
+{
+    background: url("../media/danger-stripes.png") repeat !important;
+}

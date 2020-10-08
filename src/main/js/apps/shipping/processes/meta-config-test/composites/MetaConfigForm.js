@@ -15,70 +15,9 @@ import {
 import { ButtonToolbar } from "reactstrap";
 
 import validation from "../../../../../services/validation"
+import FieldModeControl from "../../../../../components/FieldModeControl";
 
 
-const FieldModeControl = fnObserver(({}) =>
-    {
-        const { scope } = useAutomatonEnv();
-
-        return <div
-            onChangeCapture={ev => scope.setFormMode(ev.target.value)}
-        >
-
-            <div
-                className="form-check form-check-inline ml-3 pl-1 border-left"
-            >
-                <input
-                    className="form-check-input"
-                    type="radio"
-                    name="formMode"
-                    id="radioFormMode1"
-                    defaultValue={FieldMode.PLAIN_TEXT}
-                    defaultChecked={scope.formMode === FieldMode.PLAIN_TEXT}
-                />
-                <label className="form-check-label" htmlFor="radioFormMode1">
-                    PLAIN_TEXT
-                </label>
-            </div>
-            <div
-                className="form-check form-check-inline"
-            >
-                <input
-                    className="form-check-input"
-                    type="radio"
-                    name="formMode"
-                    id="radioFormMode2"
-                    defaultValue={FieldMode.READ_ONLY}
-                    defaultChecked={scope.formMode === FieldMode.READ_ONLY}
-                />
-                <label
-                    className="form-check-label"
-                    htmlFor="radioFormMode2"
-                >
-                    READ_ONLY
-                </label>
-            </div>
-            <div
-                className="form-check form-check-inline"
-            >
-                <input
-                    className="form-check-input"
-                    type="radio"
-                    name="formMode"
-                    id="radioFormMode3"
-                    defaultValue={FieldMode.NORMAL}
-                    defaultChecked={scope.formMode === FieldMode.NORMAL}
-                />
-                <label
-                    className="form-check-label"
-                    htmlFor="radioFormMode3"
-                >
-                    NORMAL
-                </label>
-            </div>
-        </div>;
-    }
-)
 
 const MetaConfigForm = props => {
 
@@ -96,13 +35,7 @@ const MetaConfigForm = props => {
             </h1>
 
             <GlobalErrors/>
-            <FormBlock
-                options={{
-                    mode: scope.formMode
-                }}
-            >
-
-                <FieldModeControl/>
+            <FieldModeControl>
 
                 <Field name="name">
                     <Addon placement={Addon.RIGHT} moveIfPlainText={true}>
@@ -186,7 +119,7 @@ const MetaConfigForm = props => {
                         <FieldMetaButton subProcess="meta-config-sub"/>
                     </Addon>
                 </CalendarField>
-            </FormBlock>
+            </FieldModeControl>
 
 
             <ButtonToolbar>
