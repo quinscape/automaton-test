@@ -64,19 +64,19 @@ export function initProcess(process, scope)
                                                     )
                                                 )
                                     }
-                                }).then(({iQueryCorge: iQueryCorge}) => {
+                                }).then(({iQueryCorge}) => {
 
                                     if (iQueryCorge.rows.length === 0)
                                     {
                                         alert("Could not load Corge with id '" + t.context)
                                     }
 
-                                    const corge = iQueryCorge.rows[0];
+                                    const corge = config.inputSchema.clone(iQueryCorge.rows[0]);
 
                                     scope.workingSet.registerBaseVersion(corge);
 
                                     return scope.updateCurrent(
-                                        config.inputSchema.clone(corge)
+                                        corge
                                     );
                                 });
                             }
@@ -91,18 +91,22 @@ export function initProcess(process, scope)
                             // update modified field
                             t.context.modified = new Date();
 
-                            scope.workingSet.addChanges(t.context);
+                            //scope.workingSet.addChanges(t.context);
 
-                            return scope.workingSet.merge({
-                                typeConfigs: []
-                            }).then(op => {
+                            return scope.workingSet.merge().then(op => {
 
                                 if (op === MergeOperation.STORE)
                                 {
+                                    // we actually did store the merged working set
+
+                                    // update list view
                                     return scope.corges.update();
                                 }
                                 else
                                 {
+                                    // we did not store (might be CANCEL, DISCARD or APPLY)
+                                    // in any case, we're going back into the mask
+                                    // (everything else that needed to happen already happened)
                                     t.target = "CorgeDetail"
                                 }
                             })
