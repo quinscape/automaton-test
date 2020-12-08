@@ -14,14 +14,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="Java Filter: Add toString()&#10;&#10;Implement a default shortened toString() for transformed FilterDSL Filter. Add default toString() impl and invoke that from many nodes.&#10;&#10;Write some nodes by hand.">
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/FilterDSL.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/FilterDSL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/test/filter-dsl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/test/filter-dsl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/IntelliLang.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_automaton_0_2_1_SNAPSHOT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_2_8_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_2_8.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/reset-corge.sql" beforeDir="false" afterPath="$PROJECT_DIR$/misc/reset-corge.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/composites/CorgeList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/composites/CorgeList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/AutomatonTestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/AutomatonTestApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/GraphQLConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/ServiceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/ServiceConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/DataGridLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/service/DataGridLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/assoc-entity-test/composites/AssocEntityList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/assoc-entity-test/composites/AssocEntityList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/CRUDList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/composites/CRUDList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/crud-test/crud-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/composites/CRUDList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/composites/CRUDList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/datagrid-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/datagrid-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/queries/Q_FooList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/datagrid-test/queries/Q_FooList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/decimal-test/composites/GarplyList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/decimal-test/composites/GarplyList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/extfilter-test/extfilter-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/extfilter-test/extfilter-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/iterator-test/queries/Q_Foo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/iterator-test/queries/Q_Foo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/merge-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/merge-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/workingset-test/workingset-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/workingset-test/workingset-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/scopes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/scopes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/automaton-test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/automaton-test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/js/temp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/js/temp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/data/FilterTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/data/FilterTransformer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,13 +68,13 @@
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../automaton-js" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -62,13 +89,6 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/../automaton-js/package.json" />
@@ -107,12 +127,12 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.12.54" />
+    <property name="extract.method.default.visibility" value="packageLocal" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.20.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.19.8" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/js/apps/shipping/processes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lisa-theme" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -122,14 +142,50 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28390804" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../spring-jsview/pom.xml" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="anwendung" />
+      <recent name="de.quinscape.automaton.runtime.merge" />
+      <recent name="de.quinscape.automaton.model.i18n" />
+      <recent name="de.quinscape.automaton.runtime.attachment" />
+      <recent name="de.quinscape.automaton.runtime.userinfo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../automaton-js/test/ui" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src/ui/iqed" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src/model" />
+      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes" />
+      <recent name="$PROJECT_DIR$/../automaton-js/test/merge" />
+    </key>
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="de.quinscape.automaton.runtime.data.QueryExecution" />
+      <recent name="de.quinscape.automaton.runtime.data.RuntimeQuery" />
+      <recent name="de.quinscape.automaton.model.data.SortOrder" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/../automaton-js/src/ui/iqed/DataRow.js" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src/ui/iqed/EditorState.js" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src/ui/iqed/ConditionDropdown.js" />
+      <recent name="$PROJECT_DIR$/../automaton-js/test/ui/merge/table-summary.js" />
+      <recent name="$PROJECT_DIR$/../automaton-js/test/merge/loadScenario.js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../automaton-js/src/util" />
+      <recent name="$PROJECT_DIR$/../automaton-js/test/ui" />
+      <recent name="$PROJECT_DIR$/../automaton-js/src/ui/iqed" />
+      <recent name="$PROJECT_DIR$/../automaton/src/main/resources/tooling" />
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="de.quinscape.automaton.runtime.attachment" />
       <recent name="de.quinscape.automaton.runtime.filter" />
@@ -137,21 +193,9 @@
       <recent name="de.quinscape.automaton.runtime.merge" />
       <recent name="de.quinscape.automaton.runtime.topic" />
     </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="de.quinscape.automaton.runtime.util" />
-      <recent name="de.quinscape.automaton.runtime.merge" />
-      <recent name="de.quinscape.automaton.runtime.pubsub" />
-      <recent name="de.quinscape.automaton.runtime.data" />
-      <recent name="de.quinscape.automaton.runtime.scalar" />
-    </key>
     <key name="MoveInnerDialog.RECENTS_KEY">
-      <recent name="de.quinscape.automaton.runtime.userinfo" />
       <recent name="de.quinscape.automaton.runtime.merge" />
-    </key>
-    <key name="MoveMembersDialog.RECENTS_KEY">
-      <recent name="de.quinscape.automaton.runtime.data.QueryExecution" />
-      <recent name="de.quinscape.automaton.runtime.data.RuntimeQuery" />
-      <recent name="de.quinscape.automaton.model.data.SortOrder" />
+      <recent name="de.quinscape.automaton.runtime.userinfo" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="de.quinscape.automaton.model.decimal" />
@@ -160,43 +204,19 @@
       <recent name="de.quinscape.automatontest.model" />
       <recent name="de.quinscape.automaton.model.filter" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../automaton/src/main/resources/tooling" />
-      <recent name="$PROJECT_DIR$/src/test/resources" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/main/js/data" />
-      <recent name="$PROJECT_DIR$/src/main/js/data/merge-test" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="de.quinscape.automaton.runtime.util" />
+      <recent name="de.quinscape.automaton.runtime.merge" />
+      <recent name="de.quinscape.automaton.runtime.pubsub" />
+      <recent name="de.quinscape.automaton.runtime.data" />
+      <recent name="de.quinscape.automaton.runtime.scalar" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.quinscape.automaton.model.domain" />
+      <recent name="de.quinscape.automaton.runtime.data" />
+      <recent name="de.quinscape.automaton.runtime.filter.impl" />
       <recent name="de.quinscape.automaton.runtime" />
       <recent name="de.quinscape.automaton.runtime.attachment" />
-      <recent name="de.quinscape.automaton.runtime.controller" />
-      <recent name="de.quinscape.automaton.runtime.userinfo" />
-      <recent name="de.quinscape.automaton.runtime.data" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/ui" />
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src" />
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/attachment-test/queries" />
-    </key>
-    <key name="es6.move.members.recent.items">
-      <recent name="$PROJECT_DIR$/../automaton-js/test/ui/merge/table-summary.js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/test/merge/loadScenario.js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/util/type-utils.js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/test/ui/tree/getText.js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/ui/tree/CaretButton.js" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="de.quinscape.automaton.runtime.attachment" />
-      <recent name="de.quinscape.automaton.runtime.userinfo" />
-      <recent name="de.quinscape.automaton.runtime.data" />
-      <recent name="de.quinscape.automaton.runtime.filter" />
-      <recent name="de.quinscape.automaton.model" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -204,7 +224,7 @@
       <command value="key" />
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.Automaton-Js Tests">
+  <component name="RunManager" selected="Mocha.AssociationSelector">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -221,40 +241,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in automaton-test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton-test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in automaton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="InteractiveQueryJoinTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="automaton" />
@@ -296,7 +313,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="temp.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" node-parameters="-r @babel/register" path-to-js-file="temp.js" working-dir="$PROJECT_DIR$/src/test/js">
+    <configuration default="true" type="NodeJSConfigurationType" node-parameters="-r @babel/register">
+      <method v="2" />
+    </configuration>
+    <configuration name="temp.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" node-parameters="-r @babel/register" path-to-js-file="$PROJECT_DIR$/src/test/js/temp.js" working-dir="$PROJECT_DIR$/src/test/js">
       <method v="2" />
     </configuration>
     <configuration name="DQLMobxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -318,7 +338,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Local Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="GraalVM 1.8">
+    <configuration name="Local Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -401,6 +421,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AssociationSelector" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options>-r @babel/register -r ./test/setup.js -r ignore-styles</node-options>
+      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs>
+        <env name="BABEL_ENV" value="test" />
+      </envs>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/association-selector.js</test-file>
+      <test-names>
+        <name value="AssociationSelector" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="Automaton-Test Tests" type="mocha-javascript-test-runner">
       <node-interpreter>project</node-interpreter>
       <node-options>-r @babel/register</node-options>
@@ -417,26 +455,7 @@
       <recursive>false</recursive>
       <method v="2" />
     </configuration>
-    <configuration name="&lt;ChangeConflictDialog/&gt;.shows resolved/informational merge conflicts" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options>-r @babel/register -r ./test/setup.js -r ignore-styles</node-options>
-      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs>
-        <env name="BABEL_ENV" value="test" />
-      </envs>
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/merge/merge-dialog.js</test-file>
-      <test-names>
-        <name value="&lt;ChangeConflictDialog/&gt;" />
-        <name value="shows resolved/informational merge conflicts" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="conditionBuilder helper" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="Button" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options>-r @babel/register -r ./test/setup.js -r ignore-styles</node-options>
       <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
@@ -448,9 +467,47 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/../automaton-js/test/condition-builder.js</test-file>
+      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/button.js</test-file>
       <test-names>
-        <name value="conditionBuilder helper" />
+        <name value="Button" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Button.invokes transitions with a context" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options>-r @babel/register -r ./test/setup.js -r ignore-styles</node-options>
+      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs>
+        <env name="BABEL_ENV" value="test" />
+      </envs>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/button.js</test-file>
+      <test-names>
+        <name value="Button" />
+        <name value="invokes transitions with a context" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tree.Folder.lazily queries tree objects" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options>-r @babel/register -r ./test/setup.js -r ignore-styles</node-options>
+      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs>
+        <env name="BABEL_ENV" value="test" />
+      </envs>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/tree/tree-folder.js</test-file>
+      <test-names>
+        <name value="Tree.Folder" />
+        <name value="lazily queries tree objects" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -475,24 +532,24 @@
     <list>
       <item itemvalue="JUnit.InteractiveQueryJoinTest" />
       <item itemvalue="JUnit.MergeServiceTests" />
-      <item itemvalue="JUnit.All in automaton" />
-      <item itemvalue="JUnit.All in automaton-test" />
       <item itemvalue="Mocha.Automaton-Test Tests" />
       <item itemvalue="Mocha.matchPath" />
       <item itemvalue="Mocha.Automaton-Js Tests" />
-      <item itemvalue="Mocha.conditionBuilder helper" />
+      <item itemvalue="Mocha.Tree.Folder.lazily queries tree objects" />
+      <item itemvalue="Mocha.Button.invokes transitions with a context" />
+      <item itemvalue="Mocha.Button" />
       <item itemvalue="Node.js.temp.js" />
       <item itemvalue="Spring Boot.DQLMobxApplication" />
       <item itemvalue="Tomcat Server.Local Tomcat" />
-      <item itemvalue="Mocha.&lt;ChangeConflictDialog/&gt;.shows resolved/informational merge conflicts" />
+      <item itemvalue="Mocha.AssociationSelector" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Mocha.&lt;ChangeConflictDialog/&gt;.shows resolved/informational merge conflicts" />
+        <item itemvalue="Mocha.AssociationSelector" />
         <item itemvalue="Node.js.temp.js" />
-        <item itemvalue="Mocha.conditionBuilder helper" />
-        <item itemvalue="JUnit.All in automaton-test" />
-        <item itemvalue="JUnit.All in automaton" />
+        <item itemvalue="Mocha.Button" />
+        <item itemvalue="Mocha.Button.invokes transitions with a context" />
+        <item itemvalue="Mocha.Tree.Folder.lazily queries tree objects" />
       </list>
     </recent_temporary>
   </component>
@@ -1108,6 +1165,87 @@
       <workItem from="1600252420257" duration="4960000" />
       <workItem from="1600340814739" duration="2118000" />
       <workItem from="1600350522282" duration="14402000" />
+      <workItem from="1600421195711" duration="21074000" />
+      <workItem from="1600516361557" duration="17220000" />
+      <workItem from="1600690132704" duration="4576000" />
+      <workItem from="1600773139591" duration="19730000" />
+      <workItem from="1600860545295" duration="59000" />
+      <workItem from="1600862155275" duration="5084000" />
+      <workItem from="1600948059438" duration="10197000" />
+      <workItem from="1600974575871" duration="724000" />
+      <workItem from="1601040088446" duration="3113000" />
+      <workItem from="1601293781768" duration="599000" />
+      <workItem from="1601400997194" duration="3975000" />
+      <workItem from="1601465839294" duration="2755000" />
+      <workItem from="1601545274222" duration="751000" />
+      <workItem from="1601555934894" duration="606000" />
+      <workItem from="1601643576918" duration="261000" />
+      <workItem from="1601647596594" duration="3065000" />
+      <workItem from="1601828204550" duration="2024000" />
+      <workItem from="1601896094943" duration="11238000" />
+      <workItem from="1601983078456" duration="2470000" />
+      <workItem from="1602001161975" duration="2800000" />
+      <workItem from="1602086327041" duration="1201000" />
+      <workItem from="1602155101731" duration="18070000" />
+      <workItem from="1602245957556" duration="8950000" />
+      <workItem from="1602353767627" duration="2007000" />
+      <workItem from="1602422586506" duration="6715000" />
+      <workItem from="1602438478395" duration="3415000" />
+      <workItem from="1602501328173" duration="7206000" />
+      <workItem from="1602520721128" duration="9045000" />
+      <workItem from="1602586508599" duration="19133000" />
+      <workItem from="1602674585382" duration="10308000" />
+      <workItem from="1602759514636" duration="18777000" />
+      <workItem from="1602850698761" duration="3102000" />
+      <workItem from="1603110254791" duration="648000" />
+      <workItem from="1603292144058" duration="20462000" />
+      <workItem from="1603361563805" duration="18118000" />
+      <workItem from="1603453171770" duration="7375000" />
+      <workItem from="1603714583125" duration="896000" />
+      <workItem from="1603724457330" duration="4863000" />
+      <workItem from="1603800171599" duration="2171000" />
+      <workItem from="1603890826561" duration="12459000" />
+      <workItem from="1603969448881" duration="16451000" />
+      <workItem from="1604059661344" duration="739000" />
+      <workItem from="1604062109654" duration="969000" />
+      <workItem from="1604402160928" duration="602000" />
+      <workItem from="1604501159270" duration="9389000" />
+      <workItem from="1604580888725" duration="10879000" />
+      <workItem from="1604668055975" duration="3677000" />
+      <workItem from="1604675699711" duration="5200000" />
+      <workItem from="1604688749504" duration="8378000" />
+      <workItem from="1604712973541" duration="9000" />
+      <workItem from="1604763210940" duration="5270000" />
+      <workItem from="1604922365596" duration="19215000" />
+      <workItem from="1605091523528" duration="8542000" />
+      <workItem from="1605113029527" duration="2513000" />
+      <workItem from="1605186246272" duration="1742000" />
+      <workItem from="1605269643282" duration="12191000" />
+      <workItem from="1605528004692" duration="13685000" />
+      <workItem from="1605632719823" duration="347000" />
+      <workItem from="1605633135489" duration="2017000" />
+      <workItem from="1605693705719" duration="4160000" />
+      <workItem from="1605819448876" duration="418000" />
+      <workItem from="1605874915499" duration="8334000" />
+      <workItem from="1606132907919" duration="2295000" />
+      <workItem from="1606226180810" duration="20325000" />
+      <workItem from="1606254649455" duration="1572000" />
+      <workItem from="1606294918652" duration="14247000" />
+      <workItem from="1606351391648" duration="599000" />
+      <workItem from="1606395233543" duration="10819000" />
+      <workItem from="1606479936076" duration="10113000" />
+      <workItem from="1606739925551" duration="1281000" />
+      <workItem from="1606747497781" duration="8411000" />
+      <workItem from="1606829937215" duration="3854000" />
+      <workItem from="1606912768547" duration="2627000" />
+      <workItem from="1606926615951" duration="17000" />
+      <workItem from="1606926644937" duration="7496000" />
+      <workItem from="1606993337676" duration="4098000" />
+      <workItem from="1607006939231" duration="8514000" />
+      <workItem from="1607089869523" duration="4890000" />
+      <workItem from="1607276927084" duration="184000" />
+      <workItem from="1607342123231" duration="14345000" />
+      <workItem from="1607431716048" duration="8448000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
@@ -1210,248 +1348,6 @@
     <MESSAGE value="Java Filter: Add toString()&#10;&#10;Implement a default shortened toString() for transformed FilterDSL Filter. Add default toString() impl and invoke that from many nodes.&#10;&#10;Write some nodes by hand." />
     <option name="LAST_COMMIT_MESSAGE" value="Java Filter: Add toString()&#10;&#10;Implement a default shortened toString() for transformed FilterDSL Filter. Add default toString() impl and invoke that from many nodes.&#10;&#10;Write some nodes by hand." />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="696" y="44" width="517" height="1017" key="#Editor_|_Color_Scheme_|_General" timestamp="1593180801683">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="696" y="44" width="517" height="1017" key="#Editor_|_Color_Scheme_|_General/0.27.1920.1053@0.27.1920.1053" timestamp="1593180801683" />
-    <state x="555" y="196" width="800" height="712" key="#Plugins" timestamp="1600350697118">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="555" y="196" width="800" height="712" key="#Plugins/0.27.1920.1053@0.27.1920.1053" timestamp="1600350697118" />
-    <state x="443" y="130" width="1024" height="845" key="#Project_Structure" timestamp="1594309669142">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="443" y="130" width="1024" height="845" key="#Project_Structure/0.27.1920.1053@0.27.1920.1053" timestamp="1594309669142" />
-    <state x="734" y="434" width="431" height="236" key="#Tomcat_Server" timestamp="1593008903500">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="734" y="434" width="431" height="236" key="#Tomcat_Server/0.27.1920.1053@0.27.1920.1053" timestamp="1593008903500" />
-    <state x="307" y="343" width="551" height="338" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1593452437263">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="307" y="343" width="551" height="338" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593452437263" />
-    <state x="743" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598628568530">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="743" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1598628568530" />
-    <state x="100" y="125" width="1640" height="855" maximized="true" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1600370777573">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="100" y="125" width="1640" height="855" maximized="true" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1600370777573" />
-    <state x="703" y="359" width="504" height="387" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599845059738">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="703" y="359" width="504" height="387" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1599845059738" />
-    <state x="768" y="264" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1599247698440">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="768" y="264" width="522" height="577" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1599247698440" />
-    <state x="687" y="331" width="524" height="441" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1593530957933">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="687" y="331" width="524" height="441" key="#com.intellij.ide.util.PackageChooserDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593530957933" />
-    <state x="692" y="345" width="525" height="414" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1597946190831">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="692" y="345" width="525" height="414" key="#com.intellij.ide.util.TreeClassChooserDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1597946190831" />
-    <state x="689" y="236" width="531" height="632" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1593008905175">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="689" y="236" width="531" height="632" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.27.1920.1053@0.27.1920.1053" timestamp="1593008905175" />
-    <state x="643" y="292" width="624" height="520" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1600350355870">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="643" y="292" width="624" height="520" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1600350355870" />
-    <state x="789" y="481" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1599242477833">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="789" y="481" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1599242477833" />
-    <state x="717" y="426" width="632" height="261" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1599830804270">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="717" y="426" width="632" height="261" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1920.1053@0.27.1920.1053" timestamp="1599830804270" />
-    <state x="742" y="402" width="426" height="300" key="#com.intellij.refactoring.move.moveInner.MoveInnerDialog" timestamp="1599242479586">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="742" y="402" width="426" height="300" key="#com.intellij.refactoring.move.moveInner.MoveInnerDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1599242479586" />
-    <state x="517" y="27" width="867" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599837381361">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="517" y="27" width="867" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1599837381361" />
-    <state x="693" y="303" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599829394435">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="693" y="303" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1599829394435" />
-    <state x="718" y="261" key="#xdebugger.evaluate" timestamp="1599830270557">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="718" y="261" key="#xdebugger.evaluate/0.27.1920.1053@0.27.1920.1053" timestamp="1599830270557" />
-    <state x="521" y="128" width="867" height="849" key="CommitChangelistDialog2" timestamp="1597944962992">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="521" y="128" width="867" height="849" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1597944962992" />
-    <state x="100" y="125" width="1700" height="862" maximized="true" key="DiffContextDialog" timestamp="1600362704262">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="100" y="125" width="1700" height="862" maximized="true" key="DiffContextDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1600362704262" />
-    <state x="827" y="324" width="256" height="456" key="EnvironmentVariablesDialog" timestamp="1593540775480">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="827" y="324" width="256" height="456" key="EnvironmentVariablesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593540775480" />
-    <state x="743" y="310" width="439" height="484" key="FileChooserDialogImpl" timestamp="1599218510189">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="743" y="310" width="439" height="484" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1599218510189" />
-    <state width="1206" height="262" key="GridCell.Tab.0.bottom" timestamp="1600370979964">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1206" height="262" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1600370979964" />
-    <state width="1206" height="262" key="GridCell.Tab.0.center" timestamp="1600370979964">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1206" height="262" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1600370979964" />
-    <state width="1206" height="262" key="GridCell.Tab.0.left" timestamp="1600370979964">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1206" height="262" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1600370979964" />
-    <state width="1206" height="262" key="GridCell.Tab.0.right" timestamp="1600370979964">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1206" height="262" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1600370979964" />
-    <state width="1206" height="262" key="GridCell.Tab.1.bottom" timestamp="1600368473026">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1206" height="262" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1600368473026" />
-    <state width="1206" height="262" key="GridCell.Tab.1.center" timestamp="1600368473025">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1206" height="262" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1600368473025" />
-    <state width="1206" height="262" key="GridCell.Tab.1.left" timestamp="1600368473025">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1206" height="262" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1600368473025" />
-    <state width="1206" height="262" key="GridCell.Tab.1.right" timestamp="1600368473026">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1206" height="262" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1600368473026" />
-    <state width="1206" height="262" key="GridCell.Tab.2.bottom" timestamp="1600368473026">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1206" height="262" key="GridCell.Tab.2.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1600368473026" />
-    <state width="1206" height="262" key="GridCell.Tab.2.center" timestamp="1600368473026">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1206" height="262" key="GridCell.Tab.2.center/0.27.1920.1053@0.27.1920.1053" timestamp="1600368473026" />
-    <state width="1206" height="262" key="GridCell.Tab.2.left" timestamp="1600368473026">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1206" height="262" key="GridCell.Tab.2.left/0.27.1920.1053@0.27.1920.1053" timestamp="1600368473026" />
-    <state width="1206" height="262" key="GridCell.Tab.2.right" timestamp="1600368473026">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1206" height="262" key="GridCell.Tab.2.right/0.27.1920.1053@0.27.1920.1053" timestamp="1600368473026" />
-    <state width="1335" height="346" key="GridCell.Tab.3.bottom" timestamp="1599839090973">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1335" height="346" key="GridCell.Tab.3.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1599839090973" />
-    <state width="1335" height="346" key="GridCell.Tab.3.center" timestamp="1599839090973">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1335" height="346" key="GridCell.Tab.3.center/0.27.1920.1053@0.27.1920.1053" timestamp="1599839090973" />
-    <state width="1335" height="346" key="GridCell.Tab.3.left" timestamp="1599839090973">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1335" height="346" key="GridCell.Tab.3.left/0.27.1920.1053@0.27.1920.1053" timestamp="1599839090973" />
-    <state width="1335" height="346" key="GridCell.Tab.3.right" timestamp="1599839090973">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1335" height="346" key="GridCell.Tab.3.right/0.27.1920.1053@0.27.1920.1053" timestamp="1599839090973" />
-    <state x="778" y="489" width="354" height="126" key="ReplaceDuplicatesPrompt" timestamp="1598976307511">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="778" y="489" width="354" height="126" key="ReplaceDuplicatesPrompt/0.27.1920.1053@0.27.1920.1053" timestamp="1598976307511" />
-    <state x="704" y="259" width="502" height="587" key="RollbackChangesDialog" timestamp="1594320462598">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="704" y="259" width="502" height="587" key="RollbackChangesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1594320462598" />
-    <state x="99" y="144" width="977" height="737" key="SettingsEditor" timestamp="1600215391641">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="99" y="144" width="977" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1600215391641" />
-    <state x="689" y="286" width="639" height="524" key="StructurePopup" timestamp="1600371983396">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="689" y="286" width="639" height="524" key="StructurePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1600371983396" />
-    <state width="610" height="556" key="SwitcherDM" timestamp="1600370906935">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="610" height="556" key="SwitcherDM/0.27.1920.1053@0.27.1920.1053" timestamp="1600370906935" />
-    <state x="735" y="254" width="990" height="596" key="VCS.ChangeListViewerDialog" timestamp="1600165669776">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="735" y="254" width="990" height="596" key="VCS.ChangeListViewerDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1600165669776" />
-    <state x="787" y="290" width="335" height="525" key="VcsDiffUtil.ChangesDialog" timestamp="1593095133512">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="787" y="290" width="335" height="525" key="VcsDiffUtil.ChangesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1593095133512" />
-    <state x="385" y="304" width="1139" height="497" key="caller.chooser.dialog" timestamp="1599829398230">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="385" y="304" width="1139" height="497" key="caller.chooser.dialog/0.27.1920.1053@0.27.1920.1053" timestamp="1599829398230" />
-    <state x="100" y="125" width="1720" height="855" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1599830859586">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="100" y="125" width="1720" height="855" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1599830859586" />
-    <state x="100" y="125" width="1720" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1599232565637">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="100" y="125" width="1720" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1599232565637" />
-    <state x="613" y="170" width="683" height="764" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600190316511">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="613" y="170" width="683" height="764" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1600190316511" />
-    <state x="751" y="473" width="424" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599752626058">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="751" y="473" width="424" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1599752626058" />
-    <state x="679" y="271" width="551" height="562" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1594824514603">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="679" y="271" width="551" height="562" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1594824514603" />
-    <state x="507" y="292" width="896" height="614" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1598449704180">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="507" y="292" width="896" height="614" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.27.1920.1053@0.27.1920.1053" timestamp="1598449704180" />
-    <state x="693" y="322" width="524" height="490" key="extract.method.dialog" timestamp="1598976303425">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="693" y="322" width="524" height="490" key="extract.method.dialog/0.27.1920.1053@0.27.1920.1053" timestamp="1598976303425" />
-    <state x="719" y="302" width="824" height="610" key="find.popup" timestamp="1600369960309">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="719" y="302" width="824" height="610" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1600369960309" />
-    <state width="495" height="102" key="javadoc.popup.new" timestamp="1600370609912">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="495" height="102" key="javadoc.popup.new/0.27.1920.1053@0.27.1920.1053" timestamp="1600370609912" />
-    <state x="376" y="176" width="1157" height="752" key="new project wizard" timestamp="1594309572516">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="376" y="176" width="1157" height="752" key="new project wizard/0.27.1920.1053@0.27.1920.1053" timestamp="1594309572516" />
-    <state x="1175" y="237" width="587" height="737" key="refactoring.ChangeSignatureDialog" timestamp="1599247622616">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="1175" y="237" width="501" height="732" key="refactoring.ChangeSignatureDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1599247622616" />
-    <state x="624" y="253" width="672" height="677" key="run.anything.popup" timestamp="1599746686940">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="624" y="253" width="672" height="677" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1599746686940" />
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1600371981180">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1600371981180" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -1468,14 +1364,19 @@
           <option name="timeStamp" value="38" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/com/graphql-java/graphql-java/11.0/graphql-java-11.0-sources.jar!/graphql/Assert.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="39" />
+          <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/data/RuntimeQuery.java</url>
+          <line>282</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/controller/AttachmentController.java</url>
+          <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/data/FilterTransformer.java</url>
           <line>58</line>
-          <option name="timeStamp" value="40" />
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/../automaton-js/src/ui/Button.js</url>
+          <line>44</line>
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1489,7 +1390,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/automaton_test$WorkingSet_Merge.dat" NAME="WorkingSet Merge Coverage Results" MODIFIED="1593180697311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/automaton_test$Automaton_Js_Tests.dat" NAME="Automaton-Js Tests Coverage Results" MODIFIED="1593174492998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/automaton_test$WorkingSet_Merge.dat" NAME="WorkingSet Merge Coverage Results" MODIFIED="1593180697311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
