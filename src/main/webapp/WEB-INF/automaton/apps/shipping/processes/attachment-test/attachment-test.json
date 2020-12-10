@@ -1,0 +1,215 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "computed"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "storeDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "deleteDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FilterDSL"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "createDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "extractTypeData"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Attachments"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FieldMode"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_GraultList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_GraultList"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_GraultDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_GraultDetail"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"GraultList\"",
+            "states": {
+                "GraultList": {
+                    "new-grault": {
+                        "to": "GraultDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const newInstance = createDomainObject(\"Grault\"); newInstance.name = \"Unnamed\"; scope.updateCurrent(newInstance); }"
+                        }
+                    },
+                    "to-detail": {
+                        "to": "GraultDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const id = t.context; return Q_GraultDetail.execute({ config: { condition: field(\"id\").eq(value(id)) } }).then(({ iQueryGrault }) => { if (iQueryGrault.rows.length === 0) { alert(\"Could not load Grault with id '\" + id); } scope.updateCurrent(config.inputSchema.clone(iQueryGrault.rows[0])); }); }"
+                        }
+                    }
+                },
+                "GraultDetail": {
+                    "save": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "// 1.\nAttachments.uploadPending(t.context) // 2.\n.then(() => storeDomainObject({ ...extractTypeData(\"GraultInput\", t.context) })) // 3.\n.then(() => Attachments.deletePending(t.context)).then(() => scope.graults.update()).then(() => t.back(backToParent(t)))"
+                        }
+                    },
+                    "delete": {
+                        "to": "GraultList",
+                        "discard": true,
+                        "confirmation": {
+                            "type": "Action",
+                            "params": [
+                                "context"
+                            ],
+                            "code": "`Delete ${context.name} ?`"
+                        },
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const { id } = t.context; return deleteDomainObject(\"Grault\", id).then(didDelete => didDelete && scope.removeGrault(id)); }"
+                        }
+                    },
+                    "cancel": {
+                        "to": "GraultList",
+                        "discard": true,
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"Transition 'cancel'\"); return Attachments.clearAll(t.context); }"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "AttachmentTestScope",
+            "observables": [
+                {
+                    "name": "currentGrault",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "name": "graults",
+                    "defaultValue": "injection(Q_GraultList)",
+                    "description": "* Current todos"
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateGraults",
+                    "params": [
+                        "graults"
+                    ],
+                    "code": "this.graults = graults;",
+                    "bound": false
+                },
+                {
+                    "name": "removeGrault",
+                    "params": [
+                        "id"
+                    ],
+                    "code": "this.graults.rows = this.graults.rows.filter(grault => grault.id !== id);",
+                    "bound": false
+                },
+                {
+                    "name": "updateCurrent",
+                    "params": [
+                        "grault"
+                    ],
+                    "code": "this.currentGrault = grault;",
+                    "bound": false
+                }
+            ],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": [
+            "// deconstruct FilterDSL methods\nconst { field, value } = FilterDSL; // noinspection JSUnusedGlobalSymbols"
+        ]
+    }
+}

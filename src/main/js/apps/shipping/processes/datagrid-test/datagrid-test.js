@@ -29,6 +29,7 @@ export function initProcess(process, scope)
 
     // process config
 
+
     // return process states and transitions
     return (
         {

@@ -1,0 +1,106 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx-react-lite",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "fnObserver",
+                    "aliasOf": "observer"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                }
+            ]
+        }
+    ],
+    "extraConstants": [],
+    "composite": {
+        "type": "CompositeComponent",
+        "constants": [
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ObjectPattern",
+                            "properties": [
+                                {
+                                    "type": "ObjectProperty",
+                                    "key": "env",
+                                    "value": {
+                                        "type": "Identifier",
+                                        "name": "env"
+                                    }
+                                }
+                            ]
+                        },
+                        "init": "props"
+                    }
+                ]
+            },
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ObjectPattern",
+                            "properties": [
+                                {
+                                    "type": "ObjectProperty",
+                                    "key": "scope",
+                                    "value": {
+                                        "type": "Identifier",
+                                        "name": "scope"
+                                    }
+                                }
+                            ]
+                        },
+                        "init": "env"
+                    }
+                ]
+            }
+        ],
+        "root": {
+            "name": "React.Fragment",
+            "attrs": [],
+            "kids": [
+                {
+                    "name": "h1",
+                    "attrs": [],
+                    "kids": [
+                        {
+                            "type": "JSXExpressionContainer",
+                            "code": "{i18n(\"BazValue '{0}'\", scope.currentName)}"
+                        }
+                    ],
+                    "type": "JSXElement"
+                }
+            ],
+            "type": "JSXElement"
+        }
+    },
+    "export": "fnObserver(TreeTestBazValueDetail)"
+}

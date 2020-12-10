@@ -1,0 +1,719 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Field"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FieldMode"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "GlobalErrors"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Select"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "TextArea"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "withForm"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx-react-lite",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "fnObserver",
+                    "aliasOf": "observer"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "AssociationSelector"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Button"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "CalendarField"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FKSelector"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ScrollTracker"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "useAutomatonEnv"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "reactstrap",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ButtonToolbar"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../../../services/validation",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "validation"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../queries/Q_AppUser",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_AppUser"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../queries/Q_CorgeAssocList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_CorgeAssocList"
+                }
+            ]
+        }
+    ],
+    "extraConstants": [],
+    "composite": {
+        "type": "CompositeComponent",
+        "constants": [
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "Identifier",
+                            "name": "env"
+                        },
+                        "init": "useAutomatonEnv()"
+                    }
+                ]
+            },
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ObjectPattern",
+                            "properties": [
+                                {
+                                    "type": "ObjectProperty",
+                                    "key": "formConfig",
+                                    "value": {
+                                        "type": "Identifier",
+                                        "name": "formConfig"
+                                    }
+                                }
+                            ]
+                        },
+                        "init": "props"
+                    }
+                ]
+            },
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ObjectPattern",
+                            "properties": [
+                                {
+                                    "type": "ObjectProperty",
+                                    "key": "scope",
+                                    "value": {
+                                        "type": "Identifier",
+                                        "name": "scope"
+                                    }
+                                }
+                            ]
+                        },
+                        "init": "env"
+                    }
+                ]
+            },
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "Identifier",
+                            "name": "auth"
+                        },
+                        "init": "config.auth"
+                    }
+                ]
+            }
+        ],
+        "root": {
+            "name": "ScrollTracker",
+            "attrs": [
+                {
+                    "type": "JSXAttribute",
+                    "name": "formConfig",
+                    "value": {
+                        "type": "JSXExpressionContainer",
+                        "code": "{formConfig}"
+                    }
+                }
+            ],
+            "kids": [
+                {
+                    "name": "h1",
+                    "attrs": [],
+                    "kids": [
+                        {
+                            "type": "JSXExpressionContainer",
+                            "code": "{i18n(\"Corge Detail\")}"
+                        }
+                    ],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "GlobalErrors",
+                    "attrs": [],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "Field",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"id\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "mode",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{FieldMode.PLAIN_TEXT}"
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "Field",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"name\""
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "Field",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"num\""
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "Field",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"num2\""
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "Field",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"flag\""
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "FKSelector",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"ownerId\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "display",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"owner.login\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "validateInput",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"login\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "tooltip",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"Corge Owner\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "required",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{true}"
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "query",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{Q_AppUser}"
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "TextArea",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"description\""
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "Select",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"type2\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "required",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{true}"
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "values",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{scope.corgeTypes.rows}"
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "nameProperty",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{\"name\"}"
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "valueProperty",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{\"id\"}"
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "FKSelector",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "key",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{formConfig.root.type.id}"
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"typeId\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "display",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"type.name\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "validateInputJS",
+                            "value": {
+                                "type": "JSXRenderFunction",
+                                "params": [
+                                    {
+                                        "type": "Identifier",
+                                        "name": "row"
+                                    },
+                                    {
+                                        "type": "Identifier",
+                                        "name": "value"
+                                    }
+                                ],
+                                "constants": [],
+                                "root": {
+                                    "type": "Expression",
+                                    "code": "row.name === value"
+                                }
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "tooltip",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"Corge Type\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "required",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{true}"
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "query",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{scope.corgeTypes}"
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "AssociationSelector",
+                    "attrs": [
+                        {
+                            "type": "JSXAttribute",
+                            "name": "name",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"corgeLinks\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "label",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"Linked\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "display",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"assoc.name\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "value",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"assoc.id\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "helpText",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"Select associated CorgeLink values\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
+                            "name": "query",
+                            "value": {
+                                "type": "JSXExpressionContainer",
+                                "code": "{Q_CorgeAssocList}"
+                            }
+                        }
+                    ],
+                    "kids": [],
+                    "type": "JSXElement"
+                },
+                {
+                    "name": "ButtonToolbar",
+                    "attrs": [],
+                    "kids": [
+                        {
+                            "name": "Button",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "className",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"btn btn-primary mr-1\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "transition",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"save\""
+                                    }
+                                }
+                            ],
+                            "kids": [
+                                {
+                                    "name": "Icon",
+                                    "attrs": [
+                                        {
+                                            "type": "JSXAttribute",
+                                            "name": "className",
+                                            "value": {
+                                                "type": "Expression",
+                                                "code": "\"fa-save mr-1\""
+                                            }
+                                        }
+                                    ],
+                                    "kids": [],
+                                    "type": "JSXElement"
+                                },
+                                {
+                                    "type": "JSXText",
+                                    "value": "Save"
+                                }
+                            ],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "Button",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "className",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"btn btn-danger mr-1\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "transition",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"delete\""
+                                    }
+                                }
+                            ],
+                            "kids": [
+                                {
+                                    "name": "Icon",
+                                    "attrs": [
+                                        {
+                                            "type": "JSXAttribute",
+                                            "name": "className",
+                                            "value": {
+                                                "type": "Expression",
+                                                "code": "\"fa-times mr-1\""
+                                            }
+                                        }
+                                    ],
+                                    "kids": [],
+                                    "type": "JSXElement"
+                                },
+                                {
+                                    "type": "JSXText",
+                                    "value": "Delete"
+                                }
+                            ],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "Button",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "className",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"btn btn-secondary mr-1\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "transition",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"cancel\""
+                                    }
+                                }
+                            ],
+                            "kids": [
+                                {
+                                    "name": "Icon",
+                                    "attrs": [
+                                        {
+                                            "type": "JSXAttribute",
+                                            "name": "className",
+                                            "value": {
+                                                "type": "Expression",
+                                                "code": "\"fa-times mr-1\""
+                                            }
+                                        }
+                                    ],
+                                    "kids": [],
+                                    "type": "JSXElement"
+                                },
+                                {
+                                    "type": "JSXText",
+                                    "value": "Cancel"
+                                }
+                            ],
+                            "type": "JSXElement"
+                        }
+                    ],
+                    "type": "JSXElement"
+                }
+            ],
+            "type": "JSXElement"
+        }
+    },
+    "export": "withForm(fnObserver(CorgeForm), { type: \"CorgeInput\", validation: validation(\"CorgeInput\") })"
+}

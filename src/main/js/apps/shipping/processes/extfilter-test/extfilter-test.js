@@ -13,6 +13,7 @@ import {
     GraphQLQuery,
     backToParent
 } from "@quinscape/automaton-js";
+import { DateTime } from "luxon";
 
 
 
@@ -53,8 +54,8 @@ export function initProcess(process, scope)
     );
 }
 
-export const MIN_DATE = new Date("2018-03-01T00:00:00Z");
-export const MAX_DATE = new Date("2019-04-30T00:00:00Z");
+export const MIN_DATE = DateTime.fromISO("2018-03-01T00:00:00Z");
+export const MAX_DATE = DateTime.fromISO("2019-04-30T00:00:00Z");
 
 export default class ExternalDataGridFilterTestScope {
 

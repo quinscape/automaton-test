@@ -53,7 +53,8 @@ module.exports = {
             "mobx-utils": path.resolve("./node_modules/mobx-utils"),
             "history": path.resolve("./node_modules/history"),
             "bignumber.js": path.resolve("./node_modules/bignumber.js"),
-            "react-calendar": path.resolve("./node_modules/react-calendar")
+            "react-calendar": path.resolve("./node_modules/react-calendar"),
+            "luxon": path.resolve("./node_modules/luxon")
         }
     },
 

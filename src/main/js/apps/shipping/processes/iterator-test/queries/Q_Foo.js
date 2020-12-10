@@ -4,6 +4,7 @@ export default query(
     // language=GraphQL
         `query iQueryFoo($config: QueryConfigInput!)
     {
+        
         iQueryFoo(config: $config)
         {
             type
@@ -24,6 +25,7 @@ export default query(
                 name
                 description
                 num
+                
                 owner{
                     login
                 }

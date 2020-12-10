@@ -25,6 +25,7 @@ export default query(
                 description
                 flag
                 type
+                created
                 owner{
                     id
                     login

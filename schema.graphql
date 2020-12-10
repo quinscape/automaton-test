@@ -222,6 +222,8 @@ type Corge {
 
 "Many-to-many associated type to Corge"
 type CorgeAssoc {
+    "Many-to-many objects from corge_link.assoc_id"
+    corgeLinks: [CorgeLink]!
     "DB column 'description'"
     description: String
     "DB column 'id'"
@@ -457,6 +459,12 @@ type InteractiveQueryCorgeType {
     rows: [CorgeType]
     "Name of payload type (always 'CorgeType')"
     type: String
+}
+
+"Container for user-editable interactive query definition. Wraps a query string and a default query config."
+type InteractiveQueryDefinition {
+    query: String
+    queryConfig: QueryConfig
 }
 
 "Interactive Query with Foo payload."
@@ -809,8 +817,11 @@ type QueryConfig {
 
 "Auto-generated from DataGridLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type QueryType {
+    _interactiveQueryDefinition(def: InteractiveQueryDefinitionInput): InteractiveQueryDefinition
     getDomainTypeIndex(condition: Condition, domainType: String!, field: String!): [String]
     getFoos(limit: Int = 10, offset: Int = 0): PagedFoo
+    iQueryAlternateBar(config: QueryConfigInput!): InteractiveQueryBar
+    iQueryAlternateFoo(config: QueryConfigInput!): InteractiveQueryFoo
     "Queries AppUser objects based on the given query config"
     iQueryAppUser(config: QueryConfigInput!): InteractiveQueryAppUser
     "Queries Bar objects based on the given query config"
@@ -1172,6 +1183,12 @@ input GraultInput {
     id: String!
     name: String!
     url: String
+}
+
+"Container for user-editable interactive query definition. Wraps a query string and a default query config."
+input InteractiveQueryDefinitionInput {
+    query: String
+    queryConfig: QueryConfigInput
 }
 
 "Generated for de.quinscape.automaton.model.merge.MergeConfig"

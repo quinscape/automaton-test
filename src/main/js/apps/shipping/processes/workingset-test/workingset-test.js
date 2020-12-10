@@ -14,6 +14,7 @@ import {
 import Q_FooList from "../datagrid-test/queries/Q_FooList";
 import Q_FooDetail from "../datagrid-test/queries/Q_FooDetail";
 import Q_FooType from "../datagrid-test/queries/Q_FooType";
+import { DateTime } from "luxon";
 
 // deconstruct FilterDSL methods
 const {field, value} = FilterDSL;
@@ -40,7 +41,7 @@ export function initProcess(process, scope)
                             newObj.description = "";
                             newObj.num = 0;
                             newObj.flag = false;
-                            newObj.created = new Date();
+                            newObj.created = DateTime.local();
                             newObj.type = "TYPE_A";
                             newObj.ownerId = config.auth.id;
 

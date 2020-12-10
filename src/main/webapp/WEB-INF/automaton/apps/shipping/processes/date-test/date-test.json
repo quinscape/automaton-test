@@ -1,0 +1,258 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "computed"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "storeDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "deleteDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FilterDSL"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "createDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "extractTypeData"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Attachments"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FieldMode"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_WaldoList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_WaldoList"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_WaldoDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_WaldoDetail"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../merge-test/queries/Q_CorgeType",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_CorgeType"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../datagrid-test/queries/Q_FooType",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooType"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"WaldoList\"",
+            "states": {
+                "WaldoList": {
+                    "new-meta-config": {
+                        "to": "WaldoDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const newInstance = createDomainObject(\"Waldo\"); newInstance.name = \"Unnamed\"; scope.updateCurrent(newInstance); }"
+                        }
+                    },
+                    "to-detail": {
+                        "to": "WaldoDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const id = t.context; return Q_WaldoDetail.execute({ config: { condition: field(\"id\").eq(value(id)) } }).then(({ iQueryWaldo }) => { if (iQueryWaldo.rows.length === 0) { alert(\"Could not load Waldo with id '\" + id); } scope.updateCurrent(config.inputSchema.clone(iQueryWaldo.rows[0])); }); }"
+                        }
+                    }
+                },
+                "WaldoDetail": {
+                    "save": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "// 1.\nAttachments.uploadPending(t.context) // 2.\n.then(() => storeDomainObject({ ...extractTypeData(\"WaldoInput\", t.context) })) // 3.\n.then(() => Attachments.deletePending(t.context)).then(() => scope.waldos.update()).then(() => t.back(backToParent(t)))"
+                        }
+                    },
+                    "delete": {
+                        "to": "WaldoList",
+                        "discard": true,
+                        "confirmation": {
+                            "type": "Action",
+                            "params": [
+                                "context"
+                            ],
+                            "code": "`Delete ${context.name} ?`"
+                        },
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const { id } = t.context; return deleteDomainObject(\"Waldo\", id).then(didDelete => didDelete && scope.removeWaldo(id)); }"
+                        }
+                    },
+                    "cancel": {
+                        "to": "WaldoList",
+                        "discard": true,
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"Transition 'cancel'\"); return Attachments.clearAll(t.context); }"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "DateTestScope",
+            "observables": [
+                {
+                    "name": "currentWaldo",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "name": "formMode",
+                    "defaultValue": "FieldMode.NORMAL",
+                    "description": null
+                },
+                {
+                    "name": "waldos",
+                    "defaultValue": "injection(Q_WaldoList)",
+                    "description": "* Current todos"
+                },
+                {
+                    "name": "corgeTypes",
+                    "defaultValue": "injection(Q_CorgeType)",
+                    "description": null
+                },
+                {
+                    "name": "fooTypes",
+                    "defaultValue": "injection(Q_FooType)",
+                    "description": null
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateWaldos",
+                    "params": [
+                        "waldos"
+                    ],
+                    "code": "this.waldos = waldos;",
+                    "bound": false
+                },
+                {
+                    "name": "setFormMode",
+                    "params": [
+                        "fieldMode"
+                    ],
+                    "code": "this.formMode = fieldMode;",
+                    "bound": false
+                },
+                {
+                    "name": "removeWaldo",
+                    "params": [
+                        "id"
+                    ],
+                    "code": "this.waldos.rows = this.waldos.rows.filter(waldo => waldo.id !== id);",
+                    "bound": false
+                },
+                {
+                    "name": "updateCurrent",
+                    "params": [
+                        "waldo"
+                    ],
+                    "code": "this.currentWaldo = waldo;",
+                    "bound": false
+                }
+            ],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": [
+            "// deconstruct FilterDSL methods\nconst { field, value } = FilterDSL; // noinspection JSUnusedGlobalSymbols"
+        ]
+    }
+}

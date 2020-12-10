@@ -1,8 +1,8 @@
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
-import { FormLayout } from "domainql-form"
+import { FormLayout, Icon } from "domainql-form"
 import CorgeForm from "./CorgeForm";
-import { useEntity } from "@quinscape/automaton-js"
+import { Button, useEntity, IQueryGrid as DataGrid, i18n } from "@quinscape/automaton-js"
 
 
 const CorgeDetail = props => {
@@ -24,6 +24,30 @@ const CorgeDetail = props => {
                             isolation: false
                         }}
                     />
+                    <hr/>
+                    <DataGrid
+                        id="iquery-test"
+                        value={ scope.corges }
+                    >
+                        <DataGrid.Column
+                            heading={ i18n("Status") }
+                        >
+                            {
+                                corge => (
+                                    <DataGrid.WorkingSetStatus
+                                        workingSet={ scope.workingSet }
+                                        type="Corge"
+                                        id={ corge.id }
+                                        
+                                    />
+                                )
+                            }
+                        </DataGrid.Column>
+                        <DataGrid.Column name="name" filter="containsIgnoreCase"/>
+                        <DataGrid.Column name="num" filter="gt"/>
+                    </DataGrid>
+
+
                 </div>
             </div>
 

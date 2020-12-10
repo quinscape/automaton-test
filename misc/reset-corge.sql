@@ -23,7 +23,7 @@ delete from public.corge_assoc;
 delete from public.corge;
 
 -- unversioned foo #1 is part of the merge service test
-delete from foo where id = '13a4ad86-e2c3-4979-81e2-a8f102b501c1';
+delete from public.foo where id = '13a4ad86-e2c3-4979-81e2-a8f102b501c1';
 
 delete from public.app_version where (entity_type = 'Corge' or entity_type = 'CorgeLink' or entity_type = 'CorgeAssoc');
 

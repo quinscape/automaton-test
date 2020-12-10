@@ -1,0 +1,22 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "query iQueryFooType($config: QueryConfigInput!)\n    {\n        iQueryFooType(config: $config)\n        {\n            rows{\n                name\n            }\n            rowCount\n        }\n    }",
+        "variables": {
+            "config": {
+                "pageSize": 0
+            }
+        }
+    }
+}

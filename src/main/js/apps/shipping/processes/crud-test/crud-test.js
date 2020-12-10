@@ -181,7 +181,8 @@ export default class CRUDTestScope {
             }
         }`
     );
-    
+
+
     @action
     updateFoos(foos)
     {

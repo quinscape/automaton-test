@@ -46,6 +46,7 @@ const CRUDList = props => {
                 <DataGrid.Column name="name"/>
                 <DataGrid.Column name="num"/>
                 <DataGrid.Column name="owner.login" heading={ i18n("owner") }/>
+                <DataGrid.Column name="created"/>
             </DataGrid>
         </div>
     );

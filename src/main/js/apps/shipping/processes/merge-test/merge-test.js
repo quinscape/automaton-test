@@ -8,12 +8,14 @@ import {
     FilterDSL,
     injection,
     MergeOperation,
-    WorkingSet
+    WorkingSet,
+    backToParent
 } from "@quinscape/automaton-js";
 
 import Q_CorgeType from "./queries/Q_CorgeType";
 import Q_CorgeList from "./queries/Q_CorgeList";
 import Q_CorgeDetail from "./queries/Q_CorgeDetail";
+import { DateTime } from "luxon";
 
 // deconstruct FilterDSL methods
 const { field, value } = FilterDSL;
@@ -89,7 +91,7 @@ export function initProcess(process, scope)
                         action: t =>{
 
                             // update modified field
-                            t.context.modified = new Date();
+                            t.context.modified = DateTime.local();
 
                             //scope.workingSet.addChanges(t.context);
 
@@ -127,11 +129,11 @@ export function initProcess(process, scope)
                         }
                     },
                     "cancel": {
-                        to: "CorgeList",
                         discard: true,
                         action: t => {
 
                             console.log("Transition 'cancel'")
+                            t.back(backToParent);
                         }
                     }
                 }

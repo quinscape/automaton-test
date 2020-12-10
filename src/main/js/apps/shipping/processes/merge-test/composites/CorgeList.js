@@ -2,7 +2,7 @@ import { Icon, Select } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { ButtonToolbar, Container, Modal, ModalBody, ModalHeader } from "reactstrap";
-import { Button, i18n, IQueryGrid as DataGrid, useDomainMonitor, FilterDSL, DomainActivityIndicator, openDialog } from "@quinscape/automaton-js"
+import { Button, i18n, IQueryGrid as DataGrid, useDomainMonitor, FilterDSL, DomainActivityIndicator, openDialog, WorkingSetStatus } from "@quinscape/automaton-js"
 import MergeDialog from "@quinscape/automaton-js/lib/ui/ChangeConflictDialog"
 
 const { and, field, value, component } = FilterDSL;
@@ -201,6 +201,19 @@ const CorgeList = props => {
                 id="iquery-test"
                 value={ scope.corges }
             >
+                <DataGrid.Column
+                    heading={ i18n("Status") }
+                >
+                    {
+                        corge => (
+                            <DataGrid.WorkingSetStatus
+                                workingSet={ scope.workingSet }
+                                type="Corge"
+                                id={ corge.id }
+                            />
+                        )
+                    }
+                </DataGrid.Column>
                 <DataGrid.Column
                     heading={ i18n("Action") }
                 >

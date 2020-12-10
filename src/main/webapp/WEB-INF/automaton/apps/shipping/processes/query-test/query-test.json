@@ -1,0 +1,119 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "computed"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "runInAction"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "graphql"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "GraphQLQuery"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_BazFoos",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_BazFoos"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_BazWithValues",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_BazWithValues"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_RecursiveNodes",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_RecursiveNodes"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"QueryTestHome\"",
+            "states": {
+                "QueryTestHome": {}
+            }
+        },
+        "scope": {
+            "name": "WireTestScope",
+            "observables": [
+                {
+                    "name": "bazFoos",
+                    "defaultValue": "injection(Q_BazFoos)",
+                    "description": null
+                },
+                {
+                    "name": "bazesWithValues",
+                    "defaultValue": "injection(Q_BazWithValues)",
+                    "description": null
+                },
+                {
+                    "name": "nodes",
+                    "defaultValue": "injection(Q_RecursiveNodes)",
+                    "description": null
+                }
+            ],
+            "actions": [],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": [
+            "// language=GraphQL\nconst WireTestQuery = new GraphQLQuery(`\n    mutation testMutation($target: FooInput!, $count: Int!){\n        wireTestMutation(input : $target, count: $count)\n        {\n            id\n            created\n            check\n        }\n    }`);",
+            "function mutationError(err) { return { id: \"ERROR\", created: new Date(), check: String(err) }; } // noinspection JSUnusedGlobalSymbols"
+        ]
+    }
+}

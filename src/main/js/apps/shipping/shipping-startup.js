@@ -13,7 +13,8 @@ import {
     publish,
     GraphQLQuery,
     createDomainObject,
-    registerBigDecimalConverter
+    registerBigDecimalConverter,
+    printSchema
 } from "@quinscape/automaton-js"
 import Layout from "../../components/Layout";
 
@@ -22,6 +23,7 @@ import AUTOMATON_CSS from "./automaton-test.css"
 import 'react-calendar/dist/Calendar.css';
 import BigNumber from "bignumber.js";
 import { GlobalConfig } from "domainql-form";
+import React from "react";
 
 // set MobX configuration
 configure({
@@ -37,6 +39,7 @@ bootstrap(
 
                 config.markUntranslated = true;
                 config.layout = Layout;
+
                 addConfig("validationRules", initial.validationRules)
 
                 // Configure German bignumber format for decimal-test/meta-config
@@ -56,6 +59,24 @@ bootstrap(
                 //console.log(JSON.stringify(BigNumber.config(),null, 4))
 
                 registerBigDecimalConverter();
+
+                config.timestampFormat = "d.M.yyyy H:mm:ss";
+
+                // GlobalConfig.registerStaticRenderer("Timestamp", value => {
+                //
+                //     const formatted = value.toFormat(config.timestampFormat);
+                //
+                //     const relative = value.toRelative();
+                //
+                //     return (
+                //             <span title={ formatted } aria-label={ relative + ": " + formatted}>
+                //             {
+                //                 relative
+                //             }
+                //             </span>
+                //         );
+                //     }
+                // )
 
                 // spy(ev => {
                 //     ev.type === "update" && console.log("MOBX", ev)
@@ -80,10 +101,11 @@ export default {
     currentProcess: getCurrentProcess,
     runInAction,
     shutdown,
-    pickSchemaTypes,
+    pickSchemaTypes : array => pickSchemaTypes(config.inputSchema.schema, array),
     toJS,
     publish,
     subscribeToTopic,
     GraphQLQuery,
-    createDomainObject
+    createDomainObject,
+    printSchema
 };

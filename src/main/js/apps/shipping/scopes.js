@@ -24,3 +24,4 @@ export class UserScope
 // {
 //     @observable value = "qux";
 // }
+

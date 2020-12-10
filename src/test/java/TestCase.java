@@ -1,4 +1,10 @@
+import de.quinscape.automatontest.domain.tables.pojos.Bar;
+import org.jooq.DSLContext;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static de.quinscape.automatontest.domain.Tables.*;
 
 public class TestCase
 {
@@ -13,8 +19,12 @@ public class TestCase
     @Test
     void name2()
     {
-        System.out.println(-1);
-        System.out.println(-1 >>> 1);
-        System.out.println(-1 >>> 2);
+        DSLContext dslContext = null;
+
+
+        final List<Bar> bars = dslContext.select()
+            .from(BAR)
+            .where(BAR.NUMA.lessThan(100))
+            .fetchInto(Bar.class);
     }
 }

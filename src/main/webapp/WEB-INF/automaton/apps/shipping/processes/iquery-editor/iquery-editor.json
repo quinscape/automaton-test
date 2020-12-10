@@ -1,0 +1,66 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "InteractiveQueryDefinition"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "InteractiveQueryEditor"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"IQEditorHome\"",
+            "states": {
+                "IQEditorHome": {
+                    "store": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ // retrieve current state as \"InteractiveQueryDefinition\" instance\nconst def = InteractiveQueryEditor.getInteractiveQueryDefinition(\"my-editor\"); // XXX: we just log here, replace with actual store\nconsole.log(\"STORE\", toJS(def)); }"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "IQueryEditorScope",
+            "observables": [
+                {
+                    "name": "definition",
+                    "defaultValue": "new InteractiveQueryDefinition( // language=GraphQL\n`\n            query Q_CorgeList($config: QueryConfigInput!)\n            {\n                iQueryCorge(config: $config)\n                {\n                    type\n                    columnStates{\n                        name\n                        enabled\n                        sortable\n                    }\n                    queryConfig{\n                        id\n                        condition\n                        offset\n                        pageSize\n                        sortFields\n                    }\n                    rows{\n                        id\n                        name\n                        num\n                        corgeLinks{\n                            assoc{\n                                name\n                                num\n                            }\n                        }\n                        owner{\n                            login\n                        }\n                    }\n                    rowCount\n                }\n            }\n        `, { \"condition\": { \"type\": \"Condition\", \"name\": \"or\", \"operands\": [{ \"type\": \"Condition\", \"name\": \"equal\", \"operands\": [{ \"type\": \"Field\", \"name\": \"owner.login\" }, { \"type\": \"Value\", \"scalarType\": \"String\", \"value\": \"admin\" }] }, { \"type\": \"Condition\", \"name\": \"equal\", \"operands\": [{ \"type\": \"Field\", \"name\": \"name\" }, { \"type\": \"Value\", \"scalarType\": \"String\", \"value\": \"aaa\" }] }] }, \"offset\": 0, \"pageSize\": 20, \"sortFields\": [] })",
+                    "description": null
+                }
+            ],
+            "actions": [],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": []
+    }
+}

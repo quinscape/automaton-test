@@ -1,0 +1,131 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FilterDSL"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../../components/TreeLayout",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "TreeLayout"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_Node",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_Node"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_NodeIndex",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_NodeIndex"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "uuid",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "uuid"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "t => { const { name, type, useIndex } = process.input; if (useIndex !== undefined) { scope.useIndex = useIndex; } switch (type) { case \"Node\": t.target = \"TreeTestNodeDetail\"; scope.updateCurrent(name); break; case \"Baz\": t.target = \"TreeTestBazDetail\"; scope.updateCurrent(name); break; case \"BazValue\": t.target = \"TreeTestBazValueDetail\"; scope.updateCurrent(name); break; default: t.target = \"TreeTestHome\"; break; } }",
+            "states": {
+                "TreeTestHome": {},
+                "TreeTestNodeDetail": {},
+                "TreeTestBazDetail": {},
+                "TreeTestBazValueDetail": {}
+            }
+        },
+        "scope": {
+            "name": "TreeTestScope",
+            "observables": [
+                {
+                    "name": "nodes",
+                    "defaultValue": "injection(Q_Node)",
+                    "description": null
+                },
+                {
+                    "name": "nodesIndex",
+                    "defaultValue": "injection(Q_NodeIndex)",
+                    "description": null
+                },
+                {
+                    "name": "currentName",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "name": "useIndex",
+                    "defaultValue": "true",
+                    "description": null
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateCurrent",
+                    "params": [
+                        "name"
+                    ],
+                    "code": "this.currentName = name;",
+                    "bound": false
+                }
+            ],
+            "computeds": [],
+            "helpers": [
+                {
+                    "name": "id",
+                    "defaultValue": "new Date().toISOString()",
+                    "description": "used to ensure we get the correct new \"Use Index\" Form connected to the current scope on refresh (see TreeLayout.js <Form/> definition)\n(as opposed to the <Tree/> instance itself which remains mounted )"
+                }
+            ]
+        },
+        "extraConstants": [
+            "// deconstruct FilterDSL methods\nconst { field, value } = FilterDSL; // noinspection JSUnusedGlobalSymbols"
+        ]
+    }
+}

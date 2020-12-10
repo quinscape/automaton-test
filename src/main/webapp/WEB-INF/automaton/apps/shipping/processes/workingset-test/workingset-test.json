@@ -1,0 +1,214 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "createDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FilterDSL"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "WorkingSet"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../datagrid-test/queries/Q_FooList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooList"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../datagrid-test/queries/Q_FooDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooDetail"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../datagrid-test/queries/Q_FooType",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooType"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "luxon",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "DateTime"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"WSTestList\"",
+            "states": {
+                "WSTestList": {
+                    "new-foo": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const newObj = createDomainObject(\"Foo\"); newObj.name = \"Unnamed Foo\"; newObj.description = \"\"; newObj.num = 0; newObj.flag = false; newObj.created = DateTime.local(); newObj.type = \"TYPE_A\"; newObj.ownerId = config.auth.id; scope.workingSet.addNew(newObj); scope.updateCurrent(newObj); //console.log(\"new-foo\", newObj)\n}"
+                        }
+                    },
+                    "edit-foo": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const id = t.context; //console.log(\"edit-foo, context = \", id);\n// Either edit the working set instance...\nconst entry = scope.workingSet.lookup(\"Foo\", id); if (entry) { scope.updateCurrent(entry.domainObject); } else { // ... or query the detail object\nreturn Q_FooDetail.execute({ config: { condition: field(\"id\").eq(value(id)) } }).then(({ iQueryFoo }) => { if (iQueryFoo.rows.length === 0) { alert(\"Could not load Foo with id '\" + t.context); } scope.updateCurrent(iQueryFoo.rows[0]); }); } }"
+                        }
+                    },
+                    "revert-foo": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ scope.workingSet.revert(t.context); }"
+                        }
+                    },
+                    "delete-foo": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ scope.workingSet.markDeleted(t.context); if (scope.currentFoo && scope.currentFoo.id === t.context.id) { scope.updateCurrent(null); } }"
+                        }
+                    },
+                    "save-all": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ scope.workingSet.persist().then(() => { scope.foos.update(); }); }"
+                        }
+                    },
+                    "revert-all": {
+                        "discard": true,
+                        "confirmation": {
+                            "type": "Action",
+                            "params": [
+                                "context"
+                            ],
+                            "code": "`Revert all changes?`"
+                        },
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ scope.workingSet.revertAll(); }"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "WorkingSetTestScope",
+            "observables": [
+                {
+                    "name": "currentFoo",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "name": "foos",
+                    "defaultValue": "injection(Q_FooList)",
+                    "description": "* Foo iQuery"
+                },
+                {
+                    "name": "fooTypes",
+                    "defaultValue": "injection(Q_FooType)",
+                    "description": "*\n     *  Example for an iQuery being used to drive a <Select/>\n     *\n     *  We could just as well define the values as constants in this case\n     *\n     * const FOO_TYPES = [\n     *     \"TYPE_A\",\n     *     \"TYPE_B\",\n     *     \"TYPE_C\",\n     *     \"TYPE_D\"\n     * ];\n     *  "
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateFoos",
+                    "params": [
+                        "foos"
+                    ],
+                    "code": "this.foos = foos;",
+                    "bound": false
+                },
+                {
+                    "name": "removeFoo",
+                    "params": [
+                        "id"
+                    ],
+                    "code": "this.foos.rows = this.foos.rows.filter(foo => foo.id !== id);",
+                    "bound": false
+                },
+                {
+                    "name": "updateCurrent",
+                    "params": [
+                        "foo"
+                    ],
+                    "code": "this.currentFoo = foo;",
+                    "bound": false
+                }
+            ],
+            "computeds": [],
+            "helpers": [
+                {
+                    "name": "workingSet",
+                    "defaultValue": "new WorkingSet()",
+                    "description": null
+                }
+            ]
+        },
+        "extraConstants": [
+            "// deconstruct FilterDSL methods\nconst { field, value } = FilterDSL; // noinspection JSUnusedGlobalSymbols"
+        ]
+    }
+}

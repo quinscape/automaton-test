@@ -1,0 +1,18 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "query Q_WaldoDetail($config: QueryConfigInput!)\n    {\n        iQueryWaldo(config: $config)\n        {\n            type\n            columnStates{\n                name\n                enabled\n                sortable\n            }\n            queryConfig{\n                id\n                condition\n                offset\n                pageSize\n                sortFields\n            }\n            rows{\n                id\n                name\n                timestamp\n                date\n                opt1\n                opt2\n            }\n            rowCount\n        }\n    }",
+        "variables": null
+    }
+}

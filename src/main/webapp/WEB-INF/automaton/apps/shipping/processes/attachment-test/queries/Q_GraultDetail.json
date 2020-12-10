@@ -1,0 +1,18 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "query Q_GraultDetail($config: QueryConfigInput!)\n    {\n        iQueryGrault(config: $config)\n        {\n            type\n            columnStates{\n                name\n                enabled\n                sortable\n            }\n            queryConfig{\n                id\n                condition\n                offset\n                pageSize\n                sortFields\n            }\n            rows{\n                id\n                name\n                attachmentId\n                url\n                attachment{\n                    id\n                    type\n                    description\n                    url\n                }\n            }\n            rowCount\n        }\n    }",
+        "variables": null
+    }
+}

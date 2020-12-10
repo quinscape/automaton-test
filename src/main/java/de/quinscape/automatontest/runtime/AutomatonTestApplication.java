@@ -40,9 +40,9 @@ import javax.annotation.PostConstruct;
 
 @Import({
     AutomatonConfiguration.class,
+    WebsocketConfiguration.class,
 
     GraphQLConfiguration.class,
-    WebsocketConfiguration.class,
     DomainConfiguration.class,
     WebConfiguration.class,
     SecurityConfiguration.class,

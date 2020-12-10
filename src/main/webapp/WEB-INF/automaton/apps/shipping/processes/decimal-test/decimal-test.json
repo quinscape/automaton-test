@@ -1,0 +1,205 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "computed"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "storeDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "deleteDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FilterDSL"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "createDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "extractTypeData"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Attachments"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_GarplyList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_GarplyList"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_GarplyDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_GarplyDetail"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"GarplyList\"",
+            "states": {
+                "GarplyList": {
+                    "new-garply": {
+                        "to": "GarplyDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const newInstance = createDomainObject(\"Garply\"); newInstance.name = \"Unnamed\"; newInstance.value = (1 + Math.sqrt(5)) / 2; newInstance.opt = Math.PI * 2; scope.updateCurrent(newInstance); }"
+                        }
+                    },
+                    "to-detail": {
+                        "to": "GarplyDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const id = t.context; return Q_GarplyDetail.execute({ config: { condition: field(\"id\").eq(value(id)) } }).then(({ iQueryGarply }) => { if (iQueryGarply.rows.length === 0) { alert(\"Could not load Garply with id '\" + id); } scope.updateCurrent(config.inputSchema.clone(iQueryGarply.rows[0])); }); }"
+                        }
+                    }
+                },
+                "GarplyDetail": {
+                    "save": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "storeDomainObject({ ...extractTypeData(\"GarplyInput\", t.context) }).then(() => scope.garplys.update()).then(() => t.back(backToParent(t)))"
+                        }
+                    },
+                    "delete": {
+                        "to": "GarplyList",
+                        "discard": true,
+                        "confirmation": {
+                            "type": "Action",
+                            "params": [
+                                "context"
+                            ],
+                            "code": "`Delete ${context.name} ?`"
+                        },
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const { id } = t.context; return deleteDomainObject(\"Garply\", id).then(didDelete => didDelete && scope.removeGarply(id)); }"
+                        }
+                    },
+                    "cancel": {
+                        "to": "GarplyList",
+                        "discard": true,
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"Transition 'cancel'\"); }"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "AttachmentTestScope",
+            "observables": [
+                {
+                    "name": "currentGarply",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "name": "garplys",
+                    "defaultValue": "injection(Q_GarplyList)",
+                    "description": "* Current todos"
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateGarplys",
+                    "params": [
+                        "garplys"
+                    ],
+                    "code": "this.garplys = garplys;",
+                    "bound": false
+                },
+                {
+                    "name": "removeGarply",
+                    "params": [
+                        "id"
+                    ],
+                    "code": "this.garplys.rows = this.garplys.rows.filter(garply => garply.id !== id);",
+                    "bound": false
+                },
+                {
+                    "name": "updateCurrent",
+                    "params": [
+                        "garply"
+                    ],
+                    "code": "this.currentGarply = garply;",
+                    "bound": false
+                }
+            ],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": [
+            "// deconstruct FilterDSL methods\nconst { field, value } = FilterDSL; // noinspection JSUnusedGlobalSymbols"
+        ]
+    }
+}

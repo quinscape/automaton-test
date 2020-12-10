@@ -1,0 +1,59 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx-react-lite",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "fnObserver",
+                    "aliasOf": "observer"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./BazValueForm",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "BazValueForm"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FormLayout"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./BazForm",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "BazForm"
+                }
+            ]
+        }
+    ],
+    "extraConstants": [
+        "const BazDetail = props => { const { env } = props; const { scope } = env; return <React.Fragment><div className=\"row\"><div className=\"col\"><BazValueForm key={scope.currentBazValue.id} value={scope.currentBazValue} options={{ layout: FormLayout.HORIZONTAL }} /></div></div></React.Fragment>; };"
+    ],
+    "export": "fnObserver(BazDetail)"
+}

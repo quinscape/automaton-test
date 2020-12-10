@@ -2,7 +2,7 @@ import { Icon } from "domainql-form"
 import React from "react"
 
 import { ButtonToolbar } from "reactstrap"
-import { Button, DataGrid, i18n } from "@quinscape/automaton-js"
+import { Button, IQueryGrid as DataGrid, i18n } from "@quinscape/automaton-js"
 
 import { observer as fnObserver } from "mobx-react-lite";
 
@@ -52,6 +52,8 @@ const GarplyList = props => {
                     }
                 </DataGrid.Column>
                 <DataGrid.Column name="name"/>
+                <DataGrid.Column name="value"/>
+                <DataGrid.Column name="opt" />
             </DataGrid>
         </div>
     );

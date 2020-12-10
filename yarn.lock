@@ -1088,15 +1088,15 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@quinscape/automaton-js@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.2.0.tgz#9ec56bb2dd7df829383a6b0df44fceb428afe81a"
-  integrity sha512-8fmMFW+YaBLN5keGzHCMfhDGMTg3MQXK1VidlD8vdUOjqqOvvO3ANALYOCCokjoWEm5pdZbzher1OCVYolFVrA==
+"@quinscape/automaton-js@^0.2.15":
+  version "0.2.15"
+  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.2.15.tgz#487a31a627080ed922ba5c00bb7bfe44fa9d00bc"
+  integrity sha512-qAtS7i3L1JJiIIKtEmYdGQaOsKItZKCRROZnVfAhQcP5nCAJampf3G1Vtva2S/c+1We57rcpsmbj2htgTJDoeg==
   dependencies:
     ajv "^6.12.2"
     classnames "^2.2.6"
     create-react-class "^15.6.3"
-    domainql-form "^3.1.1"
+    domainql-form "^3.3.2"
     graphql "^14.5.8"
     history "^4.10.1"
     js-beautify "^1.10.3"
@@ -1104,6 +1104,8 @@
     json-source-map "^0.6.1"
     lodash.get "^4.4.2"
     lodash.set "^4.3.2"
+    lodash.topath "^4.5.2"
+    luxon "^1.25.0"
     mobx "^5.15.0"
     mobx-react "^6.1.4"
     mobx-react-devtools "^6.1.1"
@@ -1871,9 +1873,9 @@ camelcase@^5.0.0, camelcase@^5.3.1:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 caniuse-lite@^1.0.30001038:
-  version "1.0.30001038"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001038.tgz#44da3cbca2ab6cb6aa83d1be5d324e17f141caff"
-  integrity sha512-zii9quPo96XfOiRD4TrfYGs+QsGZpb2cGiMAzPjtf/hpFgB6zCPZgJb7I1+EATeMw/o+lG8FyRAnI+CWStHcaQ==
+  version "1.0.30001135"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001135.tgz"
+  integrity sha512-ziNcheTGTHlu9g34EVoHQdIu5g4foc8EsxMGC7Xkokmvw0dqNtX8BS8RgCgFBaAiSp2IdjvBxNdh0ssib28eVQ==
 
 chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.4.2:
   version "2.4.2"
@@ -2352,30 +2354,10 @@ domain-browser@^1.1.1:
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
   integrity sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA==
 
-domainql-form@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.1.1.tgz#76c5e953095afd08ff41518c615c7c9e861135f6"
-  integrity sha512-jUAsdQQ+/kmFA6yF7u8zt11o+LPaNb9liEMtbn0X14fphLowkPI7+QOCGs6v7RIFVpEVBeA6UwSIKSY73eEODg==
-  dependencies:
-    classnames "^2.2.6"
-    lodash.debounce "^4.0.8"
-    lodash.get "^4.4.2"
-    lodash.isequal "^4.5.0"
-    lodash.set "^4.3.2"
-    lodash.topath "^4.5.2"
-    mobx "^5.15.0"
-    mobx-react "^6.1.4"
-    mobx-react-devtools "^6.1.1"
-    mobx-react-lite "^1.5.1"
-    mobx-utils "^5.5.2"
-    prop-types "^15.7.2"
-    react "^16.12.0"
-    use-debounce "^3.1.0"
-
-domainql-form@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.1.2.tgz#fd379bf7914bd4128c0a879e479526d341a41005"
-  integrity sha512-FQwKSlKblqTxJ3JSTP30vtpGZ7icEmLOe3lcg2kzTP43eKbJhKV/efsvEZDDZC2ModbuaA9RXOo0qbCijPSQAw==
+domainql-form@^3.3.2, domainql-form@^3.3.4:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.3.4.tgz#67169ec07e4cc9fd90ce25fd0ab887a041f66bc8"
+  integrity sha512-2jYuqpJw8hVNL2lXbgCSxkZLGD99xiaL2EX3U5ljwGiiv5Srvl5YkwRq9S3mlekluEC4aAo/k66DM7n6kG4krA==
   dependencies:
     classnames "^2.2.6"
     lodash.debounce "^4.0.8"
@@ -3794,6 +3776,11 @@ lru-cache@^5.1.1:
   integrity sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==
   dependencies:
     yallist "^3.0.2"
+
+luxon@^1.25.0:
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.25.0.tgz#d86219e90bc0102c0eb299d65b2f5e95efe1fe72"
+  integrity sha512-hEgLurSH8kQRjY6i4YLey+mcKVAWXbDNlZRmM6AgWDJ1cY3atl8Ztf5wEY7VBReFbmGnwQPz7KYJblL8B2k0jQ==
 
 make-dir@^2.0.0, make-dir@^2.1.0:
   version "2.1.0"

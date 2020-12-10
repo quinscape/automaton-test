@@ -139,7 +139,7 @@ public class GraphQLConfiguration
             .configureRelation(CORGE.OWNER_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
 
             .configureRelation(CORGE_LINK.CORGE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
-            .configureRelation(CORGE_LINK.ASSOC_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
+            .configureRelation(CORGE_LINK.ASSOC_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
 
             .configureRelation(GRAULT.ATTACHMENT_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
             .configureRelation(META_CONFIG.ATTACHMENT_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)

@@ -1,4 +1,4 @@
- package de.quinscape.automatontest.runtime.service;
+package de.quinscape.automatontest.runtime.service;
 
 import de.quinscape.automaton.model.data.ColumnState;
 import de.quinscape.automaton.model.data.InteractiveQuery;
@@ -132,6 +132,36 @@ public class DataGridLogic
 
     }
 
+    /**
+     * Alternate iQuery method for [T]
+     *
+     * @param type
+     * @param env
+     * @param config    configuration for the Interactive query.
+     * @param <T>
+     * @return
+     */
+    @GraphQLQuery
+    public <T> InteractiveQuery<T> iQueryAlternate(
+        @GraphQLTypeParam(
+            types = {
+                Foo.class,
+                Bar.class
+            }
+        )
+        Class<T> type,
+        DataFetchingEnvironment env,
+        @NotNull QueryConfig config
+    )
+    {
+
+        log.info("iQueryAlternate<{}>, config = {}", type, config);
+
+        return interactiveQueryService.buildInteractiveQuery( type, env, config)
+            .execute();
+
+    }
+
     @GraphQLQuery
     public <T> InteractiveQuery<T> iQuerywithColumnConfig(
         @GraphQLTypeParam(
@@ -242,5 +272,8 @@ public class DataGridLogic
 
         return pojo != null ? pojo.getColumns() : null;
     }
+
+
+
 
 }

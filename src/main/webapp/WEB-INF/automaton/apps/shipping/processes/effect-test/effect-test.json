@@ -1,0 +1,230 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "runInAction"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "createDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FilterDSL"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "storeDomainObject"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../datagrid-test/queries/Q_FooList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooList"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../datagrid-test/queries/Q_FooDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooDetail"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../datagrid-test/queries/Q_FooType",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooType"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../../components/EffectLayout",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "EffectLayout"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "registerAppEffect"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "unregisterAppEffect"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [
+            "process.addProcessEffect(() => { registerAppEffect(\"Process:effect-test\"); return () => { unregisterAppEffect(\"Process:effect-test\"); }; })",
+            "process.addEffect(\"EffectList\", () => { registerAppEffect(\"EffectList\"); return () => { unregisterAppEffect(\"EffectList\"); }; })",
+            "process.addEffect(\"EffectDetail\", () => { const name = \"EffectDetail ' \" + (scope.currentFoo && scope.currentFoo.name) + \"'\"; registerAppEffect(name); return () => { unregisterAppEffect(name); }; }, () => [scope.currentFoo && scope.currentFoo.id])"
+        ],
+        "process": {
+            "startState": "\"EffectList\"",
+            "states": {
+                "EffectList": {
+                    "new-foo": {
+                        "to": "EffectDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const newObj = createDomainObject(\"FooInput\"); newObj.name = \"Unnamed Foo\"; newObj.desc = \"\"; newObj.num = 0; newObj.flag = false; newObj.created = new Date(); newObj.type = \"TYPE_A\"; return scope.updateCurrent(newObj); }"
+                        }
+                    },
+                    "to-detail": {
+                        "to": "EffectDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"to-detail, context = \", t.context); return updateDetail(scope, t.context); }"
+                        }
+                    }
+                },
+                "EffectDetail": {
+                    "save": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "storeDomainObject({ ...t.context, ownerId: config.auth.id || \"\" }).then(() => scope.foos.update()).then(() => t.back(backToParent(t)))"
+                        }
+                    },
+                    "open-dialog": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "process.runSubProcess(\"effect-sub-dialog\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result)))"
+                        }
+                    },
+                    "open-full": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "process.runSubProcess(\"effect-sub-full\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result)))"
+                        }
+                    },
+                    "cancel": {
+                        "to": "EffectList",
+                        "discard": true,
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"Transition 'cancel'\"); }"
+                        }
+                    },
+                    "next": {
+                        "to": "EffectDetail",
+                        "discard": true,
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const { foos: { rows }, currentFoo } = scope; for (let i = 0; i < rows.length; i++) { const foo = rows[i]; if (foo.id === currentFoo.id && i + 1 < rows.length) { return updateDetail(scope, rows[i + 1].id); } } alert(\"No next object\"); }"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "EffectTestScope",
+            "observables": [
+                {
+                    "name": "foos",
+                    "defaultValue": "injection(Q_FooList)",
+                    "description": "* Foo iQuery"
+                },
+                {
+                    "name": "currentFoo",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "name": "fooTypes",
+                    "defaultValue": "injection(Q_FooType)",
+                    "description": null
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateFoos",
+                    "params": [
+                        "foos"
+                    ],
+                    "code": "this.foos = foos;",
+                    "bound": false
+                },
+                {
+                    "name": "updateCurrent",
+                    "params": [
+                        "foo"
+                    ],
+                    "code": "this.currentFoo = foo;",
+                    "bound": false
+                }
+            ],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": [
+            "// deconstruct FilterDSL methods\nconst { field, value } = FilterDSL;",
+            "function updateDetail(scope, id) { return Q_FooDetail.execute({ config: { condition: field(\"id\").eq(value(id)) } }).then(({ iQueryFoo }) => { if (iQueryFoo.rows.length === 0) { alert(\"Could not load Foo with id '\" + id); } scope.updateCurrent(iQueryFoo.rows[0]); }); } // noinspection JSUnusedGlobalSymbols"
+        ]
+    }
+}

@@ -1,0 +1,240 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "runInAction"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FilterDSL"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../datagrid-test/queries/Q_FooList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooList"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../datagrid-test/queries/Q_FooDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooDetail"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../datagrid-test/queries/Q_FooType",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooType"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../../components/EffectLayout",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "EffectLayout"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "registerAppEffect"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "unregisterAppEffect"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [
+            "process.addProcessEffect(() => { registerAppEffect(\"Process:effect-sub-full\"); return () => { unregisterAppEffect(\"Process:effect-sub-full\"); }; })",
+            "process.addEffect(\"SubProcessFullHome\", () => { registerAppEffect(\"SubProcessFullHome\"); return () => { unregisterAppEffect(\"SubProcessFullHome\"); }; })",
+            "process.addEffect(\"SubProcessFullDetail\", () => { const name = \"SubProcessFullDetail '\" + (scope.currentFoo && scope.currentFoo.name) + \"'\"; registerAppEffect(name); return () => { unregisterAppEffect(name); }; }, () => [scope.currentFoo && scope.currentFoo.id])"
+        ],
+        "process": {
+            "startState": "\"SubProcessFullHome\"",
+            "states": {
+                "SubProcessFullHome": {
+                    "choose": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "process.endSubProcess(t.context)"
+                        }
+                    },
+                    "close": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "process.endSubProcess(null)"
+                        }
+                    },
+                    "open-dialog": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "process.runSubProcess(\"effect-sub-dialog\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result, \"process =\", process)))"
+                        }
+                    },
+                    "open-full": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "process.runSubProcess(\"effect-sub-full\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result, \"process =\", process)))"
+                        }
+                    },
+                    "pick": {
+                        "to": "SubProcessFullDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"pick, context = \", t.context); return updateDetail(scope, t.context); }"
+                        }
+                    }
+                },
+                "SubProcessFullDetail": {
+                    "choose": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "process.endSubProcess(t.context)"
+                        }
+                    },
+                    "open-dialog": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "process.runSubProcess(\"effect-sub-dialog\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result)))"
+                        }
+                    },
+                    "open-full": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "process.runSubProcess(\"effect-sub-full\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result)))"
+                        }
+                    },
+                    "cancel": {
+                        "to": "SubProcessFullHome",
+                        "discard": true,
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"Transition 'cancel'\"); }"
+                        }
+                    },
+                    "next": {
+                        "to": "SubProcessFullDetail",
+                        "discard": true,
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const { foos: { rows }, currentFoo } = scope; for (let i = 0; i < rows.length; i++) { const foo = rows[i]; if (foo.id === currentFoo.id && i + 1 < rows.length) { return updateDetail(scope, rows[i + 1].id); } } alert(\"No next object\"); }"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "EffectSubProcessFullScope",
+            "observables": [
+                {
+                    "name": "foos",
+                    "defaultValue": "injection(Q_FooList)",
+                    "description": "* Current orders"
+                },
+                {
+                    "name": "currentFoo",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "name": "fooTypes",
+                    "defaultValue": "injection(Q_FooType)",
+                    "description": null
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateFoos",
+                    "params": [
+                        "foos"
+                    ],
+                    "code": "this.foos = foos;",
+                    "bound": false
+                },
+                {
+                    "name": "updateCurrent",
+                    "params": [
+                        "foo"
+                    ],
+                    "code": "this.currentFoo = foo;",
+                    "bound": false
+                }
+            ],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": [
+            "// deconstruct FilterDSL methods\nconst { field, value } = FilterDSL;",
+            "function updateDetail(scope, id) { return Q_FooDetail.execute({ config: { condition: field(\"id\").eq(value(id)) } }).then(({ iQueryFoo }) => { if (iQueryFoo.rows.length === 0) { alert(\"Could not load Foo with id '\" + id); } scope.updateCurrent(iQueryFoo.rows[0]); }); } // noinspection JSUnusedGlobalSymbols"
+        ]
+    }
+}

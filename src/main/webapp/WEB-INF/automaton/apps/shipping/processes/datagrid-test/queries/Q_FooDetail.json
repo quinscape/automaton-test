@@ -1,0 +1,18 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "query queryFooDetail($config: QueryConfigInput!)\n    {\n        iQueryFoo(config: $config)\n        {\n            rows{\n                id\n                name\n                num\n                description\n                created\n                flag\n                type\n                ownerId\n                owner{\n                    id\n                    login\n                }\n            }\n        }\n    }",
+        "variables": {}
+    }
+}

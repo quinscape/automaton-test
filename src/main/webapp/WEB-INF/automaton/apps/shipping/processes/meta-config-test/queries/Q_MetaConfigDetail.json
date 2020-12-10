@@ -1,0 +1,18 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "query Q_MetaConfigDetail($config: QueryConfigInput!)\n    {\n        iQueryMetaConfig(config: $config)\n        {\n            type\n            columnStates{\n                name\n                enabled\n                sortable\n            }\n            queryConfig{\n                id\n                condition\n                offset\n                pageSize\n                sortFields\n            }\n            rows{\n                id\n                name\n                num\n                bigNum\n                flag\n                timestamp\n                date\n                type\n                url\n                text\n                corgeTypeId\n                corgeType{\n                    name\n                }\n                attachmentId\n                attachment{\n                    id\n                    type\n                    description\n                    url\n                }\n            }\n            rowCount\n        }\n    }",
+        "variables": null
+    }
+}

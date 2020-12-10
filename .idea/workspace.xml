@@ -14,12 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="Java Filter: Add toString()&#10;&#10;Implement a default shortened toString() for transformed FilterDSL Filter. Add default toString() impl and invoke that from many nodes.&#10;&#10;Write some nodes by hand.">
-      <change beforePath="$PROJECT_DIR$/../automaton-js/src/FilterDSL.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/FilterDSL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/test/filter-dsl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/test/filter-dsl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/IntelliLang.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_2_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/Process.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/Process.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/misc/reset-corge.sql" beforeDir="false" afterPath="$PROJECT_DIR$/misc/reset-corge.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -39,6 +34,8 @@
       <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/decimal-test/composites/GarplyList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/decimal-test/composites/GarplyList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/extfilter-test/extfilter-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/extfilter-test/extfilter-test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/iterator-test/queries/Q_Foo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/iterator-test/queries/Q_Foo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/composites/CorgeDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/composites/CorgeDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/composites/CorgeList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/composites/CorgeList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/merge-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/merge-test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/workingset-test/workingset-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/workingset-test/workingset-test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/scopes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/scopes.js" afterDir="false" />
@@ -74,7 +71,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../automaton-js" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -224,7 +221,7 @@
       <command value="key" />
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.AssociationSelector">
+  <component name="RunManager" selected="Tomcat Server.Local Tomcat">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -237,19 +234,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -538,10 +522,10 @@
       <item itemvalue="Mocha.Tree.Folder.lazily queries tree objects" />
       <item itemvalue="Mocha.Button.invokes transitions with a context" />
       <item itemvalue="Mocha.Button" />
+      <item itemvalue="Mocha.AssociationSelector" />
       <item itemvalue="Node.js.temp.js" />
       <item itemvalue="Spring Boot.DQLMobxApplication" />
       <item itemvalue="Tomcat Server.Local Tomcat" />
-      <item itemvalue="Mocha.AssociationSelector" />
     </list>
     <recent_temporary>
       <list>
@@ -1245,7 +1229,8 @@
       <workItem from="1607089869523" duration="4890000" />
       <workItem from="1607276927084" duration="184000" />
       <workItem from="1607342123231" duration="14345000" />
-      <workItem from="1607431716048" duration="8448000" />
+      <workItem from="1607431716048" duration="11216000" />
+      <workItem from="1607525732845" duration="11490000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>

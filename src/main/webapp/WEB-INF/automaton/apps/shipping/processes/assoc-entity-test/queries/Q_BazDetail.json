@@ -1,0 +1,20 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "\n    query iQueryBazList($config: QueryConfigInput!)\n    {\n        iQueryBaz(config: $config)\n        {\n            rows{\n                id\n                name\n                ownerId\n                owner{\n                    login\n                }\n                bazLinks{\n                    id\n                    bazId\n                    valueId\n                    value{\n                        id\n                        name\n                    }\n                }\n            }\n    \n            rowCount\n        }\n    }",
+        "variables": {
+            "config": {}
+        }
+    }
+}

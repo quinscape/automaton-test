@@ -1,12 +1,9 @@
-import { Icon, Select } from "domainql-form"
 import React from "react"
+import cx from "classnames"
+import { Icon, Select } from "domainql-form"
 import { observer as fnObserver } from "mobx-react-lite";
 import { ButtonToolbar } from "reactstrap";
-import { Button, i18n, IQueryGrid as DataGrid } from "@quinscape/automaton-js"
-
-
-const MIN_DATE = new Date("2018-11-01T00:00:00Z");
-const MAX_DATE = new Date("2019-03-30T23:59:59Z");
+import { config, Button, i18n, IQueryGrid as DataGrid } from "@quinscape/automaton-js"
 
 const CRUDList = props => {
 
@@ -52,9 +49,14 @@ const CRUDList = props => {
                         )
                     }
                 </DataGrid.Column>
-                <DataGrid.Column name="name" filter="containsIgnoreCase"/>
+                <DataGrid.Column
+                    name="name"
+                    filter="containsIgnoreCase"
+                    className={ row => cx(row.name.indexOf("3") >= 0 && "bg-danger") }
+                />
                 <DataGrid.Column name="description" filter="containsIgnoreCase"/>
                 <DataGrid.Column name="flag" filter="eq"/>
+                <DataGrid.Column name="created"/>
                 <DataGrid.Column name="type" filter="eq" renderFilter={
                     (name, scalarType, label) => {
                         /**
@@ -73,7 +75,6 @@ const CRUDList = props => {
                         );
                     }
                 }/>
-                <DataGrid.Column name="owner.login" filter="containsIgnoreCase" heading={ i18n("owner") }/>
             </DataGrid>
 
         </React.Fragment>

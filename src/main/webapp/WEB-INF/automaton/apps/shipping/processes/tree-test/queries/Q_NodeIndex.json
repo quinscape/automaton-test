@@ -1,0 +1,36 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "\n        query iQueryNode($domainType: String!, $field: String!, $condition: Condition)\n        {\n            getDomainTypeIndex(\n                domainType: $domainType, \n                field: $field, \n                condition: $condition\n            )\n        }",
+        "variables": {
+            "domainType": "Node",
+            "field": "name",
+            "condition": {
+                "type": "Condition",
+                "name": "eq",
+                "operands": [
+                    {
+                        "type": "Field",
+                        "name": "type"
+                    },
+                    {
+                        "type": "Value",
+                        "scalarType": "Int",
+                        "value": 2
+                    }
+                ]
+            }
+        }
+    }
+}

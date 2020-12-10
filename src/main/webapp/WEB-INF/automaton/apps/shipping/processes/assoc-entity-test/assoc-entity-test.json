@@ -1,0 +1,296 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "createDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "storeDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "deleteDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "updateAssociations"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FilterDSL"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_BazList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_BazList"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_BazLinkList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_BazLinkList"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_BazValueList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_BazValueList"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_BazDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_BazDetail"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_BazValueDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_BazValueDetail"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"AssocEntityList\"",
+            "states": {
+                "AssocEntityList": {
+                    "new-baz": {
+                        "to": "BazDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const newBaz = createDomainObject(\"BazInput\"); newBaz.name = \"Unnamed Baz\"; return scope.updateBaz(newBaz); }"
+                        }
+                    },
+                    "new-baz-value": {
+                        "to": "BazValueDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const newBazValue = createDomainObject(\"BazValueInput\"); newBazValue.name = \"Unnamed Baz Value\"; return scope.updateBazValue(newBazValue); }"
+                        }
+                    },
+                    "to-baz-detail": {
+                        "to": "BazDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"to-baz-detail, context = \", t.context); return Q_BazDetail.execute({ config: { condition: field(\"id\").eq(value(t.context)) } }).then(({ iQueryBaz }) => scope.updateBaz(iQueryBaz.rows[0])); }"
+                        }
+                    },
+                    "to-baz-value-detail": {
+                        "to": "BazValueDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"to-baz-value-detail, context = \", t.context); return Q_BazValueDetail.execute({ config: { condition: field(\"id\").eq(value(t.context)) } }).then(({ iQueryBazValue }) => scope.updateBazValue(iQueryBazValue.rows[0])); }"
+                        }
+                    }
+                },
+                "BazDetail": {
+                    "save": {
+                        "to": "AssocEntityList",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"SAVE BAZ\", toJS(t.context)); return storeDomainObject(t.context).then(() => updateAssociations({ domainType: \"BazLink\", leftSideType: \"Baz\", sourceIds: [t.context.id], domainObjects: t.context.bazLinks.map(bl => ({ id: bl.id, bazId: t.context.id, valueId: bl.value.id })) })).then(() => Promise.all([scope.links.update(), scope.bazes.update()])); }"
+                        }
+                    },
+                    "delete": {
+                        "to": "AssocEntityList",
+                        "discard": true,
+                        "confirmation": {
+                            "type": "Action",
+                            "params": [
+                                "context"
+                            ],
+                            "code": "`Delete ${context.name} ?`"
+                        },
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const { id } = t.context; return deleteDomainObject(\"Baz\", id).then(didDelete => didDelete && Promise.all([scope.links.update(), scope.bazes.update()])); }"
+                        }
+                    },
+                    "cancel": {
+                        "to": "AssocEntityList",
+                        "discard": true,
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"Transition 'cancel'\"); }"
+                        }
+                    }
+                },
+                "BazValueDetail": {
+                    "save": {
+                        "to": "AssocEntityList",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"SAVE BAZ VALUE\", toJS(t.context)); return storeDomainObject(t.context).then(() => updateAssociations({ domainType: \"BazLink\", leftSideType: \"BazValue\", sourceIds: [t.context.id], domainObjects: t.context.bazLinks.map(bl => ({ id: bl.id, bazId: bl.baz.id, valueId: t.context.id })) })).then(() => Promise.all([scope.links.update(), scope.bazValues.update()])); }"
+                        }
+                    },
+                    "delete": {
+                        "to": "AssocEntityList",
+                        "discard": true,
+                        "confirmation": {
+                            "type": "Action",
+                            "params": [
+                                "context"
+                            ],
+                            "code": "`Delete ${context.name} ?`"
+                        },
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ const { id } = t.context; return deleteDomainObject(\"BazValue\", id).then(didDelete => didDelete && Promise.all([scope.links.update(), scope.bazValues.update()])); }"
+                        }
+                    },
+                    "cancel": {
+                        "to": "AssocEntityList",
+                        "discard": true,
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ console.log(\"Transition 'cancel'\"); }"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "AssociativeEntityTestScope",
+            "observables": [
+                {
+                    "name": "currentBaz",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "name": "currentBazValue",
+                    "defaultValue": "null",
+                    "description": null
+                },
+                {
+                    "name": "links",
+                    "defaultValue": "injection(Q_BazLinkList)",
+                    "description": "* Associative Entity  / Link-Table iQuery"
+                },
+                {
+                    "name": "bazes",
+                    "defaultValue": "injection(Q_BazList)",
+                    "description": "* Left side entity list"
+                },
+                {
+                    "name": "bazValues",
+                    "defaultValue": "injection(Q_BazValueList)",
+                    "description": "* Right side entity list"
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateBaz",
+                    "params": [
+                        "baz"
+                    ],
+                    "code": "console.log(\"updateBaz\", toJS(baz));\nthis.currentBaz = baz;",
+                    "bound": false
+                },
+                {
+                    "name": "updateBazValue",
+                    "params": [
+                        "bazValue"
+                    ],
+                    "code": "console.log(\"updateBazValue\", toJS(bazValue));\nthis.currentBazValue = bazValue;",
+                    "bound": false
+                }
+            ],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": [
+            "// deconstruct FilterDSL methods\nconst { field, value, and, or, not } = FilterDSL; // noinspection JSUnusedGlobalSymbols"
+        ]
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "    \n    query iQueryBazList($config: QueryConfigInput!)\n    {\n        iQueryBaz(config: $config)\n        {\n            type\n            columnStates{\n                name\n                enabled\n                sortable\n            }\n            queryConfig{\n                id\n                condition\n                offset\n                pageSize\n                sortFields\n            }\n            rows{\n                name\n                owner{\n                    login\n                    foos{\n                        name\n                        num\n                        description\n                    }\n                }\n            }\n            rowCount\n        }\n    }\n",
+        "variables": {
+            "config": {
+                "sortFields": [
+                    "name"
+                ]
+            }
+        }
+    }
+}

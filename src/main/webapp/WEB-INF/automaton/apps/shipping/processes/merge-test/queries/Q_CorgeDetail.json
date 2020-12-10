@@ -1,0 +1,25 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "query iQueryCorgeDetail($config: QueryConfigInput!)\n    {\n        iQueryCorge(config: $config)\n        {\n            type\n            columnStates{\n                name\n                enabled\n                sortable\n            }\n            queryConfig{\n                id\n                condition\n                offset\n                pageSize\n                sortFields\n            }\n            rows{\n                id\n                version\n                name\n                num\n                num2\n                flag\n                description\n                typeId\n                type {\n                    id\n                    name\n                }\n                type2\n                created\n                modified\n                ownerId\n                owner {\n                    login\n                }\n                \n                corgeLinks{\n                    id\n                    version\n                    assoc{\n                        id\n                        version\n                        name\n                        num\n                    }\n                    assocId\n                    corgeId\n                }\n            }\n            rowCount\n        }\n    }",
+        "variables": {
+            "config": {
+                "pageSize": 5,
+                "sortFields": [
+                    "name"
+                ]
+            }
+        }
+    }
+}

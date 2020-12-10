@@ -1,0 +1,142 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Form"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "classnames",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "cx"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx-react-lite",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "fnObserver",
+                    "aliasOf": "observer"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Button"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "InteractiveQueryEditor"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "reactstrap",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ButtonToolbar"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Col"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Row"
+                }
+            ]
+        }
+    ],
+    "extraConstants": [],
+    "composite": {
+        "type": "CompositeComponent",
+        "constants": [
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ObjectPattern",
+                            "properties": [
+                                {
+                                    "type": "ObjectProperty",
+                                    "key": "env",
+                                    "value": {
+                                        "type": "Identifier",
+                                        "name": "env"
+                                    }
+                                }
+                            ]
+                        },
+                        "init": "props"
+                    }
+                ]
+            },
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ObjectPattern",
+                            "properties": [
+                                {
+                                    "type": "ObjectProperty",
+                                    "key": "scope",
+                                    "value": {
+                                        "type": "Identifier",
+                                        "name": "scope"
+                                    }
+                                }
+                            ]
+                        },
+                        "init": "env"
+                    }
+                ]
+            }
+        ],
+        "root": {
+            "type": "Expression",
+            "code": "<><Row className=\"mt-3\"><Col><ButtonToolbar><Button className={cx(\"btn btn-secondary\")} transition=\"store\" tooltip=\"Example for store transition\"><Icon className=\"fa-vial mr-1\" />\n                            Store\n                        </Button></ButtonToolbar></Col></Row><Row className=\"mt-3\"><Col><h1>{i18n(\"IQuery Editor\")}</h1><InteractiveQueryEditor id=\"my-editor\" definition={scope.definition} /></Col></Row></>"
+        }
+    },
+    "export": "fnObserver(IQEditorHome)"
+}

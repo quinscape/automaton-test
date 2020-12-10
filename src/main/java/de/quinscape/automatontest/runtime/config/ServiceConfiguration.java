@@ -180,7 +180,8 @@ public class ServiceConfiguration
                 "    iQueryAppUser(config: $config)\n" +
                 "    {\n" +
                 "        type" +
-                "        rows{\n" +
+                    "        \n" +
+                    "        rows{\n" +
                 "            id\n" +
                 "            created\n" +
                 "            lastLogin\n" +

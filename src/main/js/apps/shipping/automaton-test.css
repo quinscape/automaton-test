@@ -162,3 +162,31 @@ ul.tree-widget:focus-within {
 button[disabled] {
     cursor: not-allowed;
 }
+
+
+.iquery-editor
+{
+    position: relative;
+}
+
+.iquery-editor .field-selector .col
+{
+    max-height: 20em;
+    overflow: auto;
+}
+
+.iquery-editor .complex
+{
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* make big decimals right-aligned in data-grid */
+table.data-grid .bd-wrapper
+{
+    display: block;
+}
+table.data-grid .bd-inner
+{
+    float: right;
+}

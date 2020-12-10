@@ -1,0 +1,50 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "\n        query iQueryNode($config: QueryConfigInput!)\n        {\n            iQueryNode(config: $config)\n            {\n                type\n                columnStates{\n                    name\n                    enabled\n                    sortable\n                }\n                queryConfig{\n                    id\n                    condition\n                    offset\n                    pageSize\n                    sortFields\n                }\n                rows{\n                    id\n                    name\n                    parent{\n                        name\n                    }\n                    type\n                }\n                rowCount\n            }\n        }    ",
+        "variables": {
+            "config": {
+                "condition": {
+                    "type": "Condition",
+                    "name": "and",
+                    "operands": [
+                        {
+                            "type": "Component",
+                            "id": null,
+                            "condition": {
+                                "type": "Condition",
+                                "name": "eq",
+                                "operands": [
+                                    {
+                                        "type": "Field",
+                                        "name": "type"
+                                    },
+                                    {
+                                        "type": "Value",
+                                        "scalarType": "Int",
+                                        "value": 2,
+                                        "name": null
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "sortFields": [
+                    "name"
+                ]
+            }
+        }
+    }
+}
