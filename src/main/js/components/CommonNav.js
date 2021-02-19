@@ -85,6 +85,11 @@ const CommonNav = props => {
                         Tree Test
                     </DropdownItem>
                     <DropdownItem
+                        onClick={ () => runProcessURI("/shipping/collapsible-test") }
+                    >
+                        Collapsible Test
+                    </DropdownItem>
+                    <DropdownItem
                         onClick={ () => runProcessURI("/shipping/monitor-test") }
                     >
                         Monitor Test
