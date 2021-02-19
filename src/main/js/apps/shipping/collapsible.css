@@ -1,0 +1,126 @@
+/* add collapsible functionality */
+.collapsible-sidebar.col {
+    flex-basis: 100%;
+}
+.collapsible-sidebar {
+    position: relative;
+    margin-bottom: 20px;
+    transition: flex 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+.collapsible-sidebar.collapsed {
+    height: 40px;
+}
+.collapsible-sidebar.expanded {
+    height: calc(100vh - 180px);
+}
+.collapsible-sidebar > .wrapper {
+    height: 100%;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    overflow: hidden;
+}
+.collapsible-sidebar > .wrapper > .resizer {
+    display: contents;
+}
+.collapsible-sidebar > .wrapper > .resizer > .content-wrapper {
+    height: 100%;
+    margin-bottom: 20px;
+    overflow: auto;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out, display 0s 0.2s linear;
+}
+.collapsible-sidebar.collapsed > .wrapper > .resizer > .content-wrapper {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out, display 0s linear;
+}
+.collapsible-sidebar > .label {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    height: 30px;
+    white-space: pre;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+.collapsible-sidebar.expanded > .label {
+    opacity: 0;
+    pointer-events: none;
+}
+.collapsible-sidebar > .button-wrapper {
+    position: absolute;
+    display: flex;
+    right: 30px;
+    bottom: -10px;
+    z-index: 100;
+}
+.collapsible-sidebar > .button-wrapper > .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-size: 10px;
+}
+.collapsible-sidebar > .button-wrapper > .btn > i {
+    margin: 0;
+}
+.collapsible-sidebar.expanded > .button-wrapper > .collapse-button > i.fa-chevron-down {
+    transform: rotate(180deg);
+}
+@media (min-width: 768px) {
+    .collapsible-sidebar.col {
+        position: sticky;
+        flex-basis: 0;
+    }
+    .collapsible-sidebar {
+        top: 56px;
+        transition: flex 0.2s ease-in-out, max-width 0.2s ease-in-out;
+        height: calc(100vh - 180px);
+        max-height: calc(100vh - 180px);
+    }
+    .collapsible-sidebar.collapsed {
+        flex: 0 0 60px;
+        max-width: 60px;
+        height: initial;
+    }
+    .collapsible-sidebar > .wrapper {
+        height: 100%;
+        border-right: 1px solid rgba(0,0,0,.1);
+        border-bottom: none;
+    }
+    .collapsible-sidebar.expanded,
+    .collapsible-sidebar.expanded > .wrapper {
+        flex-basis: auto;
+        flex-grow: 0;
+        width: max-content;
+    }
+    .collapsible-sidebar > .wrapper > .resizer {
+        display: block;
+        padding-right: 15px;
+    }
+    .collapsible-sidebar > .wrapper > .resizer > .content-wrapper {
+        margin-bottom: 0;
+        overflow: auto;
+    }
+    .collapsible-sidebar > .label {
+        top: 0px;
+        left: initial;
+        right: 0px;
+        transform: rotate(270deg) translate(-30px, -10px);
+        transform-origin: bottom right;
+    }
+    .collapsible-sidebar > .button-wrapper {
+        flex-direction: column;
+        right: 5px;
+        top: 20px;
+        bottom: initial;
+    }
+    .collapsible-sidebar > .button-wrapper > .collapse-button > i.fa-chevron-down {
+        transform: rotate(270deg);
+    }
+    .collapsible-sidebar.expanded > .button-wrapper > .collapse-button > i.fa-chevron-down {
+        transform: rotate(90deg);
+    }
+}
