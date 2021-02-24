@@ -6,9 +6,9 @@
     "author": "Sven Helmberger",
     "license": "Apache-2.0",
     "dependencies": {
-        "@quinscape/automaton-js": "^0.2.15",
+        "@quinscape/automaton-js": "^0.2.23",
         "bignumber.js": "^9.0.0",
-        "domainql-form": "^3.3.4",
+        "domainql-form": "^3.4.3",
         "history": "^4.10.1",
         "jsview-bootstrap": "^0.2.0",
         "lodash.get": "^4.4.2",
