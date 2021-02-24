@@ -22,6 +22,7 @@ import Q_BazLinkList from "../apps/shipping/processes/assoc-entity-test/queries/
 import Q_ValuesForBaz from "../apps/shipping/processes/tree-test/queries/Q_ValuesForBaz";
 
 import { observer as fnObserver } from "mobx-react-lite";
+import { toJS } from "mobx";
 
 
 function getIcon(name, isSelected)
@@ -112,7 +113,8 @@ const TreeLayout = fnObserver( props => {
                         {
                             scope.useIndex ? (
                                 <Tree.IndexedObjects
-                                    heading="Animals"
+                                    id="indexed-nodes"
+                                    heading={ scope.useHeading ? "Animals" : null }
                                     values={ scope.nodes }
                                     render={ (row, iSelected) => ( <>{getIcon(row.parent.name, iSelected) } { row.name }</> )}
                                     renderIndex={ letter => ( <b>{ letter + ":" }</b> )}
@@ -121,11 +123,16 @@ const TreeLayout = fnObserver( props => {
                                         [
                                             {
                                                 label: "Open",
-                                                action: row => runProcess("tree-test", {
-                                                    type: "Node",
-                                                    name: row.name,
-                                                    useIndex: scope.useIndex
-                                                })
+                                                action: row => {
+
+                                                    console.log("INDEX OPEN", toJS(row))
+
+                                                    return runProcess("tree-test", {
+                                                        type: "Node",
+                                                        name: row.name,
+                                                        useIndex: scope.useIndex
+                                                    });
+                                                }
                                             },
                                             {
                                                 label: "Action 2",
@@ -136,6 +143,7 @@ const TreeLayout = fnObserver( props => {
                                 />
                             ) : (
                                 <Tree.Objects
+                                    id="nodes"
                                     values={ scope.nodes }
                                     render={ row => ( row.name )}
                                     actions={
@@ -161,11 +169,11 @@ const TreeLayout = fnObserver( props => {
                         <Tree.Folder
                             render={ () => (<React.Fragment> <Icon className="fa-circle text-success mr-1"/>Bazes</React.Fragment>) }
                             query={ Q_BazList }
-                            variables={{ config: {}}}
                         >
                             {
                                 bazes => (
                                     <Tree.Objects
+                                        id="baz-objects"
                                         values={ bazes }
                                         render={ row => ( row.name )}
                                         actions={
@@ -242,6 +250,7 @@ const TreeLayout = fnObserver( props => {
                         }}
                     >
                         <Field label="Use Index" name="useIndex" type="Boolean"/>
+                        <Field label="Use 'Animals' heading" name="useHeading" type="Boolean"/>
                     </Form>
                 </Col>
                 <Col md={ 9 }>
