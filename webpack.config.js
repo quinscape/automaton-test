@@ -22,7 +22,7 @@ module.exports = {
     mode: process.env.NODE_ENV,
     entry: {
         "shipping": "./src/main/js/apps/shipping/shipping-startup.js",
-        "login": "./src/main/js/login.js",
+        "v-login": "./src/main/js/login.js",
     },
 
     devtool: "source-map",

@@ -72,7 +72,7 @@ public class SecurityConfiguration
 
             .and()
                 .formLogin()
-                    .loginPage("/login")
+                    .loginPage("/v/v-login/")
                     .loginProcessingUrl("/login_check")
                     .defaultSuccessUrl("/shipping/")
                     .permitAll()
