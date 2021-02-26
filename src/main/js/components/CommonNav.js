@@ -104,6 +104,11 @@ const CommonNav = props => {
                     >
                         Iterator-Test
                     </DropdownItem>
+                    <DropdownItem
+                        onClick={ () => runProcessURI("/shipping/file-test") }
+                    >
+                        File-Test
+                    </DropdownItem>
                     <DropdownItem divider/>
                     <DropdownItem
                         onClick={ () => runProcessURI("/shipping/multi-layout") }

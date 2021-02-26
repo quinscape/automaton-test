@@ -1,0 +1,14 @@
+{
+    "name": "Example Fred",
+    "items": [
+        {
+            "name": "Example Item #1",
+            "value": 111,
+            "flag": false
+        }, {
+            "name": "Example Item #2",
+            "value": 222,
+            "flag": true
+        }
+    ]
+}

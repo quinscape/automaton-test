@@ -297,6 +297,19 @@ type FooType {
     ordinal: Int!
 }
 
+"Container bean for the file/resource example."
+type Fred {
+    items: [FredItem]
+    name: String!
+}
+
+"Item within a Fred"
+type FredItem {
+    flag: Boolean
+    name: String!
+    value: Int
+}
+
 "Entity containing BigDecimal fields"
 type Garply {
     "garply id"
@@ -758,7 +771,7 @@ type MetaConfig {
     url: String
 }
 
-"Auto-generated from DataGridLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
+"Auto-generated from DataGridLogic, FileAccessLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type MutationType {
     complexStore(container: ComplexContainerInput): Boolean
     "Example for Datagrid column configuration. Stores columns in public.grid_columns"
@@ -780,6 +793,18 @@ type MutationType {
     storeDomainObjects(domainObjects: [DomainObject]!): [GenericScalar]
     "Updates the associations of one source domain object over a many-to-many connection / an associative entity"
     updateAssociations(domainObjects: [DomainObject]!, domainType: String!, leftSideRelation: String!, sourceIds: [GenericScalar]!): [GenericScalar]
+    "Updates the fred.json file with the new content from a Fred instance via raw file IO"
+    updateFredFile(fred: FredInput): Boolean
+    """
+
+    Updates the fred.json resource/file with the new content from a Fred instance.
+
+    <p>
+    We can only have write access if the application is deployed as "exploded WAR". In cases of a WAR deployment, all
+    servlet resources are read via input stream and don't allow updates.
+    </p>
+    """
+    updateFredResource(fred: FredInput): Boolean
     wireTestMutation(count: Int, input: FooInput): WireTestResult
 }
 
@@ -815,12 +840,36 @@ type QueryConfig {
     sortFields: [FieldExpression]
 }
 
-"Auto-generated from DataGridLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
+"Auto-generated from DataGridLogic, FileAccessLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type QueryType {
     _interactiveQueryDefinition(def: InteractiveQueryDefinitionInput): InteractiveQueryDefinition
     getDomainTypeIndex(condition: Condition, domainType: String!, field: String!): [String]
     getFoos(limit: Int = 10, offset: Int = 0): PagedFoo
+    """
+
+    Returns the current content of the fred.json via raw file access.
+    <p>
+    This method will re-read and reparse the fred.json file on *every* invocation.
+    </p>
+    """
+    getFredFile: Fred
+    """
+
+    Returns the current content of the fred.json resource/file as Fred instance.
+    <p>
+    The resource handle mechanism makes sure we only reload and reparse fred.json when
+    the file changed.
+    </p>
+    <p>
+    The resource loader system internally creates a file watch service that asynchronously listens to file change
+    events and throws away stale resource content. The next call to .getContent() will then reread and
+    reparse the content.
+    </p>
+    """
+    getFredResource: Fred
+    "Alternate iQuery method for Bar"
     iQueryAlternateBar(config: QueryConfigInput!): InteractiveQueryBar
+    "Alternate iQuery method for Foo"
     iQueryAlternateFoo(config: QueryConfigInput!): InteractiveQueryFoo
     "Queries AppUser objects based on the given query config"
     iQueryAppUser(config: QueryConfigInput!): InteractiveQueryAppUser
@@ -1165,6 +1214,19 @@ input FooInput {
     type: String!
 }
 
+"Container bean for the file/resource example."
+input FredInput {
+    items: [FredItemInput]
+    name: String!
+}
+
+"Item within a Fred"
+input FredItemInput {
+    flag: Boolean
+    name: String!
+    value: Int
+}
+
 "Entity containing BigDecimal fields"
 input GarplyInput {
     "garply id"
@@ -1404,8 +1466,8 @@ scalar Long
 "Map graph representing JOOQ conditions"
 scalar Condition
 
-"SQL date equivalent"
-scalar Date
-
 "BigDecimal wrapped as string"
 scalar BigDecimal
+
+"SQL date equivalent"
+scalar Date

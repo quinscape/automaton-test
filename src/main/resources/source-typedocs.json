@@ -4,8 +4,40 @@
     "description":null,
     "fieldDocs":[
       {
+        "name":"getFredFile",
+        "description":"Returns the current content of the fred.json via raw file access.\n<p>\n This method will re-read and reparse the fred.json file on *every* invocation.\n<\/p>",
+        "paramDocs":[
+          
+        ]
+      },
+      {
+        "name":"getFredResource",
+        "description":"Returns the current content of the fred.json resource/file as Fred instance.\n<p>\n    The resource handle mechanism makes sure we only reload and reparse fred.json when\n    the file changed.\n<\/p>\n<p>\n    The resource loader system internally creates a file watch service that asynchronously listens to file change\n    events and throws away stale resource content. The next call to .getContent() will then reread and\n    reparse the content.\n<\/p>",
+        "paramDocs":[
+          
+        ]
+      },
+      {
         "name":"iQuery",
         "description":"Queries [T] objects based on the given query config",
+        "paramDocs":[
+          {
+            "name":"type",
+            "description":""
+          },
+          {
+            "name":"env",
+            "description":""
+          },
+          {
+            "name":"config",
+            "description":"configuration for the Interactive query."
+          }
+        ]
+      },
+      {
+        "name":"iQueryAlternate",
+        "description":"Alternate iQuery method for [T]",
         "paramDocs":[
           {
             "name":"type",
@@ -40,7 +72,41 @@
             "description":"columns JSONB object"
           }
         ]
+      },
+      {
+        "name":"updateFredFile",
+        "description":"Updates the fred.json file with the new content from a Fred instance via raw file IO",
+        "paramDocs":[
+          {
+            "name":"fred",
+            "description":"new Fred"
+          }
+        ]
+      },
+      {
+        "name":"updateFredResource",
+        "description":"Updates the fred.json resource/file with the new content from a Fred instance.\n\n<p>\n    We can only have write access if the application is deployed as \"exploded WAR\". In cases of a WAR deployment, all\n    servlet resources are read via input stream and don't allow updates.\n<\/p>",
+        "paramDocs":[
+          {
+            "name":"fred",
+            "description":"new Fred"
+          }
+        ]
       }
+    ]
+  },
+  {
+    "name":"Fred",
+    "description":"Container bean for the file/resource example.",
+    "fieldDocs":[
+      
+    ]
+  },
+  {
+    "name":"FredItem",
+    "description":"Item within a Fred",
+    "fieldDocs":[
+      
     ]
   },
   {
