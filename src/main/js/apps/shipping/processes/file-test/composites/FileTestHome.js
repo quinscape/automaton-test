@@ -12,11 +12,18 @@ const FileTestHome = props => {
 
     return (
         <React.Fragment>
-            <h1>
-                {
-                    i18n("File Test Home")
-                }
-            </h1>
+
+            <Card color="info" className="mb-3 small">
+                <CardBody>
+                    <h1>
+                        {
+                            i18n("File Access Example")
+                        }
+                    </h1>
+                    Demonstrates querying and updating GraphQL resources backed by JSON files, both via the
+                    automaton/spring-jsview resource mechanism and raw file access.
+                </CardBody>
+            </Card>
 
             <ButtonToolbar>
                 <Button
@@ -27,14 +34,7 @@ const FileTestHome = props => {
                     Reload Fred from Resource
                 </Button>
                 <Button
-                    className="btn btn-secondary mr-1"
-                    transition="get-file"
-                    >
-                    <Icon className="fa-download mr-1"/>
-                    Reload Fred from File
-                </Button>
-                <Button
-                    className="btn btn-secondary mr-1"
+                    className="btn btn-secondary mr-3"
                     transition="update-resource"
                     context={ scope.currentFred }
                 >
@@ -42,7 +42,14 @@ const FileTestHome = props => {
                     Update fred via Resource
                 </Button>
                 <Button
-                    className="btn btn-secondary mr-1"
+                    className="btn btn-light mr-1"
+                    transition="get-file"
+                >
+                    <Icon className="fa-download mr-1"/>
+                    Reload Fred from File
+                </Button>
+                <Button
+                    className="btn btn-light mr-1"
                     transition="update-file"
                     context={ scope.currentFred }
                 >
@@ -105,22 +112,6 @@ const FileTestHome = props => {
                     Add Item
                 </Button>
             </ButtonToolbar>
-
-            <Card color="info" className="mt-3 small">
-                <CardBody>
-                    <p>
-                        Demonstrates querying and updating GraphQL resources backed by JSON files, both via the
-                        automaton/spring-jsview resource mechanism and raw file acces.
-                    </p>
-                    <p>
-                        The process here is not that interesting. All the GraphQL things work just as they do with DB Types.
-                        Since we don't use the generalized storeDomainObject or merge here we do need to use normal GraphQL
-                        input types here.
-
-                        Another detail here is the key mechanism of the &lt;Form/&gt; component.
-                    </p>
-                </CardBody>
-            </Card>
 
         </React.Fragment>
     );
