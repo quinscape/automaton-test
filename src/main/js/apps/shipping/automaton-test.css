@@ -192,3 +192,8 @@ table.data-grid .bd-inner
 {
     float: right;
 }
+
+.table-filling-form-controls th .form-control,
+.table-filling-form-controls td .form-control{
+    width: 100%;
+}
