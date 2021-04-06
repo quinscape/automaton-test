@@ -2,9 +2,9 @@ import { query } from "@quinscape/automaton-js"
 
 export default query(
     // language=GraphQL
-        `query iQueryQuxMain($config: QueryConfigInput!)
+        `query QuxD_Injected($config: QueryConfigInput!)
     {
-        iQueryQuxMain(config: $config)
+        iQueryQuxD(config: $config)
         {
             type
             columnStates{
@@ -12,34 +12,26 @@ export default query(
                 enabled
                 sortable
             }
-            queryConfig{
+            queryConfig {
                 id
                 condition
                 offset
                 pageSize
                 sortFields
             }
-            rows{
+            rows {
                 id
                 name
-                quxA{
-                    name
-                }
-                quxBName
-                quxC1{
-                    name
-                }
-                quxC2{
-                    name
-                }
+                value
+                description
             }
             rowCount
         }
     }`,
     {
-        "config": {
-            "pageSize": 20,
-            "sortFields" : ["name"]
+        config: {
+            pageSize: 0,
+            sortFields: ["id"]
         }
     }
 )

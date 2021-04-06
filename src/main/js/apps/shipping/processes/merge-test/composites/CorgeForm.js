@@ -86,7 +86,7 @@ const CorgeForm = props => {
             <FKSelector
                 name="ownerId"
                 display="owner.login"
-                validateInput="login"
+                searchFilter="login"
                 tooltip="Corge Owner"
                 required={ true }
                 query={ Q_AppUser }
@@ -106,7 +106,7 @@ const CorgeForm = props => {
                 key={ formConfig.root.type.id }
                 name="typeId"
                 display="type.name"
-                validateInputJS={ (row,value) => row.name === value }
+                searchFilter="name"
                 tooltip="Corge Type"
                 required={ true }
                 query={ scope.corgeTypes }

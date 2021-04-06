@@ -41,7 +41,7 @@ const BazForm = props => {
             <FKSelector
                 name="ownerId"
                 display="owner.login"
-                validateInput="login"
+                searchFilter="login"
                 tooltip="Baz-Owner"
                 required={ true }
                 query={ Q_AppUser }

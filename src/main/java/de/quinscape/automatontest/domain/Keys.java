@@ -160,6 +160,9 @@ public class Keys {
     public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID1 = ForeignKeys0.QUX_MAIN__FK_QUX_C_ID1;
     public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID2 = ForeignKeys0.QUX_MAIN__FK_QUX_C_ID2;
     public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D_ID = ForeignKeys0.QUX_MAIN__FK_QUX_D_ID;
+    public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D2_ID = ForeignKeys0.QUX_MAIN__FK_QUX_D2_ID;
+    public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D3_ID = ForeignKeys0.QUX_MAIN__FK_QUX_D3_ID;
+    public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D4_ID = ForeignKeys0.QUX_MAIN__FK_QUX_D4_ID;
 
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
@@ -233,5 +236,8 @@ public class Keys {
         public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID1 = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_C, QuxMain.QUX_MAIN, "qux_main__fk_qux_c_id1", QuxMain.QUX_MAIN.QUX_C_ID1);
         public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID2 = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_C, QuxMain.QUX_MAIN, "qux_main__fk_qux_c_id2", QuxMain.QUX_MAIN.QUX_C_ID2);
         public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_D, QuxMain.QUX_MAIN, "qux_main__fk_qux_d_id", QuxMain.QUX_MAIN.QUX_D_ID);
+        public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D2_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_D, QuxMain.QUX_MAIN, "qux_main__fk_qux_d2_id", QuxMain.QUX_MAIN.QUX_D2_ID);
+        public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D3_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_D, QuxMain.QUX_MAIN, "qux_main__fk_qux_d3_id", QuxMain.QUX_MAIN.QUX_D3_ID);
+        public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D4_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_D, QuxMain.QUX_MAIN, "qux_main__fk_qux_d4_id", QuxMain.QUX_MAIN.QUX_D4_ID);
     }
 }

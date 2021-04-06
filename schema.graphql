@@ -771,7 +771,7 @@ type MetaConfig {
     url: String
 }
 
-"Auto-generated from DataGridLogic, FileAccessLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
+"Auto-generated from DataGridLogic, FileAccessLogic, ResourceAccessLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type MutationType {
     complexStore(container: ComplexContainerInput): Boolean
     "Example for Datagrid column configuration. Stores columns in public.grid_columns"
@@ -840,7 +840,7 @@ type QueryConfig {
     sortFields: [FieldExpression]
 }
 
-"Auto-generated from DataGridLogic, FileAccessLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
+"Auto-generated from DataGridLogic, FileAccessLogic, ResourceAccessLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type QueryType {
     _interactiveQueryDefinition(def: InteractiveQueryDefinitionInput): InteractiveQueryDefinition
     getDomainTypeIndex(condition: Condition, domainType: String!, field: String!): [String]
@@ -1000,6 +1000,20 @@ type QuxMain {
     quxCId2: String
     "Target of 'qux_d_id'"
     quxD: QuxD
+    "Target of 'qux_d2_id'"
+    quxD2: QuxD
+    "DB foreign key column 'qux_d2_id'"
+    quxD2Id: String
+    "Target of 'qux_d3_id'"
+    quxD3: QuxD
+    "DB foreign key column 'qux_d3_id'"
+    quxD3Id: String
+    "Target of 'qux_d4_id'"
+    quxD4: QuxD
+    "DB foreign key column 'qux_d4_id'"
+    quxD4Id: String
+    "DB foreign key column 'qux_d_id'"
+    quxDId: String
 }
 
 "Domain object from Java POJO de.quinscape.automatontest.model.SumPerMonth shaped like the sum_per_month view in the database dump"
@@ -1395,6 +1409,9 @@ input QuxMainInput {
     quxBName: String
     quxCId1: String!
     quxCId2: String
+    quxD2Id: String
+    quxD3Id: String
+    quxD4Id: String
     quxDId: String
 }
 
@@ -1466,8 +1483,8 @@ scalar Long
 "Map graph representing JOOQ conditions"
 scalar Condition
 
-"BigDecimal wrapped as string"
-scalar BigDecimal
-
 "SQL date equivalent"
 scalar Date
+
+"BigDecimal wrapped as string"
+scalar BigDecimal

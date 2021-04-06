@@ -23,9 +23,6 @@ const FKTestDetail = props => {
                         value={
                             scope.currentQux
                         }
-                        options={{
-                            autoSubmit: true
-                        }}
                     />
                 </div>
             </div>

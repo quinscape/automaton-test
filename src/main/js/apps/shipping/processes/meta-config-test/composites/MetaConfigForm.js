@@ -99,7 +99,7 @@ const MetaConfigForm = props => {
                     key={formConfig.root.corgeType && formConfig.root.corgeType.id}
                     name="corgeTypeId"
                     display="corgeType.name"
-                    validateInputJS={(row, value) => row.name === value}
+                    searchFilter="name"
                     tooltip="Corge Type"
                     required={true}
                     query={scope.corgeTypes}

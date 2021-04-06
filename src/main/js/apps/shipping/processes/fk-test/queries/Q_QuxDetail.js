@@ -29,12 +29,6 @@ export default query(
                     name
                     value
                 }
-                quxD{
-                    # without scalar field and with id-FK, we need the id here
-                    id
-                    name
-                    value
-                }
             }
         }
     }`

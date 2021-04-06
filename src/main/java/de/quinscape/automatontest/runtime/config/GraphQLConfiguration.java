@@ -126,7 +126,11 @@ public class GraphQLConfiguration
             .configureRelation(QUX_MAIN.QUX_B_NAME, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxB", null)
             .configureRelation(QUX_MAIN.QUX_C_ID1, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxC1", null)
             .configureRelation(QUX_MAIN.QUX_C_ID2, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxC2", null)
-            .configureRelation(QUX_MAIN.QUX_D_ID, SourceField.OBJECT, TargetField.NONE, "quxD", null)
+
+            .configureRelation(QUX_MAIN.QUX_D_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxD", null)
+            .configureRelation(QUX_MAIN.QUX_D2_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxD2", null)
+            .configureRelation(QUX_MAIN.QUX_D3_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxD3", null)
+            .configureRelation(QUX_MAIN.QUX_D4_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxD4", null)
 
             .configureRelation(BAZ_LINK.BAZ_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
             .configureRelation(BAZ_LINK.VALUE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
