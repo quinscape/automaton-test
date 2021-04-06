@@ -107,17 +107,14 @@
                                 "type": "Expression",
                                 "code": "\"mr-1 btn btn-secondary\""
                             }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "text",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"To A\""
-                            }
                         }
                     ],
-                    "kids": [],
+                    "kids": [
+                        {
+                            "type": "JSXText",
+                            "value": "To A"
+                        }
+                    ],
                     "type": "JSXElement"
                 },
                 {
@@ -138,17 +135,14 @@
                                 "type": "Expression",
                                 "code": "\"mr-1 btn btn-secondary\""
                             }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "text",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"To B\""
-                            }
                         }
                     ],
-                    "kids": [],
+                    "kids": [
+                        {
+                            "type": "JSXText",
+                            "value": "To B"
+                        }
+                    ],
                     "type": "JSXElement"
                 },
                 {
@@ -169,17 +163,14 @@
                                 "type": "Expression",
                                 "code": "\"mr-1 btn btn-secondary\""
                             }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "text",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"To C\""
-                            }
                         }
                     ],
-                    "kids": [],
+                    "kids": [
+                        {
+                            "type": "JSXText",
+                            "value": "To C"
+                        }
+                    ],
                     "type": "JSXElement"
                 },
                 {

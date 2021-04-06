@@ -79,7 +79,7 @@
                                 }
                             ]
                         },
-                        "init": "useState(DEFAULT_OPTIONS)"
+                        "init": "useState(() => ({ ...DEFAULT_OPTIONS, isolation: false }))"
                     }
                 ]
             },

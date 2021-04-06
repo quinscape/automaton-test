@@ -32,6 +32,10 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "DEFAULT_OPTIONS"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FormLayout"
                 }
             ]
         },
@@ -79,7 +83,7 @@
                                 }
                             ]
                         },
-                        "init": "useState(DEFAULT_OPTIONS)"
+                        "init": "useState(() => ({ ...DEFAULT_OPTIONS, layout: FormLayout.HORIZONTAL, isolation: false, validation: { validateField: (ctx, value) => { if (ctx.qualifiedName === \"description\" && value === \"AAA\") { console.log(\"ERR\", ctx, value); return \"HighLevel-Validation: Value can't be AAA\"; } } } }))"
                     }
                 ]
             },

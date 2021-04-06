@@ -2,6 +2,16 @@
     "importDeclarations": [
         {
             "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
             "source": "react",
             "specifiers": [
                 {
@@ -27,10 +37,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "Button"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "i18n"
                 }
             ]
         },
@@ -257,22 +263,6 @@
                                                 },
                                                 {
                                                     "type": "JSXAttribute",
-                                                    "name": "icon",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"fa-plus-square\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
-                                                    "name": "text",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"Increment\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
                                                     "name": "transition",
                                                     "value": {
                                                         "type": "Expression",
@@ -280,7 +270,27 @@
                                                     }
                                                 }
                                             ],
-                                            "kids": [],
+                                            "kids": [
+                                                {
+                                                    "name": "Icon",
+                                                    "attrs": [
+                                                        {
+                                                            "type": "JSXAttribute",
+                                                            "name": "className",
+                                                            "value": {
+                                                                "type": "Expression",
+                                                                "code": "\"fa-plus-square\""
+                                                            }
+                                                        }
+                                                    ],
+                                                    "kids": [],
+                                                    "type": "JSXElement"
+                                                },
+                                                {
+                                                    "type": "JSXText",
+                                                    "value": "Increment"
+                                                }
+                                            ],
                                             "type": "JSXElement"
                                         },
                                         {
@@ -292,22 +302,6 @@
                                                     "value": {
                                                         "type": "Expression",
                                                         "code": "\"btn btn-secondary mr-1\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
-                                                    "name": "icon",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"fa-minus-square\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
-                                                    "name": "text",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"Decrement\""
                                                     }
                                                 },
                                                 {
@@ -319,7 +313,27 @@
                                                     }
                                                 }
                                             ],
-                                            "kids": [],
+                                            "kids": [
+                                                {
+                                                    "name": "Icon",
+                                                    "attrs": [
+                                                        {
+                                                            "type": "JSXAttribute",
+                                                            "name": "className",
+                                                            "value": {
+                                                                "type": "Expression",
+                                                                "code": "\"fa-minus-square\""
+                                                            }
+                                                        }
+                                                    ],
+                                                    "kids": [],
+                                                    "type": "JSXElement"
+                                                },
+                                                {
+                                                    "type": "JSXText",
+                                                    "value": "Decrement"
+                                                }
+                                            ],
                                             "type": "JSXElement"
                                         },
                                         {
@@ -331,22 +345,6 @@
                                                     "value": {
                                                         "type": "Expression",
                                                         "code": "\"btn btn-secondary mr-1\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
-                                                    "name": "icon",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"fa-plus-square\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
-                                                    "name": "text",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"Increment Non-Versioned\""
                                                     }
                                                 },
                                                 {
@@ -358,7 +356,27 @@
                                                     }
                                                 }
                                             ],
-                                            "kids": [],
+                                            "kids": [
+                                                {
+                                                    "name": "Icon",
+                                                    "attrs": [
+                                                        {
+                                                            "type": "JSXAttribute",
+                                                            "name": "className",
+                                                            "value": {
+                                                                "type": "Expression",
+                                                                "code": "\"fa-plus-square\""
+                                                            }
+                                                        }
+                                                    ],
+                                                    "kids": [],
+                                                    "type": "JSXElement"
+                                                },
+                                                {
+                                                    "type": "JSXText",
+                                                    "value": "Increment Non-Versioned"
+                                                }
+                                            ],
                                             "type": "JSXElement"
                                         },
                                         {
@@ -374,22 +392,6 @@
                                                 },
                                                 {
                                                     "type": "JSXAttribute",
-                                                    "name": "icon",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"fa-minus-square\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
-                                                    "name": "text",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"Decrement Non-Versioned\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
                                                     "name": "transition",
                                                     "value": {
                                                         "type": "Expression",
@@ -397,7 +399,27 @@
                                                     }
                                                 }
                                             ],
-                                            "kids": [],
+                                            "kids": [
+                                                {
+                                                    "name": "Icon",
+                                                    "attrs": [
+                                                        {
+                                                            "type": "JSXAttribute",
+                                                            "name": "className",
+                                                            "value": {
+                                                                "type": "Expression",
+                                                                "code": "\"fa-minus-square\""
+                                                            }
+                                                        }
+                                                    ],
+                                                    "kids": [],
+                                                    "type": "JSXElement"
+                                                },
+                                                {
+                                                    "type": "JSXText",
+                                                    "value": "Decrement Non-Versioned"
+                                                }
+                                            ],
                                             "type": "JSXElement"
                                         }
                                     ],
@@ -429,22 +451,6 @@
                                                 },
                                                 {
                                                     "type": "JSXAttribute",
-                                                    "name": "icon",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"fa-arrow-left\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
-                                                    "name": "text",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"Back\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
                                                     "name": "transition",
                                                     "value": {
                                                         "type": "Expression",
@@ -452,7 +458,27 @@
                                                     }
                                                 }
                                             ],
-                                            "kids": [],
+                                            "kids": [
+                                                {
+                                                    "name": "Icon",
+                                                    "attrs": [
+                                                        {
+                                                            "type": "JSXAttribute",
+                                                            "name": "className",
+                                                            "value": {
+                                                                "type": "Expression",
+                                                                "code": "\"fa-arrow-left\""
+                                                            }
+                                                        }
+                                                    ],
+                                                    "kids": [],
+                                                    "type": "JSXElement"
+                                                },
+                                                {
+                                                    "type": "JSXText",
+                                                    "value": "Back"
+                                                }
+                                            ],
                                             "type": "JSXElement"
                                         },
                                         {
@@ -468,22 +494,6 @@
                                                 },
                                                 {
                                                     "type": "JSXAttribute",
-                                                    "name": "icon",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"fa-arrow-left\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
-                                                    "name": "text",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"Back 2\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
                                                     "name": "transition",
                                                     "value": {
                                                         "type": "Expression",
@@ -491,7 +501,27 @@
                                                     }
                                                 }
                                             ],
-                                            "kids": [],
+                                            "kids": [
+                                                {
+                                                    "name": "Icon",
+                                                    "attrs": [
+                                                        {
+                                                            "type": "JSXAttribute",
+                                                            "name": "className",
+                                                            "value": {
+                                                                "type": "Expression",
+                                                                "code": "\"fa-arrow-left\""
+                                                            }
+                                                        }
+                                                    ],
+                                                    "kids": [],
+                                                    "type": "JSXElement"
+                                                },
+                                                {
+                                                    "type": "JSXText",
+                                                    "value": "Back 2"
+                                                }
+                                            ],
                                             "type": "JSXElement"
                                         },
                                         {
@@ -507,22 +537,6 @@
                                                 },
                                                 {
                                                     "type": "JSXAttribute",
-                                                    "name": "icon",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"fa-arrow-left\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
-                                                    "name": "text",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"Back to Parent\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
                                                     "name": "transition",
                                                     "value": {
                                                         "type": "Expression",
@@ -530,7 +544,27 @@
                                                     }
                                                 }
                                             ],
-                                            "kids": [],
+                                            "kids": [
+                                                {
+                                                    "name": "Icon",
+                                                    "attrs": [
+                                                        {
+                                                            "type": "JSXAttribute",
+                                                            "name": "className",
+                                                            "value": {
+                                                                "type": "Expression",
+                                                                "code": "\"fa-arrow-left\""
+                                                            }
+                                                        }
+                                                    ],
+                                                    "kids": [],
+                                                    "type": "JSXElement"
+                                                },
+                                                {
+                                                    "type": "JSXText",
+                                                    "value": "Back to Parent"
+                                                }
+                                            ],
                                             "type": "JSXElement"
                                         },
                                         {
@@ -546,22 +580,6 @@
                                                 },
                                                 {
                                                     "type": "JSXAttribute",
-                                                    "name": "icon",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"fa-arrow-left\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
-                                                    "name": "text",
-                                                    "value": {
-                                                        "type": "Expression",
-                                                        "code": "\"Back to Home\""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "JSXAttribute",
                                                     "name": "transition",
                                                     "value": {
                                                         "type": "Expression",
@@ -569,7 +587,27 @@
                                                     }
                                                 }
                                             ],
-                                            "kids": [],
+                                            "kids": [
+                                                {
+                                                    "name": "Icon",
+                                                    "attrs": [
+                                                        {
+                                                            "type": "JSXAttribute",
+                                                            "name": "className",
+                                                            "value": {
+                                                                "type": "Expression",
+                                                                "code": "\"fa-arrow-left\""
+                                                            }
+                                                        }
+                                                    ],
+                                                    "kids": [],
+                                                    "type": "JSXElement"
+                                                },
+                                                {
+                                                    "type": "JSXText",
+                                                    "value": "Back to Home"
+                                                }
+                                            ],
                                             "type": "JSXElement"
                                         }
                                     ],

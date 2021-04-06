@@ -2,6 +2,20 @@
     "importDeclarations": [
         {
             "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Form"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
             "source": "react",
             "specifiers": [
                 {
@@ -11,6 +25,14 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "useEffect"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "useMemo"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "useState"
                 }
             ]
         },
@@ -37,25 +59,15 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "domainql-form",
-            "specifiers": [
-                {
-                    "type": "ImportSpecifier",
-                    "name": "Field"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "Form"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
             "source": "@quinscape/automaton-js",
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
                     "name": "Button"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "CalendarField"
                 },
                 {
                     "type": "ImportSpecifier",
@@ -69,10 +81,6 @@
                     "type": "ImportSpecifier",
                     "name": "DataGrid",
                     "aliasOf": "IQueryGrid"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "CalendarField"
                 }
             ]
         },
@@ -82,11 +90,11 @@
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "MIN_DATE"
+                    "name": "MAX_DATE"
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "MAX_DATE"
+                    "name": "MIN_DATE"
                 }
             ]
         }
@@ -112,6 +120,14 @@
                                     "value": {
                                         "type": "Identifier",
                                         "name": "env"
+                                    }
+                                },
+                                {
+                                    "type": "ObjectProperty",
+                                    "key": "name",
+                                    "value": {
+                                        "type": "Identifier",
+                                        "name": "name"
                                     }
                                 }
                             ]
@@ -140,6 +156,29 @@
                             ]
                         },
                         "init": "env"
+                    }
+                ]
+            },
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ArrayPattern",
+                            "elements": [
+                                {
+                                    "type": "Identifier",
+                                    "name": "ding"
+                                },
+                                {
+                                    "type": "Identifier",
+                                    "name": "setDing"
+                                }
+                            ]
+                        },
+                        "init": "useState(\"bla\")"
                     }
                 ]
             }
@@ -188,7 +227,7 @@
                                     "name": "options",
                                     "value": {
                                         "type": "JSXExpressionContainer",
-                                        "code": "{{ autoSubmit: true }}"
+                                        "code": "{{ autoSubmit: true, isolation: false }}"
                                     }
                                 }
                             ],
@@ -353,22 +392,6 @@
                                                     },
                                                     {
                                                         "type": "JSXAttribute",
-                                                        "name": "icon",
-                                                        "value": {
-                                                            "type": "Expression",
-                                                            "code": "\"fa-edit\""
-                                                        }
-                                                    },
-                                                    {
-                                                        "type": "JSXAttribute",
-                                                        "name": "text",
-                                                        "value": {
-                                                            "type": "Expression",
-                                                            "code": "\"Detail\""
-                                                        }
-                                                    },
-                                                    {
-                                                        "type": "JSXAttribute",
                                                         "name": "transition",
                                                         "value": {
                                                             "type": "Expression",
@@ -384,7 +407,27 @@
                                                         }
                                                     }
                                                 ],
-                                                "kids": [],
+                                                "kids": [
+                                                    {
+                                                        "name": "Icon",
+                                                        "attrs": [
+                                                            {
+                                                                "type": "JSXAttribute",
+                                                                "name": "className",
+                                                                "value": {
+                                                                    "type": "Expression",
+                                                                    "code": "\"fa-edit\""
+                                                                }
+                                                            }
+                                                        ],
+                                                        "kids": [],
+                                                        "type": "JSXElement"
+                                                    },
+                                                    {
+                                                        "type": "JSXText",
+                                                        "value": "Detail"
+                                                    }
+                                                ],
                                                 "type": "JSXElement"
                                             }
                                         ],
@@ -492,7 +535,7 @@
                                         "constants": [],
                                         "root": {
                                             "type": "Expression",
-                                            "code": "field(\"numa\").add(field(\"numb\")).between(value(\"Int\", min), value(\"Int\", max))"
+                                            "code": "field(\"numa\").add(field(\"numb\")).between(value(min, \"Int\"), value(max, \"Int\"))"
                                         }
                                     }
                                 },

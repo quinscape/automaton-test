@@ -55,6 +55,10 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "WorkingSet"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
                 }
             ]
         },
@@ -157,14 +161,13 @@
                         }
                     },
                     "cancel": {
-                        "to": "CorgeList",
                         "discard": true,
                         "action": {
                             "type": "Action",
                             "params": [
                                 "t"
                             ],
-                            "code": "{ console.log(\"Transition 'cancel'\"); }"
+                            "code": "{ console.log(\"Transition 'cancel'\"); t.back(backToParent); }"
                         }
                     }
                 }

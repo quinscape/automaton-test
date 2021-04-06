@@ -2,6 +2,16 @@
     "importDeclarations": [
         {
             "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
             "source": "react",
             "specifiers": [
                 {
@@ -130,25 +140,29 @@
                                 "type": "Expression",
                                 "code": "\"mr-1 btn btn-secondary\""
                             }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "icon",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"fa-subway\""
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "text",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"Open Sub-Process\""
-                            }
                         }
                     ],
-                    "kids": [],
+                    "kids": [
+                        {
+                            "name": "Icon",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "className",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"fa-subway\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "type": "JSXText",
+                            "value": "Open Sub-Process"
+                        }
+                    ],
                     "type": "JSXElement"
                 },
                 {
@@ -169,25 +183,29 @@
                                 "type": "Expression",
                                 "code": "\"mr-1 btn btn-secondary\""
                             }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "icon",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"fa-subway\""
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "text",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"Open Customer as Sub\""
-                            }
                         }
                     ],
-                    "kids": [],
+                    "kids": [
+                        {
+                            "name": "Icon",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "className",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"fa-subway\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "type": "JSXText",
+                            "value": "Open Customer as Sub"
+                        }
+                    ],
                     "type": "JSXElement"
                 },
                 {
@@ -208,25 +226,29 @@
                                 "type": "Expression",
                                 "code": "\"mr-1 btn btn-secondary\""
                             }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "icon",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"fa-minus-circle\""
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "text",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"Clear\""
-                            }
                         }
                     ],
-                    "kids": [],
+                    "kids": [
+                        {
+                            "name": "Icon",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "className",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"fa-minus-circle\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "type": "JSXText",
+                            "value": "Clear"
+                        }
+                    ],
                     "type": "JSXElement"
                 },
                 {

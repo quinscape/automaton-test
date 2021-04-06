@@ -12,7 +12,7 @@
         }
     ],
     "query": {
-        "query": "query iQueryFoo($config: QueryConfigInput!)\n    {\n        \n        iQueryFoo(config: $config)\n        {\n            type\n            columnStates{\n                name\n                enabled\n                sortable\n            }\n            queryConfig{\n                id\n                condition\n                offset\n                pageSize\n                sortFields\n            }\n            rows{\n                id\n                name\n                description\n                num\n                owner{\n                    login\n                    \n                }\n            }\n            rowCount\n        }\n    }",
+        "query": "query iQueryFoo($config: QueryConfigInput!)\n    {\n        \n        iQueryFoo(config: $config)\n        {\n            type\n            columnStates{\n                name\n                enabled\n                sortable\n            }\n            queryConfig{\n                id\n                condition\n                offset\n                pageSize\n                sortFields\n            }\n            rows{\n                id\n                name\n                description\n                num\n                \n                owner{\n                    login\n                }\n            }\n            rowCount\n        }\n    }",
         "variables": {
             "config": {
                 "pageSize": 5,

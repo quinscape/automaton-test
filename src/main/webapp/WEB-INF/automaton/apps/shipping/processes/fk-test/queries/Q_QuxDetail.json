@@ -12,7 +12,7 @@
         }
     ],
     "query": {
-        "query": "query iQueryQuxMain($config: QueryConfigInput!)\n    {\n        iQueryQuxMain(config: $config)\n        {\n            rows{\n                id\n                name\n                quxAId\n                quxA{\n                    name\n                    value\n                }\n                quxBName\n                quxB{\n                    # name is embedded for this key\n                    value\n                }\n                quxCId1\n                quxC1{\n                    name\n                    value\n                }\n                quxCId2\n                quxC2{\n                    name\n                    value\n                }\n                quxD{\n                    # without scalar field and with id-FK, we need the id here\n                    id\n                    name\n                    value\n                }\n            }\n        }\n    }",
+        "query": "query iQueryQuxDetail($config: QueryConfigInput!)\n    {\n        iQueryQuxMain(config: $config)\n        {\n            rows{\n                id\n                name\n                quxAId\n                quxA{\n                    name\n                    value\n                }\n                quxBName\n                quxB{\n                    # name is embedded for this key\n                    value\n                }\n                quxCId1\n                quxC1{\n                    name\n                    value\n                }\n                quxCId2\n                quxC2{\n                    name\n                    value\n                }\n            }\n        }\n    }",
         "variables": null
     }
 }

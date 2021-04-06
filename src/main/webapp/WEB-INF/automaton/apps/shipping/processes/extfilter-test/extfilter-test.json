@@ -51,6 +51,16 @@
                     "name": "backToParent"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "luxon",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "DateTime"
+                }
+            ]
         }
     ],
     "processExports": {
@@ -101,7 +111,7 @@
                 },
                 {
                     "name": "bars",
-                    "defaultValue": "injection( // language=GraphQL\n`query iQueryBar($config: QueryConfigInput!)\n            {\n                iQueryBar(config: $config)\n                {\n                    type\n                    columnStates{\n                        name\n                        enabled\n                        sortable\n                    }\n                    queryConfig{\n                        id\n                        condition\n                        currentPage\n                        pageSize\n                        sortFields\n                    }\n                    rows{\n                        id\n                        created\n                        name\n                        numa\n                        numb\n                    }\n                    rowCount\n                }\n            }`, { config: //     {\n//     sortFields: [\"name\"],\n//     pageSize: 5,\n// }\n{ \"pageSize\": 5, \"sortFields\": [{ \"type\": \"Operation\", \"name\": \"desc\", \"operands\": [{ \"type\": \"Operation\", \"name\": \"add\", \"operands\": [{ \"type\": \"Field\", \"name\": \"numa\" }, { \"type\": \"Field\", \"name\": \"numb\" }] }] }] } })",
+                    "defaultValue": "injection( // language=GraphQL\n`query iQueryBar($config: QueryConfigInput!)\n            {\n                iQueryBar(config: $config)\n                {\n                    type\n                    columnStates{\n                        name\n                        enabled\n                        sortable\n                    }\n                    queryConfig{\n                        id\n                        condition\n                        offset\n                        pageSize\n                        sortFields\n                    }\n                    rows{\n                        id\n                        created\n                        name\n                        numa\n                        numb\n                    }\n                    rowCount\n                }\n            }`, { config: //     {\n//     sortFields: [\"name\"],\n//     pageSize: 5,\n// }\n{ \"pageSize\": 5, \"sortFields\": [{ \"type\": \"Operation\", \"name\": \"desc\", \"operands\": [{ \"type\": \"Operation\", \"name\": \"add\", \"operands\": [{ \"type\": \"Field\", \"name\": \"numa\" }, { \"type\": \"Field\", \"name\": \"numb\" }] }] }] } })",
                     "description": "* Current todos"
                 }
             ],
@@ -135,8 +145,8 @@
             "helpers": []
         },
         "extraConstants": [
-            "export const MIN_DATE = new Date(\"2018-03-01T00:00:00Z\");",
-            "export const MAX_DATE = new Date(\"2019-04-30T00:00:00Z\");"
+            "export const MIN_DATE = DateTime.fromISO(\"2018-03-01T00:00:00Z\");",
+            "export const MAX_DATE = DateTime.fromISO(\"2019-04-30T00:00:00Z\");"
         ]
     }
 }

@@ -13,16 +13,6 @@
                     "name": "observable"
                 }
             ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "@quinscape/automaton-js",
-            "specifiers": [
-                {
-                    "type": "ImportSpecifier",
-                    "name": "type"
-                }
-            ]
         }
     ],
     "userScope": {
@@ -31,6 +21,19 @@
             {
                 "name": "value",
                 "defaultValue": "\"bar\"",
+                "description": null
+            }
+        ],
+        "actions": [],
+        "computeds": [],
+        "helpers": []
+    },
+    "sessionScope": {
+        "name": "SessionScope",
+        "observables": [
+            {
+                "name": "value",
+                "defaultValue": "\"baz\"",
                 "description": null
             }
         ],

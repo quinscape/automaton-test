@@ -48,6 +48,10 @@
                 },
                 {
                     "type": "ImportSpecifier",
+                    "name": "FilterDSL"
+                },
+                {
+                    "type": "ImportSpecifier",
                     "name": "backToParent"
                 }
             ]
@@ -77,7 +81,7 @@
                             "params": [
                                 "t"
                             ],
-                            "code": "{ scope.currentFoo = t.context; }"
+                            "code": "{ scope.currentFoo = config.inputSchema.clone(t.context); }"
                         }
                     }
                 },

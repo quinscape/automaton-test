@@ -10,15 +10,11 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "computed"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "action"
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "toJS"
+                    "name": "isObservable"
                 }
             ]
         },
@@ -48,15 +44,41 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "GraphQLQuery"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "backToParent"
                 },
                 {
                     "type": "ImportSpecifier",
                     "name": "FilterDSL"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_FooType",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooType"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_FooDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooDetail"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_FooList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooList"
                 }
             ]
         }
@@ -75,7 +97,17 @@
                             "params": [
                                 "t"
                             ],
-                            "code": "{ const newObj = createDomainObject(\"FooInput\"); newObj.name = \"Unnamed Foo\"; newObj.desc = \"\"; newObj.num = 0; newObj.flag = false; newObj.created = new Date(); newObj.type = \"TYPE_A\"; return scope.updateCurrent(newObj); }"
+                            "code": "{ // use empty id to be replaced by a new id server-side (\nconst newObj = createDomainObject(\"FooInput\", \"\"); newObj.name = \"Unnamed\"; newObj.description = null; newObj.num = 0; newObj.flag = false; newObj.created = new Date(); newObj.type = \"TYPE_A\"; return scope.updateCurrent(newObj); }"
+                        }
+                    },
+                    "new-foo-no-ddefaults": {
+                        "to": "CRUDDetail",
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "{ // use empty id to be replaced by a new id server-side (\nconst newObj = createDomainObject(\"FooInput\", \"\"); // test required\nnewObj.name = null; // test highlevel validation\nnewObj.description = \"AAA\"; newObj.flag = false; newObj.created = new Date(); newObj.type = \"TYPE_A\"; // XXX: even though we don't set ownerId here, we won't get an\n//      revalidation error because there's no field for it\nreturn scope.updateCurrent(newObj); }"
                         }
                     },
                     "to-detail": {
@@ -85,7 +117,7 @@
                             "params": [
                                 "t"
                             ],
-                            "code": "{ console.log(\"to-detail, context = \", t.context); return FooDetailQuery.execute({ config: { condition: field(\"id\").eq(value(\"String\", t.context)) } }).then(({ iQueryFoo }) => { if (iQueryFoo.rows.length === 0) { alert(\"Could not load Foo with id '\" + t.context); } return scope.updateCurrent(iQueryFoo.rows[0]); }); }"
+                            "code": "{ console.log(\"to-detail, context = \", t.context); return Q_FooDetail.execute({ config: { condition: field(\"id\").eq(value(t.context)) } }).then(({ iQueryFoo }) => { if (iQueryFoo.rows.length === 0) { alert(\"Could not load Foo with id '\" + t.context); } return scope.updateCurrent(config.inputSchema.clone(iQueryFoo.rows[0])); }); }"
                         }
                     }
                 },
@@ -141,12 +173,12 @@
                 },
                 {
                     "name": "foos",
-                    "defaultValue": "injection( // language=GraphQL\n`query iQueryFoo($config: QueryConfigInput!)\n        {\n            iQueryFoo(config: $config)\n            {\n                type\n                columnStates{\n                    name\n                    enabled\n                    sortable\n                }\n                queryConfig{\n                    id\n                    condition\n                    currentPage\n                    pageSize\n                    sortFields\n                }\n                rows{\n                    id\n                    name\n                    description\n                    flag\n                    type\n                    owner{\n                        id\n                        login\n                    }\n                }\n                rowCount\n            }\n        }`, { \"config\": { \"pageSize\": 20 } })",
+                    "defaultValue": "injection(Q_FooList)",
                     "description": "* Foo iQuery"
                 },
                 {
                     "name": "fooTypes",
-                    "defaultValue": "injection( // language=GraphQL\n`query iQueryFooType($config: QueryConfigInput!)\n        {\n            iQueryFooType(config: $config)\n            {\n                rows{\n                    name\n                }\n                rowCount\n            }\n        }`, { \"config\": { // deactivate paging\n\"pageSize\": 0 } })",
+                    "defaultValue": "injection(Q_FooType)",
                     "description": "*\n     *  Example for an iQuery being used to drive a <Select/>\n     *\n     *  We could just as well define the values as constants in this case\n     *\n     * const FOO_TYPES = [\n     *     \"TYPE_A\",\n     *     \"TYPE_B\",\n     *     \"TYPE_C\",\n     *     \"TYPE_D\"\n     * ];\n     *  "
                 }
             ],
@@ -180,8 +212,7 @@
             "helpers": []
         },
         "extraConstants": [
-            "// deconstruct FilterDSL methods\nconst { field, value } = FilterDSL; // language=GraphQL",
-            "// language=GraphQL\nconst FooDetailQuery = new GraphQLQuery(`query queryFooDetail($config: QueryConfigInput!)\n{\n    iQueryFoo(config: $config)\n    {\n        rows{\n            id\n            name\n            num\n            description\n            created\n            flag\n            type\n            owner{\n                id\n                login\n            }\n        }\n    }\n}`); // noinspection JSUnusedGlobalSymbols"
+            "// deconstruct FilterDSL methods\nconst { field, value } = FilterDSL; // noinspection JSUnusedGlobalSymbols"
         ]
     }
 }

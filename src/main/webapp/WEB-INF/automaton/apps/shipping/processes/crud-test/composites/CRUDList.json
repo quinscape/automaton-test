@@ -2,6 +2,16 @@
     "importDeclarations": [
         {
             "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
             "source": "react",
             "specifiers": [
                 {
@@ -26,11 +36,11 @@
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "DataGrid"
+                    "name": "Button"
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "Button"
+                    "name": "DataGrid"
                 },
                 {
                     "type": "ImportSpecifier",
@@ -133,22 +143,6 @@
                                 },
                                 {
                                     "type": "JSXAttribute",
-                                    "name": "icon",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"fa-plus-circle\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "text",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"New Foo\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
                                     "name": "transition",
                                     "value": {
                                         "type": "Expression",
@@ -156,7 +150,27 @@
                                     }
                                 }
                             ],
-                            "kids": [],
+                            "kids": [
+                                {
+                                    "name": "Icon",
+                                    "attrs": [
+                                        {
+                                            "type": "JSXAttribute",
+                                            "name": "className",
+                                            "value": {
+                                                "type": "Expression",
+                                                "code": "\"fa-plus-circle\""
+                                            }
+                                        }
+                                    ],
+                                    "kids": [],
+                                    "type": "JSXElement"
+                                },
+                                {
+                                    "type": "JSXText",
+                                    "value": "New Foo"
+                                }
+                            ],
                             "type": "JSXElement"
                         }
                     ],
@@ -210,22 +224,6 @@
                                             },
                                             {
                                                 "type": "JSXAttribute",
-                                                "name": "icon",
-                                                "value": {
-                                                    "type": "Expression",
-                                                    "code": "\"fa-edit\""
-                                                }
-                                            },
-                                            {
-                                                "type": "JSXAttribute",
-                                                "name": "text",
-                                                "value": {
-                                                    "type": "Expression",
-                                                    "code": "\"Detail\""
-                                                }
-                                            },
-                                            {
-                                                "type": "JSXAttribute",
                                                 "name": "transition",
                                                 "value": {
                                                     "type": "Expression",
@@ -241,7 +239,27 @@
                                                 }
                                             }
                                         ],
-                                        "kids": [],
+                                        "kids": [
+                                            {
+                                                "name": "Icon",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "className",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"fa-edit\""
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [],
+                                                "type": "JSXElement"
+                                            },
+                                            {
+                                                "type": "JSXText",
+                                                "value": "Detail"
+                                            }
+                                        ],
                                         "type": "JSXElement"
                                     }
                                 }
@@ -295,6 +313,21 @@
                                     "value": {
                                         "type": "JSXExpressionContainer",
                                         "code": "{i18n(\"owner\")}"
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "DataGrid.Column",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "name",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"created\""
                                     }
                                 }
                             ],

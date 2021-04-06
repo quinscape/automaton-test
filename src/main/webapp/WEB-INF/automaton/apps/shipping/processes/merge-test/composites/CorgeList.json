@@ -93,6 +93,10 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "openDialog"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "WorkingSetStatus"
                 }
             ]
         },
@@ -626,6 +630,63 @@
                         }
                     ],
                     "kids": [
+                        {
+                            "name": "DataGrid.Column",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "heading",
+                                    "value": {
+                                        "type": "JSXExpressionContainer",
+                                        "code": "{i18n(\"Status\")}"
+                                    }
+                                }
+                            ],
+                            "kids": [
+                                {
+                                    "type": "JSXRenderFunction",
+                                    "params": [
+                                        {
+                                            "type": "Identifier",
+                                            "name": "corge"
+                                        }
+                                    ],
+                                    "constants": [],
+                                    "root": {
+                                        "name": "DataGrid.WorkingSetStatus",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "workingSet",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{scope.workingSet}"
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "type",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"Corge\""
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "id",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{corge.id}"
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    }
+                                }
+                            ],
+                            "type": "JSXElement"
+                        },
                         {
                             "name": "DataGrid.Column",
                             "attrs": [

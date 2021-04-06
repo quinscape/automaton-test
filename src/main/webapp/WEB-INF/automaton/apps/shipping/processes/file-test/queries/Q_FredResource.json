@@ -1,0 +1,18 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "query getFredResource\n    {\n\n        getFredResource\n        {\n            name\n            items{\n                name\n                value\n                flag\n            }\n        }\n    }",
+        "variables": null
+    }
+}

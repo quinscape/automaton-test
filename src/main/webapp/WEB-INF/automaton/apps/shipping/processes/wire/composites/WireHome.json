@@ -2,6 +2,16 @@
     "importDeclarations": [
         {
             "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
             "source": "react",
             "specifiers": [
                 {
@@ -37,11 +47,11 @@
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "i18n"
+                    "name": "Button"
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "Button"
+                    "name": "i18n"
                 }
             ]
         },
@@ -75,15 +85,11 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "Row"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "Col"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "Card"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "CardBody"
                 },
                 {
                     "type": "ImportSpecifier",
@@ -91,7 +97,11 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "CardBody"
+                    "name": "Col"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Row"
                 }
             ]
         }
@@ -358,22 +368,6 @@
                                         },
                                         {
                                             "type": "JSXAttribute",
-                                            "name": "icon",
-                                            "value": {
-                                                "type": "Expression",
-                                                "code": "\"fa-check\""
-                                            }
-                                        },
-                                        {
-                                            "type": "JSXAttribute",
-                                            "name": "text",
-                                            "value": {
-                                                "type": "Expression",
-                                                "code": "\"Test Mutation\""
-                                            }
-                                        },
-                                        {
-                                            "type": "JSXAttribute",
                                             "name": "transition",
                                             "value": {
                                                 "type": "Expression",
@@ -389,7 +383,27 @@
                                             }
                                         }
                                     ],
-                                    "kids": [],
+                                    "kids": [
+                                        {
+                                            "name": "Icon",
+                                            "attrs": [
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "className",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"fa-check\""
+                                                    }
+                                                }
+                                            ],
+                                            "kids": [],
+                                            "type": "JSXElement"
+                                        },
+                                        {
+                                            "type": "JSXText",
+                                            "value": "Test Mutation"
+                                        }
+                                    ],
                                     "type": "JSXElement"
                                 }
                             ],

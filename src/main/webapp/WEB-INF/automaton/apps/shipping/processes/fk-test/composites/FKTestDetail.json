@@ -40,6 +40,16 @@
                     "name": "QuxMainForm"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FormLayout"
+                }
+            ]
         }
     ],
     "extraConstants": [],

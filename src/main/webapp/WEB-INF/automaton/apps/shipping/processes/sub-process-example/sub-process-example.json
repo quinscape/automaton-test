@@ -35,6 +35,26 @@
                     "name": "type"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../iterator-test/queries/Q_Foo",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_Foo"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../datagrid-test/queries/Q_FooList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FooList"
+                }
+            ]
         }
     ],
     "processExports": {
@@ -69,8 +89,8 @@
             "name": "MySubProcessScope",
             "observables": [
                 {
-                    "name": "orders",
-                    "defaultValue": "injection( // language=GraphQL\n`{\n                getOrders\n                {\n                    rowCount\n                    rows{\n                        accepted\n                        customer{\n                            salutation\n                            name\n                        },\n                        id\n                        number\n                        shippingType{\n                            name\n                        }\n                        status\n                    }\n                }\n        }`)",
+                    "name": "foos",
+                    "defaultValue": "injection(Q_FooList)",
                     "description": "* Current orders"
                 }
             ],

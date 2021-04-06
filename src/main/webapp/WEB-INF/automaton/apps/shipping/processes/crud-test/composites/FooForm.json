@@ -2,6 +2,32 @@
     "importDeclarations": [
         {
             "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Field"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "GlobalErrors"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "TextArea"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "withForm"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
             "source": "react",
             "specifiers": [
                 {
@@ -40,28 +66,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "ScrollTracker"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "domainql-form",
-            "specifiers": [
-                {
-                    "type": "ImportSpecifier",
-                    "name": "Field"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "GlobalErrors"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "TextArea"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "withForm"
                 }
             ]
         },
@@ -292,25 +296,29 @@
                                         "type": "Expression",
                                         "code": "\"save\""
                                     }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "icon",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"fa-save mr-1\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "text",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"Save\""
-                                    }
                                 }
                             ],
-                            "kids": [],
+                            "kids": [
+                                {
+                                    "name": "Icon",
+                                    "attrs": [
+                                        {
+                                            "type": "JSXAttribute",
+                                            "name": "className",
+                                            "value": {
+                                                "type": "Expression",
+                                                "code": "\"fa-save mr-1\""
+                                            }
+                                        }
+                                    ],
+                                    "kids": [],
+                                    "type": "JSXElement"
+                                },
+                                {
+                                    "type": "JSXText",
+                                    "value": "Save"
+                                }
+                            ],
                             "type": "JSXElement"
                         },
                         {
@@ -331,25 +339,29 @@
                                         "type": "Expression",
                                         "code": "\"delete\""
                                     }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "icon",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"fa-times mr-1\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "text",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"Delete\""
-                                    }
                                 }
                             ],
-                            "kids": [],
+                            "kids": [
+                                {
+                                    "name": "Icon",
+                                    "attrs": [
+                                        {
+                                            "type": "JSXAttribute",
+                                            "name": "className",
+                                            "value": {
+                                                "type": "Expression",
+                                                "code": "\"fa-times mr-1\""
+                                            }
+                                        }
+                                    ],
+                                    "kids": [],
+                                    "type": "JSXElement"
+                                },
+                                {
+                                    "type": "JSXText",
+                                    "value": "Delete"
+                                }
+                            ],
                             "type": "JSXElement"
                         },
                         {
@@ -370,25 +382,29 @@
                                         "type": "Expression",
                                         "code": "\"cancel\""
                                     }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "icon",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"fa-times mr-1\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "text",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"Cancel\""
-                                    }
                                 }
                             ],
-                            "kids": [],
+                            "kids": [
+                                {
+                                    "name": "Icon",
+                                    "attrs": [
+                                        {
+                                            "type": "JSXAttribute",
+                                            "name": "className",
+                                            "value": {
+                                                "type": "Expression",
+                                                "code": "\"fa-times mr-1\""
+                                            }
+                                        }
+                                    ],
+                                    "kids": [],
+                                    "type": "JSXElement"
+                                },
+                                {
+                                    "type": "JSXText",
+                                    "value": "Cancel"
+                                }
+                            ],
                             "type": "JSXElement"
                         }
                     ],

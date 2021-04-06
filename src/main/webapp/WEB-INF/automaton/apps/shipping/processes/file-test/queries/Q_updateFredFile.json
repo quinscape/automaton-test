@@ -1,0 +1,18 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "query"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "query": "mutation updateFredFile($fred: FredInput!)\n    {\n\n        updateFredFile(fred: $fred)\n    }",
+        "variables": null
+    }
+}

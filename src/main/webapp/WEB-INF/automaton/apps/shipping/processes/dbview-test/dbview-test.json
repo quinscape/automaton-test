@@ -75,7 +75,7 @@
             "observables": [
                 {
                     "name": "statistics",
-                    "defaultValue": "injection( // language=GraphQL\n`query iQuerySumPerMonth($config: QueryConfigInput!)\n        {\n            iQuerySumPerMonth(config: $config)\n            {\n                type\n                columnStates{\n                    name\n                    enabled\n                    sortable\n                }\n                queryConfig{\n                    id\n                    condition\n                    currentPage\n                    pageSize\n                    sortFields\n                }\n                rows{\n                    year\n                    month\n                    sum\n                }\n                rowCount\n            }\n        }`, { \"config\": { pageSize: 12, sortFields: [\"year\", \"month\"] } })",
+                    "defaultValue": "injection( // language=GraphQL\n`query iQuerySumPerMonth($config: QueryConfigInput!)\n        {\n            iQuerySumPerMonth(config: $config)\n            {\n                type\n                columnStates{\n                    name\n                    enabled\n                    sortable\n                }\n                queryConfig{\n                    id\n                    condition\n                    offset\n                    pageSize\n                    sortFields\n                }\n                rows{\n                    year\n                    month\n                    sum\n                }\n                rowCount\n            }\n        }`, { \"config\": { pageSize: 12, sortFields: [\"year\", \"month\"] } })",
                     "description": null
                 }
             ],

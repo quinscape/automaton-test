@@ -2,6 +2,40 @@
     "importDeclarations": [
         {
             "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Addon"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Field"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "GlobalConfig"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "GlobalErrors"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "withForm"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FormContext"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
             "source": "react",
             "specifiers": [
                 {
@@ -31,7 +65,7 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "config"
+                    "name": "FilterDSL"
                 },
                 {
                     "type": "ImportSpecifier",
@@ -44,24 +78,10 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "ScrollTracker"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "domainql-form",
-            "specifiers": [
-                {
-                    "type": "ImportSpecifier",
-                    "name": "Field"
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "GlobalErrors"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "withForm"
+                    "name": "useAutomatonEnv"
                 }
             ]
         },
@@ -124,12 +144,61 @@
                     "name": "Q_QuxD"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
         }
     ],
-    "extraConstants": [],
+    "extraConstants": [
+        "const { and, or, field, value, component } = FilterDSL;"
+    ],
     "composite": {
         "type": "CompositeComponent",
         "constants": [
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "Identifier",
+                            "name": "env"
+                        },
+                        "init": "useAutomatonEnv()"
+                    }
+                ]
+            },
+            {
+                "type": "VariableDeclaration",
+                "kind": "const",
+                "declarations": [
+                    {
+                        "type": "VariableDeclarator",
+                        "id": {
+                            "type": "ObjectPattern",
+                            "properties": [
+                                {
+                                    "type": "ObjectProperty",
+                                    "key": "scope",
+                                    "value": {
+                                        "type": "Identifier",
+                                        "name": "scope"
+                                    }
+                                }
+                            ]
+                        },
+                        "init": "env"
+                    }
+                ]
+            },
             {
                 "type": "VariableDeclaration",
                 "kind": "const",
@@ -175,408 +244,11 @@
                         "init": "formConfig"
                     }
                 ]
-            },
-            {
-                "type": "VariableDeclaration",
-                "kind": "const",
-                "declarations": [
-                    {
-                        "type": "VariableDeclarator",
-                        "id": {
-                            "type": "Identifier",
-                            "name": "auth"
-                        },
-                        "init": "config.auth"
-                    }
-                ]
             }
         ],
         "root": {
-            "name": "ScrollTracker",
-            "attrs": [
-                {
-                    "type": "JSXAttribute",
-                    "name": "formConfig",
-                    "value": {
-                        "type": "JSXExpressionContainer",
-                        "code": "{formConfig}"
-                    }
-                }
-            ],
-            "kids": [
-                {
-                    "name": "h1",
-                    "attrs": [],
-                    "kids": [
-                        {
-                            "type": "JSXExpressionContainer",
-                            "code": "{i18n(\"Qux Detail\")}"
-                        }
-                    ],
-                    "type": "JSXElement"
-                },
-                {
-                    "name": "GlobalErrors",
-                    "attrs": [],
-                    "kids": [],
-                    "type": "JSXElement"
-                },
-                {
-                    "name": "Field",
-                    "attrs": [
-                        {
-                            "type": "JSXAttribute",
-                            "name": "name",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"name\""
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "helpText",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"Field A!\""
-                            }
-                        }
-                    ],
-                    "kids": [],
-                    "type": "JSXElement"
-                },
-                {
-                    "name": "FKSelector",
-                    "attrs": [
-                        {
-                            "type": "JSXAttribute",
-                            "name": "name",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"quxAId\""
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "display",
-                            "value": {
-                                "type": "JSXExpressionContainer",
-                                "code": "{() => root.quxA.name}"
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "required",
-                            "value": {
-                                "type": "JSXExpressionContainer",
-                                "code": "{true}"
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "query",
-                            "value": {
-                                "type": "JSXExpressionContainer",
-                                "code": "{Q_QuxA}"
-                            }
-                        }
-                    ],
-                    "kids": [],
-                    "type": "JSXElement"
-                },
-                {
-                    "name": "FKSelector",
-                    "attrs": [
-                        {
-                            "type": "JSXAttribute",
-                            "name": "name",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"quxBName\""
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "targetField",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"name\""
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "helpText",
-                            "value": {
-                                "type": "JSXExpressionContainer",
-                                "code": "{\"Select a QuxB\"}"
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "query",
-                            "value": {
-                                "type": "JSXExpressionContainer",
-                                "code": "{Q_QuxB}"
-                            }
-                        }
-                    ],
-                    "kids": [],
-                    "type": "JSXElement"
-                },
-                {
-                    "name": "FKSelector",
-                    "attrs": [
-                        {
-                            "type": "JSXAttribute",
-                            "name": "name",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"quxCId1\""
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "display",
-                            "value": {
-                                "type": "JSXExpressionContainer",
-                                "code": "{() => root.quxC1.name}"
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "onUpdate",
-                            "value": {
-                                "type": "JSXRenderFunction",
-                                "params": [
-                                    {
-                                        "type": "Identifier",
-                                        "name": "row"
-                                    }
-                                ],
-                                "constants": [],
-                                "root": {
-                                    "type": "Expression",
-                                    "code": "formConfig.root.quxC1 = row"
-                                }
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "query",
-                            "value": {
-                                "type": "JSXExpressionContainer",
-                                "code": "{Q_QuxC}"
-                            }
-                        }
-                    ],
-                    "kids": [],
-                    "type": "JSXElement"
-                },
-                {
-                    "name": "FKSelector",
-                    "attrs": [
-                        {
-                            "type": "JSXAttribute",
-                            "name": "name",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"quxCId2\""
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "display",
-                            "value": {
-                                "type": "JSXExpressionContainer",
-                                "code": "{() => root.quxC2 && root.quxC2.name}"
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "onUpdate",
-                            "value": {
-                                "type": "JSXRenderFunction",
-                                "params": [
-                                    {
-                                        "type": "Identifier",
-                                        "name": "row"
-                                    }
-                                ],
-                                "constants": [],
-                                "root": {
-                                    "type": "Expression",
-                                    "code": "formConfig.root.quxC2 = row"
-                                }
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "query",
-                            "value": {
-                                "type": "JSXExpressionContainer",
-                                "code": "{Q_QuxC}"
-                            }
-                        }
-                    ],
-                    "kids": [],
-                    "type": "JSXElement"
-                },
-                {
-                    "name": "FKSelector",
-                    "attrs": [
-                        {
-                            "type": "JSXAttribute",
-                            "name": "label",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"quxD\""
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "display",
-                            "value": {
-                                "type": "JSXExpressionContainer",
-                                "code": "{() => root.quxD && root.quxD.name}"
-                            }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "query",
-                            "value": {
-                                "type": "JSXExpressionContainer",
-                                "code": "{Q_QuxD}"
-                            }
-                        }
-                    ],
-                    "kids": [],
-                    "type": "JSXElement"
-                },
-                {
-                    "name": "ButtonToolbar",
-                    "attrs": [],
-                    "kids": [
-                        {
-                            "name": "Button",
-                            "attrs": [
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "className",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"btn btn-primary mr-1\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "transition",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"save\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "icon",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"fa-save mr-1\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "text",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"Save\""
-                                    }
-                                }
-                            ],
-                            "kids": [],
-                            "type": "JSXElement"
-                        },
-                        {
-                            "name": "Button",
-                            "attrs": [
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "className",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"btn btn-danger mr-1\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "transition",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"delete\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "icon",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"fa-times mr-1\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "text",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"Delete\""
-                                    }
-                                }
-                            ],
-                            "kids": [],
-                            "type": "JSXElement"
-                        },
-                        {
-                            "name": "Button",
-                            "attrs": [
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "className",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"btn btn-secondary mr-1\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "transition",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"cancel\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "icon",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"fa-times mr-1\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "text",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"Cancel\""
-                                    }
-                                }
-                            ],
-                            "kids": [],
-                            "type": "JSXElement"
-                        }
-                    ],
-                    "type": "JSXElement"
-                }
-            ],
-            "type": "JSXElement"
+            "type": "Expression",
+            "code": "<><h1>{i18n(\"Qux Detail\")}</h1><GlobalErrors /><Field name=\"name\" helpText=\"Field A!\" /><FKSelector name=\"quxAId\" label=\"simple search filter\" display=\"quxA.name\" searchFilter=\"name\" tooltip={root.quxA && root.quxA.name || GlobalConfig.none()} query={Q_QuxA} required={true} /><FKSelector name=\"quxBName\" label=\"foreign key to name field\" tooltip=\"Example of FK to name field\" helpText={\"Select a QuxB\"} searchFilter=\"name\" modalFilter={FKSelector.NO_FILTER} query={Q_QuxB} /><FKSelector name=\"quxCId1\" label=\"multi-relation / no-search (required)\" tooltip=\"Example of multiple fks to the same type C (FK-1)\" display={\"quxC1.name\"} query={Q_QuxC} /><FKSelector name=\"quxCId2\" label=\"multi-relation / no-search (optional)\" tooltip=\"Example of multiple fks to the same type C (FK-2)\" display={\"quxC2.name\"} query={Q_QuxC} /><FKSelector name=\"quxDId\" label=\"complex search / description addon\" tooltip=\"Example for fk with complex search filter\" display=\"quxD.name\" searchFilter={val => or(field(\"name\").containsIgnoreCase(value(val)), field(\"description\").containsIgnoreCase(value(val)))} query={Q_QuxD}><Addon placement={Addon.RIGHT} text={true} className=\"text-monospace\">{() => root.quxD && \"Description: \" + root.quxD.description || GlobalConfig.none()}</Addon></FKSelector><FKSelector tooltip=\"Custom validation filter with both search and column filter\" name=\"quxD2Id\" display=\"quxD2.name\" label=\"extra column filter\" modalTitle=\"Select target (extra column filter)\" modalFilter={FKSelector.COLUMN_FILTER} searchFilter={val => or(field(\"name\").containsIgnoreCase(value(val)), field(\"description\").containsIgnoreCase(value(val)))} query={Q_QuxD} /><FKSelector tooltip=\"Example for fk with custom validation filter with search filter in the modal\" name=\"quxD3Id\" display=\"quxD3.name\" label=\"no search filter\" modalTitle=\"Select target (no search filter)\" modalFilter={FKSelector.NO_SEARCH_FILTER} searchFilter=\"name\" query={Q_QuxD} /><FKSelector tooltip=\"Example for fk with custom validation filter with search filter in the modal\" name=\"quxD3Id\" display=\"quxD3.value\" label=\"no search filter / numeric\" modalTitle=\"Select target (no search filter)\" modalFilter={FKSelector.NO_SEARCH_FILTER} searchFilter=\"value\" query={Q_QuxD} /><FKSelector tooltip=\"Example for fk with custom validation filter with search filter in the modal\" name=\"quxD4Id\" display=\"quxD4.name\" label=\"injection-based\" modalTitle=\"Select target\" searchFilter={val => or(field(\"name\").containsIgnoreCase(value(val)), field(\"description\").containsIgnoreCase(value(val)))} query={scope.quxDs} /><ButtonToolbar><Button className=\"btn btn-primary mr-1\" transition=\"save\"><Icon className=\"fa-save mr-1\" />\n                    Save\n                </Button><Button className=\"btn btn-secondary mr-1\" transition=\"delete\"><Icon className=\"fa-times mr-1 text-danger\" />\n                    Delete\n                </Button><Button className=\"btn btn-secondary mr-1\" transition=\"cancel\"><Icon className=\"fa-times mr-1\" />\n                    Cancel\n                </Button></ButtonToolbar></>"
         }
     },
     "export": "withForm(fnObserver(QuxMainForm), { type: \"QuxMainInput\", validation: validation(\"QuxMainInput\") })"

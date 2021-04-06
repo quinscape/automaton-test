@@ -1,0 +1,184 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "observable"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "computed"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "action"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "runInAction"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "injection"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "graphql"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "GraphQLQuery"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_FredResource",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FredResource"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_FredFile",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FredFile"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_updateFredResource",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_updateFredResource"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./queries/Q_updateFredFile",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_updateFredFile"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "process": {
+            "startState": "\"FileTestHome\"",
+            "states": {
+                "FileTestHome": {
+                    "get-resource": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "Q_FredResource.execute().then(({ getFredResource: fred }) => scope.updateFred(fred))"
+                        }
+                    },
+                    "get-file": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "Q_FredFile.execute().then(({ getFredFile: fred }) => scope.updateFred(fred))"
+                        }
+                    },
+                    "update-resource": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "Q_updateFredResource.execute({ fred: t.context })"
+                        }
+                    },
+                    "update-file": {
+                        "action": {
+                            "type": "Action",
+                            "params": [
+                                "t"
+                            ],
+                            "code": "Q_updateFredFile.execute({ fred: t.context })"
+                        }
+                    }
+                }
+            }
+        },
+        "scope": {
+            "name": "FileTestScope",
+            "observables": [
+                {
+                    "name": "counter",
+                    "defaultValue": "0",
+                    "description": "*\n     * We use a counter as a key for our form since we have no id and also want to be able to re-query an object\n     * @type {number}\n     "
+                },
+                {
+                    "name": "currentFred",
+                    "defaultValue": "injection(Q_FredResource)",
+                    "description": "* Inject fred via resource mechanism"
+                }
+            ],
+            "actions": [
+                {
+                    "name": "updateFred",
+                    "params": [
+                        "fred"
+                    ],
+                    "code": "this.currentFred = fred;\nthis.counter++;",
+                    "bound": false
+                },
+                {
+                    "name": "addItem",
+                    "params": [],
+                    "code": "this.currentFred.items.push({ name: \"Unnamed Item\", value: 0, flag: false });",
+                    "bound": false
+                },
+                {
+                    "name": "removeItem",
+                    "params": [
+                        "index"
+                    ],
+                    "code": "this.currentFred.items.splice(index, 1);",
+                    "bound": false
+                }
+            ],
+            "computeds": [],
+            "helpers": []
+        },
+        "extraConstants": [
+            "// language=GraphQL\nconst WireTestQuery = new GraphQLQuery(`\n    mutation testMutation($target: FooInput!, $count: Int!){\n        wireTestMutation(input : $target, count: $count)\n        {\n            id\n            created\n            check\n        }\n    }`);",
+            "function mutationError(err) { return { id: \"ERROR\", created: new Date(), check: String(err) }; } // noinspection JSUnusedGlobalSymbols"
+        ]
+    }
+}

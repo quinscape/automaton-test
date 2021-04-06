@@ -97,17 +97,14 @@
                                 "type": "Expression",
                                 "code": "\"mr-1 btn btn-secondary\""
                             }
-                        },
-                        {
-                            "type": "JSXAttribute",
-                            "name": "text",
-                            "value": {
-                                "type": "Expression",
-                                "code": "\"Back\""
-                            }
                         }
                     ],
-                    "kids": [],
+                    "kids": [
+                        {
+                            "type": "JSXText",
+                            "value": "Back"
+                        }
+                    ],
                     "type": "JSXElement"
                 }
             ],

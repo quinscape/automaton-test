@@ -67,6 +67,26 @@
                     "name": "Q_QuxDetail"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../queries/Q_QuxD",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_QuxD"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../queries/Q_QuxD_Injected",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_QuxD_Injected"
+                }
+            ]
         }
     ],
     "processExports": {
@@ -93,7 +113,7 @@
                             "params": [
                                 "t"
                             ],
-                            "code": "{ console.log(\"to-detail, context = \", t.context); return Q_QuxDetail.execute({ config: { condition: field(\"id\").eq(value(\"String\", t.context)) } }).then(({ iQueryQuxMain }) => { if (iQueryQuxMain.rows.length === 0) { alert(\"Could not load Qux with id '\" + t.context); } return scope.updateCurrent(iQueryQuxMain.rows[0]); }); }"
+                            "code": "{ console.log(\"to-detail, context = \", t.context); return Q_QuxDetail.execute({ config: { condition: field(\"id\").eq(value(t.context)) } }).then(({ iQueryQuxMain }) => { if (iQueryQuxMain.rows.length === 0) { alert(\"Could not load Qux with id '\" + t.context); } return scope.updateCurrent(iQueryQuxMain.rows[0]); }); }"
                         }
                     }
                 },
@@ -151,6 +171,11 @@
                     "name": "quxes",
                     "defaultValue": "injection(Q_QuxMain)",
                     "description": "* Qux iQuery"
+                },
+                {
+                    "name": "quxDs",
+                    "defaultValue": "injection(Q_QuxD_Injected)",
+                    "description": "* Qux D injection"
                 }
             ],
             "actions": [

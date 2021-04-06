@@ -2,6 +2,16 @@
     "importDeclarations": [
         {
             "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
             "source": "react",
             "specifiers": [
                 {
@@ -132,22 +142,6 @@
                                 },
                                 {
                                     "type": "JSXAttribute",
-                                    "name": "icon",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"fa-close\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "text",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"Close\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
                                     "name": "transition",
                                     "value": {
                                         "type": "Expression",
@@ -155,7 +149,27 @@
                                     }
                                 }
                             ],
-                            "kids": [],
+                            "kids": [
+                                {
+                                    "name": "Icon",
+                                    "attrs": [
+                                        {
+                                            "type": "JSXAttribute",
+                                            "name": "className",
+                                            "value": {
+                                                "type": "Expression",
+                                                "code": "\"fa-close\""
+                                            }
+                                        }
+                                    ],
+                                    "kids": [],
+                                    "type": "JSXElement"
+                                },
+                                {
+                                    "type": "JSXText",
+                                    "value": "Close"
+                                }
+                            ],
                             "type": "JSXElement"
                         }
                     ],
@@ -166,136 +180,22 @@
                     "attrs": [
                         {
                             "type": "JSXAttribute",
+                            "name": "id",
+                            "value": {
+                                "type": "Expression",
+                                "code": "\"iquery-test\""
+                            }
+                        },
+                        {
+                            "type": "JSXAttribute",
                             "name": "value",
                             "value": {
                                 "type": "JSXExpressionContainer",
-                                "code": "{scope.orders}"
+                                "code": "{scope.foos}"
                             }
                         }
                     ],
                     "kids": [
-                        {
-                            "name": "DataGrid.Column",
-                            "attrs": [
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "name",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"number\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "heading",
-                                    "value": {
-                                        "type": "JSXExpressionContainer",
-                                        "code": "{i18n(\"Order:number\")}"
-                                    }
-                                }
-                            ],
-                            "kids": [],
-                            "type": "JSXElement"
-                        },
-                        {
-                            "name": "DataGrid.Column",
-                            "attrs": [
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "name",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"shippingType\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "heading",
-                                    "value": {
-                                        "type": "JSXExpressionContainer",
-                                        "code": "{i18n(\"Customer:shippingType\")}"
-                                    }
-                                }
-                            ],
-                            "kids": [
-                                {
-                                    "type": "JSXRenderFunction",
-                                    "params": [
-                                        {
-                                            "type": "Identifier",
-                                            "name": "order"
-                                        }
-                                    ],
-                                    "constants": [],
-                                    "root": {
-                                        "type": "Expression",
-                                        "code": "order.shippingType.name"
-                                    }
-                                }
-                            ],
-                            "type": "JSXElement"
-                        },
-                        {
-                            "name": "DataGrid.Column",
-                            "attrs": [
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "name",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"customer\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "heading",
-                                    "value": {
-                                        "type": "JSXExpressionContainer",
-                                        "code": "{i18n(\"Order:customer\")}"
-                                    }
-                                }
-                            ],
-                            "kids": [
-                                {
-                                    "type": "JSXRenderFunction",
-                                    "params": [
-                                        {
-                                            "type": "Identifier",
-                                            "name": "order"
-                                        }
-                                    ],
-                                    "constants": [],
-                                    "root": {
-                                        "type": "Expression",
-                                        "code": "order.customer.salutation ? order.customer.salutation + \" \" + order.customer.name : order.customer.name"
-                                    }
-                                }
-                            ],
-                            "type": "JSXElement"
-                        },
-                        {
-                            "name": "DataGrid.Column",
-                            "attrs": [
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "name",
-                                    "value": {
-                                        "type": "Expression",
-                                        "code": "\"accepted\""
-                                    }
-                                },
-                                {
-                                    "type": "JSXAttribute",
-                                    "name": "heading",
-                                    "value": {
-                                        "type": "JSXExpressionContainer",
-                                        "code": "{i18n(\"Order:accepted\")}"
-                                    }
-                                }
-                            ],
-                            "kids": [],
-                            "type": "JSXElement"
-                        },
                         {
                             "name": "DataGrid.Column",
                             "attrs": [
@@ -331,22 +231,6 @@
                                             },
                                             {
                                                 "type": "JSXAttribute",
-                                                "name": "icon",
-                                                "value": {
-                                                    "type": "Expression",
-                                                    "code": "\"fa-clipboard-check\""
-                                                }
-                                            },
-                                            {
-                                                "type": "JSXAttribute",
-                                                "name": "text",
-                                                "value": {
-                                                    "type": "Expression",
-                                                    "code": "\"Choose\""
-                                                }
-                                            },
-                                            {
-                                                "type": "JSXAttribute",
                                                 "name": "transition",
                                                 "value": {
                                                     "type": "Expression",
@@ -362,11 +246,131 @@
                                                 }
                                             }
                                         ],
-                                        "kids": [],
+                                        "kids": [
+                                            {
+                                                "name": "Icon",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "className",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"fa-clipboard-check\""
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [],
+                                                "type": "JSXElement"
+                                            },
+                                            {
+                                                "type": "JSXText",
+                                                "value": "Choose"
+                                            }
+                                        ],
                                         "type": "JSXElement"
                                     }
                                 }
                             ],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "DataGrid.Column",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "name",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"name\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "filter",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"containsIgnoreCase\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "DataGrid.Column",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "name",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"description\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "filter",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"containsIgnoreCase\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "DataGrid.Column",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "name",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"flag\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "filter",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"eq\""
+                                    }
+                                }
+                            ],
+                            "kids": [],
+                            "type": "JSXElement"
+                        },
+                        {
+                            "name": "DataGrid.Column",
+                            "attrs": [
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "name",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"owner.login\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "filter",
+                                    "value": {
+                                        "type": "Expression",
+                                        "code": "\"containsIgnoreCase\""
+                                    }
+                                },
+                                {
+                                    "type": "JSXAttribute",
+                                    "name": "heading",
+                                    "value": {
+                                        "type": "JSXExpressionContainer",
+                                        "code": "{i18n(\"owner\")}"
+                                    }
+                                }
+                            ],
+                            "kids": [],
                             "type": "JSXElement"
                         }
                     ],

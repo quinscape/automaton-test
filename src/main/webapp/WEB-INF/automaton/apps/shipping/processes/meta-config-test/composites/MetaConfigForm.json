@@ -725,24 +725,10 @@
                                 },
                                 {
                                     "type": "JSXAttribute",
-                                    "name": "validateInputJS",
+                                    "name": "searchFilter",
                                     "value": {
-                                        "type": "JSXRenderFunction",
-                                        "params": [
-                                            {
-                                                "type": "Identifier",
-                                                "name": "row"
-                                            },
-                                            {
-                                                "type": "Identifier",
-                                                "name": "value"
-                                            }
-                                        ],
-                                        "constants": [],
-                                        "root": {
-                                            "type": "Expression",
-                                            "code": "row.name === value"
-                                        }
+                                        "type": "Expression",
+                                        "code": "\"name\""
                                     }
                                 },
                                 {

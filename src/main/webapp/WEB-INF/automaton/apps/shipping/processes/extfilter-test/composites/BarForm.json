@@ -2,6 +2,32 @@
     "importDeclarations": [
         {
             "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Field"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FieldMode"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "GlobalErrors"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "withForm"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
             "source": "react",
             "specifiers": [
                 {
@@ -36,28 +62,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "ScrollTracker"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "domainql-form",
-            "specifiers": [
-                {
-                    "type": "ImportSpecifier",
-                    "name": "Field"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "FieldMode"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "GlobalErrors"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "withForm"
                 }
             ]
         },
@@ -224,25 +228,29 @@
                                                 "type": "Expression",
                                                 "code": "\"back\""
                                             }
-                                        },
-                                        {
-                                            "type": "JSXAttribute",
-                                            "name": "icon",
-                                            "value": {
-                                                "type": "Expression",
-                                                "code": "\"fa-times mr-1\""
-                                            }
-                                        },
-                                        {
-                                            "type": "JSXAttribute",
-                                            "name": "text",
-                                            "value": {
-                                                "type": "Expression",
-                                                "code": "\"Back\""
-                                            }
                                         }
                                     ],
-                                    "kids": [],
+                                    "kids": [
+                                        {
+                                            "name": "Icon",
+                                            "attrs": [
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "className",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"fa-times mr-1\""
+                                                    }
+                                                }
+                                            ],
+                                            "kids": [],
+                                            "type": "JSXElement"
+                                        },
+                                        {
+                                            "type": "JSXText",
+                                            "value": "Back"
+                                        }
+                                    ],
                                     "type": "JSXElement"
                                 }
                             ],

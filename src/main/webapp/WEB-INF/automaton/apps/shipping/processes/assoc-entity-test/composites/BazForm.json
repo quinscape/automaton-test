@@ -312,7 +312,7 @@
                         },
                         {
                             "type": "JSXAttribute",
-                            "name": "validateInput",
+                            "name": "searchFilter",
                             "value": {
                                 "type": "Expression",
                                 "code": "\"login\""

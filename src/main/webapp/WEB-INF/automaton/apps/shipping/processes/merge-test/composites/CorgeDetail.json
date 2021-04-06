@@ -28,6 +28,10 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "FormLayout"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
                 }
             ]
         },
@@ -47,7 +51,20 @@
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
+                    "name": "Button"
+                },
+                {
+                    "type": "ImportSpecifier",
                     "name": "useEntity"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "DataGrid",
+                    "aliasOf": "IQueryGrid"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
                 }
             ]
         }
@@ -168,6 +185,139 @@
                                         }
                                     ],
                                     "kids": [],
+                                    "type": "JSXElement"
+                                },
+                                {
+                                    "name": "hr",
+                                    "attrs": [],
+                                    "kids": [],
+                                    "type": "JSXElement"
+                                },
+                                {
+                                    "name": "DataGrid",
+                                    "attrs": [
+                                        {
+                                            "type": "JSXAttribute",
+                                            "name": "id",
+                                            "value": {
+                                                "type": "Expression",
+                                                "code": "\"iquery-test\""
+                                            }
+                                        },
+                                        {
+                                            "type": "JSXAttribute",
+                                            "name": "value",
+                                            "value": {
+                                                "type": "JSXExpressionContainer",
+                                                "code": "{scope.corges}"
+                                            }
+                                        }
+                                    ],
+                                    "kids": [
+                                        {
+                                            "name": "DataGrid.Column",
+                                            "attrs": [
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "heading",
+                                                    "value": {
+                                                        "type": "JSXExpressionContainer",
+                                                        "code": "{i18n(\"Status\")}"
+                                                    }
+                                                }
+                                            ],
+                                            "kids": [
+                                                {
+                                                    "type": "JSXRenderFunction",
+                                                    "params": [
+                                                        {
+                                                            "type": "Identifier",
+                                                            "name": "corge"
+                                                        }
+                                                    ],
+                                                    "constants": [],
+                                                    "root": {
+                                                        "name": "DataGrid.WorkingSetStatus",
+                                                        "attrs": [
+                                                            {
+                                                                "type": "JSXAttribute",
+                                                                "name": "workingSet",
+                                                                "value": {
+                                                                    "type": "JSXExpressionContainer",
+                                                                    "code": "{scope.workingSet}"
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "JSXAttribute",
+                                                                "name": "type",
+                                                                "value": {
+                                                                    "type": "Expression",
+                                                                    "code": "\"Corge\""
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "JSXAttribute",
+                                                                "name": "id",
+                                                                "value": {
+                                                                    "type": "JSXExpressionContainer",
+                                                                    "code": "{corge.id}"
+                                                                }
+                                                            }
+                                                        ],
+                                                        "kids": [],
+                                                        "type": "JSXElement"
+                                                    }
+                                                }
+                                            ],
+                                            "type": "JSXElement"
+                                        },
+                                        {
+                                            "name": "DataGrid.Column",
+                                            "attrs": [
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "name",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"name\""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "filter",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"containsIgnoreCase\""
+                                                    }
+                                                }
+                                            ],
+                                            "kids": [],
+                                            "type": "JSXElement"
+                                        },
+                                        {
+                                            "name": "DataGrid.Column",
+                                            "attrs": [
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "name",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"num\""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "filter",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"gt\""
+                                                    }
+                                                }
+                                            ],
+                                            "kids": [],
+                                            "type": "JSXElement"
+                                        }
+                                    ],
                                     "type": "JSXElement"
                                 }
                             ],
