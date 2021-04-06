@@ -13,7 +13,7 @@ const FileTestHome = props => {
     return (
         <React.Fragment>
 
-            <Card color="info" className="mb-3 small">
+            <Card color="info" className="mb-3">
                 <CardBody>
                     <h1>
                         {
@@ -58,16 +58,29 @@ const FileTestHome = props => {
                 </Button>
             </ButtonToolbar>
 
-            <Form
-                key={ scope.counter }
-                type="Fred"
-                value={ scope.currentFred }
-                >
-                <Field name="name"/>
-            </Form>
+            <hr/>
+
+            <div className="row">
+                <div className="col-11">
+                    <h2>Fred</h2>
+                    <Form
+                        key={ scope.counter }
+                        type="Fred"
+                        value={ scope.currentFred }
+                        options={{
+                            layout: FormLayout.HORIZONTAL,
+                            labelColumnClass: "col-2",
+                            wrapperColumnClass: "col-10",
+                        }}
+                    >
+                        <Field name="name"/>
+                    </Form>
+                </div>
+            </div>
+
             <h2>Items</h2>
             {
-                scope.currentFred.items.map((fredItem, idx) => (
+                    scope.currentFred.items.map((fredItem, idx) => (
                     <div
                         key={ FormContext.getUniqueId(fredItem) }
                         className="row"
