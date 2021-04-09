@@ -1,7 +1,7 @@
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { ButtonToolbar } from "reactstrap";
-import { Button, i18n, IQueryGrid as DataGrid, CalendarField } from "@quinscape/automaton-js"
+import { Button, i18n, DataGrid, CalendarField } from "@quinscape/automaton-js";
 import { Select, FormLayout, Icon } from "domainql-form";
 import FooForm from "./FooForm";
 import WorkingSetTestScope from "../workingset-test";

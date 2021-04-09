@@ -3,7 +3,7 @@ import cx from "classnames"
 import { Icon, Select } from "domainql-form"
 import { observer as fnObserver } from "mobx-react-lite";
 import { ButtonToolbar } from "reactstrap";
-import { config, Button, i18n, IQueryGrid as DataGrid } from "@quinscape/automaton-js"
+import { config, Button, i18n, DataGrid } from "@quinscape/automaton-js";
 
 const CRUDList = props => {
 

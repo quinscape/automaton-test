@@ -2,7 +2,14 @@ import { Icon, Select } from "domainql-form"
 import React from "react"
 import { observer as fnObserver, useObserver } from "mobx-react-lite";
 import { ButtonToolbar } from "reactstrap";
-import { Button, i18n, IQueryGrid as DataGrid, useDomainMonitor, FilterDSL, DomainActivityIndicator } from "@quinscape/automaton-js"
+import {
+    Button,
+    i18n,
+    DataGrid,
+    useDomainMonitor,
+    FilterDSL,
+    DomainActivityIndicator,
+} from "@quinscape/automaton-js";
 
 const { and, field, value, component } = FilterDSL;
 

@@ -2,7 +2,7 @@ import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { FormLayout, Icon } from "domainql-form"
 import CorgeForm from "./CorgeForm";
-import { Button, useEntity, IQueryGrid as DataGrid, i18n } from "@quinscape/automaton-js"
+import { Button, useEntity, DataGrid, i18n } from "@quinscape/automaton-js";
 
 
 const CorgeDetail = props => {

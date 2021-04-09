@@ -1,7 +1,7 @@
 import { Icon } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
-import { Button, FilterDSL, i18n, IQueryGrid as DataGrid } from "@quinscape/automaton-js"
+import { Button, FilterDSL, i18n, DataGrid } from "@quinscape/automaton-js";
 import { ButtonToolbar, Card, CardBody, CardTitle, ListGroup, ListGroupItem } from "reactstrap/lib";
 
 // deconstruct FilterDSL methods

@@ -2,7 +2,7 @@ import { Form, Icon } from "domainql-form"
 import React, { useEffect, useMemo, useState } from "react"
 import { reaction } from "mobx";
 import { observer as fnObserver } from "mobx-react-lite";
-import { Button, CalendarField, FilterDSL, i18n, IQueryGrid as DataGrid } from "@quinscape/automaton-js"
+import { Button, CalendarField, FilterDSL, i18n, DataGrid } from "@quinscape/automaton-js";
 import { MAX_DATE, MIN_DATE } from "../extfilter-test"
 
 // deconstruct FilterDSL methods

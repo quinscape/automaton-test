@@ -2,7 +2,7 @@ import { Icon } from "domainql-form"
 import React from "react"
 
 import { ButtonToolbar } from "reactstrap"
-import { Button, IQueryGrid as DataGrid, i18n } from "@quinscape/automaton-js"
+import { Button, DataGrid, i18n } from "@quinscape/automaton-js";
 
 import { observer as fnObserver } from "mobx-react-lite";
 

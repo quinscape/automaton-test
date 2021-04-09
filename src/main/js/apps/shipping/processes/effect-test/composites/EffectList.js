@@ -2,7 +2,7 @@ import { Icon } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { ButtonToolbar } from "reactstrap";
-import { Button, i18n, IQueryGrid as DataGrid } from "@quinscape/automaton-js"
+import { Button, i18n, DataGrid } from "@quinscape/automaton-js";
 
 
 const EffectList = props => {

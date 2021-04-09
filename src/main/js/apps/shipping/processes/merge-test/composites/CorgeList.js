@@ -2,7 +2,16 @@ import { Icon, Select } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { ButtonToolbar, Container, Modal, ModalBody, ModalHeader } from "reactstrap";
-import { Button, i18n, IQueryGrid as DataGrid, useDomainMonitor, FilterDSL, DomainActivityIndicator, openDialog, WorkingSetStatus } from "@quinscape/automaton-js"
+import {
+    Button,
+    i18n,
+    DataGrid,
+    useDomainMonitor,
+    FilterDSL,
+    DomainActivityIndicator,
+    openDialog,
+    WorkingSetStatus,
+} from "@quinscape/automaton-js";
 import MergeDialog from "@quinscape/automaton-js/lib/ui/ChangeConflictDialog"
 
 const { and, field, value, component } = FilterDSL;
