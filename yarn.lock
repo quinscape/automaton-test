@@ -1095,15 +1095,15 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@quinscape/automaton-js@^0.2.23":
-  version "0.2.23"
-  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.2.23.tgz#ac49af11f4319357632a1b6df2155e97e95510e2"
-  integrity sha512-DcKrdGoe1aVLATvmfBxLQ7SONIPXojsvHABYQWgImByWQfK9uD24ped+/cVBOJ4uhcxoVqUPUre3inv0z9Ovsg==
+"@quinscape/automaton-js@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.3.0.tgz#47350aaa09b85ba4d3737797e5156a167affabd1"
+  integrity sha512-jxK4oVzaYlo4QHri8QKZgx0mv3f/QksP2UXcq7oZcJ752iHSh+eeBpfh2s7PlmF4y4EqJ/RlQ1JDobeS51tG6A==
   dependencies:
     ajv "^6.12.2"
     classnames "^2.2.6"
     create-react-class "^15.6.3"
-    domainql-form "^3.4.3"
+    domainql-form "^3.5.0"
     downshift "^6.0.6"
     graphql "^14.5.8"
     history "^4.10.1"
@@ -1120,6 +1120,7 @@
     mobx-react-lite "^1.5.1"
     mobx-utils "^5.5.2"
     prop-types "^15.7.2"
+    re-resizable "^6.9.0"
     react "^16.12.0"
     react-calendar "^2.19.2"
     react-json-tree "^0.11.2"
@@ -2367,10 +2368,10 @@ domain-browser@^1.1.1:
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
   integrity sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA==
 
-domainql-form@^3.4.3:
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.4.3.tgz#ae21db926308f705706f389da89a1b2d97588a57"
-  integrity sha512-I6F8hh9UVW3tCicqLuukUCUFZH+JGOG7Qiln+viYkZ45hNETgUBZNwzPk625G+bcU+VAMMgNpG1ol5fi4K1vog==
+domainql-form@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.5.0.tgz#c7bda61f42d7a4389e1a7fc022b5f6092c1d7b36"
+  integrity sha512-Xf8uP8dfNcST5q6I1VNNq1EXGhVQOWONjouRSOqnbrmPKg3LoYbUtT0gjqYHglr6BKuVeOc7LQQLdzdzS47EDw==
   dependencies:
     classnames "^2.2.6"
     lodash.debounce "^4.0.8"
@@ -2692,6 +2693,11 @@ fast-json-stable-stringify@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz#874bf69c6f404c2b5d99c481341399fd55892633"
   integrity sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==
+
+fast-memoize@^2.5.1:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/fast-memoize/-/fast-memoize-2.5.2.tgz#79e3bb6a4ec867ea40ba0e7146816f6cdce9b57e"
+  integrity sha512-Ue0LwpDYErFbmNnZSF0UH6eImUwDmogUO1jyE+JbN2gsQz/jICm1Ve7t9QT0rNSsfJt+Hs4/S3GnsDVjL4HVrw==
 
 fbemitter@^2.0.0:
   version "2.1.1"
@@ -4856,6 +4862,13 @@ randomfill@^1.0.3:
   dependencies:
     randombytes "^2.0.5"
     safe-buffer "^5.1.0"
+
+re-resizable@^6.9.0:
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/re-resizable/-/re-resizable-6.9.0.tgz#9c3059b389ced6ade602234cc5bb1e12d231cd47"
+  integrity sha512-3cUDG81ylyqI0Pdgle/RHwwRYq0ORZzsUaySOCO8IbEtNyaRtrIHYm/jMQ5pjcNiKCxR3vsSymIQZHwJq4gg2Q==
+  dependencies:
+    fast-memoize "^2.5.1"
 
 react-base16-styling@^0.5.1:
   version "0.5.3"
