@@ -5,7 +5,6 @@ import {
     startup,
     config,
     getCurrentProcess,
-    addConfig,
     shutdown,
     pickSchemaTypes,
     Hub,
@@ -13,7 +12,7 @@ import {
     publish,
     GraphQLQuery,
     createDomainObject,
-    registerBigDecimalConverter,
+    StartupRegistry,
     printSchema
 } from "@quinscape/automaton-js"
 import Layout from "../../components/Layout";
@@ -40,7 +39,7 @@ bootstrap(
                 config.markUntranslated = true;
                 config.layout = Layout;
 
-                addConfig("validationRules", initial.validationRules)
+                StartupRegistry.addConfig("validationRules", initial.validationRules)
 
                 // Configure German bignumber format for decimal-test/meta-config
                 BigNumber.config({
@@ -58,7 +57,7 @@ bootstrap(
 
                 //console.log(JSON.stringify(BigNumber.config(),null, 4))
 
-                registerBigDecimalConverter();
+                StartupRegistry.registerBigDecimalConverter();
 
                 config.timestampFormat = "d.M.yyyy H:mm:ss";
 
