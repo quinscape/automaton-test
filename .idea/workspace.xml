@@ -14,18 +14,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="Java Filter: Add toString()&#10;&#10;Implement a default shortened toString() for transformed FilterDSL Filter. Add default toString() impl and invoke that from many nodes.&#10;&#10;Write some nodes by hand.">
-      <change afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/service/loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/service/docs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/service/docs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/ui/AssociationSelectorModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/ui/AssociationSelectorModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/ui/FkSelectorModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/ui/FkSelectorModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/ui/datagrid/IQueryGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/ui/datagrid/DataGrid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/test/ui/data-grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/test/ui/data-grid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/test/ui/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/test/ui/pagination.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/components/automaton-logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/components/automaton-logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/components/complex.icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/components/complex.icon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/service/docs-filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/service/docs-filter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/service/markdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/service/markdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/documentation-domain.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/documentation-domain.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/documentation-getting-started.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/documentation-getting-started.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/documentation-introduction.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/documentation-introduction.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/explanation-filter-dsl.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/explanation-filter-dsl.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/explanation-injection.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/explanation-injection.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/howto-one.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/howto-one.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Automaton_Js_Tests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Automaton_Js_Tests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/127.0.1.1.tm72.epoch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/js/temp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/js/temp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmlog72.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,11 +122,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="packageLocal" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.21.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.20.4" />
+    <property name="javascript.nodejs.core.library.configured.version" value="15.13.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.37" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model" />
-    <property name="last_opened_file_path" value="$USER_HOME$/tmp/cart" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/misc" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -127,7 +139,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28390804" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../spring-jsview/pom.xml" />
   </component>
@@ -140,11 +152,11 @@
       <recent name="de.quinscape.automaton.model.i18n" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/misc" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/components" />
+      <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/snippets" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/pages" />
       <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/staticgen" />
-      <recent name="$PROJECT_DIR$/src/main/js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/test/ui/fkselector" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="de.quinscape.automaton.runtime.data.QueryExecution" />
@@ -152,18 +164,18 @@
       <recent name="de.quinscape.automaton.model.data.SortOrder" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/service/printJsDocType.js" />
+      <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/service/docs-filter.js" />
+      <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/service/markdown-filter.js" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/service/DocType.js" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/components/ReactDocSection.js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/util/openDialog.js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/merge/MergeOperation.js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/src/util/evaluateMemoryQuery.js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/public/media" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/components" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/snippets" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/public" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next" />
-      <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/css" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -206,7 +218,7 @@
       <command value="key" />
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Local Tomcat">
+  <component name="RunManager" selected="npm.build">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -223,13 +235,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -294,9 +308,6 @@
       </method>
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" node-parameters="-r @babel/register">
-      <method v="2" />
-    </configuration>
-    <configuration name="temp.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" node-parameters="-r @babel/register" path-to-js-file="$PROJECT_DIR$/src/test/js/temp.js" working-dir="$PROJECT_DIR$/src/test/js">
       <method v="2" />
     </configuration>
     <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" node-parameters="-r @babel/register --experimental-modules" path-to-js-file="$PROJECT_DIR$/../automaton-js/tooling/next/test.js" working-dir="$PROJECT_DIR$/../automaton-js/tooling/next/service">
@@ -414,6 +425,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/../automaton-js/tooling/next/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Automaton-Test Tests" type="mocha-javascript-test-runner">
       <node-interpreter>project</node-interpreter>
       <node-options>-r @babel/register</node-options>
@@ -492,19 +513,19 @@
       <item itemvalue="Mocha.Automaton-Js Tests" />
       <item itemvalue="Mocha.FKSelector" />
       <item itemvalue="Mocha.Button" />
-      <item itemvalue="Node.js.temp.js" />
       <item itemvalue="Node.js.test.js" />
       <item itemvalue="npm.build" />
+      <item itemvalue="npm.dev" />
       <item itemvalue="Spring Boot.DQLMobxApplication" />
       <item itemvalue="Tomcat Server.Local Tomcat" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="Mocha.Button" />
         <item itemvalue="Mocha.FKSelector" />
-        <item itemvalue="npm.build" />
         <item itemvalue="Node.js.test.js" />
-        <item itemvalue="Node.js.temp.js" />
       </list>
     </recent_temporary>
   </component>
@@ -1298,7 +1319,13 @@
       <workItem from="1617275351136" duration="17281000" />
       <workItem from="1617318357111" duration="1578000" />
       <workItem from="1617368233432" duration="11000" />
-      <workItem from="1617708913846" duration="2038000" />
+      <workItem from="1617708913846" duration="9674000" />
+      <workItem from="1617794244381" duration="25539000" />
+      <workItem from="1617877602974" duration="23684000" />
+      <workItem from="1617901915637" duration="14439000" />
+      <workItem from="1617961076379" duration="867000" />
+      <workItem from="1617961953694" duration="29985000" />
+      <workItem from="1617998293767" duration="4810000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
@@ -1458,9 +1485,6 @@
           <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
-      <default-breakpoints>
-        <breakpoint enabled="true" type="javascript-exception" />
-      </default-breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
@@ -1469,9 +1493,9 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/automaton_test$filterTransformer.dat" NAME="filterTransformer Coverage Results" MODIFIED="1607610577105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/automaton_test$Automaton_Js_Tests.dat" NAME="Automaton-Js Tests Coverage Results" MODIFIED="1593174492998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/automaton_test$Filter_DSL.dat" NAME="Filter DSL Coverage Results" MODIFIED="1607610427965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/automaton_test$filterTransformer.dat" NAME="filterTransformer Coverage Results" MODIFIED="1607610577105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/automaton_test$WorkingSet_Merge.dat" NAME="WorkingSet Merge Coverage Results" MODIFIED="1593180697311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
