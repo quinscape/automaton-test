@@ -5,7 +5,7 @@ import { FormLayout } from "domainql-form";
 import BazForm from "./BazForm";
 
 
-const BazDetail = props => {
+const BazValueDetail = props => {
 
     const {env} = props;
     const {scope} = env;
@@ -29,4 +29,4 @@ const BazDetail = props => {
     )
 };
 
-export default fnObserver(BazDetail)
+export default fnObserver(BazValueDetail)
