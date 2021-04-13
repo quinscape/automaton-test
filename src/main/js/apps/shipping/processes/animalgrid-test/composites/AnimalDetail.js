@@ -3,7 +3,7 @@ import { observer as fnObserver } from "mobx-react-lite";
 import NodeForm from "./AnimalForm";
 
 
-const CRUDDetail = props => {
+const AnimalDetail = props => {
 
     const {env} = props;
     const {scope} = env;
@@ -21,4 +21,4 @@ const CRUDDetail = props => {
     )
 };
 
-export default fnObserver(CRUDDetail)
+export default fnObserver(AnimalDetail)
