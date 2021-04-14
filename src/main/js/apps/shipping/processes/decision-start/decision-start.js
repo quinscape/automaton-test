@@ -1,6 +1,5 @@
 import { Process } from "@quinscape/automaton-js";
 
-
 /**
  *
  * @param {Process} process
@@ -16,7 +15,16 @@ export function initProcess(process, scope)
 
                 const { target } = process.input;
 
-                t.target = ( target && "Target" + target.toUpperCase()) || "Home";
+
+                if (target)
+                {
+                    t.context = target && "Target" + target.toUpperCase() || "Home";
+                    t.target = t.context;
+                }
+                else
+                {
+                    t.target = "Home" ;
+                }
             },
             states: {
                 "Home": {
@@ -35,3 +43,8 @@ export function initProcess(process, scope)
     );
 }
 
+
+export default class DecisionStartScope
+{
+    
+}
