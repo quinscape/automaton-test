@@ -20,111 +20,12 @@ import { DateTime } from "luxon";
 const {field, value} = FilterDSL;
 
 
+import WSTestList from "./states/WSTestList";
+
+
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "WSTestList",
-            states: {
-                "WSTestList": {
-                    "new-foo": {
-                        action: t => {
-
-                            const newObj = createDomainObject("Foo");
-
-                            newObj.name = "Unnamed Foo";
-                            newObj.description = "";
-                            newObj.num = 0;
-                            newObj.flag = false;
-                            newObj.created = DateTime.local();
-                            newObj.type = "TYPE_A";
-                            newObj.ownerId = config.auth.id;
-
-                            scope.workingSet.addNew(newObj);
-                            scope.updateCurrent(newObj);
-
-                            //console.log("new-foo", newObj)
-
-                        }
-                    },
-                    "edit-foo": {
-                        action: t => {
-
-                            const id = t.context;
-
-                            //console.log("edit-foo, context = ", id);
-
-                            // Either edit the working set instance...
-                            const entry = scope.workingSet.lookup("Foo", id);
-                            if (entry)
-                            {
-                                scope.updateCurrent(entry.domainObject)
-                            }
-                            else
-                            {
-                                // ... or query the detail object
-                                return Q_FooDetail.execute({
-                                    config: {
-                                        condition:
-                                            field("id")
-                                                .eq(
-                                                    value(
-                                                        id
-                                                    )
-                                                )
-                                    }
-                                }).then(({iQueryFoo}) => {
-
-                                    if (iQueryFoo.rows.length === 0)
-                                    {
-                                        alert("Could not load Foo with id '" + t.context)
-                                    }
-                                    scope.updateCurrent(iQueryFoo.rows[0]);
-                                });
-                            }
-
-                        }
-                    },
-                    "revert-foo": {
-                        action: t => {
-                            scope.workingSet.revert(t.context)
-                        }
-                    },
-                    "delete-foo": {
-                        action: t => {
-                            scope.workingSet.markDeleted(t.context);
-
-                            if (scope.currentFoo && scope.currentFoo.id === t.context.id)
-                            {
-                                scope.updateCurrent(null);
-                            }
-                        }
-                    },
-                    "save-all": {
-                        action: t => {
-                            scope.workingSet.persist()
-                                .then(() => {
-                                    scope.foos.update();
-                                });
-                        }
-                    },
-                    "revert-all": {
-                        discard: true,
-                        confirmation: context => `Revert all changes?`,
-
-                        action: t => {
-                            scope.workingSet.revertAll();
-                        }
-                    }
-                }
-            }
-        }
-    );
+export function initProcess(process, scope) {
+    return WSTestList;
 }
 
 

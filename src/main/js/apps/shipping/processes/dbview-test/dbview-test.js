@@ -43,24 +43,11 @@ const FooDetailQuery = new GraphQLQuery(`query queryFooDetail($config: QueryConf
 }`
 );
 
+import DBViewHome from "./states/DBViewHome";
+
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "DBViewHome",
-            states: {
-                "DBViewHome":
-                    {
-
-                    }
-            }
-        }
-    );
+export function initProcess(process, scope) {
+    return DBViewHome;
 }
 
 export default class DBViewProcess {

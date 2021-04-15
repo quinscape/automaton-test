@@ -39,23 +39,13 @@ function mutationError(err)
 }
 
 
+import QueryTestHome from "./states/QueryTestHome";
+
+
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "QueryTestHome",
-            states: {
-                "QueryTestHome": {
-                }
-            }
-        }
-    );
-};
+export function initProcess(process, scope) {
+    return QueryTestHome;
+}
 
 export default class WireTestScope {
 

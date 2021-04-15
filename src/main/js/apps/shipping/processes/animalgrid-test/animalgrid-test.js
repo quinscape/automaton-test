@@ -16,52 +16,13 @@ import {
 
 
 
+import AnimalGridHome from "./states/AnimalGridHome";
+
+
+
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "AnimalGridHome",
-            states: {
-                "AnimalGridHome":
-                {
-                    "to-detail": {
-                        to: "AnimalDetail",
-                        action: t => {
-                            scope.currentNode = t.context;
-                        }
-                    }
-
-                },
-                "AnimalDetail":
-                {
-                    "back": {
-                        discard: true,
-                        to: "AnimalGridHome",
-                        action: t => {
-                            console.log("Back to Home");
-                        }
-                    },
-                    "save": {
-                        to: "AnimalGridHome",
-                        action: t => {
-                            storeDomainObject({
-                                _type: "NodeInput",
-                                id: t.context.id,
-                                name: t.context.name,
-                                parentId: t.context.parent.id
-                            });
-                        }
-                    }
-
-                }
-            }
-        }
-    );
+export function initProcess(process, scope) {
+    return AnimalGridHome;
 }
 
 

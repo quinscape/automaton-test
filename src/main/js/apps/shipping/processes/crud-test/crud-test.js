@@ -70,87 +70,12 @@ const GetFoosQuery = new GraphQLQuery(`
 );
 
 
+import CRUDList from "./states/CRUDList";
+
+
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-    //process.versioningStrategy = name => false;
-
-    // return process states and transitions
-    return (
-        {
-            startState: "CRUDList",
-            states: {
-                "CRUDList":
-                    {
-                        "new-foo": {
-                            to: "CRUDDetail",
-                            action: t =>
-                                CreateFooMutation.execute({
-                                    name: "Unnamed Foo"
-                                })
-                                .then(
-                                    ({ createFoo }) =>
-                                        scope.updateCurrent(createFoo)
-                                )
-
-                        },
-                        "to-detail": {
-                            to: "CRUDDetail",
-                            action: t => {
-                                scope.currentFoo = config.inputSchema.clone(t.context);
-                            }
-                        }
-                    }
-                ,
-                "CRUDDetail": {
-                    "save": {
-                        action: t =>
-                            storeDomainObject({
-                                ... t.context,
-                                ownerId:  config.auth.id || "",
-                            })
-                            .then(() => GetFoosQuery.execute())
-                            .then(({getFoos}) => scope.updateFoos(getFoos))
-                            .then(() => t.back(backToParent(t)))
-                    },
-                    "complex-save": {
-                        action: t =>
-                            storeDomainObject({
-                                foo: t.context,
-                                other: node
-                            })
-                            .then(() => GetFoosQuery.execute())
-                            .then(({getFoos}) => scope.updateFoos(getFoos))
-                            .then(() => t.back(backToParent(t)))
-                    },
-                    "delete": {
-                        to: "CRUDList",
-                        discard: true,
-                        confirmation: context => `Delete ${context.name} ?`,
-
-                        action: t => {
-                            const { id } = t.context;
-
-                            return deleteDomainObject("Foo", id)
-                                .then(
-                                    didDelete => didDelete && scope.removeFoo(id)
-                                )
-                        }
-                    },
-                    "cancel": {
-                        to: "CRUDList",
-                        discard: true,
-                        action: t => {
-
-                            console.log("Transition 'cancel'")
-                        }
-                    }
-                }
-            }
-        }
-    );
+export function initProcess(process, scope) {
+    return CRUDList;
 }
 
 export default class CRUDTestScope {

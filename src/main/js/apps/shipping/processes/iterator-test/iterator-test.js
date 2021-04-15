@@ -16,22 +16,12 @@ import Q_Foo from "./queries/Q_Foo";
 const {field, value} = FilterDSL;
 
 
+import IteratorTestList from "./states/IteratorTestList";
+
+
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "IteratorTestList",
-            states: {
-                "IteratorTestList":
-                    {}
-            }
-        }
-    );
+export function initProcess(process, scope) {
+    return IteratorTestList;
 }
 
 

@@ -23,122 +23,12 @@ import Q_FooList from "./queries/Q_FooList";
 const { field, value } = FilterDSL;
 
 
+import CRUDList from "./states/CRUDList";
+
+
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-
-    // return process states and transitions
-    return (
-        {
-            startState: "CRUDList",
-            states: {
-                "CRUDList":
-                    {
-                        "new-foo": {
-                            to: "CRUDDetail",
-                            action: t => {
-
-                                // use empty id to be replaced by a new id server-side (
-                                const newObj = createDomainObject("FooInput", "");
-
-                                newObj.name = "Unnamed";
-                                newObj.description = null;
-                                newObj.num = 0;
-                                newObj.flag = false;
-                                newObj.created = new Date();
-                                newObj.type = "TYPE_A";
-
-                                return scope.updateCurrent(newObj);
-                            }
-                        },
-                        "new-foo-no-ddefaults": {
-                            to: "CRUDDetail",
-                            action: t => {
-
-                                // use empty id to be replaced by a new id server-side (
-                                const newObj = createDomainObject("FooInput", "");
-
-                                // test required
-                                newObj.name = null;
-                                // test highlevel validation
-                                newObj.description = "AAA";
-                                newObj.flag = false;
-                                newObj.created = new Date();
-                                newObj.type = "TYPE_A";
-
-                                // XXX: even though we don't set ownerId here, we won't get an
-                                //      revalidation error because there's no field for it
-                                
-                                return scope.updateCurrent(newObj);
-                            }
-                        },
-                        "to-detail": {
-                            to: "CRUDDetail",
-                            action: t => {
-
-                                console.log("to-detail, context = ", t.context);
-
-                                return Q_FooDetail.execute({
-                                    config: {
-                                        condition:
-                                            field("id")
-                                                .eq(
-                                                    value(
-                                                        t.context
-                                                    )
-                                                )
-                                    }
-                                }).then(({iQueryFoo}) => {
-
-                                    if (iQueryFoo.rows.length === 0)
-                                    {
-                                        alert("Could not load Foo with id '" + t.context)
-                                    }
-                                    return scope.updateCurrent(config.inputSchema.clone(iQueryFoo.rows[0]));
-                                });
-                            }
-                        }
-                    }
-                ,
-                "CRUDDetail": {
-                    "save": {
-                        action: t =>
-                            storeDomainObject({
-                                ... t.context,
-                                ownerId:  config.auth.id || "",
-                            })
-                                .then(() => scope.foos.update())
-                                .then(() => t.back(backToParent(t)))
-                    },
-                    "delete": {
-                        to: "CRUDList",
-                        discard: true,
-                        confirmation: context => `Delete ${context.name} ?`,
-
-                        action: t => {
-                            const { id } = t.context;
-
-                            return deleteDomainObject("Foo", id)
-                                .then(
-                                    didDelete => didDelete && scope.foos.update()
-                                )
-                        }
-                    },
-                    "cancel": {
-                        to: "CRUDList",
-                        discard: true,
-                        action: t => {
-
-                            console.log("Transition 'cancel'")
-                        }
-                    }
-                }
-            }
-        }
-    );
+export function initProcess(process, scope) {
+    return CRUDList;
 }
 
 export default class CRUDTestScope {

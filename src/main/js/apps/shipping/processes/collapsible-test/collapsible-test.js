@@ -1,28 +1,20 @@
 import { Process } from "@quinscape/automaton-js";
 
 
+import CollapseHome from "./states/CollapseHome";
+
+
 /**
  *
  * @param {Process} process
  * @param {object} scope
  * @return {{startState: string, states: {ProcessTestHome: {"open-sub": {to: string, action: (function(*): *)}}}}}
  */
-export function initProcess(process, scope)
-{
-    // return process states and transitions
-    return (
-        {
-            startState: t => {
+export function initProcess(process, scope) {
+    let target;
+    const _target = process.input.target;
 
-                const { target } = process.input;
-
-                t.target = "CollapseHome";
-            },
-            states: {
-                "CollapseHome": {
-                },
-            }
-        }
-    );
+    target = CollapseHome;
+    return target;
 }
 

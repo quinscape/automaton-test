@@ -10,65 +10,43 @@ import uuid from "uuid";
 // deconstruct FilterDSL methods
 const {field, value} = FilterDSL;
 
+import TreeTestNodeDetail from "./states/TreeTestNodeDetail";
+import TreeTestBazDetail from "./states/TreeTestBazDetail";
+import TreeTestBazValueDetail from "./states/TreeTestBazValueDetail";
+import TreeTestHome from "./states/TreeTestHome";
+
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-    // process config
-    // XXX: fnObservable() messes with our layout component detection, so we use a map with a single default for now
-    process.options.layout = { default: TreeLayout };
+export function initProcess(process, scope) {
+    let target;
+    const name = process.input.name;
+    const type = process.input.type;
+    const useIndex = process.input.useIndex;
 
-    // return process states and transitions
-    return (
-        {
-            startState: t => {
+    if (useIndex !== undefined)
+    {
+        scope.useIndex = useIndex;
+    }
 
-                const { name, type, useIndex } = process.input;
+    switch(type)
+    {
+        case "Node":
+            target = TreeTestNodeDetail;
+            scope.updateCurrent(name);
+            break;
+        case "Baz":
+            target = TreeTestBazDetail;
+            scope.updateCurrent(name);
+            break;
+        case "BazValue":
+            target = TreeTestBazValueDetail;
+            scope.updateCurrent(name);
+            break;
+        default:
+            target = TreeTestHome;
+            break;
+    }
 
-                if (useIndex !== undefined)
-                {
-                    scope.useIndex = useIndex;
-                }
-
-                switch(type)
-                {
-                    case "Node":
-                        t.target = "TreeTestNodeDetail";
-                        scope.updateCurrent(name);
-                        break;
-                    case "Baz":
-                        t.target = "TreeTestBazDetail";
-                        scope.updateCurrent(name);
-                        break;
-                    case "BazValue":
-                        t.target = "TreeTestBazValueDetail";
-                        scope.updateCurrent(name);
-                        break;
-                    default:
-                        t.target = "TreeTestHome";
-                        break;
-                }
-
-            },
-            states: {
-                "TreeTestHome":
-                    {
-
-                    },
-                "TreeTestNodeDetail":
-                    {
-
-                    },
-                "TreeTestBazDetail":
-                    {
-
-                    },
-                "TreeTestBazValueDetail":
-                    {
-
-                    }
-            }
-        }
-    );
+    return target;
 }
 
 

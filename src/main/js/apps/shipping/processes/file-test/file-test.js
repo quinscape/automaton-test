@@ -41,42 +41,13 @@ function mutationError(err)
 }
 
 
-// noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-    // process config
+import FileTestHome from "./states/FileTestHome";
 
-    // return process states and transitions
-    return (
-        {
-            startState: "FileTestHome",
-            states: {
-                "FileTestHome": {
-                    "get-resource": {
-                        action: t =>
-                            Q_FredResource.execute()
-                            .then(
-                                ({ getFredResource : fred }) => scope.updateFred(fred)
-                            )
-                    },
-                    "get-file": {
-                        action: t =>
-                            Q_FredFile.execute()
-                            .then(
-                                ({ getFredFile : fred }) => scope.updateFred(fred)
-                            )
-                    },
-                    "update-resource": {
-                        action: t => Q_updateFredResource.execute({ fred: t.context })
-                    },
-                    "update-file": {
-                        action: t => Q_updateFredFile.execute({ fred: t.context })
-                    }
-                }
-            }
-        }
-    );
-};
+
+// noinspection JSUnusedGlobalSymbols
+export function initProcess(process, scope) {
+    return FileTestHome;
+}
 
 export default class FileTestScope {
 

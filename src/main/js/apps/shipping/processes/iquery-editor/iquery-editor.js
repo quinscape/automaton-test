@@ -3,33 +3,13 @@ import { observable, toJS } from "mobx";
 import { InteractiveQueryDefinition, InteractiveQueryEditor } from "@quinscape/automaton-js";
 
 
+import IQEditorHome from "./states/IQEditorHome";
+
+
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "IQEditorHome",
-            states: {
-                "IQEditorHome": {
-                    "store": {
-                        action: t => {
-
-                            // retrieve current state as "InteractiveQueryDefinition" instance
-                            const def = InteractiveQueryEditor.getInteractiveQueryDefinition("my-editor");
-
-                            // XXX: we just log here, replace with actual store
-                            console.log("STORE", toJS(def));
-                        }
-                    }
-                }
-            }
-        }
-    );
-};
+export function initProcess(process, scope) {
+    return IQEditorHome;
+}
 
 export default class IQueryEditorScope {
     @observable

@@ -11,47 +11,13 @@ import {
 } from "@quinscape/automaton-js";
 
 
+import CustomerList from "./states/CustomerList";
+
+
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "CustomerList",
-            states: {
-                "CustomerList":
-                    {
-                        "to-detail": {
-                            to: "CustomerDetail",
-                            action: t => {
-                                scope.currentCustomer = t.context;
-                            }
-                        }
-                    }
-                ,
-                "CustomerDetail": {
-                    "save": {
-                        to: "CustomerList",
-                        action: t => {
-
-                            console.log("Transition 'save': ", toJS(t.context))
-                        }
-                    },
-                    "cancel": {
-                        to: "CustomerList",
-                        action: t => {
-
-                            console.log("Transition 'cancel'")
-                        }
-                    }
-                }
-            }
-        }
-    );
-};
+export function initProcess(process, scope) {
+    return CustomerList;
+}
 
 export default class CustomerScope {
 

@@ -33,29 +33,15 @@ function updateDetail(scope, id)
     })
 }
 
+import MetaConfigSubHome from "./states/MetaConfigSubHome";
+
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-    // process config
-    process.options.forceSubProcess = true;
+export function initProcess(process, scope) {
+    let target;
 
-    // return process states and transitions
-    return (
-        {
-            startState: t => {
-
-                scope.location = process.input;
-                t.target = "MetaConfigSubHome";
-            },
-            states: {
-                "MetaConfigSubHome": {
-                    "close" : {
-                        action: t => process.endSubProcess(null)
-                    }
-                }
-            }
-        }
-    );
+    scope.location = process.input;
+    target = MetaConfigSubHome;
+    return target;
 }
 
 export default class MetaConfigSubScope {

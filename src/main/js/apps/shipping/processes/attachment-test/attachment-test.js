@@ -23,105 +23,11 @@ import Q_GraultDetail from "./queries/Q_GraultDetail";
 // deconstruct FilterDSL methods
 const { field, value } = FilterDSL;
 
+import GraultList from "./states/GraultList";
+
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-    //process.versioningStrategy = name => false;
-
-    // return process states and transitions
-    return (
-        {
-            startState: "GraultList",
-            states: {
-                "GraultList":
-                    {
-                        "new-grault": {
-                            to: "GraultDetail",
-                            action: t => {
-                                const newInstance = createDomainObject("Grault");
-                                newInstance.name = "Unnamed";
-                                scope.updateCurrent(newInstance)
-                            }
-                        },
-                        "to-detail": {
-                            to: "GraultDetail",
-                            action: t => {
-
-                                const id = t.context;
-
-                                return Q_GraultDetail.execute({
-                                    config: {
-                                        condition:
-                                            field("id")
-                                                .eq(
-                                                    value(
-                                                        id
-                                                    )
-                                                )
-                                    }
-                                }).then(({iQueryGrault}) => {
-
-                                    if (iQueryGrault.rows.length === 0)
-                                    {
-                                        alert("Could not load Grault with id '" + id)
-                                    }
-
-                                    scope.updateCurrent(
-                                        config.inputSchema.clone(
-                                            iQueryGrault.rows[0]
-                                        )
-                                    );
-                                })
-                            }
-                        }
-                    }
-                ,
-                "GraultDetail": {
-                    "save": {
-
-                        action: t =>
-                            // 1.
-                            Attachments.uploadPending(t.context)
-
-                            // 2.
-                            .then( () => storeDomainObject({
-                                ... extractTypeData("GraultInput", t.context),
-                            }))
-                            // 3.
-                            .then(() => Attachments.deletePending(t.context))
-
-                            .then(() => scope.graults.update())
-                            .then(() => t.back(backToParent(t)))
-                    },
-                    "delete": {
-                        to: "GraultList",
-                        discard: true,
-                        confirmation: context => `Delete ${context.name} ?`,
-
-                        action: t => {
-                            const { id } = t.context;
-
-                            return deleteDomainObject("Grault", id)
-                                .then(
-                                    didDelete => didDelete && scope.removeGrault(id)
-                                )
-                        }
-                    },
-                    "cancel": {
-                        to: "GraultList",
-                        discard: true,
-
-                        action: t => {
-                            console.log("Transition 'cancel'")
-                            return Attachments.clearAll(t.context)
-                        }
-                    }
-                }
-            }
-        }
-    );
+export function initProcess(process, scope) {
+    return GraultList;
 }
 
 export default class AttachmentTestScope {

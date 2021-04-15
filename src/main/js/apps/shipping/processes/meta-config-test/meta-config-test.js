@@ -25,104 +25,11 @@ import Q_FooType from "../datagrid-test/queries/Q_FooType";
 // deconstruct FilterDSL methods
 const { field, value } = FilterDSL;
 
+import MetaConfigList from "./states/MetaConfigList";
+
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "MetaConfigList",
-            states: {
-                "MetaConfigList":
-                    {
-                        "new-meta-config": {
-                            to: "MetaConfigDetail",
-                            action: t => {
-                                const newInstance = createDomainObject("MetaConfig");
-                                newInstance.name = "Unnamed";
-                                scope.updateCurrent(newInstance)
-                            }
-                        },
-                        "to-detail": {
-                            to: "MetaConfigDetail",
-                            action: t => {
-
-                                const id = t.context;
-
-                                return Q_MetaConfigDetail.execute({
-                                    config: {
-                                        condition:
-                                            field("id")
-                                                .eq(
-                                                    value(
-                                                        id
-                                                    )
-                                                )
-                                    }
-                                }).then(({iQueryMetaConfig}) => {
-
-                                    if (iQueryMetaConfig.rows.length === 0)
-                                    {
-                                        alert("Could not load MetaConfig with id '" + id)
-                                    }
-
-                                    scope.updateCurrent(
-                                        config.inputSchema.clone(
-                                            iQueryMetaConfig.rows[0]
-                                        )
-                                    );
-                                })
-                            }
-                        }
-                    }
-                ,
-                "MetaConfigDetail": {
-                    "save": {
-
-                        action: t =>
-                            // 1.
-                            Attachments.uploadPending(t.context)
-
-                            // 2.
-                            .then( () => storeDomainObject({
-                                ... extractTypeData("MetaConfigInput", t.context),
-                            }))
-                            // 3.
-                            .then(() => Attachments.deletePending(t.context))
-
-                            .then(() => scope.metaConfigs.update())
-                            .then(() => t.back(backToParent(t)))
-                    },
-                    "delete": {
-                        to: "MetaConfigList",
-                        discard: true,
-                        confirmation: context => `Delete ${context.name} ?`,
-
-                        action: t => {
-                            const { id } = t.context;
-
-                            return deleteDomainObject("MetaConfig", id)
-                                .then(
-                                    didDelete => didDelete && scope.removeMetaConfig(id)
-                                )
-                        }
-                    },
-                    "cancel": {
-                        to: "MetaConfigList",
-                        discard: true,
-
-                        action: t => {
-                            console.log("Transition 'cancel'")
-                            return Attachments.clearAll(t.context)
-                        }
-                    }
-                }
-            }
-        }
-    );
+export function initProcess(process, scope) {
+    return MetaConfigList;
 }
 
 export default class MetaConfigTestScope {
