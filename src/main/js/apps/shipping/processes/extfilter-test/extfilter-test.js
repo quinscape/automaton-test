@@ -1,57 +1,13 @@
-import {
-    observable,
-    computed,
-    action,
-    toJS
-} from "mobx";
-
-import {
-    injection,
-    config,
-    storeDomainObject,
-    deleteDomainObject,
-    GraphQLQuery,
-    backToParent
-} from "@quinscape/automaton-js";
+import { observable, computed, action } from "mobx";
+import { injection } from "@quinscape/automaton-js";
 import { DateTime } from "luxon";
+import ExtFilterHome from "./states/ExtFilterHome";
 
 
 
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "ExtFilterHome",
-            states: {
-                "ExtFilterHome":
-                {
-                    "to-detail": {
-                        to: "ExtFilterDetail",
-                        action: t => {
-                            scope.currentBar = t.context;
-                        }
-                    }
-
-                },
-                "ExtFilterDetail":
-                {
-                    "back": {
-                        discard: true,
-                        to: "ExtFilterHome",
-                        action: t => {
-                            console.log("Back to Home");
-                        }
-                    }
-
-                }
-            }
-        }
-    );
+export function initProcess(process, scope) {
+    return ExtFilterHome;
 }
 
 export const MIN_DATE = DateTime.fromISO("2018-03-01T00:00:00Z");

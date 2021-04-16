@@ -1,67 +1,12 @@
-import {
-    observable,
-    computed,
-    action,
-    toJS
-} from "mobx";
-
-import {
-    injection,
-    config,
-    storeDomainObject,
-    deleteDomainObject,
-    GraphQLQuery,
-    backToParent
-} from "@quinscape/automaton-js";
+import { observable, computed, action } from "mobx";
+import { injection } from "@quinscape/automaton-js";
+import AnimalGridHome from "./states/AnimalGridHome";
 
 
 
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "AnimalGridHome",
-            states: {
-                "AnimalGridHome":
-                {
-                    "to-detail": {
-                        to: "AnimalDetail",
-                        action: t => {
-                            scope.currentNode = t.context;
-                        }
-                    }
-
-                },
-                "AnimalDetail":
-                {
-                    "back": {
-                        discard: true,
-                        to: "AnimalGridHome",
-                        action: t => {
-                            console.log("Back to Home");
-                        }
-                    },
-                    "save": {
-                        to: "AnimalGridHome",
-                        action: t => {
-                            storeDomainObject({
-                                _type: "NodeInput",
-                                id: t.context.id,
-                                name: t.context.name,
-                                parentId: t.context.parent.id
-                            });
-                        }
-                    }
-
-                }
-            }
-        }
-    );
+export function initProcess(process, scope) {
+    return AnimalGridHome;
 }
 
 

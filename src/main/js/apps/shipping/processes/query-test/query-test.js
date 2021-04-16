@@ -1,20 +1,9 @@
-import {
-    observable,
-    computed,
-    action,
-    runInAction,
-    toJS
-} from "mobx";
-
-import {
-    injection,
-    graphql,
-    GraphQLQuery,
-    config
-} from "@quinscape/automaton-js";
+import { observable, computed, action } from "mobx";
+import { injection, GraphQLQuery } from "@quinscape/automaton-js";
 import Q_BazFoos from "./queries/Q_BazFoos";
 import Q_BazWithValues from "./queries/Q_BazWithValues";
 import Q_RecursiveNodes from "./queries/Q_RecursiveNodes";
+import QueryTestHome from "./states/QueryTestHome";
 
 // language=GraphQL
 const WireTestQuery = new GraphQLQuery(`
@@ -40,22 +29,9 @@ function mutationError(err)
 
 
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "QueryTestHome",
-            states: {
-                "QueryTestHome": {
-                }
-            }
-        }
-    );
-};
+export function initProcess(process, scope) {
+    return QueryTestHome;
+}
 
 export default class WireTestScope {
 

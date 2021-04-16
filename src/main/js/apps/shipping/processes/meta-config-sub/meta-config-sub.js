@@ -1,14 +1,13 @@
-import { action, observable, runInAction } from "mobx";
-
-import { FilterDSL, injection } from "@quinscape/automaton-js";
-
-import Q_FooList from "../datagrid-test/queries/Q_FooList";
+import { action, observable } from "mobx";
+import { FilterDSL } from "@quinscape/automaton-js";
 import Q_FooDetail from "../datagrid-test/queries/Q_FooDetail";
-import Q_FooType from "../datagrid-test/queries/Q_FooType";
-import EffectLayout, { registerAppEffect, unregisterAppEffect } from "../../../../components/EffectLayout";
+import MetaConfigSubHome from "./states/MetaConfigSubHome";
 
 // deconstruct FilterDSL methods
-const { field, value } = FilterDSL;
+const {
+    field,
+    value
+} = FilterDSL;
 
 function updateDetail(scope, id)
 {
@@ -34,28 +33,12 @@ function updateDetail(scope, id)
 }
 
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-    // process config
-    process.options.forceSubProcess = true;
+export function initProcess(process, scope) {
+    let target;
 
-    // return process states and transitions
-    return (
-        {
-            startState: t => {
-
-                scope.location = process.input;
-                t.target = "MetaConfigSubHome";
-            },
-            states: {
-                "MetaConfigSubHome": {
-                    "close" : {
-                        action: t => process.endSubProcess(null)
-                    }
-                }
-            }
-        }
-    );
+    scope.location = process.input;
+    target = MetaConfigSubHome;
+    return target;
 }
 
 export default class MetaConfigSubScope {

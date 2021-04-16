@@ -1,22 +1,7 @@
-import {
-    observable,
-    computed,
-    action,
-    runInAction,
-    toJS
-} from "mobx"
-
-import {
-    injection,
-    graphql,
-    GraphQLQuery,
-    config
-} from "@quinscape/automaton-js"
-
-import Q_FredResource from "./queries/Q_FredResource"
-import Q_FredFile from "./queries/Q_FredFile"
-import Q_updateFredResource from "./queries/Q_updateFredResource"
-import Q_updateFredFile from "./queries/Q_updateFredFile"
+import { observable, computed, action } from "mobx";
+import { injection, GraphQLQuery } from "@quinscape/automaton-js";
+import Q_FredResource from "./queries/Q_FredResource";
+import FileTestHome from "./states/FileTestHome";
 
 // language=GraphQL
 const WireTestQuery = new GraphQLQuery(`
@@ -42,41 +27,9 @@ function mutationError(err)
 
 
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "FileTestHome",
-            states: {
-                "FileTestHome": {
-                    "get-resource": {
-                        action: t =>
-                            Q_FredResource.execute()
-                            .then(
-                                ({ getFredResource : fred }) => scope.updateFred(fred)
-                            )
-                    },
-                    "get-file": {
-                        action: t =>
-                            Q_FredFile.execute()
-                            .then(
-                                ({ getFredFile : fred }) => scope.updateFred(fred)
-                            )
-                    },
-                    "update-resource": {
-                        action: t => Q_updateFredResource.execute({ fred: t.context })
-                    },
-                    "update-file": {
-                        action: t => Q_updateFredFile.execute({ fred: t.context })
-                    }
-                }
-            }
-        }
-    );
-};
+export function initProcess(process, scope) {
+    return FileTestHome;
+}
 
 export default class FileTestScope {
 

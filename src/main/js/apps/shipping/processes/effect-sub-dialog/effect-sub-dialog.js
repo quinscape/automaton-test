@@ -1,14 +1,16 @@
-import { action, observable, runInAction } from "mobx";
-
+import { action, observable } from "mobx";
 import { FilterDSL, injection } from "@quinscape/automaton-js";
-
 import Q_FooList from "../datagrid-test/queries/Q_FooList";
 import Q_FooDetail from "../datagrid-test/queries/Q_FooDetail";
 import Q_FooType from "../datagrid-test/queries/Q_FooType";
 import EffectLayout, { registerAppEffect, unregisterAppEffect } from "../../../../components/EffectLayout";
+import SubProcessDialogHome from "./states/SubProcessDialogHome";
 
 // deconstruct FilterDSL methods
-const { field, value } = FilterDSL;
+const {
+    field,
+    value
+} = FilterDSL;
 
 function updateDetail(scope, id)
 {
@@ -34,9 +36,7 @@ function updateDetail(scope, id)
 }
 
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
+export function initProcess(process, scope) {
     // process config
     process.options.forceSubProcess = true;
     process.options.layout = EffectLayout;
@@ -54,20 +54,18 @@ export function initProcess(process, scope)
     );
 
     process.addEffect(
-        "SubProcessDialogHome",
+        SubProcessDialogHome,
         () => {
-            registerAppEffect("SubProcessDialogHome");
+            registerAppEffect(SubProcessDialogHome);
 
-            return (
-                () => {
-                    unregisterAppEffect("SubProcessDialogHome");
-                }
-            )
+            return () => {
+                unregisterAppEffect(SubProcessDialogHome);
+            };
         }
     );
 
     process.addEffect(
-        "SubProcessDialogDetail",
+        SubProcessDialogDetail,
         () => {
             const name = "SubProcessDialogDetail '" + (scope.currentFoo && scope.currentFoo.name) + "'";
             registerAppEffect(name);
@@ -82,90 +80,7 @@ export function initProcess(process, scope)
     );
 
 
-    // return process states and transitions
-    return (
-        {
-            startState: "SubProcessDialogHome",
-            states: {
-                "SubProcessDialogHome": {
-                    "choose" : {
-                        action: t => process.endSubProcess(t.context)
-                    },
-                    "close" : {
-                        action: t => process.endSubProcess(null)
-                    },
-                    "open-dialog": {
-                        action: t =>
-                            process.runSubProcess("effect-sub-dialog", t.context)
-                                .then(
-                                    result => result && runInAction( () => console.log("RESULT", result, "process =", process))
-                                )
-                    },
-                    "open-full": {
-                        action: t =>
-                            process.runSubProcess("effect-sub-full", t.context)
-                                .then(
-                                    result => result && runInAction( () => console.log("RESULT", result, "process =", process))
-                                )
-                    },
-                    "pick": {
-                        to: "SubProcessDialogDetail",
-                        action: t => {
-
-                            console.log("pick, context = ", t.context);
-
-                            return updateDetail(scope, t.context);
-                        }
-                    }
-                },
-                "SubProcessDialogDetail": {
-                    "choose" : {
-                        action: t => process.endSubProcess(t.context)
-                    },
-                    "open-dialog": {
-                        action: t =>
-                            process.runSubProcess("effect-sub-dialog", t.context)
-                                .then(
-                                    result => result && runInAction( () => console.log("RESULT", result))
-                                )
-                    },
-                    "open-full": {
-                        action: t =>
-                            process.runSubProcess("effect-sub-full", t.context)
-                                .then(
-                                    result => result && runInAction( () => console.log("RESULT", result))
-                                )
-                    },
-                    "cancel": {
-                        to: "SubProcessDialogHome",
-                        discard: true,
-                        action: t => {
-
-                            console.log("Transition 'cancel'")
-                        }
-                    },
-                    "next": {
-                        to: "SubProcessDialogDetail",
-                        discard: true,
-                        action: t => {
-
-                            const { foos : { rows }, currentFoo } = scope;
-                            for (let i = 0; i < rows.length; i++)
-                            {
-                                const foo = rows[i];
-                                if (foo.id === currentFoo.id && i + 1 < rows.length)
-                                {
-                                    return updateDetail(scope, rows[i+1].id);
-                                }
-                            }
-
-                            alert("No next object");
-                        }
-                    }
-                }
-            }
-        }
-    );
+    return SubProcessDialogHome;
 }
 
 export default class EffectSubProcessDialogScope {

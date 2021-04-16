@@ -1,17 +1,6 @@
-import {
-    observable,
-    computed,
-    action,
-    runInAction,
-    toJS
-} from "mobx";
-
-import {
-    injection,
-    graphql,
-    GraphQLQuery,
-    config
-} from "@quinscape/automaton-js";
+import { observable, computed, action } from "mobx";
+import { injection, GraphQLQuery } from "@quinscape/automaton-js";
+import WireHome from "./states/WireHome";
 
 // language=GraphQL
 const WireTestQuery = new GraphQLQuery(`
@@ -37,39 +26,9 @@ function mutationError(err)
 
 
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "WireHome",
-            states: {
-                "WireHome": {
-                    "test-target": {
-                        action: t =>
-                            WireTestQuery.execute(
-                                {
-                                target: {
-                                    ...t.context,
-                                    flag: true,
-                                    ownerId:
-                                        config.auth.id || ""
-                                },
-                                count: 123
-                            })
-                            .then(
-                                ({ wireTestMutation }) => scope.updateMutationResult(wireTestMutation),
-                                err => scope.updateMutationResult(mutationError(err))
-                            )
-                    }
-                }
-            }
-        }
-    );
-};
+export function initProcess(process, scope) {
+    return WireHome;
+}
 
 export default class WireTestScope {
 

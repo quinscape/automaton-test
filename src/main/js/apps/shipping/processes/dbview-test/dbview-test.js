@@ -1,21 +1,6 @@
-import {
-    observable,
-    computed,
-    action,
-    toJS
-} from "mobx";
-
-import {
-    injection,
-    config,
-    createDomainObject,
-    storeDomainObject,
-    deleteDomainObject,
-    GraphQLQuery,
-    backToParent,
-
-    FilterDSL
-} from "@quinscape/automaton-js";
+import { observable, computed, action } from "mobx";
+import { injection, GraphQLQuery, FilterDSL } from "@quinscape/automaton-js";
+import DBViewHome from "./states/DBViewHome";
 
 
 // deconstruct FilterDSL methods
@@ -44,23 +29,8 @@ const FooDetailQuery = new GraphQLQuery(`query queryFooDetail($config: QueryConf
 );
 
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "DBViewHome",
-            states: {
-                "DBViewHome":
-                    {
-
-                    }
-            }
-        }
-    );
+export function initProcess(process, scope) {
+    return DBViewHome;
 }
 
 export default class DBViewProcess {

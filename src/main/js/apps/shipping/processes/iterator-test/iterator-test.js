@@ -1,37 +1,15 @@
 import { action, observable } from "mobx";
-
-import {
-    backToParent,
-    createDomainObject,
-    deleteDomainObject,
-    extractTypeData,
-    FilterDSL,
-    injection,
-    storeDomainObject
-} from "@quinscape/automaton-js";
-
+import { FilterDSL, injection } from "@quinscape/automaton-js";
 import Q_Foo from "./queries/Q_Foo";
+import IteratorTestList from "./states/IteratorTestList";
 
 // deconstruct FilterDSL methods
 const {field, value} = FilterDSL;
 
 
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "IteratorTestList",
-            states: {
-                "IteratorTestList":
-                    {}
-            }
-        }
-    );
+export function initProcess(process, scope) {
+    return IteratorTestList;
 }
 
 

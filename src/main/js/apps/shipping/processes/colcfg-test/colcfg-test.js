@@ -1,25 +1,11 @@
 import { observable } from "mobx";
-
 import { injection } from "@quinscape/automaton-js";
+import ColumnConfigHome from "./states/ColumnConfigHome";
 
 
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
-    // process config
-
-    // return process states and transitions
-    return (
-        {
-            startState: "ColumnConfigHome",
-            states: {
-                "ColumnConfigHome":
-                    {
-                }
-            }
-        }
-    );
+export function initProcess(process, scope) {
+    return ColumnConfigHome;
 }
 
 export default class ColumnConfigTestScope {

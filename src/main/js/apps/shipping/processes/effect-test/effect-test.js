@@ -1,21 +1,16 @@
-import { action, observable, runInAction } from "mobx";
-
-import {
-    backToParent,
-    config,
-    createDomainObject,
-    FilterDSL,
-    injection,
-    storeDomainObject
-} from "@quinscape/automaton-js";
-
+import { action, observable } from "mobx";
+import { FilterDSL, injection } from "@quinscape/automaton-js";
 import Q_FooList from "../datagrid-test/queries/Q_FooList";
 import Q_FooDetail from "../datagrid-test/queries/Q_FooDetail";
 import Q_FooType from "../datagrid-test/queries/Q_FooType";
 import EffectLayout, { registerAppEffect, unregisterAppEffect } from "../../../../components/EffectLayout";
+import EffectList from "./states/EffectList";
 
 // deconstruct FilterDSL methods
-const { field, value } = FilterDSL;
+const {
+    field,
+    value
+} = FilterDSL;
 
 
 function updateDetail(scope, id)
@@ -43,9 +38,7 @@ function updateDetail(scope, id)
 
 
 // noinspection JSUnusedGlobalSymbols
-export function initProcess(process, scope)
-{
-
+export function initProcess(process, scope) {
     // process config
     process.options.layout = EffectLayout;
 
@@ -61,20 +54,18 @@ export function initProcess(process, scope)
     );
 
     process.addEffect(
-        "EffectList",
+        EffectList,
         () => {
-            registerAppEffect("EffectList");
+            registerAppEffect(EffectList);
 
-            return (
-                () => {
-                    unregisterAppEffect("EffectList");
-                }
-            )
+            return () => {
+                unregisterAppEffect(EffectList);
+            };
         }
     );
 
     process.addEffect(
-        "EffectDetail",
+        EffectDetail,
         () => {
             const name = "EffectDetail ' "+ (scope.currentFoo && scope.currentFoo.name) + "'";
 
@@ -90,93 +81,7 @@ export function initProcess(process, scope)
         () => [ scope.currentFoo && scope.currentFoo.id ]
     );
 
-    // return process states and transitions
-    return (
-        {
-            startState: "EffectList",
-            states: {
-                "EffectList":
-                    {
-                        "new-foo": {
-                            to: "EffectDetail",
-                            action: t => {
-                                const newObj = createDomainObject("FooInput");
-
-                                newObj.name = "Unnamed Foo";
-                                newObj.desc = "";
-                                newObj.num = 0;
-                                newObj.flag = false;
-                                newObj.created = new Date();
-                                newObj.type = "TYPE_A";
-
-                                return scope.updateCurrent(newObj);
-                            }
-                        },
-                        "to-detail": {
-                            to: "EffectDetail",
-                            action: t => {
-
-                                console.log("to-detail, context = ", t.context);
-
-                                return updateDetail(scope, t.context);
-                            }
-                        }
-                    }
-                ,
-                "EffectDetail": {
-                    "save": {
-                        action: t =>
-                            storeDomainObject({
-                                ... t.context,
-                                ownerId:  config.auth.id || "",
-                            })
-                                .then(() => scope.foos.update())
-                                .then(() => t.back(backToParent(t)))
-                    },
-                    "open-dialog": {
-                        action: t =>
-                            process.runSubProcess("effect-sub-dialog", t.context)
-                                .then(
-                                    result => result && runInAction( () => console.log("RESULT", result))
-                                )
-                    },
-                    "open-full": {
-                        action: t =>
-                            process.runSubProcess("effect-sub-full", t.context)
-                                .then(
-                                    result => result && runInAction( () => console.log("RESULT", result))
-                                )
-                    },
-                    "cancel": {
-                        to: "EffectList",
-                        discard: true,
-                        action: t => {
-
-                            console.log("Transition 'cancel'")
-                        }
-                    },
-                    "next": {
-                        to: "EffectDetail",
-                        discard: true,
-                        action: t => {
-
-                            const { foos : { rows }, currentFoo } = scope;
-                            for (let i = 0; i < rows.length; i++)
-                            {
-                                const foo = rows[i];
-                                if (foo.id === currentFoo.id && i + 1 < rows.length)
-                                {
-                                    return updateDetail(scope, rows[i+1].id);
-                                }
-                            }
-
-                            alert("No next object");
-                        }
-                    }
-                }
-            }
-        }
-    );
+    return EffectList;
 }
 
 export default class EffectTestScope {
