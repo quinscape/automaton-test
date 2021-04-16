@@ -1,10 +1,6 @@
 /**
  * Code mode to rename all IQueryGrid imports to DataGrid
  *
- * I used the command "jscodeshift --parser babylon -t misc/iquerygrid-codemod.js src/main/js/apps/"
- *
- * without babylon I had parser errors.
- *
  */
 export default function transformer(file, api) {
 
@@ -50,3 +46,5 @@ export default function transformer(file, api) {
             trailingComma: false
         });
 }
+
+module.exports.parser = 'babylon';
