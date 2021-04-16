@@ -14,30 +14,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="Java Filter: Add toString()&#10;&#10;Implement a default shortened toString() for transformed FilterDSL Filter. Add default toString() impl and invoke that from many nodes.&#10;&#10;Write some nodes by hand.">
-      <change beforePath="$PROJECT_DIR$/../automaton-js/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/src/ui/AssociationSelectorModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/ui/AssociationSelectorModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/src/ui/FkSelectorModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/ui/FkSelectorModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/src/ui/datagrid/IQueryGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/ui/datagrid/DataGrid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/test/ui/data-grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/test/ui/data-grid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/test/ui/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/test/ui/pagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/components/automaton-logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/components/automaton-logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/components/complex.icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/components/complex.icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/service/docs-filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/service/docs-filter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/service/markdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/service/markdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/documentation-domain.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/documentation-domain.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/documentation-getting-started.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/documentation-getting-started.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/documentation-introduction.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/documentation-introduction.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/explanation-filter-dsl.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/explanation-filter-dsl.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/explanation-injection.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/explanation-injection.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/howto-one.md" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/snippets/howto-one.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automaton-js/tooling/next/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/tooling/next/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/process-v2-codemod.js" beforeDir="false" afterPath="$PROJECT_DIR$/misc/process-v2-codemod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/test-codemod.js" beforeDir="false" afterPath="$PROJECT_DIR$/misc/test-codemod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/composites/FKTestDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/composites/FKTestList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/fk-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/fk-test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,11 +104,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="packageLocal" />
-    <property name="javascript.nodejs.core.library.configured.version" value="15.13.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.14.37" />
+    <property name="javascript.nodejs.core.library.configured.version" value="15.14.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.41" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/misc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/misc/DANGER-reset-state-transform.sh" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -218,7 +200,7 @@
       <command value="key" />
     </option>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="Node.js.Fk-Test transform ">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -231,19 +213,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -307,10 +276,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Fk-Test transform " type="NodeJSConfigurationType" application-parameters="-t misc/process-v2-codemod.js src/main/js/apps/shipping/processes/fk-test" path-to-js-file="$USER_HOME$/.config/yarn/global/node_modules/.bin/jscodeshift" working-dir="$PROJECT_DIR$">
+      <method v="2">
+        <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_Helper_Reset JsCodeShit" />
+      </method>
+    </configuration>
+    <configuration name="Process v2 transform " type="NodeJSConfigurationType" application-parameters="-t misc/process-v2-codemod.js src/main/js/apps/shipping/processes/" path-to-js-file="$USER_HOME$/.config/yarn/global/node_modules/.bin/jscodeshift" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="NodeJSConfigurationType" node-parameters="-r @babel/register">
       <method v="2" />
     </configuration>
-    <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" node-parameters="-r @babel/register --experimental-modules" path-to-js-file="$PROJECT_DIR$/../automaton-js/tooling/next/test.js" working-dir="$PROJECT_DIR$/../automaton-js/tooling/next/service">
+    <configuration name="jscodeshift - test.js" type="NodeJSConfigurationType" temporary="true" application-parameters="-t misc/test-codemod.js test.js  misc/test.js" node-parameters="-r @babel/register" path-to-js-file="$USER_HOME$/.config/yarn/global/node_modules/.bin/jscodeshift" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="temp.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" node-parameters="-r @babel/register" path-to-js-file="temp.js" working-dir="$PROJECT_DIR$/src/test/js">
       <method v="2" />
     </configuration>
     <configuration name="DQLMobxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -469,24 +449,6 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="FKSelector" type="mocha-javascript-test-runner" temporary="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options>-r @babel/register -r ./test/setup.js -r ignore-styles</node-options>
-      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs>
-        <env name="BABEL_ENV" value="test" />
-      </envs>
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/fkselector/fk-selector.js</test-file>
-      <test-names>
-        <name value="FKSelector" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="matchPath" type="mocha-javascript-test-runner" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options>-r @babel/register -r ./test/setup.js</node-options>
@@ -511,9 +473,11 @@
       <item itemvalue="Mocha.Automaton-Test Tests" />
       <item itemvalue="Mocha.matchPath" />
       <item itemvalue="Mocha.Automaton-Js Tests" />
-      <item itemvalue="Mocha.FKSelector" />
       <item itemvalue="Mocha.Button" />
-      <item itemvalue="Node.js.test.js" />
+      <item itemvalue="Node.js.Process v2 transform " />
+      <item itemvalue="Node.js.Fk-Test transform " />
+      <item itemvalue="Node.js.temp.js" />
+      <item itemvalue="Node.js.jscodeshift - test.js" />
       <item itemvalue="npm.build" />
       <item itemvalue="npm.dev" />
       <item itemvalue="Spring Boot.DQLMobxApplication" />
@@ -521,11 +485,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.jscodeshift - test.js" />
+        <item itemvalue="Node.js.temp.js" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
         <item itemvalue="Mocha.Button" />
-        <item itemvalue="Mocha.FKSelector" />
-        <item itemvalue="Node.js.test.js" />
       </list>
     </recent_temporary>
   </component>
@@ -1326,6 +1290,14 @@
       <workItem from="1617961076379" duration="867000" />
       <workItem from="1617961953694" duration="29985000" />
       <workItem from="1617998293767" duration="4810000" />
+      <workItem from="1618312074178" duration="599000" />
+      <workItem from="1618316275944" duration="20353000" />
+      <workItem from="1618398012484" duration="7250000" />
+      <workItem from="1618409503407" duration="15110000" />
+      <workItem from="1618482914321" duration="5180000" />
+      <workItem from="1618494792485" duration="17493000" />
+      <workItem from="1618570185831" duration="6570000" />
+      <workItem from="1618577092333" duration="1332000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
