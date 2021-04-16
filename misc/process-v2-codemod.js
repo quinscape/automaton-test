@@ -1,10 +1,6 @@
 /*
  * Code mode to convert the old automaton process structure into the new process structure.
  *
- * I used the command "jscodeshift --parser babylon -t misc/process-v2-codemod.js src/main/js/apps/"
- *
- * without babylon I had parser errors.
- *
  */
 
 const path = require("path")
