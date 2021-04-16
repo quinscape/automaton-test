@@ -32,7 +32,13 @@ configure({
 bootstrap(
     initial => {
         return startup(
-            require.context("./", true, /\.js$/),
+            require.context("./", true, /^.\/(scopes|domain\/.*)\.js$/),
+
+            name => import(
+                    /* webpackChunkName: "process-" */
+                    /* webpackExclude: /(states|queries|composites)/ */
+                    `./processes/${name}/${name}.js`
+                ),
             initial,
             config => {
 
