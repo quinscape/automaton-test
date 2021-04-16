@@ -10,6 +10,7 @@ const webpack = require("webpack");
 const shellJs = require("shelljs");
 
 const PRODUCTION = (process.env.NODE_ENV === "production");
+const ASSET_PATH = (process.env.ASSET_PATH || "/js/");
 
 const JS_OUTPUT_DIRECTORY = path.join(__dirname, "target/automaton-test/js/");
 
@@ -27,6 +28,7 @@ module.exports = {
 
     devtool: "source-map",
 
+
     output: {
         path: JS_OUTPUT_DIRECTORY,
         filename: "bundle-[name]-[chunkhash].js",
@@ -36,6 +38,8 @@ module.exports = {
         library: "App",
         libraryTarget: "var",
         libraryExport: "default",
+
+        publicPath: ASSET_PATH
     },
 
     // aliases to be able to use "yarn link automaton-js"
