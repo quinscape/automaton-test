@@ -2,10 +2,7 @@ import { Icon, Select } from "domainql-form"
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
 import { Button, i18n, DataGrid } from "@quinscape/automaton-js";
-import Card from "reactstrap/es/Card";
-import CardBody from "reactstrap/es/CardBody";
-
-
+import { Card, CardBody }  from "reactstrap";
 /**
  * Localized array of month names.
 
