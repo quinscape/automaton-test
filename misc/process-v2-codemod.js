@@ -286,70 +286,70 @@ function transformInitProcess(moduleAST, j, file)
         .filter( path => path.value.id.name === "initProcess" )
         .replaceWith(path => {
 
-        const returnStmt = path.value.body.body[ path.value.body.body.length - 1 ];
+            const returnStmt = path.value.body.body[ path.value.body.body.length - 1 ];
 
-        if (returnStmt.argument.type !== "ObjectExpression")
-        {
-            console.warn("No ObjectExpression return in initProcess in ", file.path);
-            return;
-        }
-
-        const {properties} = returnStmt.argument;
-
-        for (let i = 0; i < properties.length; i++)
-        {
-            const objectProperty = properties[i];
-
-            const name = getObjectPropertyName(objectProperty);
-            if (name === "startState")
+            if (returnStmt.argument.type !== "ObjectExpression")
             {
-                startState = objectProperty.value;
+                console.warn("No ObjectExpression return in initProcess in ", file.path);
+                return;
             }
-            else if (name === "states")
-            {
-                stateInfos = getStateInfos(objectProperty.value)
-                stateNames = new Set(
-                    stateInfos.map( i => i.name)
-                );
-            }
-        }
 
-        if (startState.type === "StringLiteral")
-        {
-            return  j.functionDeclaration(
-                j.identifier("initProcess"),
-                [
-                    j.identifier("process"),
-                    j.identifier("scope")
-                ],
-                j.blockStatement(
+            const {properties} = returnStmt.argument;
+
+            for (let i = 0; i < properties.length; i++)
+            {
+                const objectProperty = properties[i];
+
+                const name = getObjectPropertyName(objectProperty);
+                if (name === "startState")
+                {
+                    startState = objectProperty.value;
+                }
+                else if (name === "states")
+                {
+                    stateInfos = getStateInfos(objectProperty.value)
+                    stateNames = new Set(
+                        stateInfos.map( i => i.name)
+                    );
+                }
+            }
+
+            if (startState.type === "StringLiteral")
+            {
+                return  j.functionDeclaration(
+                    j.identifier("initProcess"),
                     [
-                        ... path.value.body.body.slice(0, -1),
+                        j.identifier("process"),
+                        j.identifier("scope")
+                    ],
+                    j.blockStatement(
+                        [
+                            ... path.value.body.body.slice(0, -1),
 
-                        j.returnStatement(
-                            j.identifier(
-                                startState.value
+                            j.returnStatement(
+                                j.identifier(
+                                    startState.value
+                                )
                             )
-                        )
-                    ]
+                        ]
+                    )
                 )
-            )
+            }
+            else
+            {
+                const flattenedFn = flattenStartStateFunction(
+                    j,
+                    startState,
+                    file.path,
+                    stateNames
+                );
+
+                replaceStateReferences(j, flattenedFn, stateNames, importedStates);
+
+                return flattenedFn;
+            }
         }
-        else
-        {
-            const flattenedFn = flattenStartStateFunction(
-                j,
-                startState,
-                file.path,
-                stateNames
-            );
-
-            replaceStateReferences(j, flattenedFn, stateNames, importedStates);
-
-            return flattenedFn;
-        }
-
-    });
+    );
 
     if (!startState || !stateInfos)
     {
@@ -374,8 +374,10 @@ function transformInitProcess(moduleAST, j, file)
         importedStates.add(startState.value);
     }
 
-    j(moduleAST.find(j.ExportNamedDeclaration).at(0).get())
-        .insertBefore(
+    const imports = moduleAST.find(j.ImportDeclaration);
+
+    imports.at(imports.length - 1)
+        .insertAfter(
             createImportsForStates(j, importedStates, "./states/")
         )
 
@@ -431,34 +433,50 @@ function importReferenced(j, mergedImports, referenced)
     return importNodes;
 }
 
+function addNamedImport(j, imports, name, source)
+{
+    imports.set(name, {
+        specifier: j.importSpecifier(
+            j.identifier(
+                name
+            ),
+            j.identifier(
+                name
+            )
+        ),
+        source: j.stringLiteral(source),
+    })
+}
 
-function createStateModule(info, file, j, mergedImports, compositeAST, stateNames)
+function addDefaultImport(j, imports, name, source)
+{
+    imports.set(name, {
+        specifier: j.importDefaultSpecifier(
+            j.identifier(
+                name
+            )
+        ),
+        source: j.stringLiteral(source),
+    })
+}
+
+
+function createStateModule(info, file, j, mergedImports, compositeAST, stateNames, processFilterDSLImports)
 {
     const {name, transitionMap} = info;
 
     mergedImports = new Map(mergedImports);
 
-    mergedImports.set("ViewState", {
-        specifier: j.importSpecifier(
-            j.identifier(
-                "ViewState"
-            ),
-            j.identifier(
-                "ViewState"
-            )
-        ),
-        source: j.stringLiteral("@quinscape/automaton-js"),
-    })
-
-
-    mergedImports.set("React", {
-        specifier: j.importDefaultSpecifier(
-            j.identifier(
-                "React"
-            )
-        ),
-        source: j.stringLiteral("react"),
-    })
+    addNamedImport(
+        j, mergedImports, "ViewState", "@quinscape/automaton-js"
+    )
+    addNamedImport(
+        j, mergedImports, "FilterDSL", "@quinscape/automaton-js"
+    )
+    addDefaultImport
+    (
+        j, mergedImports, "React", "react"
+    )
 
     let compositeComponent = null;
     compositeAST.find(j.VariableDeclaration)
@@ -534,6 +552,20 @@ function createStateModule(info, file, j, mergedImports, compositeAST, stateName
     const viewStateIdent = j.identifier(
         name
     );
+
+    importedStates.delete(name);
+
+    const filterDSLImports = getFilterDSLImports(j, compositeAST);
+
+    Array.from(processFilterDSLImports).forEach( i => filterDSLImports.add(i))
+
+    const usedFilterDSLImports = Array.from(filterDSLImports).filter(name => referenced.has(name));
+
+    if (usedFilterDSLImports.length)
+    {
+        referenced.add("FilterDSL")
+    }
+
     const stateModuleAST = j(
         j.program(
             [
@@ -572,10 +604,7 @@ function createStateModule(info, file, j, mergedImports, compositeAST, stateName
         )
     );
 
-
-    const filterDSLImports = getFilterDSLImports(j, compositeAST);
-    const usedFilterDSLImports = Array.from(filterDSLImports).filter(prop => referenced.has(prop.value.name));
-    declareUsedFilterDSLImports(j, stateModuleAST, usedFilterDSLImports, referenced);
+    declareUsedFilterDSLImports(j, stateModuleAST, usedFilterDSLImports);
 
     return stateModuleAST;
 }
@@ -711,8 +740,8 @@ function fixCompositeImports(j, imports)
 }
 
 /**
- * Modifies the collected imports from process module so that "./Something" is turned into  "../Something" following
- * the move from the root of the process dir to the states dir
+ * Modifies the collected imports from process module so that "./Something" is turned into  "../Something" and
+ * "../Something" becomes "../../Something" following the move from the root of the process dir to the states dir
  *
  * @param  j
  * @param imports
@@ -725,6 +754,12 @@ function fixProcessImports(j, imports)
         {
             entry.source = j.stringLiteral(
                 "." + entry.source.value
+            )
+        }
+        else if (entry.source.value.indexOf("../") === 0)
+        {
+            entry.source = j.stringLiteral(
+                "../" + entry.source.value
             )
         }
     }
@@ -760,33 +795,49 @@ function findReferencedIdentifiers(j, coll)
 }
 
 
-function declareUsedFilterDSLImports(j, moduleAST, filterDSLImports, referenced)
+function declareUsedFilterDSLImports(j, moduleAST, usedFilterDSLImports)
 {
-    const usedFilterDSLImports = Array.from(filterDSLImports).filter(prop => referenced.has(prop.value.name));
     if (usedFilterDSLImports.length)
     {
-        referenced.add("FilterDSL")
+        let existing = moduleAST
+            .find(j.VariableDeclarator, { id: { type: "ObjectPattern"}, init: { name : "FilterDSL"}});
 
-        const imports = moduleAST
-            .find(j.ImportDeclaration)
-
-        imports
-            .at(imports.length - 1)
-            .insertAfter(
-                j.variableDeclaration(
-                    "const",
-                    [
-                        j.variableDeclarator(
-                            j.objectPattern(
-                                usedFilterDSLImports
-                            ),
-                            j.identifier(
-                                "FilterDSL"
-                            )
-                        )
-                    ]
-                )
+        const declarator = j.variableDeclarator(
+            j.objectPattern(
+                usedFilterDSLImports.map(name => {
+                    const identifier = j.identifier(name);
+                    const prop = j.objectProperty(
+                        identifier,
+                        identifier
+                    );
+                    prop.shorthand = true;
+                    return prop;
+                })
+            ),
+            j.identifier(
+                "FilterDSL"
             )
+        );
+
+        if (existing.length)
+        {
+            existing.replaceWith( declarator)
+        }
+        else
+        {
+            const imports = moduleAST
+                .find(j.ImportDeclaration)
+            imports
+                .at(imports.length - 1)
+                .insertAfter(
+                    j.variableDeclaration(
+                        "const",
+                        [
+                            declarator
+                        ]
+                    )
+                )
+        }
     }
 }
 
@@ -813,7 +864,8 @@ function cleanupImports(j, moduleAST, filterDSLImports)
     referenced.add("action");
     referenced.add("computed");
 
-    declareUsedFilterDSLImports(j, moduleAST, filterDSLImports, referenced);
+    const usedFilterDSLImports = Array.from(filterDSLImports).filter(name => referenced.has(name));
+    declareUsedFilterDSLImports(j, moduleAST, usedFilterDSLImports);
 
     moduleAST
         .find(j.ImportDeclaration)
@@ -856,7 +908,7 @@ function getFilterDSLImports(j, moduleAST)
 
                 for (let i = 0; i < properties.length; i++)
                 {
-                    filterDSLImports.add(properties[i]);
+                    filterDSLImports.add(properties[i].value.name);
                 }
 
             }
@@ -915,7 +967,7 @@ export default function transformer(file, api) {
 
         const mergedImports = mergeImports(j, processName, name, processImports, compositeImports)
 
-        const newModuleAST = createStateModule(info, file, j, mergedImports, compositeAST, stateNames);
+        const newModuleAST = createStateModule(info, file, j, mergedImports, compositeAST, stateNames, filterDSLImports);
 
         const statePath = path.resolve(
             path.dirname(file.path), "states", withJsExtension(name)
