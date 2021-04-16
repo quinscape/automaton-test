@@ -926,7 +926,7 @@ export default function transformer(file, api) {
 
     })
 
-    cleanupImports(j, moduleAST, filterDSLImports, true);
+    cleanupImports(j, moduleAST, filterDSLImports);
 
     return moduleAST
         .toSource({
