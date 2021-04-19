@@ -1515,10 +1515,10 @@ babel-messages@^6.23.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-automaton@^0.0.15:
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/babel-plugin-automaton/-/babel-plugin-automaton-0.0.15.tgz#a17cfc84b7a017472f0b1edf02441008ccb7b5a5"
-  integrity sha512-jT4pQmZDs0vcTntxaXNDFcERa+GQ6uAXj7H2VJ1XKLK4lrGG2nN/K+dJrUDgtbdZ/ee8gCfe5fCxELNLB4Py7g==
+babel-plugin-automaton@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-automaton/-/babel-plugin-automaton-0.1.1.tgz#5705bd471d5838a4131c915070f4ce91ab64a248"
+  integrity sha512-VygOeUQpTOmP8CFS2gY98g+ugP1JeGxmLAEHfMD2uQCXnl10B8vg3yMsWleUj7ynCam1vi7kwZFIpEUpIQVazg==
   dependencies:
     "@babel/generator" "^7.6.4"
     "@babel/runtime" "^7.6.3"
