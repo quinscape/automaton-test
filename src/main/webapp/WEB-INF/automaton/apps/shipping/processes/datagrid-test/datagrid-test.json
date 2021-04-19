@@ -11,10 +11,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "action"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "isObservable"
                 }
             ]
         },
@@ -25,26 +21,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "injection"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "config"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "createDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "storeDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "deleteDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "backToParent"
                 },
                 {
                     "type": "ImportSpecifier",
@@ -64,16 +40,6 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "./queries/Q_FooDetail",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "Q_FooDetail"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
             "source": "./queries/Q_FooList",
             "specifiers": [
                 {
@@ -81,88 +47,25 @@
                     "name": "Q_FooList"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/CRUDList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "CRUDList"
+                }
+            ]
         }
     ],
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"CRUDList\"",
-            "states": {
-                "CRUDList": {
-                    "new-foo": {
-                        "to": "CRUDDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ // use empty id to be replaced by a new id server-side (\nconst newObj = createDomainObject(\"FooInput\", \"\"); newObj.name = \"Unnamed\"; newObj.description = null; newObj.num = 0; newObj.flag = false; newObj.created = new Date(); newObj.type = \"TYPE_A\"; return scope.updateCurrent(newObj); }"
-                        }
-                    },
-                    "new-foo-no-ddefaults": {
-                        "to": "CRUDDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ // use empty id to be replaced by a new id server-side (\nconst newObj = createDomainObject(\"FooInput\", \"\"); // test required\nnewObj.name = null; // test highlevel validation\nnewObj.description = \"AAA\"; newObj.flag = false; newObj.created = new Date(); newObj.type = \"TYPE_A\"; // XXX: even though we don't set ownerId here, we won't get an\n//      revalidation error because there's no field for it\nreturn scope.updateCurrent(newObj); }"
-                        }
-                    },
-                    "to-detail": {
-                        "to": "CRUDDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"to-detail, context = \", t.context); return Q_FooDetail.execute({ config: { condition: field(\"id\").eq(value(t.context)) } }).then(({ iQueryFoo }) => { if (iQueryFoo.rows.length === 0) { alert(\"Could not load Foo with id '\" + t.context); } return scope.updateCurrent(config.inputSchema.clone(iQueryFoo.rows[0])); }); }"
-                        }
-                    }
-                },
-                "CRUDDetail": {
-                    "save": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "storeDomainObject({ ...t.context, ownerId: config.auth.id || \"\" }).then(() => scope.foos.update()).then(() => t.back(backToParent(t)))"
-                        }
-                    },
-                    "delete": {
-                        "to": "CRUDList",
-                        "discard": true,
-                        "confirmation": {
-                            "type": "Action",
-                            "params": [
-                                "context"
-                            ],
-                            "code": "`Delete ${context.name} ?`"
-                        },
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const { id } = t.context; return deleteDomainObject(\"Foo\", id).then(didDelete => didDelete && scope.foos.update()); }"
-                        }
-                    },
-                    "cancel": {
-                        "to": "CRUDList",
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Transition 'cancel'\"); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return CRUDList;"
+        ],
+        "startState": "CRUDList",
         "scope": {
             "name": "CRUDTestScope",
             "observables": [

@@ -1,0 +1,355 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "createDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Button"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "DataGrid"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FilterDSL"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../queries/Q_WaldoDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_WaldoDetail"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "reactstrap",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ButtonToolbar"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./WaldoDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "WaldoDetail"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "WaldoList",
+        "transitionMap": {
+            "new-meta-config": {
+                "to": "WaldoDetail",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ const newInstance = createDomainObject(\"Waldo\"); newInstance.name = \"Unnamed\"; scope.updateCurrent(newInstance); }"
+                }
+            },
+            "to-detail": {
+                "to": "WaldoDetail",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ const id = t.context; return Q_WaldoDetail.execute({ config: { condition: field(\"id\").eq(value(id)) } }).then(({ iQueryWaldo }) => { if (iQueryWaldo.rows.length === 0) { alert(\"Could not load Waldo with id '\" + id); } scope.updateCurrent(config.inputSchema.clone(iQueryWaldo.rows[0])); }); }"
+                }
+            }
+        },
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "scope",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "scope"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "env"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "div",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "h3",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "type": "JSXExpressionContainer",
+                                "code": "{i18n(\"Meta Config List\")}"
+                            },
+                            {
+                                "name": "small",
+                                "attrs": [],
+                                "kids": [
+                                    {
+                                        "type": "JSXText",
+                                        "value": "Meta Field config example. Tests <FieldMetaButton/> configuration"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "ButtonToolbar",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "name": "Button",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"btn btn-secondary mr-1\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "transition",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"new-meta-config\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "Icon",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "className",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"fa-plus-circle mr-1\""
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "type": "JSXText",
+                                        "value": "New Waldo"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "DataGrid",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "value",
+                                "value": {
+                                    "type": "JSXExpressionContainer",
+                                    "code": "{scope.waldos}"
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "DataGrid.Column",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "heading",
+                                        "value": {
+                                            "type": "JSXExpressionContainer",
+                                            "code": "{i18n(\"Action\")}"
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "type": "JSXRenderFunction",
+                                        "params": [
+                                            {
+                                                "type": "Identifier",
+                                                "name": "waldo"
+                                            }
+                                        ],
+                                        "constants": [],
+                                        "root": {
+                                            "name": "Button",
+                                            "attrs": [
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "className",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"btn btn-secondary\""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "transition",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"to-detail\""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "context",
+                                                    "value": {
+                                                        "type": "JSXExpressionContainer",
+                                                        "code": "{waldo.id}"
+                                                    }
+                                                }
+                                            ],
+                                            "kids": [
+                                                {
+                                                    "name": "Icon",
+                                                    "attrs": [
+                                                        {
+                                                            "type": "JSXAttribute",
+                                                            "name": "className",
+                                                            "value": {
+                                                                "type": "Expression",
+                                                                "code": "\"fa-edit mr-1\""
+                                                            }
+                                                        }
+                                                    ],
+                                                    "kids": [],
+                                                    "type": "JSXElement"
+                                                },
+                                                {
+                                                    "type": "JSXText",
+                                                    "value": "Detail"
+                                                }
+                                            ],
+                                            "type": "JSXElement"
+                                        }
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "DataGrid.Column",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "name",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"name\""
+                                        }
+                                    }
+                                ],
+                                "kids": [],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": [
+        "const { field, value } = FilterDSL;"
+    ]
+}

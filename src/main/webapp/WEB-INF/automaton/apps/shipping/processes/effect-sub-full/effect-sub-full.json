@@ -11,10 +11,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "observable"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "runInAction"
                 }
             ]
         },
@@ -79,119 +75,32 @@
                     "name": "unregisterAppEffect"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/SubProcessFullHome",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "SubProcessFullHome"
+                }
+            ]
         }
     ],
     "processExports": {
         "type": "ProcessExports",
         "configuration": [
             "process.addProcessEffect(() => { registerAppEffect(\"Process:effect-sub-full\"); return () => { unregisterAppEffect(\"Process:effect-sub-full\"); }; })",
-            "process.addEffect(\"SubProcessFullHome\", () => { registerAppEffect(\"SubProcessFullHome\"); return () => { unregisterAppEffect(\"SubProcessFullHome\"); }; })",
-            "process.addEffect(\"SubProcessFullDetail\", () => { const name = \"SubProcessFullDetail '\" + (scope.currentFoo && scope.currentFoo.name) + \"'\"; registerAppEffect(name); return () => { unregisterAppEffect(name); }; }, () => [scope.currentFoo && scope.currentFoo.id])"
+            "process.addEffect(SubProcessFullHome, () => { registerAppEffect(SubProcessFullHome); return () => { unregisterAppEffect(SubProcessFullHome); }; })",
+            "process.addEffect(SubProcessFullDetail, () => { const name = \"SubProcessFullDetail '\" + (scope.currentFoo && scope.currentFoo.name) + \"'\"; registerAppEffect(name); return () => { unregisterAppEffect(name); }; }, () => [scope.currentFoo && scope.currentFoo.id])"
         ],
-        "process": {
-            "startState": "\"SubProcessFullHome\"",
-            "states": {
-                "SubProcessFullHome": {
-                    "choose": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.endSubProcess(t.context)"
-                        }
-                    },
-                    "close": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.endSubProcess(null)"
-                        }
-                    },
-                    "open-dialog": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.runSubProcess(\"effect-sub-dialog\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result, \"process =\", process)))"
-                        }
-                    },
-                    "open-full": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.runSubProcess(\"effect-sub-full\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result, \"process =\", process)))"
-                        }
-                    },
-                    "pick": {
-                        "to": "SubProcessFullDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"pick, context = \", t.context); return updateDetail(scope, t.context); }"
-                        }
-                    }
-                },
-                "SubProcessFullDetail": {
-                    "choose": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.endSubProcess(t.context)"
-                        }
-                    },
-                    "open-dialog": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.runSubProcess(\"effect-sub-dialog\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result)))"
-                        }
-                    },
-                    "open-full": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.runSubProcess(\"effect-sub-full\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result)))"
-                        }
-                    },
-                    "cancel": {
-                        "to": "SubProcessFullHome",
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Transition 'cancel'\"); }"
-                        }
-                    },
-                    "next": {
-                        "to": "SubProcessFullDetail",
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const { foos: { rows }, currentFoo } = scope; for (let i = 0; i < rows.length; i++) { const foo = rows[i]; if (foo.id === currentFoo.id && i + 1 < rows.length) { return updateDetail(scope, rows[i + 1].id); } } alert(\"No next object\"); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "// process config\nprocess.options.asDialog = false;",
+            "process.options.forceSubProcess = true;",
+            "process.options.layout = EffectLayout;",
+            "return SubProcessFullHome;"
+        ],
+        "startState": "SubProcessFullHome",
         "scope": {
             "name": "EffectSubProcessFullScope",
             "observables": [

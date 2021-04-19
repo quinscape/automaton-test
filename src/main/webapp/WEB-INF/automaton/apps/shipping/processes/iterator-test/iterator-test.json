@@ -20,31 +20,11 @@
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "backToParent"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "createDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "deleteDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "extractTypeData"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "FilterDSL"
                 },
                 {
                     "type": "ImportSpecifier",
                     "name": "injection"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "storeDomainObject"
                 }
             ]
         },
@@ -57,17 +37,25 @@
                     "name": "Q_Foo"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/IteratorTestList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "IteratorTestList"
+                }
+            ]
         }
     ],
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"IteratorTestList\"",
-            "states": {
-                "IteratorTestList": {}
-            }
-        },
+        "init": [
+            "return IteratorTestList;"
+        ],
+        "startState": "IteratorTestList",
         "scope": {
             "name": "IteratorTestScope",
             "observables": [

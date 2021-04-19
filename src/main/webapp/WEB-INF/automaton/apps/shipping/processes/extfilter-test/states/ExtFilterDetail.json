@@ -1,0 +1,167 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../composites/BarForm",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "BarValuesForm"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./ExtFilterHome",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "ExtFilterHome"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "ExtFilterDetail",
+        "transitionMap": {
+            "back": {
+                "discard": true,
+                "to": "ExtFilterHome",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ console.log(\"Back to Home\"); }"
+                }
+            }
+        },
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "scope",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "scope"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "env"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "React.Fragment",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "div",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"row\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "div",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"col\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "BarValuesForm",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "value",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{scope.currentBar}"
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": []
+}

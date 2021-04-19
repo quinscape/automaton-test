@@ -30,16 +30,6 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "../../../../components/TreeLayout",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "TreeLayout"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
             "source": "./queries/Q_Node",
             "specifiers": [
                 {
@@ -60,11 +50,41 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "uuid",
+            "source": "./states/TreeTestNodeDetail",
             "specifiers": [
                 {
                     "type": "ImportDefaultSpecifier",
-                    "name": "uuid"
+                    "name": "TreeTestNodeDetail"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/TreeTestBazDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "TreeTestBazDetail"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/TreeTestBazValueDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "TreeTestBazValueDetail"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/TreeTestHome",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "TreeTestHome"
                 }
             ]
         }
@@ -72,15 +92,16 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "t => { const { name, type, useIndex } = process.input; if (useIndex !== undefined) { scope.useIndex = useIndex; } switch (type) { case \"Node\": t.target = \"TreeTestNodeDetail\"; scope.updateCurrent(name); break; case \"Baz\": t.target = \"TreeTestBazDetail\"; scope.updateCurrent(name); break; case \"BazValue\": t.target = \"TreeTestBazValueDetail\"; scope.updateCurrent(name); break; default: t.target = \"TreeTestHome\"; break; } }",
-            "states": {
-                "TreeTestHome": {},
-                "TreeTestNodeDetail": {},
-                "TreeTestBazDetail": {},
-                "TreeTestBazValueDetail": {}
-            }
-        },
+        "init": [
+            "let target;",
+            "const name = process.input.name;",
+            "const type = process.input.type;",
+            "const useIndex = process.input.useIndex;",
+            "if (useIndex !== undefined) { scope.useIndex = useIndex; }",
+            "switch (type) { case \"Node\": target = TreeTestNodeDetail; scope.updateCurrent(name); break; case \"Baz\": target = TreeTestBazDetail; scope.updateCurrent(name); break; case \"BazValue\": target = TreeTestBazValueDetail; scope.updateCurrent(name); break; default: target = TreeTestHome; break; }",
+            "return target;"
+        ],
+        "startState": "target",
         "scope": {
             "name": "TreeTestScope",
             "observables": [

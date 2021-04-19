@@ -1,0 +1,286 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "CollapsibleSidebar"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "CollapseHome",
+        "transitionMap": {},
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "React.Fragment",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "div",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"row\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "CollapsibleSidebar",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "id",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"collapsible\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "collapsedLabelText",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"Collapsible Test\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "width",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"20vw\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "maxWidth",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"30vw\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "minWidth",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"10vw\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "div",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "className",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"form-group\""
+                                                }
+                                            }
+                                        ],
+                                        "kids": [
+                                            {
+                                                "name": "label",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "htmlFor",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"testField\""
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [
+                                                    {
+                                                        "type": "JSXText",
+                                                        "value": "Test for focusing"
+                                                    }
+                                                ],
+                                                "type": "JSXElement"
+                                            },
+                                            {
+                                                "name": "input",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "type",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"text\""
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "className",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"form-control\""
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "name",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"test\""
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "id",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"testField\""
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "placeholder",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"Test\""
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [],
+                                                "type": "JSXElement"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "type": "JSXText",
+                                        "value": "\n                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   \n\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   \n\nUt wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   \n\nNam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   \n\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   \n\nAt vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.   \n\nConsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.   \n\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   \n\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   \n\nUt wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   \n\nNam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo\n                "
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "div",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"col\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "h1",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "type": "JSXExpressionContainer",
+                                                "code": "{i18n(\"Collapsible Test Home\")}"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "name": "p",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "className",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"text-info\""
+                                                }
+                                            }
+                                        ],
+                                        "kids": [
+                                            {
+                                                "name": "i",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "className",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"fas fa-info-circle\""
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [],
+                                                "type": "JSXElement"
+                                            },
+                                            {
+                                                "type": "JSXText",
+                                                "value": " Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   \n\n        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   \n\n        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   \n\n        Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   \n\n        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   \n\n        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.   \n\n        Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.   \n\n        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   \n\n        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   \n\n        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   \n\n        Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo\n                    "
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": []
+}

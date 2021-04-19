@@ -11,10 +11,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "observable"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "runInAction"
                 }
             ]
         },
@@ -25,20 +21,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "FilterDSL"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "injection"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "../datagrid-test/queries/Q_FooList",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "Q_FooList"
                 }
             ]
         },
@@ -54,52 +36,26 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "../datagrid-test/queries/Q_FooType",
+            "source": "./states/MetaConfigSubHome",
             "specifiers": [
                 {
                     "type": "ImportDefaultSpecifier",
-                    "name": "Q_FooType"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "../../../../components/EffectLayout",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "EffectLayout"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "registerAppEffect"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "unregisterAppEffect"
+                    "name": "MetaConfigSubHome"
                 }
             ]
         }
     ],
     "processExports": {
         "type": "ProcessExports",
-        "configuration": [],
-        "process": {
-            "startState": "t => { scope.location = process.input; t.target = \"MetaConfigSubHome\"; }",
-            "states": {
-                "MetaConfigSubHome": {
-                    "close": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.endSubProcess(null)"
-                        }
-                    }
-                }
-            }
-        },
+        "configuration": [
+            "scope.location = process.input"
+        ],
+        "init": [
+            "let target;",
+            "target = MetaConfigSubHome;",
+            "return target;"
+        ],
+        "startState": "target",
         "scope": {
             "name": "MetaConfigSubScope",
             "observables": [

@@ -15,10 +15,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "action"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "toJS"
                 }
             ]
         },
@@ -32,27 +28,17 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "config"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "storeDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "deleteDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "GraphQLQuery"
-                },
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/CRUDList",
+            "specifiers": [
                 {
-                    "type": "ImportSpecifier",
-                    "name": "FilterDSL"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "backToParent"
+                    "type": "ImportDefaultSpecifier",
+                    "name": "CRUDList"
                 }
             ]
         }
@@ -60,82 +46,10 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"CRUDList\"",
-            "states": {
-                "CRUDList": {
-                    "new-foo": {
-                        "to": "CRUDDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "CreateFooMutation.execute({ name: \"Unnamed Foo\" }).then(({ createFoo }) => scope.updateCurrent(createFoo))"
-                        }
-                    },
-                    "to-detail": {
-                        "to": "CRUDDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ scope.currentFoo = config.inputSchema.clone(t.context); }"
-                        }
-                    }
-                },
-                "CRUDDetail": {
-                    "save": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "storeDomainObject({ ...t.context, ownerId: config.auth.id || \"\" }).then(() => GetFoosQuery.execute()).then(({ getFoos }) => scope.updateFoos(getFoos)).then(() => t.back(backToParent(t)))"
-                        }
-                    },
-                    "complex-save": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "storeDomainObject({ foo: t.context, other: node }).then(() => GetFoosQuery.execute()).then(({ getFoos }) => scope.updateFoos(getFoos)).then(() => t.back(backToParent(t)))"
-                        }
-                    },
-                    "delete": {
-                        "to": "CRUDList",
-                        "discard": true,
-                        "confirmation": {
-                            "type": "Action",
-                            "params": [
-                                "context"
-                            ],
-                            "code": "`Delete ${context.name} ?`"
-                        },
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const { id } = t.context; return deleteDomainObject(\"Foo\", id).then(didDelete => didDelete && scope.removeFoo(id)); }"
-                        }
-                    },
-                    "cancel": {
-                        "to": "CRUDList",
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Transition 'cancel'\"); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return CRUDList;"
+        ],
+        "startState": "CRUDList",
         "scope": {
             "name": "CRUDTestScope",
             "observables": [

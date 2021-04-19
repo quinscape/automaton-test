@@ -2,11 +2,11 @@
     "importDeclarations": [
         {
             "type": "ImportDeclaration",
-            "source": "@quinscape/automaton-js",
+            "source": "./states/Home",
             "specifiers": [
                 {
-                    "type": "ImportSpecifier",
-                    "name": "Process"
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Home"
                 }
             ]
         }
@@ -14,28 +14,20 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "t => { const { target } = process.input; t.target = target && \"Target\" + target.toUpperCase() || \"Home\"; }",
-            "states": {
-                "Home": {},
-                "TargetA": {
-                    "back": {
-                        "to": "Home"
-                    }
-                },
-                "TargetB": {
-                    "back": {
-                        "to": "Home"
-                    }
-                },
-                "TargetC": {
-                    "back": {
-                        "to": "Home"
-                    }
-                }
-            }
+        "init": [
+            "let target, context;",
+            "const _target = process.input.target;",
+            "if (_target) { context = _target && \"Target\" + _target.toUpperCase() || Home; target = context; } else { target = Home; }",
+            "return target;"
+        ],
+        "startState": "target",
+        "scope": {
+            "name": "DecisionStartScope",
+            "observables": [],
+            "actions": [],
+            "computeds": [],
+            "helpers": []
         },
-        "scope": null,
         "extraConstants": []
     }
 }

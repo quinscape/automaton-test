@@ -1,0 +1,324 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "useState"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "storeDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "deleteDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "useEntity"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "DEFAULT_OPTIONS"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FormLayout"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../composites/FormOptions",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "FormOptions"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../composites/FooForm",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "FooForm"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./CRUDList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "CRUDList"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "CRUDDetail",
+        "transitionMap": {
+            "save": {
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "storeDomainObject({ ...t.context, ownerId: config.auth.id || \"\" }).then(() => scope.foos.update()).then(() => t.back(backToParent(t)))"
+                }
+            },
+            "delete": {
+                "to": "CRUDList",
+                "discard": true,
+                "confirmation": {
+                    "type": "Action",
+                    "params": [
+                        "context"
+                    ],
+                    "code": "`Delete ${context.name} ?`"
+                },
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ const { id } = t.context; return deleteDomainObject(\"Foo\", id).then(didDelete => didDelete && scope.foos.update()); }"
+                }
+            },
+            "cancel": {
+                "to": "CRUDList",
+                "discard": true,
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ console.log(\"Transition 'cancel'\"); }"
+                }
+            }
+        },
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ArrayPattern",
+                                "elements": [
+                                    {
+                                        "type": "Identifier",
+                                        "name": "control"
+                                    },
+                                    {
+                                        "type": "Identifier",
+                                        "name": "setControl"
+                                    }
+                                ]
+                            },
+                            "init": "useState(() => ({ ...DEFAULT_OPTIONS, layout: FormLayout.HORIZONTAL, isolation: false }))"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "Identifier",
+                                "name": "changeControl"
+                            },
+                            "init": "(k, v) => setControl({ ...control, [k]: v })"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "scope",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "scope"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "env"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "Identifier",
+                                "name": "entity"
+                            },
+                            "init": "useEntity(\"Foo\", scope.currentFoo.id)"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "React.Fragment",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "FormOptions",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "control",
+                                "value": {
+                                    "type": "JSXExpressionContainer",
+                                    "code": "{control}"
+                                }
+                            },
+                            {
+                                "type": "JSXAttribute",
+                                "name": "changeControl",
+                                "value": {
+                                    "type": "JSXExpressionContainer",
+                                    "code": "{changeControl}"
+                                }
+                            }
+                        ],
+                        "kids": [],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "div",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"row\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "div",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"col\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "FooForm",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "value",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{scope.currentFoo}"
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "options",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{control}"
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": []
+}

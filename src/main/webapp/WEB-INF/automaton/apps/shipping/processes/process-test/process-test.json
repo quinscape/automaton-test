@@ -15,32 +15,16 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "action"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "runInAction"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "toJS"
                 }
             ]
         },
         {
             "type": "ImportDeclaration",
-            "source": "@quinscape/automaton-js",
+            "source": "./states/ProcessTestHome",
             "specifiers": [
                 {
-                    "type": "ImportSpecifier",
-                    "name": "injection"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "Process"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "type"
+                    "type": "ImportDefaultSpecifier",
+                    "name": "ProcessTestHome"
                 }
             ]
         }
@@ -48,43 +32,13 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "t => { t.context = { \"accepted\": \"2017-10-17T22:00:00.000Z\", \"customer\": { \"salutation\": null, \"name\": \"Lukas Mustermann\" }, \"id\": \"d734579f-0b0a-4ab6-9ad5-45f4ee29efb1\", \"number\": \"B00000001\", \"shippingType\": { \"name\": \"STANDARD\" }, \"status\": \"PAID\", \"num\": 12345 }; t.target = \"ProcessTestHome\"; }",
-            "states": {
-                "ProcessTestHome": {
-                    "open-sub": {
-                        "to": "ProcessTestHome",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ return process.runSubProcess(\"sub-process-example\", t.context).then(result => result && runInAction(() => scope.currentOrder = result)); }"
-                        }
-                    },
-                    "open-sub2": {
-                        "to": "ProcessTestHome",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ return process.runSubProcess(\"customer\", t.context).then(result => result && runInAction(() => scope.currentOrder = result)); }"
-                        }
-                    },
-                    "clear": {
-                        "to": "ProcessTestHome",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ scope.currentOrder = null; }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "let target, context;",
+            "context = { \"accepted\": \"2017-10-17T22:00:00.000Z\", \"customer\": { \"salutation\": null, \"name\": \"Lukas Mustermann\" }, \"id\": \"d734579f-0b0a-4ab6-9ad5-45f4ee29efb1\", \"number\": \"B00000001\", \"shippingType\": { \"name\": \"STANDARD\" }, \"status\": \"PAID\", \"num\": 12345 };",
+            "target = ProcessTestHome;",
+            "return target;"
+        ],
+        "startState": "target",
         "scope": {
             "name": "ProcessTestScope",
             "observables": [

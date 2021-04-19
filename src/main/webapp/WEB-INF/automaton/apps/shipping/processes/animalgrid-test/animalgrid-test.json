@@ -15,10 +15,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "action"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "toJS"
                 }
             ]
         },
@@ -29,26 +25,16 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "injection"
-                },
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/AnimalGridHome",
+            "specifiers": [
                 {
-                    "type": "ImportSpecifier",
-                    "name": "config"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "storeDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "deleteDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "GraphQLQuery"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "backToParent"
+                    "type": "ImportDefaultSpecifier",
+                    "name": "AnimalGridHome"
                 }
             ]
         }
@@ -56,46 +42,10 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"AnimalGridHome\"",
-            "states": {
-                "AnimalGridHome": {
-                    "to-detail": {
-                        "to": "AnimalDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ scope.currentNode = t.context; }"
-                        }
-                    }
-                },
-                "AnimalDetail": {
-                    "back": {
-                        "discard": true,
-                        "to": "AnimalGridHome",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Back to Home\"); }"
-                        }
-                    },
-                    "save": {
-                        "to": "AnimalGridHome",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ storeDomainObject({ _type: \"NodeInput\", id: t.context.id, name: t.context.name, parentId: t.context.parent.id }); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return AnimalGridHome;"
+        ],
+        "startState": "AnimalGridHome",
         "scope": {
             "name": "AnimalGridTestScope",
             "observables": [

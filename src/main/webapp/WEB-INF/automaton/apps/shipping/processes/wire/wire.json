@@ -15,14 +15,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "action"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "runInAction"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "toJS"
                 }
             ]
         },
@@ -36,15 +28,17 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "graphql"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "GraphQLQuery"
-                },
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/WireHome",
+            "specifiers": [
                 {
-                    "type": "ImportSpecifier",
-                    "name": "config"
+                    "type": "ImportDefaultSpecifier",
+                    "name": "WireHome"
                 }
             ]
         }
@@ -52,22 +46,10 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"WireHome\"",
-            "states": {
-                "WireHome": {
-                    "test-target": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "WireTestQuery.execute({ target: { ...t.context, flag: true, ownerId: config.auth.id || \"\" }, count: 123 }).then(({ wireTestMutation }) => scope.updateMutationResult(wireTestMutation), err => scope.updateMutationResult(mutationError(err)))"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return WireHome;"
+        ],
+        "startState": "WireHome",
         "scope": {
             "name": "WireTestScope",
             "observables": [

@@ -1,0 +1,126 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Button"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./MultiLayoutHome",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "MultiLayoutHome"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "MultiLayoutA",
+        "transitionMap": {
+            "back": {
+                "to": "MultiLayoutHome"
+            }
+        },
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "React.Fragment",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "h1",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "type": "JSXExpressionContainer",
+                                "code": "{i18n('Multi-Layout A')}"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "Button",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "transition",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"back\""
+                                }
+                            },
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"mr-1 btn btn-secondary\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "type": "JSXText",
+                                "value": "Back"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": []
+}

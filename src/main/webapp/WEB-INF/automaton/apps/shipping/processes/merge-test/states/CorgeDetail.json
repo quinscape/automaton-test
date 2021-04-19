@@ -1,0 +1,393 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "MergeOperation"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "deleteDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "backToParent"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "useEntity"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "DataGrid"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "luxon",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "DateTime"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FormLayout"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../composites/CorgeForm",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "CorgeForm"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./CorgeList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "CorgeList"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "CorgeDetail",
+        "transitionMap": {
+            "save": {
+                "to": "CorgeList",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ // update modified field\nt.context.modified = DateTime.local(); //scope.workingSet.addChanges(t.context);\nreturn scope.workingSet.merge().then(op => { if (op === MergeOperation.STORE) { // we actually did store the merged working set\n// update list view\nreturn scope.corges.update(); } else { // we did not store (might be CANCEL, DISCARD or APPLY)\n// in any case, we're going back into the mask\n// (everything else that needed to happen already happened)\nt.target = CorgeDetail; } }); }"
+                }
+            },
+            "delete": {
+                "to": "CorgeList",
+                "discard": true,
+                "confirmation": {
+                    "type": "Action",
+                    "params": [
+                        "context"
+                    ],
+                    "code": "`Delete ${context.name} ?`"
+                },
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ const { id } = t.context; return deleteDomainObject(\"Corge\", id).then(didDelete => didDelete && scope.corges.update()); }"
+                }
+            },
+            "cancel": {
+                "discard": true,
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ console.log(\"Transition 'cancel'\"); t.back(backToParent); }"
+                }
+            }
+        },
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "scope",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "scope"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "env"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "Identifier",
+                                "name": "entity"
+                            },
+                            "init": "useEntity(\"Corge\", scope.currentCorge.id)"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "React.Fragment",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "div",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"row\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "div",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"col\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "CorgeForm",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "value",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{scope.currentCorge}"
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "options",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{{ layout: FormLayout.HORIZONTAL, isolation: false }}"
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "name": "hr",
+                                        "attrs": [],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "name": "DataGrid",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "id",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"iquery-test\""
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "value",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{scope.corges}"
+                                                }
+                                            }
+                                        ],
+                                        "kids": [
+                                            {
+                                                "name": "DataGrid.Column",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "heading",
+                                                        "value": {
+                                                            "type": "JSXExpressionContainer",
+                                                            "code": "{i18n(\"Status\")}"
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [
+                                                    {
+                                                        "type": "JSXRenderFunction",
+                                                        "params": [
+                                                            {
+                                                                "type": "Identifier",
+                                                                "name": "corge"
+                                                            }
+                                                        ],
+                                                        "constants": [],
+                                                        "root": {
+                                                            "name": "DataGrid.WorkingSetStatus",
+                                                            "attrs": [
+                                                                {
+                                                                    "type": "JSXAttribute",
+                                                                    "name": "workingSet",
+                                                                    "value": {
+                                                                        "type": "JSXExpressionContainer",
+                                                                        "code": "{scope.workingSet}"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "JSXAttribute",
+                                                                    "name": "type",
+                                                                    "value": {
+                                                                        "type": "Expression",
+                                                                        "code": "\"Corge\""
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "JSXAttribute",
+                                                                    "name": "id",
+                                                                    "value": {
+                                                                        "type": "JSXExpressionContainer",
+                                                                        "code": "{corge.id}"
+                                                                    }
+                                                                }
+                                                            ],
+                                                            "kids": [],
+                                                            "type": "JSXElement"
+                                                        }
+                                                    }
+                                                ],
+                                                "type": "JSXElement"
+                                            },
+                                            {
+                                                "name": "DataGrid.Column",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "name",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"name\""
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "filter",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"containsIgnoreCase\""
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [],
+                                                "type": "JSXElement"
+                                            },
+                                            {
+                                                "name": "DataGrid.Column",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "name",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"num\""
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "filter",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"gt\""
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [],
+                                                "type": "JSXElement"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": []
+}

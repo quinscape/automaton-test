@@ -30,18 +30,6 @@
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "config"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "createDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "deleteDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "FilterDSL"
                 },
                 {
@@ -50,15 +38,7 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "MergeOperation"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "WorkingSet"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "backToParent"
                 }
             ]
         },
@@ -84,21 +64,11 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "./queries/Q_CorgeDetail",
+            "source": "./states/CorgeList",
             "specifiers": [
                 {
                     "type": "ImportDefaultSpecifier",
-                    "name": "Q_CorgeDetail"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "luxon",
-            "specifiers": [
-                {
-                    "type": "ImportSpecifier",
-                    "name": "DateTime"
+                    "name": "CorgeList"
                 }
             ]
         }
@@ -106,73 +76,10 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"CorgeList\"",
-            "states": {
-                "CorgeList": {
-                    "new-corge": {
-                        "to": "CorgeDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ // use empty id to be replaced by a new id server-side (\nconst newObj = createDomainObject(\"CorgeInput\", \"\"); newObj.name = \"Unnamed Corge\"; newObj.desc = \"\"; newObj.num = 0; newObj.flag = false; newObj.created = new Date(); newObj.type = \"TYPE_A\"; return scope.updateCurrent(newObj); }"
-                        }
-                    },
-                    "to-detail": {
-                        "to": "CorgeDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"to-detail, context = \", t.context); return Q_CorgeDetail.execute({ config: { condition: field(\"id\").eq(value(t.context)) } }).then(({ iQueryCorge }) => { if (iQueryCorge.rows.length === 0) { alert(\"Could not load Corge with id '\" + t.context); } const corge = config.inputSchema.clone(iQueryCorge.rows[0]); scope.workingSet.registerBaseVersion(corge); return scope.updateCurrent(corge); }); }"
-                        }
-                    }
-                },
-                "CorgeDetail": {
-                    "save": {
-                        "to": "CorgeList",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ // update modified field\nt.context.modified = DateTime.local(); //scope.workingSet.addChanges(t.context);\nreturn scope.workingSet.merge().then(op => { if (op === MergeOperation.STORE) { // we actually did store the merged working set\n// update list view\nreturn scope.corges.update(); } else { // we did not store (might be CANCEL, DISCARD or APPLY)\n// in any case, we're going back into the mask\n// (everything else that needed to happen already happened)\nt.target = \"CorgeDetail\"; } }); }"
-                        }
-                    },
-                    "delete": {
-                        "to": "CorgeList",
-                        "discard": true,
-                        "confirmation": {
-                            "type": "Action",
-                            "params": [
-                                "context"
-                            ],
-                            "code": "`Delete ${context.name} ?`"
-                        },
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const { id } = t.context; return deleteDomainObject(\"Corge\", id).then(didDelete => didDelete && scope.corges.update()); }"
-                        }
-                    },
-                    "cancel": {
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Transition 'cancel'\"); t.back(backToParent); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return CorgeList;"
+        ],
+        "startState": "CorgeList",
         "scope": {
             "name": "MergeTestScope",
             "observables": [

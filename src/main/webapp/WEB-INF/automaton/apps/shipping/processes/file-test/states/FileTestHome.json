@@ -1,0 +1,627 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Button"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../queries/Q_FredResource",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FredResource"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../queries/Q_FredFile",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_FredFile"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../queries/Q_updateFredResource",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_updateFredResource"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../queries/Q_updateFredFile",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_updateFredFile"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FormLayout"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FormContext"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Form"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Field"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "reactstrap",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Card"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "CardBody"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ButtonToolbar"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "FileTestHome",
+        "transitionMap": {
+            "get-resource": {
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "Q_FredResource.execute().then(({ getFredResource: fred }) => scope.updateFred(fred))"
+                }
+            },
+            "get-file": {
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "Q_FredFile.execute().then(({ getFredFile: fred }) => scope.updateFred(fred))"
+                }
+            },
+            "update-resource": {
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "Q_updateFredResource.execute({ fred: t.context })"
+                }
+            },
+            "update-file": {
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "Q_updateFredFile.execute({ fred: t.context })"
+                }
+            }
+        },
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "scope",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "scope"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "env"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "React.Fragment",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "Card",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "color",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"info\""
+                                }
+                            },
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"mb-3\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "CardBody",
+                                "attrs": [],
+                                "kids": [
+                                    {
+                                        "name": "h1",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "type": "JSXExpressionContainer",
+                                                "code": "{i18n(\"File Access Example\")}"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "type": "JSXText",
+                                        "value": "\n                    Demonstrates querying and updating GraphQL resources backed by JSON files, both via the\n                    automaton/spring-jsview resource mechanism and raw file access.\n                "
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "ButtonToolbar",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "name": "Button",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"btn btn-secondary mr-1\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "transition",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"get-resource\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "Icon",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "className",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"fa-download mr-1\""
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "type": "JSXText",
+                                        "value": "Reload Fred from Resource"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "Button",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"btn btn-secondary mr-3\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "transition",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"update-resource\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "context",
+                                        "value": {
+                                            "type": "JSXExpressionContainer",
+                                            "code": "{scope.currentFred}"
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "Icon",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "className",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"fa-upload mr-1\""
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "type": "JSXText",
+                                        "value": "Update fred via Resource"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "Button",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"btn btn-light mr-1\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "transition",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"get-file\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "Icon",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "className",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"fa-download mr-1\""
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "type": "JSXText",
+                                        "value": "Reload Fred from File"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "Button",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"btn btn-light mr-1\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "transition",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"update-file\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "context",
+                                        "value": {
+                                            "type": "JSXExpressionContainer",
+                                            "code": "{scope.currentFred}"
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "Icon",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "className",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"fa-upload mr-1\""
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "type": "JSXText",
+                                        "value": "Update fred via File"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "hr",
+                        "attrs": [],
+                        "kids": [],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "div",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"row\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "div",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"col-11\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "h2",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "type": "JSXText",
+                                                "value": "Fred"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "name": "Form",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "key",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{scope.counter}"
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "type",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"Fred\""
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "value",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{scope.currentFred}"
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "options",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{{ layout: FormLayout.HORIZONTAL, labelColumnClass: \"col-2\", wrapperColumnClass: \"col-10\" }}"
+                                                }
+                                            }
+                                        ],
+                                        "kids": [
+                                            {
+                                                "name": "Field",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "name",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"name\""
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [],
+                                                "type": "JSXElement"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "h2",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "type": "JSXText",
+                                "value": "Items"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "type": "JSXExpressionContainer",
+                        "code": "{scope.currentFred.items.map((fredItem, idx) => <div key={FormContext.getUniqueId(fredItem)} className=\"row\"><div className=\"col-11\"><Form type=\"FredItem\" value={fredItem} options={{ layout: FormLayout.HORIZONTAL, labelColumnClass: \"col-2\", wrapperColumnClass: \"col-10\" }}><Field name=\"name\" /><Field name=\"value\" /><Field name=\"flag\" /></Form></div><div className=\"col-1\"><ButtonToolbar><Button className=\"btn btn-light mr-1 text-nowrap\" action={() => scope.removeItem(idx)} text=\"Remove Item\" tooltip=\"Remove Item\"><Icon className=\"fa-minus text-danger\" /></Button></ButtonToolbar></div></div>)}"
+                    },
+                    {
+                        "name": "ButtonToolbar",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "name": "Button",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"btn btn-light mr-1\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "action",
+                                        "value": {
+                                            "type": "JSXExpressionContainer",
+                                            "code": "{() => scope.addItem()}"
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "Icon",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "className",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"fa-plus text-success mr-1\""
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "type": "JSXText",
+                                        "value": "Add Item"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": []
+}

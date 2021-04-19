@@ -1,0 +1,177 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../../../components/JSONData",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "JSONData"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./CustomerList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "CustomerList"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "CustomerDetail",
+        "transitionMap": {
+            "save": {
+                "to": "CustomerList",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ console.log(\"Transition 'save': \", toJS(t.context)); }"
+                }
+            },
+            "cancel": {
+                "to": "CustomerList",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ console.log(\"Transition 'cancel'\"); }"
+                }
+            }
+        },
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "scope",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "scope"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "env"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "div",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "h1",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "type": "JSXExpressionContainer",
+                                "code": "{i18n('Customer Detail')}"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "JSONData",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "name",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"customer\""
+                                }
+                            },
+                            {
+                                "type": "JSXAttribute",
+                                "name": "value",
+                                "value": {
+                                    "type": "JSXExpressionContainer",
+                                    "code": "{scope.currentCustomer}"
+                                }
+                            }
+                        ],
+                        "kids": [],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": []
+}

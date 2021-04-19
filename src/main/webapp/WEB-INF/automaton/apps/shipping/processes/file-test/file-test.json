@@ -15,14 +15,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "action"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "runInAction"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "toJS"
                 }
             ]
         },
@@ -36,15 +28,7 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "graphql"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "GraphQLQuery"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "config"
                 }
             ]
         },
@@ -60,31 +44,11 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "./queries/Q_FredFile",
+            "source": "./states/FileTestHome",
             "specifiers": [
                 {
                     "type": "ImportDefaultSpecifier",
-                    "name": "Q_FredFile"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "./queries/Q_updateFredResource",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "Q_updateFredResource"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "./queries/Q_updateFredFile",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "Q_updateFredFile"
+                    "name": "FileTestHome"
                 }
             ]
         }
@@ -92,49 +56,10 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"FileTestHome\"",
-            "states": {
-                "FileTestHome": {
-                    "get-resource": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "Q_FredResource.execute().then(({ getFredResource: fred }) => scope.updateFred(fred))"
-                        }
-                    },
-                    "get-file": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "Q_FredFile.execute().then(({ getFredFile: fred }) => scope.updateFred(fred))"
-                        }
-                    },
-                    "update-resource": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "Q_updateFredResource.execute({ fred: t.context })"
-                        }
-                    },
-                    "update-file": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "Q_updateFredFile.execute({ fred: t.context })"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return FileTestHome;"
+        ],
+        "startState": "FileTestHome",
         "scope": {
             "name": "FileTestScope",
             "observables": [

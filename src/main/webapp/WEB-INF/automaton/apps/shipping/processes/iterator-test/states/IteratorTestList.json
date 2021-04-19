@@ -1,0 +1,155 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Pagination"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "reactstrap",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ListGroup"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ListGroupItem"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ListGroupItemHeading"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ListGroupItemText"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "IteratorTestList",
+        "transitionMap": {},
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "scope",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "scope"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "env"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "React.Fragment",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "h1",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "type": "JSXExpressionContainer",
+                                "code": "{i18n(\"Iterator Test\")}"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "ListGroup",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "type": "JSXExpressionContainer",
+                                "code": "{scope.foos.rows.map(foo => <ListGroupItem className=\"bg-light\"><ListGroupItemHeading>{foo.name}<br /><small className=\"text-muted\">\n                                    Owner: {foo.owner.login}</small></ListGroupItemHeading><ListGroupItemText>{foo.description}</ListGroupItemText><div className=\"row bg-white\"><div className=\"col\"><button className=\"btn btn-link disabled float-right\" disabled={true}>\n                                        Details\n                                    </button></div></div></ListGroupItem>)}"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "Pagination",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "iQuery",
+                                "value": {
+                                    "type": "JSXExpressionContainer",
+                                    "code": "{scope.foos}"
+                                }
+                            }
+                        ],
+                        "kids": [],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": []
+}

@@ -1,0 +1,359 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Button"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../composites/CounterCard",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "CounterCard"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "reactstrap",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ButtonToolbar"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./BackTestCounter",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "BackTestCounter"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "BackTestHome",
+        "transitionMap": {
+            "to-counter": {
+                "to": "BackTestCounter"
+            }
+        },
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "scope",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "scope"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "env"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "React.Fragment",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "div",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"row\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "div",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"col\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "h1",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "type": "JSXExpressionContainer",
+                                                "code": "{i18n(\"Back Test Home\")}"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "div",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"row\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "div",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"col\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "CounterCard",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "title",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"currentCounter\""
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "value",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{scope.currentCounter}"
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "div",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"col\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "CounterCard",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "title",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"nonVersioned\""
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "value",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{scope.nonVersioned}"
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "div",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"row\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "div",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"col\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "ButtonToolbar",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "name": "Button",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "className",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"btn btn-primary mr-1\""
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "transition",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"to-counter\""
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [
+                                                    {
+                                                        "name": "Icon",
+                                                        "attrs": [
+                                                            {
+                                                                "type": "JSXAttribute",
+                                                                "name": "className",
+                                                                "value": {
+                                                                    "type": "Expression",
+                                                                    "code": "\"fa-play\""
+                                                                }
+                                                            }
+                                                        ],
+                                                        "kids": [],
+                                                        "type": "JSXElement"
+                                                    },
+                                                    {
+                                                        "type": "JSXText",
+                                                        "value": "Counter"
+                                                    }
+                                                ],
+                                                "type": "JSXElement"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": []
+}

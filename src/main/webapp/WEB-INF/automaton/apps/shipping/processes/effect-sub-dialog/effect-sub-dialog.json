@@ -11,10 +11,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "observable"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "runInAction"
                 }
             ]
         },
@@ -79,119 +75,31 @@
                     "name": "unregisterAppEffect"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/SubProcessDialogHome",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "SubProcessDialogHome"
+                }
+            ]
         }
     ],
     "processExports": {
         "type": "ProcessExports",
         "configuration": [
             "process.addProcessEffect(() => { registerAppEffect(\"Process:effect-sub-dialog\"); return () => { unregisterAppEffect(\"Process:effect-sub-dialog\"); }; })",
-            "process.addEffect(\"SubProcessDialogHome\", () => { registerAppEffect(\"SubProcessDialogHome\"); return () => { unregisterAppEffect(\"SubProcessDialogHome\"); }; })",
-            "process.addEffect(\"SubProcessDialogDetail\", () => { const name = \"SubProcessDialogDetail '\" + (scope.currentFoo && scope.currentFoo.name) + \"'\"; registerAppEffect(name); return () => { unregisterAppEffect(name); }; }, () => [scope.currentFoo && scope.currentFoo.id])"
+            "process.addEffect(SubProcessDialogHome, () => { registerAppEffect(SubProcessDialogHome); return () => { unregisterAppEffect(SubProcessDialogHome); }; })",
+            "process.addEffect(SubProcessDialogDetail, () => { const name = \"SubProcessDialogDetail '\" + (scope.currentFoo && scope.currentFoo.name) + \"'\"; registerAppEffect(name); return () => { unregisterAppEffect(name); }; }, () => [scope.currentFoo && scope.currentFoo.id])"
         ],
-        "process": {
-            "startState": "\"SubProcessDialogHome\"",
-            "states": {
-                "SubProcessDialogHome": {
-                    "choose": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.endSubProcess(t.context)"
-                        }
-                    },
-                    "close": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.endSubProcess(null)"
-                        }
-                    },
-                    "open-dialog": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.runSubProcess(\"effect-sub-dialog\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result, \"process =\", process)))"
-                        }
-                    },
-                    "open-full": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.runSubProcess(\"effect-sub-full\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result, \"process =\", process)))"
-                        }
-                    },
-                    "pick": {
-                        "to": "SubProcessDialogDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"pick, context = \", t.context); return updateDetail(scope, t.context); }"
-                        }
-                    }
-                },
-                "SubProcessDialogDetail": {
-                    "choose": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.endSubProcess(t.context)"
-                        }
-                    },
-                    "open-dialog": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.runSubProcess(\"effect-sub-dialog\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result)))"
-                        }
-                    },
-                    "open-full": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.runSubProcess(\"effect-sub-full\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result)))"
-                        }
-                    },
-                    "cancel": {
-                        "to": "SubProcessDialogHome",
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Transition 'cancel'\"); }"
-                        }
-                    },
-                    "next": {
-                        "to": "SubProcessDialogDetail",
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const { foos: { rows }, currentFoo } = scope; for (let i = 0; i < rows.length; i++) { const foo = rows[i]; if (foo.id === currentFoo.id && i + 1 < rows.length) { return updateDetail(scope, rows[i + 1].id); } } alert(\"No next object\"); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "// process config\nprocess.options.forceSubProcess = true;",
+            "process.options.layout = EffectLayout;",
+            "return SubProcessDialogHome;"
+        ],
+        "startState": "SubProcessDialogHome",
         "scope": {
             "name": "EffectSubProcessDialogScope",
             "observables": [

@@ -15,52 +15,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "action"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "runInAction"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "toJS"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "@quinscape/automaton-js",
-            "specifiers": [
-                {
-                    "type": "ImportSpecifier",
-                    "name": "injection"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "Process"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "type"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "../../../../components/LayoutV2",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "LayoutV2"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "../../../../components/LayoutV3",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "LayoutV3"
                 }
             ]
         },
@@ -73,42 +27,26 @@
                     "name": "LayoutV4"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/MultiLayoutHome",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "MultiLayoutHome"
+                }
+            ]
         }
     ],
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"MultiLayoutHome\"",
-            "states": {
-                "MultiLayoutHome": {
-                    "to-a": {
-                        "to": "MultiLayoutA"
-                    },
-                    "to-b": {
-                        "to": "MultiLayoutB"
-                    },
-                    "to-c": {
-                        "to": "MultiLayoutC"
-                    }
-                },
-                "MultiLayoutA": {
-                    "back": {
-                        "to": "MultiLayoutHome"
-                    }
-                },
-                "MultiLayoutB": {
-                    "back": {
-                        "to": "MultiLayoutHome"
-                    }
-                },
-                "MultiLayoutC": {
-                    "back": {
-                        "to": "MultiLayoutHome"
-                    }
-                }
-            }
-        },
+        "init": [
+            "// process config\nprocess.options.layout = { MultiLayoutA: LayoutV2, MultiLayoutB: LayoutV3, // use local default or not depending on input value\n\"default\": process.input.useDefault ? LayoutV4 : null };",
+            "return MultiLayoutHome;"
+        ],
+        "startState": "MultiLayoutHome",
         "scope": null,
         "extraConstants": []
     }

@@ -15,10 +15,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "action"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "toJS"
                 }
             ]
         },
@@ -32,35 +28,7 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "config"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "storeDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "deleteDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "backToParent"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "FilterDSL"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "createDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "extractTypeData"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "Attachments"
                 }
             ]
         },
@@ -86,16 +54,6 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "./queries/Q_MetaConfigDetail",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "Q_MetaConfigDetail"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
             "source": "../merge-test/queries/Q_CorgeType",
             "specifiers": [
                 {
@@ -113,78 +71,25 @@
                     "name": "Q_FooType"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/MetaConfigList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "MetaConfigList"
+                }
+            ]
         }
     ],
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"MetaConfigList\"",
-            "states": {
-                "MetaConfigList": {
-                    "new-meta-config": {
-                        "to": "MetaConfigDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const newInstance = createDomainObject(\"MetaConfig\"); newInstance.name = \"Unnamed\"; scope.updateCurrent(newInstance); }"
-                        }
-                    },
-                    "to-detail": {
-                        "to": "MetaConfigDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const id = t.context; return Q_MetaConfigDetail.execute({ config: { condition: field(\"id\").eq(value(id)) } }).then(({ iQueryMetaConfig }) => { if (iQueryMetaConfig.rows.length === 0) { alert(\"Could not load MetaConfig with id '\" + id); } scope.updateCurrent(config.inputSchema.clone(iQueryMetaConfig.rows[0])); }); }"
-                        }
-                    }
-                },
-                "MetaConfigDetail": {
-                    "save": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "// 1.\nAttachments.uploadPending(t.context) // 2.\n.then(() => storeDomainObject({ ...extractTypeData(\"MetaConfigInput\", t.context) })) // 3.\n.then(() => Attachments.deletePending(t.context)).then(() => scope.metaConfigs.update()).then(() => t.back(backToParent(t)))"
-                        }
-                    },
-                    "delete": {
-                        "to": "MetaConfigList",
-                        "discard": true,
-                        "confirmation": {
-                            "type": "Action",
-                            "params": [
-                                "context"
-                            ],
-                            "code": "`Delete ${context.name} ?`"
-                        },
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const { id } = t.context; return deleteDomainObject(\"MetaConfig\", id).then(didDelete => didDelete && scope.removeMetaConfig(id)); }"
-                        }
-                    },
-                    "cancel": {
-                        "to": "MetaConfigList",
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Transition 'cancel'\"); return Attachments.clearAll(t.context); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return MetaConfigList;"
+        ],
+        "startState": "MetaConfigList",
         "scope": {
             "name": "MetaConfigTestScope",
             "observables": [

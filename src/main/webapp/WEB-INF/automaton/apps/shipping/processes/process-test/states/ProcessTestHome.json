@@ -1,0 +1,328 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Button"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "runInAction"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../../../components/JSONData",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "JSONData"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "ProcessTestHome",
+        "transitionMap": {
+            "open-sub": {
+                "to": "ProcessTestHome",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ return process.runSubProcess(\"sub-process-example\", t.context).then(result => result && runInAction(() => scope.currentOrder = result)); }"
+                }
+            },
+            "open-sub2": {
+                "to": "ProcessTestHome",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ return process.runSubProcess(\"customer\", t.context).then(result => result && runInAction(() => scope.currentOrder = result)); }"
+                }
+            },
+            "clear": {
+                "to": "ProcessTestHome",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ scope.currentOrder = null; }"
+                }
+            }
+        },
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "scope",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "scope"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "env"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "React.Fragment",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "h1",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "type": "JSXExpressionContainer",
+                                "code": "{i18n('Process-Tests')}"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "Button",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "transition",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"open-sub\""
+                                }
+                            },
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"mr-1 btn btn-secondary\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "Icon",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"fa-subway\""
+                                        }
+                                    }
+                                ],
+                                "kids": [],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "type": "JSXText",
+                                "value": "Open Sub-Process"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "Button",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "transition",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"open-sub2\""
+                                }
+                            },
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"mr-1 btn btn-secondary\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "Icon",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"fa-subway\""
+                                        }
+                                    }
+                                ],
+                                "kids": [],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "type": "JSXText",
+                                "value": "Open Customer as Sub"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "Button",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "transition",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"clear\""
+                                }
+                            },
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"mr-1 btn btn-secondary\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "Icon",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"fa-minus-circle\""
+                                        }
+                                    }
+                                ],
+                                "kids": [],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "type": "JSXText",
+                                "value": "Clear"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "JSONData",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "name",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"chosen\""
+                                }
+                            },
+                            {
+                                "type": "JSXAttribute",
+                                "name": "value",
+                                "value": {
+                                    "type": "JSXExpressionContainer",
+                                    "code": "{scope.currentOrder}"
+                                }
+                            },
+                            {
+                                "type": "JSXAttribute",
+                                "name": "maxHeight",
+                                "value": {
+                                    "type": "JSXExpressionContainer",
+                                    "code": "{20}"
+                                }
+                            }
+                        ],
+                        "kids": [],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": []
+}

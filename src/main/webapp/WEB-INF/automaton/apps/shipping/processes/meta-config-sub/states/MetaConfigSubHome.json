@@ -1,0 +1,241 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Button"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../../../components/JSONData",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "JSONData"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "MetaConfigSubHome",
+        "transitionMap": {
+            "close": {
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "process.endSubProcess(null)"
+                }
+            }
+        },
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "scope",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "scope"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "env"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "div",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "h3",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "type": "JSXText",
+                                "value": "Meta-Config"
+                            },
+                            {
+                                "name": "br",
+                                "attrs": [],
+                                "kids": [],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "small",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"text-muted\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "type": "JSXText",
+                                        "value": "Example for a meta-config subprocess invoked with <FieldMetaButton/>"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "div",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"btn-toolbar\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "Button",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"btn btn-danger\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "transition",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"close\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "Icon",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "className",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"fa-close\""
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "type": "JSXText",
+                                        "value": "Close"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "JSONData",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "name",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"Meta Config Location\""
+                                }
+                            },
+                            {
+                                "type": "JSXAttribute",
+                                "name": "value",
+                                "value": {
+                                    "type": "JSXExpressionContainer",
+                                    "code": "{scope.location}"
+                                }
+                            }
+                        ],
+                        "kids": [],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": []
+}

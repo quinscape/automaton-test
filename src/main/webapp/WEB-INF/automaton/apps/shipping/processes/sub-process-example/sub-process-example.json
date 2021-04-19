@@ -15,10 +15,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "action"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "toJS"
                 }
             ]
         },
@@ -29,20 +25,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "injection"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "type"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "../iterator-test/queries/Q_Foo",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "Q_Foo"
                 }
             ]
         },
@@ -55,36 +37,26 @@
                     "name": "Q_FooList"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/SubProcessHome",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "SubProcessHome"
+                }
+            ]
         }
     ],
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"SubProcessHome\"",
-            "states": {
-                "SubProcessHome": {
-                    "choose": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.endSubProcess(t.context)"
-                        }
-                    },
-                    "close": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.endSubProcess(null)"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "// process config\nprocess.options.forceSubProcess = true;",
+            "return SubProcessHome;"
+        ],
+        "startState": "SubProcessHome",
         "scope": {
             "name": "MySubProcessScope",
             "observables": [

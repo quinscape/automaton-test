@@ -15,10 +15,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "action"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "toJS"
                 }
             ]
         },
@@ -32,31 +28,21 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "config"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "createDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "storeDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "deleteDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "GraphQLQuery"
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "backToParent"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "FilterDSL"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/DBViewHome",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "DBViewHome"
                 }
             ]
         }
@@ -64,12 +50,10 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"DBViewHome\"",
-            "states": {
-                "DBViewHome": {}
-            }
-        },
+        "init": [
+            "return DBViewHome;"
+        ],
+        "startState": "DBViewHome",
         "scope": {
             "name": "DBViewProcess",
             "observables": [

@@ -1,0 +1,243 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "storeDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "updateAssociations"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "deleteDomainObject"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "mobx",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "toJS"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FormLayout"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../composites/BazValueForm",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "BazValueForm"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./AssocEntityList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "AssocEntityList"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "BazValueDetail",
+        "transitionMap": {
+            "save": {
+                "to": "AssocEntityList",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ console.log(\"SAVE BAZ VALUE\", toJS(t.context)); return storeDomainObject(t.context).then(() => updateAssociations({ domainType: \"BazLink\", leftSideType: \"BazValue\", sourceIds: [t.context.id], domainObjects: t.context.bazLinks.map(bl => ({ id: bl.id, bazId: bl.baz.id, valueId: t.context.id })) })).then(() => Promise.all([scope.links.update(), scope.bazValues.update()])); }"
+                }
+            },
+            "delete": {
+                "to": "AssocEntityList",
+                "discard": true,
+                "confirmation": {
+                    "type": "Action",
+                    "params": [
+                        "context"
+                    ],
+                    "code": "`Delete ${context.name} ?`"
+                },
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ const { id } = t.context; return deleteDomainObject(\"BazValue\", id).then(didDelete => didDelete && Promise.all([scope.links.update(), scope.bazValues.update()])); }"
+                }
+            },
+            "cancel": {
+                "to": "AssocEntityList",
+                "discard": true,
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ console.log(\"Transition 'cancel'\"); }"
+                }
+            }
+        },
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "scope",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "scope"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "env"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "React.Fragment",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "div",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "className",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"row\""
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "div",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"col\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "BazValueForm",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "key",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{scope.currentBazValue.id}"
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "value",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{scope.currentBazValue}"
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "options",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{{ layout: FormLayout.HORIZONTAL }}"
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": []
+}

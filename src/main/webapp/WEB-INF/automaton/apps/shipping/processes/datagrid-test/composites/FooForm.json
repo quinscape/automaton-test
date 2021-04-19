@@ -519,5 +519,5 @@
             "type": "JSXElement"
         }
     },
-    "export": "withForm(fnObserver(FooForm), { type: \"FooInput\" })"
+    "export": "withForm(fnObserver(FooForm), { type: \"Foo\" })"
 }

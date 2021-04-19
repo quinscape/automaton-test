@@ -7,10 +7,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "observable"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "toJS"
                 }
             ]
         },
@@ -21,10 +17,16 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "InteractiveQueryDefinition"
-                },
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/IQEditorHome",
+            "specifiers": [
                 {
-                    "type": "ImportSpecifier",
-                    "name": "InteractiveQueryEditor"
+                    "type": "ImportDefaultSpecifier",
+                    "name": "IQEditorHome"
                 }
             ]
         }
@@ -32,22 +34,10 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"IQEditorHome\"",
-            "states": {
-                "IQEditorHome": {
-                    "store": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ // retrieve current state as \"InteractiveQueryDefinition\" instance\nconst def = InteractiveQueryEditor.getInteractiveQueryDefinition(\"my-editor\"); // XXX: we just log here, replace with actual store\nconsole.log(\"STORE\", toJS(def)); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return IQEditorHome;"
+        ],
+        "startState": "IQEditorHome",
         "scope": {
             "name": "IQueryEditorScope",
             "observables": [

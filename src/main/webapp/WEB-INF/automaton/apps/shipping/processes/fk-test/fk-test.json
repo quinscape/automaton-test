@@ -20,31 +20,11 @@
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "backToParent"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "createDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "deleteDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "extractTypeData"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "FilterDSL"
                 },
                 {
                     "type": "ImportSpecifier",
                     "name": "injection"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "storeDomainObject"
                 }
             ]
         },
@@ -60,26 +40,6 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "./queries/Q_QuxDetail",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "Q_QuxDetail"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "../../queries/Q_QuxD",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "Q_QuxD"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
             "source": "../../queries/Q_QuxD_Injected",
             "specifiers": [
                 {
@@ -87,78 +47,25 @@
                     "name": "Q_QuxD_Injected"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/FKTestList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "FKTestList"
+                }
+            ]
         }
     ],
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"FKTestList\"",
-            "states": {
-                "FKTestList": {
-                    "new-qux": {
-                        "to": "FKTestDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const newObj = createDomainObject(\"QuxMainInput\"); newObj.name = \"Unnamed Qux\"; newObj.desc = \"\"; newObj.num = 0; newObj.flag = false; newObj.created = new Date(); newObj.type = \"TYPE_A\"; return scope.updateCurrent(newObj); }"
-                        }
-                    },
-                    "to-detail": {
-                        "to": "FKTestDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"to-detail, context = \", t.context); return Q_QuxDetail.execute({ config: { condition: field(\"id\").eq(value(t.context)) } }).then(({ iQueryQuxMain }) => { if (iQueryQuxMain.rows.length === 0) { alert(\"Could not load Qux with id '\" + t.context); } return scope.updateCurrent(iQueryQuxMain.rows[0]); }); }"
-                        }
-                    }
-                },
-                "FKTestDetail": {
-                    "save": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "storeDomainObject({ ...extractTypeData(\"QuxMainInput\", t.context), quxDId: t.context.quxD && t.context.quxD.id }).then(() => scope.quxes.update()).then(() => t.back(backToParent(t)))"
-                        }
-                    },
-                    "delete": {
-                        "to": "FKTestList",
-                        "discard": true,
-                        "confirmation": {
-                            "type": "Action",
-                            "params": [
-                                "context"
-                            ],
-                            "code": "`Delete ${context.name} ?`"
-                        },
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const { id } = t.context; return deleteDomainObject(\"QuxMain\", id).then(didDelete => didDelete && scope.quxes.update()); }"
-                        }
-                    },
-                    "cancel": {
-                        "to": "FKTestList",
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Transition 'cancel'\"); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return FKTestList;"
+        ],
+        "startState": "FKTestList",
         "scope": {
             "name": "FKTestScope",
             "observables": [

@@ -20,11 +20,11 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "@quinscape/automaton-js",
+            "source": "./states/ShippingHome",
             "specifiers": [
                 {
-                    "type": "ImportSpecifier",
-                    "name": "injection"
+                    "type": "ImportDefaultSpecifier",
+                    "name": "ShippingHome"
                 }
             ]
         }
@@ -32,12 +32,10 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"ShippingHome\"",
-            "states": {
-                "ShippingHome": []
-            }
-        },
+        "init": [
+            "return ShippingHome;"
+        ],
+        "startState": "ShippingHome",
         "scope": null,
         "extraConstants": []
     }

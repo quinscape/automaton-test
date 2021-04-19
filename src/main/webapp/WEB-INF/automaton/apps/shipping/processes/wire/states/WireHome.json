@@ -1,0 +1,563 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "config"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "i18n"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Button"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "classnames",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "cx"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "reactstrap",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Row"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Col"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ButtonToolbar"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Card"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "CardHeader"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "CardBody"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../../../../../components/FooList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "FooList"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "react-calendar",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Calendar"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "WireHome",
+        "transitionMap": {
+            "test-target": {
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "WireTestQuery.execute({ target: { ...t.context, flag: true, ownerId: config.auth.id || \"\" }, count: 123 }).then(({ wireTestMutation }) => scope.updateMutationResult(wireTestMutation), err => scope.updateMutationResult(mutationError(err)))"
+                }
+            }
+        },
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "scope",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "scope"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "env"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "Row",
+                "attrs": [
+                    {
+                        "type": "JSXAttribute",
+                        "name": "className",
+                        "value": {
+                            "type": "Expression",
+                            "code": "\"mt-3\""
+                        }
+                    }
+                ],
+                "kids": [
+                    {
+                        "name": "Col",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "name": "h1",
+                                "attrs": [],
+                                "kids": [
+                                    {
+                                        "type": "JSXExpressionContainer",
+                                        "code": "{i18n(\"Injected Values\")}"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "dl",
+                                "attrs": [],
+                                "kids": [
+                                    {
+                                        "name": "dt",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "type": "JSXExpressionContainer",
+                                                "code": "{\"complex ( count \" + scope.complex.rowCount + \" )\"}"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "name": "dd",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "name": "FooList",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "ob",
+                                                        "value": {
+                                                            "type": "JSXExpressionContainer",
+                                                            "code": "{scope}"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "path",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"complex.rows\""
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [],
+                                                "type": "JSXElement"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "name": "dt",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "type": "JSXText",
+                                                "value": "scalar"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "name": "dd",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "name": "Calendar",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "className",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"shadow p-3 mb-5 bg-white rounded\""
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "value",
+                                                        "value": {
+                                                            "type": "JSXExpressionContainer",
+                                                            "code": "{scope.scalar}"
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [],
+                                                "type": "JSXElement"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "name": "dt",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "type": "JSXText",
+                                                "value": "list"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "name": "dd",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "name": "ul",
+                                                "attrs": [],
+                                                "kids": [
+                                                    {
+                                                        "type": "JSXExpressionContainer",
+                                                        "code": "{scope.list.map(n => <li key={n}>{n}</li>)}"
+                                                    }
+                                                ],
+                                                "type": "JSXElement"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "name": "dt",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "type": "JSXText",
+                                                "value": "complexList"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "name": "dd",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "name": "FooList",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "ob",
+                                                        "value": {
+                                                            "type": "JSXExpressionContainer",
+                                                            "code": "{scope}"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "path",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"complexList\""
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [],
+                                                "type": "JSXElement"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "Col",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "name": "ButtonToolbar",
+                                "attrs": [],
+                                "kids": [
+                                    {
+                                        "name": "Button",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "className",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{cx(\"btn\", scope.mutationResult ? scope.mutationResult.successful ? \"btn-success\" : \"btn-danger\" : \"btn-primary\")}"
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "transition",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"test-target\""
+                                                }
+                                            },
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "context",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{scope.complexList[0]}"
+                                                }
+                                            }
+                                        ],
+                                        "kids": [
+                                            {
+                                                "name": "Icon",
+                                                "attrs": [
+                                                    {
+                                                        "type": "JSXAttribute",
+                                                        "name": "className",
+                                                        "value": {
+                                                            "type": "Expression",
+                                                            "code": "\"fa-check\""
+                                                        }
+                                                    }
+                                                ],
+                                                "kids": [],
+                                                "type": "JSXElement"
+                                            },
+                                            {
+                                                "type": "JSXText",
+                                                "value": "Test Mutation"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "Card",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"mt-2\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "color",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"secondary\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "renderedIf",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "scope.mutationResult"
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "CardHeader",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "className",
+                                                "value": {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{scope.mutationResult.successful ? \"bg-success\" : \"bg-danger\"}"
+                                                }
+                                            }
+                                        ],
+                                        "kids": [
+                                            {
+                                                "type": "JSXText",
+                                                "value": "Mutation Result"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "name": "CardBody",
+                                        "attrs": [],
+                                        "kids": [
+                                            {
+                                                "name": "dl",
+                                                "attrs": [],
+                                                "kids": [
+                                                    {
+                                                        "name": "dt",
+                                                        "attrs": [],
+                                                        "kids": [
+                                                            {
+                                                                "type": "JSXText",
+                                                                "value": "id"
+                                                            }
+                                                        ],
+                                                        "type": "JSXElement"
+                                                    },
+                                                    {
+                                                        "name": "dd",
+                                                        "attrs": [],
+                                                        "kids": [
+                                                            {
+                                                                "type": "JSXExpressionContainer",
+                                                                "code": "{String(scope.mutationResult.id)}"
+                                                            }
+                                                        ],
+                                                        "type": "JSXElement"
+                                                    },
+                                                    {
+                                                        "name": "dt",
+                                                        "attrs": [],
+                                                        "kids": [
+                                                            {
+                                                                "type": "JSXText",
+                                                                "value": "created"
+                                                            }
+                                                        ],
+                                                        "type": "JSXElement"
+                                                    },
+                                                    {
+                                                        "name": "dd",
+                                                        "attrs": [],
+                                                        "kids": [
+                                                            {
+                                                                "type": "JSXExpressionContainer",
+                                                                "code": "{String(scope.mutationResult.created.toISOString())}"
+                                                            }
+                                                        ],
+                                                        "type": "JSXElement"
+                                                    },
+                                                    {
+                                                        "name": "dt",
+                                                        "attrs": [],
+                                                        "kids": [
+                                                            {
+                                                                "type": "JSXText",
+                                                                "value": "check"
+                                                            }
+                                                        ],
+                                                        "type": "JSXElement"
+                                                    },
+                                                    {
+                                                        "name": "dd",
+                                                        "attrs": [],
+                                                        "kids": [
+                                                            {
+                                                                "type": "JSXExpressionContainer",
+                                                                "code": "{String(scope.mutationResult.check)}"
+                                                            }
+                                                        ],
+                                                        "type": "JSXElement"
+                                                    }
+                                                ],
+                                                "type": "JSXElement"
+                                            }
+                                        ],
+                                        "type": "JSXElement"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": []
+}

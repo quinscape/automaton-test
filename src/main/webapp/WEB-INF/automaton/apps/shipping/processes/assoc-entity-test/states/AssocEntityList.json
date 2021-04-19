@@ -1,0 +1,804 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "react",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "React"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "@quinscape/automaton-js",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ViewState"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "createDomainObject"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "DataGrid"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Button"
+                },
+                {
+                    "type": "ImportSpecifier",
+                    "name": "FilterDSL"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../queries/Q_BazDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_BazDetail"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "../queries/Q_BazValueDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "Q_BazValueDetail"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "reactstrap",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "ButtonToolbar"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "domainql-form",
+            "specifiers": [
+                {
+                    "type": "ImportSpecifier",
+                    "name": "Icon"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./BazDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "BazDetail"
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./BazValueDetail",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "BazValueDetail"
+                }
+            ]
+        }
+    ],
+    "state": {
+        "type": "ViewState",
+        "name": "AssocEntityList",
+        "transitionMap": {
+            "new-baz": {
+                "to": "BazDetail",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ const newBaz = createDomainObject(\"BazInput\"); newBaz.name = \"Unnamed Baz\"; return scope.updateBaz(newBaz); }"
+                }
+            },
+            "new-baz-value": {
+                "to": "BazValueDetail",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ const newBazValue = createDomainObject(\"BazValueInput\"); newBazValue.name = \"Unnamed Baz Value\"; return scope.updateBazValue(newBazValue); }"
+                }
+            },
+            "to-baz-detail": {
+                "to": "BazDetail",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ console.log(\"to-baz-detail, context = \", t.context); return Q_BazDetail.execute({ config: { condition: field(\"id\").eq(value(t.context)) } }).then(({ iQueryBaz }) => scope.updateBaz(iQueryBaz.rows[0])); }"
+                }
+            },
+            "to-baz-value-detail": {
+                "to": "BazValueDetail",
+                "action": {
+                    "type": "Action",
+                    "params": [
+                        "t"
+                    ],
+                    "code": "{ console.log(\"to-baz-value-detail, context = \", t.context); return Q_BazValueDetail.execute({ config: { condition: field(\"id\").eq(value(t.context)) } }).then(({ iQueryBazValue }) => scope.updateBazValue(iQueryBazValue.rows[0])); }"
+                }
+            }
+        },
+        "composite": {
+            "type": "CompositeComponent",
+            "constants": [
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "env",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "env"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "props"
+                        }
+                    ]
+                },
+                {
+                    "type": "VariableDeclaration",
+                    "kind": "const",
+                    "declarations": [
+                        {
+                            "type": "VariableDeclarator",
+                            "id": {
+                                "type": "ObjectPattern",
+                                "properties": [
+                                    {
+                                        "type": "ObjectProperty",
+                                        "key": "scope",
+                                        "value": {
+                                            "type": "Identifier",
+                                            "name": "scope"
+                                        }
+                                    }
+                                ]
+                            },
+                            "init": "env"
+                        }
+                    ]
+                }
+            ],
+            "root": {
+                "name": "React.Fragment",
+                "attrs": [],
+                "kids": [
+                    {
+                        "name": "h1",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "type": "JSXExpressionContainer",
+                                "code": "{\"Associations\"}"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "DataGrid",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "id",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"assoc-grid\""
+                                }
+                            },
+                            {
+                                "type": "JSXAttribute",
+                                "name": "value",
+                                "value": {
+                                    "type": "JSXExpressionContainer",
+                                    "code": "{scope.links}"
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "DataGrid.Column",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "heading",
+                                        "value": {
+                                            "type": "JSXExpressionContainer",
+                                            "code": "{\"Left\"}"
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "filter",
+                                        "value": {
+                                            "type": "JSXRenderFunction",
+                                            "params": [
+                                                {
+                                                    "type": "Identifier",
+                                                    "name": "val"
+                                                }
+                                            ],
+                                            "constants": [],
+                                            "root": {
+                                                "type": "Expression",
+                                                "code": "field(\"baz.name\").containsIgnoreCase(value(val, \"String\"))"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "sort",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"baz.name\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "type": "JSXRenderFunction",
+                                        "params": [
+                                            {
+                                                "type": "Identifier",
+                                                "name": "link"
+                                            }
+                                        ],
+                                        "constants": [],
+                                        "root": {
+                                            "name": "Button",
+                                            "attrs": [
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "className",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"btn btn btn-link\""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "transition",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"to-baz-detail\""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "context",
+                                                    "value": {
+                                                        "type": "JSXExpressionContainer",
+                                                        "code": "{link.baz.id}"
+                                                    }
+                                                }
+                                            ],
+                                            "kids": [
+                                                {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{link.baz.name}"
+                                                }
+                                            ],
+                                            "type": "JSXElement"
+                                        }
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "DataGrid.Column",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "heading",
+                                        "value": {
+                                            "type": "JSXExpressionContainer",
+                                            "code": "{\"Right\"}"
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "filter",
+                                        "value": {
+                                            "type": "JSXRenderFunction",
+                                            "params": [
+                                                {
+                                                    "type": "Identifier",
+                                                    "name": "val"
+                                                }
+                                            ],
+                                            "constants": [],
+                                            "root": {
+                                                "type": "Expression",
+                                                "code": "field(\"value.name\").containsIgnoreCase(value(val, \"String\"))"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "sort",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"value.name\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "type": "JSXRenderFunction",
+                                        "params": [
+                                            {
+                                                "type": "Identifier",
+                                                "name": "link"
+                                            }
+                                        ],
+                                        "constants": [],
+                                        "root": {
+                                            "name": "Button",
+                                            "attrs": [
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "className",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"btn btn btn-link\""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "transition",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"to-baz-value-detail\""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "context",
+                                                    "value": {
+                                                        "type": "JSXExpressionContainer",
+                                                        "code": "{link.value.id}"
+                                                    }
+                                                }
+                                            ],
+                                            "kids": [
+                                                {
+                                                    "type": "JSXExpressionContainer",
+                                                    "code": "{link.value.name}"
+                                                }
+                                            ],
+                                            "type": "JSXElement"
+                                        }
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "ButtonToolbar",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "name": "Button",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"btn btn-secondary mr-1\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "transition",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"new-baz\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "Icon",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "className",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"fa-save mr-1\""
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "type": "JSXText",
+                                        "value": "New"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "Button",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "className",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"btn btn-secondary mr-1\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "transition",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"new-baz-value\""
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "name": "Icon",
+                                        "attrs": [
+                                            {
+                                                "type": "JSXAttribute",
+                                                "name": "className",
+                                                "value": {
+                                                    "type": "Expression",
+                                                    "code": "\"fa-save mr-1\""
+                                                }
+                                            }
+                                        ],
+                                        "kids": [],
+                                        "type": "JSXElement"
+                                    },
+                                    {
+                                        "type": "JSXText",
+                                        "value": "New Value"
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "h2",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "type": "JSXExpressionContainer",
+                                "code": "{\"Left-side Entities (Baz)\"}"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "DataGrid",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "id",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"baz-grid\""
+                                }
+                            },
+                            {
+                                "type": "JSXAttribute",
+                                "name": "value",
+                                "value": {
+                                    "type": "JSXExpressionContainer",
+                                    "code": "{scope.bazes}"
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "DataGrid.Column",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "heading",
+                                        "value": {
+                                            "type": "JSXExpressionContainer",
+                                            "code": "{\"Action\"}"
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "type": "JSXRenderFunction",
+                                        "params": [
+                                            {
+                                                "type": "Identifier",
+                                                "name": "baz"
+                                            }
+                                        ],
+                                        "constants": [],
+                                        "root": {
+                                            "name": "Button",
+                                            "attrs": [
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "className",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"btn btn-secondary text-nowrap\""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "transition",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"to-baz-detail\""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "context",
+                                                    "value": {
+                                                        "type": "JSXExpressionContainer",
+                                                        "code": "{baz.id}"
+                                                    }
+                                                }
+                                            ],
+                                            "kids": [
+                                                {
+                                                    "name": "Icon",
+                                                    "attrs": [
+                                                        {
+                                                            "type": "JSXAttribute",
+                                                            "name": "className",
+                                                            "value": {
+                                                                "type": "Expression",
+                                                                "code": "\"fa-edit\""
+                                                            }
+                                                        }
+                                                    ],
+                                                    "kids": [],
+                                                    "type": "JSXElement"
+                                                },
+                                                {
+                                                    "type": "JSXText",
+                                                    "value": "Detail"
+                                                }
+                                            ],
+                                            "type": "JSXElement"
+                                        }
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "DataGrid.Column",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "name",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"name\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "filter",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"containsIgnoreCase\""
+                                        }
+                                    }
+                                ],
+                                "kids": [],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "DataGrid.Column",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "name",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"owner.login\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "filter",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"containsIgnoreCase\""
+                                        }
+                                    }
+                                ],
+                                "kids": [],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "h2",
+                        "attrs": [],
+                        "kids": [
+                            {
+                                "type": "JSXExpressionContainer",
+                                "code": "{\"Right-side Entities (BazValue)\"}"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    },
+                    {
+                        "name": "DataGrid",
+                        "attrs": [
+                            {
+                                "type": "JSXAttribute",
+                                "name": "id",
+                                "value": {
+                                    "type": "Expression",
+                                    "code": "\"baz-value-grid\""
+                                }
+                            },
+                            {
+                                "type": "JSXAttribute",
+                                "name": "value",
+                                "value": {
+                                    "type": "JSXExpressionContainer",
+                                    "code": "{scope.bazValues}"
+                                }
+                            }
+                        ],
+                        "kids": [
+                            {
+                                "name": "DataGrid.Column",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "heading",
+                                        "value": {
+                                            "type": "JSXExpressionContainer",
+                                            "code": "{\"Action\"}"
+                                        }
+                                    }
+                                ],
+                                "kids": [
+                                    {
+                                        "type": "JSXRenderFunction",
+                                        "params": [
+                                            {
+                                                "type": "Identifier",
+                                                "name": "bazValue"
+                                            }
+                                        ],
+                                        "constants": [],
+                                        "root": {
+                                            "name": "Button",
+                                            "attrs": [
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "className",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"btn btn-secondary text-nowrap\""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "transition",
+                                                    "value": {
+                                                        "type": "Expression",
+                                                        "code": "\"to-baz-value-detail\""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "JSXAttribute",
+                                                    "name": "context",
+                                                    "value": {
+                                                        "type": "JSXExpressionContainer",
+                                                        "code": "{bazValue.id}"
+                                                    }
+                                                }
+                                            ],
+                                            "kids": [
+                                                {
+                                                    "name": "Icon",
+                                                    "attrs": [
+                                                        {
+                                                            "type": "JSXAttribute",
+                                                            "name": "className",
+                                                            "value": {
+                                                                "type": "Expression",
+                                                                "code": "\"fa-edit\""
+                                                            }
+                                                        }
+                                                    ],
+                                                    "kids": [],
+                                                    "type": "JSXElement"
+                                                },
+                                                {
+                                                    "type": "JSXText",
+                                                    "value": "Detail"
+                                                }
+                                            ],
+                                            "type": "JSXElement"
+                                        }
+                                    }
+                                ],
+                                "type": "JSXElement"
+                            },
+                            {
+                                "name": "DataGrid.Column",
+                                "attrs": [
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "name",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"name\""
+                                        }
+                                    },
+                                    {
+                                        "type": "JSXAttribute",
+                                        "name": "filter",
+                                        "value": {
+                                            "type": "Expression",
+                                            "code": "\"containsIgnoreCase\""
+                                        }
+                                    }
+                                ],
+                                "kids": [],
+                                "type": "JSXElement"
+                            }
+                        ],
+                        "type": "JSXElement"
+                    }
+                ],
+                "type": "JSXElement"
+            }
+        }
+    },
+    "extraConstants": [
+        "const { field, value } = FilterDSL;"
+    ]
+}

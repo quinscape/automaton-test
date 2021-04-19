@@ -12,11 +12,11 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "@quinscape/automaton-js",
+            "source": "./states/BackTestHome",
             "specifiers": [
                 {
-                    "type": "ImportSpecifier",
-                    "name": "backToParent"
+                    "type": "ImportDefaultSpecifier",
+                    "name": "BackTestHome"
                 }
             ]
         }
@@ -24,88 +24,10 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"BackTestHome\"",
-            "states": {
-                "BackTestHome": {
-                    "to-counter": {
-                        "to": "BackTestCounter"
-                    }
-                },
-                "BackTestCounter": {
-                    "increment": {
-                        "to": "BackTestCounter",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ scope.currentCounter++; }"
-                        }
-                    },
-                    "decrement": {
-                        "to": "BackTestCounter",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ scope.currentCounter--; }"
-                        }
-                    },
-                    "increment-nv": {
-                        "to": "BackTestCounter",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ scope.nonVersioned++; }"
-                        }
-                    },
-                    "decrement-nv": {
-                        "to": "BackTestCounter",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ scope.nonVersioned--; }"
-                        }
-                    },
-                    "back": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ t.back(); }"
-                        }
-                    },
-                    "back-2": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ t.back(2); }"
-                        }
-                    },
-                    "back-fn": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ t.back(backToParent(t)); }"
-                        }
-                    },
-                    "back-home": {
-                        "to": "BackTestHome"
-                    }
-                }
-            }
-        },
+        "init": [
+            "return BackTestHome;"
+        ],
+        "startState": "BackTestHome",
         "scope": {
             "name": "BackTestScope",
             "observables": [

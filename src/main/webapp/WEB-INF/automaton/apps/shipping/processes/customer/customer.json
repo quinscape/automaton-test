@@ -15,10 +15,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "action"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "toJS"
                 }
             ]
         },
@@ -29,10 +25,16 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "injection"
-                },
+                }
+            ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/CustomerList",
+            "specifiers": [
                 {
-                    "type": "ImportSpecifier",
-                    "name": "type"
+                    "type": "ImportDefaultSpecifier",
+                    "name": "CustomerList"
                 }
             ]
         }
@@ -40,45 +42,10 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"CustomerList\"",
-            "states": {
-                "CustomerList": {
-                    "to-detail": {
-                        "to": "CustomerDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ scope.currentCustomer = t.context; }"
-                        }
-                    }
-                },
-                "CustomerDetail": {
-                    "save": {
-                        "to": "CustomerList",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Transition 'save': \", toJS(t.context)); }"
-                        }
-                    },
-                    "cancel": {
-                        "to": "CustomerList",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Transition 'cancel'\"); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return CustomerList;"
+        ],
+        "startState": "CustomerList",
         "scope": {
             "name": "CustomerScope",
             "observables": [

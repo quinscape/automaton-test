@@ -1,0 +1,27 @@
+{
+    "importDeclarations": [
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/CollapseHome",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "CollapseHome"
+                }
+            ]
+        }
+    ],
+    "processExports": {
+        "type": "ProcessExports",
+        "configuration": [],
+        "init": [
+            "let target;",
+            "const _target = process.input.target;",
+            "target = CollapseHome;",
+            "return target;"
+        ],
+        "startState": "target",
+        "scope": null,
+        "extraConstants": []
+    }
+}

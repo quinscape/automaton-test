@@ -19,17 +19,25 @@
                     "name": "injection"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/ColumnConfigHome",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "ColumnConfigHome"
+                }
+            ]
         }
     ],
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"ColumnConfigHome\"",
-            "states": {
-                "ColumnConfigHome": {}
-            }
-        },
+        "init": [
+            "return ColumnConfigHome;"
+        ],
+        "startState": "ColumnConfigHome",
         "scope": {
             "name": "ColumnConfigTestScope",
             "observables": [

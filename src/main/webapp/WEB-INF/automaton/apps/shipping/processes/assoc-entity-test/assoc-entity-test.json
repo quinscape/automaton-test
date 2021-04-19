@@ -28,30 +28,6 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "config"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "createDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "storeDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "deleteDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "backToParent"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "updateAssociations"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "FilterDSL"
                 }
             ]
@@ -88,21 +64,11 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "./queries/Q_BazDetail",
+            "source": "./states/AssocEntityList",
             "specifiers": [
                 {
                     "type": "ImportDefaultSpecifier",
-                    "name": "Q_BazDetail"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "./queries/Q_BazValueDetail",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "Q_BazValueDetail"
+                    "name": "AssocEntityList"
                 }
             ]
         }
@@ -110,135 +76,10 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"AssocEntityList\"",
-            "states": {
-                "AssocEntityList": {
-                    "new-baz": {
-                        "to": "BazDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const newBaz = createDomainObject(\"BazInput\"); newBaz.name = \"Unnamed Baz\"; return scope.updateBaz(newBaz); }"
-                        }
-                    },
-                    "new-baz-value": {
-                        "to": "BazValueDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const newBazValue = createDomainObject(\"BazValueInput\"); newBazValue.name = \"Unnamed Baz Value\"; return scope.updateBazValue(newBazValue); }"
-                        }
-                    },
-                    "to-baz-detail": {
-                        "to": "BazDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"to-baz-detail, context = \", t.context); return Q_BazDetail.execute({ config: { condition: field(\"id\").eq(value(t.context)) } }).then(({ iQueryBaz }) => scope.updateBaz(iQueryBaz.rows[0])); }"
-                        }
-                    },
-                    "to-baz-value-detail": {
-                        "to": "BazValueDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"to-baz-value-detail, context = \", t.context); return Q_BazValueDetail.execute({ config: { condition: field(\"id\").eq(value(t.context)) } }).then(({ iQueryBazValue }) => scope.updateBazValue(iQueryBazValue.rows[0])); }"
-                        }
-                    }
-                },
-                "BazDetail": {
-                    "save": {
-                        "to": "AssocEntityList",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"SAVE BAZ\", toJS(t.context)); return storeDomainObject(t.context).then(() => updateAssociations({ domainType: \"BazLink\", leftSideType: \"Baz\", sourceIds: [t.context.id], domainObjects: t.context.bazLinks.map(bl => ({ id: bl.id, bazId: t.context.id, valueId: bl.value.id })) })).then(() => Promise.all([scope.links.update(), scope.bazes.update()])); }"
-                        }
-                    },
-                    "delete": {
-                        "to": "AssocEntityList",
-                        "discard": true,
-                        "confirmation": {
-                            "type": "Action",
-                            "params": [
-                                "context"
-                            ],
-                            "code": "`Delete ${context.name} ?`"
-                        },
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const { id } = t.context; return deleteDomainObject(\"Baz\", id).then(didDelete => didDelete && Promise.all([scope.links.update(), scope.bazes.update()])); }"
-                        }
-                    },
-                    "cancel": {
-                        "to": "AssocEntityList",
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Transition 'cancel'\"); }"
-                        }
-                    }
-                },
-                "BazValueDetail": {
-                    "save": {
-                        "to": "AssocEntityList",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"SAVE BAZ VALUE\", toJS(t.context)); return storeDomainObject(t.context).then(() => updateAssociations({ domainType: \"BazLink\", leftSideType: \"BazValue\", sourceIds: [t.context.id], domainObjects: t.context.bazLinks.map(bl => ({ id: bl.id, bazId: bl.baz.id, valueId: t.context.id })) })).then(() => Promise.all([scope.links.update(), scope.bazValues.update()])); }"
-                        }
-                    },
-                    "delete": {
-                        "to": "AssocEntityList",
-                        "discard": true,
-                        "confirmation": {
-                            "type": "Action",
-                            "params": [
-                                "context"
-                            ],
-                            "code": "`Delete ${context.name} ?`"
-                        },
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const { id } = t.context; return deleteDomainObject(\"BazValue\", id).then(didDelete => didDelete && Promise.all([scope.links.update(), scope.bazValues.update()])); }"
-                        }
-                    },
-                    "cancel": {
-                        "to": "AssocEntityList",
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Transition 'cancel'\"); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return AssocEntityList;"
+        ],
+        "startState": "AssocEntityList",
         "scope": {
             "name": "AssociativeEntityTestScope",
             "observables": [

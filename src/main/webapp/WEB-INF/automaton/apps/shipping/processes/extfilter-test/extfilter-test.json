@@ -15,10 +15,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "action"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "toJS"
                 }
             ]
         },
@@ -29,26 +25,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "injection"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "config"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "storeDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "deleteDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "GraphQLQuery"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "backToParent"
                 }
             ]
         },
@@ -61,41 +37,25 @@
                     "name": "DateTime"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/ExtFilterHome",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "ExtFilterHome"
+                }
+            ]
         }
     ],
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"ExtFilterHome\"",
-            "states": {
-                "ExtFilterHome": {
-                    "to-detail": {
-                        "to": "ExtFilterDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ scope.currentBar = t.context; }"
-                        }
-                    }
-                },
-                "ExtFilterDetail": {
-                    "back": {
-                        "discard": true,
-                        "to": "ExtFilterHome",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Back to Home\"); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return ExtFilterHome;"
+        ],
+        "startState": "ExtFilterHome",
         "scope": {
             "name": "ExternalDataGridFilterTestScope",
             "observables": [

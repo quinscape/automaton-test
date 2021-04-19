@@ -11,10 +11,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "observable"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "runInAction"
                 }
             ]
         },
@@ -24,27 +20,11 @@
             "specifiers": [
                 {
                     "type": "ImportSpecifier",
-                    "name": "backToParent"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "config"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "createDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "FilterDSL"
                 },
                 {
                     "type": "ImportSpecifier",
                     "name": "injection"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "storeDomainObject"
                 }
             ]
         },
@@ -95,93 +75,30 @@
                     "name": "unregisterAppEffect"
                 }
             ]
+        },
+        {
+            "type": "ImportDeclaration",
+            "source": "./states/EffectList",
+            "specifiers": [
+                {
+                    "type": "ImportDefaultSpecifier",
+                    "name": "EffectList"
+                }
+            ]
         }
     ],
     "processExports": {
         "type": "ProcessExports",
         "configuration": [
             "process.addProcessEffect(() => { registerAppEffect(\"Process:effect-test\"); return () => { unregisterAppEffect(\"Process:effect-test\"); }; })",
-            "process.addEffect(\"EffectList\", () => { registerAppEffect(\"EffectList\"); return () => { unregisterAppEffect(\"EffectList\"); }; })",
-            "process.addEffect(\"EffectDetail\", () => { const name = \"EffectDetail ' \" + (scope.currentFoo && scope.currentFoo.name) + \"'\"; registerAppEffect(name); return () => { unregisterAppEffect(name); }; }, () => [scope.currentFoo && scope.currentFoo.id])"
+            "process.addEffect(EffectList, () => { registerAppEffect(EffectList); return () => { unregisterAppEffect(EffectList); }; })",
+            "process.addEffect(EffectDetail, () => { const name = \"EffectDetail ' \" + (scope.currentFoo && scope.currentFoo.name) + \"'\"; registerAppEffect(name); return () => { unregisterAppEffect(name); }; }, () => [scope.currentFoo && scope.currentFoo.id])"
         ],
-        "process": {
-            "startState": "\"EffectList\"",
-            "states": {
-                "EffectList": {
-                    "new-foo": {
-                        "to": "EffectDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const newObj = createDomainObject(\"FooInput\"); newObj.name = \"Unnamed Foo\"; newObj.desc = \"\"; newObj.num = 0; newObj.flag = false; newObj.created = new Date(); newObj.type = \"TYPE_A\"; return scope.updateCurrent(newObj); }"
-                        }
-                    },
-                    "to-detail": {
-                        "to": "EffectDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"to-detail, context = \", t.context); return updateDetail(scope, t.context); }"
-                        }
-                    }
-                },
-                "EffectDetail": {
-                    "save": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "storeDomainObject({ ...t.context, ownerId: config.auth.id || \"\" }).then(() => scope.foos.update()).then(() => t.back(backToParent(t)))"
-                        }
-                    },
-                    "open-dialog": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.runSubProcess(\"effect-sub-dialog\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result)))"
-                        }
-                    },
-                    "open-full": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "process.runSubProcess(\"effect-sub-full\", t.context).then(result => result && runInAction(() => console.log(\"RESULT\", result)))"
-                        }
-                    },
-                    "cancel": {
-                        "to": "EffectList",
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Transition 'cancel'\"); }"
-                        }
-                    },
-                    "next": {
-                        "to": "EffectDetail",
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const { foos: { rows }, currentFoo } = scope; for (let i = 0; i < rows.length; i++) { const foo = rows[i]; if (foo.id === currentFoo.id && i + 1 < rows.length) { return updateDetail(scope, rows[i + 1].id); } } alert(\"No next object\"); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "// process config\nprocess.options.layout = EffectLayout;",
+            "return EffectList;"
+        ],
+        "startState": "EffectList",
         "scope": {
             "name": "EffectTestScope",
             "observables": [

@@ -15,10 +15,6 @@
                 {
                     "type": "ImportSpecifier",
                     "name": "action"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "toJS"
                 }
             ]
         },
@@ -32,45 +28,7 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "config"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "storeDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "deleteDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "backToParent"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "FilterDSL"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "createDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "extractTypeData"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "Attachments"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
-            "source": "domainql-form",
-            "specifiers": [
-                {
-                    "type": "ImportSpecifier",
-                    "name": "FieldMode"
                 }
             ]
         },
@@ -86,11 +44,11 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "./queries/Q_GraultDetail",
+            "source": "./states/GraultList",
             "specifiers": [
                 {
                     "type": "ImportDefaultSpecifier",
-                    "name": "Q_GraultDetail"
+                    "name": "GraultList"
                 }
             ]
         }
@@ -98,73 +56,10 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"GraultList\"",
-            "states": {
-                "GraultList": {
-                    "new-grault": {
-                        "to": "GraultDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const newInstance = createDomainObject(\"Grault\"); newInstance.name = \"Unnamed\"; scope.updateCurrent(newInstance); }"
-                        }
-                    },
-                    "to-detail": {
-                        "to": "GraultDetail",
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const id = t.context; return Q_GraultDetail.execute({ config: { condition: field(\"id\").eq(value(id)) } }).then(({ iQueryGrault }) => { if (iQueryGrault.rows.length === 0) { alert(\"Could not load Grault with id '\" + id); } scope.updateCurrent(config.inputSchema.clone(iQueryGrault.rows[0])); }); }"
-                        }
-                    }
-                },
-                "GraultDetail": {
-                    "save": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "// 1.\nAttachments.uploadPending(t.context) // 2.\n.then(() => storeDomainObject({ ...extractTypeData(\"GraultInput\", t.context) })) // 3.\n.then(() => Attachments.deletePending(t.context)).then(() => scope.graults.update()).then(() => t.back(backToParent(t)))"
-                        }
-                    },
-                    "delete": {
-                        "to": "GraultList",
-                        "discard": true,
-                        "confirmation": {
-                            "type": "Action",
-                            "params": [
-                                "context"
-                            ],
-                            "code": "`Delete ${context.name} ?`"
-                        },
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const { id } = t.context; return deleteDomainObject(\"Grault\", id).then(didDelete => didDelete && scope.removeGrault(id)); }"
-                        }
-                    },
-                    "cancel": {
-                        "to": "GraultList",
-                        "discard": true,
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ console.log(\"Transition 'cancel'\"); return Attachments.clearAll(t.context); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return GraultList;"
+        ],
+        "startState": "GraultList",
         "scope": {
             "name": "AttachmentTestScope",
             "observables": [

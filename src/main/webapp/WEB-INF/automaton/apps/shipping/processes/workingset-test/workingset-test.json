@@ -24,14 +24,6 @@
                 },
                 {
                     "type": "ImportSpecifier",
-                    "name": "config"
-                },
-                {
-                    "type": "ImportSpecifier",
-                    "name": "createDomainObject"
-                },
-                {
-                    "type": "ImportSpecifier",
                     "name": "FilterDSL"
                 },
                 {
@@ -52,16 +44,6 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "../datagrid-test/queries/Q_FooDetail",
-            "specifiers": [
-                {
-                    "type": "ImportDefaultSpecifier",
-                    "name": "Q_FooDetail"
-                }
-            ]
-        },
-        {
-            "type": "ImportDeclaration",
             "source": "../datagrid-test/queries/Q_FooType",
             "specifiers": [
                 {
@@ -72,11 +54,11 @@
         },
         {
             "type": "ImportDeclaration",
-            "source": "luxon",
+            "source": "./states/WSTestList",
             "specifiers": [
                 {
-                    "type": "ImportSpecifier",
-                    "name": "DateTime"
+                    "type": "ImportDefaultSpecifier",
+                    "name": "WSTestList"
                 }
             ]
         }
@@ -84,75 +66,10 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [],
-        "process": {
-            "startState": "\"WSTestList\"",
-            "states": {
-                "WSTestList": {
-                    "new-foo": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const newObj = createDomainObject(\"Foo\"); newObj.name = \"Unnamed Foo\"; newObj.description = \"\"; newObj.num = 0; newObj.flag = false; newObj.created = DateTime.local(); newObj.type = \"TYPE_A\"; newObj.ownerId = config.auth.id; scope.workingSet.addNew(newObj); scope.updateCurrent(newObj); //console.log(\"new-foo\", newObj)\n}"
-                        }
-                    },
-                    "edit-foo": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ const id = t.context; //console.log(\"edit-foo, context = \", id);\n// Either edit the working set instance...\nconst entry = scope.workingSet.lookup(\"Foo\", id); if (entry) { scope.updateCurrent(entry.domainObject); } else { // ... or query the detail object\nreturn Q_FooDetail.execute({ config: { condition: field(\"id\").eq(value(id)) } }).then(({ iQueryFoo }) => { if (iQueryFoo.rows.length === 0) { alert(\"Could not load Foo with id '\" + t.context); } scope.updateCurrent(iQueryFoo.rows[0]); }); } }"
-                        }
-                    },
-                    "revert-foo": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ scope.workingSet.revert(t.context); }"
-                        }
-                    },
-                    "delete-foo": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ scope.workingSet.markDeleted(t.context); if (scope.currentFoo && scope.currentFoo.id === t.context.id) { scope.updateCurrent(null); } }"
-                        }
-                    },
-                    "save-all": {
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ scope.workingSet.persist().then(() => { scope.foos.update(); }); }"
-                        }
-                    },
-                    "revert-all": {
-                        "discard": true,
-                        "confirmation": {
-                            "type": "Action",
-                            "params": [
-                                "context"
-                            ],
-                            "code": "`Revert all changes?`"
-                        },
-                        "action": {
-                            "type": "Action",
-                            "params": [
-                                "t"
-                            ],
-                            "code": "{ scope.workingSet.revertAll(); }"
-                        }
-                    }
-                }
-            }
-        },
+        "init": [
+            "return WSTestList;"
+        ],
+        "startState": "WSTestList",
         "scope": {
             "name": "WorkingSetTestScope",
             "observables": [
