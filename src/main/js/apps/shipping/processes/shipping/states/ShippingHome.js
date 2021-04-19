@@ -1,7 +1,7 @@
 import React from "react";
 import { ViewState } from "@quinscape/automaton-js";
 
-const ShippingHome = new ViewState("ShippingHome", (process, scope) => [], props => {
+const ShippingHome = new ViewState("ShippingHome", (process, scope) => ({}), props => {
 
     return (
         <div>
