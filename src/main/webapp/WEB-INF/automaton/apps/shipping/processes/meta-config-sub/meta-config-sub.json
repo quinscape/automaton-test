@@ -55,7 +55,7 @@
             "target = MetaConfigSubHome;",
             "return target;"
         ],
-        "startState": "target",
+        "startState": null,
         "scope": {
             "name": "MetaConfigSubScope",
             "observables": [

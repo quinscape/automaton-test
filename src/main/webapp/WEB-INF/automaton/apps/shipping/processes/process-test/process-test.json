@@ -38,7 +38,7 @@
             "target = ProcessTestHome;",
             "return target;"
         ],
-        "startState": "target",
+        "startState": null,
         "scope": {
             "name": "ProcessTestScope",
             "observables": [

@@ -41,9 +41,11 @@
     ],
     "processExports": {
         "type": "ProcessExports",
-        "configuration": [],
+        "configuration": [
+            "/* process config /*\n",
+            "process.options.layout = { MultiLayoutA: LayoutV2, MultiLayoutB: LayoutV3, // use local default or not depending on input value\n\"default\": process.input.useDefault ? LayoutV4 : null }"
+        ],
         "init": [
-            "// process config\nprocess.options.layout = { MultiLayoutA: LayoutV2, MultiLayoutB: LayoutV3, // use local default or not depending on input value\n\"default\": process.input.useDefault ? LayoutV4 : null };",
             "return MultiLayoutHome;"
         ],
         "startState": "MultiLayoutHome",

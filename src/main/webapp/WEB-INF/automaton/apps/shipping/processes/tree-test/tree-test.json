@@ -101,7 +101,7 @@
             "switch (type) { case \"Node\": target = TreeTestNodeDetail; scope.updateCurrent(name); break; case \"Baz\": target = TreeTestBazDetail; scope.updateCurrent(name); break; case \"BazValue\": target = TreeTestBazValueDetail; scope.updateCurrent(name); break; default: target = TreeTestHome; break; }",
             "return target;"
         ],
-        "startState": "target",
+        "startState": null,
         "scope": {
             "name": "TreeTestScope",
             "observables": [

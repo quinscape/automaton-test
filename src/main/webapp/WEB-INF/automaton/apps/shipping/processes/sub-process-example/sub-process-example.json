@@ -51,9 +51,11 @@
     ],
     "processExports": {
         "type": "ProcessExports",
-        "configuration": [],
+        "configuration": [
+            "/* process config /*\n",
+            "process.options.forceSubProcess = true"
+        ],
         "init": [
-            "// process config\nprocess.options.forceSubProcess = true;",
             "return SubProcessHome;"
         ],
         "startState": "SubProcessHome",

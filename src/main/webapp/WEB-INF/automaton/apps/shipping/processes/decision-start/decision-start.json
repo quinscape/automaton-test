@@ -20,7 +20,7 @@
             "if (_target) { context = _target && \"Target\" + _target.toUpperCase() || Home; target = context; } else { target = Home; }",
             "return target;"
         ],
-        "startState": "target",
+        "startState": null,
         "scope": {
             "name": "DecisionStartScope",
             "observables": [],

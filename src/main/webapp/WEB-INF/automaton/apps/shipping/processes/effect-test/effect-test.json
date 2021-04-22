@@ -90,12 +90,13 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [
+            "/* process config /*\n",
+            "process.options.layout = EffectLayout",
             "process.addProcessEffect(() => { registerAppEffect(\"Process:effect-test\"); return () => { unregisterAppEffect(\"Process:effect-test\"); }; })",
             "process.addEffect(EffectList, () => { registerAppEffect(EffectList); return () => { unregisterAppEffect(EffectList); }; })",
             "process.addEffect(EffectDetail, () => { const name = \"EffectDetail ' \" + (scope.currentFoo && scope.currentFoo.name) + \"'\"; registerAppEffect(name); return () => { unregisterAppEffect(name); }; }, () => [scope.currentFoo && scope.currentFoo.id])"
         ],
         "init": [
-            "// process config\nprocess.options.layout = EffectLayout;",
             "return EffectList;"
         ],
         "startState": "EffectList",

@@ -90,14 +90,15 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [
+            "/* process config /*\n",
+            "process.options.asDialog = false",
+            "process.options.forceSubProcess = true",
+            "process.options.layout = EffectLayout",
             "process.addProcessEffect(() => { registerAppEffect(\"Process:effect-sub-full\"); return () => { unregisterAppEffect(\"Process:effect-sub-full\"); }; })",
             "process.addEffect(SubProcessFullHome, () => { registerAppEffect(SubProcessFullHome); return () => { unregisterAppEffect(SubProcessFullHome); }; })",
             "process.addEffect(SubProcessFullDetail, () => { const name = \"SubProcessFullDetail '\" + (scope.currentFoo && scope.currentFoo.name) + \"'\"; registerAppEffect(name); return () => { unregisterAppEffect(name); }; }, () => [scope.currentFoo && scope.currentFoo.id])"
         ],
         "init": [
-            "// process config\nprocess.options.asDialog = false;",
-            "process.options.forceSubProcess = true;",
-            "process.options.layout = EffectLayout;",
             "return SubProcessFullHome;"
         ],
         "startState": "SubProcessFullHome",

@@ -20,7 +20,7 @@
             "target = CollapseHome;",
             "return target;"
         ],
-        "startState": "target",
+        "startState": null,
         "scope": null,
         "extraConstants": []
     }

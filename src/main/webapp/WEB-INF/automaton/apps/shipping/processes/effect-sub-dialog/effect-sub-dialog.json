@@ -90,13 +90,14 @@
     "processExports": {
         "type": "ProcessExports",
         "configuration": [
+            "/* process config /*\n",
+            "process.options.forceSubProcess = true",
+            "process.options.layout = EffectLayout",
             "process.addProcessEffect(() => { registerAppEffect(\"Process:effect-sub-dialog\"); return () => { unregisterAppEffect(\"Process:effect-sub-dialog\"); }; })",
             "process.addEffect(SubProcessDialogHome, () => { registerAppEffect(SubProcessDialogHome); return () => { unregisterAppEffect(SubProcessDialogHome); }; })",
             "process.addEffect(SubProcessDialogDetail, () => { const name = \"SubProcessDialogDetail '\" + (scope.currentFoo && scope.currentFoo.name) + \"'\"; registerAppEffect(name); return () => { unregisterAppEffect(name); }; }, () => [scope.currentFoo && scope.currentFoo.id])"
         ],
         "init": [
-            "// process config\nprocess.options.forceSubProcess = true;",
-            "process.options.layout = EffectLayout;",
             "return SubProcessDialogHome;"
         ],
         "startState": "SubProcessDialogHome",
