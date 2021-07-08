@@ -16,36 +16,26 @@
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="Java Filter: Add toString()&#10;&#10;Implement a default shortened toString() for transformed FilterDSL Filter. Add default toString() impl and invoke that from many nodes.&#10;&#10;Write some nodes by hand.">
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_11_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_svenson_svenson_1_5_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_24_1_jre.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_graphql_java_graphql_java_11_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_graphql_java_java_dataloader_2_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_automaton_0_2_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_2_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_7_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_all_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jooq_jooq_codegen_3_10_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jooq_jooq_meta_3_10_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_firefox_driver_3_141_59.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_30.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_3_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_3_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_3_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_7_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_2_10_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_302.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_3_3_RELEASE2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_7_RELEASE2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_2_7_RELEASE2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automatontest.backup" beforeDir="false" afterPath="$PROJECT_DIR$/automatontest.backup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/states/FKTestList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/states/FKTestList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/collapsible-test/collapsible-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/collapsible-test/collapsible-test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/decision-start/decision-start.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/decision-start/decision-start.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/meta-config-sub/meta-config-sub.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/meta-config-sub/meta-config-sub.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/process-test/process-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/process-test/process-test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/tree-test/tree-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/automaton/apps/shipping/processes/tree-test/tree-test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Indexes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Indexes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Keys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Keys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Public.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Public.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Tables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Tables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/animalgrid-test/states/AnimalGridHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/animalgrid-test/states/AnimalGridHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/iquery-editor/iquery-editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/iquery-editor/iquery-editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/iquery-editor/states/IQEditorHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/iquery-editor/states/IQEditorHome.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/js/temp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/js/temp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/automaton.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/automaton.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +55,8 @@
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -135,7 +125,7 @@
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.41" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sktex" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cpcomic" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -173,18 +163,18 @@
       <recent name="de.quinscape.automaton.model.data.SortOrder" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/../automaton-js/src/util/AABB.js" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/service/printJsDocType.js" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/service/docs-filter.js" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/service/markdown-filter.js" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/service/DocType.js" />
-      <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/components/ReactDocSection.js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../automaton-js/src/util" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/public/media" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/components" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/snippets" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/public" />
-      <recent name="$PROJECT_DIR$/../automaton-js/tooling/next" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -227,7 +217,7 @@
       <command value="key" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InteractiveQueryConditionTest">
+  <component name="RunManager" selected="Tomcat Server.Local Tomcat">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -299,35 +289,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InteractiveQueryContextConditionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="uniqueId" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <uniqueIds>
-        <uniqueId value="[engine:junit-jupiter]/[class:de.quinscape.automaton.runtime.data.InteractiveQueryContextConditionTest]" />
-      </uniqueIds>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InteractiveQueryContextConditionTest.testCondition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton" />
-      <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.data" />
-      <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.runtime.data.InteractiveQueryContextConditionTest" />
-      <option name="METHOD_NAME" value="testCondition" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="InteractiveQueryJoinTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="automaton" />
       <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.data" />
@@ -358,20 +319,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCase.toEnglish" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton-test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCase" />
-      <option name="METHOD_NAME" value="toEnglish" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -391,6 +338,9 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" node-parameters="-r @babel/register">
+      <method v="2" />
+    </configuration>
+    <configuration name="temp.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" node-parameters="-r @babel/register" path-to-js-file="$PROJECT_DIR$/src/test/js/temp.js" working-dir="$PROJECT_DIR$/src/test/js">
       <method v="2" />
     </configuration>
     <configuration name="DQLMobxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -511,6 +461,40 @@
       <recursive>false</recursive>
       <method v="2" />
     </configuration>
+    <configuration name="IQueryEditor: field search" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options>-r @babel/register -r ./test/setup.js -r ignore-styles --exit</node-options>
+      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs>
+        <env name="BABEL_ENV" value="test" />
+      </envs>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/../automaton-js/test/iqed/field-search.js</test-file>
+      <test-names>
+        <name value="IQueryEditor: field search" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="IQueryEditor: field search.searches deep" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/../automaton-js/test/iqed/field-search.js</test-file>
+      <test-names>
+        <name value="IQueryEditor: field search" />
+        <name value="searches deep" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="matchPath" type="mocha-javascript-test-runner" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options>-r @babel/register -r ./test/setup.js</node-options>
@@ -532,26 +516,26 @@
     <list>
       <item itemvalue="JUnit.InteractiveQueryJoinTest" />
       <item itemvalue="JUnit.MergeServiceTests" />
-      <item itemvalue="JUnit.TestCase.toEnglish" />
       <item itemvalue="JUnit.All in automaton" />
-      <item itemvalue="JUnit.InteractiveQueryContextConditionTest.testCondition" />
-      <item itemvalue="JUnit.InteractiveQueryContextConditionTest" />
       <item itemvalue="JUnit.InteractiveQueryConditionTest" />
       <item itemvalue="Mocha.Automaton-Test Tests" />
       <item itemvalue="Mocha.matchPath" />
       <item itemvalue="Mocha.Automaton-Js Tests" />
+      <item itemvalue="Mocha.IQueryEditor: field search.searches deep" />
+      <item itemvalue="Mocha.IQueryEditor: field search" />
       <item itemvalue="Node.js.Process v2 transform " />
       <item itemvalue="Node.js.DataGrid-Test transform " />
+      <item itemvalue="Node.js.temp.js" />
       <item itemvalue="Spring Boot.DQLMobxApplication" />
       <item itemvalue="Tomcat Server.Local Tomcat" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.IQueryEditor: field search.searches deep" />
+        <item itemvalue="Mocha.IQueryEditor: field search" />
+        <item itemvalue="Node.js.temp.js" />
         <item itemvalue="JUnit.InteractiveQueryConditionTest" />
         <item itemvalue="JUnit.All in automaton" />
-        <item itemvalue="JUnit.InteractiveQueryContextConditionTest.testCondition" />
-        <item itemvalue="JUnit.InteractiveQueryContextConditionTest" />
-        <item itemvalue="JUnit.TestCase.toEnglish" />
       </list>
     </recent_temporary>
   </component>
@@ -1369,7 +1353,38 @@
       <workItem from="1618937848938" duration="647000" />
       <workItem from="1618999472286" duration="296000" />
       <workItem from="1618999780196" duration="11748000" />
-      <workItem from="1619084079961" duration="6438000" />
+      <workItem from="1619084079961" duration="8528000" />
+      <workItem from="1619173374494" duration="2482000" />
+      <workItem from="1619448217616" duration="2606000" />
+      <workItem from="1619516054105" duration="8488000" />
+      <workItem from="1619609619802" duration="3668000" />
+      <workItem from="1620052871051" duration="11118000" />
+      <workItem from="1620126833987" duration="1202000" />
+      <workItem from="1620301105111" duration="1198000" />
+      <workItem from="1620383267109" duration="1321000" />
+      <workItem from="1620422367687" duration="243000" />
+      <workItem from="1620645444489" duration="1263000" />
+      <workItem from="1620728753502" duration="600000" />
+      <workItem from="1620837419186" duration="552000" />
+      <workItem from="1621510143138" duration="2192000" />
+      <workItem from="1621518961337" duration="7339000" />
+      <workItem from="1621597855136" duration="4063000" />
+      <workItem from="1621948594195" duration="10801000" />
+      <workItem from="1621973792177" duration="4097000" />
+      <workItem from="1622035410697" duration="12202000" />
+      <workItem from="1622114310445" duration="10939000" />
+      <workItem from="1622203724009" duration="599000" />
+      <workItem from="1622210724175" duration="1028000" />
+      <workItem from="1622215145808" duration="5824000" />
+      <workItem from="1622643639273" duration="52000" />
+      <workItem from="1622643714318" duration="1422000" />
+      <workItem from="1622647395753" duration="66000" />
+      <workItem from="1625141474410" duration="2449000" />
+      <workItem from="1625224569333" duration="2597000" />
+      <workItem from="1625493942875" duration="7401000" />
+      <workItem from="1625583041220" duration="1060000" />
+      <workItem from="1625657018318" duration="5374000" />
+      <workItem from="1625742459564" duration="6749000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
