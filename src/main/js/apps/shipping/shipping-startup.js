@@ -106,7 +106,7 @@ export default {
     currentProcess: getCurrentProcess,
     runInAction,
     shutdown,
-    pickSchemaTypes : array => pickSchemaTypes(config.inputSchema.schema, array),
+    pickSchemaTypes : array => pickSchemaTypes(config.inputSchema, array),
     toJS,
     publish,
     subscribeToTopic,
