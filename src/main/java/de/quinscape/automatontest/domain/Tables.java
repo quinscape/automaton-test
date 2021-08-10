@@ -27,6 +27,7 @@ import de.quinscape.automatontest.domain.tables.Grault;
 import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.MetaConfig;
 import de.quinscape.automatontest.domain.tables.Node;
+import de.quinscape.automatontest.domain.tables.Plugh;
 import de.quinscape.automatontest.domain.tables.QuxA;
 import de.quinscape.automatontest.domain.tables.QuxB;
 import de.quinscape.automatontest.domain.tables.QuxC;
@@ -165,6 +166,11 @@ public class Tables {
      * The table <code>public.node</code>.
      */
     public static final Node NODE = de.quinscape.automatontest.domain.tables.Node.NODE;
+
+    /**
+     * The table <code>public.plugh</code>.
+     */
+    public static final Plugh PLUGH = de.quinscape.automatontest.domain.tables.Plugh.PLUGH;
 
     /**
      * The table <code>public.qux_a</code>.

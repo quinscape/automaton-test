@@ -27,6 +27,7 @@ import de.quinscape.automatontest.domain.tables.Grault;
 import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.MetaConfig;
 import de.quinscape.automatontest.domain.tables.Node;
+import de.quinscape.automatontest.domain.tables.Plugh;
 import de.quinscape.automatontest.domain.tables.QuxA;
 import de.quinscape.automatontest.domain.tables.QuxB;
 import de.quinscape.automatontest.domain.tables.QuxC;
@@ -59,7 +60,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = 456401860;
+    private static final long serialVersionUID = 1270008162;
 
     /**
      * The reference instance of <code>public</code>
@@ -182,6 +183,11 @@ public class Public extends SchemaImpl {
     public final Node NODE = de.quinscape.automatontest.domain.tables.Node.NODE;
 
     /**
+     * The table <code>public.plugh</code>.
+     */
+    public final Plugh PLUGH = de.quinscape.automatontest.domain.tables.Plugh.PLUGH;
+
+    /**
      * The table <code>public.qux_a</code>.
      */
     public final QuxA QUX_A = de.quinscape.automatontest.domain.tables.QuxA.QUX_A;
@@ -264,6 +270,7 @@ public class Public extends SchemaImpl {
             GridColumns.GRID_COLUMNS,
             MetaConfig.META_CONFIG,
             Node.NODE,
+            Plugh.PLUGH,
             QuxA.QUX_A,
             QuxB.QUX_B,
             QuxC.QUX_C,

@@ -564,6 +564,20 @@ type InteractiveQueryNode {
     type: String
 }
 
+"Interactive Query with Plugh payload."
+type InteractiveQueryPlugh {
+    "Column states for the current result."
+    columnStates: [ColumnState]
+    "Query configuration the current result was produced with."
+    queryConfig: QueryConfig
+    "Total row count available."
+    rowCount: Int
+    "List with current rows of Plugh."
+    rows: [Plugh]
+    "Name of payload type (always 'Plugh')"
+    type: String
+}
+
 "Interactive Query with QuxA payload."
 type InteractiveQueryQuxA {
     "Column states for the current result."
@@ -826,6 +840,26 @@ type PagedFoo {
     rows: [Foo]!
 }
 
+type Plugh {
+    "DB column 'created'"
+    created: Timestamp!
+    "DB column 'description'"
+    description: String
+    extra: String
+    "DB column 'flag'"
+    flag: Boolean!
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "DB column 'num'"
+    num: Int!
+    "Target of 'owner_id'"
+    owner: AppUser!
+    "DB foreign key column 'owner_id'"
+    ownerId: String!
+}
+
 "Encapsulates all parameters of an interactive query."
 type QueryConfig {
     "FilterDSL condition graph or null"
@@ -901,6 +935,8 @@ type QueryType {
     iQueryMetaConfig(config: QueryConfigInput!): InteractiveQueryMetaConfig
     "Queries Node objects based on the given query config"
     iQueryNode(config: QueryConfigInput!): InteractiveQueryNode
+    "Queries Plugh objects based on the given query config"
+    iQueryPlugh(config: QueryConfigInput!): InteractiveQueryPlugh
     "Queries QuxA objects based on the given query config"
     iQueryQuxA(config: QueryConfigInput!): InteractiveQueryQuxA
     "Queries QuxB objects based on the given query config"
@@ -1459,26 +1495,11 @@ input WaldoInput {
 }
 
 
+"BigDecimal wrapped as string"
+scalar BigDecimal
+
 "Built-in Byte as Int"
 scalar Byte
-
-"SQL timestamp equivalent"
-scalar Timestamp
-
-"Container for generic scalar values"
-scalar GenericScalar
-
-"Postgresql jsonb type equivalent"
-scalar JSONB
-
-"Container for generic domain objects as scalar"
-scalar DomainObject
-
-"Map graph representing a JOOQ field expression"
-scalar FieldExpression
-
-"Long type"
-scalar Long
 
 "Map graph representing JOOQ conditions"
 scalar Condition
@@ -1486,5 +1507,20 @@ scalar Condition
 "SQL date equivalent"
 scalar Date
 
-"BigDecimal wrapped as string"
-scalar BigDecimal
+"Container for generic domain objects as scalar"
+scalar DomainObject
+
+"Map graph representing a JOOQ field expression"
+scalar FieldExpression
+
+"Container for generic scalar values"
+scalar GenericScalar
+
+"Postgresql jsonb type equivalent"
+scalar JSONB
+
+"Long type"
+scalar Long
+
+"SQL timestamp equivalent"
+scalar Timestamp

@@ -26,6 +26,7 @@ import de.quinscape.automatontest.domain.tables.Grault;
 import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.MetaConfig;
 import de.quinscape.automatontest.domain.tables.Node;
+import de.quinscape.automatontest.domain.tables.Plugh;
 import de.quinscape.automatontest.domain.tables.QuxA;
 import de.quinscape.automatontest.domain.tables.QuxB;
 import de.quinscape.automatontest.domain.tables.QuxC;
@@ -87,6 +88,7 @@ public class Indexes {
     public static final Index PK_META_CONFIG = Indexes0.PK_META_CONFIG;
     public static final Index PK_NODE = Indexes0.PK_NODE;
     public static final Index UC_NODE_NAME = Indexes0.UC_NODE_NAME;
+    public static final Index PK_PLUGH = Indexes0.PK_PLUGH;
     public static final Index PK_QUX_A = Indexes0.PK_QUX_A;
     public static final Index QUX_A_NAME_KEY = Indexes0.QUX_A_NAME_KEY;
     public static final Index PK_QUX_B = Indexes0.PK_QUX_B;
@@ -133,6 +135,7 @@ public class Indexes {
         public static Index PK_META_CONFIG = Internal.createIndex("pk_meta_config", MetaConfig.META_CONFIG, new OrderField[] { MetaConfig.META_CONFIG.ID }, true);
         public static Index PK_NODE = Internal.createIndex("pk_node", Node.NODE, new OrderField[] { Node.NODE.ID }, true);
         public static Index UC_NODE_NAME = Internal.createIndex("uc_node_name", Node.NODE, new OrderField[] { Node.NODE.NAME }, true);
+        public static Index PK_PLUGH = Internal.createIndex("pk_plugh", Plugh.PLUGH, new OrderField[] { Plugh.PLUGH.ID }, true);
         public static Index PK_QUX_A = Internal.createIndex("pk_qux_a", QuxA.QUX_A, new OrderField[] { QuxA.QUX_A.ID }, true);
         public static Index QUX_A_NAME_KEY = Internal.createIndex("qux_a_name_key", QuxA.QUX_A, new OrderField[] { QuxA.QUX_A.NAME }, true);
         public static Index PK_QUX_B = Internal.createIndex("pk_qux_b", QuxB.QUX_B, new OrderField[] { QuxB.QUX_B.ID }, true);

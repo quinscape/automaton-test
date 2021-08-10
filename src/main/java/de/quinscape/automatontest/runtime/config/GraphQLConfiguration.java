@@ -33,6 +33,7 @@ import de.quinscape.domainql.generic.GenericScalar;
 import de.quinscape.domainql.generic.GenericScalarType;
 import de.quinscape.domainql.jsonb.JSONB;
 import de.quinscape.domainql.jsonb.JSONBScalar;
+import de.quinscape.domainql.meta.MetadataProvider;
 import de.quinscape.domainql.scalar.BigDecimalScalar;
 import graphql.GraphQL;
 import org.jooq.DSLContext;
@@ -78,6 +79,7 @@ public class GraphQLConfiguration
     public DomainQL domainQL() throws IOException
     {
         final Collection<Object> logicBeans = applicationContext.getBeansWithAnnotation(GraphQLLogic.class).values();
+        final Collection<MetadataProvider> metadataProviders = applicationContext.getBeansOfType(MetadataProvider.class).values();
 
         final DomainQL domainQL = DomainQL.newDomainQL(dslContext)
             //.parameterProvider(new AutomatonConnectionProviderFactory(applicationContext))
@@ -150,6 +152,8 @@ public class GraphQLConfiguration
             .configureRelation(META_CONFIG.CORGE_TYPE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
             .configureRelation(META_CONFIG.TYPE, SourceField.SCALAR, TargetField.NONE)
 
+
+            .configureRelation(PLUGH.OWNER_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
             .configureNameField("name")
 
             /*
@@ -170,6 +174,11 @@ public class GraphQLConfiguration
             .withTypeDocsFrom(
                 new ClassPathResource("source-typedocs.json").getInputStream()
             )
+
+            .withMetadataProviders(
+                metadataProviders.toArray(new MetadataProvider[0])
+            )
+
             .build();
 
         return domainQL;

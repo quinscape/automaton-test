@@ -29,6 +29,7 @@ import de.quinscape.automatontest.domain.tables.pojos.QuxD;
 import de.quinscape.automatontest.domain.tables.pojos.QuxMain;
 import de.quinscape.automatontest.domain.tables.pojos.SumPerMonth;
 import de.quinscape.automatontest.domain.tables.pojos.Waldo;
+import de.quinscape.automatontest.model.Plugh;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.domainql.annotation.GraphQLLogic;
 import de.quinscape.domainql.annotation.GraphQLMutation;
@@ -116,7 +117,9 @@ public class DataGridLogic
                 Garply.class,
 
                 MetaConfig.class,
-                Waldo.class
+                Waldo.class,
+
+                Plugh.class
             }
         )
         Class<T> type,

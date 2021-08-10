@@ -26,6 +26,7 @@ import de.quinscape.automatontest.domain.tables.Grault;
 import de.quinscape.automatontest.domain.tables.GridColumns;
 import de.quinscape.automatontest.domain.tables.MetaConfig;
 import de.quinscape.automatontest.domain.tables.Node;
+import de.quinscape.automatontest.domain.tables.Plugh;
 import de.quinscape.automatontest.domain.tables.QuxA;
 import de.quinscape.automatontest.domain.tables.QuxB;
 import de.quinscape.automatontest.domain.tables.QuxC;
@@ -54,6 +55,7 @@ import de.quinscape.automatontest.domain.tables.records.GraultRecord;
 import de.quinscape.automatontest.domain.tables.records.GridColumnsRecord;
 import de.quinscape.automatontest.domain.tables.records.MetaConfigRecord;
 import de.quinscape.automatontest.domain.tables.records.NodeRecord;
+import de.quinscape.automatontest.domain.tables.records.PlughRecord;
 import de.quinscape.automatontest.domain.tables.records.QuxARecord;
 import de.quinscape.automatontest.domain.tables.records.QuxBRecord;
 import de.quinscape.automatontest.domain.tables.records.QuxCRecord;
@@ -120,6 +122,7 @@ public class Keys {
     public static final UniqueKey<MetaConfigRecord> PK_META_CONFIG = UniqueKeys0.PK_META_CONFIG;
     public static final UniqueKey<NodeRecord> PK_NODE = UniqueKeys0.PK_NODE;
     public static final UniqueKey<NodeRecord> UC_NODE_NAME = UniqueKeys0.UC_NODE_NAME;
+    public static final UniqueKey<PlughRecord> PK_PLUGH = UniqueKeys0.PK_PLUGH;
     public static final UniqueKey<QuxARecord> PK_QUX_A = UniqueKeys0.PK_QUX_A;
     public static final UniqueKey<QuxARecord> QUX_A_NAME_KEY = UniqueKeys0.QUX_A_NAME_KEY;
     public static final UniqueKey<QuxBRecord> PK_QUX_B = UniqueKeys0.PK_QUX_B;
@@ -155,6 +158,7 @@ public class Keys {
     public static final ForeignKey<MetaConfigRecord, AppAttachmentRecord> META_CONFIG__FK_META_CONFIG_ATTACHMENT_ID = ForeignKeys0.META_CONFIG__FK_META_CONFIG_ATTACHMENT_ID;
     public static final ForeignKey<MetaConfigRecord, CorgeTypeRecord> META_CONFIG__FK_META_CONFIG_CORGE_TYPE_ID = ForeignKeys0.META_CONFIG__FK_META_CONFIG_CORGE_TYPE_ID;
     public static final ForeignKey<NodeRecord, NodeRecord> NODE__FK_NODE_PARENT_ID = ForeignKeys0.NODE__FK_NODE_PARENT_ID;
+    public static final ForeignKey<PlughRecord, AppUserRecord> PLUGH__FK_PLUGH_OWNER_ID = ForeignKeys0.PLUGH__FK_PLUGH_OWNER_ID;
     public static final ForeignKey<QuxMainRecord, QuxARecord> QUX_MAIN__FK_QUX_A_ID = ForeignKeys0.QUX_MAIN__FK_QUX_A_ID;
     public static final ForeignKey<QuxMainRecord, QuxBRecord> QUX_MAIN__FK_QUX_B_NAME = ForeignKeys0.QUX_MAIN__FK_QUX_B_NAME;
     public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID1 = ForeignKeys0.QUX_MAIN__FK_QUX_C_ID1;
@@ -198,6 +202,7 @@ public class Keys {
         public static final UniqueKey<MetaConfigRecord> PK_META_CONFIG = Internal.createUniqueKey(MetaConfig.META_CONFIG, "pk_meta_config", MetaConfig.META_CONFIG.ID);
         public static final UniqueKey<NodeRecord> PK_NODE = Internal.createUniqueKey(Node.NODE, "pk_node", Node.NODE.ID);
         public static final UniqueKey<NodeRecord> UC_NODE_NAME = Internal.createUniqueKey(Node.NODE, "uc_node_name", Node.NODE.NAME);
+        public static final UniqueKey<PlughRecord> PK_PLUGH = Internal.createUniqueKey(Plugh.PLUGH, "pk_plugh", Plugh.PLUGH.ID);
         public static final UniqueKey<QuxARecord> PK_QUX_A = Internal.createUniqueKey(QuxA.QUX_A, "pk_qux_a", QuxA.QUX_A.ID);
         public static final UniqueKey<QuxARecord> QUX_A_NAME_KEY = Internal.createUniqueKey(QuxA.QUX_A, "qux_a_name_key", QuxA.QUX_A.NAME);
         public static final UniqueKey<QuxBRecord> PK_QUX_B = Internal.createUniqueKey(QuxB.QUX_B, "pk_qux_b", QuxB.QUX_B.ID);
@@ -231,6 +236,7 @@ public class Keys {
         public static final ForeignKey<MetaConfigRecord, AppAttachmentRecord> META_CONFIG__FK_META_CONFIG_ATTACHMENT_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_ATTACHMENT, MetaConfig.META_CONFIG, "meta_config__fk_meta_config_attachment_id", MetaConfig.META_CONFIG.ATTACHMENT_ID);
         public static final ForeignKey<MetaConfigRecord, CorgeTypeRecord> META_CONFIG__FK_META_CONFIG_CORGE_TYPE_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_CORGE_TYPE, MetaConfig.META_CONFIG, "meta_config__fk_meta_config_corge_type_id", MetaConfig.META_CONFIG.CORGE_TYPE_ID);
         public static final ForeignKey<NodeRecord, NodeRecord> NODE__FK_NODE_PARENT_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_NODE, Node.NODE, "node__fk_node_parent_id", Node.NODE.PARENT_ID);
+        public static final ForeignKey<PlughRecord, AppUserRecord> PLUGH__FK_PLUGH_OWNER_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_APP_USER, Plugh.PLUGH, "plugh__fk_plugh_owner_id", Plugh.PLUGH.OWNER_ID);
         public static final ForeignKey<QuxMainRecord, QuxARecord> QUX_MAIN__FK_QUX_A_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_A, QuxMain.QUX_MAIN, "qux_main__fk_qux_a_id", QuxMain.QUX_MAIN.QUX_A_ID);
         public static final ForeignKey<QuxMainRecord, QuxBRecord> QUX_MAIN__FK_QUX_B_NAME = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.QUX_B_NAME_KEY, QuxMain.QUX_MAIN, "qux_main__fk_qux_b_name", QuxMain.QUX_MAIN.QUX_B_NAME);
         public static final ForeignKey<QuxMainRecord, QuxCRecord> QUX_MAIN__FK_QUX_C_ID1 = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_C, QuxMain.QUX_MAIN, "qux_main__fk_qux_c_id1", QuxMain.QUX_MAIN.QUX_C_ID1);
