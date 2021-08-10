@@ -17,13 +17,44 @@ const ProcessTestHome = new ViewState("ProcessTestHome", (process, scope) => ({
             );
         }
     },
-
-    "open-sub2" : {
+    "open-sub-small" : {
         to: ProcessTestHome,
         action: t => {
 
             return (
-                process.runSubProcess("customer", t.context)
+                process.runSubProcess(
+                    "sub-process-example",
+                    t.context,
+                    {
+                        props: {
+                            size: "sm"
+                        }
+                    }
+                )
+                .then(
+                    result => result && runInAction( () => scope.currentOrder = result)
+                )
+            );
+        }
+    },
+    "open-sub-big" : {
+        to: ProcessTestHome,
+        action: t => {
+
+            return (
+                process.runSubProcess(
+                    "sub-process-example",
+                    t.context,
+                    {
+                        props: {
+                            size: "lg",
+                            style: {
+                                maxWidth: 1600,
+                                width: "80%"
+                            }
+                        }
+                    }
+                )
                 .then(
                     result => result && runInAction( () => scope.currentOrder = result)
                 )
@@ -57,9 +88,14 @@ const ProcessTestHome = new ViewState("ProcessTestHome", (process, scope) => ({
                 Open Sub-Process
             </Button>
 
-            <Button transition="open-sub2" className="mr-1 btn btn-secondary">
+            <Button transition="open-sub-small" className="mr-1 btn btn-secondary">
                 <Icon className="fa-subway" />
-                Open Customer as Sub
+                Open Sub-Process (Small)
+            </Button>
+
+            <Button transition="open-sub-big" className="mr-1 btn btn-secondary">
+                <Icon className="fa-subway" />
+                Open Sub-Process(Big)
             </Button>
 
             <Button transition="clear" className="mr-1 btn btn-secondary">
