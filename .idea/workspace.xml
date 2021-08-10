@@ -14,26 +14,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="Java Filter: Add toString()&#10;&#10;Implement a default shortened toString() for transformed FilterDSL Filter. Add default toString() impl and invoke that from many nodes.&#10;&#10;Write some nodes by hand.">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_2_10_SNAPSHOT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_302.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_3_3_RELEASE2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_7_RELEASE2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_2_7_RELEASE2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_automaton_0_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_6_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automatontest.backup" beforeDir="false" afterPath="$PROJECT_DIR$/automatontest.backup" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Indexes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Indexes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Keys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Keys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Public.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Public.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Tables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/domain/Tables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/animalgrid-test/states/AnimalGridHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/animalgrid-test/states/AnimalGridHome.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/iquery-editor/iquery-editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/iquery-editor/iquery-editor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/iquery-editor/states/IQEditorHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/iquery-editor/states/IQEditorHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/shipping-startup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/quinscape/automatontest/TestCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/js/temp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/js/temp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton/automaton.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/automaton.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../automaton/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/pom.xml" afterDir="false" />
     </list>
@@ -122,10 +118,10 @@
     <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="packageLocal" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.14.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.14.41" />
+    <property name="javascript.nodejs.core.library.typings.version" value="15.14.0" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cpcomic" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rm-09" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -138,7 +134,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28390804" />
-    <property name="settings.editor.selected.configurable" value="build.tools" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../spring-jsview/pom.xml" />
   </component>
@@ -205,11 +201,11 @@
       <recent name="de.quinscape.automaton.runtime.scalar" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.quinscape.automaton.runtime.tstimpl" />
+      <recent name="de.quinscape.automaton.runtime.data" />
       <recent name="de.quinscape.automatontest.runtime.service" />
       <recent name="de.quinscape.automaton.runtime.controller" />
       <recent name="de.quinscape.automaton.runtime.filter.impl" />
-      <recent name="de.quinscape.automatontest" />
-      <recent name="de.quinscape.automaton.model.domain" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -224,16 +220,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-      <Host>localhost</Host>
-      <Port>5050</Port>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -241,6 +227,16 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -276,11 +272,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InteractiveQueryConditionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InteractiveQueryConcatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="automaton" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.quinscape.automaton.runtime.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.data" />
-      <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.runtime.data.InteractiveQueryConditionTest" />
+      <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.runtime.data.InteractiveQueryConcatTest" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InteractiveQueryConcatTest.testCondition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automaton" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.quinscape.automaton.runtime.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.data" />
+      <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.runtime.data.InteractiveQueryConcatTest" />
+      <option name="METHOD_NAME" value="testCondition" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -294,6 +316,26 @@
       <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.data" />
       <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.runtime.data.InteractiveQueryJoinTest" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaFilterTransformerTest.test_concat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automaton" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.quinscape.automaton.runtime.filter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.filter" />
+      <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.runtime.filter.JavaFilterTransformerTest" />
+      <option name="METHOD_NAME" value="test_concat" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -338,9 +380,6 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" node-parameters="-r @babel/register">
-      <method v="2" />
-    </configuration>
-    <configuration name="temp.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" node-parameters="-r @babel/register" path-to-js-file="$PROJECT_DIR$/src/test/js/temp.js" working-dir="$PROJECT_DIR$/src/test/js">
       <method v="2" />
     </configuration>
     <configuration name="DQLMobxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -461,25 +500,7 @@
       <recursive>false</recursive>
       <method v="2" />
     </configuration>
-    <configuration name="IQueryEditor: field search" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options>-r @babel/register -r ./test/setup.js -r ignore-styles --exit</node-options>
-      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs>
-        <env name="BABEL_ENV" value="test" />
-      </envs>
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/../automaton-js/test/iqed/field-search.js</test-file>
-      <test-names>
-        <name value="IQueryEditor: field search" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="IQueryEditor: field search.searches deep" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="filterTransformer.transforms JSON conditions into JS" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
@@ -488,10 +509,10 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/../automaton-js/test/iqed/field-search.js</test-file>
+      <test-file>$PROJECT_DIR$/../automaton-js/test/util/filter-transformer.js</test-file>
       <test-names>
-        <name value="IQueryEditor: field search" />
-        <name value="searches deep" />
+        <name value="filterTransformer" />
+        <name value="transforms JSON conditions into JS" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -516,26 +537,26 @@
     <list>
       <item itemvalue="JUnit.InteractiveQueryJoinTest" />
       <item itemvalue="JUnit.MergeServiceTests" />
-      <item itemvalue="JUnit.All in automaton" />
-      <item itemvalue="JUnit.InteractiveQueryConditionTest" />
       <item itemvalue="Mocha.Automaton-Test Tests" />
       <item itemvalue="Mocha.matchPath" />
       <item itemvalue="Mocha.Automaton-Js Tests" />
-      <item itemvalue="Mocha.IQueryEditor: field search.searches deep" />
-      <item itemvalue="Mocha.IQueryEditor: field search" />
       <item itemvalue="Node.js.Process v2 transform " />
       <item itemvalue="Node.js.DataGrid-Test transform " />
-      <item itemvalue="Node.js.temp.js" />
       <item itemvalue="Spring Boot.DQLMobxApplication" />
       <item itemvalue="Tomcat Server.Local Tomcat" />
+      <item itemvalue="JUnit.JavaFilterTransformerTest.test_concat" />
+      <item itemvalue="Mocha.filterTransformer.transforms JSON conditions into JS" />
+      <item itemvalue="JUnit.InteractiveQueryConcatTest.testCondition" />
+      <item itemvalue="JUnit.InteractiveQueryConcatTest" />
+      <item itemvalue="JUnit.All in automaton" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Mocha.IQueryEditor: field search.searches deep" />
-        <item itemvalue="Mocha.IQueryEditor: field search" />
-        <item itemvalue="Node.js.temp.js" />
-        <item itemvalue="JUnit.InteractiveQueryConditionTest" />
+        <item itemvalue="JUnit.InteractiveQueryConcatTest" />
         <item itemvalue="JUnit.All in automaton" />
+        <item itemvalue="JUnit.InteractiveQueryConcatTest.testCondition" />
+        <item itemvalue="Mocha.filterTransformer.transforms JSON conditions into JS" />
+        <item itemvalue="JUnit.JavaFilterTransformerTest.test_concat" />
       </list>
     </recent_temporary>
   </component>
@@ -1385,6 +1406,18 @@
       <workItem from="1625583041220" duration="1060000" />
       <workItem from="1625657018318" duration="5374000" />
       <workItem from="1625742459564" duration="6749000" />
+      <workItem from="1627561609871" duration="4021000" />
+      <workItem from="1627644114666" duration="4392000" />
+      <workItem from="1627652104126" duration="6110000" />
+      <workItem from="1627847479491" duration="599000" />
+      <workItem from="1627906724609" duration="10381000" />
+      <workItem from="1627988740070" duration="2502000" />
+      <workItem from="1628163145516" duration="1013000" />
+      <workItem from="1628254072724" duration="2176000" />
+      <workItem from="1628288346867" duration="603000" />
+      <workItem from="1628507730653" duration="43000" />
+      <workItem from="1628507790251" duration="2447000" />
+      <workItem from="1628592160413" duration="15847000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
@@ -1529,11 +1562,6 @@
           <option name="timeStamp" value="38" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/data/FilterTransformer.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../automaton/src/test/java/de/quinscape/automaton/runtime/tstimpl/IQueryTestLogic.java</url>
           <line>61</line>
           <option name="timeStamp" value="77" />
@@ -1560,9 +1588,9 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/automaton_test$filterTransformer.dat" NAME="filterTransformer Coverage Results" MODIFIED="1607610577105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/automaton_test$Automaton_Js_Tests.dat" NAME="Automaton-Js Tests Coverage Results" MODIFIED="1593174492998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/automaton_test$Filter_DSL.dat" NAME="Filter DSL Coverage Results" MODIFIED="1607610427965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/automaton_test$WorkingSet_Merge.dat" NAME="WorkingSet Merge Coverage Results" MODIFIED="1593180697311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/automaton_test$Automaton_Js_Tests.dat" NAME="Automaton-Js Tests Coverage Results" MODIFIED="1593174492998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/automaton_test$filterTransformer.dat" NAME="filterTransformer Coverage Results" MODIFIED="1607610577105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/automaton_test$Filter_DSL.dat" NAME="Filter DSL Coverage Results" MODIFIED="1607610427965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
