@@ -19,9 +19,6 @@ export default class MetaConfigTestScope {
     @observable
     currentMetaConfig = null;
 
-    @observable
-    formMode = FieldMode.NORMAL;
-
     /** Current todos */
     @observable
     metaConfigs = injection( Q_MetaConfigList );
@@ -38,11 +35,6 @@ export default class MetaConfigTestScope {
     updateMetaConfigs(metaConfigs)
     {
         this.metaConfigs = metaConfigs;
-    }
-    @action
-    setFormMode(fieldMode)
-    {
-        this.formMode = fieldMode;
     }
 
     @action
