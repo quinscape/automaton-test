@@ -1,7 +1,8 @@
-import { observable } from "mobx";
-import { InteractiveQueryDefinition } from "@quinscape/automaton-js";
+import { action, observable } from "mobx";
+import { InteractiveQueryDefinition, InteractiveQueryEditor, graphql, getFirstValue, getIQueryPayloadType } from "@quinscape/automaton-js";
 import IQEditorHome from "./states/IQEditorHome";
-
+import Q_IQEditorExample from "./queries/Q_IQEditorExample";
+import uuid from "uuid";
 
 // noinspection JSUnusedGlobalSymbols
 export function initProcess(process, scope) {
@@ -10,85 +11,49 @@ export function initProcess(process, scope) {
 
 export default class IQueryEditorScope {
     @observable
-//    definition = new InteractiveQueryDefinition(null, null);
+    //definition = new InteractiveQueryDefinition(null, null);
     definition = new InteractiveQueryDefinition(
-            // language=GraphQL
-            `
-            query Q_CorgeList($config: QueryConfigInput!)
-            {
-                iQueryCorge(config: $config)
-                {
-                    type
-                    columnStates{
-                        name
-                        enabled
-                        sortable
-                    }
-                    queryConfig{
-                        id
-                        condition
-                        offset
-                        pageSize
-                        sortFields
-                    }
-                    rows{
-                        id
-                        name
-                        num
-                        corgeLinks{
-                            assoc{
-                                name
-                                num
-                            }
-                        }
-                        owner{
-                            login
-                        }
-                    }
-                    rowCount
-                }
-            }
-        `,
-        {
-            "condition": {
-                "type": "Condition",
-                "name": "or",
-                "operands": [
-                    {
-                        "type": "Condition",
-                        "name": "equal",
-                        "operands": [
-                            {
-                                "type": "Field",
-                                "name": "owner.login"
-                            },
-                            {
-                                "type": "Value",
-                                "scalarType": "String",
-                                "value": "admin"
-                            }
-                        ]
-                    },
-                    {
-                        "type": "Condition",
-                        "name": "equal",
-                        "operands": [
-                            {
-                                "type": "Field",
-                                "name": "name"
-                            },
-                            {
-                                "type": "Value",
-                                "scalarType": "String",
-                                "value": "aaa"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "offset": 0,
-            "pageSize": 20,
-            "sortFields": []
-        }
+        Q_IQEditorExample.query,
+        Q_IQEditorExample.defaultVars
     );
+
+
+    //////////////////////////////////// Query Testing ////////////////////////////////////
+
+
+    @observable
+    queryResult = null;
+    @observable
+    queryId = 0;
+    @observable
+    fields = new Set();
+
+    @action
+    setQueryResult(queryResult)
+    {
+        this.queryResult = queryResult;
+        this.queryId++;
+    }
+
+
+    testQuery()
+    {
+
+        // retrieve current state as "InteractiveQueryDefinition" instance
+        const def = InteractiveQueryEditor.getInteractiveQueryDefinition("my-editor");
+
+        //console.log(toJS(def));
+
+        return graphql({
+            query: def.query,
+            variables: {
+                config: def.queryConfig
+            }
+        }).then(result => {
+            const iQuery = getFirstValue(result);
+            this.setQueryResult(iQuery);
+        })
+
+    }
+
 }
