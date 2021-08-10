@@ -88,7 +88,6 @@ const MetaConfigForm = props => {
 
                 <URLField
                     name="url"
-                    mode={scope.formMode}
                 >
                     <Addon placement={Addon.RIGHT} moveIfPlainText={true}>
                         <FieldMetaButton subProcess="meta-config-sub"/>
