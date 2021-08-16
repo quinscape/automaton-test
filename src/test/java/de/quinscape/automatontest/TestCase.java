@@ -1,5 +1,8 @@
 package de.quinscape.automatontest;
 
+import com.github.javaparser.StaticJavaParser;
+import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.body.MethodDeclaration;
 import de.quinscape.spring.jsview.util.JSONUtil;
 import org.jooq.Condition;
 import org.jooq.Field;
@@ -9,6 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.svenson.JSON;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -122,9 +127,11 @@ public class TestCase
 
 
     @Test
-    void testDSLMethods()
+    void testDSLMethods() throws FileNotFoundException
     {
         final JSON gen = JSONUtil.DEFAULT_GENERATOR;
+
+        final Set<String> deprecated = getDeprecatedFieldMethods();
 
         StringBuilder conditions = new StringBuilder();
         StringBuilder operations = new StringBuilder();
@@ -136,6 +143,7 @@ public class TestCase
         {
             if (
                 !existing.contains(method.getName()) &&
+                !deprecated.contains(method.getName()) &&
                 Arrays
                     .stream(method.getParameterTypes())
                     .noneMatch(Class::isArray)
@@ -184,6 +192,29 @@ public class TestCase
         log.info("\n--- MISSING EXTENDED\nCONDITIONS: \n{}OPERATIONS: \n{}", conditionsEx, operationsEx);
     }
 
+
+    private Set<String> getDeprecatedFieldMethods() throws FileNotFoundException
+    {
+
+        final CompilationUnit compilationUnit = StaticJavaParser.parse(new File("./src/test/resources/Field.java"));
+
+
+        final Set<String> methods = new HashSet<>(
+            compilationUnit.findAll(MethodDeclaration.class).stream()
+                .filter(
+                    decl ->
+                        decl.getType().asString().startsWith("Field<") &&
+                            decl.getJavadoc().isPresent() &&
+                            decl.getJavadoc().get().toText().contains("This method is part of the pre-2.0 API")
+                )
+                .map(methodDeclaration -> methodDeclaration.getName().asString())
+                .collect(Collectors.toSet()));
+
+        methods.add("as");
+        methods.add("cast");
+        methods.add("coerce");
+        return methods;
+    }
 
 }
 

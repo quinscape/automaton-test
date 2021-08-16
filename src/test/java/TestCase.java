@@ -1,5 +1,6 @@
 import de.quinscape.automatontest.domain.tables.pojos.Bar;
 import org.jooq.DSLContext;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class TestCase
 
 
     @Test
+    @Disabled
     void name2()
     {
         DSLContext dslContext = null;

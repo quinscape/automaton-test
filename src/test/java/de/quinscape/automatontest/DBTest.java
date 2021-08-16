@@ -5,7 +5,7 @@ import de.quinscape.automatontest.runtime.config.DomainConfiguration;
 import de.quinscape.automatontest.runtime.config.GraphQLConfiguration;
 import de.quinscape.domainql.DomainQL;
 import org.jooq.DSLContext;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -35,7 +35,7 @@ import static de.quinscape.automatontest.domain.Tables.*;
 @Tag("integration")
 @TestPropertySource("classpath:automatontest-integration-test.properties")
 @Transactional
-@Ignore
+@Disabled
 public class DBTest
 {
     private final static Logger log = LoggerFactory.getLogger(DBTest.class);

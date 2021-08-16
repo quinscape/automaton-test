@@ -5,7 +5,7 @@ import de.quinscape.spring.jsview.util.JSONUtil;
 import org.jooq.Condition;
 import org.jooq.Field;
 import org.jooq.impl.DSL;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +25,7 @@ public class DSLPlayground
     private final static Logger log = LoggerFactory.getLogger(DSLPlayground.class);
 
     @Test
-    @Ignore
+    @Disabled
     public void testDSL() throws FileNotFoundException
     {
         System.out.println("-- Global Conditions");
