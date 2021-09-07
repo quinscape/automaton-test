@@ -1,5 +1,4 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const PreloadQueriesPlugin = require("domainql-webpack-plugin");
 const JsViewPlugin = require("jsview-webpack-plugin");
 const TrackUsagePlugin = require("babel-plugin-track-usage/webpack/track-usage-plugin");
 const AutomatonPlugin = require("babel-plugin-automaton/webpack/AutomatonPlugin");
@@ -78,9 +77,6 @@ module.exports = {
 
             // clean old assets and generate webpack-assets.json
             new JsViewPlugin(),
-            new PreloadQueriesPlugin({
-                //debug: true
-            }),
             new TrackUsagePlugin({
                 output: path.join( JS_OUTPUT_DIRECTORY, "/track-usage.json")
             })

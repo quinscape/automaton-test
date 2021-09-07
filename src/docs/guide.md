@@ -434,24 +434,3 @@ Link: https://github.com/quinscape/jsview-webpack-plugin
 
 Extrahiert informationen zu den Webpack-Bundles für die Server-Seite, damit diese weiss, welche Ressourcen zu
 den jeweiligen Entry-Points gehören.
-
-### domainql-webpack-plugin
-
-Link: https://github.com/quinscape/domainql-webpack-plugin 
-
-Support für PRELOADED_QUERIES, einer statischen Alternative zu unseren "Observable"-Objekt injections.
-
-Wenn man im Entry-Point eine Definition ala
-
-```jsx harmony
-
-export const PRELOADED_QUERIES = {
-    
-    // language=GraphQL
-    myQuery: `...`
-}
-```
-erhält man das Resultat der GraphQL-Query als Teil der initialen Daten. Im Prinzip reines DomainQL an dem
-Automaton-System vorbei.
- 
-
