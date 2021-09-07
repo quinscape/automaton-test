@@ -1,4 +1,4 @@
-import { action, observable } from "mobx";
+import { action, observable, makeObservable } from "mobx";
 import { computedFn } from "mobx-utils";
 import { FilterDSL, injection, WorkingSet } from "@quinscape/automaton-js";
 import Q_CorgeType from "./queries/Q_CorgeType";
@@ -14,7 +14,6 @@ export function initProcess(process, scope) {
 }
 
 export default class MergeTestScope {
-
     /**
      * Construct our working set with the merge config.
      *
@@ -47,7 +46,11 @@ export default class MergeTestScope {
 
     @observable
     corgeTypes = injection(Q_CorgeType);
-    
+
+    constructor() {
+        makeObservable(this);
+    }
+
     @action
     updateCorges(corges)
     {

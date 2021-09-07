@@ -1,4 +1,4 @@
-import { observable, action } from "mobx";
+import { observable, action, makeObservable } from "mobx";
 import { injection, FilterDSL, WorkingSet } from "@quinscape/automaton-js";
 import Q_FooList from "../datagrid-test/queries/Q_FooList";
 import Q_FooType from "../datagrid-test/queries/Q_FooType";
@@ -15,7 +15,6 @@ export function initProcess(process, scope) {
 
 
 export default class WorkingSetTestScope {
-
     workingSet = new WorkingSet();
 
     @observable
@@ -41,6 +40,11 @@ export default class WorkingSetTestScope {
     fooTypes = injection(
         Q_FooType
     );
+
+
+    constructor() {
+        makeObservable(this);
+    }
 
 
     @action

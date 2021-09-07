@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 import { injection, GraphQLQuery } from "@quinscape/automaton-js";
 import CRUDList from "./states/CRUDList";
 
@@ -63,7 +63,6 @@ export function initProcess(process, scope) {
 }
 
 export default class CRUDTestScope {
-
     @observable
     currentFoo = null;
 
@@ -90,6 +89,11 @@ export default class CRUDTestScope {
             }
         }`
     );
+
+
+    constructor() {
+        makeObservable(this);
+    }
 
 
     @action

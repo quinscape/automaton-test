@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 import ProcessTestHome from "./states/ProcessTestHome";
 
 // noinspection JSUnusedGlobalSymbols
@@ -13,7 +13,10 @@ export function initProcess(process, scope) {
 
 
 export default class ProcessTestScope {
-
     @observable
     currentOrder = null;
+
+    constructor() {
+        makeObservable(this);
+    }
 }

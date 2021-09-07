@@ -1,4 +1,4 @@
-import { observable, action } from "mobx";
+import { observable, action, makeObservable } from "mobx";
 import { injection, FilterDSL } from "@quinscape/automaton-js";
 import Q_FooType from "../datagrid-test/queries/Q_FooType";
 import Q_FooList from "../datagrid-test/queries/Q_FooList";
@@ -13,7 +13,6 @@ export function initProcess(process, scope) {
 }
 
 export default class MonitorTestScope {
-
     @observable
     currentFoo = null;
 
@@ -37,7 +36,11 @@ export default class MonitorTestScope {
     fooTypes = injection(
         Q_FooType
     );
-    
+
+    constructor() {
+        makeObservable(this);
+    }
+
     @action
     updateFoos(foos)
     {

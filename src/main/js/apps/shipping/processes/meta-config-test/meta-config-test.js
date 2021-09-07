@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 import { injection, FilterDSL } from "@quinscape/automaton-js";
 import { FieldMode } from "domainql-form";
 import Q_MetaConfigList from "./queries/Q_MetaConfigList";
@@ -15,7 +15,6 @@ export function initProcess(process, scope) {
 }
 
 export default class MetaConfigTestScope {
-
     @observable
     currentMetaConfig = null;
 
@@ -30,6 +29,10 @@ export default class MetaConfigTestScope {
     fooTypes = injection(
         Q_FooType
     );
+
+    constructor() {
+        makeObservable(this);
+    }
 
     @action
     updateMetaConfigs(metaConfigs)

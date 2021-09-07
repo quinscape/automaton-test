@@ -1,18 +1,21 @@
-import {
-    action,
-    observable
-} from "mobx";
+import { action, observable, makeObservable } from "mobx";
 
 export class AppScope
 {
     @observable value = "foo";
 
+    constructor() {
+        makeObservable(this);
+    }
 }
 
 export class UserScope
 {
     @observable value = "bar";
 
+    constructor() {
+        makeObservable(this);
+    }
 }
 
 // export class SessionScope {

@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 import { injection, FilterDSL } from "@quinscape/automaton-js";
 import Q_GarplyList from "./queries/Q_GarplyList";
 import GarplyList from "./states/GarplyList";
@@ -12,14 +12,17 @@ export function initProcess(process, scope) {
 }
 
 export default class AttachmentTestScope {
-
     @observable
     currentGarply = null;
 
     /** Current todos */
     @observable
     garplys = injection( Q_GarplyList );
-    
+
+    constructor() {
+        makeObservable(this);
+    }
+
     @action
     updateGarplys(garplys)
     {

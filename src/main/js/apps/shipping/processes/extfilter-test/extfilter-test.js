@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 import { injection } from "@quinscape/automaton-js";
 import { DateTime } from "luxon";
 import ExtFilterHome from "./states/ExtFilterHome";
@@ -14,7 +14,6 @@ export const MIN_DATE = DateTime.fromISO("2018-03-01T00:00:00Z");
 export const MAX_DATE = DateTime.fromISO("2019-04-30T00:00:00Z");
 
 export default class ExternalDataGridFilterTestScope {
-
     @observable
     externalFilter = {
         minCreated: MIN_DATE,
@@ -87,6 +86,11 @@ export default class ExternalDataGridFilterTestScope {
                 }
         }
     );
+
+
+    constructor() {
+        makeObservable(this);
+    }
 
 
     @action

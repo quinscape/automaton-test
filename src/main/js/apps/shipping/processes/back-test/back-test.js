@@ -1,4 +1,4 @@
-import { observable } from "mobx";
+import { observable, makeObservable } from "mobx";
 import BackTestHome from "./states/BackTestHome";
 
 // noinspection JSUnusedGlobalSymbols
@@ -9,13 +9,15 @@ export function initProcess(process, scope) {
 
 
 class Nested {
-
     @observable
     value = 0;
+
+    constructor() {
+        makeObservable(this);
+    }
 }
 
 export default class BackTestScope {
-
     @observable
     currentCounter = 0;
 
@@ -24,4 +26,8 @@ export default class BackTestScope {
 
     @observable
     nested = new Nested();
+
+    constructor() {
+        makeObservable(this);
+    }
 }

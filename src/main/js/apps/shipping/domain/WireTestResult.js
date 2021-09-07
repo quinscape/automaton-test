@@ -1,13 +1,16 @@
-import { computed, observable } from "mobx";
+import { computed, observable, makeObservable } from "mobx";
 
 
 export default class WireTestResult {
-
     @observable id;
 
     @observable created;
 
     @observable check;
+
+    constructor() {
+        makeObservable(this);
+    }
 
     @computed get successful()
     {

@@ -39,7 +39,9 @@ module.exports = {
         libraryTarget: "var",
         libraryExport: "default",
 
-        publicPath: ASSET_PATH
+        publicPath: ASSET_PATH,
+
+        clean: true
     },
 
     // aliases to be able to use "yarn link automaton-js"
@@ -51,7 +53,6 @@ module.exports = {
             "mobx": path.resolve("./node_modules/mobx"),
             "domainql-form": path.resolve("./node_modules/domainql-form"),
             "reactstrap": path.resolve("./node_modules/reactstrap"),
-            "mobx-react": path.resolve("./node_modules/mobx-react"),
             "mobx-react-lite": path.resolve("./node_modules/mobx-react-lite"),
             "mobx-react-devtools": path.resolve("./node_modules/mobx-react-devtools"),
             "mobx-utils": path.resolve("./node_modules/mobx-utils"),

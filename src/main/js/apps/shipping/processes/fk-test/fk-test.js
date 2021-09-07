@@ -1,4 +1,4 @@
-import { action, observable } from "mobx";
+import { action, observable, makeObservable } from "mobx";
 import { FilterDSL, injection } from "@quinscape/automaton-js";
 import Q_QuxMain from "./queries/Q_QuxMain";
 import Q_QuxD_Injected from "../../queries/Q_QuxD_Injected";
@@ -14,7 +14,6 @@ export function initProcess(process, scope) {
 }
 
 export default class FKTestScope {
-
     @observable
     currentQux = null;
 
@@ -25,6 +24,10 @@ export default class FKTestScope {
     /** Qux D injection  */
     @observable
     quxDs = injection( Q_QuxD_Injected );
+
+    constructor() {
+        makeObservable(this);
+    }
 
     @action
     updateCurrent(qux)

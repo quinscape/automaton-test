@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 import { injection } from "@quinscape/automaton-js";
 import CustomerList from "./states/CustomerList";
 
@@ -9,7 +9,6 @@ export function initProcess(process, scope) {
 }
 
 export default class CustomerScope {
-
     @observable
     currentCustomer = null;
 
@@ -28,6 +27,10 @@ export default class CustomerScope {
                 }
             }`
     );
+
+    constructor() {
+        makeObservable(this);
+    }
 
     @action
     updateCustomers(customers)

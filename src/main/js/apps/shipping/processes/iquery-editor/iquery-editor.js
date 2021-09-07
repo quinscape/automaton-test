@@ -1,4 +1,4 @@
-import { action, observable } from "mobx";
+import { action, observable, makeObservable } from "mobx";
 import { InteractiveQueryDefinition, InteractiveQueryEditor, graphql, getFirstValue, getIQueryPayloadType } from "@quinscape/automaton-js";
 import IQEditorHome from "./states/IQEditorHome";
 import Q_IQEditorExample from "./queries/Q_IQEditorExample";
@@ -28,6 +28,10 @@ export default class IQueryEditorScope {
     @observable
     fields = new Set();
 
+    constructor() {
+        makeObservable(this);
+    }
+
     @action
     setQueryResult(queryResult)
     {
@@ -55,5 +59,4 @@ export default class IQueryEditorScope {
         })
 
     }
-
 }

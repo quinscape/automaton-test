@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 import { injection, GraphQLQuery } from "@quinscape/automaton-js";
 import WireHome from "./states/WireHome";
 
@@ -31,7 +31,6 @@ export function initProcess(process, scope) {
 }
 
 export default class WireTestScope {
-
     /** Current todos */
     @observable
     complex = injection(
@@ -81,6 +80,11 @@ export default class WireTestScope {
                 }
             }`
     );
+
+
+    constructor() {
+        makeObservable(this);
+    }
 
 
     @action.bound

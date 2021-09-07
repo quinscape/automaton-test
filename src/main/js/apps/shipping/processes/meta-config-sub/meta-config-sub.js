@@ -1,4 +1,4 @@
-import { action, observable } from "mobx";
+import { action, observable, makeObservable } from "mobx";
 import { FilterDSL } from "@quinscape/automaton-js";
 import Q_FooDetail from "../datagrid-test/queries/Q_FooDetail";
 import MetaConfigSubHome from "./states/MetaConfigSubHome";
@@ -42,8 +42,11 @@ export function initProcess(process, scope) {
 }
 
 export default class MetaConfigSubScope {
-
     /** Current orders */
     @observable
     location = {};
+
+    constructor() {
+        makeObservable(this);
+    }
 }

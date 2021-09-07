@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 import { injection, FilterDSL } from "@quinscape/automaton-js";
 import { FieldMode } from "domainql-form";
 import Q_WaldoList from "./queries/Q_WaldoList";
@@ -15,7 +15,6 @@ export function initProcess(process, scope) {
 }
 
 export default class DateTestScope {
-
     @observable
     currentWaldo = null;
 
@@ -33,6 +32,10 @@ export default class DateTestScope {
     fooTypes = injection(
         Q_FooType
     );
+
+    constructor() {
+        makeObservable(this);
+    }
 
     @action
     updateWaldos(waldos)

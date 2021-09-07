@@ -1,8 +1,4 @@
-import {
-    observable,
-    computed,
-    action
-} from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 
 import {
     injection
@@ -10,7 +6,6 @@ import {
 
 
 export default class Foo {
-
     @observable id;
 
     @observable name;
@@ -26,6 +21,10 @@ export default class Foo {
     @observable flag;
 
     @observable owner;
+
+    constructor() {
+        makeObservable(this);
+    }
 
     @computed get code()
     {

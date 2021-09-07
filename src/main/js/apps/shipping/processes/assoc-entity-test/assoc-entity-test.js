@@ -1,4 +1,4 @@
-import { observable, action, toJS } from "mobx";
+import { observable, action, toJS, makeObservable } from "mobx";
 import { injection, FilterDSL } from "@quinscape/automaton-js";
 import Q_BazList from "./queries/Q_BazList";
 import Q_BazLinkList from "./queries/Q_BazLinkList";
@@ -16,7 +16,6 @@ export function initProcess(process, scope) {
 }
 
 export default class AssociativeEntityTestScope {
-
     @observable
     currentBaz = null;
 
@@ -34,6 +33,10 @@ export default class AssociativeEntityTestScope {
     /** Right side entity list */
     @observable
     bazValues = injection(Q_BazValueList);
+
+    constructor() {
+        makeObservable(this);
+    }
 
     @action
     updateBaz(baz)

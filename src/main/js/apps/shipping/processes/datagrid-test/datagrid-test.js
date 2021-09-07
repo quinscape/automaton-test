@@ -1,4 +1,4 @@
-import { observable, action } from "mobx";
+import { observable, action, makeObservable } from "mobx";
 import { injection, FilterDSL } from "@quinscape/automaton-js";
 import Q_FooType from "./queries/Q_FooType";
 import Q_FooList from "./queries/Q_FooList";
@@ -15,7 +15,6 @@ export function initProcess(process, scope) {
 }
 
 export default class CRUDTestScope {
-
     @observable
     currentFoo = null;
 
@@ -39,7 +38,11 @@ export default class CRUDTestScope {
     fooTypes = injection(
         Q_FooType
     );
-    
+
+    constructor() {
+        makeObservable(this);
+    }
+
     @action
     updateFoos(foos)
     {

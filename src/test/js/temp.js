@@ -1,38 +1,25 @@
-import { field, not, value, and, component } from "@quinscape/automaton-js/lib/FilterDSL"
-import { DateTime } from "luxon"
-import { action, computed, observable, toJS } from "mobx";
-import get from "lodash.get";
-
-class MyClass
-{
-    @observable
-    field = "bla";
-
-    @action
-    myAction(v)
-    {
-        this.field = v;
+const {observable, autorun} = require("mobx");
+const formRoot = observable({
+    name: "MyType",
+    fields: [
+        {
+            name: "id",
+            type: "UUID",
+            maxLength: 36,
+            required: true,
+            unique: false
+        }, {
+            name: "name",
+            type: "STRING",
+            maxLength: 100,
+            required: true,
+            unique: false
+        }
+    ],
+    foreignKeys: [],
+    uniqueConstraints: [],
+    primaryKey: {
+        fields: ["id"]
     }
-
-    @computed
-    get prop()
-    {
-        return this.field + "bla";
-    }
-}
-
-
-const instance = new MyClass();
-
-instance.myAction("blup");
-
-
-
-const nonClassInstance = observable({
-
-        field: "bla"
-    }
-)
-
-
-console.log(toJS(instance), toJS(nonClassInstance), instance.prop)
+});
+autorun(() => console.log(JSON.stringify(formRoot, null, 4)))

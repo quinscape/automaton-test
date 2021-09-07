@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 import { injection } from "@quinscape/automaton-js";
 import AnimalGridHome from "./states/AnimalGridHome";
 
@@ -11,7 +11,6 @@ export function initProcess(process, scope) {
 
 
 export default class AnimalGridTestScope {
-
     @observable
     currentNode = null;
 
@@ -115,6 +114,11 @@ export default class AnimalGridTestScope {
             }
         }
     );
+
+
+    constructor() {
+        makeObservable(this);
+    }
 
 
     @action

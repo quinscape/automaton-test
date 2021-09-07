@@ -1,4 +1,4 @@
-import { observable } from "mobx";
+import { observable, makeObservable } from "mobx";
 import { injection } from "@quinscape/automaton-js";
 import ColumnConfigHome from "./states/ColumnConfigHome";
 
@@ -9,7 +9,6 @@ export function initProcess(process, scope) {
 }
 
 export default class ColumnConfigTestScope {
-
     /** Current todos */
     @observable
     foos = injection(
@@ -55,4 +54,8 @@ export default class ColumnConfigTestScope {
             }
         }
     );
+
+    constructor() {
+        makeObservable(this);
+    }
 }

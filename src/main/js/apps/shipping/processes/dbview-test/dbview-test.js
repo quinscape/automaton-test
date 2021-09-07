@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 import { injection, GraphQLQuery, FilterDSL } from "@quinscape/automaton-js";
 import DBViewHome from "./states/DBViewHome";
 
@@ -34,7 +34,6 @@ export function initProcess(process, scope) {
 }
 
 export default class DBViewProcess {
-
     @observable
     statistics = injection(
         // language=GraphQL
@@ -70,4 +69,8 @@ export default class DBViewProcess {
             }
         }
     );
+
+    constructor() {
+        makeObservable(this);
+    }
 }

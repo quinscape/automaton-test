@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 import { injection, GraphQLQuery } from "@quinscape/automaton-js";
 import Q_BazFoos from "./queries/Q_BazFoos";
 import Q_BazWithValues from "./queries/Q_BazWithValues";
@@ -34,7 +34,6 @@ export function initProcess(process, scope) {
 }
 
 export default class WireTestScope {
-
     @observable
     bazFoos = injection(
         Q_BazFoos
@@ -50,5 +49,8 @@ export default class WireTestScope {
         Q_RecursiveNodes
     );
 
+    constructor() {
+        makeObservable(this);
+    }
 }
 

@@ -1,4 +1,4 @@
-import { action, observable } from "mobx";
+import { action, observable, makeObservable } from "mobx";
 import { FilterDSL, injection } from "@quinscape/automaton-js";
 import Q_Foo from "./queries/Q_Foo";
 import IteratorTestList from "./states/IteratorTestList";
@@ -14,10 +14,14 @@ export function initProcess(process, scope) {
 
 
 export default class IteratorTestScope {
-
     /** Foo iQuery  */
     @observable
     foos = injection(Q_Foo);
+
+
+    constructor() {
+        makeObservable(this);
+    }
 
 
     @action

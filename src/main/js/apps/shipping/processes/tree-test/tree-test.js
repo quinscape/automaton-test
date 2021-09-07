@@ -1,4 +1,4 @@
-import { action, observable } from "mobx";
+import { action, observable, makeObservable } from "mobx";
 import { FilterDSL, injection } from "@quinscape/automaton-js";
 import Q_Node from "./queries/Q_Node";
 import Q_NodeIndex from "./queries/Q_NodeIndex";
@@ -46,7 +46,6 @@ export function initProcess(process, scope) {
 
 
 export default class TreeTestScope {
-
     @observable
     nodes = injection(Q_Node);
 
@@ -62,6 +61,10 @@ export default class TreeTestScope {
     // used to ensure we get the correct new "Use Index" Form connected to the current scope on refresh (see TreeLayout.js <Form/> definition)
     // (as opposed to the <Tree/> instance itself which remains mounted )
     id = new Date().toISOString();
+
+    constructor() {
+        makeObservable(this);
+    }
 
     @action
     updateCurrent(name)

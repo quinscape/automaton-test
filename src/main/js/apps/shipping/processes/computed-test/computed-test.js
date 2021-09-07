@@ -1,4 +1,4 @@
-import { observable, action } from "mobx";
+import { observable, action, makeObservable } from "mobx";
 import { injection, FilterDSL } from "@quinscape/automaton-js";
 import Q_PlughList from "./queries/Q_PlughList";
 import PlughList from "./states/PlughList";
@@ -14,13 +14,16 @@ export function initProcess(process, scope) {
 }
 
 export default class ComputedTestScope {
-
     @observable
     currentPlugh = null;
 
     /** Plugh iQuery  */
     @observable
     plughs = injection(Q_PlughList);
+
+    constructor() {
+        makeObservable(this);
+    }
 
     @action
     updatePlughs(plughs)

@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 import { injection, FilterDSL } from "@quinscape/automaton-js";
 import Q_GraultList from "./queries/Q_GraultList";
 import GraultList from "./states/GraultList";
@@ -12,14 +12,17 @@ export function initProcess(process, scope) {
 }
 
 export default class AttachmentTestScope {
-
     @observable
     currentGrault = null;
 
     /** Current todos */
     @observable
     graults = injection( Q_GraultList );
-    
+
+    constructor() {
+        makeObservable(this);
+    }
+
     @action
     updateGraults(graults)
     {

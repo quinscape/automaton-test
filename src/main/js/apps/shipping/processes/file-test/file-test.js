@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, makeObservable } from "mobx";
 import { injection, GraphQLQuery } from "@quinscape/automaton-js";
 import Q_FredResource from "./queries/Q_FredResource";
 import FileTestHome from "./states/FileTestHome";
@@ -32,7 +32,6 @@ export function initProcess(process, scope) {
 }
 
 export default class FileTestScope {
-
     /**
      * We use a counter as a key for our form since we have no id and also want to be able to re-query an object
      * @type {number}
@@ -45,6 +44,10 @@ export default class FileTestScope {
     currentFred = injection(
         Q_FredResource
     );
+
+    constructor() {
+        makeObservable(this);
+    }
 
     @action
     updateFred(fred)
