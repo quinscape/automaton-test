@@ -65,7 +65,7 @@ const CorgeDetail = new ViewState("CorgeDetail", (process, scope) => ({
         action: t => {
 
             console.log("Transition 'cancel'")
-            t.back(backToParent);
+            t.back(backToParent(t));
         }
     }
 }), props => {
