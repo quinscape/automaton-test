@@ -2133,7 +2133,7 @@ dom-helpers@^3.4.0:
   dependencies:
     "@babel/runtime" "^7.1.2"
 
-domainql-form@^3.6.1, domainql-form@^3.7.0:
+domainql-form@^3.6.1:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.7.0.tgz#246b94018010538134fdf98e00a5f6ad5daf8db2"
   integrity sha512-cQNT8uPqd9OOFa6ytEmlp3S+FtbtZ3QXBYOv4ekACk2oTj/XgsHJzmRKnYVTC50Fyqn9/dlvmpIN1zq9bsdsiQ==
@@ -2151,10 +2151,23 @@ domainql-form@^3.6.1, domainql-form@^3.7.0:
     react "^17.0.2"
     use-debounce "^7.0.0"
 
-domainql-webpack-plugin@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/domainql-webpack-plugin/-/domainql-webpack-plugin-0.0.4.tgz#ef5b1ee89bed594885801c1e4376b04408a3987d"
-  integrity sha512-LqhxDt46R+8FjRRk7XuF8Lr1YmAD8Cyihf2xxqi4gDP1B+qirCrENXHl+mo0sYxRM2HqhyA6F7QvmG+9p93HpA==
+domainql-form@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.7.1.tgz#9d1d0ede107be0a4350a2c7b65219cbbebab9af8"
+  integrity sha512-tl5L9IM5VYkxz9HSyRzxiiLwZmG6D9RLXyLuSGKh+dm1ymi7ye/OdbisG8yasGIjddXZUK3P6UVs5uKKw68ObA==
+  dependencies:
+    classnames "^2.3.1"
+    lodash.debounce "^4.0.8"
+    lodash.get "^4.4.2"
+    lodash.isequal "^4.5.0"
+    lodash.set "^4.3.2"
+    lodash.topath "^4.5.2"
+    mobx "^6.3.3"
+    mobx-react-lite "^3.2.1"
+    mobx-utils "^6.0.4"
+    prop-types "^15.7.2"
+    react "^17.0.2"
+    use-debounce "^7.0.0"
 
 domready@^1.0.8:
   version "1.0.8"
