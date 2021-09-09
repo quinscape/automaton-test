@@ -1,6 +1,6 @@
 import { Field, FieldMode, GlobalErrors, Icon, withForm } from "domainql-form"
 import React from "react"
-import { observer as fnObserver } from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 import { Button, i18n, ScrollTracker } from "@quinscape/automaton-js"
 import { ButtonToolbar } from "reactstrap";
 
@@ -38,9 +38,7 @@ const BarForm = props => {
 };
 
 export default withForm(
-    fnObserver(
-        BarForm
-    ),
+    observer(BarForm),
     {
         type: "BarInput"
     }

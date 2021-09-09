@@ -1,6 +1,6 @@
 import { Addon, Field, FieldMode, FormBlock, GlobalErrors, Icon, Select, TextArea, withForm } from "domainql-form"
 import React, { useState } from "react"
-import { observer as fnObserver } from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 import {
     AttachmentField,
     Button,
@@ -142,9 +142,7 @@ const MetaConfigForm = props => {
 };
 
 export default withForm(
-    fnObserver(
-        MetaConfigForm
-    ),
+    observer(MetaConfigForm),
     {
         id: "upload-form",
         type: "MetaConfig",

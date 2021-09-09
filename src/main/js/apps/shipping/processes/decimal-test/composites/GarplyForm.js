@@ -1,6 +1,6 @@
 import { Field, GlobalErrors, Icon, TextArea, withForm, FieldMode, Addon } from "domainql-form"
 import React from "react"
-import { observer as fnObserver } from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 import { Button, config, i18n, ScrollTracker,AttachmentField,DecimalField } from "@quinscape/automaton-js"
 import { ButtonToolbar } from "reactstrap";
 
@@ -53,9 +53,7 @@ const GarplyForm = props => {
 };
 
 export default withForm(
-    fnObserver(
-        GarplyForm
-    ),
+    observer(GarplyForm),
     {
         id: "upload-form",
         type: "Garply",

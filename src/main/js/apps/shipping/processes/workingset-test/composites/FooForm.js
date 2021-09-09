@@ -1,5 +1,5 @@
 import React from "react"
-import { observer as fnObserver } from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 import { Button, config, i18n, ScrollTracker, CalendarField } from "@quinscape/automaton-js"
 
 import { Field, GlobalErrors, TextArea, withForm, FieldMode, FieldGroup } from "domainql-form"
@@ -33,9 +33,7 @@ const FooForm = props => {
 };
 
 export default withForm(
-    fnObserver(
-        FooForm
-    ),
+    observer(FooForm),
     {
         type: "FooInput",
         validation: validation("FooInput")

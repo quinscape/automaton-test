@@ -1,6 +1,6 @@
 import { Addon, Field, GlobalConfig, GlobalErrors, Icon, withForm, FormContext } from "domainql-form"
 import React from "react"
-import { observer as fnObserver } from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 import { Button, FilterDSL, FKSelector, i18n, ScrollTracker, useAutomatonEnv } from "@quinscape/automaton-js"
 import { ButtonToolbar } from "reactstrap";
 
@@ -202,9 +202,7 @@ const QuxMainForm = props => {
 };
 
 export default withForm(
-    fnObserver(
-        QuxMainForm
-    ),
+    observer(QuxMainForm),
     {
         type: "QuxMainInput",
         validation: validation("QuxMainInput")

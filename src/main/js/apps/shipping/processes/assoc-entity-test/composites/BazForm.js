@@ -1,6 +1,6 @@
 import { Field, FieldMode, GlobalErrors, Icon, withForm } from "domainql-form"
 import React from "react"
-import { observer as fnObserver } from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 import { AssociationSelector, Button, FKSelector, i18n, useAutomatonEnv } from "@quinscape/automaton-js"
 import { ButtonToolbar } from "reactstrap";
 import Q_BazValueList from "../queries/Q_BazValueList";
@@ -67,9 +67,7 @@ const BazForm = props => {
 };
 
 export default withForm(
-    fnObserver(
-        BazForm
-    ),
+    observer(BazForm),
     {
         type: "BazInput"
     }

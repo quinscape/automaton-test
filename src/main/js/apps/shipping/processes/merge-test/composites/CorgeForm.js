@@ -1,6 +1,6 @@
 import { Field, FieldMode, GlobalErrors, Icon, Select, TextArea, withForm } from "domainql-form"
 import React from "react"
-import { observer as fnObserver } from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 import {
     AssociationSelector,
     Button,
@@ -147,9 +147,7 @@ const CorgeForm = props => {
 };
 
 export default withForm(
-    fnObserver(
-        CorgeForm
-    ),
+    observer(CorgeForm),
     {
         type: "CorgeInput",
         validation: validation("CorgeInput")

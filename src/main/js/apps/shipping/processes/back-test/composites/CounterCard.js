@@ -2,7 +2,7 @@ import React from "react"
 
 import { Card, CardBody, CardHeader } from "reactstrap"
 
-import { observer as fnObserver } from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 
 const CounterCard = props => {
 
@@ -20,4 +20,4 @@ const CounterCard = props => {
     )
 };
 
-export default fnObserver(CounterCard)
+export default observer(CounterCard);

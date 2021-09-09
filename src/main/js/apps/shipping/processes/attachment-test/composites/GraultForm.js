@@ -1,7 +1,7 @@
 import { Field, GlobalErrors, Icon, TextArea, withForm, FieldMode, Addon } from "domainql-form"
 import React, { useRef } from "react"
 import cx from "classnames"
-import { observer as fnObserver } from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 import { Button, config, i18n, useAutomatonEnv,AttachmentField, URLField } from "@quinscape/automaton-js"
 import { ButtonToolbar } from "reactstrap";
 
@@ -46,9 +46,7 @@ const GraultForm = props => {
 };
 
 export default withForm(
-    fnObserver(
-        GraultForm
-    ),
+    observer(GraultForm),
     {
         id: "upload-form",
         type: "Grault",

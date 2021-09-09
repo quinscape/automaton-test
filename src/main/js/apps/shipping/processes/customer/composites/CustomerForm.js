@@ -1,6 +1,6 @@
 import { Icon } from "domainql-form"
 import React from "react"
-import { observer as fnObserver } from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 
 import { Button, DataGrid, i18n } from "@quinscape/automaton-js"
 
@@ -44,4 +44,4 @@ const CustomerForm = props => {
     );
 };
 
-export default fnObserver(CustomerForm);
+export default observer(CustomerForm);
