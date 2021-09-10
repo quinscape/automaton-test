@@ -94,7 +94,7 @@
         <dependency>
             <groupId>de.quinscape</groupId>
             <artifactId>spring-jsview</artifactId>
-            <version>0.6</version>
+            <version>0.9</version>
         </dependency>
 
         <!-- DATABASE DEPENDENCIES -->
@@ -182,7 +182,7 @@
         <dependency>
             <groupId>de.quinscape.domainql</groupId>
             <artifactId>automaton</artifactId>
-            <version>0.3.3-SNAPSHOT</version>
+            <version>0.5.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
