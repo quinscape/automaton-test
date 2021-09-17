@@ -130,6 +130,33 @@
     ]
   },
   {
+    "name":"Result",
+    "description":"Generic result wrapper. Allows client-side code to register post-processors based on it.",
+    "fieldDocs":[
+      {
+        "name":"payload",
+        "description":"Returns the payload of type [P]",
+        "paramDocs":[
+          
+        ]
+      },
+      {
+        "name":"type",
+        "description":"Returns the result type.",
+        "paramDocs":[
+          
+        ]
+      }
+    ]
+  },
+  {
+    "name":"ResultType",
+    "description":null,
+    "fieldDocs":[
+      
+    ]
+  },
+  {
     "name":"RuleField",
     "description":null,
     "fieldDocs":[

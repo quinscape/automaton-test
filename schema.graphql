@@ -785,7 +785,7 @@ type MetaConfig {
     url: String
 }
 
-"Auto-generated from DataGridLogic, FileAccessLogic, ResourceAccessLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
+"Auto-generated from DataGridLogic, FileAccessLogic, ResourceAccessLogic, ResultTestLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type MutationType {
     complexStore(container: ComplexContainerInput): Boolean
     "Example for Datagrid column configuration. Stores columns in public.grid_columns"
@@ -793,6 +793,7 @@ type MutationType {
     createFoo(name: String!): Foo
     "Deletes the domain object of the given type and with the given id."
     deleteDomainObject(cascade: [String], id: GenericScalar!, type: String!): Boolean
+    fiftyFifty(delay: Boolean): String
     "Generate a new domain object id using the application specific IdGenerator implementation."
     generateDomainObjectId(count: Int = 1, domainType: String!): [GenericScalar]
     "Server-side end-point for WorkingSet.merge()"
@@ -801,6 +802,10 @@ type MutationType {
     persistWorkingSet(deletions: [EntityDeletionInput]!, domainObjects: [DomainObject]!): Boolean
     "Dummy end-point to define the types involved in resolving a merge conflict, which happens on the client side only. This is only exists for documentation purposes."
     resolveMerge(mergeConfig: MergeConfigInput, mergeConflict: MergeConflictInput): MergeResolution
+    resultError(delay: Boolean): ResultString
+    resultInfo(delay: Boolean): ResultFoo
+    resultSilent(delay: Boolean): ResultString
+    resultWarning(delay: Boolean): ResultString
     "Stores a single domain object of any type. Note that you might have to manually register an input type."
     storeDomainObject(domainObject: DomainObject!): GenericScalar
     "Stores a list of domain object of any type. Note that you might have to manually register an input type."
@@ -874,7 +879,7 @@ type QueryConfig {
     sortFields: [FieldExpression]
 }
 
-"Auto-generated from DataGridLogic, FileAccessLogic, ResourceAccessLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
+"Auto-generated from DataGridLogic, FileAccessLogic, ResourceAccessLogic, ResultTestLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type QueryType {
     _interactiveQueryDefinition(def: InteractiveQueryDefinitionInput): InteractiveQueryDefinition
     getDomainTypeIndex(condition: Condition, domainType: String!, field: String!): [String]
@@ -1052,6 +1057,22 @@ type QuxMain {
     quxDId: String
 }
 
+"Generic result wrapper. Allows client-side code to register post-processors based on it."
+type ResultFoo {
+    "Returns the payload of type Foo"
+    payload: Foo
+    "Returns the result type."
+    type: ResultType
+}
+
+"Generic result wrapper. Allows client-side code to register post-processors based on it."
+type ResultString {
+    "Returns the payload of type String"
+    payload: String
+    "Returns the result type."
+    type: ResultType
+}
+
 "Domain object from Java POJO de.quinscape.automatontest.model.SumPerMonth shaped like the sum_per_month view in the database dump"
 type SumPerMonth {
     "DB column 'month'"
@@ -1139,6 +1160,15 @@ enum ModePolicy {
     IGNORE_LOCAL
     "Override if effective mode is be NORMAL"
     OVERRIDE
+}
+
+enum ResultType {
+    DEFAULT
+    ERROR
+    INFO
+    SILENT
+    SUCCESS
+    WARNING
 }
 
 "Domain object used in ext-filter-test. Generated from public.bar in the database dump."

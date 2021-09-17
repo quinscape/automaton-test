@@ -20,11 +20,17 @@ export class UserScope
 
 // export class SessionScope {
 //     @observable value = "baz";
+//     constructor() {
+//         makeObservable(this);
+//     }
 // }
 //
 //
 // export class LocalScope
 // {
 //     @observable value = "qux";
+//     constructor() {
+//         makeObservable(this);
+//     }
 // }
 

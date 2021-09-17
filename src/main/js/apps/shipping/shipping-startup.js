@@ -13,16 +13,20 @@ import {
     GraphQLQuery,
     createDomainObject,
     StartupRegistry,
-    printSchema
+    printSchema,
+    configurePromiseUI
 } from "@quinscape/automaton-js"
 import Layout from "../../components/Layout";
 
 // noinspection ES6UnusedImports
 import AUTOMATON_CSS from "./automaton-test.css"
 import 'react-calendar/dist/Calendar.css';
+import 'react-toastify/dist/ReactToastify.css';
+
 import BigNumber from "bignumber.js";
 import { GlobalConfig } from "domainql-form";
 import React from "react";
+import { toast } from "react-toastify";
 
 // set MobX configuration
 configure({
@@ -65,7 +69,9 @@ bootstrap(
 
                 StartupRegistry.registerBigDecimalConverter();
 
+
                 config.timestampFormat = "d.M.yyyy H:mm:ss";
+
 
                 // GlobalConfig.registerStaticRenderer("Timestamp", value => {
                 //
@@ -92,6 +98,27 @@ bootstrap(
                 //     }
                 // })
 
+
+                configurePromiseUI(
+                    "de.quinscape.automatontest.model.result.Result",
+                    result => {
+
+                        const { type } = result;
+
+                        if (type === "SILENT")
+                        {
+                            return null;
+                        }
+
+                        return {
+                            type,
+                            render: <h1>type</h1>,
+                            autoClose: type === "ERROR" ? false : null
+                        }
+                    }
+                )
+
+
                 return Hub.init(initial.connectionId)
             }
         );
@@ -112,5 +139,6 @@ export default {
     subscribeToTopic,
     GraphQLQuery,
     createDomainObject,
-    printSchema
+    printSchema,
+    toast
 };

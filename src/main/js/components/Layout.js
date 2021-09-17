@@ -11,6 +11,7 @@ import {
 } from "reactstrap"
 
 import CommonNav from "./CommonNav";
+import { ToastContainer } from "react-toastify";
 
 const Layout = props => {
 
@@ -55,6 +56,7 @@ const Layout = props => {
                 <StyleSwitcher/>
                 <LogoutForm/>
             </div>
+            <ToastContainer/>
         </Container>
     );
 };

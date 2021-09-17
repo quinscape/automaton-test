@@ -48,7 +48,7 @@ module.exports = {
         alias: {
             "react": path.resolve("./node_modules/react"),
             "react-dom": path.resolve("./node_modules/react-dom"),
-            "create-react-class": path.resolve("./node_modules/create-react-class"),
+            "react-toastify": path.resolve("./node_modules/react-toastify"),
             "mobx": path.resolve("./node_modules/mobx"),
             "domainql-form": path.resolve("./node_modules/domainql-form"),
             "reactstrap": path.resolve("./node_modules/reactstrap"),

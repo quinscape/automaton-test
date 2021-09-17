@@ -1562,10 +1562,10 @@ babel-plugin-syntax-decorators@^6.1.18:
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-decorators/-/babel-plugin-syntax-decorators-6.13.0.tgz#312563b4dbde3cc806cee3e416cceeaddd11ac0b"
   integrity sha1-MSVjtNvePMgGzuPkFszurd0RrAs=
 
-babel-plugin-track-usage@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-track-usage/-/babel-plugin-track-usage-0.3.1.tgz#142fb7e610e75c6ad2de6cd758a80b156f149fe9"
-  integrity sha512-M9EPC4Dcyt3o+YQxoqzX2xOukvxqv2R2KUqtjpiQncsUxXlAF2aDc+Yx2ZAPKTOiVxNX68JtJgEG4ojzDUtgWw==
+babel-plugin-track-usage@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-track-usage/-/babel-plugin-track-usage-0.3.2.tgz#b749138e55a97db3e37cac5aa971df6c2c6d02bb"
+  integrity sha512-DQzNjo+GnumddXQmxi0sfTmVN5XjzgZZFIFphBuuy9ZOOwjSC/QqbCExFde+pcwvo5V8uB6IsabEVO/h2MmJAQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     deep-equal "^2.0.5"
@@ -1857,7 +1857,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.3, classnames@^2.3.1:
+classnames@^2.2.3, classnames@^2.2.6, classnames@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
   integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
