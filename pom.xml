@@ -249,8 +249,8 @@
                         <!-- optional: default phase is "generate-resources" -->
                         <phase>generate-resources</phase>
                         <configuration>
-                            <nodeVersion>v12.18.1</nodeVersion>
-                            <yarnVersion>v1.22.4</yarnVersion>
+                            <nodeVersion>v14.17.6</nodeVersion>
+                            <yarnVersion>v1.22.5</yarnVersion>
 
                             <!-- optional: where to download node from. Defaults to https://nodejs.org/dist/ -->
                             <!--
