@@ -1,7 +1,5 @@
 import React, { useReducer, useState, useEffect } from "react"
 
-import { AutomatonDevTools, LogoutForm } from "@quinscape/automaton-js"
-
 import {
     Collapse,
     Container,
@@ -128,7 +126,6 @@ const EffectLayout = props => {
                 <LogoutForm/>
                 <AppEffectsContainer/>
             </div>
-            <AutomatonDevTools/>
         </Container>
     );
 };

@@ -2,7 +2,6 @@ import { action, observable, makeObservable } from "mobx";
 import { InteractiveQueryDefinition, InteractiveQueryEditor, graphql, getFirstValue, getIQueryPayloadType } from "@quinscape/automaton-js";
 import IQEditorHome from "./states/IQEditorHome";
 import Q_IQEditorExample from "./queries/Q_IQEditorExample";
-import uuid from "uuid";
 
 // noinspection JSUnusedGlobalSymbols
 export function initProcess(process, scope) {

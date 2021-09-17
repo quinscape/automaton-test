@@ -1,7 +1,5 @@
 import React, { useReducer } from "react"
 
-import { AutomatonDevTools } from "@quinscape/automaton-js"
-
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler } from "reactstrap"
 import CommonNav from "./CommonNav";
 
@@ -26,7 +24,6 @@ const LayoutV3 = props => {
             {
                 children
             }
-            <AutomatonDevTools/>
         </Container>
     )
 }
