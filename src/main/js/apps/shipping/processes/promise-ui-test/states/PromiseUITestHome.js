@@ -13,6 +13,7 @@ import Q_FiftyFifty from "../queries/Q_FiftyFifty";
 import { toast } from "react-toastify";
 import Q_MultipleResults from "../queries/Q_MultipleResults";
 import Q_ResultSilent from "../queries/Q_ResultSilent";
+import PromiseUITestAlternate from "./PromiseUITestAlternate";
 
 const PromiseUITestHome = new ViewState("PromiseUITestHome", (process, scope) => ({
 
@@ -89,6 +90,16 @@ const PromiseUITestHome = new ViewState("PromiseUITestHome", (process, scope) =>
               })
         }
     },
+    "to-alternate": {
+        to: PromiseUITestAlternate,
+        action: t => {
+
+            t.target = PromiseUITestAlternate;
+
+            console.log("to-alternate", t)
+        }
+    }
+
 
 }), props => {
 
@@ -99,6 +110,7 @@ const PromiseUITestHome = new ViewState("PromiseUITestHome", (process, scope) =>
     return (
         <Row className="mt-3">
             <Col>
+                <h1>promiseUI Test Home</h1>
                 <ButtonToolbar>
                     <Button
                         className={ cx("btn btn-secondary mr-1") }
@@ -148,7 +160,17 @@ const PromiseUITestHome = new ViewState("PromiseUITestHome", (process, scope) =>
                         <Field name="delay" type="Boolean"/>
                     </Form>
                 </ButtonToolbar>
-            </Col>
+                <hr/>
+                <ButtonToolbar>
+                    <Button
+                        className={ cx("btn btn-secondary mr-1") }
+                        transition="to-alternate"
+                    >
+                        To Alternate
+                    </Button>
+                </ButtonToolbar>
+
+        </Col>
         </Row>
     );
 });
