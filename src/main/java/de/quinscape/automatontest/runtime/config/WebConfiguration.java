@@ -1,8 +1,10 @@
 package de.quinscape.automatontest.runtime.config;
 
+import de.quinscape.automaton.model.js.StaticFunctionReferences;
 import de.quinscape.automaton.runtime.provider.AlternateStyleProvider;
 import de.quinscape.automaton.runtime.provider.AutomatonJsViewProvider;
 import de.quinscape.automaton.runtime.provider.StyleSheetDefinition;
+import de.quinscape.automaton.runtime.util.ProcessListUtil;
 import de.quinscape.automatontest.model.ValidationRules;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.spring.jsview.JsViewResolver;
@@ -44,6 +46,8 @@ public class WebConfiguration
 
     private final ResourceHandle<ValidationRules> validationRulesHandle;
 
+    private final ResourceHandle<StaticFunctionReferences> staticFnHandle;
+
     @Autowired
     public WebConfiguration(
         Environment env,
@@ -53,7 +57,8 @@ public class WebConfiguration
         DSLContext dslContext,
         AutomatonJsViewProvider automatonJsViewProvider,
         @Qualifier("validationRules")
-        ResourceHandle<ValidationRules> validationRulesHandle
+        ResourceHandle<ValidationRules> validationRulesHandle,
+        ResourceHandle<StaticFunctionReferences> staticFnHandle
     )
     {
         this.env = env;
@@ -64,6 +69,7 @@ public class WebConfiguration
         this.dslContext = dslContext;
         this.automatonJsViewProvider = automatonJsViewProvider;
         this.validationRulesHandle = validationRulesHandle;
+        this.staticFnHandle = staticFnHandle;
     }
 
 
@@ -95,6 +101,7 @@ public class WebConfiguration
                     ctx -> {
                         final ValidationRules content = validationRulesHandle.getContent();
                         ctx.provideViewData("validationRules", content);
+                        ctx.provideViewData("processes", ProcessListUtil.listProcesses("shipping", staticFnHandle));
                     }
                 )
                 .build()

@@ -50,6 +50,7 @@ bootstrap(
                 config.layout = Layout;
 
                 StartupRegistry.addConfig("validationRules", initial.validationRules)
+                StartupRegistry.addConfig("processes", initial.processes)
 
                 // Configure German bignumber format for decimal-test/meta-config
                 BigNumber.config({
@@ -112,7 +113,10 @@ bootstrap(
 
                         return {
                             type,
-                            render: <h1>type</h1>,
+                            /**
+                             * React elements for result
+                             */
+                            render: type,
                             autoClose: type === "ERROR" ? false : null
                         }
                     }

@@ -1,19 +1,25 @@
-import React, { useState, useCallback } from "react"
+import React, { useState, useCallback, useEffect } from "react"
 import Nav from "reactstrap/lib/Nav";
-import NavItem from "reactstrap/lib/NavItem";
 import Dropdown from "reactstrap/lib/Dropdown";
 import DropdownToggle from "reactstrap/lib/DropdownToggle";
 import DropdownMenu from "reactstrap/lib/DropdownMenu";
 import DropdownItem from "reactstrap/lib/DropdownItem";
 
-import { uri, Link, runProcessURI } from "@quinscape/automaton-js"
+import { runProcessURI, config } from "@quinscape/automaton-js"
 
+const ignoreTests = new Set([
+    "multi-layout",
+    "decision-start",
+])
 
+ 
 const CommonNav = props => {
 
     const [ dropdownOpen, setDropdownOpen ] = useState(false);
 
     const toggle = useCallback(() => setDropdownOpen(!dropdownOpen), [dropdownOpen]);
+
+    const { processes } = config;
 
     return (
         <Nav className="ml-auto" navbar>
@@ -23,98 +29,29 @@ const CommonNav = props => {
                     Tests
                 </DropdownToggle>
                 <DropdownMenu>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/wire") }
-                    >
-                        Wire-Tests
+                    <DropdownItem header>
+                        Processes (alphabetical)
                     </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/crud-test") }
-                    >
-                        CRUD-Test
-                    </DropdownItem>
+                    {
+                        processes.map(
+                            name => (
+                                <DropdownItem
+                                    key={name}
+                                    className="btn-sm"
+                                    onClick={() => runProcessURI("/shipping/"+ name )}
+                                >
+                                    {
+                                        name
+                                    }
+                                </DropdownItem>
+
+                            )
+                        )
+                    }
                     <DropdownItem divider/>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/datagrid-test") }
-                    >
-                        DataGrid-Test
+                    <DropdownItem header>
+                        Parametrized Processes
                     </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/animalgrid-test") }
-                    >
-                        Animals Grid
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/extfilter-test") }
-                    >
-                        External Filter Grid
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/colcfg-test") }
-                    >
-                        Column Config Grid
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/dbview-test") }
-                    >
-                        DB-View in Grid
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/fk-test") }
-                    >
-                        ForeignKey-Test
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/assoc-entity-test") }
-                    >
-                        Association Test
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/query-test") }
-                    >
-                        Advanced iQueries
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/workingset-test") }
-                    >
-                        WorkingSet-CRUD
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/tree-test") }
-                    >
-                        Tree Test
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/collapsible-test") }
-                    >
-                        Collapsible Test
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/monitor-test") }
-                    >
-                        Monitor Test
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/merge-test") }
-                    >
-                        Merge Test
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/attachment-test") }
-                    >
-                        Attachment Test
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/iterator-test") }
-                    >
-                        Iterator-Test
-                    </DropdownItem>
-                    <DropdownItem
-                        onClick={ () => runProcessURI("/shipping/file-test") }
-                    >
-                        File-Test
-                    </DropdownItem>
-                    <DropdownItem divider/>
                     <DropdownItem
                         onClick={ () => runProcessURI("/shipping/multi-layout") }
                     >
