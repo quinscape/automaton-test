@@ -1,10 +1,11 @@
 import React from "react";
-import { ViewState, createDomainObject, config, i18n, Button, DataGrid, FilterDSL } from "@quinscape/automaton-js";
+import { ViewState, createDomainObject, config, i18n, Button, DataGrid, FilterDSL, promiseUI } from "@quinscape/automaton-js";
 import Q_FooDetail from "../queries/Q_FooDetail";
 import cx from "classnames";
 import { ButtonToolbar } from "reactstrap";
 import { Icon, Select } from "domainql-form";
 import CRUDDetail from "./CRUDDetail";
+import { DateTime } from "luxon";
 
 const {
     field,
@@ -17,13 +18,13 @@ const CRUDList = new ViewState("CRUDList", (process, scope) => ({
         action: t => {
 
             // use empty id to be replaced by a new id server-side (
-            const newObj = createDomainObject("FooInput", "");
+            const newObj = createDomainObject("FooInput");
 
             newObj.name = "Unnamed";
             newObj.description = null;
             newObj.num = 0;
             newObj.flag = false;
-            newObj.created = new Date();
+            newObj.created = DateTime.now();
             newObj.type = "TYPE_A";
 
             return scope.updateCurrent(newObj);
@@ -58,7 +59,7 @@ const CRUDList = new ViewState("CRUDList", (process, scope) => ({
 
             console.log("to-detail, context = ", t.context);
 
-            return Q_FooDetail.execute({
+            return promiseUI(Q_FooDetail.execute({
                 config: {
                     condition:
                         field("id")
@@ -68,7 +69,7 @@ const CRUDList = new ViewState("CRUDList", (process, scope) => ({
                                 )
                             )
                 }
-            }).then(({iQueryFoo}) => {
+            })).then(({iQueryFoo}) => {
 
                 if (iQueryFoo.rows.length === 0)
                 {

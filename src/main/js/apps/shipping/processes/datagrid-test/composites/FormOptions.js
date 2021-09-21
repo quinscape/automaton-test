@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
-import { DEFAULT_OPTIONS, UserFormControl, Icon } from "domainql-form";
+import { UserFormControl, Icon } from "domainql-form";
 
 const FormOptions = props => {
 

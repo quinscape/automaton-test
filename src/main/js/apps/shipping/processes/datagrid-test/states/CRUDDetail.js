@@ -1,18 +1,31 @@
 import React, { useState } from "react";
 
 import {
+    Button,
     ViewState,
     storeDomainObject,
     config,
     backToParent,
     deleteDomainObject,
     FilterDSL,
+    CalendarField,
+    i18n
 } from "@quinscape/automaton-js";
 
-import { DEFAULT_OPTIONS, FormLayout } from "domainql-form";
+import {
+    Form,
+    DEFAULT_OPTIONS,
+    Field,
+    FieldGroup,
+    FieldMode,
+    FormLayout,
+    GlobalErrors, Icon,
+    Select,
+    TextArea
+} from "domainql-form";
 import FormOptions from "../composites/FormOptions";
-import FooForm from "../composites/FooForm";
 import CRUDList from "./CRUDList";
+import { ButtonToolbar } from "reactstrap";
 
 
 const {
@@ -82,7 +95,45 @@ const CRUDDetail = new ViewState(
                 <div className="row">
 
                     <div className="col">
-                        <FooForm value={scope.currentFoo} options={control}/>
+                        <Form type="Foo" value={scope.currentFoo} options={control}>
+                            <h1>
+                                {
+                                    i18n("Foo Detail")
+                                }
+                            </h1>
+
+
+                            <GlobalErrors/>
+                            <Field name="id" mode={ FieldMode.PLAIN_TEXT }/>
+                            <FieldGroup>
+                                <Field name="name" wrapperColumnClass="col-md-4"/>
+                                <Field name="num"  wrapperColumnClass="col-md-3"/>
+                            </FieldGroup>
+                            <TextArea name="description"/>
+                            <CalendarField name="created"/>
+                            <Field name="flag"/>
+                            <Select
+                                name="type"
+                                values={ scope.fooTypes.rows }
+                                nameProperty={ "name" }
+                                valueProperty={ "name" }
+                            />
+                            <ButtonToolbar>
+                                <Button className="btn btn-primary mr-1" transition="save">
+                                    <Icon className="fa-save mr-1" />
+                                    Save
+                                </Button>
+                                <Button className="btn btn-danger mr-1" transition="delete">
+                                    <Icon className="fa-times mr-1" />
+                                    Delete
+                                </Button>
+                                <Button className="btn btn-secondary mr-1" transition="cancel">
+                                    <Icon className="fa-times mr-1" />
+                                    Cancel
+                                </Button>
+
+                            </ButtonToolbar>
+                        </Form>
                     </div>
                 </div>
 
