@@ -4,6 +4,7 @@ import Q_QuxDetail from "../queries/Q_QuxDetail";
 import { ButtonToolbar } from "reactstrap";
 import { Icon } from "domainql-form";
 import FKTestDetail from "./FKTestDetail";
+import FKTestValidate from "./FKTestValidate";
 
 const {
     field,
@@ -52,6 +53,10 @@ const FKTestList = new ViewState("FKTestList", (process, scope) => ({
                 return scope.updateCurrent(iQueryQuxMain.rows[0]);
             });
         }
+    },
+
+    "to-validate" : {
+        to: FKTestValidate
     }
 }), props => {
 
@@ -71,6 +76,11 @@ const FKTestList = new ViewState("FKTestList", (process, scope) => ({
                 <Button className="btn btn-primary mr-1" transition="new-qux">
                     <Icon className="fa-save mr-1" />
                     New
+                </Button>
+
+                <Button className="btn btn-secondary mr-1" transition="to-validate">
+                    <Icon className="fa-arrow-right mr-1" />
+                    To Validate
                 </Button>
             </ButtonToolbar>
 
