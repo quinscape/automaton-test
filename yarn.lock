@@ -2225,6 +2225,24 @@ domainql-form@^3.7.1:
     react "^17.0.2"
     use-debounce "^7.0.0"
 
+domainql-form@^3.7.3:
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.7.3.tgz#b46aa46b01b224c4a3fc39aee37a94671eb5604a"
+  integrity sha512-3IxtSU8fd21b4unO0FCpZNWoxgVQB3vfCgHqg0R77KEzsRjg0ndFLGnki7KlTyVhOc0CPvGeMMNt5nm7lpoBRg==
+  dependencies:
+    classnames "^2.3.1"
+    lodash.debounce "^4.0.8"
+    lodash.get "^4.4.2"
+    lodash.isequal "^4.5.0"
+    lodash.set "^4.3.2"
+    lodash.topath "^4.5.2"
+    mobx "^6.3.3"
+    mobx-react-lite "^3.2.1"
+    mobx-utils "^6.0.4"
+    prop-types "^15.7.2"
+    react "^17.0.2"
+    use-debounce "^7.0.0"
+
 domready@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/domready/-/domready-1.0.8.tgz#91f252e597b65af77e745ae24dd0185d5e26d58c"
