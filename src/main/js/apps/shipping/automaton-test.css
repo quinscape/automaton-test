@@ -197,3 +197,9 @@ table.data-grid .bd-inner
 .table-filling-form-controls td .form-control{
     width: 100%;
 }
+
+.form-group .form-control.pending
+{
+    color: #000;
+    background: #ffbf00;
+}
