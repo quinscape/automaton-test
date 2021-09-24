@@ -203,3 +203,9 @@ table.data-grid .bd-inner
     color: #000;
     background: #ffbf00;
 }
+
+.btn.btn-secondary:not(:disabled):not(.disabled).active
+{
+    background: var(--yellow);
+    color: var(--secondary)
+}
