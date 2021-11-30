@@ -71,8 +71,8 @@ const PromiseUITestHome = new ViewState("PromiseUITestHome", (process, scope) =>
               return promiseUI(
                   Q_ResultSilent.execute({ delay: scope.delay })
               )
-              .then(({a, b, c}) => {
-                  console.log("MULTIPLE RESULTS", toJS(a.payload), b.payload, c.payload)
+              .then(({resultSilent}) => {
+                  console.log("SILENT RESULT", toJS(resultSilent))
               })
         }
     },
