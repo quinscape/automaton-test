@@ -209,3 +209,40 @@ table.data-grid .bd-inner
     background: var(--yellow);
     color: var(--secondary)
 }
+
+.condition-editor,.condition-editor-expression-dialog
+{
+    position: relative;
+}
+
+.condition-editor .node,.condition-editor-expression-dialog .node
+{
+    position: absolute;
+}
+
+.condition-editor .leaf
+{
+    padding: 3px;
+}
+
+.condition-editor .input-group,.condition-editor .dropdown
+{
+    display: inline-flex;
+}
+
+.condition-editor .condition:hover,.condition-editor .condition:focus-within
+{
+    background: #c2c9ea;
+    z-index: 100;
+}
+
+/**
+.condition-editor .structural .ctrl
+{
+    position: relative;
+    top: -1.8em;
+}
+ */
+
+
+
