@@ -34,7 +34,7 @@ const ConditionEditorTestHome = new ViewState(
                         Test
                     </Button>
                     <select
-                        defaultValue=""
+                        defaultValue={ scope.templateName }
                         onChange={
                             ev => {
 
@@ -72,6 +72,12 @@ const ConditionEditorTestHome = new ViewState(
                         }
 
                     </select>
+                    <button
+                        type="button"
+                        className="btn btn-link"
+                        >
+                        Focus
+                    </button>
                 </ButtonToolbar>
                 <hr/>
                 <ConditionEditor
