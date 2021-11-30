@@ -38,18 +38,6 @@
                 "babel-plugin-espower"
             ]
         },
-        "production": {
-            "plugins": [
-                [
-                    "transform-imports", {
-                        "reactstrap": {
-                            "transform": "reactstrap/lib/${member}",
-                            "preventFullImport": true
-                        }
-                    }
-                ]
-            ]
-        },
         "analyze": {
             "plugins": [
                 [

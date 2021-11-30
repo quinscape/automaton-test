@@ -1,9 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react"
-import Nav from "reactstrap/lib/Nav";
-import Dropdown from "reactstrap/lib/Dropdown";
-import DropdownToggle from "reactstrap/lib/DropdownToggle";
-import DropdownMenu from "reactstrap/lib/DropdownMenu";
-import DropdownItem from "reactstrap/lib/DropdownItem";
+import { Nav, Dropdown , DropdownToggle , DropdownMenu , DropdownItem  } from "reactstrap"
 
 import { runProcessURI, config } from "@quinscape/automaton-js"
 

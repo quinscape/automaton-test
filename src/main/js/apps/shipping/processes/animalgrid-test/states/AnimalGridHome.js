@@ -1,6 +1,6 @@
 import React from "react";
 import { ViewState, i18n, DataGrid, Button, FilterDSL } from "@quinscape/automaton-js";
-import { ButtonToolbar, Card, CardBody, CardTitle, ListGroup, ListGroupItem } from "reactstrap/lib";
+import { ButtonToolbar, Card, CardBody, CardTitle, ListGroup, ListGroupItem } from "reactstrap";
 import { Icon } from "domainql-form";
 import AnimalDetail from "./AnimalDetail";
 
