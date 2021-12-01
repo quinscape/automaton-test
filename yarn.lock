@@ -1026,10 +1026,10 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.0.tgz#6734f8ebc106a0860dff7f92bf90df193f0935d7"
   integrity sha512-zrsUxjLOKAzdewIDRWy9nsV1GQsKBCWaGwsZQlCgr6/q+vjyZhFgqedLfFBuI9anTPEUT4APq9Mu0SZBTzIcGQ==
 
-"@quinscape/automaton-js@^0.5.4":
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.5.4.tgz#37a5e7fde43d480b7e5a876ca3fabb5c236fe9c8"
-  integrity sha512-Ri+d7pXGUpwfatWCF8D/NlIkuorb9oR36TUnL6X+l8sRphYiF6n30I01tjJ1Kr2nTn8WH6k7vXj+71io10BDZA==
+"@quinscape/automaton-js@^0.5.5":
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.5.5.tgz#be733824e1cf2ee325617b3b4b023560bf2abbbf"
+  integrity sha512-RD15knQoL3KsQ4s1bWESblQ+eh2mFDcUzziC16U9MrB6cIe4mMmqwM6Cov5kkAoLTiCrb0N8dzpAAImqOKDM/g==
   dependencies:
     "@popperjs/core" "^2.11.0"
     ajv "^8.8.2"
