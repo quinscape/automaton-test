@@ -31,7 +31,10 @@ import de.quinscape.automatontest.domain.tables.QuxA;
 import de.quinscape.automatontest.domain.tables.QuxB;
 import de.quinscape.automatontest.domain.tables.QuxC;
 import de.quinscape.automatontest.domain.tables.QuxD;
+import de.quinscape.automatontest.domain.tables.QuxE;
 import de.quinscape.automatontest.domain.tables.QuxMain;
+import de.quinscape.automatontest.domain.tables.QuxMid;
+import de.quinscape.automatontest.domain.tables.QuxTop;
 import de.quinscape.automatontest.domain.tables.Waldo;
 import de.quinscape.automatontest.domain.tables.records.AppAttachmentDataRecord;
 import de.quinscape.automatontest.domain.tables.records.AppAttachmentRecord;
@@ -60,7 +63,10 @@ import de.quinscape.automatontest.domain.tables.records.QuxARecord;
 import de.quinscape.automatontest.domain.tables.records.QuxBRecord;
 import de.quinscape.automatontest.domain.tables.records.QuxCRecord;
 import de.quinscape.automatontest.domain.tables.records.QuxDRecord;
+import de.quinscape.automatontest.domain.tables.records.QuxERecord;
 import de.quinscape.automatontest.domain.tables.records.QuxMainRecord;
+import de.quinscape.automatontest.domain.tables.records.QuxMidRecord;
+import de.quinscape.automatontest.domain.tables.records.QuxTopRecord;
 import de.quinscape.automatontest.domain.tables.records.WaldoRecord;
 
 import javax.annotation.Generated;
@@ -131,7 +137,12 @@ public class Keys {
     public static final UniqueKey<QuxCRecord> QUX_C_NAME_KEY = UniqueKeys0.QUX_C_NAME_KEY;
     public static final UniqueKey<QuxDRecord> PK_QUX_D = UniqueKeys0.PK_QUX_D;
     public static final UniqueKey<QuxDRecord> QUX_D_NAME_KEY = UniqueKeys0.QUX_D_NAME_KEY;
+    public static final UniqueKey<QuxERecord> PK_QUX_E = UniqueKeys0.PK_QUX_E;
+    public static final UniqueKey<QuxERecord> QUX_E_NAME_KEY = UniqueKeys0.QUX_E_NAME_KEY;
     public static final UniqueKey<QuxMainRecord> PK_QUX_MAIN = UniqueKeys0.PK_QUX_MAIN;
+    public static final UniqueKey<QuxMidRecord> PK_QUX_MID = UniqueKeys0.PK_QUX_MID;
+    public static final UniqueKey<QuxMidRecord> QUX_MID_NAME_KEY = UniqueKeys0.QUX_MID_NAME_KEY;
+    public static final UniqueKey<QuxTopRecord> PK_QUX_TOP = UniqueKeys0.PK_QUX_TOP;
     public static final UniqueKey<WaldoRecord> PK_WALDO = UniqueKeys0.PK_WALDO;
 
     // -------------------------------------------------------------------------
@@ -167,6 +178,8 @@ public class Keys {
     public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D2_ID = ForeignKeys0.QUX_MAIN__FK_QUX_D2_ID;
     public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D3_ID = ForeignKeys0.QUX_MAIN__FK_QUX_D3_ID;
     public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D4_ID = ForeignKeys0.QUX_MAIN__FK_QUX_D4_ID;
+    public static final ForeignKey<QuxMidRecord, QuxERecord> QUX_MID__FK_QUX_E_ID = ForeignKeys0.QUX_MID__FK_QUX_E_ID;
+    public static final ForeignKey<QuxTopRecord, QuxMidRecord> QUX_TOP__FK_QUX_MID_ID = ForeignKeys0.QUX_TOP__FK_QUX_MID_ID;
 
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
@@ -211,7 +224,12 @@ public class Keys {
         public static final UniqueKey<QuxCRecord> QUX_C_NAME_KEY = Internal.createUniqueKey(QuxC.QUX_C, "qux_c_name_key", QuxC.QUX_C.NAME);
         public static final UniqueKey<QuxDRecord> PK_QUX_D = Internal.createUniqueKey(QuxD.QUX_D, "pk_qux_d", QuxD.QUX_D.ID);
         public static final UniqueKey<QuxDRecord> QUX_D_NAME_KEY = Internal.createUniqueKey(QuxD.QUX_D, "qux_d_name_key", QuxD.QUX_D.NAME);
+        public static final UniqueKey<QuxERecord> PK_QUX_E = Internal.createUniqueKey(QuxE.QUX_E, "pk_qux_e", QuxE.QUX_E.ID);
+        public static final UniqueKey<QuxERecord> QUX_E_NAME_KEY = Internal.createUniqueKey(QuxE.QUX_E, "qux_e_name_key", QuxE.QUX_E.NAME);
         public static final UniqueKey<QuxMainRecord> PK_QUX_MAIN = Internal.createUniqueKey(QuxMain.QUX_MAIN, "pk_qux_main", QuxMain.QUX_MAIN.ID);
+        public static final UniqueKey<QuxMidRecord> PK_QUX_MID = Internal.createUniqueKey(QuxMid.QUX_MID, "pk_qux_mid", QuxMid.QUX_MID.ID);
+        public static final UniqueKey<QuxMidRecord> QUX_MID_NAME_KEY = Internal.createUniqueKey(QuxMid.QUX_MID, "qux_mid_name_key", QuxMid.QUX_MID.NAME);
+        public static final UniqueKey<QuxTopRecord> PK_QUX_TOP = Internal.createUniqueKey(QuxTop.QUX_TOP, "pk_qux_top", QuxTop.QUX_TOP.ID);
         public static final UniqueKey<WaldoRecord> PK_WALDO = Internal.createUniqueKey(Waldo.WALDO, "pk_waldo", Waldo.WALDO.ID);
     }
 
@@ -245,5 +263,7 @@ public class Keys {
         public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D2_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_D, QuxMain.QUX_MAIN, "qux_main__fk_qux_d2_id", QuxMain.QUX_MAIN.QUX_D2_ID);
         public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D3_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_D, QuxMain.QUX_MAIN, "qux_main__fk_qux_d3_id", QuxMain.QUX_MAIN.QUX_D3_ID);
         public static final ForeignKey<QuxMainRecord, QuxDRecord> QUX_MAIN__FK_QUX_D4_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_D, QuxMain.QUX_MAIN, "qux_main__fk_qux_d4_id", QuxMain.QUX_MAIN.QUX_D4_ID);
+        public static final ForeignKey<QuxMidRecord, QuxERecord> QUX_MID__FK_QUX_E_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_E, QuxMid.QUX_MID, "qux_mid__fk_qux_e_id", QuxMid.QUX_MID.QUX_E_ID);
+        public static final ForeignKey<QuxTopRecord, QuxMidRecord> QUX_TOP__FK_QUX_MID_ID = Internal.createForeignKey(de.quinscape.automatontest.domain.Keys.PK_QUX_MID, QuxTop.QUX_TOP, "qux_top__fk_qux_mid_id", QuxTop.QUX_TOP.QUX_MID_ID);
     }
 }

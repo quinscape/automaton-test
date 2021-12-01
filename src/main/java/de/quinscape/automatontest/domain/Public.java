@@ -32,7 +32,10 @@ import de.quinscape.automatontest.domain.tables.QuxA;
 import de.quinscape.automatontest.domain.tables.QuxB;
 import de.quinscape.automatontest.domain.tables.QuxC;
 import de.quinscape.automatontest.domain.tables.QuxD;
+import de.quinscape.automatontest.domain.tables.QuxE;
 import de.quinscape.automatontest.domain.tables.QuxMain;
+import de.quinscape.automatontest.domain.tables.QuxMid;
+import de.quinscape.automatontest.domain.tables.QuxTop;
 import de.quinscape.automatontest.domain.tables.SumPerMonth;
 import de.quinscape.automatontest.domain.tables.Waldo;
 
@@ -60,7 +63,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = 1270008162;
+    private static final long serialVersionUID = 358756946;
 
     /**
      * The reference instance of <code>public</code>
@@ -208,9 +211,24 @@ public class Public extends SchemaImpl {
     public final QuxD QUX_D = de.quinscape.automatontest.domain.tables.QuxD.QUX_D;
 
     /**
+     * The table <code>public.qux_e</code>.
+     */
+    public final QuxE QUX_E = de.quinscape.automatontest.domain.tables.QuxE.QUX_E;
+
+    /**
      * The table <code>public.qux_main</code>.
      */
     public final QuxMain QUX_MAIN = de.quinscape.automatontest.domain.tables.QuxMain.QUX_MAIN;
+
+    /**
+     * The table <code>public.qux_mid</code>.
+     */
+    public final QuxMid QUX_MID = de.quinscape.automatontest.domain.tables.QuxMid.QUX_MID;
+
+    /**
+     * The table <code>public.qux_top</code>.
+     */
+    public final QuxTop QUX_TOP = de.quinscape.automatontest.domain.tables.QuxTop.QUX_TOP;
 
     /**
      * The table <code>public.sum_per_month</code>.
@@ -275,7 +293,10 @@ public class Public extends SchemaImpl {
             QuxB.QUX_B,
             QuxC.QUX_C,
             QuxD.QUX_D,
+            QuxE.QUX_E,
             QuxMain.QUX_MAIN,
+            QuxMid.QUX_MID,
+            QuxTop.QUX_TOP,
             SumPerMonth.SUM_PER_MONTH,
             Waldo.WALDO);
     }

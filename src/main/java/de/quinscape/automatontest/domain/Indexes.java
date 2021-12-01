@@ -31,7 +31,10 @@ import de.quinscape.automatontest.domain.tables.QuxA;
 import de.quinscape.automatontest.domain.tables.QuxB;
 import de.quinscape.automatontest.domain.tables.QuxC;
 import de.quinscape.automatontest.domain.tables.QuxD;
+import de.quinscape.automatontest.domain.tables.QuxE;
 import de.quinscape.automatontest.domain.tables.QuxMain;
+import de.quinscape.automatontest.domain.tables.QuxMid;
+import de.quinscape.automatontest.domain.tables.QuxTop;
 import de.quinscape.automatontest.domain.tables.Waldo;
 
 import javax.annotation.Generated;
@@ -97,7 +100,12 @@ public class Indexes {
     public static final Index QUX_C_NAME_KEY = Indexes0.QUX_C_NAME_KEY;
     public static final Index PK_QUX_D = Indexes0.PK_QUX_D;
     public static final Index QUX_D_NAME_KEY = Indexes0.QUX_D_NAME_KEY;
+    public static final Index PK_QUX_E = Indexes0.PK_QUX_E;
+    public static final Index QUX_E_NAME_KEY = Indexes0.QUX_E_NAME_KEY;
     public static final Index PK_QUX_MAIN = Indexes0.PK_QUX_MAIN;
+    public static final Index PK_QUX_MID = Indexes0.PK_QUX_MID;
+    public static final Index QUX_MID_NAME_KEY = Indexes0.QUX_MID_NAME_KEY;
+    public static final Index PK_QUX_TOP = Indexes0.PK_QUX_TOP;
     public static final Index PK_WALDO = Indexes0.PK_WALDO;
 
     // -------------------------------------------------------------------------
@@ -144,7 +152,12 @@ public class Indexes {
         public static Index QUX_C_NAME_KEY = Internal.createIndex("qux_c_name_key", QuxC.QUX_C, new OrderField[] { QuxC.QUX_C.NAME }, true);
         public static Index PK_QUX_D = Internal.createIndex("pk_qux_d", QuxD.QUX_D, new OrderField[] { QuxD.QUX_D.ID }, true);
         public static Index QUX_D_NAME_KEY = Internal.createIndex("qux_d_name_key", QuxD.QUX_D, new OrderField[] { QuxD.QUX_D.NAME }, true);
+        public static Index PK_QUX_E = Internal.createIndex("pk_qux_e", QuxE.QUX_E, new OrderField[] { QuxE.QUX_E.ID }, true);
+        public static Index QUX_E_NAME_KEY = Internal.createIndex("qux_e_name_key", QuxE.QUX_E, new OrderField[] { QuxE.QUX_E.NAME }, true);
         public static Index PK_QUX_MAIN = Internal.createIndex("pk_qux_main", QuxMain.QUX_MAIN, new OrderField[] { QuxMain.QUX_MAIN.ID }, true);
+        public static Index PK_QUX_MID = Internal.createIndex("pk_qux_mid", QuxMid.QUX_MID, new OrderField[] { QuxMid.QUX_MID.ID }, true);
+        public static Index QUX_MID_NAME_KEY = Internal.createIndex("qux_mid_name_key", QuxMid.QUX_MID, new OrderField[] { QuxMid.QUX_MID.NAME }, true);
+        public static Index PK_QUX_TOP = Internal.createIndex("pk_qux_top", QuxTop.QUX_TOP, new OrderField[] { QuxTop.QUX_TOP.ID }, true);
         public static Index PK_WALDO = Internal.createIndex("pk_waldo", Waldo.WALDO, new OrderField[] { Waldo.WALDO.ID }, true);
     }
 }

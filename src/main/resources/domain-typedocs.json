@@ -30,6 +30,21 @@
         "fieldDocs": []
     },
     {
+        "name": "QuxTop",
+        "description": "Top level object for two-step fk_test. Has a 1-to-1 relation to QuxMid",
+        "fieldDocs": []
+    },
+    {
+        "name": "QuxMid",
+        "description": "Mid level object for two-step fk_test.",
+        "fieldDocs": []
+    },
+    {
+        "name": "QuxE",
+        "description": "Catalog-like connected via id foreign key to QuxMid",
+        "fieldDocs": []
+    },
+    {
         "name": "QuxA",
         "description": "Catalog-like connected via id foreign key to QuxMain",
         "fieldDocs": []

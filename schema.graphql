@@ -634,6 +634,20 @@ type InteractiveQueryQuxD {
     type: String
 }
 
+"Interactive Query with QuxE payload."
+type InteractiveQueryQuxE {
+    "Column states for the current result."
+    columnStates: [ColumnState]
+    "Query configuration the current result was produced with."
+    queryConfig: QueryConfig
+    "Total row count available."
+    rowCount: Int
+    "List with current rows of QuxE."
+    rows: [QuxE]
+    "Name of payload type (always 'QuxE')"
+    type: String
+}
+
 "Interactive Query with QuxMain payload."
 type InteractiveQueryQuxMain {
     "Column states for the current result."
@@ -645,6 +659,20 @@ type InteractiveQueryQuxMain {
     "List with current rows of QuxMain."
     rows: [QuxMain]
     "Name of payload type (always 'QuxMain')"
+    type: String
+}
+
+"Interactive Query with QuxTop payload."
+type InteractiveQueryQuxTop {
+    "Column states for the current result."
+    columnStates: [ColumnState]
+    "Query configuration the current result was produced with."
+    queryConfig: QueryConfig
+    "Total row count available."
+    rowCount: Int
+    "List with current rows of QuxTop."
+    rows: [QuxTop]
+    "Name of payload type (always 'QuxTop')"
     type: String
 }
 
@@ -950,8 +978,12 @@ type QueryType {
     iQueryQuxC(config: QueryConfigInput!): InteractiveQueryQuxC
     "Queries QuxD objects based on the given query config"
     iQueryQuxD(config: QueryConfigInput!): InteractiveQueryQuxD
+    "Queries QuxE objects based on the given query config"
+    iQueryQuxE(config: QueryConfigInput!): InteractiveQueryQuxE
     "Queries QuxMain objects based on the given query config"
     iQueryQuxMain(config: QueryConfigInput!): InteractiveQueryQuxMain
+    "Queries QuxTop objects based on the given query config"
+    iQueryQuxTop(config: QueryConfigInput!): InteractiveQueryQuxTop
     "Queries SumPerMonth objects based on the given query config"
     iQuerySumPerMonth(config: QueryConfigInput!): InteractiveQuerySumPerMonth
     "Queries Waldo objects based on the given query config"
@@ -1017,6 +1049,18 @@ type QuxD {
     value: Int!
 }
 
+"Catalog-like connected via id foreign key to QuxMid"
+type QuxE {
+    "DB column 'description'"
+    description: String
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "DB column 'value'"
+    value: Int!
+}
+
 "Main object for fk_test"
 type QuxMain {
     "DB column 'id'"
@@ -1055,6 +1099,32 @@ type QuxMain {
     quxD4Id: String
     "DB foreign key column 'qux_d_id'"
     quxDId: String
+}
+
+"Mid level object for two-step fk_test."
+type QuxMid {
+    "DB column 'description'"
+    description: String
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "Target of 'qux_e_id'"
+    quxE: QuxE
+    "DB foreign key column 'qux_e_id'"
+    quxEId: String
+}
+
+"Top level object for two-step fk_test. Has a 1-to-1 relation to QuxMid"
+type QuxTop {
+    "DB column 'id'"
+    id: String!
+    "DB column 'name'"
+    name: String!
+    "Target of 'qux_mid_id'"
+    quxMid: QuxMid!
+    "DB foreign key column 'qux_mid_id'"
+    quxMidId: String!
 }
 
 "Generic result wrapper. Allows client-side code to register post-processors based on it."
