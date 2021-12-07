@@ -14,12 +14,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="Java Filter: Add toString()&#10;&#10;Implement a default shortened toString() for transformed FilterDSL Filter. Add default toString() impl and invoke that from many nodes.&#10;&#10;Write some nodes by hand.">
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_24_1_jre.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_compat_qual_2_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_14.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/animalgrid-test/states/AnimalGridHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/animalgrid-test/states/AnimalGridHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/components/CommonNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/components/CommonNav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/ServiceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/quinscape/automatontest/runtime/config/ServiceConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/monitor-test/states/CRUDList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/monitor-test/states/CRUDList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/promise-ui-test/states/PromiseUITestHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/promise-ui-test/states/PromiseUITestHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/queries/Q_AppUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/queries/Q_AppUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/js/temp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/js/temp.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +123,7 @@
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.6" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gen-17" />
+    <property name="last_opened_file_path" value="/var/www/html/test/pen.html" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -208,7 +218,7 @@
       <command value="key" />
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.FKSelector">
+  <component name="RunManager" selected="Tomcat Server.Local Tomcat">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -540,9 +550,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.temp.js" />
         <item itemvalue="Mocha.FKSelector" />
         <item itemvalue="JUnit.All in automaton" />
-        <item itemvalue="Node.js.temp.js" />
         <item itemvalue="JUnit.TestCase.name3" />
         <item itemvalue="Mocha.Tree" />
       </list>
@@ -1510,6 +1520,14 @@
       <workItem from="1638017902626" duration="320000" />
       <workItem from="1638185804410" duration="2663000" />
       <workItem from="1638278356567" duration="4378000" />
+      <workItem from="1638450552343" duration="3611000" />
+      <workItem from="1638454241359" duration="12630000" />
+      <workItem from="1638532356116" duration="4639000" />
+      <workItem from="1638635131313" duration="803000" />
+      <workItem from="1638796088438" duration="6119000" />
+      <workItem from="1638814772004" duration="680000" />
+      <workItem from="1638826809175" duration="1834000" />
+      <workItem from="1638878228321" duration="4909000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
