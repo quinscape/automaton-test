@@ -14,12 +14,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="Java Filter: Add toString()&#10;&#10;Implement a default shortened toString() for transformed FilterDSL Filter. Add default toString() impl and invoke that from many nodes.&#10;&#10;Write some nodes by hand.">
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/animalgrid-test/states/AnimalGridHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/animalgrid-test/states/AnimalGridHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/components/CommonNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/components/CommonNav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/condition-editor-test/condition-editor-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/condition-editor-test/condition-editor-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/js/temp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/js/temp.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +37,8 @@
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
-        <option value="JavaScript File" />
         <option value="Interface" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -109,11 +107,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="packageLocal" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.17.6" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.17.6" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.18.3" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.18.3" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gen-17" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../automaton-js/test" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -142,11 +140,11 @@
       <recent name="de.quinscape.automatontest.model.example" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../automaton-js/test" />
       <recent name="$PROJECT_DIR$/../automaton-js/src/ui/condition" />
       <recent name="$PROJECT_DIR$/src/main/js" />
       <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/condition-editor-test/states" />
       <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes" />
-      <recent name="$PROJECT_DIR$/src/main/js/apps/shipping/processes/fk-test/states" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="de.quinscape.automaton.runtime.data.QueryExecution" />
@@ -161,11 +159,11 @@
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/service/docs-filter.js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../automaton-js/test/util" />
       <recent name="$PROJECT_DIR$/../automaton-js/src/util" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/public/media" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/components" />
       <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/snippets" />
-      <recent name="$PROJECT_DIR$/../automaton-js/tooling/next/public" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -196,10 +194,10 @@
       <recent name="de.quinscape.automaton.runtime.scalar" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.quinscape.automaton.runtime.data" />
       <recent name="de.quinscape.automatontest.model.result" />
       <recent name="de.quinscape.automaton.runtime.filter.transformer" />
       <recent name="de.quinscape.automaton.runtime.tstimpl" />
-      <recent name="de.quinscape.automaton.runtime.data" />
       <recent name="de.quinscape.automatontest.runtime.service" />
     </key>
   </component>
@@ -208,7 +206,7 @@
       <command value="key" />
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.FKSelector">
+  <component name="RunManager" selected="Mocha.ConditionEditor">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -255,18 +253,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="All in automaton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="InteractiveQueryJoinTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="automaton" />
       <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.data" />
@@ -297,12 +283,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCase.name3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton-test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCase" />
-      <option name="METHOD_NAME" value="name3" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration name="PositiveListViolationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automaton" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.quinscape.automaton.runtime.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.data" />
+      <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.runtime.data.PositiveListViolationTest" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -330,9 +321,6 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" node-parameters="-r @babel/register">
-      <method v="2" />
-    </configuration>
-    <configuration name="temp.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" node-parameters="-r @babel/register" path-to-js-file="$PROJECT_DIR$/src/test/js/temp.js" working-dir="$PROJECT_DIR$/src/test/js">
       <method v="2" />
     </configuration>
     <configuration name="DQLMobxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -468,7 +456,7 @@
       <recursive>false</recursive>
       <method v="2" />
     </configuration>
-    <configuration name="FKSelector" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="ConditionEditor" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options>-r @babel/register -r ./test/setup.js -r ignore-styles --exit</node-options>
       <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
@@ -480,13 +468,13 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/fkselector/fk-selector.js</test-file>
+      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/condition/condition-editor.js</test-file>
       <test-names>
-        <name value="FKSelector" />
+        <name value="ConditionEditor" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Tree" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="ConditionEditor.edits FilterDSL condition graphs" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options>-r @babel/register -r ./test/setup.js -r ignore-styles --exit</node-options>
       <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
@@ -497,10 +485,49 @@
       </envs>
       <ui>bdd</ui>
       <extra-mocha-options />
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/tree/tree-kb.js</test-file>
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/condition/condition-editor.js</test-file>
       <test-names>
-        <name value="Tree" />
+        <name value="ConditionEditor" />
+        <name value="edits FilterDSL condition graphs" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConditionEditor.wraps nodes in logical conditions" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options>-r @babel/register -r ./test/setup.js -r ignore-styles --exit</node-options>
+      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs>
+        <env name="BABEL_ENV" value="test" />
+      </envs>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/condition/condition-editor.js</test-file>
+      <test-names>
+        <name value="ConditionEditor" />
+        <name value="wraps nodes in logical conditions" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConditionEditor.wraps nodes" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options>-r @babel/register -r ./test/setup.js -r ignore-styles --exit</node-options>
+      <mocha-package>$PROJECT_DIR$/../automaton-js/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/../automaton-js</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs>
+        <env name="BABEL_ENV" value="test" />
+      </envs>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/../automaton-js/test/ui/condition/condition-editor.js</test-file>
+      <test-names>
+        <name value="ConditionEditor" />
+        <name value="wraps nodes" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -525,26 +552,26 @@
     <list>
       <item itemvalue="JUnit.InteractiveQueryJoinTest" />
       <item itemvalue="JUnit.MergeServiceTests" />
-      <item itemvalue="JUnit.TestCase.name3" />
-      <item itemvalue="JUnit.All in automaton" />
+      <item itemvalue="JUnit.PositiveListViolationTest" />
       <item itemvalue="Mocha.Automaton-Test Tests" />
       <item itemvalue="Mocha.matchPath" />
       <item itemvalue="Mocha.Automaton-Js Tests" />
-      <item itemvalue="Mocha.Tree" />
-      <item itemvalue="Mocha.FKSelector" />
       <item itemvalue="Node.js.Process v2 transform " />
       <item itemvalue="Node.js.DataGrid-Test transform " />
-      <item itemvalue="Node.js.temp.js" />
       <item itemvalue="Spring Boot.DQLMobxApplication" />
       <item itemvalue="Tomcat Server.Local Tomcat" />
+      <item itemvalue="Mocha.ConditionEditor.edits FilterDSL condition graphs" />
+      <item itemvalue="Mocha.ConditionEditor" />
+      <item itemvalue="Mocha.ConditionEditor.wraps nodes" />
+      <item itemvalue="Mocha.ConditionEditor.wraps nodes in logical conditions" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Mocha.FKSelector" />
-        <item itemvalue="JUnit.All in automaton" />
-        <item itemvalue="Node.js.temp.js" />
-        <item itemvalue="JUnit.TestCase.name3" />
-        <item itemvalue="Mocha.Tree" />
+        <item itemvalue="Mocha.ConditionEditor" />
+        <item itemvalue="Mocha.ConditionEditor.wraps nodes in logical conditions" />
+        <item itemvalue="Mocha.ConditionEditor.wraps nodes" />
+        <item itemvalue="Mocha.ConditionEditor.edits FilterDSL condition graphs" />
+        <item itemvalue="JUnit.PositiveListViolationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1510,6 +1537,35 @@
       <workItem from="1638017902626" duration="320000" />
       <workItem from="1638185804410" duration="2663000" />
       <workItem from="1638278356567" duration="4378000" />
+      <workItem from="1638450552343" duration="3611000" />
+      <workItem from="1638454241359" duration="12630000" />
+      <workItem from="1638532356116" duration="4639000" />
+      <workItem from="1638635131313" duration="803000" />
+      <workItem from="1638796088438" duration="6119000" />
+      <workItem from="1638814772004" duration="680000" />
+      <workItem from="1638826809175" duration="1834000" />
+      <workItem from="1638878228321" duration="4909000" />
+      <workItem from="1639056609285" duration="9299000" />
+      <workItem from="1639135145179" duration="5105000" />
+      <workItem from="1639397631806" duration="11341000" />
+      <workItem from="1639481299266" duration="8468000" />
+      <workItem from="1639568921579" duration="8853000" />
+      <workItem from="1639656075894" duration="10724000" />
+      <workItem from="1639745288779" duration="8178000" />
+      <workItem from="1639844292038" duration="12000" />
+      <workItem from="1639999096116" duration="8167000" />
+      <workItem from="1640084900040" duration="7216000" />
+      <workItem from="1640175148414" duration="2802000" />
+      <workItem from="1640526330216" duration="28000" />
+      <workItem from="1640975314652" duration="573000" />
+      <workItem from="1640977902277" duration="311000" />
+      <workItem from="1641470962763" duration="1440000" />
+      <workItem from="1641559566242" duration="659000" />
+      <workItem from="1641919634104" duration="297000" />
+      <workItem from="1641919949943" duration="8000" />
+      <workItem from="1641994440458" duration="636000" />
+      <workItem from="1642084061215" duration="615000" />
+      <workItem from="1642163412924" duration="14725000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
@@ -1532,6 +1588,7 @@
     <option name="version" value="3" />
     <option name="includedJSSourcePackages">
       <set>
+        <option value="@testing-library/react" />
         <option value="mobx" />
       </set>
     </option>
@@ -1682,6 +1739,12 @@
           <url>file://$PROJECT_DIR$/../automaton-js/src/process/Process.js</url>
           <line>833</line>
           <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/../automaton-js/test/ui/condition/helper.js</url>
+          <line>52</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
