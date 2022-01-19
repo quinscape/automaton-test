@@ -5,6 +5,7 @@ import Q_FooDetail from "../datagrid-test/queries/Q_FooDetail";
 import Q_FooType from "../datagrid-test/queries/Q_FooType";
 import EffectLayout, { registerAppEffect, unregisterAppEffect } from "../../../../components/EffectLayout";
 import EffectList from "./states/EffectList";
+import EffectDetail from "./states/EffectDetail";
 
 // deconstruct FilterDSL methods
 const {
@@ -13,7 +14,7 @@ const {
 } = FilterDSL;
 
 
-function updateDetail(scope, id)
+export function updateDetail(scope, id)
 {
     return Q_FooDetail.execute({
         config: {

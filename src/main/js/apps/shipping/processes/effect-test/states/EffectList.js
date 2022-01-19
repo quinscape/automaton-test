@@ -3,6 +3,7 @@ import { ViewState, createDomainObject, i18n, Button, DataGrid } from "@quinscap
 import { ButtonToolbar } from "reactstrap";
 import { Icon } from "domainql-form";
 import EffectDetail from "./EffectDetail";
+import { updateDetail } from "../effect-test";
 
 const EffectList = new ViewState("EffectList", (process, scope) => ({
     "new-foo": {

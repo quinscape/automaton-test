@@ -4,6 +4,7 @@ import { runInAction } from "mobx";
 import { Icon } from "domainql-form";
 import { ButtonToolbar } from "reactstrap";
 import SubProcessDialogDetail from "./SubProcessDialogDetail";
+import { updateDetail } from "../effect-sub-dialog";
 
 const SubProcessDialogHome = new ViewState("SubProcessDialogHome", (process, scope) => ({
     "choose" : {

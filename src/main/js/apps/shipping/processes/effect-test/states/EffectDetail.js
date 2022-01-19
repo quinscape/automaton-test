@@ -4,6 +4,7 @@ import { runInAction } from "mobx";
 import { FormLayout } from "domainql-form";
 import FooForm from "../composites/FooForm";
 import EffectList from "./EffectList";
+import { updateDetail } from "../effect-test";
 
 const EffectDetail = new ViewState("EffectDetail", (process, scope) => ({
     "save": {

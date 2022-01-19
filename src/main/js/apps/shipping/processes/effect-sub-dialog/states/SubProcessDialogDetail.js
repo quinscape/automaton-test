@@ -4,6 +4,7 @@ import { runInAction } from "mobx";
 import { FormLayout, FieldMode } from "domainql-form";
 import FooForm from "../composites/FooForm";
 import SubProcessDialogHome from "./SubProcessDialogHome";
+import { updateDetail } from "../effect-sub-dialog";
 
 const SubProcessDialogDetail = new ViewState("SubProcessDialogDetail", (process, scope) => ({
     "choose" : {
