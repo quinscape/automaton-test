@@ -14,10 +14,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73953398-d2a9-430f-a574-ddcd4ad761da" name="Default Changelist" comment="Java Filter: Add toString()&#10;&#10;Implement a default shortened toString() for transformed FilterDSL Filter. Add default toString() impl and invoke that from many nodes.&#10;&#10;Write some nodes by hand.">
+      <change beforePath="$PROJECT_DIR$/../automaton-js/src/WorkingSet.js" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton-js/src/WorkingSet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/automaton_test_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/automaton-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/automaton-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_2_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_quinscape_domainql_domainql_0_2_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/automaton-test.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/condition-editor-test/condition-editor-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/condition-editor-test/condition-editor-test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/js/temp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/js/temp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-sub-dialog/effect-sub-dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-sub-dialog/effect-sub-dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-sub-full/effect-sub-full.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-sub-full/effect-sub-full.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-sub-full/states/SubProcessFullDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-sub-full/states/SubProcessFullDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-test/effect-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/effect-test/effect-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/composites/CorgeForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/queries/Q_CorgeDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/queries/Q_CorgeDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/states/CorgeDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/states/CorgeDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/states/CorgeList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/apps/shipping/processes/merge-test/states/CorgeList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/js/components/EffectLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/js/components/EffectLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/automaton.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/automaton.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automaton/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../automaton/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +117,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552585669913" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript&#10;GraphQL&#10;JSX Harmony" />
-    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="C++&#10;PLAIN_TEXT" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="JSON&#10;C++&#10;PLAIN_TEXT" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -111,7 +128,7 @@
     <property name="javascript.nodejs.core.library.typings.version" value="14.18.3" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/model" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../automaton-js/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../automaton-template" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -206,7 +223,7 @@
       <command value="key" />
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.ConditionEditor">
+  <component name="RunManager" selected="Tomcat Server.Local Tomcat">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -253,6 +270,18 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="All in automaton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automaton" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="InteractiveQueryJoinTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="automaton" />
       <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.data" />
@@ -275,25 +304,6 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea -Dspring.profiles.active=integration-test" />
       <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PositiveListViolationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automaton" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.quinscape.automaton.runtime.data.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.quinscape.automaton.runtime.data" />
-      <option name="MAIN_CLASS_NAME" value="de.quinscape.automaton.runtime.data.PositiveListViolationTest" />
-      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -552,26 +562,26 @@
     <list>
       <item itemvalue="JUnit.InteractiveQueryJoinTest" />
       <item itemvalue="JUnit.MergeServiceTests" />
-      <item itemvalue="JUnit.PositiveListViolationTest" />
+      <item itemvalue="JUnit.All in automaton" />
       <item itemvalue="Mocha.Automaton-Test Tests" />
       <item itemvalue="Mocha.matchPath" />
       <item itemvalue="Mocha.Automaton-Js Tests" />
-      <item itemvalue="Node.js.Process v2 transform " />
-      <item itemvalue="Node.js.DataGrid-Test transform " />
-      <item itemvalue="Spring Boot.DQLMobxApplication" />
-      <item itemvalue="Tomcat Server.Local Tomcat" />
       <item itemvalue="Mocha.ConditionEditor.edits FilterDSL condition graphs" />
       <item itemvalue="Mocha.ConditionEditor" />
       <item itemvalue="Mocha.ConditionEditor.wraps nodes" />
       <item itemvalue="Mocha.ConditionEditor.wraps nodes in logical conditions" />
+      <item itemvalue="Node.js.Process v2 transform " />
+      <item itemvalue="Node.js.DataGrid-Test transform " />
+      <item itemvalue="Spring Boot.DQLMobxApplication" />
+      <item itemvalue="Tomcat Server.Local Tomcat" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in automaton" />
         <item itemvalue="Mocha.ConditionEditor" />
         <item itemvalue="Mocha.ConditionEditor.wraps nodes in logical conditions" />
         <item itemvalue="Mocha.ConditionEditor.wraps nodes" />
         <item itemvalue="Mocha.ConditionEditor.edits FilterDSL condition graphs" />
-        <item itemvalue="JUnit.PositiveListViolationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1566,6 +1576,26 @@
       <workItem from="1641994440458" duration="636000" />
       <workItem from="1642084061215" duration="615000" />
       <workItem from="1642163412924" duration="14725000" />
+      <workItem from="1642426941828" duration="1215000" />
+      <workItem from="1642503734279" duration="6453000" />
+      <workItem from="1642598146560" duration="10607000" />
+      <workItem from="1642675769590" duration="6266000" />
+      <workItem from="1642764962396" duration="9506000" />
+      <workItem from="1642789210783" duration="9000" />
+      <workItem from="1643031336495" duration="3330000" />
+      <workItem from="1643043755169" duration="3187000" />
+      <workItem from="1643115871139" duration="4409000" />
+      <workItem from="1643199013772" duration="19007000" />
+      <workItem from="1643282830547" duration="19409000" />
+      <workItem from="1643373015880" duration="20821000" />
+      <workItem from="1643480297205" duration="50000" />
+      <workItem from="1643505374026" duration="2024000" />
+      <workItem from="1643511062284" duration="3083000" />
+      <workItem from="1643522502160" duration="1862000" />
+      <workItem from="1643527111059" duration="463000" />
+      <workItem from="1643547731270" duration="5041000" />
+      <workItem from="1643639351101" duration="611000" />
+      <workItem from="1643717854692" duration="1419000" />
     </task>
     <task id="LOCAL-00001" summary="Mention Conway's Law">
       <created>1544204618909</created>
@@ -1716,9 +1746,29 @@
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/de/quinscape/spring-jsview/0.6/spring-jsview-0.6-sources.jar!/de/quinscape/spring/jsview/asset/WebpackAssets.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="79" />
+          <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/merge/MergeServiceImpl.java</url>
+          <line>1234</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../automaton/src/main/java/de/quinscape/automaton/runtime/merge/MergeServiceImpl.java</url>
+          <line>366</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/automaton/0.5.4-SNAPSHOT/automaton-0.5.4-SNAPSHOT-sources.jar!/de/quinscape/automaton/runtime/merge/MergeServiceImpl.java</url>
+          <line>366</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/automaton/0.5.4-SNAPSHOT/automaton-0.5.4-SNAPSHOT-sources.jar!/de/quinscape/automaton/runtime/merge/MergeServiceImpl.java</url>
+          <line>1353</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/de/quinscape/domainql/automaton/0.5.4-SNAPSHOT/automaton-0.5.4-SNAPSHOT-sources.jar!/de/quinscape/automaton/runtime/merge/MergeServiceImpl.java</url>
+          <line>1420</line>
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/../automaton-js/node_modules/mobx/lib/mobx.js</url>
@@ -1737,17 +1787,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/../automaton-js/src/process/Process.js</url>
-          <line>833</line>
+          <line>835</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/../automaton-js/test/ui/condition/helper.js</url>
           <line>52</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.util.ArrayList" memberName="elementData" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="env.getSelectionSet().getFields(&quot;rows/*&quot;).stream().map( f -&gt; f.getName()).collect(Collectors.joining(&quot;, &quot;))" language="JAVA" custom="org.jooq.impl.FieldAlias,java.util.stream.Collectors" />
