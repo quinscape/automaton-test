@@ -57,10 +57,10 @@ export function initProcess(process, scope) {
     process.addEffect(
         SubProcessDialogHome,
         () => {
-            registerAppEffect(SubProcessDialogHome);
+            registerAppEffect("SubProcessDialogHome");
 
             return () => {
-                unregisterAppEffect(SubProcessDialogHome);
+                unregisterAppEffect("SubProcessDialogHome");
             };
         }
     );

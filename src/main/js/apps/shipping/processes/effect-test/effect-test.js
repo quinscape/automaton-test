@@ -57,10 +57,10 @@ export function initProcess(process, scope) {
     process.addEffect(
         EffectList,
         () => {
-            registerAppEffect(EffectList);
+            registerAppEffect("EffectList");
 
             return () => {
-                unregisterAppEffect(EffectList);
+                unregisterAppEffect("EffectList");
             };
         }
     );

@@ -58,10 +58,10 @@ export function initProcess(process, scope) {
     process.addEffect(
         SubProcessFullHome,
         () => {
-            registerAppEffect(SubProcessFullHome);
+            registerAppEffect("SubProcessFullHome");
 
             return () => {
-                unregisterAppEffect(SubProcessFullHome);
+                unregisterAppEffect("SubProcessFullHome");
             };
         }
     );
