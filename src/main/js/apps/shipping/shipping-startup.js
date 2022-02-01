@@ -90,12 +90,15 @@ bootstrap(
                 //     }
                 // )
 
-                // spy(ev => {
-                //     ev.type === "update" && console.log("MOBX", ev)
-                //
-                //     if (ev.oldValue === "ec2ae4c3-6615-4c77-b07e-d1c879dc69cb")
-                //     {
-                //         debugger;
+                // spy(event => {
+                //     if (event.type === "action") {
+                //         console.log(`ACTION: ${event.name}(`, ... event.arguments,`)`)
+                //     }
+                //     else if (event.type === "reaction") {
+                //         console.log(`REACTION: ${event.name}`)
+                //     }
+                //     else if (event.type === "error") {
+                //         console.log(`ERROR: ${event.name}: ${event.message}, error = ${event.error}`)
                 //     }
                 // })
 

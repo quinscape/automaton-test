@@ -10,7 +10,6 @@ import {
     Button,
     DataGrid,
     DomainActivityIndicator,
-    FilterDSL,
 } from "@quinscape/automaton-js";
 
 import Q_CorgeDetail from "../queries/Q_CorgeDetail";
@@ -24,25 +23,46 @@ import { Icon } from "domainql-form";
 import MergeDialog from "@quinscape/automaton-js/lib/ui/ChangeConflictDialog";
 import CorgeDetail from "./CorgeDetail";
 
-const {
+import {
     field,
     value
-} = FilterDSL;
+} from "@quinscape/automaton-js/filter"
+import { DateTime } from "luxon"
+
 
 const CorgeList = new ViewState("CorgeList", (process, scope) => ({
     "new-corge": {
         to: CorgeDetail,
         action: t => {
 
-            // use empty id to be replaced by a new id server-side (
-            const newObj = createDomainObject("CorgeInput", "");
+            const newObj = createDomainObject("Corge");
 
             newObj.name = "Unnamed Corge";
             newObj.desc = "";
             newObj.num = 0;
             newObj.flag = false;
-            newObj.created = new Date();
+            newObj.created = DateTime.local();
             newObj.type = "TYPE_A";
+            newObj.ownerId = "af432487-a1b1-4f99-96d4-3b8e9796c95a";
+            newObj.type2 = "ec2ae4c3-6615-4c77-b07e-d1c879dc69cb"
+            newObj.type2Obj = null
+            newObj.typeId = "964d2966-7c30-4ffa-902e-54d8d7527ed8"
+            newObj.type = {
+                "_type": "CorgeType",
+                "name": "Type #2",
+                "id": "964d2966-7c30-4ffa-902e-54d8d7527ed8"
+            }
+            newObj.owner = {
+                "_type": "AppUser",
+                "roles": "ROLE_ANONYMOUS",
+                "id": "af432487-a1b1-4f99-96d4-3b8e9796c95a",
+                "login": "anonymous"
+            };
+
+
+            newObj.corgeLinks = [];
+
+            scope.workingSet.addNew(newObj)
 
             return scope.updateCurrent(newObj);
         }

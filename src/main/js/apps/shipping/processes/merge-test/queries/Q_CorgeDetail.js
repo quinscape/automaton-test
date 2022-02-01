@@ -47,6 +47,7 @@ export default query(
                         id
                         version
                         name
+                        description
                         num
                     }
                     assocId

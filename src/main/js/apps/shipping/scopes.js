@@ -34,3 +34,17 @@ export class UserScope
 //     }
 // }
 
+export class CommonScope
+{
+    @observable value = "quux";
+    constructor() {
+        makeObservable(this);
+    }
+
+    init()
+    {
+        console.log("CommonScope init");
+        // can return a promise
+        return Promise.resolve()
+    }
+}
