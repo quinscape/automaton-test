@@ -6,6 +6,7 @@ import TreeTestNodeDetail from "./states/TreeTestNodeDetail";
 import TreeTestBazDetail from "./states/TreeTestBazDetail";
 import TreeTestBazValueDetail from "./states/TreeTestBazValueDetail";
 import TreeTestHome from "./states/TreeTestHome";
+import TreeLayout from "../../../../components/TreeLayout"
 
 // deconstruct FilterDSL methods
 const {field, value} = FilterDSL;
@@ -13,6 +14,9 @@ const {field, value} = FilterDSL;
 // noinspection JSUnusedGlobalSymbols
 export function initProcess(process, scope) {
     let target;
+
+    process.options.layout = { default: TreeLayout };
+    
     const name = process.input.name;
     const type = process.input.type;
     const useIndex = process.input.useIndex;
