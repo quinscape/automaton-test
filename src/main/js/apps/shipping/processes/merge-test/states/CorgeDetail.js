@@ -1,32 +1,27 @@
-import React from "react";
+import React from "react"
 
 import {
     AssociationSelector,
-    FKSelector,
-    ViewState,
-    MergeOperation,
-    deleteDomainObject,
     backToParent,
-    useEntity,
-    i18n,
     Button,
+    config,
     DataGrid,
-    config
-} from "@quinscape/automaton-js";
+    FKSelector,
+    i18n,
+    MergeOperation,
+    useEntity,
+    ViewState
+} from "@quinscape/automaton-js"
 
-import {
-    field,
-    value
-} from "@quinscape/automaton-js/filter"
+import { DateTime } from "luxon"
+import { Field, FieldMode, Form, FormLayout, GlobalErrors, Icon, Select, TextArea } from "domainql-form"
+import CorgeList from "./CorgeList"
+import WorkingSetHelper from "../../../../../components/WorkingSetHelper"
+import Q_AppUser from "../../../queries/Q_AppUser"
+import Q_CorgeAssocList from "../queries/Q_CorgeAssocList"
+import { ButtonToolbar } from "reactstrap"
+import Q_CorgeDetail from "../queries/Q_CorgeDetail"
 
-import { DateTime } from "luxon";
-import { Form, Field, FieldMode, FormLayout, GlobalErrors, Icon, Select, TextArea, FormContext } from "domainql-form";
-import CorgeList from "./CorgeList";
-import WorkingSetHelper from "../../../../../components/WorkingSetHelper";
-import Q_AppUser from "../../../queries/Q_AppUser";
-import Q_CorgeAssocList from "../queries/Q_CorgeAssocList";
-import { ButtonToolbar } from "reactstrap";
-import Q_CorgeDetail from "../queries/Q_CorgeDetail";
 
 const CorgeDetail = new ViewState("CorgeDetail", (process, scope) => {
     return ({
@@ -94,47 +89,11 @@ const CorgeDetail = new ViewState("CorgeDetail", (process, scope) => {
         },
 
         "select": {
-            action: t => {
-
-                const id = t.context
-
-                const registered = scope.workingSet.lookup("Corge", id)
-                if (registered)
-                {
-                    scope.updateCurrent(
-                        registered.domainObject
+            action: t =>
+                scope.workingSet.load("Corge", t.context, Q_CorgeDetail)
+                    .then(
+                        corge => scope.updateCurrent(corge)
                     )
-                }
-                else
-                {
-                    return Q_CorgeDetail.execute({
-                        config: {
-                            condition:
-                                field("id")
-                                    .eq(
-                                        value(
-                                            id
-                                        )
-                                    )
-                        }
-                    }).then(({iQueryCorge}) => {
-
-                        if (iQueryCorge.rows.length === 0)
-                        {
-                            alert("Could not load Corge with id '" + t.context)
-                        }
-
-                        const corge = config.inputSchema.clone(iQueryCorge.rows[0])
-
-                        scope.workingSet.registerBaseVersion(corge)
-
-                        return scope.updateCurrent(
-                            corge
-                        )
-                    })
-                }
-
-            }
         }
     })
 }, props => {
@@ -246,6 +205,7 @@ const CorgeDetail = new ViewState("CorgeDetail", (process, scope) => {
                     <DataGrid
                         id="merge-test"
                         value={ scope.corges }
+                        workingSet={ scope.workingSet }
                         isCompact={ false }
                     >
                         <DataGrid.Column

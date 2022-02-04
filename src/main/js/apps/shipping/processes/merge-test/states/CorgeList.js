@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuid } from "uuid";
 
 import {
     ViewState,
@@ -35,36 +36,45 @@ const CorgeList = new ViewState("CorgeList", (process, scope) => ({
         to: CorgeDetail,
         action: t => {
 
-            const newObj = createDomainObject("Corge");
+            const newId = uuid()
 
-            newObj.name = "Unnamed Corge";
-            newObj.desc = "";
-            newObj.num = 0;
-            newObj.flag = false;
-            newObj.created = DateTime.local();
-            newObj.type = "TYPE_A";
-            newObj.ownerId = "af432487-a1b1-4f99-96d4-3b8e9796c95a";
-            newObj.type2 = "ec2ae4c3-6615-4c77-b07e-d1c879dc69cb"
-            newObj.type2Obj = null
-            newObj.typeId = "964d2966-7c30-4ffa-902e-54d8d7527ed8"
-            newObj.type = {
-                "_type": "CorgeType",
-                "name": "Type #2",
-                "id": "964d2966-7c30-4ffa-902e-54d8d7527ed8"
-            }
-            newObj.owner = {
-                "_type": "AppUser",
-                "roles": "ROLE_ANONYMOUS",
-                "id": "af432487-a1b1-4f99-96d4-3b8e9796c95a",
-                "login": "anonymous"
-            };
+            // new implemented via workingSet load. Not something you would normally do
+            // just doing this to test the function variant
+            return scope.workingSet.load("Corge", newId, (type,id) => {
+                const newCorge = createDomainObject(type, id);
+
+                newCorge.name = "Unnamed Corge";
+                newCorge.desc = "";
+                newCorge.num = 0;
+                newCorge.flag = false;
+                newCorge.created = DateTime.local();
+                newCorge.type = "TYPE_A";
+                newCorge.ownerId = "af432487-a1b1-4f99-96d4-3b8e9796c95a";
+                newCorge.type2 = "ec2ae4c3-6615-4c77-b07e-d1c879dc69cb"
+                newCorge.type2Obj = null
+                newCorge.typeId = "964d2966-7c30-4ffa-902e-54d8d7527ed8"
+                newCorge.type = {
+                    "_type": "CorgeType",
+                    "name": "Type #2",
+                    "id": "964d2966-7c30-4ffa-902e-54d8d7527ed8"
+                }
+                newCorge.owner = {
+                    "_type": "AppUser",
+                    "roles": "ROLE_ANONYMOUS",
+                    "id": "af432487-a1b1-4f99-96d4-3b8e9796c95a",
+                    "login": "anonymous"
+                };
 
 
-            newObj.corgeLinks = [];
-
-            scope.workingSet.addNew(newObj)
-
-            return scope.updateCurrent(newObj);
+                newCorge.corgeLinks = [];
+                scope.workingSet.addNew(newCorge)
+                return newCorge
+            })
+            .then( corge => {
+                return scope.updateCurrent(
+                    corge
+                )
+            })
         }
     },
 
