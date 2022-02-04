@@ -92,10 +92,11 @@ const FKTestDetail = new ViewState("FKTestDetail", (process, scope) => ({
 
                                         <GlobalErrors/>
 
-                                        <Field name="name" helpText="Field A!"/>
+                                        <Field name="name" />
 
                                         <FKSelector
                                             name="quxAId"
+                                            helpText="Field A!"
                                             label="simple search filter"
                                             display="quxA.name"
                                             searchFilter="name"

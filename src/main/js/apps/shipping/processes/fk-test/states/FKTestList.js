@@ -5,11 +5,37 @@ import { ButtonToolbar } from "reactstrap";
 import { Icon } from "domainql-form";
 import FKTestDetail from "./FKTestDetail";
 import FKTestValidate from "./FKTestValidate";
+import FKTestPreFilter from "./FKTestPreFilter"
 
 const {
     field,
     value
 } = FilterDSL;
+
+
+function loadCurrent(t, scope)
+{
+    console.log("to-detail, context = ", t.context);
+    return Q_QuxDetail.execute({
+        config: {
+            condition:
+                field("id")
+                    .eq(
+                        value(
+                            t.context
+                        )
+                    )
+        }
+    }).then(({iQueryQuxMain}) => {
+
+        if (iQueryQuxMain.rows.length === 0)
+        {
+            alert("Could not load Qux with id '" + t.context)
+        }
+        return scope.updateCurrent(iQueryQuxMain.rows[0])
+    })
+}
+
 
 const FKTestList = new ViewState("FKTestList", (process, scope) => ({
     "new-qux": {
@@ -30,33 +56,15 @@ const FKTestList = new ViewState("FKTestList", (process, scope) => ({
 
     "to-detail": {
         to: FKTestDetail,
-        action: t => {
-
-            console.log("to-detail, context = ", t.context);
-
-            return Q_QuxDetail.execute({
-                config: {
-                    condition:
-                        field("id")
-                            .eq(
-                                value(
-                                    t.context
-                                )
-                            )
-                }
-            }).then(({iQueryQuxMain}) => {
-
-                if (iQueryQuxMain.rows.length === 0)
-                {
-                    alert("Could not load Qux with id '" + t.context)
-                }
-                return scope.updateCurrent(iQueryQuxMain.rows[0]);
-            });
-        }
+        action: t => loadCurrent(t, scope)
     },
 
     "to-validate" : {
         to: FKTestValidate
+    },
+    "to-pre-filter" : {
+        to: FKTestPreFilter,
+        action: t => loadCurrent(t, scope)
     }
 }), props => {
 
@@ -82,6 +90,7 @@ const FKTestList = new ViewState("FKTestList", (process, scope) => ({
                     <Icon className="fa-arrow-right mr-1" />
                     To Validate
                 </Button>
+
             </ButtonToolbar>
 
             <DataGrid
@@ -93,13 +102,22 @@ const FKTestList = new ViewState("FKTestList", (process, scope) => ({
                 >
                     {
                         qux => (
-                            <Button
-                                className="btn btn-secondary text-nowrap"
-                                transition="to-detail"
-                                context={ qux.id }>
-                                <Icon className="fa-edit" />
-                                Detail
-                            </Button>
+                            <>
+                                <Button
+                                    className="btn btn-secondary text-nowrap mr-1"
+                                    transition="to-detail"
+                                    context={ qux.id }>
+                                    <Icon className="fa-edit" />
+                                    Detail
+                                </Button>
+                                <Button
+                                    className="btn btn-secondary mr-1"
+                                    transition="to-pre-filter"
+                                    context={ qux.id }>
+                                    <Icon className="fa-arrow-right mr-1" />
+                                    To PreFilter
+                                </Button>
+                            </>
                         )
                     }
                 </DataGrid.Column>
