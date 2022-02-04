@@ -88,7 +88,7 @@
         <dependency>
             <groupId>de.quinscape.domainql</groupId>
             <artifactId>domainql</artifactId>
-            <version>0.2.13</version>
+            <version>0.2.15</version>
         </dependency>
 
         <dependency>
@@ -182,7 +182,7 @@
         <dependency>
             <groupId>de.quinscape.domainql</groupId>
             <artifactId>automaton</artifactId>
-            <version>0.5.4-SNAPSHOT</version>
+            <version>0.5.7-SNAPSHOT</version>
         </dependency>
 
         <dependency>

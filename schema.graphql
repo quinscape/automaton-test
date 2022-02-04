@@ -909,6 +909,7 @@ type QueryConfig {
 
 "Auto-generated from DataGridLogic, FileAccessLogic, ResourceAccessLogic, ResultTestLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type QueryType {
+    _filterFnScalar(def: FilterFunction): FilterFunction
     _interactiveQueryDefinition(def: InteractiveQueryDefinitionInput): InteractiveQueryDefinition
     getDomainTypeIndex(condition: Condition, domainType: String!, field: String!): [String]
     getFoos(limit: Int = 10, offset: Int = 0): PagedFoo
@@ -1612,6 +1613,9 @@ scalar DomainObject
 
 "Map graph representing a JOOQ field expression"
 scalar FieldExpression
+
+"Encapsulates a dynamically evaluated FilterDSL value"
+scalar FilterFunction
 
 "Container for generic scalar values"
 scalar GenericScalar

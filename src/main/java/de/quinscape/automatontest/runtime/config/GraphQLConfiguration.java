@@ -1,5 +1,7 @@
 package de.quinscape.automatontest.runtime.config;
 
+import de.quinscape.automaton.model.domain.AutomatonRelation;
+import de.quinscape.automaton.runtime.domain.builder.AutomatonDomain;
 import de.quinscape.automaton.runtime.scalar.ConditionScalar;
 import de.quinscape.automaton.runtime.scalar.ConditionType;
 import de.quinscape.automaton.runtime.scalar.FieldExpressionScalar;
@@ -81,19 +83,12 @@ public class GraphQLConfiguration
         final Collection<Object> logicBeans = applicationContext.getBeansWithAnnotation(GraphQLLogic.class).values();
         final Collection<MetadataProvider> metadataProviders = applicationContext.getBeansOfType(MetadataProvider.class).values();
 
-        final DomainQL domainQL = DomainQL.newDomainQL(dslContext)
+        final DomainQL domainQL = AutomatonDomain.newDomain(dslContext, metadataProviders)
             //.parameterProvider(new AutomatonConnectionProviderFactory(applicationContext))
 
             .logicBeans(logicBeans)
 
             .objectTypes(Public.PUBLIC)
-
-            .withAdditionalScalar(DomainObject.class, DomainObjectScalar.newDomainObjectScalar())
-            .withAdditionalScalar(JSONB.class, new JSONBScalar())
-            .withAdditionalScalar(ConditionScalar.class, ConditionType.newConditionType())
-            .withAdditionalScalar(FieldExpressionScalar.class, FieldExpressionType.newFieldExpressionType())
-            .withAdditionalScalar(GenericScalar.class, GenericScalarType.newGenericScalar())
-            .withAdditionalScalar(BigDecimal.class, new BigDecimalScalar())
 
             .withAdditionalInputTypes(
                 Node.class,
@@ -137,8 +132,8 @@ public class GraphQLConfiguration
             .configureRelation(QUX_MAIN.QUX_D3_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxD3", null)
             .configureRelation(QUX_MAIN.QUX_D4_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "quxD4", null)
 
-            .configureRelation(BAZ_LINK.BAZ_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
-            .configureRelation(BAZ_LINK.VALUE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
+            .configureRelation(BAZ_LINK.BAZ_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY, null, null, AutomatonRelation.MANY_TO_MANY)
+            .configureRelation(BAZ_LINK.VALUE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY, null, null, AutomatonRelation.MANY_TO_MANY)
             .configureRelation(BAZ.OWNER_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
 
             .configureRelation(APP_VERSION.OWNER_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
@@ -147,8 +142,8 @@ public class GraphQLConfiguration
             .configureRelation(CORGE.TYPE2, SourceField.OBJECT_AND_SCALAR, TargetField.NONE, "type2Obj", null)
             .configureRelation(CORGE.OWNER_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
 
-            .configureRelation(CORGE_LINK.CORGE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
-            .configureRelation(CORGE_LINK.ASSOC_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY)
+            .configureRelation(CORGE_LINK.CORGE_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY, null, null, AutomatonRelation.MANY_TO_MANY)
+            .configureRelation(CORGE_LINK.ASSOC_ID, SourceField.OBJECT_AND_SCALAR, TargetField.MANY, null, null, AutomatonRelation.MANY_TO_MANY)
 
             .configureRelation(GRAULT.ATTACHMENT_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
             .configureRelation(META_CONFIG.ATTACHMENT_ID, SourceField.OBJECT_AND_SCALAR, TargetField.NONE)
@@ -178,9 +173,6 @@ public class GraphQLConfiguration
                 new ClassPathResource("source-typedocs.json").getInputStream()
             )
 
-            .withMetadataProviders(
-                metadataProviders.toArray(new MetadataProvider[0])
-            )
 
             .build();
 
