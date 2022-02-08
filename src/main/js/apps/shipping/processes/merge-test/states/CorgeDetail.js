@@ -88,6 +88,15 @@ const CorgeDetail = new ViewState("CorgeDetail", (process, scope) => {
             }
         },
 
+        "undo": {
+            to: CorgeDetail,
+            discard: true,
+            confirmation: context => `Undo changes ?`,
+            action: t => {
+                scope.workingSet.undo()
+            }
+        },
+
         "select": {
             action: t =>
                 scope.workingSet.load("Corge", t.context, Q_CorgeDetail)
@@ -140,6 +149,10 @@ const CorgeDetail = new ViewState("CorgeDetail", (process, scope) => {
                                             <Button className="btn btn-danger mr-1" transition="delete">
                                                 <Icon className="fa-times mr-1" />
                                                 Delete
+                                            </Button>
+                                            <Button className="btn btn-danger mr-1" transition="undo">
+                                                <Icon className="fa-undo-alt mr-1" />
+                                                Undo
                                             </Button>
                                             <Button className="btn btn-secondary mr-1" transition="cancel">
                                                 <Icon className="fa-times mr-1" />
