@@ -1,11 +1,12 @@
 import React from "react";
-import { ViewState, createDomainObject, config, i18n, Button, DataGrid, FilterDSL, promiseUI } from "@quinscape/automaton-js";
+import { ViewState, createDomainObject, config, i18n, Button, DataGrid, FilterDSL, promiseUI, InteractiveQuery } from "@quinscape/automaton-js";
 import Q_FooDetail from "../queries/Q_FooDetail";
 import cx from "classnames";
 import { ButtonToolbar } from "reactstrap";
 import { Icon, Select } from "domainql-form";
 import CRUDDetail from "./CRUDDetail";
 import { DateTime } from "luxon";
+import Q_FooMulti from "../queries/Q_FooMulti"
 
 const {
     field,
@@ -78,8 +79,28 @@ const CRUDList = new ViewState("CRUDList", (process, scope) => ({
                 return scope.updateCurrent(config.inputSchema.clone(iQueryFoo.rows[0]));
             });
         }
+    },
+
+    "test-partial": {
+        to: CRUDList,
+        action: t => {
+
+            // We execute a multi-query document...
+            return Q_FooMulti.execute({
+                config: {},
+                config2: {}
+            }).then(
+                result => {
+
+                    // .. and then extract one iQuery document with a generated query containing only that iQuery
+                    const foos = InteractiveQuery.separate(result, "foos")
+                    scope.updateFoos(foos)
+                }
+            )
+        }
     }
-}), props => {
+
+    }), props => {
 
     const { env } = props;
 
@@ -101,6 +122,9 @@ const CRUDList = new ViewState("CRUDList", (process, scope) => ({
                 <Button className="btn btn-primary mr-1" transition="new-foo-no-ddefaults" tooltip="Revalidation example">
                     <Icon className="fa-save mr-1" />
                     New w/o defaults
+                </Button>
+                <Button className="btn btn-primary mr-1" transition="test-partial">
+                    Test Partial
                 </Button>
             </ButtonToolbar>
 
