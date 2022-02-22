@@ -9,7 +9,7 @@
         "@quinscape/automaton-js": "^0.5.5",
         "bignumber.js": "^9.0.1",
         "classnames": "^2.3.1",
-        "domainql-form": "^3.7.9",
+        "domainql-form": "^3.7.11",
         "history": "^5.1.0",
         "jsview-bootstrap": "^0.2.0",
         "lodash.get": "^4.4.2",
