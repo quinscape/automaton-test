@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react"
-import { Nav, Dropdown , DropdownToggle , DropdownMenu , DropdownItem  } from "reactstrap"
+import { Nav, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, NavItem, NavLink } from "reactstrap"
 
 import { runProcessURI, config } from "@quinscape/automaton-js"
 
@@ -76,6 +76,14 @@ const CommonNav = props => {
                     </DropdownItem>
                 </DropdownMenu>
             </Dropdown>
+            <NavItem>
+                <NavLink
+                    onClick={ () => 0}
+                    title="Only exists to be focusable"
+                >
+                    Focus
+                </NavLink>
+            </NavItem>
         </Nav>
     )
 };
