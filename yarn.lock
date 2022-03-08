@@ -1026,15 +1026,16 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.0.tgz#6734f8ebc106a0860dff7f92bf90df193f0935d7"
   integrity sha512-zrsUxjLOKAzdewIDRWy9nsV1GQsKBCWaGwsZQlCgr6/q+vjyZhFgqedLfFBuI9anTPEUT4APq9Mu0SZBTzIcGQ==
 
-"@quinscape/automaton-js@^0.5.5":
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.5.5.tgz#be733824e1cf2ee325617b3b4b023560bf2abbbf"
-  integrity sha512-RD15knQoL3KsQ4s1bWESblQ+eh2mFDcUzziC16U9MrB6cIe4mMmqwM6Cov5kkAoLTiCrb0N8dzpAAImqOKDM/g==
+"@quinscape/automaton-js@^0.5.7":
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/@quinscape/automaton-js/-/automaton-js-0.5.7.tgz#c3198bd19c99a8e0f3326a2cd823a0c457eb51a0"
+  integrity sha512-bV4Br583xjfXmvkDJ79Iu7apOaLidEJ/HHVJFwFi2YfcTQqzWJ/dJ4fX/lZPaIfCCsxBfTOS2SbLtdz1Z21NeQ==
   dependencies:
     "@popperjs/core" "^2.11.0"
     ajv "^8.8.2"
     classnames "^2.3.1"
-    domainql-form "^3.7.5"
+    d3-flextree "^2.1.2"
+    domainql-form "^3.7.12"
     downshift "^6.1.7"
     graphql "^16.0.1"
     history "^5.1.0"
@@ -1927,6 +1928,18 @@ csstype@^3.0.2, csstype@^3.0.9:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.10.tgz#2ad3a7bed70f35b965707c092e5f30b327c290e5"
   integrity sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==
 
+d3-flextree@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/d3-flextree/-/d3-flextree-2.1.2.tgz#1f0419f4e6c972e096dd884627a87b6b38e7ba73"
+  integrity sha512-gJiHrx5uTTHq44bjyIb3xpbmmdZcWLYPKeO9EPVOq8EylMFOiH2+9sWqKAiQ4DcFuOZTAxPOQyv0Rnmji/g15A==
+  dependencies:
+    d3-hierarchy "^1.1.5"
+
+d3-hierarchy@^1.1.5:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/d3-hierarchy/-/d3-hierarchy-1.1.9.tgz#2f6bee24caaea43f8dc37545fa01628559647a83"
+  integrity sha512-j8tPxlqh1srJHAtxfvOUwKNYJkQuBFdM1+JAUfq6xqH5eAqf93L7oG1NVqDa4CpFZNvnNKtCYEUC8KY9yEn9lQ==
+
 debug@4.3.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
@@ -2023,28 +2036,10 @@ dom-helpers@^5.0.1:
     "@babel/runtime" "^7.8.7"
     csstype "^3.0.2"
 
-domainql-form@^3.7.11:
-  version "3.7.11"
-  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.7.11.tgz#dfe68e2db9be83133ef699e6746fd010038167c6"
-  integrity sha512-FSVXUiULjKn+AEX/xp0i92gVkqx+Wp23NkNGKJNV5ZCSLimcxcjokAalNRGCU/cGEPyfHZoF0lKa03dhVU3w9g==
-  dependencies:
-    classnames "^2.3.1"
-    lodash.debounce "^4.0.8"
-    lodash.get "^4.4.2"
-    lodash.isequal "^4.5.0"
-    lodash.set "^4.3.2"
-    lodash.topath "^4.5.2"
-    mobx "^6.3.8"
-    mobx-react-lite "^3.2.2"
-    mobx-utils "^6.0.4"
-    prop-types "^15.7.2"
-    react "^17.0.2"
-    use-debounce "^7.0.1"
-
-domainql-form@^3.7.5:
-  version "3.7.5"
-  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.7.5.tgz#fcd98f7f0e5d02a5ea7f34f63a317d5be9480eb1"
-  integrity sha512-DtGafhlS4192SKvh6NFIAyqrjIvI62JMLfK3yizT5rwUYgio/s2hw6mjxN8n6fz2wEu7fzbNOUbQy+wQEkE08g==
+domainql-form@^3.7.12:
+  version "3.7.12"
+  resolved "https://registry.yarnpkg.com/domainql-form/-/domainql-form-3.7.12.tgz#f53b0b96f0c408e5e9ab6f6e49d34100e2c63883"
+  integrity sha512-9bjpn0kOV1Ct2cap3Hgbiri71GSkOGfobohjwWWiuuldbanJDPipp5XfcsnQ6AThFT/5hms+ylolsiRkuM105A==
   dependencies:
     classnames "^2.3.1"
     lodash.debounce "^4.0.8"
