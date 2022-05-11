@@ -136,7 +136,7 @@ const PlughList = new ViewState(
                     <DataGrid.Column
                         name="extra"
                         filter={
-                            val => field("name")
+                            (fieldName, val) => field("name")
                                 .concat(value(':'))
                                 .concat(field('num'))
                                 .containsIgnoreCase(value(val, 'String'))

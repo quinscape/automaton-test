@@ -126,7 +126,7 @@ const ExtFilterHome = new ViewState("ExtFilterHome", (process, scope) => ({
                 <DataGrid.Column name="numb" filter="between"/>
                 <DataGrid.Column
                     heading={ i18n("Sum") }
-                    filter={ (min,max) => (
+                    filter={ (fieldName, min, max) => (
                         field("numa")
                             .add(
                                 field(

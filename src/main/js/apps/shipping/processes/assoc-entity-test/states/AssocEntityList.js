@@ -93,7 +93,7 @@ const AssocEntityList = new ViewState("AssocEntityList", (process, scope) => ({
                 <DataGrid.Column
                     heading={ ("Left") }
                     filter={
-                        val => field("baz.name")
+                        (fieldName, val) => field("baz.name")
                             .containsIgnoreCase(
                                 value(
                                     val,
@@ -117,7 +117,7 @@ const AssocEntityList = new ViewState("AssocEntityList", (process, scope) => ({
                 <DataGrid.Column
                     heading={ ("Right") }
                     filter={
-                        val => field("value.name")
+                        (fieldName, val) => field("value.name")
                             .containsIgnoreCase(
                                 value(
                                     val,
