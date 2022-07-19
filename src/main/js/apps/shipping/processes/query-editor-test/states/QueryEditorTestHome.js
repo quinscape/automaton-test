@@ -39,8 +39,6 @@ const QueryEditorTestHome = new ViewState(
                             "id": true
                         }
                     }}
-                    workingSet={scope.workingSet}
-                    containerPath="condition"
                     columnNameRenderer={(value, {origin, isDirectory}) => {
                         if(origin === QueryEditor.ORIGIN_FIELD_SELECTION_TOKEN_LIST) {
                             console.log(value, isDirectory);
