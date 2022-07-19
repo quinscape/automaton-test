@@ -1,5 +1,5 @@
-import React from "react";
-import { Button, ConditionEditor, i18n, ViewState } from "@quinscape/automaton-js";
+import React, {useState} from "react";
+import { Button, ConditionEditor, i18n, ViewState, config, SelectionTreeModal } from "@quinscape/automaton-js";
 import cx from "classnames";
 import { ButtonToolbar, Col, Row } from "reactstrap";
 import { testCases } from "../condition-editor-test";
@@ -21,12 +21,41 @@ const ConditionEditorTestHome = new ViewState(
 
     const { scope } = env;
 
+    const [treeSelectionModalOpen, setTreeSelectionModalOpen] = useState(false);
+
+    console.log(config.inputSchema);
+
     return (
         <Row className="mt-3">
             <Col>
                 <h1>Condition-Test Test Home</h1>
 
                 <ButtonToolbar>
+                    <button
+                        type="button"
+                        className={ cx("btn btn-secondary mr-1") }
+                        onClick={() => {
+                            setTreeSelectionModalOpen(true);
+                        }}
+                    >
+                        TREEEE
+                    </button>
+                    <SelectionTreeModal
+                        modalHeader="TIMBEEEER (by Pitbull feat. Kesha)"
+                        toggle={() => setTreeSelectionModalOpen(!treeSelectionModalOpen)}
+                        isOpen={treeSelectionModalOpen}
+                        selected={[]}
+                        onSubmit={(selectedElements) => {
+                            console.log(selectedElements)
+                        }}
+                        treeContent={{
+                            "id": true,
+                            "bstId": true,
+                            "ABst": {
+                                "id": true
+                            }
+                        }}
+                    />
                     <Button
                         className={ cx("btn btn-secondary mr-1") }
                         transition="test"
@@ -86,6 +115,7 @@ const ConditionEditorTestHome = new ViewState(
                     rootType={ scope.rootType }
                     container={ scope }
                     path="condition"
+                    fields={[{name: "id", label: "Id"}, {name: "name", label: "Name"}, {name: "num", label: "Nummer"}]} //TODO: auslesen und so
                 />
 
 
