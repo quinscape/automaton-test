@@ -4,9 +4,14 @@ body
 {
 }
 
-.brand-icon
+#app-navbar .brand-icon
 {
     font-weight: normal;
+}
+
+#app-navbar .dropdown-menu {
+    overflow-y: auto;
+    max-height: 80vh;
 }
 
 .react-calendar__tile--active
