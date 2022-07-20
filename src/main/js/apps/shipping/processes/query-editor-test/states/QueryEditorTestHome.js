@@ -56,6 +56,10 @@ const QueryEditorTestHome = new ViewState(
                             return value;
                         }
                     }}
+                    saveButtonOnClick={(queryConfiguration) => {
+                        console.log("QUERY EDITOR SAVE");
+                        console.log(queryConfiguration);
+                    }}
                 />
             </Col>
         </Row>
