@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {config, QueryEditor, ViewState} from "@quinscape/automaton-js";
+import {config, QueryEditor, ViewState, createTreeRepresentationForInputSchema} from "@quinscape/automaton-js";
 import {Col, Row} from "reactstrap";
 import {Icon} from "domainql-form";
 
@@ -20,7 +20,12 @@ const QueryEditorTestHome = new ViewState(
 
     const { scope } = env;
 
-    console.log(config.inputSchema);
+    console.log("unfiltered tree representation:", createTreeRepresentationForInputSchema("AppUser"));
+
+    const treeRepresentation = createTreeRepresentationForInputSchema("AppUser", ({fieldPath}) => {
+        return !fieldPath.endsWith("bazLinks") && !fieldPath.endsWith("id");
+    });
+    console.log("filtered tree representation:", treeRepresentation);
 
     return (
         <Row className="mt-3">
@@ -31,14 +36,8 @@ const QueryEditorTestHome = new ViewState(
                     key={ scope.counter }
                     className="mb-3"
                     header={"Query Editor Test"}
-                    // columnNameRenderer
-                    availableColumnTreeObject={{
-                        "id": true,
-                        "bstId": true,
-                        "ABst": {
-                            "id": true
-                        }
-                    }}
+                    availableColumnTreeObject={treeRepresentation}
+                    rootType="AppUser"
                     columnNameRenderer={(value, {origin, isDirectory}) => {
                         if(origin === QueryEditor.ORIGIN_FIELD_SELECTION_TOKEN_LIST) {
                             console.log(value, isDirectory);
