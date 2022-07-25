@@ -57,7 +57,54 @@ const QueryEditorTestHome = new ViewState(
                     }}
                     saveButtonOnClick={(queryConfiguration) => {
                         console.log("QUERY EDITOR SAVE");
-                        console.log(queryConfiguration);
+                        console.log(JSON.parse(JSON.stringify(queryConfiguration)));
+                    }}
+                    queryConfiguration={{
+                        "select": [
+                            "roles",
+                            "login",
+                            "foos.created"
+                        ],
+                        "where": {
+                            "type": "Condition",
+                            "name": "or",
+                            "operands": [
+                                {
+                                    "type": "Condition",
+                                    "name": "containsIgnoreCase",
+                                    "operands": [
+                                        {
+                                            "type": "Field",
+                                            "name": "foos.name"
+                                        },
+                                        {
+                                            "type": "Value",
+                                            "scalarType": "String",
+                                            "value": "gfd"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Condition",
+                                    "name": "equal",
+                                    "operands": [
+                                        {
+                                            "type": "Field",
+                                            "name": "login"
+                                        },
+                                        {
+                                            "type": "Value",
+                                            "scalarType": "String",
+                                            "value": "gfdsgfdsxg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "sort": [
+                            "login",
+                            "!foos.num"
+                        ]
                     }}
                 />
             </Col>
