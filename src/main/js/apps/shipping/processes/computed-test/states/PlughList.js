@@ -60,6 +60,7 @@ const PlughList = new ViewState(
             action: t => {
 
                 console.log("to-detail, context = ", t.context);
+                console.log(Q_PlughDetail.getQueryDefinition());
 
                 return Q_PlughDetail.execute({
                     config: {
