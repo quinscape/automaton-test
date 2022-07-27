@@ -20,12 +20,11 @@ const QueryEditorTestHome = new ViewState(
 
     const { scope } = env;
 
-    console.log("unfiltered tree representation:", createTreeRepresentationForInputSchema("AppUser"));
-
-    const treeRepresentation = createTreeRepresentationForInputSchema("AppUser", ({fieldPath}) => {
+    const pathFilterCallback = ({fieldPath}) => {
         return !fieldPath.endsWith("bazLinks") && !fieldPath.endsWith("id");
-    });
-    console.log("filtered tree representation:", treeRepresentation);
+    };
+
+    console.log("unfiltered tree:", createTreeRepresentationForInputSchema("AppUser", {recursive: true}));
 
     return (
         <Row className="mt-3">
@@ -36,24 +35,27 @@ const QueryEditorTestHome = new ViewState(
                     key={ scope.counter }
                     className="mb-3"
                     header={"Query Editor Test"}
-                    availableColumnTreeObject={treeRepresentation}
                     rootType="AppUser"
-                    columnNameRenderer={(value, {origin, isDirectory}) => {
-                        if(origin === QueryEditor.ORIGIN_FIELD_SELECTION_TOKEN_LIST) {
-                            console.log(value, isDirectory);
+                    schemaResolveFilterCallback={pathFilterCallback}
+                    columnNameRenderer={(value, {
+                        isTree = false,
+                        isDirectory = false
+                    } = {}) => {
+                        console.log("render: %s; tree: %s; dir: %s", value, isTree, isDirectory);
+                        if (isTree) {
+                            if (isDirectory) {
+                                return (
+                                    <>
+                                        <Icon className="fa-book mr-2"/>
+                                        {
+                                            value
+                                        }
+                                    </>
+                                )
+                            }
+                            return value.split(".").at(-1);
                         }
-                        if (isDirectory) {
-                            return (
-                                <>
-                                    <Icon className="fa-book mr-2"/>
-                                    {
-                                        value
-                                    }
-                                </>
-                            )
-                        } else {
-                            return value;
-                        }
+                        return value;
                     }}
                     saveButtonOnClick={(queryConfiguration) => {
                         console.log("QUERY EDITOR SAVE");
