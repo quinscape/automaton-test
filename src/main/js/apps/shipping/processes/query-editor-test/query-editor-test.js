@@ -14,12 +14,64 @@ export default class QueryEditorTest {
     rootType = "Foo"
 
     @observable
-    condition = null;
+    queryConfig = {
+        "select": [
+            "roles",
+            "login",
+            "foos.created"
+        ],
+        "where": {
+            "type": "Condition",
+            "name": "or",
+            "operands": [
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "foos.name"
+                        },
+                        // {
+                        //     "type": "Field",
+                        //     "name": "foos.num"
+                        // },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": "gfd"
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "equal",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "login"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": "gfdsgfdsxg"
+                        }
+                    ]
+                }
+            ]
+        },
+        "sort": [
+            "login",
+            "!foos.num"
+        ]
+    };
 
 
     constructor()
     {
         makeObservable(this)
     }
+
+
 
 }

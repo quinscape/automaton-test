@@ -1,7 +1,8 @@
 import React, {useState} from "react";
-import {config, QueryEditor, ViewState, createTreeRepresentationForInputSchema} from "@quinscape/automaton-js";
+import {config, QueryEditor, ViewState, createTreeRepresentationForInputSchema, decompileFilter} from "@quinscape/automaton-js";
 import {Col, Row} from "reactstrap";
 import {Icon} from "domainql-form";
+import { toJS } from "mobx"
 
 
 const QueryEditorTestHome = new ViewState(
@@ -56,56 +57,15 @@ const QueryEditorTestHome = new ViewState(
                         }
                     }}
                     saveButtonOnClick={(queryConfiguration) => {
+
+                        const { select, where, sort } = queryConfiguration
+
                         console.log("QUERY EDITOR SAVE");
-                        console.log(JSON.parse(JSON.stringify(queryConfiguration)));
+                        console.log("SELECT", toJS(select))
+                        console.log("CONDITION", decompileFilter(where))
+                        console.log("SORT", toJS(sort))
                     }}
-                    queryConfiguration={{
-                        "select": [
-                            "roles",
-                            "login",
-                            "foos.created"
-                        ],
-                        "where": {
-                            "type": "Condition",
-                            "name": "or",
-                            "operands": [
-                                {
-                                    "type": "Condition",
-                                    "name": "containsIgnoreCase",
-                                    "operands": [
-                                        {
-                                            "type": "Field",
-                                            "name": "foos.name"
-                                        },
-                                        {
-                                            "type": "Value",
-                                            "scalarType": "String",
-                                            "value": "gfd"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Condition",
-                                    "name": "equal",
-                                    "operands": [
-                                        {
-                                            "type": "Field",
-                                            "name": "login"
-                                        },
-                                        {
-                                            "type": "Value",
-                                            "scalarType": "String",
-                                            "value": "gfdsgfdsxg"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        "sort": [
-                            "login",
-                            "!foos.num"
-                        ]
-                    }}
+                    queryConfiguration={ scope.queryConfig }
                 />
             </Col>
         </Row>
