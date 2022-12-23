@@ -1,71 +1,8 @@
-import React, {useEffect, useState} from "react";
-import {QueryEditor, ViewState, createTreeRepresentationForInputSchema} from "@quinscape/automaton-js";
+import React, {useEffect} from "react";
+import {QueryEditor, ViewState, createTreeRepresentationForInputSchema, decompileFilter} from "@quinscape/automaton-js";
 import {Col, Row} from "reactstrap";
 import {Icon} from "domainql-form";
-
-
-const TEST_DATA = {
-    "columns": [
-        "roles",
-        "login",
-        "foos.created"
-    ],
-    "condition": {
-        "type": "Condition",
-        "name": "or",
-        "operands": [
-            {
-                "type": "Condition",
-                "name": "containsIgnoreCase",
-                "operands": [
-                    {
-                        "type": "Field",
-                        "name": "foos.name"
-                    },
-                    {
-                        "type": "Value",
-                        "scalarType": "String",
-                        "value": "gfd"
-                    }
-                ]
-            },
-            {
-                "type": "Condition",
-                "name": "equal",
-                "operands": [
-                    {
-                        "type": "Field",
-                        "name": "login"
-                    },
-                    {
-                        "type": "Value",
-                        "scalarType": "String",
-                        "value": "gfdsgfdsxg"
-                    }
-                ]
-            },
-            {
-                "type": "Condition",
-                "name": "equal",
-                "operands": [
-                    {
-                        "type": "Field",
-                        "name": "foos.created"
-                    },
-                    {
-                        "type": "Value",
-                        "scalarType": "Date",
-                        "value": ""
-                    }
-                ]
-            }
-        ]
-    },
-    "sort": [
-        "login",
-        "!foos.num"
-    ]
-};
+import { toJS } from "mobx"
 
 
 const QueryEditorTestHome = new ViewState(
@@ -85,7 +22,13 @@ const QueryEditorTestHome = new ViewState(
     const { scope } = env;
 
     useEffect(() => {
-        console.log("SCOPE DATA CHANGE:", JSON.parse(JSON.stringify(scope.editorQuery)));
+        const { columns, condition, sort } = scope.editorQuery;
+
+        console.group("SCOPE DATA CHANGE");
+        console.log("SELECT", `[\n\t${columns.join("\n\t")}\n]`);
+        console.log("CONDITION", decompileFilter(condition));
+        console.log("SORT", `[\n\t${sort.map(a => JSON.stringify(a)).join("\n\t")}\n]`);
+        console.groupEnd("SCOPE DATA CHANGE");
     }, [
         scope.editorQuery.columns,
         scope.editorQuery.condition,
@@ -96,7 +39,7 @@ const QueryEditorTestHome = new ViewState(
         return !fieldPath.endsWith("bazLinks") && !fieldPath.endsWith("id");
     };
 
-    //console.log("unfiltered tree:", createTreeRepresentationForInputSchema("AppUser", {recursive: true}));
+    console.log("unfiltered tree:", createTreeRepresentationForInputSchema("AppUser", {recursive: true}));
 
     return (
         <Row className="mt-3">
@@ -134,12 +77,24 @@ const QueryEditorTestHome = new ViewState(
                         return fieldData.description || value;
                     }}
                     saveButtonOnClick={(queryConfiguration) => {
-                        console.log("QUERY EDITOR SAVE:", JSON.parse(JSON.stringify(queryConfiguration)));
+                        const { columns, condition, sort } = queryConfiguration
+
+                        console.group("QUERY EDITOR SAVE");
+                        console.log("SELECT", toJS(columns));
+                        console.log("CONDITION", decompileFilter(condition));
+                        console.log("SORT", toJS(sort));
+                        console.groupEnd("QUERY EDITOR SAVE");
                     }}
                     onChange={(queryConfiguration) => {
-                        console.log("QUERY EDITOR CHANGE:", JSON.parse(JSON.stringify(queryConfiguration)));
+                        const { columns, condition, sort } = queryConfiguration
+
+                        console.group("QUERY EDITOR CHANGE");
+                        console.log("SELECT", toJS(columns));
+                        console.log("CONDITION", decompileFilter(condition));
+                        console.log("SORT", toJS(sort));
+                        console.groupEnd("QUERY EDITOR CHANGE");
                     }}
-                    queryConfiguration={TEST_DATA}
+                    queryConfiguration={ scope.queryConfig }
                 />
             </Col>
         </Row>

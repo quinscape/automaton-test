@@ -18,6 +18,74 @@ export default class QueryEditorTest {
         columns: null,
         condition: null,
         sort: null
+    }
+
+    @observable
+    queryConfig = {
+        "columns": [
+            "roles",
+            "login",
+            "foos.created"
+        ],
+        "condition": {
+            "type": "Condition",
+            "name": "or",
+            "operands": [
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "foos.name"
+                        },
+                        // {
+                        //     "type": "Field",
+                        //     "name": "foos.num"
+                        // },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": "gfd"
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "equal",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "login"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": "gfdsgfdsxg"
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "equal",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "foos.created"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "Date",
+                            "value": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "sort": [
+            "login",
+            "!foos.num"
+        ]
     };
 
 
@@ -25,5 +93,7 @@ export default class QueryEditorTest {
     {
         makeObservable(this)
     }
+
+
 
 }
