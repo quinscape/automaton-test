@@ -14,7 +14,11 @@ export default class QueryEditorTest {
     rootType = "Foo"
 
     @observable
-    condition = null;
+    editorQuery = {
+        columns: null,
+        condition: null,
+        sort: null
+    };
 
 
     constructor()
