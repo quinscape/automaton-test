@@ -62,7 +62,16 @@ const QueryEditorTestHome = new ViewState(
 
                         console.log("QUERY EDITOR SAVE");
                         console.log("SELECT", toJS(select))
-                        console.log("CONDITION", decompileFilter(where))
+                        console.log("WHERE", decompileFilter(where))
+                        console.log("SORT", toJS(sort))
+                    }}
+                    onChange={(queryConfiguration) => {
+
+                        const { select, where, sort } = queryConfiguration
+
+                        console.log("QUERY EDITOR CHANGE");
+                        console.log("SELECT", toJS(select))
+                        console.log("WHERE", decompileFilter(where))
                         console.log("SORT", toJS(sort))
                     }}
                     queryConfiguration={ scope.queryConfig }
