@@ -23,6 +23,7 @@ module.exports = {
     entry: {
         "shipping": "./src/main/js/apps/shipping/shipping-startup.js",
         "v-login": "./src/main/js/login.js",
+        "v-error": "./src/main/js/error.js",
     },
 
     devtool: "source-map",

@@ -104,6 +104,9 @@ public class WebConfiguration
                         ctx.provideViewData("processes", ProcessListUtil.listProcesses("shipping", staticFnHandle));
                     }
                 )
+                .withViewDataProvider(
+                    new AutomatonTestErrorProvider()
+                )
                 .build()
         );
     }

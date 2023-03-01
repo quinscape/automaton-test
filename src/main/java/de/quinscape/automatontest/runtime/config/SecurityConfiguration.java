@@ -4,8 +4,10 @@ import de.quinscape.automaton.runtime.config.AutomatonCSRFExceptions;
 import de.quinscape.automaton.runtime.auth.AppAuthenticationService;
 import de.quinscape.automaton.runtime.auth.DefaultPersistentTokenRepository;
 import de.quinscape.automaton.runtime.controller.GraphQLController;
+import de.quinscape.automaton.runtime.config.AutomatonSessionExpiredStrategy;
 import de.quinscape.automatontest.domain.tables.pojos.AppLogin;
 import de.quinscape.automatontest.domain.tables.pojos.AppUser;
+import javax.servlet.Filter;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,9 +17,14 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.session.SessionRegistry;
+import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import org.springframework.security.web.authentication.session.ConcurrentSessionControlAuthenticationStrategy;
+import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
+import org.springframework.security.web.session.ConcurrentSessionFilter;
 
 @Configuration
 //@Import(MethodSecurityConfiguration.class)
@@ -120,6 +127,29 @@ public class SecurityConfiguration
             dslContext,
             "app_user",
             AppUser.class
+        );
+    }
+
+    @Bean
+    public SessionRegistry sessionRegistry()
+    {
+        return new SessionRegistryImpl();
+    }
+
+    @Bean
+    public SessionAuthenticationStrategy sessionAuthenticationStrategy()
+    {
+        return new ConcurrentSessionControlAuthenticationStrategy(
+            sessionRegistry()
+        );
+    }
+
+    @Bean
+    public Filter concurrentSessionFilter()
+    {
+        return new ConcurrentSessionFilter(
+            sessionRegistry(),
+            new AutomatonSessionExpiredStrategy()
         );
     }
 }
