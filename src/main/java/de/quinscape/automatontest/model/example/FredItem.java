@@ -1,6 +1,6 @@
 package de.quinscape.automatontest.model.example;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * Item within a Fred

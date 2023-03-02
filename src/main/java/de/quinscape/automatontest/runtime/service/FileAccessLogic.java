@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.svenson.tokenize.InputStreamSource;
 
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletContext;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;

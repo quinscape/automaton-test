@@ -1,26 +1,25 @@
 package de.quinscape.automatontest.runtime.config;
 
-import de.quinscape.automaton.runtime.config.AutomatonCSRFExceptions;
 import de.quinscape.automaton.runtime.auth.AppAuthenticationService;
 import de.quinscape.automaton.runtime.auth.DefaultPersistentTokenRepository;
-import de.quinscape.automaton.runtime.controller.GraphQLController;
+import de.quinscape.automaton.runtime.config.AutomatonCSRFExceptions;
 import de.quinscape.automaton.runtime.config.AutomatonSessionExpiredStrategy;
 import de.quinscape.automatontest.domain.tables.pojos.AppLogin;
 import de.quinscape.automatontest.domain.tables.pojos.AppUser;
-import javax.servlet.Filter;
+import jakarta.servlet.Filter;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 import org.springframework.security.web.authentication.session.ConcurrentSessionControlAuthenticationStrategy;
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
@@ -29,9 +28,8 @@ import org.springframework.security.web.session.ConcurrentSessionFilter;
 @Configuration
 //@Import(MethodSecurityConfiguration.class)
 // Enable method security ( with @PreAuthorize/@PostAuthorize annotations)
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration
-    extends WebSecurityConfigurerAdapter
 {
 
     private final DSLContext dslContext;
@@ -62,55 +60,64 @@ public class SecurityConfiguration
     }
 
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception
     {
+        
         http
-            .authorizeRequests()
-            .antMatchers(
-                PUBLIC_URIS
-            ).permitAll()
-
-            .antMatchers("/admin/**")
-                .hasRole("ADMIN")
-
-            .antMatchers("**")
-                .hasRole("USER")
-
+            .formLogin()
+                .loginPage("/v/v-login/")
+                .loginProcessingUrl("/login_check")
+                .defaultSuccessUrl("/shipping/")
+                .permitAll()
             .and()
-                .formLogin()
-                    .loginPage("/v/v-login/")
-                    .loginProcessingUrl("/login_check")
-                    .defaultSuccessUrl("/shipping/")
-                    .permitAll()
+            .logout()
+            .logoutUrl("/logout")
+            .logoutSuccessUrl("/")
+            .deleteCookies("remember-me")
             .and()
+            .authorizeHttpRequests(
+                auth ->
+                    auth.requestMatchers(PUBLIC_URIS).permitAll()
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/**").hasRole("USER")
+            )
 
             // exempt GRAPHQL_DEV_URI from CSRF requirements if allowDevGraphQLAccess is set
             .csrf()
-                .requireCsrfProtectionMatcher(
-                    new AutomatonCSRFExceptions(crsfDevExceptions)
-                )
+            .requireCsrfProtectionMatcher(
+                new AutomatonCSRFExceptions(crsfDevExceptions)
+            )
             .and()
-            .logout()
-                .logoutUrl("/logout")
-                .logoutSuccessUrl("/")
-                .deleteCookies("remember-me")
-                .and()
-                .rememberMe()
-                    .key("Y.hOf+S/Ze3MY@O5bSxt")
-                    .tokenRepository(persistentTokenRepository())
-                    .userDetailsService(userDetailsServiceBean());
-
-    }
-    
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception
-    {
-        auth
+            .rememberMe()
+            .key("Y.hOf+S/Ze3MY@O5bSxt")
+            .tokenRepository(persistentTokenRepository())
             .userDetailsService(userDetailsServiceBean())
-            .passwordEncoder(new BCryptPasswordEncoder());
+            .and()
 
+            .addFilterBefore(concurrentSessionFilter(), ConcurrentSessionFilter.class)
+            .sessionManagement()
+            .sessionAuthenticationStrategy(sessionAuthenticationStrategy())
+            // configure the number of concurrent *sessions* (not windows), -1 for unlimited
+            .maximumSessions(-1);
+        return http.build();
     }
+
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception
+//    {
+//        auth
+//            .userDetailsService(userDetailsServiceBean())
+//            .passwordEncoder(new BCryptPasswordEncoder());
+//
+//    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder()
+    {
+        return new BCryptPasswordEncoder();
+    }
+
 
     @Bean
     public PersistentTokenRepository persistentTokenRepository()
@@ -120,7 +127,6 @@ public class SecurityConfiguration
 
 
     @Bean
-    @Override
     public UserDetailsService userDetailsServiceBean()
     {
         return new AppAuthenticationService<AppUser>(

@@ -29,9 +29,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import javax.annotation.PostConstruct;
 
 @SpringBootApplication(
-    exclude = {
-        DataSourceAutoConfiguration.class
-    },
     scanBasePackageClasses = {
         ShippingLogic.class,
         JsEntryPointController.class

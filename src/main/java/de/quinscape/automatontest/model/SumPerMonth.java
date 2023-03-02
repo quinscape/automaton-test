@@ -2,8 +2,8 @@ package de.quinscape.automatontest.model;
 
 import de.quinscape.domainql.jooq.GeneratedDomainObject;
 
-import javax.persistence.Column;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Table;
 
 @Table(name = "sum_per_month")
 public class SumPerMonth
