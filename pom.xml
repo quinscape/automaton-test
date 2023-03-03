@@ -23,7 +23,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
         <spring.core.version>6.0.5</spring.core.version>
-        <atomikos.version>5.0.9</atomikos.version>
         <spring.profiles.active>dev</spring.profiles.active>
 
         <!--
@@ -232,7 +231,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.5.3</version>
             </plugin>
 
 
@@ -407,8 +405,6 @@
                 <!-- Specify the plugin configuration.
                      The configuration format is the same as for the standalone code generator -->
                 <configuration>
-                    <logging>DEBUG</logging>
-
 
                     <!-- JDBC connection parameters -->
                     <jdbc>
@@ -428,7 +424,6 @@
                             <inputCatalog>public</inputCatalog>
                               -->
                             <inputSchema>public</inputSchema>
-                            
                             <forcedTypes>
                                 <forcedType>
                                     <userType>de.quinscape.domainql.jsonb.JSONB</userType>
