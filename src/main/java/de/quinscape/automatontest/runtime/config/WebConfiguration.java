@@ -1,6 +1,9 @@
 package de.quinscape.automatontest.runtime.config;
 
 import de.quinscape.automaton.model.js.StaticFunctionReferences;
+import de.quinscape.automaton.runtime.controller.GraphQLController;
+import de.quinscape.automaton.runtime.gzip.AutomatonCompressionFilter;
+import de.quinscape.automaton.runtime.gzip.AutomatonPreZipFilter;
 import de.quinscape.automaton.runtime.provider.AlternateStyleProvider;
 import de.quinscape.automaton.runtime.provider.AutomatonJsViewProvider;
 import de.quinscape.automaton.runtime.provider.StyleSheetDefinition;
@@ -14,6 +17,9 @@ import graphql.schema.GraphQLSchema;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.core.env.Environment;
@@ -23,6 +29,8 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import jakarta.servlet.ServletContext;
+
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
@@ -80,7 +88,7 @@ public class WebConfiguration
         registry.viewResolver(
             JsViewResolver.newResolver(servletContext, "WEB-INF/template-alternate-styles.html")
                 .withResourceLoader(resourceLoader)
-
+                
                 // Process injections and general miscellaneous data we would normally
                 // inject by hand in a Spring-JsView application
                 .withViewDataProvider(
@@ -109,6 +117,58 @@ public class WebConfiguration
                 )
                 .build()
         );
+    }
+
+
+    /**
+     * Compression for static build product resources
+     */
+    @Bean
+    public FilterRegistrationBean<AutomatonPreZipFilter> preZipFilter(
+        @Value("${automaton.prezip.workdir:}") String workDir
+
+    ) throws IOException
+    {
+        final FilterRegistrationBean<AutomatonPreZipFilter> bean = new FilterRegistrationBean<>();
+
+        bean.setFilter(
+            new AutomatonPreZipFilter(
+                workDir
+            )
+        );
+        
+        bean.addUrlPatterns(
+            "/js/*",
+            "/css/*",
+            "/webfonts/*"
+        );
+        bean.setOrder(-2);
+
+        return bean;
+    }
+
+
+    /**
+     * Compression for dynamic controller output
+     */
+    @Bean
+    public FilterRegistrationBean<AutomatonCompressionFilter> compressionFilter()
+    {
+        final FilterRegistrationBean<AutomatonCompressionFilter> bean = new FilterRegistrationBean<>();
+
+        bean.setFilter(
+            new AutomatonCompressionFilter()
+        );
+
+        bean.addUrlPatterns(
+            "/shipping/*",
+            GraphQLController.GRAPHQL_URI,
+            "/_auto/process/*"
+        );
+
+        bean.setOrder(-1);
+
+        return bean;
     }
 
 
