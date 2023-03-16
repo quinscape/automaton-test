@@ -1,6 +1,5 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {config, QueryEditor, ViewState, createTreeRepresentationForInputSchema, decompileFilter} from "@quinscape/automaton-js";
-import { toJSON } from "@quinscape/automaton-js/filter";
 import { ButtonToolbar, Col, Row } from "reactstrap"
 import {Icon} from "domainql-form";
 import { toJS } from "mobx"
