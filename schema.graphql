@@ -1242,6 +1242,39 @@ enum ResultType {
     WARNING
 }
 
+"BigDecimal wrapped as string"
+scalar BigDecimal
+
+"8-bit integer"
+scalar Byte
+
+"Map graph representing JOOQ conditions"
+scalar Condition
+
+"SQL date equivalent"
+scalar Date
+
+"Container for generic domain objects as scalar"
+scalar DomainObject
+
+"Map graph representing a JOOQ field expression"
+scalar FieldExpression
+
+"Encapsulates a dynamically evaluated FilterDSL value"
+scalar FilterFunction
+
+"Container for generic scalar values"
+scalar GenericScalar
+
+"Postgresql jsonb type equivalent"
+scalar JSONB
+
+"64-bit/53-bit integer"
+scalar Long
+
+"SQL timestamp equivalent"
+scalar Timestamp
+
 "Domain object used in ext-filter-test. Generated from public.bar in the database dump."
 input BarInput {
     created: Timestamp
@@ -1507,9 +1540,9 @@ input QueryConfigInput {
     "Optional unique query identifier. Useful for server-side query implementations."
     id: String
     "Current offset within the paginated results. The number of rows to skip in the results."
-    offset: Int
+    offset: Int = 0
     "Maximum number of paginated results.,"
-    pageSize: Int
+    pageSize: Int = 10
     "Current sort order for the query."
     sortFields: [FieldExpression]
 }
@@ -1594,37 +1627,3 @@ input WaldoInput {
     opt2: Date
     timestamp: Timestamp!
 }
-
-
-"BigDecimal wrapped as string"
-scalar BigDecimal
-
-"Built-in Byte as Int"
-scalar Byte
-
-"Map graph representing JOOQ conditions"
-scalar Condition
-
-"SQL date equivalent"
-scalar Date
-
-"Container for generic domain objects as scalar"
-scalar DomainObject
-
-"Map graph representing a JOOQ field expression"
-scalar FieldExpression
-
-"Encapsulates a dynamically evaluated FilterDSL value"
-scalar FilterFunction
-
-"Container for generic scalar values"
-scalar GenericScalar
-
-"Postgresql jsonb type equivalent"
-scalar JSONB
-
-"Long type"
-scalar Long
-
-"SQL timestamp equivalent"
-scalar Timestamp
