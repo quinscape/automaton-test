@@ -1,0 +1,737 @@
+{
+    "None": {
+        "rootType": "Foo",
+        "condition": null
+    },
+    "Minimal": {
+        "rootType": "Foo",
+        "condition": {
+            "type": "Condition",
+            "name": "containsIgnoreCase",
+            "operands": [
+                {
+                    "type": "Field",
+                    "name": ""
+                },
+                {
+                    "type": "Value",
+                    "scalarType": "String",
+                    "value": "",
+                    "name": null
+                }
+            ]
+        }
+    },
+    "Simple": {
+        "rootType": "Foo",
+        "condition": {
+            "type": "Condition",
+            "name": "containsIgnoreCase",
+            "operands": [
+                {
+                    "type": "Field",
+                    "name": "name"
+                },
+                {
+                    "type": "Value",
+                    "scalarType": "String",
+                    "value": "a",
+                    "name": null
+                }
+            ]
+        }
+    },
+    "Expression": {
+        "rootType": "Foo",
+        "condition": {
+            "type": "Condition",
+            "name": "and",
+            "operands": [
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Operation",
+                            "name": "sub",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "name"
+                                },
+                                {
+                                    "type": "Field",
+                                    "name": "description"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": "b",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "parent.name"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": "Fish",
+                            "name": null
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "Complex": {
+        "rootType": "Foo",
+        "condition": {
+            "type": "Condition",
+            "name": "or",
+            "operands": [
+                {
+                    "type": "Condition",
+                    "name": "and",
+                    "operands": [
+                        {
+                            "type": "Condition",
+                            "name": "containsIgnoreCase",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "name"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "String",
+                                    "value": "a",
+                                    "name": null
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Condition",
+                            "name": "eq",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "num"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "Int",
+                                    "value": 50,
+                                    "name": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "and",
+                    "operands": [
+                        {
+                            "type": "Condition",
+                            "name": "containsIgnoreCase",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "name"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "String",
+                                    "value": "b",
+                                    "name": null
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Condition",
+                            "name": "eq",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "num"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "Int",
+                                    "value": 100,
+                                    "name": null
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "Complex 2": {
+        "rootType": "Foo",
+        "condition": {
+            "type": "Condition",
+            "name": "or",
+            "operands": [
+                {
+                    "type": "Condition",
+                    "name": "and",
+                    "operands": [
+                        {
+                            "type": "Condition",
+                            "name": "containsIgnoreCase",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "name"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "String",
+                                    "value": "a",
+                                    "name": null
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Condition",
+                            "name": "containsIgnoreCase",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "num"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "Int",
+                                    "value": 50,
+                                    "name": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "and",
+                    "operands": [
+                        {
+                            "type": "Condition",
+                            "name": "containsIgnoreCase",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "name"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "String",
+                                    "value": "b",
+                                    "name": null
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Condition",
+                            "name": "containsIgnoreCase",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "num"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "Int",
+                                    "value": 100,
+                                    "name": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "description"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": "",
+                            "name": null
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "Complex 3": {
+        "rootType": "Foo",
+        "condition": {
+            "type": "Condition",
+            "name": "or",
+            "operands": [
+                {
+                    "type": "Condition",
+                    "name": "and",
+                    "operands": [
+                        {
+                            "type": "Condition",
+                            "name": "or",
+                            "operands": [
+                                {
+                                    "type": "Condition",
+                                    "name": "eq",
+                                    "operands": [
+                                        {
+                                            "type": "Field",
+                                            "name": "num"
+                                        },
+                                        {
+                                            "type": "Value",
+                                            "scalarType": "Int",
+                                            "value": 100,
+                                            "name": null
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Condition",
+                                    "name": "eq",
+                                    "operands": [
+                                        {
+                                            "type": "Field",
+                                            "name": "num"
+                                        },
+                                        {
+                                            "type": "Value",
+                                            "scalarType": "Int",
+                                            "value": 110,
+                                            "name": null
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Condition",
+                            "name": "or",
+                            "operands": [
+                                {
+                                    "type": "Condition",
+                                    "name": "eq",
+                                    "operands": [
+                                        {
+                                            "type": "Field",
+                                            "name": "num"
+                                        },
+                                        {
+                                            "type": "Value",
+                                            "scalarType": "Int",
+                                            "value": 200,
+                                            "name": null
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Condition",
+                                    "name": "eq",
+                                    "operands": [
+                                        {
+                                            "type": "Field",
+                                            "name": "num"
+                                        },
+                                        {
+                                            "type": "Value",
+                                            "scalarType": "Int",
+                                            "value": 210,
+                                            "name": null
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Condition",
+                            "name": "eq",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "num"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "Int",
+                                    "value": 300,
+                                    "name": null
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Condition",
+                            "name": "eq",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "num"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "Int",
+                                    "value": 310,
+                                    "name": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "description"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": "",
+                            "name": null
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "MixedSize": {
+        "rootType": "Foo",
+        "condition": {
+            "type": "Condition",
+            "name": "or",
+            "operands": [
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "description"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": ""
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "and",
+                    "operands": [
+                        {
+                            "type": "Condition",
+                            "name": "or",
+                            "operands": [
+                                {
+                                    "type": "Condition",
+                                    "name": "eq",
+                                    "operands": [
+                                        {
+                                            "type": "Field",
+                                            "name": "num"
+                                        },
+                                        {
+                                            "type": "Value",
+                                            "scalarType": "Int",
+                                            "value": 200
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Condition",
+                                    "name": "eq",
+                                    "operands": [
+                                        {
+                                            "type": "Field",
+                                            "name": "num"
+                                        },
+                                        {
+                                            "type": "Value",
+                                            "scalarType": "Int",
+                                            "value": 210
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Condition",
+                            "name": "eq",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "num"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "Int",
+                                    "value": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Condition",
+                            "name": "eq",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "num"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "Int",
+                                    "value": 300
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Condition",
+                            "name": "eq",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "num"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "Int",
+                                    "value": 310
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "MixedSizeFlipped": {
+        "rootType": "Foo",
+        "condition": {
+            "type": "Condition",
+            "name": "or",
+            "operands": [
+                {
+                    "type": "Condition",
+                    "name": "and",
+                    "operands": [
+                        {
+                            "type": "Condition",
+                            "name": "eq",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "num"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "Int",
+                                    "value": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Condition",
+                            "name": "or",
+                            "operands": [
+                                {
+                                    "type": "Condition",
+                                    "name": "eq",
+                                    "operands": [
+                                        {
+                                            "type": "Field",
+                                            "name": "num"
+                                        },
+                                        {
+                                            "type": "Value",
+                                            "scalarType": "Int",
+                                            "value": 200
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Condition",
+                                    "name": "eq",
+                                    "operands": [
+                                        {
+                                            "type": "Field",
+                                            "name": "num"
+                                        },
+                                        {
+                                            "type": "Value",
+                                            "scalarType": "Int",
+                                            "value": 210
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Condition",
+                            "name": "eq",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "num"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "Int",
+                                    "value": 300
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Condition",
+                            "name": "eq",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "num"
+                                },
+                                {
+                                    "type": "Value",
+                                    "scalarType": "Int",
+                                    "value": 310
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "description"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "MultiArg": {
+        "rootType": "Foo",
+        "condition": {
+            "type": "Condition",
+            "name": "between",
+            "operands": [
+                {
+                    "type": "Field",
+                    "name": "num"
+                },
+                {
+                    "type": "Value",
+                    "scalarType": "Int",
+                    "value": 100,
+                    "name": null
+                },
+                {
+                    "type": "Value",
+                    "scalarType": "Int",
+                    "value": 200,
+                    "name": null
+                }
+            ]
+        }
+    },
+    "Values": {
+        "rootType": "Foo",
+        "condition": {
+            "type": "Condition",
+            "name": "in",
+            "operands": [
+                {
+                    "type": "Field",
+                    "name": "name"
+                },
+                {
+                    "type": "Values",
+                    "scalarType": "String",
+                    "values": [
+                        "aaa",
+                        "bbb",
+                        "ccc"
+                    ]
+                }
+            ]
+        }
+    },
+    "AppUser" : {
+        "rootType" : "AppUser",
+        "fields" : [
+            "roles",
+            "login",
+            "foos.created"
+        ],
+        "condition" : {
+            "type": "Condition",
+            "name": "or",
+            "operands": [
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "foos.name"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": "gfd"
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "equal",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "login"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": "gfdsgfdsxg"
+                        }
+                    ]
+                }
+            ]
+        },
+        "sort" : [
+            "login",
+            "!foos.num"
+        ]
+    }
+}
