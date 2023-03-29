@@ -115,7 +115,7 @@ const ConditionEditorTestHome = new ViewState(
                     rootType={ scope.rootType }
                     container={ scope }
                     path="condition"
-                    fields={[{name: "id", label: "Id"}, {name: "name", label: "Name"}, {name: "num", label: "Nummer"}]} //TODO: auslesen und so
+                    queryCondition={scope.condition}
                 />
 
 

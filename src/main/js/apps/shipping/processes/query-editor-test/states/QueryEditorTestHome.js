@@ -24,13 +24,6 @@ const QueryEditorTestHome = new ViewState(
 
     const { scope } = env;
 
-    //console.log("unfiltered tree representation:", createTreeRepresentationForInputSchema("AppUser"));
-
-    const treeRepresentation = createTreeRepresentationForInputSchema("AppUser", ({fieldPath}) => {
-        return !fieldPath.endsWith("bazLinks") && !fieldPath.endsWith("id");
-    });
-    //console.log("filtered tree representation:", treeRepresentation);
-
     return (
         <>
             <Row className="mt-3">
@@ -41,8 +34,10 @@ const QueryEditorTestHome = new ViewState(
                         key={ scope.counter }
                         className="mb-3"
                         header={"Query Editor Test"}
-                        availableColumnTreeObject={treeRepresentation}
                         rootType={ scope.rootType }
+                        schemaResolveFilterCallback={({fieldPath}) => {
+                            return !fieldPath.endsWith("id");
+                        }}
                         columnNameRenderer={(value, {origin, isDirectory}) => {
                             if(origin === QueryEditor.ORIGIN_FIELD_SELECTION_TOKEN_LIST) {
                                 console.log(value, isDirectory);

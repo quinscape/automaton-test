@@ -79,7 +79,7 @@
                     "operands": [
                         {
                             "type": "Field",
-                            "name": "parent.name"
+                            "name": "owner.bazes.name"
                         },
                         {
                             "type": "Value",
