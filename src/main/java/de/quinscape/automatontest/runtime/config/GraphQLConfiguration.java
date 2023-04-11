@@ -21,7 +21,9 @@ import de.quinscape.automatontest.domain.tables.pojos.QuxC;
 import de.quinscape.automatontest.domain.tables.pojos.QuxMain;
 import de.quinscape.automatontest.domain.tables.pojos.Waldo;
 import de.quinscape.automatontest.model.ValidationRules;
+import de.quinscape.automatontest.model.halfedge.HalfEdge;
 import de.quinscape.domainql.DomainQL;
+import de.quinscape.domainql.RelationBuilder;
 import de.quinscape.domainql.annotation.GraphQLLogic;
 import de.quinscape.domainql.config.SourceField;
 import de.quinscape.domainql.config.TargetField;
@@ -39,6 +41,7 @@ import org.springframework.core.io.ClassPathResource;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Collection;
+import java.util.Collections;
 
 import static de.quinscape.automatontest.domain.Tables.*;
 

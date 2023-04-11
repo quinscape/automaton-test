@@ -1,6 +1,6 @@
 import { action, makeObservable, observable } from "mobx"
 import QueryEditorTestHome from "./states/QueryEditorTestHome"
-import QueryTestCases from "../../../../data/condition/test-cases.json"
+import QueryTestCases from "../../../../data/condition/condition-tests.json"
 
 import { config } from "@quinscape/automaton-js"
 import { Type } from "@quinscape/automaton-js/filter"
@@ -9,6 +9,20 @@ import { Type } from "@quinscape/automaton-js/filter"
 // noinspection JSUnusedGlobalSymbols
 export function initProcess(process, scope)
 {
+    console.log("INIT", process)
+
+    const name = process.input.test || "AppUser"
+    const testCase = QueryTestCases[name]
+
+    if (!testCase)
+    {
+        const message = "Invalid test-case: " + name
+        alert(message)
+        throw new Error(message)
+    }
+
+    scope.loadTestcase(testCase)
+
     return QueryEditorTestHome;
 }
 
@@ -91,8 +105,6 @@ export default class QueryEditorTest {
     constructor()
     {
         makeObservable(this)
-
-        this.loadTestcase(QueryTestCases.AppUser)
     }
 
 

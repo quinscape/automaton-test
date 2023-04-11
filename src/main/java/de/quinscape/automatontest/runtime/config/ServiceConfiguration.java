@@ -13,6 +13,9 @@ import de.quinscape.automaton.runtime.domain.op.BatchStoreOperation;
 import de.quinscape.automaton.runtime.domain.op.DefaultBatchStoreOperation;
 import de.quinscape.automaton.runtime.domain.op.DefaultStoreOperation;
 import de.quinscape.automaton.runtime.domain.op.StoreOperation;
+import de.quinscape.automaton.runtime.export.excel.ExcelExporter;
+import de.quinscape.automaton.runtime.export.GraphQLQueryContext;
+import de.quinscape.automaton.runtime.export.json.JSONExporter;
 import de.quinscape.automaton.runtime.filter.JavaFilterTransformer;
 import de.quinscape.automaton.runtime.i18n.DefaultTranslationService;
 import de.quinscape.automaton.runtime.i18n.TranslationService;
@@ -25,6 +28,7 @@ import de.quinscape.automaton.runtime.ws.DefaultAutomatonWebSocketHandler;
 import de.quinscape.automatontest.domain.tables.pojos.AppTranslation;
 import de.quinscape.automatontest.model.ValidationRules;
 import de.quinscape.domainql.DomainQL;
+import de.quinscape.domainql.meta.MetadataProvider;
 import de.quinscape.spring.jsview.loader.FileResourceLoader;
 import de.quinscape.spring.jsview.loader.JSONResourceConverter;
 import de.quinscape.spring.jsview.loader.ResourceHandle;
@@ -39,7 +43,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.util.StringUtils;
 
-import javax.sql.DataSource;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
@@ -230,5 +233,63 @@ public class ServiceConfiguration
                 domainQL
             )
         );
+    }
+
+
+    /**
+     * JSON exporter for GraphQL
+     */
+    @Bean
+    public JSONExporter jsonExporter()
+    {
+        return new JSONExporter();
+    }
+
+    @Bean
+    public ExcelExporter excelExporter(@Lazy DomainQL domainQL)
+    {
+        return ExcelExporter.newExporter(domainQL)
+            .withExportStrategy(
+                // default strategy with custom names
+                new ExcelExporter.OneQueryStrategy("Automaton-Test Export", "automaton-test-$now.xlsx")
+            )
+            .build();
+    }
+
+
+    /**
+     * Exporter example for a multi-query document export based on src/main/js/apps/shipping/queries/Q_BazAndUsers.js
+     */
+    @Bean
+    public ExcelExporter bazExporter(@Lazy DomainQL domainQL)
+    {
+        return ExcelExporter.newExporter(domainQL)
+            .withExportStrategy((ctx, queryContext) -> {
+
+                final GraphQLQueryContext.MethodResult bazes = queryContext.getMethodResult("iQueryBaz");
+                final GraphQLQueryContext.MethodResult appUsers = queryContext.getMethodResult("iQueryAppUser");
+
+                // note how you also receive a schema reference for the query data, so we could also name sheets by
+                // domain type etc pp
+                log.info("Method ref type: {}", bazes.methodReference().toString());
+
+                ctx.addSheet("Baz Report", bazes, ref -> !ref.getFieldName().equals("id"));
+                ctx.addSheet("AppUser Reference", appUsers);
+
+                return "baz-report-$now.xlsx";
+            })
+            .build();
+    }
+
+    @Bean
+    public MetadataProvider headingProvider()
+    {
+        return (dql, meta) -> {
+
+            // provide some headings for the text excel export
+            meta.getTypeMeta("Foo").setFieldMeta("name", "heading", "Foo-Name");
+            meta.getTypeMeta("AppUser").setFieldMeta("id", "heading", "Benutzer-Id");
+            meta.getTypeMeta("AppUser").setFieldMeta("login", "heading", "Benutzer-Login");
+        };
     }
 }

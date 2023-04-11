@@ -7,6 +7,7 @@ import { Icon, Select } from "domainql-form";
 import CRUDDetail from "./CRUDDetail";
 import { DateTime } from "luxon";
 import Q_FooMulti from "../queries/Q_FooMulti"
+import Q_BazAndUsers from "../../../queries/Q_BazAndUsers"
 
 const {
     field,
@@ -174,6 +175,27 @@ const CRUDList = new ViewState("CRUDList", (process, scope) => ({
                     }
                 }/>
             </DataGrid>
+
+            <ButtonToolbar>
+                <Button
+                    className="btn btn-secondary text-nowrap mr-1"
+                    tooltip="Export current Datagrid as Excel sheet"
+                    action={ () => scope.foos.export("excelExporter") }
+                >
+                    <Icon className="text-info fa-file-excel mr-1"/>
+                    Grid
+                </Button>
+                <Button
+                    className="btn btn-secondary text-nowrap"
+                    tooltip="Export Baz Combo as Excel sheets"
+                    action={
+                        () => Q_BazAndUsers.export("bazExporter")
+                    }
+                >
+                    <Icon className="text-info fa-file-excel mr-1"/>
+                    Baz Combo
+                </Button>
+            </ButtonToolbar>
 
         </React.Fragment>
     );

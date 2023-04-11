@@ -32,6 +32,7 @@ import de.quinscape.automatontest.domain.tables.pojos.QuxTop;
 import de.quinscape.automatontest.domain.tables.pojos.SumPerMonth;
 import de.quinscape.automatontest.domain.tables.pojos.Waldo;
 import de.quinscape.automatontest.model.Plugh;
+import de.quinscape.automatontest.model.halfedge.HalfEdge;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.domainql.annotation.GraphQLLogic;
 import de.quinscape.domainql.annotation.GraphQLMutation;
@@ -40,8 +41,6 @@ import de.quinscape.domainql.annotation.GraphQLTypeParam;
 import de.quinscape.domainql.jsonb.JSONB;
 import graphql.schema.DataFetchingEnvironment;
 import org.jooq.DSLContext;
-import org.jooq.Field;
-import org.jooq.Table;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +48,6 @@ import org.springframework.context.annotation.Lazy;
 
 import jakarta.validation.constraints.NotNull;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -280,7 +278,12 @@ public class DataGridLogic
         return pojo != null ? pojo.getColumns() : null;
     }
 
-
+    // XXX: remove
+    @GraphQLQuery
+    public HalfEdge _halfEdge()
+    {
+        return null;
+    }
 
 
 }

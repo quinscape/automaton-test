@@ -3,6 +3,54 @@
         "rootType": "Foo",
         "condition": null
     },
+    "AppUser" : {
+        "rootType" : "AppUser",
+        "fields" : [
+            "roles",
+            "login",
+            "foos.created"
+        ],
+        "condition" : {
+            "type": "Condition",
+            "name": "or",
+            "operands": [
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "foos.name"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": "gfd"
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "equal",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "login"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": "gfdsgfdsxg"
+                        }
+                    ]
+                }
+            ]
+        },
+        "sort" : [
+            "login",
+            "!foos.num"
+        ]
+    },
     "Minimal": {
         "rootType": "Foo",
         "condition": {
@@ -11,7 +59,7 @@
             "operands": [
                 {
                     "type": "Field",
-                    "name": ""
+                    "name": "name"
                 },
                 {
                     "type": "Value",
@@ -42,7 +90,7 @@
         }
     },
     "Expression": {
-        "rootType": "Foo",
+        "rootType": "Node",
         "condition": {
             "type": "Condition",
             "name": "and",
@@ -53,7 +101,7 @@
                     "operands": [
                         {
                             "type": "Operation",
-                            "name": "sub",
+                            "name": "add",
                             "operands": [
                                 {
                                     "type": "Field",
@@ -61,7 +109,7 @@
                                 },
                                 {
                                     "type": "Field",
-                                    "name": "description"
+                                    "name": "id"
                                 }
                             ]
                         },
@@ -80,6 +128,55 @@
                         {
                             "type": "Field",
                             "name": "owner.bazes.name"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "String",
+                            "value": "Fish",
+                            "name": null
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "Expression2": {
+        "rootType": "Node",
+        "condition": {
+            "type": "Condition",
+            "name": "and",
+            "operands": [
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Operation",
+                            "name": "add",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "name"
+                                },
+                                {
+                                    "type": "Field",
+                                    "name": "id"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Field",
+                            "name": "parent.name"
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "parent.name"
                         },
                         {
                             "type": "Value",
@@ -686,12 +783,14 @@
             ]
         }
     },
-    "AppUser" : {
+    "ComputedValue" : {
         "rootType" : "AppUser",
         "fields" : [
             "roles",
             "login",
-            "foos.created"
+            "created",
+            "foos.created",
+            "foos.num"
         ],
         "condition" : {
             "type": "Condition",
@@ -699,11 +798,11 @@
             "operands": [
                 {
                     "type": "Condition",
-                    "name": "containsIgnoreCase",
+                    "name": "eq",
                     "operands": [
                         {
                             "type": "Field",
-                            "name": "foos.name"
+                            "name": "login"
                         },
                         {
                             "type": "Value",
@@ -714,18 +813,88 @@
                 },
                 {
                     "type": "Condition",
-                    "name": "equal",
+                    "name": "greaterThan",
                     "operands": [
                         {
                             "type": "Field",
-                            "name": "login"
+                            "name": "created"
                         },
                         {
                             "type": "Value",
-                            "scalarType": "String",
-                            "value": "gfdsgfdsxg"
+                            "scalarType": "ComputedValue",
+                            "value": {
+                                "name" : "now",
+                                "args": []
+                            }
                         }
                     ]
+                }
+            ]
+        },
+        "sort" : [
+            "login",
+            "!foos.num"
+        ]
+    },
+    "ComputedValueArg" : {
+        "rootType" : "AppUser",
+        "fields" : [
+            "roles",
+            "login",
+            "created",
+            "foos.created",
+            "foos.num"
+        ],
+        "condition" : {
+            "type": "Condition",
+            "name": "greaterThan",
+            "operands": [
+                {
+                    "type": "Field",
+                    "name": "created"
+                },
+                {
+                    "type": "Value",
+                    "scalarType": "ComputedValue",
+                    "value": {
+                        "name" : "test",
+                        "args": [{
+                            "type": "String",
+                            "value" : "aaa"
+                        },{
+                            "type": "Int",
+                            "value" : 2
+                        }]
+                    }
+                }
+            ]
+        },
+        "sort" : [
+            "login",
+            "!foos.num"
+        ]
+    },
+    "ComputedValueShortcut" : {
+        "rootType" : "AppUser",
+        "fields" : [
+            "roles",
+            "login",
+            "created",
+            "foos.created",
+            "foos.num"
+        ],
+        "condition" : {
+            "type": "Condition",
+            "name": "greaterThan",
+            "operands": [
+                {
+                    "type": "Field",
+                    "name": "created"
+                },
+                {
+                    "type": "Value",
+                    "scalarType": "Timestamp",
+                    "value": ""
                 }
             ]
         },

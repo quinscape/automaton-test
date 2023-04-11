@@ -162,7 +162,7 @@
         <dependency>
             <groupId>de.quinscape.domainql</groupId>
             <artifactId>automaton</artifactId>
-            <version>0.6.2-SNAPSHOT</version>
+            <version>0.6.3-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -211,6 +211,12 @@
             <artifactId>jakarta.servlet-api</artifactId>
             <version>6.0.0</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.2.3</version>
         </dependency>
 
     </dependencies>

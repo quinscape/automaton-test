@@ -260,11 +260,21 @@ type CorgeType {
     name: String!
 }
 
+"Generated for de.quinscape.automatontest.model.halfedge.Edge"
+type Edge {
+    halfEdge: HalfEdge
+}
+
 "Reference to a specific entity or entity version"
 type EntityReference {
     id: GenericScalar!
     type: String!
     version: String
+}
+
+"Generated for de.quinscape.automatontest.model.halfedge.Face"
+type Face {
+    halfEdge: HalfEdge
 }
 
 "Generic domain object. Used as target in datagrid-test. Generated from public.foo in the database dump."
@@ -346,6 +356,15 @@ type GridColumns {
     name: String!
     "DB column 'owner_id'"
     ownerId: String!
+}
+
+"Generated for de.quinscape.automatontest.model.halfedge.HalfEdge"
+type HalfEdge {
+    edge: Edge
+    face: Face
+    next: HalfEdge
+    twin: HalfEdge
+    vertex: Vertex
 }
 
 "Interactive Query with AppUser payload."
@@ -901,7 +920,7 @@ type QueryConfig {
     id: String
     "Current offset within the paginated results. The number of rows to skip in the results."
     offset: Int
-    "Maximum number of paginated results.,"
+    "Maximum number of paginated results. Set to zero to disable pagination."
     pageSize: Int
     "Current sort order for the query."
     sortFields: [FieldExpression]
@@ -909,7 +928,8 @@ type QueryConfig {
 
 "Auto-generated from DataGridLogic, FileAccessLogic, ResourceAccessLogic, ResultTestLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type QueryType {
-    _filterFnScalar(def: FilterFunction): FilterFunction
+    _filterFnScalar(def: ComputedValue): ComputedValue
+    _halfEdge: HalfEdge
     _interactiveQueryDefinition(def: InteractiveQueryDefinitionInput): InteractiveQueryDefinition
     getDomainTypeIndex(condition: Condition, domainType: String!, field: String!): [String]
     getFoos(limit: Int = 10, offset: Int = 0): PagedFoo
@@ -1154,6 +1174,14 @@ type SumPerMonth {
     year: Int
 }
 
+"Generated for de.quinscape.automatontest.model.halfedge.Vertex"
+type Vertex {
+    halfEdge: HalfEdge
+    x: Int
+    y: Int
+    z: Int
+}
+
 "Generated from public.waldo"
 type Waldo {
     "DB column 'date'"
@@ -1248,6 +1276,9 @@ scalar BigDecimal
 "8-bit integer"
 scalar Byte
 
+"Encapsulates a dynamically evaluated FilterDSL value"
+scalar ComputedValue
+
 "Map graph representing JOOQ conditions"
 scalar Condition
 
@@ -1259,9 +1290,6 @@ scalar DomainObject
 
 "Map graph representing a JOOQ field expression"
 scalar FieldExpression
-
-"Encapsulates a dynamically evaluated FilterDSL value"
-scalar FilterFunction
 
 "Container for generic scalar values"
 scalar GenericScalar
@@ -1541,7 +1569,7 @@ input QueryConfigInput {
     id: String
     "Current offset within the paginated results. The number of rows to skip in the results."
     offset: Int = 0
-    "Maximum number of paginated results.,"
+    "Maximum number of paginated results. Set to zero to disable pagination."
     pageSize: Int = 10
     "Current sort order for the query."
     sortFields: [FieldExpression]

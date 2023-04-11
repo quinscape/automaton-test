@@ -1,6 +1,8 @@
 import "whatwg-fetch"
 import bootstrap from "jsview-bootstrap"
 import { configure, observable, runInAction, spy, toJS } from "mobx"
+import { decompileFilter, FilterDSL, i18n } from "@quinscape/automaton-js"
+import ConditionPointer from "@quinscape/automaton-js/lib/ui/condition/ConditionPointer"
 import {
     startup,
     config,
@@ -27,6 +29,7 @@ import BigNumber from "bignumber.js";
 import { GlobalConfig } from "domainql-form";
 import React from "react";
 import { toast } from "react-toastify";
+import Q_BazAndUsers from "./queries/Q_BazAndUsers"
 
 // set MobX configuration
 configure({
@@ -102,6 +105,23 @@ bootstrap(
                 //     }
                 // })
 
+                FilterDSL.COMPUTED_VALUES.push({
+                        name: "test",
+                        type: "String",
+                        description: "test - " + i18n("ComputedValue:Test Description"),
+                        args: [
+                            {
+                                name: "name",
+                                type: "String",
+                                default: "abc"
+                            },
+                            {
+                                name: "num",
+                                type: "Int"
+                            }
+                        ]
+                    }
+                )
 
                 configurePromiseUI(
                     "de.quinscape.automatontest.model.result.Result",
@@ -147,5 +167,9 @@ export default {
     GraphQLQuery,
     createDomainObject,
     printSchema,
-    toast
+    toast,
+    decompileFilter,
+    ConditionPointer,
+
+
 };

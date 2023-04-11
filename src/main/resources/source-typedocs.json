@@ -96,6 +96,33 @@
     ]
   },
   {
+    "name":"ErrorViewModel",
+    "description":"View model for the error.js view.",
+    "fieldDocs":[
+      {
+        "name":"detail",
+        "description":"Returns the error detail message",
+        "paramDocs":[
+          
+        ]
+      },
+      {
+        "name":"showLogin",
+        "description":"If true, show the login form below the error making the error view look like another login view.",
+        "paramDocs":[
+          
+        ]
+      },
+      {
+        "name":"title",
+        "description":"Returns the error title",
+        "paramDocs":[
+          
+        ]
+      }
+    ]
+  },
+  {
     "name":"Fred",
     "description":"Container bean for the file/resource example.",
     "fieldDocs":[

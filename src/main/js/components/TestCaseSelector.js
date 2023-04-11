@@ -6,7 +6,7 @@ import { i18n } from "@quinscape/automaton-js"
 
 let counter = 0;
 
-const TestCaseSelector = observer(function TestCaseSelector({className = "form-control", label = i18n("Load Test-Case"), cases, current = null, onCaseSelect}) {
+const TestCaseSelector = observer(function TestCaseSelector({className = "form-control", tooltip = null, label = i18n("Load Test-Case"), cases, current = null, onCaseSelect}) {
 
     const id = useMemo(
         () => "test-case-select" + counter++,
@@ -27,6 +27,7 @@ const TestCaseSelector = observer(function TestCaseSelector({className = "form-c
                 id={ id }
                 className={ className }
                 defaultValue={ current }
+                title={ tooltip }
                 onChange={
                     ev => {
                         const name = ev.target.value

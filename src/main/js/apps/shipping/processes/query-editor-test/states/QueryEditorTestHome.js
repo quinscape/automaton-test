@@ -5,7 +5,7 @@ import {Icon} from "domainql-form";
 import { toJS } from "mobx"
 import TestCaseSelector from "../../../../../components/TestCaseSelector"
 
-import QueryTestCases from "../../../../../data/condition/test-cases.json"
+import QueryTestCases from "../../../../../data/condition/condition-tests.json"
 
 const QueryEditorTestHome = new ViewState(
     "QueryEditorTestHome",
@@ -27,8 +27,6 @@ const QueryEditorTestHome = new ViewState(
         <>
             <Row className="mt-3">
                 <Col>
-                    <h1>Query Editor Test</h1>
-                    <hr/>
                     <QueryEditor
                         key={ scope.counter }
                         className="mb-3"
@@ -65,12 +63,12 @@ const QueryEditorTestHome = new ViewState(
                         }}
                         onChange={(queryConfiguration) => {
 
-                            const { select, where, sort } = queryConfiguration
-
-                            console.log("QUERY EDITOR CHANGE");
-                            console.log("SELECT", toJS(select))
-                            console.log("WHERE", decompileFilter(where))
-                            console.log("SORT", toJS(sort))
+                            // const { select, where, sort } = queryConfiguration
+                            //
+                            // console.log("QUERY EDITOR CHANGE");
+                            // console.log("SELECT", toJS(select))
+                            // console.log("WHERE", decompileFilter(where))
+                            // console.log("SORT", toJS(sort))
                         }}
                         queryConfiguration={ scope.queryConfig }
                     />
@@ -86,6 +84,7 @@ const QueryEditorTestHome = new ViewState(
                                 label="Load Query Test-Case"
                                 cases={ QueryTestCases }
                                 onCaseSelect={ (testCase, name) => scope.loadTestcase(testCase) }
+                                tooltip="The default test-case on startup can be controlled with a ?test=Name parameter"
                             />
                         </div>
                     </ButtonToolbar>
