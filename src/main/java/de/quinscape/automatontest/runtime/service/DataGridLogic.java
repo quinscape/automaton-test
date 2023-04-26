@@ -32,7 +32,6 @@ import de.quinscape.automatontest.domain.tables.pojos.QuxTop;
 import de.quinscape.automatontest.domain.tables.pojos.SumPerMonth;
 import de.quinscape.automatontest.domain.tables.pojos.Waldo;
 import de.quinscape.automatontest.model.Plugh;
-import de.quinscape.automatontest.model.halfedge.HalfEdge;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.domainql.annotation.GraphQLLogic;
 import de.quinscape.domainql.annotation.GraphQLMutation;
@@ -277,13 +276,4 @@ public class DataGridLogic
 
         return pojo != null ? pojo.getColumns() : null;
     }
-
-    // XXX: remove
-    @GraphQLQuery
-    public HalfEdge _halfEdge()
-    {
-        return null;
-    }
-
-
 }

@@ -21,7 +21,6 @@ import de.quinscape.automatontest.domain.tables.pojos.QuxC;
 import de.quinscape.automatontest.domain.tables.pojos.QuxMain;
 import de.quinscape.automatontest.domain.tables.pojos.Waldo;
 import de.quinscape.automatontest.model.ValidationRules;
-import de.quinscape.automatontest.model.halfedge.HalfEdge;
 import de.quinscape.domainql.DomainQL;
 import de.quinscape.domainql.RelationBuilder;
 import de.quinscape.domainql.annotation.GraphQLLogic;
