@@ -65,6 +65,9 @@ public class SecurityConfiguration
     {
         
         http
+            .headers(
+                headers -> headers.xssProtection().disable()
+            )
             .formLogin()
                 .loginPage("/v/v-login/")
                 .loginProcessingUrl("/login_check")
