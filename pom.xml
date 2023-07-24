@@ -23,6 +23,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
         <spring.core.version>6.0.5</spring.core.version>
+        <jooq.version>3.17.7</jooq.version>
+        <junit.version>5.6.2</junit.version>
         <spring.profiles.active>dev</spring.profiles.active>
 
         <!--
@@ -105,19 +107,19 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.1.4</version>
+            <version>42.6.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq</artifactId>
-            <version>3.17.7</version>
+            <version>${jooq.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq-codegen</artifactId>
-            <version>3.17.7</version>
+            <version>${jooq.version}</version>
         </dependency>
 
         <dependency>
@@ -162,7 +164,7 @@
         <dependency>
             <groupId>de.quinscape.domainql</groupId>
             <artifactId>automaton</artifactId>
-            <version>0.6.3-SNAPSHOT</version>
+            <version>0.6.4-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -182,14 +184,14 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.6.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.6.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
 
