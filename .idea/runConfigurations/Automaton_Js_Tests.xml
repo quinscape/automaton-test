@@ -9,7 +9,7 @@
       <env name="BABEL_ENV" value="test" />
     </envs>
     <ui>bdd</ui>
-    <extra-mocha-options />
+    <extra-mocha-options>--exit</extra-mocha-options>
     <test-kind>DIRECTORY</test-kind>
     <test-directory>$PROJECT_DIR$/../automaton-js/test/</test-directory>
     <recursive>true</recursive>
