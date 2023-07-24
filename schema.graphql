@@ -260,21 +260,11 @@ type CorgeType {
     name: String!
 }
 
-"Generated for de.quinscape.automatontest.model.halfedge.Edge"
-type Edge {
-    halfEdge: HalfEdge
-}
-
 "Reference to a specific entity or entity version"
 type EntityReference {
     id: GenericScalar!
     type: String!
     version: String
-}
-
-"Generated for de.quinscape.automatontest.model.halfedge.Face"
-type Face {
-    halfEdge: HalfEdge
 }
 
 "Generic domain object. Used as target in datagrid-test. Generated from public.foo in the database dump."
@@ -356,15 +346,6 @@ type GridColumns {
     name: String!
     "DB column 'owner_id'"
     ownerId: String!
-}
-
-"Generated for de.quinscape.automatontest.model.halfedge.HalfEdge"
-type HalfEdge {
-    edge: Edge
-    face: Face
-    next: HalfEdge
-    twin: HalfEdge
-    vertex: Vertex
 }
 
 "Interactive Query with AppUser payload."
@@ -929,7 +910,6 @@ type QueryConfig {
 "Auto-generated from DataGridLogic, FileAccessLogic, ResourceAccessLogic, ResultTestLogic, ShippingLogic, TestLogic, AutomatonStandardLogic"
 type QueryType {
     _filterFnScalar(def: ComputedValue): ComputedValue
-    _halfEdge: HalfEdge
     _interactiveQueryDefinition(def: InteractiveQueryDefinitionInput): InteractiveQueryDefinition
     getDomainTypeIndex(condition: Condition, domainType: String!, field: String!): [String]
     getFoos(limit: Int = 10, offset: Int = 0): PagedFoo
@@ -1172,14 +1152,6 @@ type SumPerMonth {
     sum: Long
     "DB column 'year'"
     year: Int
-}
-
-"Generated for de.quinscape.automatontest.model.halfedge.Vertex"
-type Vertex {
-    halfEdge: HalfEdge
-    x: Int
-    y: Int
-    z: Int
 }
 
 "Generated from public.waldo"
