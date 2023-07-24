@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {config, QueryEditor, ViewState, createTreeRepresentationForInputSchema, decompileFilter} from "@quinscape/automaton-js";
+import {config, QueryEditor, ViewState, createTreeRepresentationForInputSchema, decompileFilter, createQuery} from "@quinscape/automaton-js";
 import { ButtonToolbar, Col, Row } from "reactstrap"
 import {Icon} from "domainql-form";
 import { toJS } from "mobx"
@@ -58,7 +58,7 @@ const QueryEditorTestHome = new ViewState(
 
                             console.log("QUERY EDITOR SAVE");
                             console.log("SELECT", toJS(select))
-                            console.log("WHERE", decompileFilter(where))
+                            console.log("WHERE", JSON.stringify(where))
                             console.log("SORT", toJS(sort))
                         }}
                         onChange={(queryConfiguration) => {
@@ -77,7 +77,22 @@ const QueryEditorTestHome = new ViewState(
             </Row>
             <Row>
                 <Col md={6} >
+                </Col>
+            </Row>
+            <Row>
+                <Col md={6} >
                     <ButtonToolbar>
+                        <button
+                            className="btn btn-secondary"
+                            onClick={
+                                () => {
+                                    const q = createQuery(scope.rootType, scope.queryConfig)
+                                    q.execute(q.defaultVars).then(data => console.log("RESULT", data))
+                                }
+                            }
+                            >
+                            Execute
+                        </button>
                         <div
                         className="form form-inline">
                             <TestCaseSelector
