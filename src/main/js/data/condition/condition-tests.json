@@ -189,6 +189,67 @@
             ]
         }
     },
+    "Expression3": {
+        "rootType": "Node",
+        "condition": {
+            "type": "Condition",
+            "name": "and",
+            "operands": [
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Operation",
+                            "name": "add",
+                            "operands": [
+                                {
+                                    "type": "Field",
+                                    "name": "name"
+                                },
+                                {
+                                    "type": "Field",
+                                    "name": "id"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Field",
+                            "name": "parent.name"
+                        }
+                    ]
+                },
+                {
+                    "type": "Condition",
+                    "name": "containsIgnoreCase",
+                    "operands": [
+                        {
+                            "type": "Field",
+                            "name": "parent.name"
+                        },
+                        {
+                            "type": "Value",
+                            "scalarType": "ComputedValue",
+                            "value": {
+                                "name": "param",
+                                "args": [
+                                    {
+                                        "type": "String",
+                                        "value": null
+                                    },
+                                    {
+                                        "type": "Int",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "name": "param"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "Complex": {
         "rootType": "Foo",
         "condition": {
@@ -901,6 +962,76 @@
         "sort" : [
             "login",
             "!foos.num"
+        ]
+    },
+    "Parametrized" : {
+        "rootType" : "Foo",
+        "fields" : [
+            "name",
+            "num",
+            "created",
+            "owner.id",
+            "owner.login"
+        ],
+        "condition" : {
+            "type": "Condition",
+            "name": "eq",
+            "operands": [
+                {
+                    "type": "Field",
+                    "name": "num"
+                }, {
+                    "type": "Value",
+                    "scalarType": "ComputedValue",
+                    "value": {
+                        "name": "param",
+                        "args": [
+                            {
+                                "type": "String",
+                                "value": "test"
+                            }
+                        ]
+                    },
+                    "name": null
+                }
+            ]
+        },
+        "sort" : [
+            "name"
+        ]
+    },
+    "ParamBigDecimal" : {
+        "rootType" : "Garply",
+        "fields" : [
+            "name",
+            "value",
+            "opt"
+        ],
+        "condition" : {
+            "type": "Condition",
+            "name": "lt",
+            "operands": [
+                {
+                    "type": "Field",
+                    "name": "value"
+                }, {
+                    "type": "Value",
+                    "scalarType": "ComputedValue",
+                    "value": {
+                        "name": "param",
+                        "args": [
+                            {
+                                "type": "String",
+                                "value": "limit"
+                            }
+                        ]
+                    },
+                    "name": null
+                }
+            ]
+        },
+        "sort" : [
+            "name"
         ]
     }
 }
