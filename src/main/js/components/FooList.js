@@ -1,6 +1,6 @@
 import React from "react"
 import { observer as fnObserver } from "mobx-react-lite";
-import get from "lodash.get";
+import get from "lodash/get";
 
 const FooList = props => {
 

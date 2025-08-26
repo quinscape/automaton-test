@@ -1,5 +1,5 @@
 import { config, i18n } from "@quinscape/automaton-js"
-import toPath from "lodash.topath"
+import toPath from "lodash/topath"
 
 import { FieldMode } from "domainql-form";
 
